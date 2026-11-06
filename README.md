@@ -141,7 +141,7 @@ rejected because ICU reads it as an escape.
 | String | `{name}` | `%1$@` | `%1$s` | `{name}` |
 | int | `{name}` | `%1$lld` (`Int`) | `%1$d` | `{name}` |
 | double | `{name}` | `%1$lf` (`Double`) | `%1$f` | `{name}` |
-| plural | ICU | `variations.plural` with positional arguments; when another number is present, `%#@count@` with a substitution and `%arg` | `<plurals>`, `#` as `%N$d` | `key.<category>` entries, `#` as `{count}` |
+| plural | ICU | `variations.plural` with positional arguments; when another number is present, `%#@count@` with a substitution and `%arg` (Xcode then labels that argument: `.playerProgress(count: 3, 10)`) | `<plurals>`, `#` as `%N$d` | `key.<category>` entries, `#` as `{count}` |
 | literal `%` | `%` | `%%` when the message has arguments | `%%` when it has arguments, else `formatted="false"` | `%` |
 
 Roku plural contract: a translated plural always carries every category of its language, so

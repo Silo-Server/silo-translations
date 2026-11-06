@@ -37,7 +37,8 @@ function localization(entry: SourceEntry, a: Analysis): Localization {
     return { variations: { plural } };
   }
   // Another number besides the count: Xcode's substitution form names the selecting argument.
-  // %arg is the count inside the forms; the other arguments keep their positions.
+  // %arg is the count inside the forms; the other arguments keep their positions. The generated
+  // symbol labels the count with the substitution's name (`.playerProgress(count: 3, 10)`).
   const plural: Record<string, Unit> = {};
   for (const [cat, elements] of shape.forms) plural[cat] = unit(text(entry, elements, true, () => "%arg"));
   return {
