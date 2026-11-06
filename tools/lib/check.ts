@@ -3,6 +3,8 @@ import { analyze, literalLength, type Analysis } from "./icu.ts";
 import { catalogPath, inScope, isShared, loadCatalog, type Catalog, type Issue, type SourceEntry } from "./catalog.ts";
 import { loadGlossary, termsIn, type GlossaryTerm } from "./glossary.ts";
 import { loadLocales, type Locale, type Locales } from "./locales.ts";
+import { readFileSync } from "node:fs";
+import { formattedFiles, layoutProblems } from "./format.ts";
 
 export function androidName(key: string): string {
   return key.replaceAll(".", "_");
@@ -145,6 +147,16 @@ export function checkRepository(root: string): CheckedCatalog {
         } else roku.set(name, entry.key);
       }
     }
+  }
+
+  // Canonical layout (make fmt), so branches that add keys in parallel merge cleanly. Only make
+  // check fails on these; generate and translate read the content and ignore the layout.
+  for (const { file, kind } of formattedFiles(root)) {
+    const { problems, parsed } = layoutProblems(readFileSync(file, "utf8"), kind);
+    // An unparsable file the loader read is already reported; one it skipped (a language not in
+    // locales.json) is not.
+    const reported = !parsed && issues.some((i) => i.file === file && !i.key);
+    for (const message of problems) if (!reported) issues.push({ level: "error", file, message, rule: "layout" });
   }
 
   const glossaryTerms = new Map(catalog.entries.map((e) => [e.key, termsIn(glossary, e.message)]));

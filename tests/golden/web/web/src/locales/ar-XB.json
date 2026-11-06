@@ -1,36 +1,8 @@
 {
-  "common.cancel": [
+  "catalog.extra.behind_the_scenes": [
     {
       "type": 0,
-      "value": "‏‮Cancel‬"
-    }
-  ],
-  "home.section.continueWatching": [
-    {
-      "type": 0,
-      "value": "‏‮Continue Watching‬"
-    }
-  ],
-  "signIn.body": [
-    {
-      "type": 0,
-      "value": "‏‮Sign in to ‬"
-    },
-    {
-      "type": 1,
-      "value": "server"
-    },
-    {
-      "type": 0,
-      "value": "‮ as ‬"
-    },
-    {
-      "type": 1,
-      "value": "account"
-    },
-    {
-      "type": 0,
-      "value": "‮.‬"
+      "value": "‏‮Behind the Scenes‬"
     }
   ],
   "catalog.seasons": [
@@ -71,6 +43,12 @@
       },
       "offset": 0,
       "pluralType": "cardinal"
+    }
+  ],
+  "common.cancel": [
+    {
+      "type": 0,
+      "value": "‏‮Cancel‬"
     }
   ],
   "companion.limit": [
@@ -129,80 +107,16 @@
       "pluralType": "cardinal"
     }
   ],
-  "player.rate": [
+  "home.section.continueWatching": [
     {
       "type": 0,
-      "value": "‏"
-    },
-    {
-      "type": 1,
-      "value": "rate"
-    },
-    {
-      "type": 0,
-      "value": "‮× speed, 100% volume‬"
+      "value": "‏‮Continue Watching‬"
     }
   ],
-  "player.volumeFull": [
+  "player.muted": [
     {
       "type": 0,
-      "value": "‏‮Volume 100%‬"
-    }
-  ],
-  "catalog.extra.behind_the_scenes": [
-    {
-      "type": 0,
-      "value": "‏‮Behind the Scenes‬"
-    }
-  ],
-  "web.greeting": [
-    {
-      "type": 0,
-      "value": "‏"
-    },
-    {
-      "type": 5,
-      "value": "gender",
-      "options": {
-        "female": {
-          "value": [
-            {
-              "type": 0,
-              "value": "‮She‬"
-            }
-          ]
-        },
-        "male": {
-          "value": [
-            {
-              "type": 0,
-              "value": "‮He‬"
-            }
-          ]
-        },
-        "other": {
-          "value": [
-            {
-              "type": 0,
-              "value": "‮They‬"
-            }
-          ]
-        }
-      }
-    },
-    {
-      "type": 0,
-      "value": "‮ invited you to ‬"
-    },
-    {
-      "type": 8,
-      "value": "b",
-      "children": [
-        {
-          "type": 1,
-          "value": "party"
-        }
-      ]
+      "value": "‏‮Muted‬"
     }
   ],
   "player.progress": [
@@ -261,10 +175,96 @@
       "pluralType": "cardinal"
     }
   ],
-  "player.muted": [
+  "player.rate": [
     {
       "type": 0,
-      "value": "‏‮Muted‬"
+      "value": "‏"
+    },
+    {
+      "type": 1,
+      "value": "rate"
+    },
+    {
+      "type": 0,
+      "value": "‮× speed, 100% volume‬"
+    }
+  ],
+  "player.volumeFull": [
+    {
+      "type": 0,
+      "value": "‏‮Volume 100%‬"
+    }
+  ],
+  "signIn.body": [
+    {
+      "type": 0,
+      "value": "‏‮Sign in to ‬"
+    },
+    {
+      "type": 1,
+      "value": "server"
+    },
+    {
+      "type": 0,
+      "value": "‮ as ‬"
+    },
+    {
+      "type": 1,
+      "value": "account"
+    },
+    {
+      "type": 0,
+      "value": "‮.‬"
+    }
+  ],
+  "web.greeting": [
+    {
+      "type": 0,
+      "value": "‏"
+    },
+    {
+      "type": 5,
+      "value": "gender",
+      "options": {
+        "female": {
+          "value": [
+            {
+              "type": 0,
+              "value": "‮She‬"
+            }
+          ]
+        },
+        "male": {
+          "value": [
+            {
+              "type": 0,
+              "value": "‮He‬"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+            {
+              "type": 0,
+              "value": "‮They‬"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": 0,
+      "value": "‮ invited you to ‬"
+    },
+    {
+      "type": 8,
+      "value": "b",
+      "children": [
+        {
+          "type": 1,
+          "value": "party"
+        }
+      ]
     }
   ]
 }

@@ -1,12 +1,16 @@
 # Every target runs the TypeScript tools directly with Node (>= 22.18, native type stripping).
 NODE ?= node
 
-.PHONY: check test typecheck generate golden translate import-settings-manifest ci
+.PHONY: check fmt test typecheck generate golden translate import-settings-manifest ci
 
 ## check: validate the catalog (errors fail; warnings print)
 check:
 	$(NODE) tools/validate.ts .
 	$(NODE) tools/import-settings-manifest.ts --check
+
+## fmt: rewrite catalog/*.arb and state/*.json in the canonical layout (make check requires it)
+fmt:
+	$(NODE) tools/fmt.ts
 
 ## test: validator table tests, generator goldens, plural rules, platform acceptance
 test:

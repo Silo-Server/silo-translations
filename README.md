@@ -25,7 +25,8 @@ tests/                validator table tests, generator goldens, platform accepta
 
 ```sh
 npm ci
-make check                      # validate the catalog; errors fail, warnings print
+make fmt                        # rewrite catalog/*.arb and state/*.json in the canonical layout
+make check                      # validate the catalog (and its layout); errors fail, warnings print
 make test                       # all tests
 make ci                         # typecheck + check + test (what CI runs)
 make generate OUT=<dir>         # write every platform's files under <dir>

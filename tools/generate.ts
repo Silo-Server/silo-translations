@@ -19,7 +19,7 @@ const MARKER = ".silo-translations-out";
 /** Generates every platform's files in memory. Throws when the catalog has errors. */
 export function generateAll(root: string, version: string): Map<string, Files> {
   const checked = checkRepository(root);
-  const errors = checked.issues.filter((i) => i.level === "error");
+  const errors = checked.issues.filter((i) => i.level === "error" && i.rule !== "layout");
   if (errors.length) {
     throw new Error(`catalog has ${errors.length} errors:\n${errors.map((i) => formatIssue(root, i)).join("\n")}`);
   }

@@ -16,6 +16,9 @@ describes the formats; CONTRIBUTING describes the workflows.
 
 ## Catalog rules
 
+- Run `make fmt` after editing any `catalog/*.arb`; `make check` rejects files outside the
+  canonical layout (sorted keys, `@key` after its key, 2-space JSON). Tools that write these
+  files (`make translate`, `make import-settings-manifest`) already write that layout.
 - `catalog/en.arb` is the only file developers edit for English. Every key needs a
   `description` that says where the text appears and what each placeholder holds.
 - Key, placeholder and message rules are in the README and enforced by `make check`. Don't

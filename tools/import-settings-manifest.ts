@@ -13,6 +13,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { parseArgs } from "node:util";
 import { fileURLToPath } from "node:url";
+import { canonicalArb, jsonText } from "./lib/format.ts";
 
 export const PREFIX = "settingsManifest.";
 const MANIFEST_PATH = "contracts/settings/v1/manifest.json";
@@ -53,30 +54,11 @@ export function manifestEntries(manifest: Manifest): [string, unknown][] {
   return out;
 }
 
-/**
- * en.arb with every settingsManifest.* entry replaced by the manifest's. Existing entries stay
- * where they were; new ones go after the last existing settingsManifest entry (or at the end).
- */
+/** en.arb with every settingsManifest.* entry replaced by the manifest's, in the canonical layout. */
 export function applyManifest(arb: Record<string, unknown>, manifest: Manifest): Record<string, unknown> {
-  const generated = manifestEntries(manifest);
   const isOwned = (k: string) => k.startsWith(PREFIX) || k.startsWith(`@${PREFIX}`);
-  const out: [string, unknown][] = [];
-  let inserted = false;
-  const entries = Object.entries(arb);
-  const lastOwned = entries.findLastIndex(([k]) => isOwned(k));
-  entries.forEach(([k, v], i) => {
-    if (!isOwned(k)) out.push([k, v]);
-    if (i === lastOwned) {
-      out.push(...generated);
-      inserted = true;
-    }
-  });
-  if (!inserted) out.push(...generated);
-  return Object.fromEntries(out);
-}
-
-export function arbText(arb: Record<string, unknown>): string {
-  return JSON.stringify(arb, null, 2) + "\n";
+  const kept = Object.entries(arb).filter(([k]) => !isOwned(k));
+  return canonicalArb(Object.fromEntries([...kept, ...manifestEntries(manifest)]));
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
@@ -107,9 +89,11 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   }
   const manifest = JSON.parse(readFileSync(vendored, "utf8")) as Manifest;
   const current = readFileSync(enPath, "utf8");
-  const next = arbText(applyManifest(JSON.parse(current), manifest));
+  const next = jsonText(applyManifest(JSON.parse(current), manifest));
   if (values.check) {
-    if (next !== current) {
+    // Compare with the current file in canonical form, so a layout difference (make check
+    // reports it) is not mistaken for manifest drift.
+    if (next !== jsonText(canonicalArb(JSON.parse(current)))) {
       console.error("catalog/en.arb settingsManifest.* entries differ from sources/settings-manifest.json; run make import-settings-manifest");
       process.exit(1);
     }

@@ -36,21 +36,20 @@ test("import-settings-manifest: keys, hyphens, numbers, unset labels", () => {
   ]);
 });
 
-test("import-settings-manifest: replaces owned keys in place and keeps the rest", () => {
+test("import-settings-manifest: replaces owned keys and writes the canonical layout", () => {
   const arb = {
     "@@locale": "en",
-    "a.b": "A",
-    "@a.b": { description: "x" },
-    "settingsManifest.old.label": "Old",
-    "@settingsManifest.old.label": { description: "x" },
     "z.y": "Z",
     "@z.y": { description: "x" },
+    "settingsManifest.old.label": "Old",
+    "@settingsManifest.old.label": { description: "x" },
+    "a.b": "A",
+    "@a.b": { description: "x" },
   };
   const out = Object.keys(applyManifest(arb, manifest));
   assert.equal(out.indexOf("settingsManifest.old.label"), -1);
-  assert.equal(out[3], "settingsManifest.ui.theme.label");
-  assert.equal(out.at(-2), "z.y");
-  const fresh = Object.keys(applyManifest({ "@@locale": "en", "a.b": "A", "@a.b": { description: "x" } }, manifest));
-  assert.equal(fresh[3], "settingsManifest.ui.theme.label");
+  assert.deepEqual(out.slice(0, 3), ["@@locale", "a.b", "@a.b"]);
+  assert.equal(out[3], "settingsManifest.playback.audio_language.description");
+  assert.deepEqual(out.slice(-2), ["z.y", "@z.y"]);
   assert.deepEqual(Object.entries(applyManifest(applyManifest(arb, manifest), manifest)), Object.entries(applyManifest(arb, manifest)));
 });

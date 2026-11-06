@@ -28,6 +28,8 @@ export interface Issue {
   file: string;
   key?: string;
   message: string;
+  /** "layout": the file's formatting (make fmt), which only make check enforces. */
+  rule?: "layout";
 }
 
 export interface Catalog {

@@ -51,6 +51,24 @@ your pull request. Keep English byte-identical when moving strings out of a clie
 Don't edit `settingsManifest.*` keys; change the label in silo-server and run
 `make import-settings-manifest`.
 
+## Adding keys from a client branch
+
+When you extract strings from a client while other branches do the same:
+
+1. Branch from `feat/seed-catalog` (from `main` once the seed has merged).
+2. Add keys only in the namespaces your area owns, such as `player.*` for the player. Leave
+   other areas' keys and `common.*` alone; propose shared vocabulary in its own small change.
+3. Run `make fmt`. Every `catalog/*.arb` and `state/*.json` file has one canonical layout:
+   `@@locale` first, then keys in code-point order, each `@key` block right after its key,
+   2-space JSON with a trailing newline. Parallel branches then add lines in different places
+   and merge without conflicts.
+4. Run `make check`. It fails on a file that isn't in the canonical layout, or that repeats a key
+   (a merge can leave one twice; only the last would count, so remove the extra by hand).
+5. Generate into the client from your branch:
+   `scripts/sync-translations --platform <web|apple|android|roku> --local <this checkout>`.
+   The client records `version=local-<commit>`, with `-dirty` when your catalog changes are
+   not committed yet; commit them first so the client points at a real commit.
+
 ## Maintainers: the translation pass
 
 `make translate LOCALE=<tag>|all` runs on a maintainer machine with Claude Code signed in. CI

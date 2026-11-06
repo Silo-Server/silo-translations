@@ -23,6 +23,7 @@ import { checkRepository, checkTranslation, type CheckedCatalog } from "./lib/ch
 import { catalogPath, type SourceEntry } from "./lib/catalog.ts";
 import { termsIn } from "./lib/glossary.ts";
 import { categoriesFor } from "./lib/plural.ts";
+import { canonicalArb, canonicalState, jsonText } from "./lib/format.ts";
 import type { Locale } from "./lib/locales.ts";
 
 export const MODEL = "claude-opus-5-5";
@@ -214,10 +215,10 @@ function writeLanguage(root: string, checked: CheckedCatalog, locale: Locale, wo
       merged[entry.key] = now;
     }
   }
-  writeFileSync(file, JSON.stringify(merged, null, 2) + "\n");
-  const ordered = Object.fromEntries(checked.catalog.entries.filter((e) => state[e.key]).map((e) => [e.key, state[e.key]]));
+  writeFileSync(file, jsonText(canonicalArb(merged)));
+  const kept = Object.fromEntries(checked.catalog.entries.filter((e) => state[e.key]).map((e) => [e.key, state[e.key]!]));
   mkdirSync(join(root, "state"), { recursive: true });
-  writeFileSync(join(root, "state", `${locale.tag}.json`), JSON.stringify(ordered, null, 2) + "\n");
+  writeFileSync(join(root, "state", `${locale.tag}.json`), jsonText(canonicalState(kept)));
 }
 
 export function prBody(reports: Report[]): string {
@@ -241,7 +242,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const checked = checkRepository(root);
   // Errors block the run; warnings (such as translations an English change left stale) don't,
   // since retranslating them is part of the run.
-  if (checked.issues.some((i) => i.level === "error")) {
+  if (checked.issues.some((i) => i.level === "error" && i.rule !== "layout")) {
     console.error("the catalog has validation errors; run make check first");
     process.exit(1);
   }

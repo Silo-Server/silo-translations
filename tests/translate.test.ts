@@ -7,7 +7,8 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { fingerprint, select, valueHash, type State } from "../tools/translate.ts";
 import type { SourceEntry } from "../tools/lib/catalog.ts";
-import { entry, makeRepo, REPO } from "./helpers.ts";
+import { canonicalText } from "../tools/lib/format.ts";
+import { entry, makeRepo, REPO, writeArb } from "./helpers.ts";
 
 const e = (key: string, message: string, description = "Test string."): SourceEntry => ({ key, message, description, placeholders: [], platforms: ["web"] });
 
@@ -88,6 +89,11 @@ test("translate: writes catalog, state and PR body; retries once; keeps human va
     "catalog.seasons": "{count, plural, one {ES # season} many {ES # seasons} other {ES # seasons}}",
     "common.kept": "Conservado",
   });
+  // Both files come out in the canonical layout make check requires.
+  for (const f of ["catalog/es.arb", "state/es.json"]) {
+    const text = readFileSync(join(root, f), "utf8");
+    assert.equal(canonicalText(text, f.startsWith("state") ? "state" : "arb"), text, f);
+  }
   const state = JSON.parse(readFileSync(join(root, "state/es.json"), "utf8")) as State;
   assert.equal(state["common.cancel"]!.by, "opus");
   assert.equal(state["common.cancel"]!.model, "claude-opus-5-5");
@@ -119,11 +125,11 @@ test("translate: a human edit whose English changed is retranslated and listed",
   const esPath = join(root, "catalog/es.arb");
   const es = JSON.parse(readFileSync(esPath, "utf8"));
   es["common.cancel"] = "Cancelar";
-  writeFileSync(esPath, JSON.stringify(es, null, 2));
+  writeArb(esPath, es);
   const enPath = join(root, "catalog/en.arb");
   const en = JSON.parse(readFileSync(enPath, "utf8"));
   en["common.cancel"] = "Cancel now";
-  writeFileSync(enPath, JSON.stringify(en, null, 2));
+  writeArb(enPath, en);
   run(root, "--locale", "es");
   assert.equal(JSON.parse(readFileSync(esPath, "utf8"))["common.cancel"], "ES Cancel now");
   assert.match(readFileSync(join(root, "out/translate-pr-body.md"), "utf8"), /\| es \| `common.cancel` \| Cancelar \| ES Cancel now \|/);
@@ -155,7 +161,7 @@ test("translate: an English placeholder change does not block the run that repai
   const en = JSON.parse(readFileSync(enPath, "utf8"));
   en["common.flaky"] = "Hi {name} on {server}";
   en["@common.flaky"] = { description: "Test string. {name}: who; {server}: where.", placeholders: { name: { type: "String" }, server: { type: "String" } } };
-  writeFileSync(enPath, JSON.stringify(en, null, 2));
+  writeArb(enPath, en);
   run(root, "--locale", "es");
   assert.equal(JSON.parse(readFileSync(join(root, "catalog/es.arb"), "utf8"))["common.flaky"], "ES Hi {name} on {server}");
 });
@@ -168,7 +174,7 @@ test("translate: an empty answer keeps the existing value and is reported", () =
   const enPath = join(root, "catalog/en.arb");
   const en = JSON.parse(readFileSync(enPath, "utf8"));
   en["common.empty"] = "Cancel right now";
-  writeFileSync(enPath, JSON.stringify(en, null, 2));
+  writeArb(enPath, en);
   run(root, "--locale", "es");
   assert.equal(JSON.parse(readFileSync(join(root, "catalog/es.arb"), "utf8"))["common.empty"], "Abbrechen");
   assert.match(readFileSync(join(root, "out/translate-pr-body.md"), "utf8"), /es `common.empty`: no translation returned/);
