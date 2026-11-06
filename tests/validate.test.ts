@@ -66,6 +66,8 @@ const cases: Case[] = [
   { name: "Roku plural expansion collision (case-insensitive)", en: { ...entry("a.b.oNe", "x"), ...entry("a.b", SEASONS, COUNT) }, errors: ["Roku name a.b.one collides with"] },
   { name: "Roku case-insensitive collision", en: { ...entry("a.bC", "x"), ...entry("a.bc", "y") }, errors: ["Roku name a.bc collides with a.bC"] },
   { name: "Apple symbol collision", en: { ...entry("home.sectionTitle", "x"), ...entry("homeSection.title", "y") }, errors: ["Apple symbol homeSectionTitle collides with home.sectionTitle"] },
+  { name: "Apple symbol capitalizes after _", en: { ...entry("a.b_c", "x"), ...entry("a.bC", "y") }, errors: ["Apple symbol aBC collides with"] },
+  { name: "Apple symbol capitalizes after a digit", en: { ...entry("a.a11yHost", "x"), ...entry("a.a11YHost", "y", { "x-platforms": ["apple"] }) }, errors: ["Apple symbol aA11YHost collides with"] },
   {
     name: "Apple collision ignored outside Apple scope",
     en: { ...entry("home.sectionTitle", "x", { "x-platforms": ["web"] }), ...entry("homeSection.title", "y") },

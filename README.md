@@ -110,8 +110,9 @@ table above. Sync refuses any listed path that passes through a symlink in the c
   `settingsManifest.ui.theme.option.midnight_cinema`.
 - `common.*` holds vocabulary every platform shares. Other namespaces follow the feature.
 - Android names replace `.` with `_` (`home_section_continueWatching`). Apple's String Catalog
-  uses the key, and Xcode generates a symbol that joins the segments in lowerCamel
-  (`home.section.continueWatching` → `.homeSectionContinueWatching`). Web and Roku use the key
+  uses the key, and Xcode generates a symbol that joins the segments in lowerCamel, with a
+  capital after each `_` and after a digit (`home.section.continueWatching` →
+  `.homeSectionContinueWatching`, `requests.reason.not_found` → `.requestsReasonNotFound`). Web and Roku use the key
   itself. The validator rejects keys that collide on any platform: Android names, Apple
   symbols (`home.sectionTitle` and `homeSection.title`), Roku plural entries, and Roku's
   case-insensitive lookup.

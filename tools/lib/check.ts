@@ -10,11 +10,18 @@ export function androidName(key: string): string {
   return key.replaceAll(".", "_");
 }
 
-/** The symbol Xcode generates for a key: segments joined in lowerCamel (`a.bC.d` -> `aBCD`). */
+/**
+ * The symbol Xcode generates for a key: segments joined in lowerCamel, with a capital after each
+ * `_` and after a digit (`a.bC.d` -> `aBCD`, `requests.reason.not_found` ->
+ * `requestsReasonNotFound`, `watchParty.seat.a11yHost` -> `watchPartySeatA11YHost`).
+ */
 export function appleSymbol(key: string): string {
   return key
     .split(".")
-    .map((s, i) => (i === 0 ? s : s.charAt(0).toUpperCase() + s.slice(1)))
+    .map((seg, i) => {
+      const s = seg.replace(/_+([A-Za-z0-9])/g, (_, c: string) => c.toUpperCase()).replace(/(\d)([a-z])/g, (_, d: string, c: string) => d + c.toUpperCase());
+      return i === 0 ? s : s.charAt(0).toUpperCase() + s.slice(1);
+    })
     .join("");
 }
 
