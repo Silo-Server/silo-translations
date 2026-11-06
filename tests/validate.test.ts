@@ -98,14 +98,14 @@ const cases: Case[] = [
     glossary: "\uFEFFterm,note,de\nContinue Watching,Home row,Weiterschauen\n",
   },
   { name: "empty translation is missing, not an error", en: entry("a.b", "Hi"), tr: { de: { "a.b": "" } } },
-  { name: "translation placeholder renamed", en: entry("a.c", "Hi {name}", NAME), tr: { es: { "a.c": "Hola {nombre}" } }, errors: ["placeholders (nombre) differ from English (name)"] },
-  { name: "translation drops a placeholder", en: entry("a.c", "Hi {name}", NAME), tr: { fr: { "a.c": "Salut" } }, errors: ["placeholders (none) differ"] },
-  { name: "translation not a plural", en: entry("a.d", SEASONS, COUNT), tr: { de: { "a.d": "{count} Staffeln" } }, errors: ["must be one too"] },
+  { name: "translation placeholder renamed", en: entry("a.c", "Hi {name}", NAME), tr: { es: { "a.c": "Hola {nombre}" } }, warnings: ["placeholders (nombre) differ from English (name)"] },
+  { name: "translation drops a placeholder", en: entry("a.c", "Hi {name}", NAME), tr: { fr: { "a.c": "Salut" } }, warnings: ["placeholders (none) differ"] },
+  { name: "translation not a plural", en: entry("a.d", SEASONS, COUNT), tr: { de: { "a.d": "{count} Staffeln" } }, warnings: ["must be one too"] },
   {
     name: "translation plural on another arg",
     en: entry("a.d", "{count, plural, one {# of {n}} other {# of {n}}}", { description: "{count}: done; {n}: total.", placeholders: { count: { type: "int" }, n: { type: "int" } } }),
     tr: { de: { "a.d": "{n, plural, one {{count} von #} other {{count} von #}}" } },
-    errors: ["plural must select on count"],
+    warnings: ["plurals select on n; English selects on count"],
   },
   { name: "Spanish needs many", en: entry("a.d", SEASONS, COUNT), tr: { es: { "a.d": "{count, plural, one {# temporada} other {# temporadas}}" } }, errors: ["es categories one many other"] },
   {
@@ -122,7 +122,13 @@ const cases: Case[] = [
   { name: "Japanese has only other", en: entry("a.d", SEASONS, COUNT), tr: { ja: { "a.d": "{count, plural, other {#シーズン}}" } } },
   { name: "Japanese with one", en: entry("a.d", SEASONS, COUNT), tr: { ja: { "a.d": SEASONS } }, errors: ["ja categories other"] },
   { name: "pt-BR uses CLDR pt", en: entry("a.d", SEASONS, COUNT), tr: { "pt-BR": { "a.d": "{count, plural, one {# temporada} many {# de temporadas} other {# temporadas}}" } } },
-  { name: "translation adds a tag", en: entry("a.b", "Go", { "x-platforms": ["web"] }), tr: { de: { "a.b": "<b>Los</b>" } }, errors: ["tags (b) differ"] },
+  { name: "translation adds a tag", en: entry("a.b", "Go", { "x-platforms": ["web"] }), tr: { de: { "a.b": "<b>Los</b>" } }, warnings: ["tags (b) differ"] },
+  {
+    name: "web translation that moves the plural to another argument",
+    en: entry("a.b", "{count, plural, one {{name}: # item} other {{name}: # items}}", { placeholders: { name: { type: "String" }, count: { type: "int" } }, "x-platforms": ["web"] }),
+    tr: { es: { "a.b": "{name, plural, one {{count}: # elemento} many {{count}: # de elementos} other {{count}: # elementos}}" } },
+    warnings: ["plurals select on name; English selects on count; left out until retranslated"],
+  },
   { name: "translation select in web key", en: entry("a.b", "{name}", { ...NAME, "x-platforms": ["web"] }), tr: { de: { "a.b": "{name, select, a {A} other {B}}" } } },
   { name: "max length warning", en: entry("a.b", "Hi", { "x-maxLength": 5 }), tr: { de: { "a.b": "Hallo Welt" } }, warnings: ["longer than x-maxLength 5"] },
   {

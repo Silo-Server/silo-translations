@@ -43,7 +43,10 @@ the merge publishes a release the client then syncs. Don't add translations in t
 request; the next translation pass writes them.
 
 Changing an English message, its description or its placeholders marks every translation of
-it for retranslation. Keep English byte-identical when moving strings out of a client.
+it for retranslation. When the change adds, removes or renames a placeholder, `make check`
+warns about each translation that no longer matches and leaves it out of the generated files
+(English shows instead) until the next translation pass or a person fixes it; it does not block
+your pull request. Keep English byte-identical when moving strings out of a client.
 
 Don't edit `settingsManifest.*` keys; change the label in silo-server and run
 `make import-settings-manifest`.

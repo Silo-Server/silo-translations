@@ -59,25 +59,34 @@ function pluralCategoryProblems(a: Analysis, locale: Locale): string[] {
     .map((p) => `plural ${p.arg} needs exactly the ${locale.tag} categories ${want.join(" ")} (has ${p.categories.join(" ")})`);
 }
 
-/** Problems with one translation, given the English analysis. Shared with `make translate`. */
+/**
+ * Checks one translation against its English. `problems` are faults in the translation itself
+ * (ICU syntax, the subset, plural categories). `mismatches` are differences from the current
+ * English (placeholders, tags, plural structure), which is also what an English change leaves
+ * behind in every existing translation. Shared with `make translate`.
+ */
 export function checkTranslation(
   entry: SourceEntry,
   en: Analysis,
   locale: Locale,
   message: string,
-): { problems: string[]; analysis: Analysis } {
+): { problems: string[]; mismatches: string[]; analysis: Analysis } {
   const tr = analyze(message, isShared(entry));
   const problems = [...tr.problems];
-  if (!tr.ast.length && problems.length) return { problems, analysis: tr };
-  if (!sameSet(tr.args, en.args)) problems.push(`placeholders (${list(tr.args)}) differ from English (${list(en.args)})`);
-  if (!sameSet(tr.tags, en.tags)) problems.push(`tags (${list(tr.tags)}) differ from English (${list(en.tags)})`);
+  const mismatches: string[] = [];
+  if (!tr.ast.length && problems.length) return { problems, mismatches, analysis: tr };
+  if (!sameSet(tr.args, en.args)) mismatches.push(`placeholders (${list(tr.args)}) differ from English (${list(en.args)})`);
+  if (!sameSet(tr.tags, en.tags)) mismatches.push(`tags (${list(tr.tags)}) differ from English (${list(en.tags)})`);
   if (en.shape && tr.shape && en.shape.kind !== tr.shape.kind) {
-    problems.push(en.shape.kind === "plural" ? "English is a plural; the translation must be one too" : "English is not a plural");
-  } else if (en.shape?.kind === "plural" && tr.shape?.kind === "plural" && en.shape.arg !== tr.shape.arg) {
-    problems.push(`plural must select on ${en.shape.arg}`);
+    mismatches.push(en.shape.kind === "plural" ? "English is a plural; the translation must be one too" : "English is not a plural");
+  } else {
+    const selectors = (a: Analysis) => new Set(a.plurals.map((p) => p.arg));
+    if (!sameSet(selectors(tr), selectors(en))) {
+      mismatches.push(`plurals select on ${list(selectors(tr))}; English selects on ${list(selectors(en))}`);
+    }
   }
   problems.push(...pluralCategoryProblems(tr, locale));
-  return { problems, analysis: tr };
+  return { problems, mismatches, analysis: tr };
 }
 
 export interface CheckedCatalog {
@@ -150,9 +159,12 @@ export function checkRepository(root: string): CheckedCatalog {
       const entry = catalog.byKey.get(key)!;
       const en = english.get(key);
       if (!en) continue; // English is broken; reported above.
-      const { problems, analysis: tr } = checkTranslation(entry, en, locale, message);
+      const { problems, mismatches, analysis: tr } = checkTranslation(entry, en, locale, message);
       for (const m of problems) issues.push({ level: "error", file, key, message: m });
-      if (problems.length) continue;
+      // A mismatch must not block the English change that caused it: the translation is left
+      // out of generated files (English shows instead) until make translate or a person fixes it.
+      for (const m of mismatches) issues.push({ level: "warning", file, key, message: `${m}; left out until retranslated` });
+      if (problems.length || mismatches.length) continue;
       ok.set(key, tr);
       if (entry.maxLength !== undefined && literalLength(tr.ast) > entry.maxLength) {
         issues.push({ level: "warning", file, key, message: `longer than x-maxLength ${entry.maxLength}` });

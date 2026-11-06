@@ -41,7 +41,8 @@ function value(entry: SourceEntry, elements: MessageFormatElement[], formatted: 
 }
 
 function comment(text: string): string {
-  return text.replace(/--/g, "- -").replace(/-$/, "- ");
+  // XML comments may not contain "--" or end in "-": space out every run of hyphens.
+  return text.replace(/-{2,}/g, (run) => run.split("").join(" ")).replace(/-$/, "- ");
 }
 
 function resource(entry: SourceEntry, a: Analysis, withComment: boolean): string {

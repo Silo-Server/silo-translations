@@ -35,7 +35,7 @@ test("translate: selection and human-edit guard", () => {
     ["a.editedChanged", "Seis (corregido)"],
     ["a.described", "Siete"],
   ]);
-  const work = select([a, b, c, d, f, g, h], translations, state);
+  const work = select([a, b, c, d, f, g, h], translations, state, new Set(translations.keys()));
   assert.deepEqual(
     work.map((w) => [w.entry.key, w.reason, w.previous]),
     [
@@ -51,7 +51,9 @@ test("translate: selection and human-edit guard", () => {
   assert.equal(state["a.edited"]!.by, "human");
   assert.equal(state["a.edited"]!.value, valueHash("Cuatro (corregido)"));
   // A human value stays human even when it equals the last machine value hash later.
-  assert.equal(select([b], new Map([["a.human", "Dos"]]), state).length, 0);
+  assert.equal(select([b], new Map([["a.human", "Dos"]]), state, new Set(["a.human"])).length, 0);
+  // A value that no longer validates against English is retranslated, whoever wrote it.
+  assert.deepEqual(select([b], new Map([["a.human", "Dos {x}"]]), state, new Set()).map((w) => w.reason), ["invalid"]);
 });
 
 function run(root: string, ...args: string[]) {
@@ -144,4 +146,16 @@ test("translate: an empty Weblate unit is translated, not kept", () => {
   run(root, "--locale", "es");
   assert.equal(JSON.parse(readFileSync(join(root, "catalog/es.arb"), "utf8"))["common.cancel"], "ES Cancel");
   assert.doesNotMatch(readFileSync(join(root, "out/translate-pr-body.md"), "utf8"), /changed during the run/);
+});
+
+test("translate: an English placeholder change does not block the run that repairs it", () => {
+  const root = makeRepo(catalog());
+  run(root, "--locale", "es");
+  const enPath = join(root, "catalog/en.arb");
+  const en = JSON.parse(readFileSync(enPath, "utf8"));
+  en["common.flaky"] = "Hi {name} on {server}";
+  en["@common.flaky"] = { description: "Test string. {name}: who; {server}: where.", placeholders: { name: { type: "String" }, server: { type: "String" } } };
+  writeFileSync(enPath, JSON.stringify(en, null, 2));
+  run(root, "--locale", "es");
+  assert.equal(JSON.parse(readFileSync(join(root, "catalog/es.arb"), "utf8"))["common.flaky"], "ES Hi {name} on {server}");
 });

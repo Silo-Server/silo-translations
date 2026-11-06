@@ -46,7 +46,7 @@ export function fingerprint(e: SourceEntry): string {
   return valueHash(JSON.stringify([e.message, e.description, e.placeholders]));
 }
 
-export type Reason = "missing" | "source-changed" | "human-edit-source-changed";
+export type Reason = "missing" | "invalid" | "source-changed" | "human-edit-source-changed";
 export interface Work {
   entry: SourceEntry;
   reason: Reason;
@@ -54,8 +54,12 @@ export interface Work {
   previous?: string;
 }
 
-/** Decides what to translate for one language and updates `state` for kept human values. */
-export function select(entries: SourceEntry[], translations: Map<string, string>, state: State): Work[] {
+/**
+ * Decides what to translate for one language and updates `state` for kept human values.
+ * `valid` holds the keys whose current translation passes validation; any other existing
+ * value (for example one an English placeholder change left behind) is retranslated.
+ */
+export function select(entries: SourceEntry[], translations: Map<string, string>, state: State, valid: Set<string>): Work[] {
   const work: Work[] = [];
   for (const entry of entries) {
     const current = translations.get(entry.key);
@@ -63,6 +67,8 @@ export function select(entries: SourceEntry[], translations: Map<string, string>
     const fp = fingerprint(entry);
     if (current === undefined) {
       work.push({ entry, reason: "missing" });
+    } else if (!valid.has(entry.key)) {
+      work.push({ entry, reason: "invalid", previous: current });
     } else if (!st) {
       state[entry.key] = { source: fp, value: valueHash(current), by: "human" };
     } else {
@@ -164,7 +170,8 @@ export function translateBatch(root: string, checked: CheckedCatalog, locale: Lo
     feedback = new Map();
     for (const w of pending) {
       const message = got.get(w.entry.key);
-      const problems = message === undefined ? ["no translation returned"] : checkTranslation(w.entry, checked.english.get(w.entry.key)!, locale, message).problems;
+      const checkedMessage = message === undefined ? undefined : checkTranslation(w.entry, checked.english.get(w.entry.key)!, locale, message);
+      const problems = checkedMessage ? [...checkedMessage.problems, ...checkedMessage.mismatches] : ["no translation returned"];
       if (problems.length) feedback.set(w.entry.key, problems);
       else accepted.set(w.entry.key, message!);
     }
@@ -201,7 +208,7 @@ function writeLanguage(root: string, checked: CheckedCatalog, locale: Locale, wo
       merged[entry.key] = next;
       state[entry.key] = { source: fingerprint(entry), value: valueHash(next), by: "opus", model: MODEL };
       report.written++;
-      if (w.reason === "human-edit-source-changed") report.humanEdits.push({ key: entry.key, before: w.previous!, after: next });
+      if (w.reason === "human-edit-source-changed" || w.reason === "invalid") report.humanEdits.push({ key: entry.key, before: w.previous!, after: next });
     } else if (now !== undefined) {
       merged[entry.key] = now;
     }
@@ -217,7 +224,7 @@ export function prBody(reports: Report[]): string {
   for (const r of reports) lines.push(`| ${r.locale} | ${r.written} | ${r.failed.size} |`);
   const edits = reports.flatMap((r) => r.humanEdits.map((e) => ({ ...e, locale: r.locale })));
   if (edits.length) {
-    lines.push("", "## Retranslated human edits (English changed; please review)", "", "| Language | Key | Before | After |", "|---|---|---|---|");
+    lines.push("", "## Retranslated values a person wrote or that no longer matched English (please review)", "", "| Language | Key | Before | After |", "|---|---|---|---|");
     for (const e of edits) lines.push(`| ${e.locale} | \`${e.key}\` | ${e.before.replace(/\|/g, "\\|")} | ${e.after.replace(/\|/g, "\\|")} |`);
   }
   const failed = reports.flatMap((r) => [...r.failed].map(([key, p]) => `- ${r.locale} \`${key}\`: ${p.join("; ")}`));
@@ -231,6 +238,8 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const { values } = parseArgs({ options: { locale: { type: "string" }, "dry-run": { type: "boolean" }, root: { type: "string" } } });
   const root = resolve(values.root ?? resolve(import.meta.dirname, ".."));
   const checked = checkRepository(root);
+  // Errors block the run; warnings (such as translations an English change left stale) don't,
+  // since retranslating them is part of the run.
   if (checked.issues.some((i) => i.level === "error")) {
     console.error("the catalog has validation errors; run make check first");
     process.exit(1);
@@ -245,7 +254,8 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   for (const locale of locales) {
     const state = readJson<State>(join(root, "state", `${locale.tag}.json`), {});
     const translations = checked.catalog.translations.get(locale.tag) ?? new Map();
-    const work = select(entries, translations, state).sort((a, b) => (a.entry.key < b.entry.key ? -1 : 1));
+    const valid = new Set(checked.valid.get(locale.tag)?.keys() ?? []);
+    const work = select(entries, translations, state, valid).sort((a, b) => (a.entry.key < b.entry.key ? -1 : 1));
     console.error(`${locale.tag}: ${work.length} keys to translate`);
     const batches: Work[][] = [];
     for (let i = 0; i < work.length; i += BATCH_SIZE) batches.push(work.slice(i, i + BATCH_SIZE));

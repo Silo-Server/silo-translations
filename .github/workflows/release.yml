@@ -4,9 +4,11 @@ on:
   push:
     branches: [main]
 
-# One release at a time, in merge order; a later merge never cancels an earlier release.
+# One run per commit: a rerun of the same merge waits for the first. Different merges run side
+# by side; each tags its own commit (--target), so none replaces another. (A single shared
+# group would keep only one pending run and silently drop intermediate merges.)
 concurrency:
-  group: release
+  group: release-${{ github.sha }}
   cancel-in-progress: false
 
 permissions:
