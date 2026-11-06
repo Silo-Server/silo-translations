@@ -159,3 +159,17 @@ test("translate: an English placeholder change does not block the run that repai
   run(root, "--locale", "es");
   assert.equal(JSON.parse(readFileSync(join(root, "catalog/es.arb"), "utf8"))["common.flaky"], "ES Hi {name} on {server}");
 });
+
+test("translate: an empty answer keeps the existing value and is reported", () => {
+  const cat = catalog();
+  const root = makeRepo({ en: { ...cat.en, ...entry("common.empty", "Cancel now") }, es: { "@@locale": "es", "common.empty": "Abbrechen" } });
+  // No state: the value is a person's, so change the English to make it due for retranslation.
+  run(root, "--locale", "es");
+  const enPath = join(root, "catalog/en.arb");
+  const en = JSON.parse(readFileSync(enPath, "utf8"));
+  en["common.empty"] = "Cancel right now";
+  writeFileSync(enPath, JSON.stringify(en, null, 2));
+  run(root, "--locale", "es");
+  assert.equal(JSON.parse(readFileSync(join(root, "catalog/es.arb"), "utf8"))["common.empty"], "Abbrechen");
+  assert.match(readFileSync(join(root, "out/translate-pr-body.md"), "utf8"), /es `common.empty`: no translation returned/);
+});

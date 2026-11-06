@@ -170,7 +170,8 @@ export function translateBatch(root: string, checked: CheckedCatalog, locale: Lo
     feedback = new Map();
     for (const w of pending) {
       const message = got.get(w.entry.key);
-      const checkedMessage = message === undefined ? undefined : checkTranslation(w.entry, checked.english.get(w.entry.key)!, locale, message);
+      // An empty answer is no answer: it would erase the value and read as missing next time.
+      const checkedMessage = message === undefined || message.trim() === "" ? undefined : checkTranslation(w.entry, checked.english.get(w.entry.key)!, locale, message);
       const problems = checkedMessage ? [...checkedMessage.problems, ...checkedMessage.mismatches] : ["no translation returned"];
       if (problems.length) feedback.set(w.entry.key, problems);
       else accepted.set(w.entry.key, message!);

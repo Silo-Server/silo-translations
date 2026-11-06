@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Stand-in for `claude -p --output-format json --json-schema ...` in translate tests.
 // Translates by prefixing literal text with "ES " and expanding English plurals to the
-// es categories. A key containing "flaky" drops its placeholders on the first attempt so
+// es categories. A key containing "empty" always gets "". A key containing "flaky" drops its placeholders on the first attempt so
 // the retry path runs; a key containing "broken" always fails.
 import { readFileSync } from "node:fs";
 const prompt = readFileSync(0, "utf8");
@@ -15,6 +15,7 @@ const translations = items.map((it) => {
   else message = `ES ${it.english}`;
   if (it.key.includes("flaky") && !it.problemsWithLastAttempt) message = "ES sin marcador";
   if (it.key.includes("broken")) message = "ES {roto";
+  if (it.key.includes("empty")) message = "";
   return { key: it.key, message };
 });
 process.stdout.write(JSON.stringify({ type: "result", is_error: false, result: "", structured_output: { translations } }));
