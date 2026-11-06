@@ -1,1 +1,48 @@
-{}
+{
+  "web.greeting": [
+    {
+      "type": 5,
+      "value": "gender",
+      "options": {
+        "female": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Ela"
+            }
+          ]
+        },
+        "male": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Ele"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Elu"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": 0,
+      "value": " convidou você para "
+    },
+    {
+      "type": 8,
+      "value": "b",
+      "children": [
+        {
+          "type": 1,
+          "value": "party"
+        }
+      ]
+    }
+  ]
+}

@@ -23,10 +23,10 @@ export interface AppLocale {
 
 export const SOURCE_LOCALE = "en";
 
+/** The languages this build ships (each has a <tag>.json), then the pseudo-locales. */
 export const LOCALES: readonly AppLocale[] = [
   { tag: "en", name: "English", dir: "ltr", pseudo: false },
   { tag: "es", name: "Español", dir: "ltr", pseudo: false },
-  { tag: "de", name: "Deutsch", dir: "ltr", pseudo: false },
   { tag: "fr", name: "Français", dir: "ltr", pseudo: false },
   { tag: "pt-BR", name: "Português (Brasil)", dir: "ltr", pseudo: false },
   { tag: "ja", name: "日本語", dir: "ltr", pseudo: false },

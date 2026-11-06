@@ -1,5 +1,6 @@
 // Roku: flat locale/<folder>/strings.json in the format source/util/i18n.bs reads, plus
-// source/util/pluralRules.bs compiled from CLDR, and i18n-charsets/<folder>.txt: every
+// source/util/pluralRules.bs compiled from CLDR, locale/languages.json (the shipped folders),
+// and i18n-charsets/<folder>.txt: every
 // character the language's strings use, sorted by code point, for the font subset step. The
 // charsets sit outside locale/ and fonts/, so they are not packaged.
 //
@@ -10,6 +11,7 @@
 import { inScope } from "../lib/catalog.ts";
 import { brightScriptCondition, categoriesFor, CLDR_VERSION } from "../lib/plural.ts";
 import { header, json, languagesFor, render, type Files, type GenInput } from "./common.ts";
+import { shipsOn } from "../lib/locales.ts";
 import { TYPE, type Analysis, type MessageFormatElement } from "../lib/icu.ts";
 
 function flatten(key: string, a: Analysis, out: Record<string, string>): void {
@@ -40,8 +42,9 @@ function charset(messages: Analysis[]): string {
   return [...chars].filter((c) => !/\p{Cc}/u.test(c)).sort((a, b) => a.codePointAt(0)! - b.codePointAt(0)!).join("");
 }
 
+/** Rules for every language Roku allows, shipped or not, so any folder a client has is covered. */
 function pluralRules(input: GenInput): string {
-  const languages = languagesFor(input, "roku", true).map((l) => l.locale);
+  const languages = [input.locales.source, ...input.locales.targets, ...input.locales.pseudo].filter((l) => shipsOn(l, "roku"));
   // Group Roku folders by their CLDR rules, so languages that share rules share a branch.
   const groups = new Map<string, string[]>();
   for (const l of languages) groups.set(l.cldr, [...(groups.get(l.cldr) ?? []), l.roku]);
@@ -73,7 +76,8 @@ export function generateRoku(input: GenInput): Files {
   const files: Files = new Map();
   const entries = input.entries.filter((e) => inScope(e, "roku"));
   const english = entries.map((e) => input.english.get(e.key)!);
-  for (const { locale, messages } of languagesFor(input, "roku", true)) {
+  const shipped = languagesFor(input, "roku", true);
+  for (const { locale, messages } of shipped) {
     const out: Record<string, string> = {};
     const used: Analysis[] = [];
     for (const e of entries) {
@@ -86,6 +90,12 @@ export function generateRoku(input: GenInput): Files {
     const fallback = locale === input.locales.source ? [] : english;
     files.set(`i18n-charsets/${locale.roku}.txt`, charset([...used, ...fallback]) + "\n");
   }
+  // The folders this build ships, for the language picker and i18n.load (pseudo-locales apart,
+  // for debug builds).
+  files.set(
+    "locale/languages.json",
+    json({ languages: shipped.filter((l) => !l.pseudo).map((l) => l.locale.roku), pseudo: shipped.filter((l) => l.pseudo).map((l) => l.locale.roku) }),
+  );
   files.set("source/util/pluralRules.bs", pluralRules(input));
   return files;
 }

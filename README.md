@@ -45,15 +45,29 @@ client's repository root, and it is exactly what the platform's release tarball 
 
 | Platform | Files under `<dir>/<platform>/` |
 |---|---|
-| web | `web/src/locales/<tag>.json` (FormatJS AST, one per language and pseudo-locale), `web/src/locales/keys.ts` (`MessageKey` type, `LOCALES` with `dir` and `pseudo`, `SOURCE_LOCALE`) |
+| web | `web/src/locales/<tag>.json` (FormatJS AST, one per language and pseudo-locale), `web/src/locales/keys.ts` (`MessageKey` type, `LOCALES`: the shipped languages then the pseudo-locales, with `dir` and `pseudo`; `SOURCE_LOCALE`) |
 | apple | `iosApp/iosApp/Localizable.xcstrings` (all languages, every entry `extractionState: manual`) |
 | android | `android-shared/src/androidMain/res/values{,-<qualifier>}/strings_catalog.xml` (next to hand-written `strings.xml`, never replacing it), `android-shared/silo-locales.properties` (each app's languages as resource qualifiers, for `androidResources.localeFilters`) |
-| roku | `locale/<folder>/strings.json` (one per language and pseudo-locale), `source/util/pluralRules.bs`, `i18n-charsets/<folder>.txt` (every character that language's strings use, sorted, for the font subset step; outside `locale/` and `fonts/`, so not packaged) |
+| roku | `locale/<folder>/strings.json` (one per language and pseudo-locale), `locale/languages.json` (`{"languages": [shipped folders], "pseudo": [folders]}`), `source/util/pluralRules.bs`, `i18n-charsets/<folder>.txt` (every character that language's strings use, sorted, for the font subset step; outside `locale/` and `fonts/`, so not packaged) |
 
 `<dir>/.silo-translations-out` holds the version the files were generated as: the release
 version, or `local-<commit>` (with `-dirty` when the catalog or tools have uncommitted changes).
 A language file holds only the keys translated in that language; clients fall back to
-English. A platform gets files only for the languages it ships: Roku doesn't ship `ar`
+English.
+
+**Shipped languages.** A language ships on a platform when `locales.json` allows it there and it
+has at least one valid translation of a key in that platform's scope; English always ships. Only
+shipped languages get files, so clients read the list instead of hard-coding one:
+
+| Platform | Shipped list |
+|---|---|
+| web | `LOCALES` in `keys.ts` (entries with `pseudo: false`) |
+| apple | the String Catalog's localizations, which become the bundle's (`Bundle.main.localizations`) |
+| android | the `values-<qualifier>` directories (so AGP's generated `localeConfig`), and per app `silo-locales.properties` |
+| roku | `locale/languages.json` |
+
+Separately from translations, `locales.json` can keep a language off a platform: Roku doesn't
+ship `ar`
 (no right-to-left or Arabic shaping in SceneGraph) or `ar-XB` yet. On Android, `platforms`
 can name one app (`android-phone`, `android-tv`). Both apps read `android-shared`'s
 resources, so the language is still generated, and the app that doesn't ship it leaves it out
@@ -80,8 +94,10 @@ scripts/sync-translations --local ~/src/silo-translations                # befor
 The repository is private, so downloads use `gh release download` and need `gh` signed in
 with read access. `SILO_TRANSLATIONS_PUBLIC=1` switches to `curl` once it is public. The script
 verifies the checksum and unpacks into a temporary directory before touching the client,
-rejects links and paths outside the tree, and writes `.silo-translations` last. It does not
-delete files; nothing removes a language yet.
+rejects links and paths outside the tree, and writes `.silo-translations` last. Each tree carries
+`.silo-translations-files`, the list of generated paths; after installing, sync removes the files
+the previous list named and the new one doesn't (a language that stopped shipping), and nothing
+else.
 
 ## Keys
 
@@ -101,7 +117,10 @@ delete files; nothing removes a language yet.
 - A key that is not a plural can't end in a plural category (`zero one two few many other`),
   since Roku writes plurals as `key.<category>`.
 - `settingsManifest.*` keys are imported from silo-server's settings manifest
-  (`label`, `description`, `unsetLabel`, `option.<value>`). Change them in silo-server.
+  (`label`, `description`, `unsetLabel`, `option.<value>`). Change them in silo-server. Each kind
+  is scoped to the clients that render it (`MANIFEST_PLATFORMS` in
+  `tools/import-settings-manifest.ts`): web and Apple all of them, Android only `unsetLabel`,
+  Roku none.
 
 ## Messages
 

@@ -17,6 +17,9 @@ function release(version: string, files: Record<string, string>, extra?: (tree: 
     mkdirSync(join(tree, p, ".."), { recursive: true });
     writeFileSync(join(tree, p), c);
   }
+  if (!(".silo-translations-files" in files)) {
+    writeFileSync(join(tree, ".silo-translations-files"), Object.keys(files).sort().join("\n") + "\n");
+  }
   extra?.(tree);
   const dir = join(base, `v${version}`);
   mkdirSync(dir);
@@ -108,4 +111,29 @@ test("sync: a local pin cannot be reinstalled as a release", () => {
   const r = sync(root, "/nonexistent");
   assert.notEqual(r.status, 0);
   assert.match(r.stderr, /pinned to a local build/);
+});
+
+test("sync: files the previous install listed and the new one doesn't are removed", () => {
+  const v1 = release("1", { "locale/en_US/strings.json": "{}\n", "locale/de/strings.json": "{}\n" });
+  const v2 = release("2", { "locale/en_US/strings.json": "{}\n" });
+  const root = client();
+  mkdirSync(join(root, "locale/de"), { recursive: true });
+  assert.equal(sync(root, v1.base, "--platform", "roku", "--version", "1").status, 0);
+  writeFileSync(join(root, "locale/de/notes.txt"), "mine"); // not generated: must survive
+  writeFileSync(join(root, "keep.txt"), "mine");
+  const r = sync(root, v2.base, "--version", "2");
+  assert.equal(r.status, 0, r.stderr);
+  assert.ok(!existsSync(join(root, "locale/de/strings.json")));
+  assert.ok(existsSync(join(root, "locale/de/notes.txt")));
+  assert.ok(existsSync(join(root, "keep.txt")));
+  assert.equal(readFileSync(join(root, ".silo-translations-files"), "utf8"), "locale/en_US/strings.json\n");
+});
+
+test("sync: an unsafe path in a file list stops before anything changes", () => {
+  const evil = release("1", { "a.txt": "x", ".silo-translations-files": "a.txt\n../outside.txt\n" });
+  const root = client();
+  const r = sync(root, evil.base, "--platform", "roku", "--version", "1");
+  assert.notEqual(r.status, 0);
+  assert.match(r.stderr, /unsafe paths/);
+  assert.ok(!existsSync(join(root, "a.txt")));
 });

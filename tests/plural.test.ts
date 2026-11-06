@@ -9,7 +9,7 @@ import { join } from "node:path";
 import { categoriesFor, categoryOf, integerSamples } from "../tools/lib/plural.ts";
 import { loadLocales, shipsOn } from "../tools/lib/locales.ts";
 import { generateAll } from "../tools/generate.ts";
-import { FIXTURE, REPO } from "./helpers.ts";
+import { entry, makeRepo, REPO } from "./helpers.ts";
 
 const locales = loadLocales(REPO);
 const languages = [...locales.all, ...locales.pseudo];
@@ -45,7 +45,12 @@ test("plural: CLDR integer samples", () => {
 test("plural: generated pluralRules.bs compiles with bsc and matches under brs-node", () => {
   const dir = mkdtempSync(join(tmpdir(), "silo-plural-"));
   mkdirSync(join(dir, "src/source/util"), { recursive: true });
-  const rules = generateAll(FIXTURE, "test").get("roku")!.get("source/util/pluralRules.bs")!;
+  // A catalog where every language has a translation, so every Roku language ships and gets rules.
+  const root = makeRepo({
+    en: entry("a.b", "Hi"),
+    ...Object.fromEntries(locales.targets.map((l) => [l.tag, { "@@locale": l.tag, "a.b": "x" }])),
+  });
+  const rules = generateAll(root, "test").get("roku")!.get("source/util/pluralRules.bs")!;
   writeFileSync(join(dir, "src/source/util/pluralRules.bs"), rules);
   const all = cases();
   const calls = all.map((c) => `    print "${c.roku} ${c.n} " + pluralRules.category("${c.roku}", ${c.n})`).join("\n");

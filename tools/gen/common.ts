@@ -1,6 +1,6 @@
 import type { Analysis, MessageFormatElement } from "../lib/icu.ts";
 import { TYPE } from "../lib/icu.ts";
-import type { PlaceholderType, Platform, SourceEntry } from "../lib/catalog.ts";
+import { inScope, type PlaceholderType, type Platform, type SourceEntry } from "../lib/catalog.ts";
 import { shipsOn, type Locale, type Locales, type PseudoLocale } from "../lib/locales.ts";
 
 export interface GenInput {
@@ -24,12 +24,18 @@ export interface Language {
 
 /**
  * The languages a platform ships, source first, then targets, then (when `withPseudo`) the
- * pseudo-locales.
+ * pseudo-locales. A target ships on a platform only when locales.json allows it there and it has
+ * at least one valid translation of a key in that platform's scope: generators write
+ * no file for any other language, so "shipped" can be read off the generated files.
  */
 export function languagesFor(input: GenInput, platform: Platform, withPseudo: boolean): Language[] {
+  const scoped = input.entries.filter((e) => inScope(e, platform));
+  const translated = (messages?: Map<string, Analysis>) => scoped.some((e) => messages?.has(e.key));
   const out: Language[] = [
     { locale: input.locales.source, messages: input.english, pseudo: false },
-    ...input.locales.targets.map((l) => ({ locale: l, messages: input.translations.get(l.tag), pseudo: false })),
+    ...input.locales.targets
+      .map((l) => ({ locale: l, messages: input.translations.get(l.tag), pseudo: false }))
+      .filter((l) => translated(l.messages)),
   ];
   if (withPseudo) out.push(...input.locales.pseudo.map((l) => ({ locale: l, messages: input.pseudo.get(l.tag), pseudo: true })));
   return out.filter((l) => shipsOn(l.locale, platform));

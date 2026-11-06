@@ -39,6 +39,7 @@ export interface AppLocale {
 
 export const SOURCE_LOCALE = ${JSON.stringify(input.locales.source.tag)};
 
+/** The languages this build ships (each has a <tag>.json), then the pseudo-locales. */
 export const LOCALES: readonly AppLocale[] = [
 ${localeLines}
 ];

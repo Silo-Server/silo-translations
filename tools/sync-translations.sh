@@ -16,8 +16,9 @@
 #
 # Downloads use `gh release download` (the repository is private; needs gh auth with read
 # access). Set SILO_TRANSLATIONS_PUBLIC=1 to use plain curl once the repository is public.
-# Nothing in the client changes until the download is verified and unpacked; the
-# .silo-translations file is written last.
+# Nothing in the client changes until the download is verified and unpacked. Then the files are
+# copied in, files the previous install listed in .silo-translations-files and this one doesn't
+# are removed (a language that stopped shipping), and .silo-translations is written last.
 set -eu
 
 REPO=Silo-Server/silo-translations
@@ -85,7 +86,31 @@ else
   tar -xzf "$tmp/$asset" -C "$tmp/tree"
 fi
 
+list=.silo-translations-files
+[ -f "$tmp/tree/$list" ] || die "the generated tree has no $list"
+# A listed path must be relative and stay inside the client.
+unsafe() { grep -E '^/|(^|/)\.\.(/|$)|^$' "$1"; }
+unsafe "$tmp/tree/$list" && die "$list of the new tree has unsafe paths"
+old=
+if [ -f "$root/$list" ]; then
+  unsafe "$root/$list" && die "$root/$list has unsafe paths; fix it by hand"
+  old="$tmp/old-list"
+  cp "$root/$list" "$old"
+fi
+
 cp -R "$tmp/tree/." "$root/"
+
+if [ -n "$old" ]; then
+  sort "$old" > "$tmp/old-sorted"
+  sort "$tmp/tree/$list" > "$tmp/new-sorted"
+  comm -23 "$tmp/old-sorted" "$tmp/new-sorted" | while IFS= read -r path; do
+    # Only regular files; leave links and anything else alone.
+    if [ -f "$root/$path" ] && [ ! -L "$root/$path" ]; then
+      rm -f "$root/$path"
+      rmdir "$(dirname "$root/$path")" 2>/dev/null || true
+    fi
+  done
+fi
 printf 'platform=%s\nversion=%s\nsha256=%s\n' "$platform" "$version" "$sha" > "$config.tmp"
 mv "$config.tmp" "$config"
 echo "sync-translations: $platform $version installed" >&2

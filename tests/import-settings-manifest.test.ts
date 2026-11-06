@@ -53,3 +53,12 @@ test("import-settings-manifest: replaces owned keys and writes the canonical lay
   assert.deepEqual(out.slice(-2), ["z.y", "@z.y"]);
   assert.deepEqual(Object.entries(applyManifest(applyManifest(arb, manifest), manifest)), Object.entries(applyManifest(arb, manifest)));
 });
+
+test("import-settings-manifest: scopes each kind of text to the clients that render it", () => {
+  const meta = Object.fromEntries(manifestEntries(manifest).filter(([k]) => k.startsWith("@")));
+  const platforms = (k: string) => (meta[`@${k}`] as { "x-platforms": string[] })["x-platforms"];
+  assert.deepEqual(platforms("settingsManifest.ui.theme.label"), ["web", "apple"]);
+  assert.deepEqual(platforms("settingsManifest.ui.theme.description"), ["web", "apple"]);
+  assert.deepEqual(platforms("settingsManifest.ui.theme.option.midnight_cinema"), ["web", "apple"]);
+  assert.deepEqual(platforms("settingsManifest.playback.audio_language.unsetLabel"), ["web", "apple", "android"]);
+});

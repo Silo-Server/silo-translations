@@ -32,7 +32,15 @@ export function generateAll(root: string, version: string): Map<string, Files> {
     translations: checked.valid,
     pseudo: new Map(checked.locales.pseudo.map((l) => [l.tag, pseudoMessages(l, entries, checked.english)])),
   };
-  return new Map(Object.entries(GENERATORS).map(([platform, gen]) => [platform, gen(input)]));
+  return new Map(Object.entries(GENERATORS).map(([platform, gen]) => [platform, withFileList(gen(input))]));
+}
+
+export const FILE_LIST = ".silo-translations-files";
+
+/** Adds the list of generated paths, which sync uses to remove files a later release drops. */
+function withFileList(files: Files): Files {
+  const paths = [...files.keys()].sort();
+  return new Map([...files, [FILE_LIST, paths.join("\n") + "\n"]]);
 }
 
 /** `local-<commit>` with `-dirty` when catalog inputs have uncommitted changes. */

@@ -34,21 +34,34 @@ export function segment(id: string | number): string {
   return String(id).replace(/-/g, "_");
 }
 
+/**
+ * Which clients render each kind of manifest text. Web and Apple render labels, descriptions
+ * and option labels from the manifest; Android renders only the unset label (its other settings
+ * text comes from its own strings); Roku renders none. Widen a list when a client starts reading
+ * that text.
+ */
+export const MANIFEST_PLATFORMS = {
+  label: ["web", "apple"],
+  description: ["web", "apple"],
+  option: ["web", "apple"],
+  unsetLabel: ["web", "apple", "android"],
+} as const;
+
 /** The settingsManifest.* entries (message and metadata) a manifest produces, in manifest order. */
 export function manifestEntries(manifest: Manifest): [string, unknown][] {
   const out: [string, unknown][] = [];
-  const add = (key: string, message: string, description: string) => {
-    out.push([key, message], [`@${key}`, { description }]);
+  const add = (kind: keyof typeof MANIFEST_PLATFORMS, key: string, message: string, description: string) => {
+    out.push([key, message], [`@${key}`, { description, "x-platforms": [...MANIFEST_PLATFORMS[kind]] }]);
   };
   for (const d of manifest.definitions) {
     const base = `${PREFIX}${d.key.split(".").map(segment).join(".")}`;
     const where = `the ${d.key} setting`;
-    add(`${base}.label`, d.label, `Label of ${where} in settings screens. From the server's settings manifest.`);
-    add(`${base}.description`, d.description, `Help text under ${where}. From the server's settings manifest.`);
-    if (d.unset_label) add(`${base}.unsetLabel`, d.unset_label, `Choice for ${where} that leaves it unset. From the server's settings manifest.`);
+    add("label", `${base}.label`, d.label, `Label of ${where} in settings screens. From the server's settings manifest.`);
+    add("description", `${base}.description`, d.description, `Help text under ${where}. From the server's settings manifest.`);
+    if (d.unset_label) add("unsetLabel", `${base}.unsetLabel`, d.unset_label, `Choice for ${where} that leaves it unset. From the server's settings manifest.`);
     for (const v of d.value_schema.values ?? []) {
       if (v.label === undefined) continue;
-      add(`${base}.option.${segment(v.value)}`, v.label, `Choice "${v.value}" for ${where}. From the server's settings manifest.`);
+      add("option", `${base}.option.${segment(v.value)}`, v.label, `Choice "${v.value}" for ${where}. From the server's settings manifest.`);
     }
   }
   return out;
