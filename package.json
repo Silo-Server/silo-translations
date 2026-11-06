@@ -1,0 +1,20 @@
+{
+  "name": "silo-translations",
+  "private": true,
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "dependencies": {
+    "@formatjs/icu-messageformat-parser": "3.5.22",
+    "cldr-core": "49.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "brighterscript": "0.73.7",
+    "brs-node": "2.6.1",
+    "intl-messageformat": "12.1.4",
+    "typescript": "5.9.3"
+  }
+}

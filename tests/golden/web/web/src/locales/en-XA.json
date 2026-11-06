@@ -1,0 +1,274 @@
+{
+  "common.cancel": [
+    {
+      "type": 0,
+      "value": "⟦Çåñçéļ~~~⟧"
+    }
+  ],
+  "home.section.continueWatching": [
+    {
+      "type": 0,
+      "value": "⟦Çöñţîñûé Ŵåţçĥîñĝ~~~~~~~⟧"
+    }
+  ],
+  "signIn.body": [
+    {
+      "type": 0,
+      "value": "⟦Šîĝñ îñ ţö "
+    },
+    {
+      "type": 1,
+      "value": "server"
+    },
+    {
+      "type": 0,
+      "value": " åš "
+    },
+    {
+      "type": 1,
+      "value": "account"
+    },
+    {
+      "type": 0,
+      "value": ".~~~~~~~⟧"
+    }
+  ],
+  "catalog.seasons": [
+    {
+      "type": 6,
+      "value": "count",
+      "options": {
+        "one": {
+          "value": [
+            {
+              "type": 0,
+              "value": "⟦"
+            },
+            {
+              "type": 7
+            },
+            {
+              "type": 0,
+              "value": " Šéåšöñ~~~⟧"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+            {
+              "type": 0,
+              "value": "⟦"
+            },
+            {
+              "type": 7
+            },
+            {
+              "type": 0,
+              "value": " Šéåšöñš~~~~⟧"
+            }
+          ]
+        }
+      },
+      "offset": 0,
+      "pluralType": "cardinal"
+    }
+  ],
+  "companion.limit": [
+    {
+      "type": 6,
+      "value": "count",
+      "options": {
+        "one": {
+          "value": [
+            {
+              "type": 0,
+              "value": "⟦"
+            },
+            {
+              "type": 1,
+              "value": "name"
+            },
+            {
+              "type": 0,
+              "value": " çåñ çĥööšé "
+            },
+            {
+              "type": 7
+            },
+            {
+              "type": 0,
+              "value": " îţéɱ~~~~~~~⟧"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+            {
+              "type": 0,
+              "value": "⟦"
+            },
+            {
+              "type": 1,
+              "value": "name"
+            },
+            {
+              "type": 0,
+              "value": " çåñ çĥööšé "
+            },
+            {
+              "type": 7
+            },
+            {
+              "type": 0,
+              "value": " îţéɱš~~~~~~~~⟧"
+            }
+          ]
+        }
+      },
+      "offset": 0,
+      "pluralType": "cardinal"
+    }
+  ],
+  "player.rate": [
+    {
+      "type": 0,
+      "value": "⟦"
+    },
+    {
+      "type": 1,
+      "value": "rate"
+    },
+    {
+      "type": 0,
+      "value": "× šþééđ, 100% ṽöļûɱé~~~~~~~~⟧"
+    }
+  ],
+  "player.volumeFull": [
+    {
+      "type": 0,
+      "value": "⟦Ṽöļûɱé 100%~~~~~⟧"
+    }
+  ],
+  "catalog.extra.behind_the_scenes": [
+    {
+      "type": 0,
+      "value": "⟦Ɓéĥîñđ ţĥé Šçéñéš~~~~~~~⟧"
+    }
+  ],
+  "web.greeting": [
+    {
+      "type": 0,
+      "value": "⟦"
+    },
+    {
+      "type": 5,
+      "value": "gender",
+      "options": {
+        "female": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Šĥé"
+            }
+          ]
+        },
+        "male": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Ĥé"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Ţĥéý"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": 0,
+      "value": " îñṽîţéđ ýöû ţö "
+    },
+    {
+      "type": 8,
+      "value": "b",
+      "children": [
+        {
+          "type": 1,
+          "value": "party"
+        }
+      ]
+    },
+    {
+      "type": 0,
+      "value": "~~~~~~~⟧"
+    }
+  ],
+  "player.progress": [
+    {
+      "type": 6,
+      "value": "count",
+      "options": {
+        "one": {
+          "value": [
+            {
+              "type": 0,
+              "value": "⟦"
+            },
+            {
+              "type": 7
+            },
+            {
+              "type": 0,
+              "value": " öƒ "
+            },
+            {
+              "type": 1,
+              "value": "total"
+            },
+            {
+              "type": 0,
+              "value": " éþîšöđé ŵåţçĥéđ~~~~~~~~⟧"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+            {
+              "type": 0,
+              "value": "⟦"
+            },
+            {
+              "type": 7
+            },
+            {
+              "type": 0,
+              "value": " öƒ "
+            },
+            {
+              "type": 1,
+              "value": "total"
+            },
+            {
+              "type": 0,
+              "value": " éþîšöđéš ŵåţçĥéđ~~~~~~~~~⟧"
+            }
+          ]
+        }
+      },
+      "offset": 0,
+      "pluralType": "cardinal"
+    }
+  ],
+  "player.muted": [
+    {
+      "type": 0,
+      "value": "⟦Ṁûţéđ~~⟧"
+    }
+  ]
+}

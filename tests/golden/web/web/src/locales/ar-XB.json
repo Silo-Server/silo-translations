@@ -1,0 +1,270 @@
+{
+  "common.cancel": [
+    {
+      "type": 0,
+      "value": "‏‮Cancel‬"
+    }
+  ],
+  "home.section.continueWatching": [
+    {
+      "type": 0,
+      "value": "‏‮Continue Watching‬"
+    }
+  ],
+  "signIn.body": [
+    {
+      "type": 0,
+      "value": "‏‮Sign in to ‬"
+    },
+    {
+      "type": 1,
+      "value": "server"
+    },
+    {
+      "type": 0,
+      "value": "‮ as ‬"
+    },
+    {
+      "type": 1,
+      "value": "account"
+    },
+    {
+      "type": 0,
+      "value": "‮.‬"
+    }
+  ],
+  "catalog.seasons": [
+    {
+      "type": 6,
+      "value": "count",
+      "options": {
+        "one": {
+          "value": [
+            {
+              "type": 0,
+              "value": "‏"
+            },
+            {
+              "type": 7
+            },
+            {
+              "type": 0,
+              "value": "‮ Season‬"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+            {
+              "type": 0,
+              "value": "‏"
+            },
+            {
+              "type": 7
+            },
+            {
+              "type": 0,
+              "value": "‮ Seasons‬"
+            }
+          ]
+        }
+      },
+      "offset": 0,
+      "pluralType": "cardinal"
+    }
+  ],
+  "companion.limit": [
+    {
+      "type": 6,
+      "value": "count",
+      "options": {
+        "one": {
+          "value": [
+            {
+              "type": 0,
+              "value": "‏"
+            },
+            {
+              "type": 1,
+              "value": "name"
+            },
+            {
+              "type": 0,
+              "value": "‮ can choose ‬"
+            },
+            {
+              "type": 7
+            },
+            {
+              "type": 0,
+              "value": "‮ item‬"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+            {
+              "type": 0,
+              "value": "‏"
+            },
+            {
+              "type": 1,
+              "value": "name"
+            },
+            {
+              "type": 0,
+              "value": "‮ can choose ‬"
+            },
+            {
+              "type": 7
+            },
+            {
+              "type": 0,
+              "value": "‮ items‬"
+            }
+          ]
+        }
+      },
+      "offset": 0,
+      "pluralType": "cardinal"
+    }
+  ],
+  "player.rate": [
+    {
+      "type": 0,
+      "value": "‏"
+    },
+    {
+      "type": 1,
+      "value": "rate"
+    },
+    {
+      "type": 0,
+      "value": "‮× speed, 100% volume‬"
+    }
+  ],
+  "player.volumeFull": [
+    {
+      "type": 0,
+      "value": "‏‮Volume 100%‬"
+    }
+  ],
+  "catalog.extra.behind_the_scenes": [
+    {
+      "type": 0,
+      "value": "‏‮Behind the Scenes‬"
+    }
+  ],
+  "web.greeting": [
+    {
+      "type": 0,
+      "value": "‏"
+    },
+    {
+      "type": 5,
+      "value": "gender",
+      "options": {
+        "female": {
+          "value": [
+            {
+              "type": 0,
+              "value": "‮She‬"
+            }
+          ]
+        },
+        "male": {
+          "value": [
+            {
+              "type": 0,
+              "value": "‮He‬"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+            {
+              "type": 0,
+              "value": "‮They‬"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": 0,
+      "value": "‮ invited you to ‬"
+    },
+    {
+      "type": 8,
+      "value": "b",
+      "children": [
+        {
+          "type": 1,
+          "value": "party"
+        }
+      ]
+    }
+  ],
+  "player.progress": [
+    {
+      "type": 6,
+      "value": "count",
+      "options": {
+        "one": {
+          "value": [
+            {
+              "type": 0,
+              "value": "‏"
+            },
+            {
+              "type": 7
+            },
+            {
+              "type": 0,
+              "value": "‮ of ‬"
+            },
+            {
+              "type": 1,
+              "value": "total"
+            },
+            {
+              "type": 0,
+              "value": "‮ episode watched‬"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+            {
+              "type": 0,
+              "value": "‏"
+            },
+            {
+              "type": 7
+            },
+            {
+              "type": 0,
+              "value": "‮ of ‬"
+            },
+            {
+              "type": 1,
+              "value": "total"
+            },
+            {
+              "type": 0,
+              "value": "‮ episodes watched‬"
+            }
+          ]
+        }
+      },
+      "offset": 0,
+      "pluralType": "cardinal"
+    }
+  ],
+  "player.muted": [
+    {
+      "type": 0,
+      "value": "‏‮Muted‬"
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+// make translate: key selection, the human-edit guard, retries and the files it writes, with
+// a stand-in for Claude Code (tests/bin/fake-claude.mjs).
+import { test } from "node:test";
+import assert from "node:assert/strict";
+import { execFileSync } from "node:child_process";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
+import { fingerprint, select, valueHash, type State } from "../tools/translate.ts";
+import type { SourceEntry } from "../tools/lib/catalog.ts";
+import { entry, makeRepo, REPO } from "./helpers.ts";
+
+const e = (key: string, message: string, description = "Test string."): SourceEntry => ({ key, message, description, placeholders: [], platforms: ["web"] });
+
+test("translate: selection and human-edit guard", () => {
+  const a = e("a.missing", "One");
+  const b = e("a.human", "Two");
+  const c = e("a.machine", "Three");
+  const d = e("a.edited", "Four");
+  const f = e("a.changed", "Five");
+  const g = e("a.editedChanged", "Six");
+  const h = e("a.described", "Seven", "Now a verb");
+  const old = (entry: SourceEntry, value: string, by: "opus" | "human" = "opus") => ({ source: fingerprint(entry), value: valueHash(value), by });
+  const state: State = {
+    "a.machine": old(c, "Tres"),
+    "a.edited": old(d, "Cuatro"),
+    "a.changed": old({ ...f, message: "Old five" }, "Cinco"),
+    "a.editedChanged": old({ ...g, message: "Old six" }, "Seis"),
+    "a.described": old({ ...h, description: "An adjective" }, "Siete"),
+  };
+  const translations = new Map([
+    ["a.human", "Dos"],
+    ["a.machine", "Tres"],
+    ["a.edited", "Cuatro (corregido)"],
+    ["a.changed", "Cinco"],
+    ["a.editedChanged", "Seis (corregido)"],
+    ["a.described", "Siete"],
+  ]);
+  const work = select([a, b, c, d, f, g, h], translations, state);
+  assert.deepEqual(
+    work.map((w) => [w.entry.key, w.reason, w.previous]),
+    [
+      ["a.missing", "missing", undefined],
+      ["a.changed", "source-changed", "Cinco"],
+      ["a.editedChanged", "human-edit-source-changed", "Seis (corregido)"],
+      ["a.described", "source-changed", "Siete"],
+    ],
+  );
+  // A translation with no state is a person's: recorded, not retranslated.
+  assert.deepEqual(state["a.human"], { source: fingerprint(b), value: valueHash("Dos"), by: "human" });
+  // An edited value with unchanged English is kept and recorded as human.
+  assert.equal(state["a.edited"]!.by, "human");
+  assert.equal(state["a.edited"]!.value, valueHash("Cuatro (corregido)"));
+  // A human value stays human even when it equals the last machine value hash later.
+  assert.equal(select([b], new Map([["a.human", "Dos"]]), state).length, 0);
+});
+
+function run(root: string, ...args: string[]) {
+  return execFileSync(process.execPath, [join(REPO, "tools/translate.ts"), "--root", root, ...args], {
+    encoding: "utf8",
+    env: { ...process.env, SILO_CLAUDE_BIN: join(REPO, "tests/bin/fake-claude.mjs"), FAKE_CLAUDE_LOG: join(root, "prompts.log") },
+    stdio: ["ignore", "pipe", "pipe"],
+  });
+}
+
+const catalog = () => ({
+  en: {
+    ...entry("common.cancel", "Cancel"),
+    ...entry("common.flaky", "Hi {name}", { placeholders: { name: { type: "String" } } }),
+    ...entry("common.broken", "Broken"),
+    ...entry("catalog.seasons", "{count, plural, one {# season} other {# seasons}}", { placeholders: { count: { type: "int" } } }),
+    ...entry("common.kept", "Kept"),
+  },
+  es: { "@@locale": "es", "common.kept": "Conservado" },
+});
+
+test("translate: writes catalog, state and PR body; retries once; keeps human values", () => {
+  const root = makeRepo(catalog());
+  mkdirSync(join(root, "style"));
+  writeFileSync(join(root, "style/es.md"), "Use tú.\n");
+  run(root, "--locale", "es");
+  const es = JSON.parse(readFileSync(join(root, "catalog/es.arb"), "utf8"));
+  assert.deepEqual(es, {
+    "@@locale": "es",
+    "common.cancel": "ES Cancel",
+    "common.flaky": "ES Hi {name}",
+    "catalog.seasons": "{count, plural, one {ES # season} many {ES # seasons} other {ES # seasons}}",
+    "common.kept": "Conservado",
+  });
+  const state = JSON.parse(readFileSync(join(root, "state/es.json"), "utf8")) as State;
+  assert.equal(state["common.cancel"]!.by, "opus");
+  assert.equal(state["common.cancel"]!.model, "claude-opus-5-5");
+  assert.equal(state["common.kept"]!.by, "human");
+  assert.equal(state["common.broken"], undefined);
+  const body = readFileSync(join(root, "out/translate-pr-body.md"), "utf8");
+  assert.match(body, /\| es \| 3 \| 1 \|/);
+  assert.match(body, /es `common.broken`: ICU parse error/);
+  const prompts = readFileSync(join(root, "prompts.log"), "utf8");
+  assert.match(prompts, /Use tú\./);
+  assert.match(prompts, /one, many, other/);
+  assert.match(prompts, /problemsWithLastAttempt/);
+
+  // Second run: only the key that failed is sent again; the catalog is unchanged.
+  const before = readFileSync(join(root, "catalog/es.arb"), "utf8");
+  writeFileSync(join(root, "prompts.log"), "");
+  run(root, "--locale", "es");
+  assert.equal(readFileSync(join(root, "catalog/es.arb"), "utf8"), before);
+  const sent = readFileSync(join(root, "prompts.log"), "utf8")
+    .split("\n=====\n")
+    .filter(Boolean)
+    .flatMap((p) => (JSON.parse(p.slice(p.indexOf("Strings to translate:") + 21)) as { key: string }[]).map((i) => i.key));
+  assert.deepEqual([...new Set(sent)], ["common.broken"]);
+});
+
+test("translate: a human edit whose English changed is retranslated and listed", () => {
+  const root = makeRepo(catalog());
+  run(root, "--locale", "es");
+  const esPath = join(root, "catalog/es.arb");
+  const es = JSON.parse(readFileSync(esPath, "utf8"));
+  es["common.cancel"] = "Cancelar";
+  writeFileSync(esPath, JSON.stringify(es, null, 2));
+  const enPath = join(root, "catalog/en.arb");
+  const en = JSON.parse(readFileSync(enPath, "utf8"));
+  en["common.cancel"] = "Cancel now";
+  writeFileSync(enPath, JSON.stringify(en, null, 2));
+  run(root, "--locale", "es");
+  assert.equal(JSON.parse(readFileSync(esPath, "utf8"))["common.cancel"], "ES Cancel now");
+  assert.match(readFileSync(join(root, "out/translate-pr-body.md"), "utf8"), /\| es \| `common.cancel` \| Cancelar \| ES Cancel now \|/);
+});
+
+test("translate: --dry-run sends one batch and writes nothing", () => {
+  const root = makeRepo(catalog());
+  const out = run(root, "--locale", "es", "--dry-run");
+  const parsed = JSON.parse(out);
+  assert.equal(parsed.accepted["common.cancel"], "ES Cancel");
+  assert.ok(parsed.failed["common.broken"]);
+  assert.equal(JSON.parse(readFileSync(join(root, "catalog/es.arb"), "utf8"))["common.cancel"], undefined);
+  assert.ok(!existsSync(join(root, "state")));
+  assert.ok(!existsSync(join(root, "out")));
+});
+
+test("translate: an empty Weblate unit is translated, not kept", () => {
+  const cat = catalog();
+  const root = makeRepo({ en: cat.en, es: { "@@locale": "es", "common.cancel": "", "common.kept": "Conservado" } });
+  run(root, "--locale", "es");
+  assert.equal(JSON.parse(readFileSync(join(root, "catalog/es.arb"), "utf8"))["common.cancel"], "ES Cancel");
+  assert.doesNotMatch(readFileSync(join(root, "out/translate-pr-body.md"), "utf8"), /changed during the run/);
+});

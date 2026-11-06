@@ -1,0 +1,56 @@
+name: release
+
+on:
+  push:
+    branches: [main]
+
+# One release at a time, in merge order; a later merge never cancels an earlier release.
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - run: make ci
+      - name: Version
+        id: version
+        run: |
+          version="$(date -u +%Y.%m.%d)-${GITHUB_SHA::7}"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          if gh release view "v$version" >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Build tarballs
+        if: steps.version.outputs.exists != 'true'
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          make generate OUT=out VERSION="$VERSION"
+          mkdir dist
+          for platform in web apple android roku; do
+            tar -C "out/$platform" --sort=name --owner=0 --group=0 --numeric-owner --mtime=@0 -cf - . \
+              | gzip -n > "dist/silo-translations-$platform-$VERSION.tar.gz"
+          done
+          (cd dist && sha256sum *.tar.gz > SHA256SUMS)
+      - name: Publish
+        if: steps.version.outputs.exists != 'true'
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          gh release create "v$VERSION" dist/* \
+            --target "$GITHUB_SHA" \
+            --title "$VERSION" \
+            --notes "Generated from $GITHUB_SHA. Install with scripts/sync-translations --version $VERSION."

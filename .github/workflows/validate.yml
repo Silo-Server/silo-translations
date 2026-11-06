@@ -1,0 +1,23 @@
+name: validate
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      # Type-check, validate the catalog and the settings-manifest drift check, then the
+      # validator, golden, plural (bsc + brs-node) and aapt2 acceptance tests. The runner image
+      # ships the Android SDK; the aapt2 test fails rather than skips when CI is set.
+      - run: make ci
+      - run: make generate OUT="$RUNNER_TEMP/out"
