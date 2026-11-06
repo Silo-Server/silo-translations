@@ -1,8 +1,9 @@
-// Apple: one Localizable.xcstrings (String Catalog) with every language, all entries manual.
+// Apple: Localizable.xcstrings (String Catalog) with every language, all entries manual, and the
+// per-app InfoPlist.xcstrings catalogs for permission prompts.
 // Pseudo-locales come from Xcode's own pseudolanguages, so none are generated here.
-import { inScope, type SourceEntry } from "../lib/catalog.ts";
+import { INFO_PLIST_APPS, infoPlistApp, inScope, isInfoPlist, type SourceEntry } from "../lib/catalog.ts";
 import type { Analysis, MessageFormatElement } from "../lib/icu.ts";
-import { languagesFor, positional, positions, render, type Files, type GenInput } from "./common.ts";
+import { languagesFor, positional, positions, render, type Files, type GenInput, type Language } from "./common.ts";
 
 const FILE = "iosApp/iosApp/Localizable.xcstrings";
 // %lld is Int and %lf Double in Xcode's generated symbols (%d would be Int32, %f Float).
@@ -60,18 +61,33 @@ export function xcodeJson(value: unknown, indent = ""): string {
   return `{\n${entries.map(([k, v]) => `${inner}${JSON.stringify(k)} : ${xcodeJson(v, inner)}`).join(",\n")}\n${indent}}`;
 }
 
-export function generateApple(input: GenInput): Files {
+function catalog(input: GenInput, languages: Language[], entries: SourceEntry[], keyOf: (e: SourceEntry) => string): string {
   const strings: Record<string, unknown> = {};
-  const entries = input.entries.filter((e) => inScope(e, "apple"));
-  const languages = languagesFor(input, "apple", false);
   for (const entry of entries) {
     const localizations: Record<string, Localization> = {};
     for (const { locale, messages } of languages) {
       const a = messages?.get(entry.key);
       if (a) localizations[locale.tag] = localization(entry, a);
     }
-    strings[entry.key] = { comment: entry.description, extractionState: "manual", localizations };
+    strings[keyOf(entry)] = { comment: entry.description, extractionState: "manual", localizations };
   }
-  const doc = { sourceLanguage: input.locales.source.tag, strings, version: "1.0" };
-  return new Map([[FILE, xcodeJson(doc) + "\n"]]);
+  return xcodeJson({ sourceLanguage: input.locales.source.tag, strings, version: "1.0" }) + "\n";
+}
+
+/**
+ * Localizable.xcstrings for app strings, and one InfoPlist.xcstrings per app
+ * (iosApp/InfoPlist/<iOS|tvOS|macOS>/) for its Info.plist strings, keyed by the plist key. The
+ * three InfoPlist catalogs are always written, so the project's references stay valid. Which
+ * languages ship is decided by the app strings alone; a translated prompt doesn't ship a language.
+ */
+export function generateApple(input: GenInput): Files {
+  const entries = input.entries.filter((e) => inScope(e, "apple"));
+  const app = entries.filter((e) => !isInfoPlist(e));
+  const languages = languagesFor({ ...input, entries: app }, "apple", false);
+  const files: Files = new Map([[FILE, catalog(input, languages, app, (e) => e.key)]]);
+  for (const [name, dir] of Object.entries(INFO_PLIST_APPS)) {
+    const own = entries.filter((e) => infoPlistApp(e) === name);
+    files.set(`iosApp/InfoPlist/${dir}/InfoPlist.xcstrings`, catalog(input, languages, own, (e) => e.plistKey!));
+  }
+  return files;
 }

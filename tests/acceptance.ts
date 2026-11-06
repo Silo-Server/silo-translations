@@ -17,7 +17,7 @@ import { generateAll, writeOutput } from "../tools/generate.ts";
 import { androidName, checkRepository } from "../tools/lib/check.ts";
 import { render } from "../tools/gen/common.ts";
 import type { Analysis } from "../tools/lib/icu.ts";
-import type { SourceEntry } from "../tools/lib/catalog.ts";
+import { PLIST_KEY_PATTERN, type SourceEntry } from "../tools/lib/catalog.ts";
 import { decodeResources, findSdk } from "../tools/lib/aapt.ts";
 
 /** Runs the acceptance checks for any catalog root; the seed branch reuses this on the real catalog. */
@@ -81,6 +81,17 @@ export function acceptance(root: string, name: string) {
         }
         if (!checked.catalog.byKey.get(key)!.placeholders.length) continue; // no formatting, % is literal
         for (const v of units(loc)) assert.doesNotMatch(v.replace(/%%/g, ""), /%(?!(\d+\$)?(@|lld|lf)|arg|#@)/, `${key} ${tag}: ${v}`);
+      }
+    }
+  });
+
+  test(`${name}: apple InfoPlist catalogs are keyed by plist key`, () => {
+    for (const dir of ["iOS", "tvOS", "macOS"]) {
+      const xc = JSON.parse(platforms.get("apple")!.get(`iosApp/InfoPlist/${dir}/InfoPlist.xcstrings`)!);
+      assert.equal(xc.sourceLanguage, "en");
+      for (const [key, s] of Object.entries(xc.strings as Record<string, Record<string, unknown>>)) {
+        assert.match(key, PLIST_KEY_PATTERN, `${dir} ${key}`);
+        assert.equal(s.extractionState, "manual");
       }
     }
   });

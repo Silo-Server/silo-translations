@@ -1,6 +1,6 @@
 import { CATEGORY_ORDER, categoriesFor } from "./plural.ts";
 import { analyze, literalLength, type Analysis } from "./icu.ts";
-import { catalogPath, inScope, isShared, loadCatalog, type Catalog, type Issue, type SourceEntry } from "./catalog.ts";
+import { catalogPath, INFO_PLIST_APPS, INFO_PLIST_PREFIX, infoPlistApp, inScope, isInfoPlist, isShared, loadCatalog, PLIST_KEY_PATTERN, type Catalog, type Issue, type SourceEntry } from "./catalog.ts";
 import { loadGlossary, termsIn, type GlossaryTerm } from "./glossary.ts";
 import { loadLocales, type Locale, type Locales } from "./locales.ts";
 import { readFileSync } from "node:fs";
@@ -43,6 +43,7 @@ export function checkSource(entry: SourceEntry, en: Analysis, source: Locale): s
   if (en.shape?.kind !== "plural" && (CATEGORY_ORDER as readonly string[]).includes(last)) {
     problems.push(`a key that is not a plural cannot end in the plural category "${last}" (Roku writes plurals as key.<category>)`);
   }
+  problems.push(...infoPlistProblems(entry));
   if (entry.placeholders.length >= 2 && (inScope(entry, "apple") || inScope(entry, "android"))) {
     // Apple's generated symbols and Android's getString take unlabeled positional arguments;
     // the description is the call site's only guide to their order.
@@ -51,6 +52,23 @@ export function checkSource(entry: SourceEntry, en: Analysis, source: Locale): s
       problems.push(`description must name the placeholders in argument order: ${entry.placeholders.map((p) => `{${p.name}}`).join(", ")}`);
     }
   }
+  return problems;
+}
+
+/**
+ * Rules for Info.plist strings (permission prompts): apple.infoPlist.<app>.<name>, Apple only,
+ * with the plist key in x-plistKey, and no placeholders (Info.plist values are not formatted).
+ */
+function infoPlistProblems(entry: SourceEntry): string[] {
+  const problems: string[] = [];
+  if (!isInfoPlist(entry)) {
+    if (entry.plistKey !== undefined) problems.push(`x-plistKey is only for ${INFO_PLIST_PREFIX}* keys`);
+    return problems;
+  }
+  if (!infoPlistApp(entry)) problems.push(`Info.plist keys are ${INFO_PLIST_PREFIX}<${Object.keys(INFO_PLIST_APPS).join("|")}>.<name>`);
+  if (entry.platforms.length !== 1 || entry.platforms[0] !== "apple") problems.push('Info.plist keys need "x-platforms": ["apple"]');
+  if (!entry.plistKey || !PLIST_KEY_PATTERN.test(entry.plistKey)) problems.push("Info.plist keys need x-plistKey, the plist key verbatim (such as NSCameraUsageDescription)");
+  if (entry.placeholders.length) problems.push("Info.plist strings take no placeholders");
   return problems;
 }
 
@@ -118,6 +136,16 @@ export function checkRepository(root: string): CheckedCatalog {
     if (problems.length === 0) english.set(entry.key, a);
   }
 
+  // Two keys for the same Info.plist key of one app.
+  const plist = new Map<string, string>();
+  for (const entry of catalog.entries) {
+    const app = infoPlistApp(entry);
+    if (!app || !entry.plistKey) continue;
+    const other = plist.get(`${app} ${entry.plistKey}`);
+    if (other) issues.push({ level: "error", file: sourceFile, key: entry.key, message: `${entry.plistKey} for ${app} is already ${other}` });
+    else plist.set(`${app} ${entry.plistKey}`, entry.key);
+  }
+
   // Platform name collisions. Android joins segments with "_"; Xcode's symbols join them in
   // lowerCamel (a collision fails the build). Roku expands plurals to key.<category>, and its
   // associative arrays ignore case.
@@ -125,7 +153,8 @@ export function checkRepository(root: string): CheckedCatalog {
   const apple = new Map<string, string>();
   const roku = new Map<string, string>();
   for (const entry of catalog.entries) {
-    if (inScope(entry, "apple")) {
+    // Info.plist strings get no Localizable symbol.
+    if (inScope(entry, "apple") && !isInfoPlist(entry)) {
       const symbol = appleSymbol(entry.key);
       const other = apple.get(symbol);
       if (other) issues.push({ level: "error", file: sourceFile, key: entry.key, message: `Apple symbol ${symbol} collides with ${other}` });

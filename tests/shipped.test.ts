@@ -22,3 +22,16 @@ test("shipped: per platform, valid translations only", () => {
   assert.match(out.get("web")!.get("web/src/locales/keys.ts")!, /tag: "es"/);
   assert.doesNotMatch(out.get("web")!.get("web/src/locales/keys.ts")!, /tag: "de"/);
 });
+
+test("shipped: a translated Info.plist prompt alone doesn't ship a language on Apple", () => {
+  const plist = { "x-platforms": ["apple"], "x-plistKey": "NSLocalNetworkUsageDescription" };
+  const root = makeRepo({
+    en: { ...entry("a.all", "All"), ...entry("apple.infoPlist.ios.localNetwork", "Local network.", plist) },
+    de: { "@@locale": "de", "apple.infoPlist.ios.localNetwork": "Lokales Netzwerk." },
+    fr: { "@@locale": "fr", "a.all": "Tous", "apple.infoPlist.ios.localNetwork": "Réseau local." },
+  });
+  const apple = generateAll(root, "test").get("apple")!;
+  const prompts = JSON.parse(apple.get("iosApp/InfoPlist/iOS/InfoPlist.xcstrings")!).strings;
+  assert.deepEqual(Object.keys(prompts.NSLocalNetworkUsageDescription.localizations), ["en", "fr"]);
+  assert.equal(JSON.parse(apple.get("iosApp/iosApp/Localizable.xcstrings")!).strings["apple.infoPlist.ios.localNetwork"], undefined);
+});

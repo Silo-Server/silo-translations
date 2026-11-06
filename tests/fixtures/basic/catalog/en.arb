@@ -1,5 +1,21 @@
 {
   "@@locale": "en",
+  "apple.infoPlist.ios.nsLocalNetworkUsageDescription": "Silo uses your local network to find servers and TVs. 100% local.",
+  "@apple.infoPlist.ios.nsLocalNetworkUsageDescription": {
+    "description": "iOS permission prompt for local network access.",
+    "x-platforms": [
+      "apple"
+    ],
+    "x-plistKey": "NSLocalNetworkUsageDescription"
+  },
+  "apple.infoPlist.tvos.nsLocalNetworkUsageDescription": "Silo uses your local network to find servers.",
+  "@apple.infoPlist.tvos.nsLocalNetworkUsageDescription": {
+    "description": "tvOS permission prompt for local network access.",
+    "x-platforms": [
+      "apple"
+    ],
+    "x-plistKey": "NSLocalNetworkUsageDescription"
+  },
   "catalog.extra.behind_the_scenes": "Behind the Scenes",
   "@catalog.extra.behind_the_scenes": {
     "description": "Extra type label; the last segment is the server's extra type."

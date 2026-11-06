@@ -21,6 +21,8 @@ export interface SourceEntry {
   placeholders: Placeholder[];
   platforms: Platform[];
   maxLength?: number;
+  /** Info.plist key (`apple.infoPlist.*` keys only), verbatim, e.g. NSLocalNetworkUsageDescription. */
+  plistKey?: string;
 }
 
 export interface Issue {
@@ -96,7 +98,7 @@ export function loadCatalog(root: string, locales: Locales): Catalog {
       at("@metadata must be an object");
     } else {
       for (const field of Object.keys(meta)) {
-        if (!["description", "placeholders", "x-platforms", "x-maxLength"].includes(field)) {
+        if (!["description", "placeholders", "x-platforms", "x-maxLength", "x-plistKey"].includes(field)) {
           at(`unknown metadata field ${field}`);
         }
       }
@@ -134,6 +136,11 @@ export function loadCatalog(root: string, locales: Locales): Catalog {
         } else {
           entry.platforms = PLATFORMS.filter((p) => platforms.includes(p));
         }
+      }
+      const plistKey = meta["x-plistKey"];
+      if (plistKey !== undefined) {
+        if (typeof plistKey === "string") entry.plistKey = plistKey;
+        else at("x-plistKey must be a string");
       }
       const maxLength = meta["x-maxLength"];
       if (maxLength !== undefined) {
@@ -181,6 +188,23 @@ export function loadCatalog(root: string, locales: Locales): Catalog {
   }
 
   return { sourceFile, entries, byKey, translations, issues };
+}
+
+/** Apple apps with their own Info.plist, and the folder each one's InfoPlist.xcstrings lives in. */
+export const INFO_PLIST_APPS = { ios: "iOS", tvos: "tvOS", macos: "macOS" } as const;
+export type InfoPlistApp = keyof typeof INFO_PLIST_APPS;
+export const INFO_PLIST_PREFIX = "apple.infoPlist.";
+export const PLIST_KEY_PATTERN = /^[A-Z][A-Za-z0-9]*$/;
+
+/** True for Info.plist strings (apple.infoPlist.*), which go to InfoPlist.xcstrings only. */
+export function isInfoPlist(entry: SourceEntry): boolean {
+  return entry.key.startsWith(INFO_PLIST_PREFIX);
+}
+
+/** The app an apple.infoPlist.<app>.<name> key belongs to, or undefined when the shape is wrong. */
+export function infoPlistApp(entry: SourceEntry): InfoPlistApp | undefined {
+  const parts = entry.key.slice(INFO_PLIST_PREFIX.length).split(".");
+  return isInfoPlist(entry) && parts.length === 2 && Object.hasOwn(INFO_PLIST_APPS, parts[0]!) ? (parts[0] as InfoPlistApp) : undefined;
 }
 
 export function inScope(entry: SourceEntry, platform: Platform): boolean {

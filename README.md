@@ -46,7 +46,7 @@ client's repository root, and it is exactly what the platform's release tarball 
 | Platform | Files under `<dir>/<platform>/` |
 |---|---|
 | web | `web/src/locales/<tag>.json` (FormatJS AST, one per language and pseudo-locale), `web/src/locales/keys.ts` (`MessageKey` type, `LOCALES`: the shipped languages then the pseudo-locales, with `dir` and `pseudo`; `SOURCE_LOCALE`) |
-| apple | `iosApp/iosApp/Localizable.xcstrings` (all languages, every entry `extractionState: manual`) |
+| apple | `iosApp/iosApp/Localizable.xcstrings` (all languages, every entry `extractionState: manual`), `iosApp/InfoPlist/{iOS,tvOS,macOS}/InfoPlist.xcstrings` (each app's Info.plist strings, keyed by plist key; always written, empty when an app has none) |
 | android | `android-shared/src/androidMain/res/values{,-<qualifier>}/strings_catalog.xml` (next to hand-written `strings.xml`, never replacing it), `android-shared/silo-locales.properties` (each app's languages as resource qualifiers, for `androidResources.localeFilters`) |
 | roku | `locale/<folder>/strings.json` (one per language and pseudo-locale), `locale/languages.json` (`{"languages": [shipped folders], "pseudo": [folders]}`), `source/util/pluralRules.bs`, `i18n-charsets/<folder>.txt` (every character that language's strings use, sorted, for the font subset step; outside `locale/` and `fonts/`, so not packaged) |
 
@@ -115,6 +115,12 @@ table above. Sync refuses any listed path that passes through a symlink in the c
   itself. The validator rejects keys that collide on any platform: Android names, Apple
   symbols (`home.sectionTitle` and `homeSection.title`), Roku plural entries, and Roku's
   case-insensitive lookup.
+- Info.plist strings (permission prompts) are `apple.infoPlist.<ios|tvos|macos>.<name>` with
+  `"x-platforms": ["apple"]` and the plist key verbatim in `x-plistKey`, for example
+  `apple.infoPlist.ios.nsLocalNetworkUsageDescription` with `"x-plistKey":
+  "NSLocalNetworkUsageDescription"`. The app segment chooses the catalog; each app's prompts
+  are separate keys because their English differs. They take no placeholders and never reach
+  `Localizable.xcstrings`.
 - A key that is not a plural can't end in a plural category (`zero one two few many other`),
   since Roku writes plurals as `key.<category>`.
 - `settingsManifest.*` keys are imported from silo-server's settings manifest
