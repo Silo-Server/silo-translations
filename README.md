@@ -56,8 +56,9 @@ English. A platform gets files only for the languages it ships: Roku doesn't shi
 (no right-to-left or Arabic shaping in SceneGraph) or `ar-XB` yet. On Android, `platforms`
 can name one app (`android-phone`, `android-tv`). Both apps read `android-shared`'s
 resources, so the language is still generated, and the app that doesn't ship it leaves it out
-with `localeFilters` from `silo-locales.properties`. `ar` ships on the phone app only until the
-TV layout supports right-to-left.
+with `localeFilters` from `silo-locales.properties`. Nothing uses that today: `ar` ships on both
+Android apps, the TV app with its current left-to-right layout. (The test fixture holds `ar` back
+on the TV app to keep the capability covered.)
 
 Pseudo-locales (`en-XA` accented and about 40% longer inside `⟦ ⟧`, `ar-XB` right-to-left) are
 generated for web and Roku only, for debug builds. Android uses AAPT's own
