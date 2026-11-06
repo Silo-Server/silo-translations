@@ -8,9 +8,8 @@
 // aapt2 is skipped when the Android SDK is missing, except in CI.
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { execFileSync } from "node:child_process";
-import { existsSync, mkdtempSync, readdirSync, writeFileSync } from "node:fs";
-import { homedir, tmpdir } from "node:os";
+import { mkdtempSync } from "node:fs";
+import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { IntlMessageFormat } from "intl-messageformat";
 import { generateAll, writeOutput } from "../tools/generate.ts";
@@ -18,6 +17,7 @@ import { androidName, checkRepository } from "../tools/lib/check.ts";
 import { render } from "../tools/gen/common.ts";
 import type { Analysis } from "../tools/lib/icu.ts";
 import type { SourceEntry } from "../tools/lib/catalog.ts";
+import { decodeResources, findSdk } from "../tools/lib/aapt.ts";
 import { FIXTURE } from "./helpers.ts";
 
 /** Runs the acceptance checks for any catalog root; the seed branch reuses this on the real catalog. */
@@ -85,22 +85,14 @@ export function acceptance(root: string, name: string) {
     }
   });
 
-  const sdk = process.env.ANDROID_HOME ?? join(homedir(), "Android/Sdk");
-  const buildTools = existsSync(join(sdk, "build-tools")) ? readdirSync(join(sdk, "build-tools")).sort().pop() : undefined;
-  const platformsDir = existsSync(join(sdk, "platforms")) ? readdirSync(join(sdk, "platforms")).sort().pop() : undefined;
-  const skip = !buildTools || !platformsDir ? (process.env.CI ? false : "Android SDK not found") : false;
+  const sdk = findSdk();
+  const skip = !sdk ? (process.env.CI ? false : "Android SDK not found") : false;
 
   test(`${name}: android resources compile, link and decode as expected`, { skip }, () => {
-    assert.ok(buildTools && platformsDir, "Android SDK required in CI");
-    const aapt2 = join(sdk, "build-tools", buildTools, "aapt2");
-    const dir = mkdtempSync(join(tmpdir(), "silo-aapt2-"));
+    assert.ok(sdk, "Android SDK required in CI");
+    const dir = mkdtempSync(join(tmpdir(), "silo-native-"));
     writeOutput(join(dir, "out"), new Map([["android", platforms.get("android")!]]));
-    writeFileSync(join(dir, "AndroidManifest.xml"), '<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="org.silo.translations.check"/>');
-    const res = join(dir, "out/android/android-shared/src/androidMain/res");
-    execFileSync(aapt2, ["compile", "--dir", res, "-o", join(dir, "compiled.zip")]);
-    execFileSync(aapt2, ["link", "-I", join(sdk, "platforms", platformsDir, "android.jar"), "--manifest", join(dir, "AndroidManifest.xml"), "-o", join(dir, "out.apk"), join(dir, "compiled.zip")]);
-    const dump = execFileSync(aapt2, ["dump", "resources", join(dir, "out.apk")], { encoding: "utf8", maxBuffer: 64 << 20 });
-    const got = parseDump(dump);
+    const got = decodeResources(sdk, join(dir, "out/android/android-shared/src/androidMain/res"));
 
     const languages = [
       { config: "", messages: checked.english },
@@ -139,45 +131,6 @@ function expectedAndroid(entry: SourceEntry, a: Analysis): [string, string][] {
     return [["", render(shape.elements, { literal: (t) => (formatted ? t.replace(/%/g, "%%") : t), arg, pound: () => "" })]];
   }
   return [...shape.forms].map(([cat, els]) => [cat, render(els, { literal: (t) => t.replace(/%/g, "%%"), arg, pound: () => arg(shape.arg) })]);
-}
-
-/** Parses `aapt2 dump resources` into "name|config|quantity" -> decoded value. */
-function parseDump(dump: string): Map<string, string> {
-  const out = new Map<string, string>();
-  const lines = dump.split("\n");
-  const resource = /^\s+resource 0x[0-9a-f]+ (string|plurals)\/(\S+)/;
-  const stringLine = /^      \(([^)]*)\) "(.*)$/;
-  const pluralHead = /^      \(([^)]*)\) \(plurals\)/;
-  const item = /^        (zero|one|two|few|many|other)="(.*)$/;
-  let name = "";
-  let config = "";
-  let pending: { id: string; text: string } | undefined;
-  const flush = () => {
-    if (pending) out.set(pending.id, pending.text.replace(/\n+$/, "").replace(/"$/, ""));
-    pending = undefined;
-  };
-  for (const line of lines) {
-    let m: RegExpExecArray | null;
-    if ((m = resource.exec(line))) {
-      flush();
-      name = m[2]!;
-    } else if ((m = pluralHead.exec(line))) {
-      flush();
-      config = m[1]!;
-    } else if ((m = stringLine.exec(line))) {
-      flush();
-      pending = { id: `${name}|${m[1]}|`, text: m[2]! };
-    } else if ((m = item.exec(line))) {
-      flush();
-      pending = { id: `${name}|${config}|${m[1]}`, text: m[2]! };
-    } else if (/^\s+(type|Package|resource) /.test(line)) {
-      flush();
-    } else if (pending) {
-      pending.text += "\n" + line.replace(/^ {6}/, "");
-    }
-  }
-  flush();
-  return out;
 }
 
 acceptance(FIXTURE, "fixture");
