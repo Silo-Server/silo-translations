@@ -94,10 +94,25 @@ export function integerSamples(cldr: string, cat: Category): number[] {
   return out;
 }
 
+/** Wraps an expression in parentheses when it combines terms with `op`. */
+const group = (expr: string, op: "and" | "or") => (expr.includes(` ${op} `) ? `(${expr})` : expr);
+
+/** One relation as BrightScript; `x` is `n` or `(n mod m)`. */
+function relationExpr(rel: Relation): string {
+  const x = rel.mod !== undefined ? `(n mod ${rel.mod})` : "n";
+  if (rel.negated) {
+    // Outside every range: each value excluded, each span outside its bounds.
+    return rel.ranges.map(([lo, hi]) => (lo === hi ? `${x} <> ${lo}` : `(${x} < ${lo} or ${x} > ${hi})`)).join(" and ");
+  }
+  const alts = rel.ranges.map(([lo, hi]) => (lo === hi ? `${x} = ${lo}` : `${x} >= ${lo} and ${x} <= ${hi}`));
+  return alts.length === 1 ? alts[0]! : alts.map((a) => group(a, "and")).join(" or ");
+}
+
 /**
  * The condition for a category as a BrightScript boolean expression over the whole
- * number `n`, with the operands that are always 0 for whole numbers folded away.
- * Returns "true" or "false" when the condition is constant.
+ * number `n`, with the operands that are always 0 for whole numbers folded away, and no
+ * parentheses around the whole expression (bslint's code-style rule). Returns "true" or
+ * "false" when the condition is constant.
  */
 export function brightScriptCondition(cldr: string, cat: Category): string {
   const text = rulesFor(cldr)[`pluralRule-count-${cat}`];
@@ -111,15 +126,12 @@ export function brightScriptCondition(cldr: string, cat: Category): string {
         if (!holds(rel, 0)) constFalse = true;
         continue;
       }
-      const x = rel.mod !== undefined ? `(n MOD ${rel.mod})` : "n";
-      const alts = rel.ranges.map(([lo, hi]) => (lo === hi ? `${x} = ${lo}` : `(${x} >= ${lo} and ${x} <= ${hi})`));
-      const any = alts.length === 1 ? alts[0]! : `(${alts.join(" or ")})`;
-      parts.push(rel.negated ? `not (${any})` : any);
+      parts.push(relationExpr(rel));
     }
     if (constFalse) continue;
     if (parts.length === 0) return "true";
-    ors.push(parts.length === 1 ? parts[0]! : parts.join(" and "));
+    ors.push(parts.length === 1 ? parts[0]! : parts.map((p) => group(p, "or")).join(" and "));
   }
   if (ors.length === 0) return "false";
-  return ors.length === 1 ? ors[0]! : ors.map((o) => (o.includes(" and ") ? `(${o})` : o)).join(" or ");
+  return ors.length === 1 ? ors[0]! : ors.map((o) => group(o, "and")).join(" or ");
 }

@@ -15,7 +15,7 @@ namespace pluralRules
         ' CLDR "es"
         if language = "es"
             if n = 1 then return "one"
-            if not (n = 0) and (n MOD 1000000) = 0 then return "many"
+            if n <> 0 and (n mod 1000000) = 0 then return "many"
             return "other"
         end if
         ' CLDR "de"
@@ -25,14 +25,14 @@ namespace pluralRules
         end if
         ' CLDR "fr"
         if language = "fr"
-            if (n >= 0 and n <= 1) then return "one"
-            if not (n = 0) and (n MOD 1000000) = 0 then return "many"
+            if n >= 0 and n <= 1 then return "one"
+            if n <> 0 and (n mod 1000000) = 0 then return "many"
             return "other"
         end if
         ' CLDR "pt"
         if language = "pt_BR"
-            if (n >= 0 and n <= 1) then return "one"
-            if not (n = 0) and (n MOD 1000000) = 0 then return "many"
+            if n >= 0 and n <= 1 then return "one"
+            if n <> 0 and (n mod 1000000) = 0 then return "many"
             return "other"
         end if
         return "other"
