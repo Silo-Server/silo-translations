@@ -4,7 +4,7 @@ import { catalogPath, inScope, isShared, loadCatalog, type Catalog, type Issue, 
 import { loadGlossary, termsIn, type GlossaryTerm } from "./glossary.ts";
 import { loadLocales, type Locale, type Locales } from "./locales.ts";
 import { readFileSync } from "node:fs";
-import { formattedFiles, layoutProblems } from "./format.ts";
+import { formattedFiles, LAYOUT_MESSAGE, layoutProblems } from "./format.ts";
 
 export function androidName(key: string): string {
   return key.replaceAll(".", "_");
@@ -152,11 +152,12 @@ export function checkRepository(root: string): CheckedCatalog {
   // Canonical layout (make fmt), so branches that add keys in parallel merge cleanly. Only make
   // check fails on these; generate and translate read the content and ignore the layout.
   for (const { file, kind } of formattedFiles(root)) {
-    const { problems, parsed } = layoutProblems(readFileSync(file, "utf8"), kind);
+    const { problems, layout, parsed } = layoutProblems(readFileSync(file, "utf8"), kind);
     // An unparsable file the loader read is already reported; one it skipped (a language not in
-    // locales.json) is not.
+    // locales.json) is not. Repeated keys lose data, so they block generate and translate too.
     const reported = !parsed && issues.some((i) => i.file === file && !i.key);
-    for (const message of problems) if (!reported) issues.push({ level: "error", file, message, rule: "layout" });
+    for (const message of problems) if (!reported) issues.push({ level: "error", file, message });
+    if (layout) issues.push({ level: "error", file, message: LAYOUT_MESSAGE, rule: "layout" });
   }
 
   const glossaryTerms = new Map(catalog.entries.map((e) => [e.key, termsIn(glossary, e.message)]));

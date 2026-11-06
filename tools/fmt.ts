@@ -9,12 +9,11 @@ let failed = false;
 let changed = 0;
 for (const { file, kind } of formattedFiles(root)) {
   const text = readFileSync(file, "utf8");
-  const { problems } = layoutProblems(text, kind);
-  const fixable = problems.length === 1 && problems[0]!.endsWith("run make fmt");
-  if (problems.length && !fixable) {
+  const { problems, layout } = layoutProblems(text, kind);
+  if (problems.length) {
     console.error(`${file}: ${problems.join("; ")}; fix it by hand`);
     failed = true;
-  } else if (fixable) {
+  } else if (layout) {
     writeFileSync(file, canonicalText(text, kind)!);
     changed++;
   }

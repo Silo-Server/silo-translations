@@ -96,3 +96,18 @@ test("fmt: rewrites catalog and state files into the canonical layout", () => {
   assert.deepEqual(checkRepository(root).issues, []);
   assert.deepEqual(Object.keys(JSON.parse(readFileSync(join(root, "state/de.json"), "utf8"))), ["a.x", "b.x"]);
 });
+
+test("format: an own __proto__ key survives formatting", () => {
+  const text = canonicalText('{"@@locale": "en", "__proto__": {"sentinel": "keep"}, "a": "1"}', "arb")!;
+  assert.deepEqual(Object.keys(JSON.parse(text)), ["@@locale", "__proto__", "a"]);
+});
+
+test("generate and translate refuse a repeated key; only formatting is exempt", () => {
+  const root = makeRepo({ en: entry("a.x", "A") });
+  const en = join(root, "catalog/en.arb");
+  writeFileSync(en, readFileSync(en, "utf8").replace('"a.x": "A",', '"a.x": "First",\n  "a.x": "A",'));
+  assert.throws(() => generateAll(root, "test"), /repeats a\.x/);
+  const r = spawnSync(process.execPath, [join(REPO, "tools/translate.ts"), "--root", root, "--locale", "es", "--dry-run"], { encoding: "utf8", env: { ...process.env, SILO_CLAUDE_BIN: "/bin/false" } });
+  assert.equal(r.status, 1);
+  assert.match(r.stderr, /validation errors/);
+});

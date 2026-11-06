@@ -60,8 +60,10 @@ When you extract strings from a client while other branches do the same:
    other areas' keys and `common.*` alone; propose shared vocabulary in its own small change.
 3. Run `make fmt`. Every `catalog/*.arb` and `state/*.json` file has one canonical layout:
    `@@locale` first, then keys in code-point order, each `@key` block right after its key,
-   2-space JSON with a trailing newline. Parallel branches then add lines in different places
-   and merge without conflicts.
+   2-space JSON with a trailing newline. Branches that add keys in different namespaces then
+   mostly touch different lines. Two new namespaces that sort into the same gap (say
+   `downloads.*` and `ebooks.*` between `diagnostics.*` and `filters.*`) still conflict: keep
+   both sides of the conflict, then run `make fmt` and `make check`.
 4. Run `make check`. It fails on a file that isn't in the canonical layout, or that repeats a key
    (a merge can leave one twice; only the last would count, so remove the extra by hand).
 5. Generate into the client from your branch:

@@ -20,17 +20,20 @@ export function compareCodePoints(a: string, b: string): number {
 }
 
 export function canonicalArb(arb: Record<string, unknown>): Record<string, unknown> {
-  const out: Record<string, unknown> = {};
-  if ("@@locale" in arb) out["@@locale"] = arb["@@locale"];
+  // Built from an entry list, with own-property checks only, so no key (not even "__proto__",
+  // which JSON.parse keeps as an own property) is lost or read from the prototype.
+  const own = (k: string) => Object.hasOwn(arb, k);
+  const out: [string, unknown][] = [];
+  if (own("@@locale")) out.push(["@@locale", arb["@@locale"]]);
   const fileMeta = Object.keys(arb).filter((k) => k.startsWith("@@") && k !== "@@locale").sort(compareCodePoints);
-  for (const k of fileMeta) out[k] = arb[k];
+  for (const k of fileMeta) out.push([k, arb[k]]);
   // A "@key" without its message still sorts by the key it describes.
   const keys = new Set(Object.keys(arb).filter((k) => !k.startsWith("@@")).map((k) => (k.startsWith("@") ? k.slice(1) : k)));
   for (const key of [...keys].sort(compareCodePoints)) {
-    if (key in arb) out[key] = arb[key];
-    if (`@${key}` in arb) out[`@${key}`] = arb[`@${key}`];
+    if (own(key)) out.push([key, arb[key]]);
+    if (own(`@${key}`)) out.push([`@${key}`, arb[`@${key}`]]);
   }
-  return out;
+  return Object.fromEntries(out);
 }
 
 export function canonicalState<T>(state: Record<string, T>): Record<string, T> {
@@ -75,14 +78,20 @@ export function duplicateKeys(text: string): string[] {
   return dups;
 }
 
-/** Layout problems of one ARB or state file; empty when it is canonical. */
-export function layoutProblems(text: string, kind: "arb" | "state"): { problems: string[]; parsed: boolean } {
+export const LAYOUT_MESSAGE = "not in the canonical layout (sorted keys, @key after its key, 2-space JSON); run make fmt";
+
+/**
+ * One ARB or state file against the canonical layout. `problems` would lose or misread data
+ * (a repeated key, not a JSON object) and need a person; `layout` is only formatting, which
+ * make fmt fixes.
+ */
+export function layoutProblems(text: string, kind: "arb" | "state"): { problems: string[]; layout: boolean; parsed: boolean } {
   const dups = duplicateKeys(text);
   const canonical = canonicalText(text, kind);
   const problems = dups.length ? [`repeats ${dups.join(", ")} (only the last one counts); remove the extra by hand`] : [];
   if (canonical === undefined) problems.push("not a JSON object");
-  else if (!dups.length && canonical !== text) problems.push("not in the canonical layout (sorted keys, @key after its key, 2-space JSON); run make fmt");
-  return { problems, parsed: canonical !== undefined };
+  const layout = canonical !== undefined && !dups.length && canonical !== text;
+  return { problems, layout, parsed: canonical !== undefined };
 }
 
 export function jsonText(value: unknown): string {
