@@ -5,6 +5,46 @@
       "value": "‏‮Behind the Scenes‬"
     }
   ],
+  "catalog.parts": [
+    {
+      "type": 6,
+      "value": "count",
+      "options": {
+        "one": {
+          "value": [
+            {
+              "type": 0,
+              "value": "‏"
+            },
+            {
+              "type": 7
+            },
+            {
+              "type": 0,
+              "value": "‮ part‬"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+            {
+              "type": 0,
+              "value": "‏"
+            },
+            {
+              "type": 7
+            },
+            {
+              "type": 0,
+              "value": "‮ parts‬"
+            }
+          ]
+        }
+      },
+      "offset": 0,
+      "pluralType": "cardinal"
+    }
+  ],
   "catalog.seasons": [
     {
       "type": 6,
@@ -99,6 +139,81 @@
             {
               "type": 0,
               "value": "‮ items‬"
+            }
+          ]
+        }
+      },
+      "offset": 0,
+      "pluralType": "cardinal"
+    }
+  ],
+  "downloads.deleteMixed": [
+    {
+      "type": 6,
+      "value": "count",
+      "options": {
+        "one": {
+          "value": [
+            {
+              "type": 0,
+              "value": "‏‮Delete download‬"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+            {
+              "type": 0,
+              "value": "‏‮Delete ‬"
+            },
+            {
+              "type": 7
+            },
+            {
+              "type": 0,
+              "value": "‮ downloads‬"
+            }
+          ]
+        }
+      },
+      "offset": 0,
+      "pluralType": "cardinal"
+    }
+  ],
+  "downloads.selected": [
+    {
+      "type": 6,
+      "value": "count",
+      "options": {
+        "one": {
+          "value": [
+            {
+              "type": 0,
+              "value": "‏‮Delete ‬"
+            },
+            {
+              "type": 1,
+              "value": "count_text"
+            },
+            {
+              "type": 0,
+              "value": "‮ download‬"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+            {
+              "type": 0,
+              "value": "‏‮Delete ‬"
+            },
+            {
+              "type": 1,
+              "value": "count_text"
+            },
+            {
+              "type": 0,
+              "value": "‮ downloads‬"
             }
           ]
         }
@@ -215,6 +330,32 @@
     {
       "type": 0,
       "value": "‮.‬"
+    }
+  ],
+  "vote.label": [
+    {
+      "type": 6,
+      "value": "count",
+      "options": {
+        "one": {
+          "value": [
+            {
+              "type": 0,
+              "value": "‏‮VOTE‬"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+            {
+              "type": 0,
+              "value": "‏‮VOTES‬"
+            }
+          ]
+        }
+      },
+      "offset": 0,
+      "pluralType": "cardinal"
     }
   ],
   "web.greeting": [

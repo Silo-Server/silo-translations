@@ -2,15 +2,19 @@
 
 export type MessageKey =
   | "catalog.extra.behind_the_scenes"
+  | "catalog.parts"
   | "catalog.seasons"
   | "common.cancel"
   | "companion.limit"
+  | "downloads.deleteMixed"
+  | "downloads.selected"
   | "home.section.continueWatching"
   | "player.muted"
   | "player.progress"
   | "player.rate"
   | "player.volumeFull"
   | "signIn.body"
+  | "vote.label"
   | "web.greeting";
 
 export interface AppLocale {

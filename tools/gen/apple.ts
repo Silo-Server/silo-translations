@@ -2,7 +2,7 @@
 // per-app InfoPlist.xcstrings catalogs for permission prompts.
 // Pseudo-locales come from Xcode's own pseudolanguages, so none are generated here.
 import { INFO_PLIST_APPS, infoPlistApp, inScope, isInfoPlist, type SourceEntry } from "../lib/catalog.ts";
-import type { Analysis, MessageFormatElement } from "../lib/icu.ts";
+import { TYPE, type Analysis, type MessageFormatElement } from "../lib/icu.ts";
 import { languagesFor, positional, positions, render, type Files, type GenInput, type Language } from "./common.ts";
 
 const FILE = "iosApp/iosApp/Localizable.xcstrings";
@@ -24,12 +24,35 @@ function text(entry: SourceEntry, elements: MessageFormatElement[], formatted: b
   });
 }
 
-function localization(entry: SourceEntry, a: Analysis): Localization {
+/** Whether a plural form prints its count, as `#` or as the count argument itself. */
+function printsCount(elements: MessageFormatElement[], arg: string): boolean {
+  return elements.some((el) => el.type === TYPE.pound || (el.type === TYPE.argument && el.value === arg));
+}
+
+/**
+ * Whether a plural key needs Xcode's substitution layout in every language. Xcode rejects a
+ * whole-string plural variation whose forms don't reference the number ("Plural variation
+ * requires referencing the number in the string"): a `{count_text}` string printed instead of
+ * `#`, a label plural (`one {VOTE} other {VOTES}`), or a form such as "Delete download". It
+ * accepts the same forms as a substitution. English decides, so a translation never changes the
+ * generated symbol; those symbols label the count (`.key(count: n, text)`).
+ */
+function needsSubstitution(entry: SourceEntry, english: Analysis | undefined): boolean {
+  const shape = english?.shape;
+  if (shape?.kind !== "plural") return false;
+  const otherNumber = entry.placeholders.some((p) => p.name !== shape.arg && p.type !== "String");
+  return otherNumber || [...shape.forms.values()].some((elements) => !printsCount(elements, shape.arg));
+}
+
+function localization(entry: SourceEntry, a: Analysis, substitution: boolean): Localization {
   const shape = a.shape!;
   if (shape.kind === "simple") return unit(text(entry, shape.elements, entry.placeholders.length > 0, () => ""));
   const pos = positions(entry);
   const argNum = pos.get(shape.arg)!;
-  if (entry.placeholders.every((p) => p.name === shape.arg || p.type === "String")) {
+  // A translation whose forms all leave the number out (every count spelled out) can't be a
+  // whole-string variation either; its layout changes, but the symbol comes from English.
+  const anyPrints = [...shape.forms.values()].some((elements) => printsCount(elements, shape.arg));
+  if (!substitution && anyPrints) {
     // The count is the only number: the whole string varies by plural, with positional
     // arguments. Xcode compiles this to a stringsdict and selects on the count itself, also
     // when it is not the first argument (silo-apple spike S1).
@@ -37,9 +60,9 @@ function localization(entry: SourceEntry, a: Analysis): Localization {
     for (const [cat, elements] of shape.forms) plural[cat] = unit(text(entry, elements, true, () => `%${argNum}$lld`));
     return { variations: { plural } };
   }
-  // Another number besides the count: Xcode's substitution form names the selecting argument.
-  // %arg is the count inside the forms; the other arguments keep their positions. The generated
-  // symbol labels the count with the substitution's name (`.playerProgress(count: 3, 10)`).
+  // The substitution form: %#@count@ names the selecting argument; %arg is the count inside the
+  // forms, and the other arguments keep their positions. The generated symbol labels the count
+  // with the substitution's name (`.playerProgress(count: 3, 10)`).
   const plural: Record<string, Unit> = {};
   for (const [cat, elements] of shape.forms) plural[cat] = unit(text(entry, elements, true, () => "%arg"));
   return {
@@ -65,9 +88,10 @@ function catalog(input: GenInput, languages: Language[], entries: SourceEntry[],
   const strings: Record<string, unknown> = {};
   for (const entry of entries) {
     const localizations: Record<string, Localization> = {};
+    const substitution = needsSubstitution(entry, input.english.get(entry.key));
     for (const { locale, messages } of languages) {
       const a = messages?.get(entry.key);
-      if (a) localizations[locale.tag] = localization(entry, a);
+      if (a) localizations[locale.tag] = localization(entry, a, substitution);
     }
     strings[keyOf(entry)] = { comment: entry.description, extractionState: "manual", localizations };
   }

@@ -3,6 +3,11 @@
 <resources>
     <!-- Extra type label; the last segment is the server's extra type. -->
     <string name="catalog_extra_behind_the_scenes">Behind the Scenes</string>
+    <!-- Number of parts of a title. {count}: the number of parts. -->
+    <plurals name="catalog_parts">
+        <item quantity="one">%1$d part</item>
+        <item quantity="other">%1$d parts</item>
+    </plurals>
     <!-- Number of seasons on a series page. -->
     <plurals name="catalog_seasons">
         <item quantity="one">%1$d Season</item>
@@ -14,6 +19,16 @@
     <plurals name="companion_limit">
         <item quantity="one">%1$s can choose %2$d item</item>
         <item quantity="other">%1$s can choose %2$d items</item>
+    </plurals>
+    <!-- Button that deletes downloads; the one form names no number. {count}: the number of downloads. -->
+    <plurals name="downloads_deleteMixed">
+        <item quantity="one">Delete download</item>
+        <item quantity="other">Delete %1$d downloads</item>
+    </plurals>
+    <!-- Button for the selected downloads; the count is printed as text, never as #. {count}: the number selected; {count_text}: the same number as text. -->
+    <plurals name="downloads_selected">
+        <item quantity="one">Delete %2$s download</item>
+        <item quantity="other">Delete %2$s downloads</item>
     </plurals>
     <!-- Home row title - - items the profile started and has not finished. -->
     <string name="home_section_continueWatching">Continue Watching</string>
@@ -34,4 +49,9 @@
     <string name="signIn_body">Sign in to %1$s as %2$s.</string>
     <!-- Escaping test: leading @, quotes, typographic apostrophe, markup characters, repeated and trailing spaces. -->
     <string name="text_escapes">\@home \"quoted\" Tom’s 1 &lt; 2 &gt; 0 &amp; co. \u0020two spaces\u0020</string>
+    <!-- Label after a vote count; the number is shown beside it, not in it. {count}: the number of votes. -->
+    <plurals name="vote_label">
+        <item quantity="one">VOTE</item>
+        <item quantity="other">VOTES</item>
+    </plurals>
 </resources>

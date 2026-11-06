@@ -20,6 +20,15 @@
   "@catalog.extra.behind_the_scenes": {
     "description": "Extra type label; the last segment is the server's extra type."
   },
+  "catalog.parts": "{count, plural, one {# part} other {# parts}}",
+  "@catalog.parts": {
+    "description": "Number of parts of a title. {count}: the number of parts.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "catalog.seasons": "{count, plural, one {# Season} other {# Seasons}}",
   "@catalog.seasons": {
     "description": "Number of seasons on a series page.",
@@ -42,6 +51,27 @@
       },
       "count": {
         "type": "int"
+      }
+    }
+  },
+  "downloads.deleteMixed": "{count, plural, one {Delete download} other {Delete # downloads}}",
+  "@downloads.deleteMixed": {
+    "description": "Button that deletes downloads; the one form names no number. {count}: the number of downloads.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "downloads.selected": "{count, plural, one {Delete {count_text} download} other {Delete {count_text} downloads}}",
+  "@downloads.selected": {
+    "description": "Button for the selected downloads; the count is printed as text, never as #. {count}: the number selected; {count_text}: the same number as text.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
       }
     }
   },
@@ -107,6 +137,15 @@
       "apple",
       "roku"
     ]
+  },
+  "vote.label": "{count, plural, one {VOTE} other {VOTES}}",
+  "@vote.label": {
+    "description": "Label after a vote count; the number is shown beside it, not in it. {count}: the number of votes.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
   },
   "web.greeting": "{gender, select, female {She} male {He} other {They}} invited you to <b>{party}</b>",
   "@web.greeting": {

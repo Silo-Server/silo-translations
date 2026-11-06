@@ -13,6 +13,52 @@
         }
       }
     },
+    "catalog.parts" : {
+      "comment" : "Number of parts of a title. {count}: the number of parts.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$lld part"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$lld parts"
+                }
+              }
+            }
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%#@count@"
+          },
+          "substitutions" : {
+            "count" : {
+              "argNum" : 1,
+              "formatSpecifier" : "lld",
+              "variations" : {
+                "plural" : {
+                  "other" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "いくつかのパート"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "catalog.seasons" : {
       "comment" : "Number of seasons on a series page.",
       "extractionState" : "manual",
@@ -205,6 +251,108 @@
         }
       }
     },
+    "downloads.deleteMixed" : {
+      "comment" : "Button that deletes downloads; the one form names no number. {count}: the number of downloads.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%#@count@"
+          },
+          "substitutions" : {
+            "count" : {
+              "argNum" : 1,
+              "formatSpecifier" : "lld",
+              "variations" : {
+                "plural" : {
+                  "one" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "Delete download"
+                    }
+                  },
+                  "other" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "Delete %arg downloads"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "downloads.selected" : {
+      "comment" : "Button for the selected downloads; the count is printed as text, never as #. {count}: the number selected; {count_text}: the same number as text.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%#@count@"
+          },
+          "substitutions" : {
+            "count" : {
+              "argNum" : 1,
+              "formatSpecifier" : "lld",
+              "variations" : {
+                "plural" : {
+                  "one" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "Delete %2$@ download"
+                    }
+                  },
+                  "other" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "Delete %2$@ downloads"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%#@count@"
+          },
+          "substitutions" : {
+            "count" : {
+              "argNum" : 1,
+              "formatSpecifier" : "lld",
+              "variations" : {
+                "plural" : {
+                  "many" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "Eliminar %2$@ de descargas"
+                    }
+                  },
+                  "one" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "Eliminar %2$@ descarga"
+                    }
+                  },
+                  "other" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "Eliminar %2$@ descargas"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "home.section.continueWatching" : {
       "comment" : "Home row title -- items the profile started and has not finished.",
       "extractionState" : "manual",
@@ -365,6 +513,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "@home \"quoted\" Tom’s 1 < 2 > 0 & co.  two spaces "
+          }
+        }
+      }
+    },
+    "vote.label" : {
+      "comment" : "Label after a vote count; the number is shown beside it, not in it. {count}: the number of votes.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%#@count@"
+          },
+          "substitutions" : {
+            "count" : {
+              "argNum" : 1,
+              "formatSpecifier" : "lld",
+              "variations" : {
+                "plural" : {
+                  "one" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "VOTE"
+                    }
+                  },
+                  "other" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "VOTES"
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
