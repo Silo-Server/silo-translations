@@ -1,7 +1,6 @@
 // Pseudo-locales built from English: en-XA (accented, about 40% longer, wrapped in ⟦ ⟧) and
 // ar-XB (each text run forced right-to-left). Placeholders are kept as they are.
-import { printAST } from "@formatjs/icu-messageformat-parser/printer.js";
-import { analyze, TYPE, type Analysis, type MessageFormatElement } from "../lib/icu.ts";
+import { analyzeAst, TYPE, type Analysis, type MessageFormatElement } from "../lib/icu.ts";
 import { isShared, type SourceEntry } from "../lib/catalog.ts";
 import type { PseudoLocale } from "../lib/locales.ts";
 
@@ -22,6 +21,22 @@ function mapLiterals(elements: MessageFormatElement[], f: (s: string) => string)
     if (el.type === TYPE.tag) return { ...el, children: mapLiterals(el.children, f) };
     return el;
   });
+}
+
+/** Joins adjacent literal elements, as the parser would, so the output matches a parsed message. */
+function mergeLiterals(elements: MessageFormatElement[]): MessageFormatElement[] {
+  const out: MessageFormatElement[] = [];
+  for (const el of elements) {
+    let next = el;
+    if (el.type === TYPE.plural || el.type === TYPE.select) {
+      const options = Object.fromEntries(Object.entries(el.options).map(([k, o]) => [k, { ...o, value: mergeLiterals(o.value) }]));
+      next = { ...el, options } as MessageFormatElement;
+    } else if (el.type === TYPE.tag) next = { ...el, children: mergeLiterals(el.children) };
+    const last = out[out.length - 1];
+    if (next.type === TYPE.literal && last?.type === TYPE.literal) out[out.length - 1] = { ...last, value: last.value + next.value };
+    else out.push(next);
+  }
+  return out;
 }
 
 function textLength(elements: MessageFormatElement[]): number {
@@ -62,7 +77,7 @@ export function pseudoMessages(
     } else {
       ast = form(en.ast);
     }
-    out.set(entry.key, analyze(printAST(ast), isShared(entry)));
+    out.set(entry.key, analyzeAst(mergeLiterals(ast), isShared(entry)));
   }
   return out;
 }

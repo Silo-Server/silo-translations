@@ -30,23 +30,34 @@ export function parseMessage(message: string): { ast?: MessageFormatElement[]; e
   }
 }
 
-const APOSTROPHE_HAZARD = /'(?=[{}#<'])|(?<=[{}])'/;
+// ICU's rule: an ASCII apostrophe is literal unless the next character is one it quotes
+// ({ } # | or another '). FormatJS also quotes < for rich-text tags. So "{n}'s" is fine, and
+// "'{" or "''" is an escape the author almost never means.
+const APOSTROPHE_HAZARD = /'(?=[{}#|'<])/;
 
 /**
  * Parses a message and checks it against the shared ICU subset (`shared`), or the web-only
  * rules. Problems are human-readable and empty when the message is fine.
  */
 export function analyze(message: string, shared: boolean): Analysis {
-  const result: Analysis = { ast: [], args: new Set(), tags: new Set(), plurals: [], problems: [] };
-  if (APOSTROPHE_HAZARD.test(message)) {
-    result.problems.push("ASCII apostrophe next to a brace or ICU syntax; use ’ (U+2019)");
-  }
   const parsed = parseMessage(message);
-  if (!parsed.ast) {
-    result.problems.push(parsed.error!);
-    return result;
+  const result = parsed.ast ? analyzeAst(parsed.ast, shared) : emptyAnalysis([parsed.error!]);
+  // A check on the text people write; ASTs built by the tools never carry it.
+  if (APOSTROPHE_HAZARD.test(message)) {
+    result.problems.unshift("ASCII apostrophe before { } # | < or ' starts an ICU escape; use ’ (U+2019)");
+    result.shape = undefined;
   }
-  result.ast = parsed.ast;
+  return result;
+}
+
+function emptyAnalysis(problems: string[]): Analysis {
+  return { ast: [], args: new Set(), tags: new Set(), plurals: [], problems };
+}
+
+/** The same checks on an AST (used for generated messages such as pseudo-locales). */
+export function analyzeAst(ast: MessageFormatElement[], shared: boolean): Analysis {
+  const result = emptyAnalysis([]);
+  result.ast = ast;
 
   const walk = (elements: MessageFormatElement[], inPlural: boolean) => {
     for (const el of elements) {
@@ -91,10 +102,9 @@ export function analyze(message: string, shared: boolean): Analysis {
       }
     }
   };
-  walk(parsed.ast, false);
+  walk(ast, false);
 
   if (shared && result.problems.length === 0) {
-    const ast = parsed.ast;
     const plural = ast.find((el) => el.type === TYPE.plural);
     if (!plural) {
       result.shape = { kind: "simple", elements: ast };
