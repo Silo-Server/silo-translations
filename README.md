@@ -62,7 +62,7 @@ shipped languages get files, so clients read the list instead of hard-coding one
 | Platform | Shipped list |
 |---|---|
 | web | `LOCALES` in `keys.ts` (entries with `pseudo: false`) |
-| apple | the String Catalog's localizations, which become the bundle's (`Bundle.main.localizations`) |
+| apple | the String Catalog's localizations, which become the bundle's (`Bundle.main.localizations`). On Apple only app strings count: a language with nothing but translated `apple.infoPlist.*` prompts doesn't ship, and its prompts are left out too |
 | android | the `values-<qualifier>` directories (so AGP's generated `localeConfig`), and per app `silo-locales.properties` |
 | roku | `locale/languages.json` |
 
