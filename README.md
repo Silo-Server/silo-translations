@@ -97,7 +97,8 @@ verifies the checksum and unpacks into a temporary directory before touching the
 rejects links and paths outside the tree, and writes `.silo-translations` last. Each tree carries
 `.silo-translations-files`, the list of generated paths; after installing, sync removes the files
 the previous list named and the new one doesn't (a language that stopped shipping), and nothing
-else.
+else. A client installed before lists existed is pruned by the platform's output paths in the
+table above. Sync refuses any listed path that passes through a symlink in the client.
 
 ## Keys
 

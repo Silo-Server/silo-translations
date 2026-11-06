@@ -3,7 +3,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { execFileSync, spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
-import { existsSync, mkdirSync, mkdtempSync, readFileSync, symlinkSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { REPO } from "./helpers.ts";
@@ -136,4 +136,50 @@ test("sync: an unsafe path in a file list stops before anything changes", () => 
   assert.notEqual(r.status, 0);
   assert.match(r.stderr, /unsafe paths/);
   assert.ok(!existsSync(join(root, "a.txt")));
+});
+
+test("sync: never writes or removes through a symlinked directory", () => {
+  const v1 = release("1", { "locale/en_US/strings.json": "{}\n", "locale/de/strings.json": "{}\n" });
+  const v2 = release("2", { "locale/en_US/strings.json": "{}\n" });
+  const root = client();
+  assert.equal(sync(root, v1.base, "--platform", "roku", "--version", "1").status, 0);
+  const outside = mkdtempSync(join(tmpdir(), "silo-outside-"));
+  writeFileSync(join(outside, "strings.json"), "not yours");
+  rmSync(join(root, "locale/de"), { recursive: true });
+  symlinkSync(outside, join(root, "locale/de"));
+  const r = sync(root, v2.base, "--version", "2");
+  assert.notEqual(r.status, 0);
+  assert.match(r.stderr, /symlink/);
+  assert.equal(readFileSync(join(outside, "strings.json"), "utf8"), "not yours");
+});
+
+test("sync: a failed copy keeps the old list, so a retry still removes dropped files", () => {
+  const v1 = release("1", { "locale/en_US/strings.json": "{}\n", "locale/de/strings.json": "{}\n", "source/util/pluralRules.bs": "' 1\n" });
+  const v2 = release("2", { "locale/en_US/strings.json": "{}\n", "source/util/pluralRules.bs": "' 2\n" });
+  const root = client();
+  assert.equal(sync(root, v1.base, "--platform", "roku", "--version", "1").status, 0);
+  // A directory where the release has a file makes cp fail part-way.
+  rmSync(join(root, "source/util/pluralRules.bs"));
+  mkdirSync(join(root, "source/util/pluralRules.bs"));
+  assert.notEqual(sync(root, v2.base, "--version", "2").status, 0);
+  assert.match(readFileSync(join(root, ".silo-translations-files"), "utf8"), /locale\/de\/strings\.json/);
+  rmSync(join(root, "source/util/pluralRules.bs"), { recursive: true });
+  const r = sync(root, v2.base, "--version", "2");
+  assert.equal(r.status, 0, r.stderr);
+  assert.ok(!existsSync(join(root, "locale/de/strings.json")));
+});
+
+test("sync: an install without a file list is pruned by the platform's output paths", () => {
+  const root = client();
+  for (const p of ["locale/en_US/strings.json", "locale/de/strings.json", "i18n-charsets/de.txt", "locale/de/notes.txt"]) {
+    mkdirSync(join(root, p, ".."), { recursive: true });
+    writeFileSync(join(root, p), "old");
+  }
+  const v = release("1", { "locale/en_US/strings.json": "{}\n" });
+  const r = sync(root, v.base, "--platform", "roku", "--version", "1");
+  assert.equal(r.status, 0, r.stderr);
+  assert.ok(!existsSync(join(root, "locale/de/strings.json")));
+  assert.ok(!existsSync(join(root, "i18n-charsets/de.txt")));
+  assert.ok(existsSync(join(root, "locale/de/notes.txt")));
+  assert.equal(readFileSync(join(root, "locale/en_US/strings.json"), "utf8"), "{}\n");
 });
