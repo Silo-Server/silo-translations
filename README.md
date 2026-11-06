@@ -171,7 +171,7 @@ another `'`, where ICU (and FormatJS, for `<`) reads it as the start of an escap
 | String | `{name}` | `%1$@` | `%1$s` | `{name}` |
 | int | `{name}` | `%1$lld` (`Int`) | `%1$d` | `{name}` |
 | double | `{name}` | `%1$lf` (`Double`) | `%1$f` | `{name}` |
-| plural | ICU | `variations.plural` with positional arguments; when another number is present, `%#@count@` with a substitution and `%arg` (Xcode then labels that argument: `.playerProgress(count: 3, 10)`) | `<plurals>`, `#` as `%N$d` | `key.<category>` entries, `#` as `{count}` |
+| plural | ICU | `variations.plural` with positional arguments; `%#@count@` with a substitution and `%arg` when another number is present or an English form doesn't print the count (`{count_text}`, `one {VOTE}`, "Delete download"). English decides for every language; a translation with no number in any form also gets a substitution. Xcode labels a substitution's count: `.playerProgress(count: 3, 10)` | `<plurals>`, `#` as `%N$d` | `key.<category>` entries, `#` as `{count}` |
 | literal `%` | `%` | `%%` when the message has arguments | `%%` when it has arguments, else `formatted="false"` | `%` |
 
 Roku plural contract: a translated plural always carries every category of its language, so
