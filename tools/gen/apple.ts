@@ -98,13 +98,6 @@ export function xcodeJson(value: unknown, indent = ""): string {
 }
 
 /**
- * With `fallback`, every shipped language gets every key: where a language has no valid
- * translation, it gets the English value marked `needs_review`. Apple shows the raw key name for an
- * app string missing from the app language's table instead of falling back to English, which every
- * other platform does (D71). Info.plist strings don't need it: the system uses the plist's own
- * (English) value for a language without one.
- */
-/**
  * English, re-keyed to a target language's plural categories. Foundation selects a fallback's
  * form by the app language's rules, so English's `one`/`other` would give Chinese "1 parts" and
  * French "Delete download" for 0. Each target category takes the English form English itself uses
@@ -120,13 +113,20 @@ export function englishFor(english: Analysis, targetCldr: string, sourceCldr: st
   for (const cat of categoriesFor(targetCldr)) {
     const numbers = [...Array.from({ length: 1001 }, (_, n) => n), ...integerSamples(targetCldr, cat)];
     const used = new Set(numbers.filter((n) => categoryOf(targetCldr, n) === cat).map((n) => categoryOf(sourceCldr, n) as string));
-    const choices = ["other", ...[...used].filter((c) => c !== "other")].filter((c) => used.has(c));
-    const chosen = used.size === 1 ? [...used][0]! : (choices.find((c) => printsCount(form(c), shape.arg)) ?? "other");
+    let chosen = [...used][0]!;
+    if (used.size > 1) chosen = ["other", ...used].find((c) => used.has(c) && printsCount(form(c), shape.arg)) ?? "other";
     forms.set(cat, form(chosen));
   }
   return { ...english, shape: { ...shape, forms } };
 }
 
+/**
+ * With `fallback`, every shipped language gets every key: where a language has no valid
+ * translation, it gets the English value marked `needs_review`. Apple shows the raw key name for an
+ * app string missing from the app language's table instead of falling back to English, which every
+ * other platform does (D71). Info.plist strings don't need it: the system uses the plist's own
+ * (English) value for a language without one.
+ */
 function catalog(input: GenInput, languages: Language[], entries: SourceEntry[], keyOf: (e: SourceEntry) => string, fallback: boolean): string {
   const strings: Record<string, unknown> = {};
   for (const entry of entries) {
