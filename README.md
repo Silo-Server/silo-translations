@@ -78,7 +78,8 @@ with `localeFilters` from `silo-locales.properties`. Nothing uses that today: `a
 Android apps, the TV app with its current left-to-right layout. (The test fixture holds `ar` back
 on the TV app to keep the capability covered.)
 
-Pseudo-locales (`en-XA` accented and about 40% longer inside `⟦ ⟧`, `ar-XB` right-to-left) are
+Pseudo-locales (`en-XA` accented and about 40% longer inside `⟦ ⟧`, or `« »` on Roku, whose font
+has no `⟦ ⟧`; `ar-XB` right-to-left) are
 generated for web and Roku only, for debug builds. Android uses AAPT's own
 (`pseudoLocalesEnabled`), and Apple uses Xcode's pseudolanguages.
 

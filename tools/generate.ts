@@ -11,7 +11,7 @@ import { generateWeb } from "./gen/web.ts";
 import { generateApple } from "./gen/apple.ts";
 import { generateAndroid } from "./gen/android.ts";
 import { generateRoku } from "./gen/roku.ts";
-import { pseudoMessages } from "./gen/pseudo.ts";
+import { pseudoMessages, ROKU_BRACKETS } from "./gen/pseudo.ts";
 
 export const GENERATORS = { web: generateWeb, apple: generateApple, android: generateAndroid, roku: generateRoku };
 const MARKER = ".silo-translations-out";
@@ -31,6 +31,7 @@ export function generateAll(root: string, version: string): Map<string, Files> {
     english: checked.english,
     translations: checked.valid,
     pseudo: new Map(checked.locales.pseudo.map((l) => [l.tag, pseudoMessages(l, entries, checked.english)])),
+    rokuPseudo: new Map(checked.locales.pseudo.map((l) => [l.tag, pseudoMessages(l, entries, checked.english, ROKU_BRACKETS)])),
   };
   return new Map(Object.entries(GENERATORS).map(([platform, gen]) => [platform, withFileList(gen(input))]));
 }

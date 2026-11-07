@@ -76,7 +76,7 @@ export function generateRoku(input: GenInput): Files {
   const files: Files = new Map();
   const entries = input.entries.filter((e) => inScope(e, "roku"));
   const english = entries.map((e) => input.english.get(e.key)!);
-  const shipped = languagesFor(input, "roku", true);
+  const shipped = languagesFor({ ...input, pseudo: input.rokuPseudo }, "roku", true);
   for (const { locale, messages } of shipped) {
     const out: Record<string, string> = {};
     const used: Analysis[] = [];

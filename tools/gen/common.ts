@@ -11,8 +11,10 @@ export interface GenInput {
   english: Map<string, Analysis>;
   /** Valid translations: tag -> key -> analysis. */
   translations: Map<string, Map<string, Analysis>>;
-  /** Pseudo-locale messages: tag -> key -> analysis (web and Roku only). */
+  /** Pseudo-locale messages: tag -> key -> analysis (web). */
   pseudo: Map<string, Map<string, Analysis>>;
+  /** The same for Roku, whose en-XA uses brackets its font can draw. */
+  rokuPseudo: Map<string, Map<string, Analysis>>;
 }
 
 export interface Language {

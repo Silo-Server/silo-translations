@@ -1,5 +1,6 @@
-// Pseudo-locales built from English: en-XA (accented, about 40% longer, wrapped in ⟦ ⟧) and
-// ar-XB (each text run forced right-to-left). Placeholders are kept as they are.
+// Pseudo-locales built from English: en-XA (accented, about 40% longer, wrapped in brackets that
+// mark where each string starts and ends) and ar-XB (each text run forced right-to-left).
+// Placeholders are kept as they are.
 import { analyzeAst, TYPE, type Analysis, type MessageFormatElement } from "../lib/icu.ts";
 import { isShared, type SourceEntry } from "../lib/catalog.ts";
 import type { PseudoLocale } from "../lib/locales.ts";
@@ -47,10 +48,18 @@ function lit(value: string): MessageFormatElement {
   return { type: TYPE.literal, value };
 }
 
-function accentedForm(elements: MessageFormatElement[]): MessageFormatElement[] {
+/**
+ * en-XA's brackets. Web uses ⟦ ⟧, which English never contains. Roku's Inter font has no glyph for
+ * them (QR saw NO GLYPH boxes on the device), so Roku uses « », which Inter has.
+ */
+export type Brackets = readonly [open: string, close: string];
+export const BRACKETS: Brackets = ["⟦", "⟧"];
+export const ROKU_BRACKETS: Brackets = ["«", "»"];
+
+function accentedForm(elements: MessageFormatElement[], [open, close]: Brackets): MessageFormatElement[] {
   const body = mapLiterals(elements, (s) => [...s].map((c) => ACCENTS[c] ?? c).join(""));
   const pad = "~".repeat(Math.ceil(textLength(elements) * 0.4));
-  return [lit("⟦"), ...body, lit(`${pad}⟧`)];
+  return [lit(open), ...body, lit(`${pad}${close}`)];
 }
 
 function bidiForm(elements: MessageFormatElement[]): MessageFormatElement[] {
@@ -62,8 +71,9 @@ export function pseudoMessages(
   locale: PseudoLocale,
   entries: SourceEntry[],
   english: Map<string, Analysis>,
+  brackets: Brackets = BRACKETS,
 ): Map<string, Analysis> {
-  const form = locale.kind === "accented" ? accentedForm : bidiForm;
+  const form = (elements: MessageFormatElement[]) => (locale.kind === "accented" ? accentedForm(elements, brackets) : bidiForm(elements));
   const out = new Map<string, Analysis>();
   for (const entry of entries) {
     const en = english.get(entry.key);
