@@ -127,6 +127,13 @@ const cases: Case[] = [
     warnings: ['glossary: "Collection" should be "colección" or "colecciones"'],
   },
   {
+    name: "glossary terms match their English plural",
+    en: entry("a.b", "Collections"),
+    tr: { es: { "a.b": "Grupos" } },
+    glossary: "term,note,es\nCollection,Group of titles,colección|colecciones\n",
+    warnings: ['glossary: "Collection" should be'],
+  },
+  {
     name: "glossary with a byte-order mark",
     en: entry("a.b", "Continue Watching"),
     tr: { de: { "a.b": "Weiterschauen" } },

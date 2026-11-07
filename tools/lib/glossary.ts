@@ -73,7 +73,7 @@ function escapeRegExp(s: string): string {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-/** Glossary terms that occur in the English text as whole words, case-insensitively. */
+/** Glossary terms that occur in the English text as whole words (or their plural), case-insensitively. */
 export function termsIn(glossary: GlossaryTerm[], english: string): GlossaryTerm[] {
-  return glossary.filter((g) => new RegExp(`(^|[^\\p{L}\\p{N}])${escapeRegExp(g.term)}($|[^\\p{L}\\p{N}])`, "iu").test(english));
+  return glossary.filter((g) => new RegExp(`(^|[^\\p{L}\\p{N}])${escapeRegExp(g.term)}(?:s|es)?($|[^\\p{L}\\p{N}])`, "iu").test(english));
 }
