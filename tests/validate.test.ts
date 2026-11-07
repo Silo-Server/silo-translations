@@ -180,6 +180,19 @@ const cases: Case[] = [
     glossary: "term,note,de,es\nContinue Watching,Home row,Weiterschauen,Seguir viendo\n",
     warnings: ['glossary: "Continue Watching" should be "Weiterschauen"'],
   },
+  {
+    name: "glossary ignores placeholder and tag names",
+    en: entry("a.b", "Connect to {server} as <row>{account}</row>", { placeholders: { server: { type: "String" }, account: { type: "String" } }, description: "{server}: name; {account}: user.", "x-platforms": ["web"] }),
+    tr: { es: { "a.b": "Conectar a {server} como <row>{account}</row>" } },
+    glossary: "term,note,es\nServer,,servidor\nRow,,fila\nAccount,,cuenta\n",
+  },
+  {
+    name: "glossary still checks prose next to a placeholder",
+    en: entry("a.b", "Server {server} is offline", { placeholders: { server: { type: "String" } }, description: "{server}: name." }),
+    tr: { es: { "a.b": "El equipo {server} está sin conexión" } },
+    glossary: "term,note,es\nServer,,servidor\n",
+    warnings: ['glossary: "Server" should be "servidor"'],
+  },
 ];
 
 for (const c of cases) {

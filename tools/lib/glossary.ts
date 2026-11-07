@@ -73,7 +73,16 @@ function escapeRegExp(s: string): string {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-/** Glossary terms that occur in the English text as whole words (or their plural), case-insensitively. */
+/** The English text without placeholder and tag names, which are code rather than prose. */
+function prose(english: string): string {
+  return english.replace(/\{\s*[A-Za-z_][\w]*/g, "{").replace(/<\/?[A-Za-z][\w-]*/g, "<");
+}
+
+/**
+ * Glossary terms that occur in the English prose as whole words (or their plural),
+ * case-insensitively. Placeholder and tag names don't count: "{server}" is not the term "Server".
+ */
 export function termsIn(glossary: GlossaryTerm[], english: string): GlossaryTerm[] {
-  return glossary.filter((g) => new RegExp(`(^|[^\\p{L}\\p{N}])${escapeRegExp(g.term)}(?:s|es)?($|[^\\p{L}\\p{N}])`, "iu").test(english));
+  const text = prose(english);
+  return glossary.filter((g) => new RegExp(`(^|[^\\p{L}\\p{N}])${escapeRegExp(g.term)}(?:s|es)?($|[^\\p{L}\\p{N}])`, "iu").test(text));
 }
