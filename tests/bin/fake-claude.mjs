@@ -16,6 +16,7 @@ const translations = items.map((it) => {
   if (it.key.includes("flaky") && !it.problemsWithLastAttempt) message = "ES sin marcador";
   if (it.key.includes("broken")) message = "ES {roto";
   if (it.key.includes("empty")) message = "";
+  if (it.key.includes("crash") && process.env.FAKE_CLAUDE_CRASH) { process.stderr.write("simulated failure\n"); process.exit(1); }
   return { key: it.key, message };
 });
 process.stdout.write(JSON.stringify({ type: "result", is_error: false, result: "", structured_output: { translations } }));

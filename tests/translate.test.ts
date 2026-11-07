@@ -5,7 +5,7 @@ import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { fingerprint, select, valueHash, type State } from "../tools/translate.ts";
+import { fingerprint, makeBatches, select, valueHash, type State, type Work } from "../tools/translate.ts";
 import type { SourceEntry } from "../tools/lib/catalog.ts";
 import { canonicalText } from "../tools/lib/format.ts";
 import { entry, makeRepo, REPO, writeArb } from "./helpers.ts";
@@ -58,9 +58,13 @@ test("translate: selection and human-edit guard", () => {
 });
 
 function run(root: string, ...args: string[]) {
+  return runEnv(root, {}, ...args);
+}
+
+function runEnv(root: string, env: Record<string, string>, ...args: string[]) {
   return execFileSync(process.execPath, [join(REPO, "tools/translate.ts"), "--root", root, ...args], {
     encoding: "utf8",
-    env: { ...process.env, SILO_CLAUDE_BIN: join(REPO, "tests/bin/fake-claude.mjs"), FAKE_CLAUDE_LOG: join(root, "prompts.log") },
+    env: { ...process.env, SILO_CLAUDE_BIN: join(REPO, "tests/bin/fake-claude.mjs"), FAKE_CLAUDE_LOG: join(root, "prompts.log"), SILO_TRANSLATE_RETRY_MS: "0", ...env },
     stdio: ["ignore", "pipe", "pipe"],
   });
 }
@@ -178,4 +182,48 @@ test("translate: an empty answer keeps the existing value and is reported", () =
   run(root, "--locale", "es");
   assert.equal(JSON.parse(readFileSync(join(root, "catalog/es.arb"), "utf8"))["common.empty"], "Abbrechen");
   assert.match(readFileSync(join(root, "out/translate-pr-body.md"), "utf8"), /es `common.empty`: no translation returned/);
+});
+
+test("translate: batches keep namespaces together", () => {
+  const w = (key: string): Work => ({ entry: e(key, "x"), reason: "missing" });
+  const keys = [...Array.from({ length: 3 }, (_, i) => `a.k${i}`), ...Array.from({ length: 4 }, (_, i) => `b.k${i}`), ...Array.from({ length: 5 }, (_, i) => `web.admin.x.k${i}`), "web.admin.y.k0"];
+  const batches = makeBatches(keys.reverse().map(w), 4).map((b) => b.map((x) => x.entry.key));
+  assert.deepEqual(batches, [
+    ["a.k0", "a.k1", "a.k2"],
+    ["b.k0", "b.k1", "b.k2", "b.k3"],
+    ["web.admin.x.k0", "web.admin.x.k1", "web.admin.x.k2", "web.admin.x.k3"],
+    ["web.admin.x.k4"],
+    ["web.admin.y.k0"],
+  ]);
+});
+
+test("translate: each batch is written as it finishes, so a failed run resumes", () => {
+  const cat = catalog();
+  const root = makeRepo({ en: { ...cat.en, ...entry("zzz.crash", "Crash me") }, es: cat.es });
+  runEnv(root, { FAKE_CLAUDE_CRASH: "1", SILO_TRANSLATE_BATCH_SIZE: "4" }, "--locale", "es", "--jobs", "2");
+  const es = JSON.parse(readFileSync(join(root, "catalog/es.arb"), "utf8"));
+  assert.equal(es["common.cancel"], "ES Cancel");
+  assert.equal(es["zzz.crash"], undefined);
+  assert.match(readFileSync(join(root, "out/translate-pr-body.md"), "utf8"), /`zzz.crash`: call failed/);
+  const log = readFileSync(join(root, "out/translate-es.log.jsonl"), "utf8").trim().split("\n").map((l) => JSON.parse(l));
+  assert.ok(log.some((b) => b.failed["zzz.crash"]));
+  assert.ok(log.some((b) => b.firstAttempt["common.flaky"]), "the first attempt's placeholder loss is logged");
+  // Rerun without the failure: only the missing key is sent.
+  writeFileSync(join(root, "prompts.log"), "");
+  run(root, "--locale", "es");
+  assert.equal(JSON.parse(readFileSync(join(root, "catalog/es.arb"), "utf8"))["zzz.crash"], "ES Crash me");
+  const resent = readFileSync(join(root, "prompts.log"), "utf8").split("\n=====\n").filter(Boolean)
+    .flatMap((p) => (JSON.parse(p.slice(p.indexOf("Strings to translate:") + 21)) as { key: string }[]).map((i) => i.key));
+  assert.ok(resent.includes("zzz.crash") && !resent.includes("common.cancel"), JSON.stringify(resent));
+});
+
+test("translate: --retranslate resends Opus values under a prefix and keeps a person's", () => {
+  const root = makeRepo(catalog());
+  run(root, "--locale", "es");
+  writeFileSync(join(root, "prompts.log"), "");
+  run(root, "--locale", "es", "--retranslate", "common.,catalog.");
+  const sent = readFileSync(join(root, "prompts.log"), "utf8").split("\n=====\n").filter(Boolean)
+    .flatMap((p) => (JSON.parse(p.slice(p.indexOf("Strings to translate:") + 21)) as { key: string }[]).map((i) => i.key));
+  assert.ok(sent.includes("common.cancel") && sent.includes("catalog.seasons"));
+  assert.ok(!sent.includes("common.kept"), "the person's value is not resent");
 });
