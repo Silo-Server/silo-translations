@@ -193,6 +193,19 @@ const cases: Case[] = [
     glossary: "term,note,es\nServer,,servidor\n",
     warnings: ['glossary: "Server" should be "servidor"'],
   },
+  {
+    name: "glossary acronym matches only in capitals",
+    en: entry("a.b", "Pin it, then enter the PIN"),
+    tr: { es: { "a.b": "Fíjalo y luego escribe el código" } },
+    glossary: "term,note,es\nPIN,,PIN\n",
+    warnings: ['glossary: "PIN" should be "PIN"'],
+  },
+  {
+    name: "glossary acronym ignores the lower-case word",
+    en: entry("a.b", "Pin it to the sidebar"),
+    tr: { es: { "a.b": "Fíjalo en la barra lateral" } },
+    glossary: "term,note,es\nPIN,,PIN\n",
+  },
 ];
 
 for (const c of cases) {

@@ -80,9 +80,14 @@ function prose(english: string): string {
 
 /**
  * Glossary terms that occur in the English prose as whole words (or their plural),
- * case-insensitively. Placeholder and tag names don't count: "{server}" is not the term "Server".
+ * case-insensitively. An all-caps term is an acronym and matches only in capitals ("PIN", not
+ * "pin it"). Placeholder and tag names don't count: "{server}" is not the term "Server".
  */
 export function termsIn(glossary: GlossaryTerm[], english: string): GlossaryTerm[] {
   const text = prose(english);
-  return glossary.filter((g) => new RegExp(`(^|[^\\p{L}\\p{N}])${escapeRegExp(g.term)}(?:s|es)?($|[^\\p{L}\\p{N}])`, "iu").test(text));
+  return glossary.filter((g) => {
+    const acronym = /\p{Lu}/u.test(g.term) && g.term === g.term.toUpperCase();
+    const pattern = `(^|[^\\p{L}\\p{N}])${escapeRegExp(g.term)}(?:s|es)?($|[^\\p{L}\\p{N}])`;
+    return new RegExp(pattern, acronym ? "u" : "iu").test(text);
+  });
 }
