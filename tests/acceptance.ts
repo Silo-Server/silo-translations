@@ -4,7 +4,8 @@
 //   source message formatted directly, and rich-text tags reach their handlers.
 // - android: aapt2 compiles and links the resources, and the values AAPT decoded match the
 //   expected text (escaping, spaces, placeholders) for every key and language.
-// - apple: the String Catalog is JSON with the structure Xcode reads (no Xcode on Linux).
+// - apple: the String Catalog is JSON with the structure Xcode reads (no Xcode on Linux), and
+//   every shipped language has every key, English where it has no translation (D71).
 // Roku's bsc compile and run is in plural.test.ts.
 // aapt2 is skipped when the Android SDK is missing, except in CI.
 import { test } from "node:test";
@@ -50,14 +51,16 @@ export function acceptance(root: string, name: string) {
     const xc = JSON.parse(platforms.get("apple")!.get("iosApp/iosApp/Localizable.xcstrings")!);
     assert.equal(xc.sourceLanguage, "en");
     assert.equal(xc.version, "1.0");
-    const units = (l: Record<string, unknown>): string[] => {
+    // Every string unit has one state: "translated" for a valid translation (or English itself),
+    // "needs_review" for the English value written where a language has none (D71).
+    const units = (l: Record<string, unknown>, state?: string): string[] => {
       const out: string[] = [];
       const walk = (v: unknown) => {
         if (v && typeof v === "object") {
           const o = v as Record<string, unknown>;
           if (o.stringUnit) {
             const u = o.stringUnit as Record<string, unknown>;
-            assert.equal(u.state, "translated");
+            if (state) assert.equal(u.state, state);
             assert.equal(typeof u.value, "string");
             out.push(u.value as string);
           }
@@ -67,10 +70,21 @@ export function acceptance(root: string, name: string) {
       walk(l);
       return out;
     };
-    for (const [key, s] of Object.entries(xc.strings as Record<string, Record<string, unknown>>)) {
+    const strings = Object.entries(xc.strings as Record<string, Record<string, unknown>>);
+    const shipped = new Set(strings.flatMap(([, s]) => Object.keys(s.localizations as object)));
+    for (const [key, s] of strings) {
       assert.equal(s.extractionState, "manual", key);
       assert.equal(typeof s.comment, "string", key);
-      for (const [tag, loc] of Object.entries(s.localizations as Record<string, Record<string, unknown>>)) {
+      const locs = s.localizations as Record<string, Record<string, unknown>>;
+      // Apple shows the raw key for a key missing from the app language, so none may be missing.
+      assert.deepEqual(Object.keys(locs).sort(), [...shipped].sort(), `${key}: every shipped language`);
+      const source = checked.locales.source.tag;
+      for (const [tag, loc] of Object.entries(locs)) {
+        const translated = tag === source || checked.valid.get(tag)?.has(key) === true;
+        units(loc, translated ? "translated" : "needs_review");
+        if (!translated) assert.deepEqual(units(loc), units(locs[source]!), `${key} ${tag}: English fallback`);
+      }
+      for (const [tag, loc] of Object.entries(locs)) {
         const keys = Object.keys(loc).sort().join(",");
         assert.ok(["stringUnit", "variations", "stringUnit,substitutions"].includes(keys), `${key} ${tag}: ${keys}`);
         if (loc.substitutions) {

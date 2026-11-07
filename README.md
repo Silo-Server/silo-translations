@@ -53,7 +53,10 @@ client's repository root, and it is exactly what the platform's release tarball 
 `<dir>/.silo-translations-out` holds the version the files were generated as: the release
 version, or `local-<commit>` (with `-dirty` when the catalog or tools have uncommitted changes).
 A language file holds only the keys translated in that language; clients fall back to
-English.
+English. Apple is the exception: it shows the raw key name for a key missing from the app
+language, so `Localizable.xcstrings` gives every shipped language every key, with the English
+value marked `"state" : "needs_review"` where the language has no valid translation. Info.plist
+strings need no fallback; the system uses the plist's own value.
 
 **Shipped languages.** A language ships on a platform when `locales.json` allows it there and it
 has at least one valid translation of a key in that platform's scope; English always ships. Only

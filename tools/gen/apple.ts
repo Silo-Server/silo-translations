@@ -9,11 +9,23 @@ const FILE = "iosApp/iosApp/Localizable.xcstrings";
 // %lld is Int and %lf Double in Xcode's generated symbols (%d would be Int32, %f Float).
 const SPECIFIER = { String: "@", int: "lld", double: "lf" } as const;
 
-type Unit = { stringUnit: { state: "translated"; value: string } };
+// "translated" for a real translation; "needs_review" for the English value written into a
+// language that has no valid translation of the key (D71).
+type State = "translated" | "needs_review";
+type Unit = { stringUnit: { state: State; value: string } };
 type Localization = Unit | { variations: { plural: Record<string, Unit> } } | (Unit & { substitutions: Record<string, unknown> });
 
 function unit(value: string): Unit {
   return { stringUnit: { state: "translated", value } };
+}
+
+/** Marks every string unit in a localization as an English fallback, not a translation. */
+function asFallback(value: unknown): unknown {
+  if (value === null || typeof value !== "object") return value;
+  if (Array.isArray(value)) return value.map(asFallback);
+  return Object.fromEntries(
+    Object.entries(value).map(([k, v]) => [k, k === "stringUnit" ? { ...(v as Unit["stringUnit"]), state: "needs_review" } : asFallback(v)]),
+  );
 }
 
 function text(entry: SourceEntry, elements: MessageFormatElement[], formatted: boolean, pound: () => string): string {
@@ -84,14 +96,23 @@ export function xcodeJson(value: unknown, indent = ""): string {
   return `{\n${entries.map(([k, v]) => `${inner}${JSON.stringify(k)} : ${xcodeJson(v, inner)}`).join(",\n")}\n${indent}}`;
 }
 
-function catalog(input: GenInput, languages: Language[], entries: SourceEntry[], keyOf: (e: SourceEntry) => string): string {
+/**
+ * With `fallback`, every shipped language gets every key: where a language has no valid
+ * translation, it gets the English value marked `needs_review`. Apple shows the raw key name for an
+ * app string missing from the app language's table instead of falling back to English, which every
+ * other platform does (D71). Info.plist strings don't need it: the system uses the plist's own
+ * (English) value for a language without one.
+ */
+function catalog(input: GenInput, languages: Language[], entries: SourceEntry[], keyOf: (e: SourceEntry) => string, fallback: boolean): string {
   const strings: Record<string, unknown> = {};
   for (const entry of entries) {
     const localizations: Record<string, Localization> = {};
-    const substitution = needsSubstitution(entry, input.english.get(entry.key));
+    const english = input.english.get(entry.key);
+    const substitution = needsSubstitution(entry, english);
     for (const { locale, messages } of languages) {
       const a = messages?.get(entry.key);
       if (a) localizations[locale.tag] = localization(entry, a, substitution);
+      else if (fallback && english) localizations[locale.tag] = asFallback(localization(entry, english, substitution)) as Localization;
     }
     strings[keyOf(entry)] = { comment: entry.description, extractionState: "manual", localizations };
   }
@@ -108,10 +129,10 @@ export function generateApple(input: GenInput): Files {
   const entries = input.entries.filter((e) => inScope(e, "apple"));
   const app = entries.filter((e) => !isInfoPlist(e));
   const languages = languagesFor({ ...input, entries: app }, "apple", false);
-  const files: Files = new Map([[FILE, catalog(input, languages, app, (e) => e.key)]]);
+  const files: Files = new Map([[FILE, catalog(input, languages, app, (e) => e.key, true)]]);
   for (const [name, dir] of Object.entries(INFO_PLIST_APPS)) {
     const own = entries.filter((e) => infoPlistApp(e) === name);
-    files.set(`iosApp/InfoPlist/${dir}/InfoPlist.xcstrings`, catalog(input, languages, own, (e) => e.plistKey!));
+    files.set(`iosApp/InfoPlist/${dir}/InfoPlist.xcstrings`, catalog(input, languages, own, (e) => e.plistKey!, false));
   }
   return files;
 }
