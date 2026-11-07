@@ -3,6 +3,7 @@
 // Pseudo-locales come from Xcode's own pseudolanguages, so none are generated here.
 import { INFO_PLIST_APPS, infoPlistApp, inScope, isInfoPlist, type SourceEntry } from "../lib/catalog.ts";
 import { TYPE, type Analysis, type MessageFormatElement } from "../lib/icu.ts";
+import { categoriesFor, categoryOf, integerSamples } from "../lib/plural.ts";
 import { languagesFor, positional, positions, render, type Files, type GenInput, type Language } from "./common.ts";
 
 const FILE = "iosApp/iosApp/Localizable.xcstrings";
@@ -103,6 +104,29 @@ export function xcodeJson(value: unknown, indent = ""): string {
  * other platform does (D71). Info.plist strings don't need it: the system uses the plist's own
  * (English) value for a language without one.
  */
+/**
+ * English, re-keyed to a target language's plural categories. Foundation selects a fallback's
+ * form by the app language's rules, so English's `one`/`other` would give Chinese "1 parts" and
+ * French "Delete download" for 0. Each target category takes the English form English itself uses
+ * for that category's numbers (0–1000 and CLDR's samples). Where those numbers span several
+ * English forms, it takes one that prints the count (`other` first), so the count is never lost;
+ * only the agreement can then be off ("1 parts" in Japanese, which has one category).
+ */
+export function englishFor(english: Analysis, targetCldr: string, sourceCldr: string): Analysis {
+  const shape = english.shape;
+  if (shape?.kind !== "plural") return english;
+  const form = (cat: string) => shape.forms.get(cat) ?? shape.forms.get("other")!;
+  const forms = new Map<string, MessageFormatElement[]>();
+  for (const cat of categoriesFor(targetCldr)) {
+    const numbers = [...Array.from({ length: 1001 }, (_, n) => n), ...integerSamples(targetCldr, cat)];
+    const used = new Set(numbers.filter((n) => categoryOf(targetCldr, n) === cat).map((n) => categoryOf(sourceCldr, n) as string));
+    const choices = ["other", ...[...used].filter((c) => c !== "other")].filter((c) => used.has(c));
+    const chosen = used.size === 1 ? [...used][0]! : (choices.find((c) => printsCount(form(c), shape.arg)) ?? "other");
+    forms.set(cat, form(chosen));
+  }
+  return { ...english, shape: { ...shape, forms } };
+}
+
 function catalog(input: GenInput, languages: Language[], entries: SourceEntry[], keyOf: (e: SourceEntry) => string, fallback: boolean): string {
   const strings: Record<string, unknown> = {};
   for (const entry of entries) {
@@ -112,7 +136,10 @@ function catalog(input: GenInput, languages: Language[], entries: SourceEntry[],
     for (const { locale, messages } of languages) {
       const a = messages?.get(entry.key);
       if (a) localizations[locale.tag] = localization(entry, a, substitution);
-      else if (fallback && english) localizations[locale.tag] = asFallback(localization(entry, english, substitution)) as Localization;
+      else if (fallback && english) {
+        const re = englishFor(english, locale.cldr, input.locales.source.cldr);
+        localizations[locale.tag] = asFallback(localization(entry, re, substitution)) as Localization;
+      }
     }
     strings[keyOf(entry)] = { comment: entry.description, extractionState: "manual", localizations };
   }

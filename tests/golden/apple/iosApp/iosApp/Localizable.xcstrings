@@ -50,6 +50,18 @@
         "ar" : {
           "variations" : {
             "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "needs_review",
+                  "value" : "%1$lld parts"
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "needs_review",
+                  "value" : "%1$lld parts"
+                }
+              },
               "one" : {
                 "stringUnit" : {
                   "state" : "needs_review",
@@ -57,6 +69,18 @@
                 }
               },
               "other" : {
+                "stringUnit" : {
+                  "state" : "needs_review",
+                  "value" : "%1$lld parts"
+                }
+              },
+              "two" : {
+                "stringUnit" : {
+                  "state" : "needs_review",
+                  "value" : "%1$lld parts"
+                }
+              },
+              "zero" : {
                 "stringUnit" : {
                   "state" : "needs_review",
                   "value" : "%1$lld parts"
@@ -86,6 +110,12 @@
         "es" : {
           "variations" : {
             "plural" : {
+              "many" : {
+                "stringUnit" : {
+                  "state" : "needs_review",
+                  "value" : "%1$lld parts"
+                }
+              },
               "one" : {
                 "stringUnit" : {
                   "state" : "needs_review",
@@ -104,10 +134,16 @@
         "fr" : {
           "variations" : {
             "plural" : {
+              "many" : {
+                "stringUnit" : {
+                  "state" : "needs_review",
+                  "value" : "%1$lld parts"
+                }
+              },
               "one" : {
                 "stringUnit" : {
                   "state" : "needs_review",
-                  "value" : "%1$lld part"
+                  "value" : "%1$lld parts"
                 }
               },
               "other" : {
@@ -144,12 +180,6 @@
         "zh-Hans" : {
           "variations" : {
             "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "needs_review",
-                  "value" : "%1$lld part"
-                }
-              },
               "other" : {
                 "stringUnit" : {
                   "state" : "needs_review",
@@ -252,10 +282,16 @@
         "fr" : {
           "variations" : {
             "plural" : {
+              "many" : {
+                "stringUnit" : {
+                  "state" : "needs_review",
+                  "value" : "%1$lld Seasons"
+                }
+              },
               "one" : {
                 "stringUnit" : {
                   "state" : "needs_review",
-                  "value" : "%1$lld Season"
+                  "value" : "%1$lld Seasons"
                 }
               },
               "other" : {
@@ -342,6 +378,18 @@
         "ar" : {
           "variations" : {
             "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "needs_review",
+                  "value" : "%1$@ can choose %2$lld items"
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "needs_review",
+                  "value" : "%1$@ can choose %2$lld items"
+                }
+              },
               "one" : {
                 "stringUnit" : {
                   "state" : "needs_review",
@@ -349,6 +397,18 @@
                 }
               },
               "other" : {
+                "stringUnit" : {
+                  "state" : "needs_review",
+                  "value" : "%1$@ can choose %2$lld items"
+                }
+              },
+              "two" : {
+                "stringUnit" : {
+                  "state" : "needs_review",
+                  "value" : "%1$@ can choose %2$lld items"
+                }
+              },
+              "zero" : {
                 "stringUnit" : {
                   "state" : "needs_review",
                   "value" : "%1$@ can choose %2$lld items"
@@ -402,10 +462,16 @@
         "fr" : {
           "variations" : {
             "plural" : {
+              "many" : {
+                "stringUnit" : {
+                  "state" : "needs_review",
+                  "value" : "%1$@ can choose %2$lld items"
+                }
+              },
               "one" : {
                 "stringUnit" : {
                   "state" : "needs_review",
-                  "value" : "%1$@ can choose %2$lld item"
+                  "value" : "%1$@ can choose %2$lld items"
                 }
               },
               "other" : {
@@ -420,12 +486,6 @@
         "ja" : {
           "variations" : {
             "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "needs_review",
-                  "value" : "%1$@ can choose %2$lld item"
-                }
-              },
               "other" : {
                 "stringUnit" : {
                   "state" : "needs_review",
@@ -438,12 +498,6 @@
         "zh-Hans" : {
           "variations" : {
             "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "needs_review",
-                  "value" : "%1$@ can choose %2$lld item"
-                }
-              },
               "other" : {
                 "stringUnit" : {
                   "state" : "needs_review",
@@ -470,6 +524,18 @@
               "formatSpecifier" : "lld",
               "variations" : {
                 "plural" : {
+                  "few" : {
+                    "stringUnit" : {
+                      "state" : "needs_review",
+                      "value" : "Delete %arg downloads"
+                    }
+                  },
+                  "many" : {
+                    "stringUnit" : {
+                      "state" : "needs_review",
+                      "value" : "Delete %arg downloads"
+                    }
+                  },
                   "one" : {
                     "stringUnit" : {
                       "state" : "needs_review",
@@ -477,6 +543,18 @@
                     }
                   },
                   "other" : {
+                    "stringUnit" : {
+                      "state" : "needs_review",
+                      "value" : "Delete %arg downloads"
+                    }
+                  },
+                  "two" : {
+                    "stringUnit" : {
+                      "state" : "needs_review",
+                      "value" : "Delete %arg downloads"
+                    }
+                  },
+                  "zero" : {
                     "stringUnit" : {
                       "state" : "needs_review",
                       "value" : "Delete %arg downloads"
@@ -526,6 +604,12 @@
               "formatSpecifier" : "lld",
               "variations" : {
                 "plural" : {
+                  "many" : {
+                    "stringUnit" : {
+                      "state" : "needs_review",
+                      "value" : "Delete %arg downloads"
+                    }
+                  },
                   "one" : {
                     "stringUnit" : {
                       "state" : "needs_review",
@@ -554,10 +638,16 @@
               "formatSpecifier" : "lld",
               "variations" : {
                 "plural" : {
+                  "many" : {
+                    "stringUnit" : {
+                      "state" : "needs_review",
+                      "value" : "Delete %arg downloads"
+                    }
+                  },
                   "one" : {
                     "stringUnit" : {
                       "state" : "needs_review",
-                      "value" : "Delete download"
+                      "value" : "Delete %arg downloads"
                     }
                   },
                   "other" : {
@@ -582,12 +672,6 @@
               "formatSpecifier" : "lld",
               "variations" : {
                 "plural" : {
-                  "one" : {
-                    "stringUnit" : {
-                      "state" : "needs_review",
-                      "value" : "Delete download"
-                    }
-                  },
                   "other" : {
                     "stringUnit" : {
                       "state" : "needs_review",
@@ -610,12 +694,6 @@
               "formatSpecifier" : "lld",
               "variations" : {
                 "plural" : {
-                  "one" : {
-                    "stringUnit" : {
-                      "state" : "needs_review",
-                      "value" : "Delete download"
-                    }
-                  },
                   "other" : {
                     "stringUnit" : {
                       "state" : "needs_review",
@@ -644,6 +722,18 @@
               "formatSpecifier" : "lld",
               "variations" : {
                 "plural" : {
+                  "few" : {
+                    "stringUnit" : {
+                      "state" : "needs_review",
+                      "value" : "Delete %2$@ downloads"
+                    }
+                  },
+                  "many" : {
+                    "stringUnit" : {
+                      "state" : "needs_review",
+                      "value" : "Delete %2$@ downloads"
+                    }
+                  },
                   "one" : {
                     "stringUnit" : {
                       "state" : "needs_review",
@@ -651,6 +741,18 @@
                     }
                   },
                   "other" : {
+                    "stringUnit" : {
+                      "state" : "needs_review",
+                      "value" : "Delete %2$@ downloads"
+                    }
+                  },
+                  "two" : {
+                    "stringUnit" : {
+                      "state" : "needs_review",
+                      "value" : "Delete %2$@ downloads"
+                    }
+                  },
+                  "zero" : {
                     "stringUnit" : {
                       "state" : "needs_review",
                       "value" : "Delete %2$@ downloads"
@@ -734,10 +836,16 @@
               "formatSpecifier" : "lld",
               "variations" : {
                 "plural" : {
+                  "many" : {
+                    "stringUnit" : {
+                      "state" : "needs_review",
+                      "value" : "Delete %2$@ downloads"
+                    }
+                  },
                   "one" : {
                     "stringUnit" : {
                       "state" : "needs_review",
-                      "value" : "Delete %2$@ download"
+                      "value" : "Delete %2$@ downloads"
                     }
                   },
                   "other" : {
@@ -762,12 +870,6 @@
               "formatSpecifier" : "lld",
               "variations" : {
                 "plural" : {
-                  "one" : {
-                    "stringUnit" : {
-                      "state" : "needs_review",
-                      "value" : "Delete %2$@ download"
-                    }
-                  },
                   "other" : {
                     "stringUnit" : {
                       "state" : "needs_review",
@@ -790,12 +892,6 @@
               "formatSpecifier" : "lld",
               "variations" : {
                 "plural" : {
-                  "one" : {
-                    "stringUnit" : {
-                      "state" : "needs_review",
-                      "value" : "Delete %2$@ download"
-                    }
-                  },
                   "other" : {
                     "stringUnit" : {
                       "state" : "needs_review",
@@ -908,6 +1004,18 @@
               "formatSpecifier" : "lld",
               "variations" : {
                 "plural" : {
+                  "few" : {
+                    "stringUnit" : {
+                      "state" : "needs_review",
+                      "value" : "%arg of %2$lld episodes watched"
+                    }
+                  },
+                  "many" : {
+                    "stringUnit" : {
+                      "state" : "needs_review",
+                      "value" : "%arg of %2$lld episodes watched"
+                    }
+                  },
                   "one" : {
                     "stringUnit" : {
                       "state" : "needs_review",
@@ -915,6 +1023,18 @@
                     }
                   },
                   "other" : {
+                    "stringUnit" : {
+                      "state" : "needs_review",
+                      "value" : "%arg of %2$lld episodes watched"
+                    }
+                  },
+                  "two" : {
+                    "stringUnit" : {
+                      "state" : "needs_review",
+                      "value" : "%arg of %2$lld episodes watched"
+                    }
+                  },
+                  "zero" : {
                     "stringUnit" : {
                       "state" : "needs_review",
                       "value" : "%arg of %2$lld episodes watched"
@@ -998,10 +1118,16 @@
               "formatSpecifier" : "lld",
               "variations" : {
                 "plural" : {
+                  "many" : {
+                    "stringUnit" : {
+                      "state" : "needs_review",
+                      "value" : "%arg of %2$lld episodes watched"
+                    }
+                  },
                   "one" : {
                     "stringUnit" : {
                       "state" : "needs_review",
-                      "value" : "%arg of %2$lld episode watched"
+                      "value" : "%arg of %2$lld episodes watched"
                     }
                   },
                   "other" : {
@@ -1026,12 +1152,6 @@
               "formatSpecifier" : "lld",
               "variations" : {
                 "plural" : {
-                  "one" : {
-                    "stringUnit" : {
-                      "state" : "needs_review",
-                      "value" : "%arg of %2$lld episode watched"
-                    }
-                  },
                   "other" : {
                     "stringUnit" : {
                       "state" : "needs_review",
@@ -1054,12 +1174,6 @@
               "formatSpecifier" : "lld",
               "variations" : {
                 "plural" : {
-                  "one" : {
-                    "stringUnit" : {
-                      "state" : "needs_review",
-                      "value" : "%arg of %2$lld episode watched"
-                    }
-                  },
                   "other" : {
                     "stringUnit" : {
                       "state" : "needs_review",
@@ -1256,6 +1370,18 @@
               "formatSpecifier" : "lld",
               "variations" : {
                 "plural" : {
+                  "few" : {
+                    "stringUnit" : {
+                      "state" : "needs_review",
+                      "value" : "VOTES"
+                    }
+                  },
+                  "many" : {
+                    "stringUnit" : {
+                      "state" : "needs_review",
+                      "value" : "VOTES"
+                    }
+                  },
                   "one" : {
                     "stringUnit" : {
                       "state" : "needs_review",
@@ -1263,6 +1389,18 @@
                     }
                   },
                   "other" : {
+                    "stringUnit" : {
+                      "state" : "needs_review",
+                      "value" : "VOTES"
+                    }
+                  },
+                  "two" : {
+                    "stringUnit" : {
+                      "state" : "needs_review",
+                      "value" : "VOTES"
+                    }
+                  },
+                  "zero" : {
                     "stringUnit" : {
                       "state" : "needs_review",
                       "value" : "VOTES"
@@ -1312,6 +1450,12 @@
               "formatSpecifier" : "lld",
               "variations" : {
                 "plural" : {
+                  "many" : {
+                    "stringUnit" : {
+                      "state" : "needs_review",
+                      "value" : "VOTES"
+                    }
+                  },
                   "one" : {
                     "stringUnit" : {
                       "state" : "needs_review",
@@ -1340,10 +1484,16 @@
               "formatSpecifier" : "lld",
               "variations" : {
                 "plural" : {
+                  "many" : {
+                    "stringUnit" : {
+                      "state" : "needs_review",
+                      "value" : "VOTES"
+                    }
+                  },
                   "one" : {
                     "stringUnit" : {
                       "state" : "needs_review",
-                      "value" : "VOTE"
+                      "value" : "VOTES"
                     }
                   },
                   "other" : {
@@ -1368,12 +1518,6 @@
               "formatSpecifier" : "lld",
               "variations" : {
                 "plural" : {
-                  "one" : {
-                    "stringUnit" : {
-                      "state" : "needs_review",
-                      "value" : "VOTE"
-                    }
-                  },
                   "other" : {
                     "stringUnit" : {
                       "state" : "needs_review",
@@ -1396,12 +1540,6 @@
               "formatSpecifier" : "lld",
               "variations" : {
                 "plural" : {
-                  "one" : {
-                    "stringUnit" : {
-                      "state" : "needs_review",
-                      "value" : "VOTE"
-                    }
-                  },
                   "other" : {
                     "stringUnit" : {
                       "state" : "needs_review",

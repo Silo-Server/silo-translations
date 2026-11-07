@@ -82,7 +82,11 @@ export function acceptance(root: string, name: string) {
       for (const [tag, loc] of Object.entries(locs)) {
         const translated = tag === source || checked.valid.get(tag)?.has(key) === true;
         units(loc, translated ? "translated" : "needs_review");
-        if (!translated) assert.deepEqual(units(loc), units(locs[source]!), `${key} ${tag}: English fallback`);
+        if (!translated) {
+          // English, re-keyed to the language's plural categories (englishFor).
+          const english = new Set(units(locs[source]!));
+          for (const v of units(loc)) assert.ok(english.has(v), `${key} ${tag}: English fallback ${v}`);
+        }
       }
       for (const [tag, loc] of Object.entries(locs)) {
         const keys = Object.keys(loc).sort().join(",");
