@@ -47,7 +47,7 @@ client's repository root, and it is exactly what the platform's release tarball 
 |---|---|
 | web | `web/src/locales/<tag>.json` (FormatJS AST, one per language and pseudo-locale), `web/src/locales/keys.ts` (`MessageKey` type, `LOCALES`: the shipped languages then the pseudo-locales, with `dir` and `pseudo`; `SOURCE_LOCALE`) |
 | apple | `iosApp/iosApp/Localizable.xcstrings` (all languages, every entry `extractionState: manual`), `iosApp/InfoPlist/{iOS,tvOS,macOS}/InfoPlist.xcstrings` (each app's Info.plist strings, keyed by plist key; always written, empty when an app has none) |
-| android | `android-shared/src/androidMain/res/values{,-<qualifier>}/strings_catalog.xml` (next to hand-written `strings.xml`, never replacing it), `android-shared/silo-locales.properties` (each app's languages as resource qualifiers, for `androidResources.localeFilters`) |
+| android | `android-shared/src/androidMain/res/values{,-<qualifier>}/strings_catalog.xml` (next to hand-written `strings.xml`, never replacing it; a plural whose English `one` prints no number carries `tools:ignore="ImpliedQuantity"`, since fr and pt-BR `one` also covers 0), `android-shared/silo-locales.properties` (each app's languages as resource qualifiers, for `androidResources.localeFilters`) |
 | roku | `locale/<folder>/strings.json` (one per language and pseudo-locale), `locale/languages.json` (`{"languages": [shipped folders], "pseudo": [folders]}`), `source/util/pluralRules.bs`, `i18n-charsets/<folder>.txt` (every character that language's strings use, sorted, for the font subset step; outside `locale/` and `fonts/`, so not packaged) |
 
 `<dir>/.silo-translations-out` holds the version the files were generated as: the release

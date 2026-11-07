@@ -7,12 +7,23 @@
 // for its localeFilters, which is how a language is held back on one app.
 import { inScope, type SourceEntry } from "../lib/catalog.ts";
 import { androidName } from "../lib/check.ts";
-import type { Analysis, MessageFormatElement } from "../lib/icu.ts";
+import { TYPE, type Analysis, type MessageFormatElement } from "../lib/icu.ts";
 import { hasPercent, header, languagesFor, positional, render, type Files, type GenInput } from "./common.ts";
 import { ANDROID_APPS, androidApps, type Locale } from "../lib/locales.ts";
 
 const RES = "android-shared/src/androidMain/res";
 const SPECIFIER = { String: "s", int: "d", double: "f" } as const;
+const TOOLS_NS = 'xmlns:tools="http://schemas.android.com/tools"';
+
+/**
+ * Whether lint's ImpliedQuantity check must be silenced for a plural: its English `one` form
+ * prints no number ("Delete download", "VOTE"). In languages whose `one` also covers 0 (fr,
+ * pt-BR), lint reads such a form as implying exactly one; the text is intended there (D76).
+ */
+function oneOmitsNumber(english: Analysis | undefined): boolean {
+  const one = english?.shape?.kind === "plural" ? english.shape.forms.get("one") : undefined;
+  return one !== undefined && !one.some((el) => el.type === TYPE.pound || el.type === TYPE.argument);
+}
 
 /** Escapes text for an AAPT string resource (backslash escapes, then XML). */
 export function escapeAndroid(text: string, formatted: boolean): string {
@@ -45,7 +56,7 @@ function comment(text: string): string {
   return text.replace(/-{2,}/g, (run) => run.split("").join(" ")).replace(/-$/, "- ");
 }
 
-function resource(entry: SourceEntry, a: Analysis, withComment: boolean): string {
+function resource(entry: SourceEntry, a: Analysis, withComment: boolean, ignoreImplied: boolean): string {
   const name = androidName(entry.key);
   const lines: string[] = [];
   if (withComment) lines.push(`    <!-- ${comment(entry.description)} -->`);
@@ -57,7 +68,8 @@ function resource(entry: SourceEntry, a: Analysis, withComment: boolean): string
     lines.push(`    <string name="${name}"${attr}>${value(entry, shape.elements, formatted)}</string>`);
   } else {
     // getQuantityString with the count always formats, so % is escaped in plural items.
-    lines.push(`    <plurals name="${name}">`);
+    const ignore = ignoreImplied ? ' tools:ignore="ImpliedQuantity"' : "";
+    lines.push(`    <plurals name="${name}"${ignore}>`);
     for (const [cat, elements] of shape.forms) {
       lines.push(`        <item quantity="${cat}">${value(entry, elements, true, shape.arg)}</item>`);
     }
@@ -72,15 +84,14 @@ export function generateAndroid(input: GenInput): Files {
   const languages = languagesFor(input, "android", false);
   for (const { locale, messages } of languages) {
     const isSource = locale === input.locales.source;
-    const body = entries
-      .filter((e) => messages?.has(e.key))
-      .map((e) => resource(e, messages!.get(e.key)!, isSource))
-      .join("\n");
+    const shown = entries.filter((e) => messages?.has(e.key));
+    const implied = new Set(shown.filter((e) => oneOmitsNumber(input.english.get(e.key))).map((e) => e.key));
+    const body = shown.map((e) => resource(e, messages!.get(e.key)!, isSource, implied.has(e.key))).join("\n");
     files.set(
       `${RES}/${(locale as Locale).android}/strings_catalog.xml`,
       `<?xml version="1.0" encoding="utf-8"?>
 <!-- ${header(input.version)} -->
-<resources>
+<resources${implied.size ? ` ${TOOLS_NS}` : ""}>
 ${body ? body + "\n" : ""}</resources>
 `,
     );
