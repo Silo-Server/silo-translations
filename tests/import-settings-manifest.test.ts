@@ -59,6 +59,6 @@ test("import-settings-manifest: scopes each kind of text to the clients that ren
   const platforms = (k: string) => (meta[`@${k}`] as { "x-platforms": string[] })["x-platforms"];
   assert.deepEqual(platforms("settingsManifest.ui.theme.label"), ["web", "apple"]);
   assert.deepEqual(platforms("settingsManifest.ui.theme.description"), ["web", "apple"]);
-  assert.deepEqual(platforms("settingsManifest.ui.theme.option.midnight_cinema"), ["web", "apple"]);
-  assert.deepEqual(platforms("settingsManifest.playback.audio_language.unsetLabel"), ["web", "apple", "android"]);
+  assert.deepEqual(platforms("settingsManifest.ui.theme.option.midnight_cinema"), ["web", "apple", "roku"]);
+  assert.deepEqual(platforms("settingsManifest.playback.audio_language.unsetLabel"), ["web", "apple", "android", "roku"]);
 });

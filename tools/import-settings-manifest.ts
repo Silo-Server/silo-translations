@@ -37,14 +37,14 @@ export function segment(id: string | number): string {
 /**
  * Which clients render each kind of manifest text. Web and Apple render labels, descriptions
  * and option labels from the manifest; Android renders only the unset label (its other settings
- * text comes from its own strings); Roku renders none. Widen a list when a client starts reading
- * that text.
+ * text comes from its own strings); Roku renders option labels and the unset label (D70), its
+ * titles and help come from its own strings. Widen a list when a client starts reading that text.
  */
 export const MANIFEST_PLATFORMS = {
   label: ["web", "apple"],
   description: ["web", "apple"],
-  option: ["web", "apple"],
-  unsetLabel: ["web", "apple", "android"],
+  option: ["web", "apple", "roku"],
+  unsetLabel: ["web", "apple", "android", "roku"],
 } as const;
 
 /** The settingsManifest.* entries (message and metadata) a manifest produces, in manifest order. */

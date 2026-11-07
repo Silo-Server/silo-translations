@@ -131,7 +131,7 @@ table above. Sync refuses any listed path that passes through a symlink in the c
   (`label`, `description`, `unsetLabel`, `option.<value>`). Change them in silo-server. Each kind
   is scoped to the clients that render it (`MANIFEST_PLATFORMS` in
   `tools/import-settings-manifest.ts`): web and Apple all of them, Android only `unsetLabel`,
-  Roku none.
+  Roku `option.<value>` and `unsetLabel`.
 
 ## Messages
 
