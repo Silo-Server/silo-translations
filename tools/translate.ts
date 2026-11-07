@@ -178,7 +178,7 @@ Rules:
 - A plural message must stay a plural on the same argument and use exactly these CLDR categories for ${locale.tag}: ${categoriesFor(locale.cldr).join(", ")}. Use # where the English uses #; where the English forms print a placeholder such as {count_text} instead, print that placeholder, never #.
 - Keep every select and every rich-text tag (<b>…</b>, <name></name>, …) from the English, with the same names and options. Do not add select, tags, number or date formatting.
 - Use the typographic apostrophe ’, never ASCII '.
-- Keep within maxLength characters when it is given.
+- Keep within maxLength characters when it is given; a CJK (wide) character counts as two.
 - Follow the glossary's required renderings and the style guide. A required rendering equal to the English term means: keep it untranslated.
 - Return one entry per key below, with the key unchanged and the translated ICU message.
 

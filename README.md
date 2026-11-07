@@ -157,7 +157,9 @@ table above. Sync refuses any listed path that passes through a symlink in the c
   `[a-z][a-z0-9_]*`. Their order here is the positional order on Android (`%1$s`) and Apple
   (`%1$@`), so never reorder existing placeholders.
 - `x-platforms` limits a key to some of `web`, `apple`, `android`, `roku`; omitted means all.
-- `x-maxLength` is a character budget; translations over it get a warning.
+- `x-maxLength` is a character budget; translations over it get a warning. East Asian wide
+  characters (CJK, kana, full-width punctuation) count as two, since they take about twice a
+  Latin character's room.
 
 Keys that reach Apple, Android or Roku use a shared subset of ICU MessageFormat: text,
 `{name}` arguments, and at most one `plural` that spans the whole message, on an `int`

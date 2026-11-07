@@ -173,6 +173,8 @@ const cases: Case[] = [
   },
   { name: "translation select in web key", en: entry("a.b", "{name}", { ...NAME, "x-platforms": ["web"] }), tr: { de: { "a.b": "{name, select, a {A} other {B}}" } } },
   { name: "max length warning", en: entry("a.b", "Hi", { "x-maxLength": 5 }), tr: { de: { "a.b": "Hallo Welt" } }, warnings: ["longer than x-maxLength 5"] },
+  { name: "max length counts a wide character as two", en: entry("a.b", "Search", { "x-maxLength": 5 }), tr: { ja: { "a.b": "デバイス" } }, warnings: ["longer than x-maxLength 5"] },
+  { name: "max length fits wide characters within the budget", en: entry("a.b", "Search", { "x-maxLength": 8 }), tr: { ja: { "a.b": "デバイス" }, "zh-Hans": { "a.b": "搜索设备" } } },
   {
     name: "glossary warning",
     en: entry("a.b", "Continue Watching"),
