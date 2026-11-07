@@ -152,7 +152,10 @@ export function makeBatches(work: Work[], size = BATCH_SIZE): Work[][] {
 export function buildPrompt(root: string, checked: CheckedCatalog, locale: Locale, batch: Work[], known: Map<string, string>, feedback?: Map<string, string[]>): string {
   const style = existsSync(join(root, "style", `${locale.tag}.md`)) ? readFileSync(join(root, "style", `${locale.tag}.md`), "utf8") : "";
   const english = batch.map((w) => w.entry.message).join("\n");
-  const glossary = termsIn(checked.glossary, english).map((g) => ({ term: g.term, note: g.note, required: g.renderings.get(locale.tag) ?? null }));
+  const glossary = termsIn(checked.glossary, english).map((g) => {
+    const forms = (g.renderings.get(locale.tag) ?? "").split("|").map((f) => f.trim()).filter(Boolean);
+    return { term: g.term, note: g.note, required: forms[0] ?? null, ...(forms.length > 1 ? { acceptedForms: forms } : {}) };
+  });
   const spaces = new Set(batch.map((w) => namespaceOf(w.entry.key)));
   const inBatch = new Set(batch.map((w) => w.entry.key));
   const existing = [...known]

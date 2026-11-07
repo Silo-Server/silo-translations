@@ -114,6 +114,19 @@ const cases: Case[] = [
     warnings: ["longer than x-maxLength 8"],
   },
   {
+    name: "glossary accepts listed forms, ignoring case and accents",
+    en: { ...entry("a.b", "Collections"), ...entry("a.c", "Collection") },
+    tr: { es: { "a.b": "Colecciones", "a.c": "COLECCION nueva" } },
+    glossary: "term,note,es\nCollection,Group of titles,colección|colecciones\n",
+  },
+  {
+    name: "glossary warns when no listed form is used",
+    en: entry("a.b", "Collection"),
+    tr: { es: { "a.b": "Grupo" } },
+    glossary: "term,note,es\nCollection,Group of titles,colección|colecciones\n",
+    warnings: ['glossary: "Collection" should be "colección" or "colecciones"'],
+  },
+  {
     name: "glossary with a byte-order mark",
     en: entry("a.b", "Continue Watching"),
     tr: { de: { "a.b": "Weiterschauen" } },

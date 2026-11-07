@@ -55,6 +55,20 @@ export function loadGlossary(root: string): GlossaryTerm[] {
   }));
 }
 
+/** Lower case without accents, for comparing a translation with a glossary rendering. */
+function fold(s: string, tag: string): string {
+  return s.toLocaleLowerCase(tag).normalize("NFD").replace(/\p{M}/gu, "");
+}
+
+/**
+ * Whether a translation uses a glossary rendering. A rendering may list accepted forms separated
+ * by "|" (singular and plural, "colección|colecciones"); comparison ignores case and accents.
+ */
+export function usesRendering(message: string, rendering: string, tag: string): boolean {
+  const text = fold(message, tag);
+  return rendering.split("|").some((form) => form.trim() !== "" && text.includes(fold(form.trim(), tag)));
+}
+
 function escapeRegExp(s: string): string {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }

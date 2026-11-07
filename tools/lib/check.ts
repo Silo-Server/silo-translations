@@ -1,7 +1,7 @@
 import { CATEGORY_ORDER, categoriesFor } from "./plural.ts";
 import { analyze, literalLength, type Analysis } from "./icu.ts";
 import { catalogPath, INFO_PLIST_APPS, INFO_PLIST_PREFIX, infoPlistApp, inScope, isInfoPlist, isShared, loadCatalog, PLIST_KEY_PATTERN, type Catalog, type Issue, type SourceEntry } from "./catalog.ts";
-import { loadGlossary, termsIn, type GlossaryTerm } from "./glossary.ts";
+import { loadGlossary, termsIn, usesRendering, type GlossaryTerm } from "./glossary.ts";
 import { loadLocales, type Locale, type Locales } from "./locales.ts";
 import { readFileSync } from "node:fs";
 import { formattedFiles, LAYOUT_MESSAGE, layoutProblems } from "./format.ts";
@@ -220,8 +220,8 @@ export function checkRepository(root: string): CheckedCatalog {
       }
       for (const term of glossaryTerms.get(key)!) {
         const want = term.renderings.get(locale.tag);
-        if (want && !message.toLocaleLowerCase(locale.tag).includes(want.toLocaleLowerCase(locale.tag))) {
-          issues.push({ level: "warning", file, key, message: `glossary: "${term.term}" should be "${want}"` });
+        if (want && !usesRendering(message, want, locale.tag)) {
+          issues.push({ level: "warning", file, key, message: `glossary: "${term.term}" should be "${want.split("|").join('" or "')}"` });
         }
       }
     }
