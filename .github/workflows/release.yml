@@ -30,7 +30,10 @@ jobs:
       - name: Version
         id: version
         run: |
-          version="$(date -u +%Y.%m.%d)-${GITHUB_SHA::7}"
+          # The date comes from the commit, not the run, so a rerun after midnight UTC finds the
+          # release the first run made.
+          day="$(date -u -d "@$(git show -s --format=%ct "$GITHUB_SHA")" +%Y.%m.%d)"
+          version="$day-${GITHUB_SHA::7}"
           echo "version=$version" >> "$GITHUB_OUTPUT"
           # A published release with its four tarballs and SHA256SUMS is done. A draft or a
           # release missing assets is what an interrupted run leaves: delete it and publish again.
