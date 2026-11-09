@@ -150,6 +150,30 @@ test("translate: a run with nothing to send still records human translations in 
   assert.equal(JSON.parse(readFileSync(join(root, "catalog/es.arb"), "utf8"))["a.b"], "ES Hello there");
 });
 
+test("translate: a run that stops keeps the record of human values it replaced for the next report", () => {
+  const root = makeRepo({ en: entry("a.edit", "Hello"), es: {} });
+  run(root, "--locale", "es");
+  const esPath = join(root, "catalog/es.arb");
+  writeArb(esPath, { ...JSON.parse(readFileSync(esPath, "utf8")), "a.edit": "Hola (corregido)" });
+  writeArb(join(root, "catalog/en.arb"), { ...entry("a.edit", "Hello there"), ...entry("zzz.kill", "Stop here") });
+  try {
+    runEnv(root, { FAKE_CLAUDE_KILL: "1", SILO_TRANSLATE_BATCH_SIZE: "1" }, "--locale", "es");
+  } catch {
+    // killed mid-run
+  }
+  assert.equal(JSON.parse(readFileSync(esPath, "utf8"))["a.edit"], "ES Hello there");
+  run(root, "--locale", "es");
+  assert.match(readFileSync(join(root, "out/translate-pr-body.md"), "utf8"), /\| es \| `a.edit` \| Hola \(corregido\) \| ES Hello there \|/);
+});
+
+test("translate: keeps translations of English keys added while it runs", () => {
+  const root = makeRepo({ en: entry("a.b", "Hello"), es: {} });
+  runEnv(root, { FAKE_CLAUDE_ADD_ROOT: root }, "--locale", "es");
+  const es = JSON.parse(readFileSync(join(root, "catalog/es.arb"), "utf8"));
+  assert.equal(es["a.b"], "ES Hello");
+  assert.equal(es["zzz.added"], "Añadido");
+});
+
 test("translate: --dry-run sends one batch and writes nothing", () => {
   const root = makeRepo(catalog());
   const out = run(root, "--locale", "es", "--dry-run");

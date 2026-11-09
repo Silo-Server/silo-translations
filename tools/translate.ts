@@ -24,7 +24,7 @@
 //                             (after a glossary or style fix); a person's values are kept
 import { spawn } from "node:child_process";
 import { createHash } from "node:crypto";
-import { appendFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { appendFileSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { tmpdir } from "node:os";
 import { parseArgs } from "node:util";
@@ -327,6 +327,12 @@ function writeLanguage(root: string, checked: CheckedCatalog, locale: Locale, by
       merged[entry.key] = now;
     }
   }
+  // English keys added while this run was going aren't in the catalog it loaded. Keep their
+  // translations instead of pruning them as orphans.
+  const english = readJson<Record<string, unknown>>(catalogPath(root, checked.locales.source.tag), {});
+  for (const [key, value] of Object.entries(onDisk)) {
+    if (!key.startsWith("@") && !(key in merged) && key in english && value !== "") merged[key] = value;
+  }
   writeFileSync(file, jsonText(canonicalArb(merged)));
   writeState(root, checked, locale, state);
 }
@@ -417,6 +423,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     }
     mkdirSync(join(root, "out"), { recursive: true });
     const log = join(root, "out", `translate-${locale.tag}.log.jsonl`);
+    const audit = join(root, "out", `translate-${locale.tag}.human-edits.jsonl`);
     const byKey = new Map(work.map((w) => [w.entry.key, w]));
     const results = new Map<string, string>();
     const changedDuringRun = new Set<string>();
@@ -433,6 +440,14 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
       for (const [k, v] of r.failed) report.failed.set(k, v);
       report.calls += r.calls;
       writeLanguage(root, checked, locale, byKey, results, state, changedDuringRun);
+      // The record of human values replaced goes to disk with the batch, so a run that stops
+      // before the end still reports them on the next run.
+      for (const w of batch) {
+        const k = w.entry.key;
+        if ((w.reason === "human-edit-source-changed" || w.reason === "invalid") && r.accepted.has(k) && !changedDuringRun.has(k)) {
+          appendFileSync(audit, JSON.stringify({ key: k, before: w.previous!, after: results.get(k)! }) + "\n");
+        }
+      }
       done++;
       const keys = batch.map((w) => w.entry.key);
       appendFileSync(log, JSON.stringify({ batch: i + 1, of: batches.length, first: keys[0], last: keys[keys.length - 1], keys: keys.length, accepted: r.accepted.size, calls: r.calls, seconds: Math.round((Date.now() - t0) / 1000), firstAttempt: Object.fromEntries(r.firstAttempt), failed: Object.fromEntries(r.failed) }) + "\n");
@@ -444,10 +459,18 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
       writeState(root, checked, locale, state);
     }
     report.seconds = (Date.now() - started) / 1000;
-    for (const [k, w] of byKey) {
-      if (!results.has(k) || changedDuringRun.has(k)) continue;
-      report.written++;
-      if (w.reason === "human-edit-source-changed" || w.reason === "invalid") report.humanEdits.push({ key: k, before: w.previous!, after: results.get(k)! });
+    for (const k of byKey.keys()) {
+      if (results.has(k) && !changedDuringRun.has(k)) report.written++;
+    }
+    // Human values replaced by this run and by any earlier run that stopped before reporting.
+    if (existsSync(audit)) {
+      const edits = new Map<string, { key: string; before: string; after: string }>();
+      for (const line of readFileSync(audit, "utf8").split("\n").filter(Boolean)) {
+        const r = JSON.parse(line) as { key: string; before: string; after: string };
+        edits.set(r.key, { ...r, before: edits.get(r.key)?.before ?? r.before });
+      }
+      report.humanEdits.push(...edits.values());
+      rmSync(audit);
     }
     report.changedDuringRun = [...changedDuringRun];
     reports.push(report);
