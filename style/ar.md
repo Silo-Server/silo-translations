@@ -68,12 +68,14 @@ element has in the catalog, not the English one. The glossary lists the names th
 
 ## Plurals and numbers
 
-- Plurals: all six categories `zero one two few many other`, in every plural key. Use the dual
-  for `two` (*موسمان*), the plural with the counted noun in `few` (3–10: *# مواسم*), the
-  singular accusative in `many` (11–99: *# موسمًا*), and the singular genitive in `other`
-  (100 and up: *# موسم*). `zero` and `one` may leave the number out where the English prints it
-  (*لا مواسم*، *موسم واحد*), but where the English uses `{count_text}`, keep it in every form
-  that shows a number.
+- Plurals: all six categories `zero one two few many other`, in every plural key. CLDR picks
+  them by the number modulo 100: `zero` for 0, `one` for 1, `two` for 2, `few` when it ends in
+  03–10 (3–10, 103–110, …), `many` when it ends in 11–99 (11–99, 111–199, …), and `other` for
+  the rest (100–102, 200–202, … and fractions). Use the dual for `two` (*موسمان*), the plural
+  with the counted noun in `few` (*# مواسم*), the singular accusative in `many` (*# موسمًا*),
+  and the singular genitive in `other` (*# موسم*). `zero`, `one` and `two` may leave the number
+  out (*لا مواسم*، *موسم واحد*، *موسمان*; see the dual rule below); `few`, `many` and `other` keep
+  the number, as `#` or as `{count_text}` where the English prints that.
 - Western digits come from the app's number formatting; don't convert digits by hand.
 - A number and its unit are separated by a space and the unit agrees with the number in each
   plural form: *24 ساعة*، *5 دقائق*، *45 ثانية*. In compact strings (a countdown, a table cell)
