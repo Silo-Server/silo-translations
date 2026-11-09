@@ -6,6 +6,8 @@ import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join, relative } from "node:path";
 import { generateAll } from "../tools/generate.ts";
 import { escapeAndroid } from "../tools/gen/android.ts";
+import { json, literalBidi } from "../tools/gen/common.ts";
+import { xcodeJson } from "../tools/gen/apple.ts";
 import { entry, FIXTURE, makeRepo, REPO } from "./helpers.ts";
 
 const GOLDEN = join(REPO, "tests/golden");
@@ -75,4 +77,27 @@ test("pseudo: en-XA lengthens text inside a tag too", () => {
 
 test("android: control characters XML can't hold become \\u escapes", () => {
   assert.equal(escapeAndroid("x\u000by\rz", false), "x\\u000by\\u000dz");
+});
+
+const BIDI = "\u061C\u200E\u200F\u202A\u202B\u202C\u202D\u202E\u2066\u2067\u2068\u2069";
+
+test("bidi: no generated file holds a literal bidi control, and each platform escapes them", () => {
+  for (const [platform, files] of platforms) assert.deepEqual(literalBidi(files), [], platform);
+  const text = (platform: string, path: string) => platforms.get(platform)!.get(path)!;
+  assert.match(text("web", "web/src/locales/ar.json"), /\\u2068/);
+  assert.match(text("roku", "locale/en_US/strings.json"), /Shared by \\u2068\{name\}\\u2069/);
+  assert.match(text("apple", "iosApp/iosApp/Localizable.xcstrings"), /\\u2068%1\$@\\u2069\\u200F/);
+  assert.match(text("android", "android-shared/src/androidMain/res/values-ar/strings_catalog.xml"), /\\u2068%1\$s\\u2069\\u200f/);
+});
+
+test("bidi: escaped JSON parses to the same strings", () => {
+  const value = { [`k${BIDI}`]: `a${BIDI}b`, list: [BIDI] };
+  assert.doesNotMatch(json(value), /[\u061C\u200E\u200F\u202A-\u202E\u2066-\u2069]/);
+  assert.deepEqual(JSON.parse(json(value)), value);
+  assert.deepEqual(JSON.parse(xcodeJson(value)), value);
+  assert.equal(escapeAndroid(BIDI, false), BIDI.split("").map((c) => `\\u${c.charCodeAt(0).toString(16).padStart(4, "0")}`).join(""));
+});
+
+test("bidi: make check's scan names a file with a literal bidi control", () => {
+  assert.deepEqual(literalBidi(new Map([["ok.json", "\\u200F"], ["bad.json", "x\u2067y"]])), [{ path: "bad.json", codePoint: "U+2067" }]);
 });

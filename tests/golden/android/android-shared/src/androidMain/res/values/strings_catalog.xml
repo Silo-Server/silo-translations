@@ -15,6 +15,8 @@
     </plurals>
     <!-- Button that closes a dialog without saving. -->
     <string name="common_cancel">Cancel</string>
+    <!-- Line under a shared item. name is the person's display name, isolated so a name in another script keeps its direction. -->
+    <string name="common_sharedBy">Shared by \u2068%1$s\u2069</string>
     <!-- How many items a profile may pick. {name} is the profile name; {count} the limit. -->
     <plurals name="companion_limit">
         <item quantity="one">%1$s can choose %2$d item</item>

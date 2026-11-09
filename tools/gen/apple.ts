@@ -4,7 +4,7 @@
 import { INFO_PLIST_APPS, infoPlistApp, inScope, isInfoPlist, type SourceEntry } from "../lib/catalog.ts";
 import { TYPE, type Analysis, type MessageFormatElement } from "../lib/icu.ts";
 import { categoriesFor, categoryOf, integerSamples } from "../lib/plural.ts";
-import { languagesFor, positional, positions, render, type Files, type GenInput, type Language } from "./common.ts";
+import { escapeBidi, languagesFor, positional, positions, render, type Files, type GenInput, type Language } from "./common.ts";
 
 const FILE = "iosApp/iosApp/Localizable.xcstrings";
 // %lld is Int and %lf Double in Xcode's generated symbols (%d would be Int32, %f Float).
@@ -86,7 +86,7 @@ function localization(entry: SourceEntry, a: Analysis, substitution: boolean): L
 
 /** JSON in Xcode's own layout (sorted keys, `"key" : value`, two-space indent), so an IDE save changes nothing. */
 export function xcodeJson(value: unknown, indent = ""): string {
-  if (value === null || typeof value !== "object") return JSON.stringify(value);
+  if (value === null || typeof value !== "object") return escapeBidi(JSON.stringify(value));
   const inner = indent + "  ";
   if (Array.isArray(value)) {
     if (!value.length) return "[]";
@@ -94,7 +94,7 @@ export function xcodeJson(value: unknown, indent = ""): string {
   }
   const entries = Object.entries(value).sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0));
   if (!entries.length) return "{\n\n" + indent + "}";
-  return `{\n${entries.map(([k, v]) => `${inner}${JSON.stringify(k)} : ${xcodeJson(v, inner)}`).join(",\n")}\n${indent}}`;
+  return `{\n${entries.map(([k, v]) => `${inner}${escapeBidi(JSON.stringify(k))} : ${xcodeJson(v, inner)}`).join(",\n")}\n${indent}}`;
 }
 
 /**

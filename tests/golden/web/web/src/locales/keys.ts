@@ -5,6 +5,7 @@ export type MessageKey =
   | "catalog.parts"
   | "catalog.seasons"
   | "common.cancel"
+  | "common.sharedBy"
   | "companion.limit"
   | "downloads.deleteMixed"
   | "downloads.selected"

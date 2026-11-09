@@ -206,3 +206,107 @@ test("sync: an install without a file list is pruned by the platform's output pa
   assert.ok(existsSync(join(root, "locale/de/notes.txt")));
   assert.equal(readFileSync(join(root, "locale/en_US/strings.json"), "utf8"), "{}\n");
 });
+
+test("sync: every platform's generated output is an allowed path", () => {
+  for (const platform of ["web", "apple", "android", "roku"]) {
+    const root = client();
+    const r = sync(root, "/nonexistent", "--platform", platform, "--local", REPO);
+    assert.equal(r.status, 0, `${platform}: ${r.stderr}`);
+    const listed = readFileSync(join(root, ".silo-translations-files"), "utf8").trim().split("\n");
+    assert.ok(listed.length > 0, platform);
+    if (platform === "apple") assert.ok(listed.some((p) => /^iosApp\/InfoPlist\/[^/]+\/InfoPlist\.xcstrings$/.test(p)), "apple InfoPlist");
+    if (platform === "android") assert.ok(listed.some((p) => /^android-shared\/src\/androidMain\/res\/values-[^/]+\/strings_catalog\.xml$/.test(p)), "android values-*");
+    if (platform === "roku") {
+      assert.ok(listed.includes("source/util/pluralRules.bs"), "roku pluralRules.bs");
+      assert.ok(listed.some((p) => p.startsWith("i18n-charsets/")), "roku charsets");
+    }
+  }
+});
+
+/** A release whose tarball is written member by member, so it can hold what tar -C would refuse. */
+function rawRelease(members: { name: string; data: string }[]) {
+  const base = mkdtempSync(join(tmpdir(), "silo-release-"));
+  mkdirSync(join(base, "v1"));
+  const asset = join(base, "v1/silo-translations-roku-1.tar.gz");
+  execFileSync("python3", ["-I", "-c", `
+import io, json, sys, tarfile
+with tarfile.open(sys.argv[1], "w:gz") as t:
+    for m in json.loads(sys.argv[2]):
+        data = m["data"].encode()
+        info = tarfile.TarInfo(m["name"]); info.size = len(data)
+        t.addfile(info, io.BytesIO(data))
+`, asset, JSON.stringify(members)]);
+  const sum = createHash("sha256").update(readFileSync(asset)).digest("hex");
+  writeFileSync(join(base, "v1/SHA256SUMS"), `${sum}  silo-translations-roku-1.tar.gz\n`);
+  return base;
+}
+
+test("sync: refuses a listed path outside the platform's generated outputs", () => {
+  const cases: [string, Record<string, string>, RegExp][] = [
+    ["a git hook", { ".git/hooks/post-checkout": "#!/bin/sh\n" }, /not a generated roku output/],
+    ["a build file", { "Makefile": "all:\n" }, /not a generated roku output/],
+    ["another platform's output", { "web/src/locales/en.json": "{}\n" }, /not a generated roku output/],
+    ["a wildcard spanning two segments", { "locale/a/b/strings.json": "{}\n" }, /not a generated roku output/],
+  ];
+  for (const [name, extra, error] of cases) {
+    const v = release("1", { "locale/en_US/strings.json": "{}\n", ...extra });
+    const root = client();
+    const r = sync(root, v.base, "--platform", "roku", "--version", "1");
+    assert.notEqual(r.status, 0, name);
+    assert.match(r.stderr, error, name);
+    assert.ok(!existsSync(join(root, "locale/en_US/strings.json")), `${name}: nothing installed`);
+    for (const p of Object.keys(extra)) assert.ok(!existsSync(join(root, p)), `${name}: ${p}`);
+    assert.ok(!existsSync(join(root, ".silo-translations")), name);
+  }
+});
+
+test("sync: refuses absolute and climbing paths in the tarball and in its list", () => {
+  const listed = (paths: string) => ({ name: "./.silo-translations-files", data: paths });
+  const file = { name: "./locale/en_US/strings.json", data: "{}\n" };
+  const cases: [string, { name: string; data: string }[]][] = [
+    ["absolute member", [file, { name: "/tmp/silo-sync-absolute.txt", data: "x" }, listed("locale/en_US/strings.json\n")]],
+    ["climbing member", [file, { name: "./locale/../../escaped.txt", data: "x" }, listed("locale/en_US/strings.json\n")]],
+    ["absolute list entry", [file, listed("locale/en_US/strings.json\n/tmp/silo-sync-absolute.txt\n")]],
+    ["hook through ..", [file, listed("locale/en_US/strings.json\nlocale/../.git/hooks/pre-commit\n")]],
+  ];
+  for (const [name, members] of cases) {
+    const root = client();
+    const r = sync(root, rawRelease(members), "--platform", "roku", "--version", "1");
+    assert.notEqual(r.status, 0, name);
+    assert.match(r.stderr, /unsafe paths/, name);
+    assert.ok(!existsSync(join(root, "locale")), name);
+    assert.ok(!existsSync(join(root, ".git/hooks/pre-commit")), name);
+  }
+  assert.ok(!existsSync("/tmp/silo-sync-absolute.txt"));
+});
+
+test("sync: refuses an unlisted file even at an allowed path", () => {
+  const v = release("1", { "locale/en_US/strings.json": "{}\n" }, (tree) => {
+    mkdirSync(join(tree, "locale/de"));
+    writeFileSync(join(tree, "locale/de/strings.json"), "{}\n");
+  });
+  const root = client();
+  const r = sync(root, v.base, "--platform", "roku", "--version", "1");
+  assert.notEqual(r.status, 0);
+  assert.match(r.stderr, /doesn't match/);
+  assert.ok(!existsSync(join(root, "locale")));
+});
+
+test("sync: never removes a previously listed path outside the generated outputs", () => {
+  const v = release("1", { "locale/en_US/strings.json": "{}\n" });
+  const root = client();
+  writeFileSync(join(root, ".silo-translations-files"), "locale/en_US/strings.json\nREADME.md\n");
+  writeFileSync(join(root, "README.md"), "mine");
+  const r = sync(root, v.base, "--platform", "roku", "--version", "1");
+  assert.notEqual(r.status, 0);
+  assert.match(r.stderr, /README\.md is not a generated roku output; refusing to remove it/);
+  assert.equal(readFileSync(join(root, "README.md"), "utf8"), "mine");
+});
+
+test("sync: refuses a file list without a final newline", () => {
+  const v = release("1", { "locale/en_US/strings.json": "{}\n", ".silo-translations-files": "locale/en_US/strings.json" });
+  const root = client();
+  const r = sync(root, v.base, "--platform", "roku", "--version", "1");
+  assert.notEqual(r.status, 0);
+  assert.match(r.stderr, /does not end with a newline/);
+});

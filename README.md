@@ -50,6 +50,12 @@ client's repository root, and it is exactly what the platform's release tarball 
 | android | `android-shared/src/androidMain/res/values{,-<qualifier>}/strings_catalog.xml` (next to hand-written `strings.xml`, never replacing it; a plural whose English `one` prints no number carries `tools:ignore="ImpliedQuantity"`, since fr and pt-BR `one` also covers 0), `android-shared/silo-locales.properties` (each app's languages as resource qualifiers, for `androidResources.localeFilters`) |
 | roku | `locale/<folder>/strings.json` (one per language and pseudo-locale), `locale/languages.json` (`{"languages": [shipped folders], "pseudo": [folders]}`), `source/util/pluralRules.bs`, `i18n-charsets/<folder>.txt` (every character that language's strings use, sorted, for the font subset step; outside `locale/` and `fonts/`, so not packaged) |
 
+Bidi control characters (U+061C, U+200E, U+200F, U+202A to U+202E, U+2066 to U+2069) never appear
+literally in generated files, because client repositories refuse them in tracked files. JSON
+outputs write them as `\uXXXX`, and Android as the `\uXXXX` escapes AAPT decodes. The strings an
+app reads are unchanged. Roku's charsets leave them out, since they draw nothing. `make check`
+fails if a generated file holds one literally.
+
 `<dir>/.silo-translations-out` holds the version the files were generated as: the release
 version, or `local-<commit>` (with `-dirty` when the catalog or tools have uncommitted changes).
 A language file holds only the keys translated in that language; clients fall back to

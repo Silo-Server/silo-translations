@@ -10,7 +10,7 @@
 // translated there; otherwise the client uses English with English's category.
 import { inScope } from "../lib/catalog.ts";
 import { brightScriptCondition, categoriesFor, CLDR_VERSION } from "../lib/plural.ts";
-import { header, json, languagesFor, render, type Files, type GenInput } from "./common.ts";
+import { BIDI_CONTROL, header, json, languagesFor, render, type Files, type GenInput } from "./common.ts";
 import { shipsOn } from "../lib/locales.ts";
 import { TYPE, type Analysis, type MessageFormatElement } from "../lib/icu.ts";
 
@@ -39,7 +39,8 @@ function charset(messages: Analysis[]): string {
     }
   };
   for (const a of messages) collect(a.ast);
-  return [...chars].filter((c) => !/\p{Cc}/u.test(c)).sort((a, b) => a.codePointAt(0)! - b.codePointAt(0)!).join("");
+  // Control and bidi control characters draw nothing and need no glyph in the subset font.
+  return [...chars].filter((c) => !/\p{Cc}/u.test(c) && !BIDI_CONTROL.test(c)).sort((a, b) => a.codePointAt(0)! - b.codePointAt(0)!).join("");
 }
 
 /** Rules for every language Roku allows, shipped or not, so any folder a client has is covered. */

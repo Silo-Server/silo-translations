@@ -371,6 +371,48 @@
         }
       }
     },
+    "common.sharedBy" : {
+      "comment" : "Line under a shared item. name is the person's display name, isolated so a name in another script keeps its direction.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "شاركه \u2068%1$@\u2069\u200F"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shared by \u2068%1$@\u2069"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Shared by \u2068%1$@\u2069"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Shared by \u2068%1$@\u2069"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Shared by \u2068%1$@\u2069"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Shared by \u2068%1$@\u2069"
+          }
+        }
+      }
+    },
     "companion.limit" : {
       "comment" : "How many items a profile may pick. {name} is the profile name; {count} the limit.",
       "extractionState" : "manual",

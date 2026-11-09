@@ -8,11 +8,13 @@
 import { inScope, type SourceEntry } from "../lib/catalog.ts";
 import { androidName } from "../lib/check.ts";
 import { TYPE, type Analysis, type MessageFormatElement } from "../lib/icu.ts";
-import { hasPercent, header, languagesFor, positional, render, type Files, type GenInput } from "./common.ts";
+import { BIDI_CONTROL, hasPercent, header, languagesFor, positional, render, type Files, type GenInput } from "./common.ts";
 import { ANDROID_APPS, androidApps, type Locale } from "../lib/locales.ts";
 
 const RES = "android-shared/src/androidMain/res";
 const SPECIFIER = { String: "s", int: "d", double: "f" } as const;
+/** Characters written as \uXXXX: XML-forbidden controls, carriage return, and bidi controls. */
+const ESCAPED = new RegExp(`[\\u0000-\\u0008\\u000B-\\u001F\\u007F]|${BIDI_CONTROL.source}`, "g");
 const TOOLS_NS = 'xmlns:tools="http://schemas.android.com/tools"';
 
 /**
@@ -34,9 +36,10 @@ export function escapeAndroid(text: string, formatted: boolean): string {
     .replace(/\n/g, "\\n")
     .replace(/\t/g, "\\t");
   if (formatted) s = s.replace(/%/g, "%%");
-  // XML forbids most control characters, and AAPT folds a raw carriage return into a space:
-  // write them as Android \uXXXX escapes.
-  s = s.replace(/[\u0000-\u0008\u000B-\u001F\u007F]/g, (c) => `\\u${c.charCodeAt(0).toString(16).padStart(4, "0")}`);
+  // XML forbids most control characters, AAPT folds a raw carriage return into a space, and
+  // repositories that vendor the output refuse literal bidi controls: write them all as Android
+  // \uXXXX escapes, which AAPT decodes to the same character.
+  s = s.replace(ESCAPED, (c) => `\\u${c.charCodeAt(0).toString(16).padStart(4, "0")}`);
   return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
