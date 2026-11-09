@@ -153,6 +153,20 @@ test("sync: never writes or removes through a symlinked directory", () => {
   assert.equal(readFileSync(join(outside, "strings.json"), "utf8"), "not yours");
 });
 
+test("sync: never writes its metadata through a symlink", () => {
+  for (const meta of [".silo-translations-files", ".silo-translations.tmp"]) {
+    const v1 = release("1", { "locale/en_US/strings.json": "{}\n" });
+    const root = client();
+    const outside = join(mkdtempSync(join(tmpdir(), "silo-outside-")), "target");
+    writeFileSync(outside, "not yours");
+    symlinkSync(outside, join(root, meta));
+    const r = sync(root, v1.base, "--platform", "roku", "--version", "1");
+    assert.notEqual(r.status, 0, meta);
+    assert.match(r.stderr, /symlink/, meta);
+    assert.equal(readFileSync(outside, "utf8"), "not yours", meta);
+  }
+});
+
 test("sync: a failed copy keeps the old list, so a retry still removes dropped files", () => {
   const v1 = release("1", { "locale/en_US/strings.json": "{}\n", "locale/de/strings.json": "{}\n", "source/util/pluralRules.bs": "' 1\n" });
   const v2 = release("2", { "locale/en_US/strings.json": "{}\n", "source/util/pluralRules.bs": "' 2\n" });

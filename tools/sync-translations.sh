@@ -122,6 +122,10 @@ else
 fi
 
 unsafe "$tmp/new-list" && die "$list of the new tree has unsafe paths"
+# The sync's own metadata files are written too: the file list and the config (through its .tmp).
+for meta in "$list" .silo-translations .silo-translations.tmp; do
+  contained "$meta" || die "$root/$meta is a symlink; refusing to write there"
+done
 while IFS= read -r path; do
   contained "$path" || die "$path goes through a symlink in the client; refusing to write there"
 done < "$tmp/new-list"
