@@ -778,6 +778,18 @@
       "roku"
     ]
   },
+  "accounts.hostOnLocalNetwork": "{host} · Connected on your local network",
+  "@accounts.hostOnLocalNetwork": {
+    "description": "Phone Accounts screen: line under the active server's name while the app reaches it over its direct local-network route. {host}: the server's host name or IP address, with its port when the saved address names one.",
+    "placeholders": {
+      "host": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "android"
+    ]
+  },
   "accounts.remove.body": "This signs out of every account on {server} on this device, then removes the server.",
   "@accounts.remove.body": {
     "description": "Body of the phone dialog for removing a server from Accounts settings. {server}: the server's display name, shown in bold.",
@@ -2152,7 +2164,7 @@
   },
   "calendar.episodeShort": "E{episode}",
   "@calendar.episodeShort": {
-    "description": "Abbreviated episode label on a small card: on the Roku Calendar screen, and on Android phone and TV episode cards when the season number is unknown (Android pads to two digits). Apple iOS, tvOS and macOS use it in the video player title and info overlay when an episode has an episode number but no season number. {episode}: the episode number.",
+    "description": "Abbreviated episode label on a small card: on the Roku Calendar screen, and on Android phone and TV episode cards when the season number is unknown (Android pads to two digits). Apple iOS, tvOS and macOS use it in the video player title and info overlay when an episode has an episode number but no season number. {episode}: the episode number. Apple iOS and macOS: a downloaded episode's tag in Downloads rows, on its offline page and in the Free Up Space sheet when only the episode number is known, the code of an episode row in an expanded downloaded series, and the code in the offline play button of a special (Play E3). Roku also uses it on episode cards when the season number is unknown (padded to two digits).",
     "placeholders": {
       "episode": {
         "type": "String"
@@ -2221,84 +2233,84 @@
   },
   "calendar.month.1": "January",
   "@calendar.month.1": {
-    "description": "Roku Calendar screen: name of month 1 of the year (1 = January) in headings.",
+    "description": "Roku Calendar screen: name of month 1 of the year (1 = January) in headings, and in long dates (catalog.date.long), such as October 4, 2015.",
     "x-platforms": [
       "roku"
     ]
   },
   "calendar.month.10": "October",
   "@calendar.month.10": {
-    "description": "Roku Calendar screen: name of month 10 of the year (1 = January) in headings.",
+    "description": "Roku Calendar screen: name of month 10 of the year (1 = January) in headings, and in long dates (catalog.date.long), such as October 4, 2015.",
     "x-platforms": [
       "roku"
     ]
   },
   "calendar.month.11": "November",
   "@calendar.month.11": {
-    "description": "Roku Calendar screen: name of month 11 of the year (1 = January) in headings.",
+    "description": "Roku Calendar screen: name of month 11 of the year (1 = January) in headings, and in long dates (catalog.date.long), such as October 4, 2015.",
     "x-platforms": [
       "roku"
     ]
   },
   "calendar.month.12": "December",
   "@calendar.month.12": {
-    "description": "Roku Calendar screen: name of month 12 of the year (1 = January) in headings.",
+    "description": "Roku Calendar screen: name of month 12 of the year (1 = January) in headings, and in long dates (catalog.date.long), such as October 4, 2015.",
     "x-platforms": [
       "roku"
     ]
   },
   "calendar.month.2": "February",
   "@calendar.month.2": {
-    "description": "Roku Calendar screen: name of month 2 of the year (1 = January) in headings.",
+    "description": "Roku Calendar screen: name of month 2 of the year (1 = January) in headings, and in long dates (catalog.date.long), such as October 4, 2015.",
     "x-platforms": [
       "roku"
     ]
   },
   "calendar.month.3": "March",
   "@calendar.month.3": {
-    "description": "Roku Calendar screen: name of month 3 of the year (1 = January) in headings.",
+    "description": "Roku Calendar screen: name of month 3 of the year (1 = January) in headings, and in long dates (catalog.date.long), such as October 4, 2015.",
     "x-platforms": [
       "roku"
     ]
   },
   "calendar.month.4": "April",
   "@calendar.month.4": {
-    "description": "Roku Calendar screen: name of month 4 of the year (1 = January) in headings.",
+    "description": "Roku Calendar screen: name of month 4 of the year (1 = January) in headings, and in long dates (catalog.date.long), such as October 4, 2015.",
     "x-platforms": [
       "roku"
     ]
   },
   "calendar.month.5": "May",
   "@calendar.month.5": {
-    "description": "Roku Calendar screen: name of month 5 of the year (1 = January) in headings.",
+    "description": "Roku Calendar screen: name of month 5 of the year (1 = January) in headings, and in long dates (catalog.date.long), such as October 4, 2015.",
     "x-platforms": [
       "roku"
     ]
   },
   "calendar.month.6": "June",
   "@calendar.month.6": {
-    "description": "Roku Calendar screen: name of month 6 of the year (1 = January) in headings.",
+    "description": "Roku Calendar screen: name of month 6 of the year (1 = January) in headings, and in long dates (catalog.date.long), such as October 4, 2015.",
     "x-platforms": [
       "roku"
     ]
   },
   "calendar.month.7": "July",
   "@calendar.month.7": {
-    "description": "Roku Calendar screen: name of month 7 of the year (1 = January) in headings.",
+    "description": "Roku Calendar screen: name of month 7 of the year (1 = January) in headings, and in long dates (catalog.date.long), such as October 4, 2015.",
     "x-platforms": [
       "roku"
     ]
   },
   "calendar.month.8": "August",
   "@calendar.month.8": {
-    "description": "Roku Calendar screen: name of month 8 of the year (1 = January) in headings.",
+    "description": "Roku Calendar screen: name of month 8 of the year (1 = January) in headings, and in long dates (catalog.date.long), such as October 4, 2015.",
     "x-platforms": [
       "roku"
     ]
   },
   "calendar.month.9": "September",
   "@calendar.month.9": {
-    "description": "Roku Calendar screen: name of month 9 of the year (1 = January) in headings.",
+    "description": "Roku Calendar screen: name of month 9 of the year (1 = January) in headings, and in long dates (catalog.date.long), such as October 4, 2015.",
     "x-platforms": [
       "roku"
     ]
@@ -2377,7 +2389,7 @@
   },
   "calendar.seasonShort": "S{season}",
   "@calendar.seasonShort": {
-    "description": "Abbreviated season label on a small card: on the Roku Calendar screen, and on Android phone and TV episode cards when the episode number is unknown (Android pads to two digits). Apple iOS, tvOS and macOS use it in the video player title and info overlay when an episode has a season number but no episode number. {season}: the season number.",
+    "description": "Abbreviated season label on a small card: on the Roku Calendar screen, and on Android phone and TV episode cards when the episode number is unknown (Android pads to two digits). Apple iOS, tvOS and macOS use it in the video player title and info overlay when an episode has a season number but no episode number. {season}: the season number. Apple iOS and macOS: a downloaded episode's tag in Downloads rows, on its offline page and in the Free Up Space sheet when only the season number is known. Roku also uses it on episode cards when the episode number is unknown (padded to two digits).",
     "placeholders": {
       "season": {
         "type": "String"
@@ -2593,7 +2605,7 @@
   },
   "cardMenu.removeContinueWatching": "Remove from Continue Watching",
   "@cardMenu.removeContinueWatching": {
-    "description": "Menu row in the Options menu (Roku) or long-press menu (Android phone and TV) of a card in the Continue Watching row. Removes the item from that row.",
+    "description": "Menu row in the Options menu (Roku) or long-press menu (Android phone and TV) of a card in the Continue Watching row. Removes the item from that row. Apple: long-press menu of a Continue Watching card on iPhone, iPad and Mac, and its context menu on Apple TV.",
     "x-platforms": [
       "apple",
       "android",
@@ -3458,9 +3470,45 @@
       "roku"
     ]
   },
+  "catalog.date.long": "{month} {day}, {year}",
+  "@catalog.date.long": {
+    "description": "Roku: a date in long form, on a title's detail page (Released, First Aired, Last Aired, Aired), when the interface language is not the one the Roku is set to. {month}: the month's name (calendar.month.*); {day}: the day of the month; {year}: the four-digit year. Reorder for the language, such as {day} {month} {year}.",
+    "placeholders": {
+      "month": {
+        "type": "String"
+      },
+      "day": {
+        "type": "String"
+      },
+      "year": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "roku"
+    ]
+  },
+  "catalog.date.short": "{month} {day}, {year}",
+  "@catalog.date.short": {
+    "description": "Roku: a date in short form, such as Feb 18, 2026: an episode's air date on its card and in the detail page's facts, a Shuffle pick's release date on its Up Next card, and a person's birth and death dates; used when the interface language is not the one the Roku is set to. {month}: the abbreviated month name (settings.month.*); {day}: the day of the month; {year}: the four-digit year. Reorder for the language.",
+    "placeholders": {
+      "month": {
+        "type": "String"
+      },
+      "day": {
+        "type": "String"
+      },
+      "year": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "roku"
+    ]
+  },
   "catalog.episodeCaption": "S{season} · E{episode}",
   "@catalog.episodeCaption": {
-    "description": "Episode caption, such as S2 · E5, with a middle dot separator: on Roku cards, in the Android TV player Info panel above the episode title (shown in capitals), and as the season and episode line in the Apple iOS, tvOS and macOS video player's info overlay and Remote Control state. {season}: the season number; {episode}: the episode number.",
+    "description": "Episode caption, such as S2 · E5, with a middle dot separator: on Roku cards, in the Android TV player Info panel above the episode title (shown in capitals), and as the season and episode line in the Apple iOS, tvOS and macOS video player's info overlay and Remote Control state. {season}: the season number; {episode}: the episode number. Apple iOS and macOS: the season and episode of a downloaded episode in Downloads rows, in the downloads Live Activity and in the background download progress, and as the code in the This Episode row of the series Download sheet (S1 · E2 · Pilot, joined to the title through detail.episodeCard.title). Roku also uses it after the episode title in the player's title line and Info tab.",
     "placeholders": {
       "season": {
         "type": "String"
@@ -3477,7 +3525,7 @@
   },
   "catalog.episodeTag": "S{season}E{episode}",
   "@catalog.episodeTag": {
-    "description": "Compact episode tag, such as S2E5 (Android pads each number to two digits: S02E05), on Roku, Android phone and Android TV cards and the Android TV Home hero. On Android phone it also appears in a download's subtitle and progress notification, and in the media notification after the series name, such as Severance - S02E04. On Apple iOS, tvOS and macOS it is the season and episode code in the video player's title line (series • S2E5 • episode title), also on the lock screen. {season}: the season number; {episode}: the episode number. Android phone and TV title pages: the code before the episode title under an episode card (S01E02).",
+    "description": "Compact episode tag, such as S2E5 (Android pads each number to two digits: S02E05), on Roku, Android phone and Android TV cards and the Android TV Home hero. On Android phone it also appears in a download's subtitle and progress notification, and in the media notification after the series name, such as Severance - S02E04. On Apple iOS, tvOS and macOS it is the season and episode code in the video player's title line (series • S2E5 • episode title), also on the lock screen. {season}: the season number; {episode}: the episode number. Android phone and TV title pages: the code before the episode title under an episode card (S01E02). Apple iOS, tvOS and macOS also show it padded to two digits (S01E02) on episode cards in Home rows, library and search grids and a series page's episode rail, and in the Apple TV Top Shelf after the series name (Severance · S2E5); the Downloads Free Up Space sheet shows it unpadded after the series name.",
     "placeholders": {
       "season": {
         "type": "String"
@@ -6157,6 +6205,13 @@
       "roku"
     ]
   },
+  "detail.a11yNowViewing": "Now viewing",
+  "@detail.a11yNowViewing": {
+    "description": "Apple iOS, tvOS and macOS: part of the spoken (VoiceOver) label of the episode card, in a series page's episode rail, for the episode whose page is open. Read after the season, episode, title and air date, and before Watched.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "detail.actionOff": "Off",
   "@detail.actionOff": {
     "description": "Apple iOS: accessibility value read after an on/off action under a title's Play button (such as Favorite or Watchlist) when it is off.",
@@ -7134,7 +7189,7 @@
   },
   "detail.episode": "Episode {number}",
   "@detail.episode": {
-    "description": "Episode label on a series or episode page (Roku series page), also used as the name of an episode without a title. Apple iOS and macOS: series Download sheet and episode option name when the episode has no title. Apple iOS, tvOS and macOS: Up Next panel title for a next episode, shuffle pick or On Deck episode with no title of its own. Apple (iPhone, iPad, Apple TV): stand-in title of an untitled episode in the Watch Party picker and lobby. {number}: the episode number.",
+    "description": "Episode label on a series or episode page (Roku series page), also used as the name of an episode without a title. Apple iOS and macOS: series Download sheet and episode option name when the episode has no title. Apple iOS, tvOS and macOS: Up Next panel title for a next episode, shuffle pick or On Deck episode with no title of its own. Apple (iPhone, iPad, Apple TV): stand-in title of an untitled episode in the Watch Party picker and lobby. {number}: the episode number. Apple iOS, tvOS and macOS: the second part of an episode card's spoken (VoiceOver) label, as in Season 1, Episode 2, and the title of an untitled downloaded episode in Downloads.",
     "placeholders": {
       "number": {
         "type": "String"
@@ -7163,7 +7218,7 @@
   },
   "detail.episodeCard.title": "{code} · {title}",
   "@detail.episodeCard.title": {
-    "description": "Android phone and TV title page: title line under an episode card. {code}: the episode code, such as S01E02; {title}: the episode title.",
+    "description": "Android phone and TV title page: title line under an episode card. {code}: the episode code, such as S01E02; {title}: the episode title. Apple iOS, tvOS and macOS: the line under an episode card in Home rows, library and search grids and a series page's episode rail ({code} such as S01E02), the This Episode row of the series Download sheet ({code} such as S1 · E2), and an episode row in an expanded downloaded series ({code} such as E2). On Apple, {title} can be the stand-in name of an untitled episode, such as Episode 2.",
     "placeholders": {
       "code": {
         "type": "String"
@@ -7173,12 +7228,13 @@
       }
     },
     "x-platforms": [
-      "android"
+      "android",
+      "apple"
     ]
   },
   "detail.episodeCode": "S{season}·E{episode}",
   "@detail.episodeCode": {
-    "description": "Short episode code with a middle dot, such as S2·E5, on play buttons and Watch Party captions (Android phone, Apple iOS and tvOS). {season}: the season number; {episode}: the episode number. Both are passed as digits, so a year-numbered season reads 2021.",
+    "description": "Short episode code with a middle dot, such as S2·E5, on play buttons and Watch Party captions (Android phone, Apple iOS and tvOS). {season}: the season number; {episode}: the episode number. Both are passed as digits, so a year-numbered season reads 2021. Apple iOS and macOS: inside the play button of a downloaded episode's offline page (Play S2·E5).",
     "placeholders": {
       "season": {
         "type": "String"
@@ -8331,7 +8387,7 @@
   },
   "detail.season": "Season {number}",
   "@detail.season": {
-    "description": "Name of a season on a series page, such as in the season row or above the episode list. {number}: the season number.",
+    "description": "Name of a season on a series page, such as in the season row or above the episode list. {number}: the season number. Apple iOS, tvOS and macOS: also the first part of an episode card's spoken (VoiceOver) label, as in Season 1, Episode 2, the season tabs of the Apple TV Watch Party picker, and the Season row of the series Download sheet.",
     "placeholders": {
       "number": {
         "type": "String"
@@ -8453,7 +8509,7 @@
   },
   "detail.specials": "Specials",
   "@detail.specials": {
-    "description": "Name of the season on a series page (Roku) that holds special episodes outside regular numbering. Apple iOS and macOS also use it as the name of the specials season in downloaded series rows and on the offline series screen.",
+    "description": "Name of the season on a series page (Roku) that holds special episodes outside regular numbering. Apple iOS and macOS also use it as the name of the specials season in downloaded series rows and on the offline series screen. Apple iOS, tvOS and macOS: also the first part of a special episode card's spoken (VoiceOver) label, as in Specials, Episode 2, the specials tab of the Apple TV Watch Party picker, and the Season row of the series Download sheet for specials without a title.",
     "x-platforms": [
       "apple",
       "android",
@@ -15794,7 +15850,7 @@
   },
   "home.seasonEpisode": "S{season} E{episode}",
   "@home.seasonEpisode": {
-    "description": "Home card subtitle (Roku) and Home marquee line (Apple tvOS) for an episode. {season}: the season number; {episode}: the episode number. S and E abbreviate Season and Episode.",
+    "description": "Home card subtitle (Roku) and Home marquee line (Apple tvOS) for an episode. {season}: the season number; {episode}: the episode number. S and E abbreviate Season and Episode. Apple iOS and macOS: the first fact on a downloaded episode's offline page.",
     "placeholders": {
       "season": {
         "type": "String"
@@ -15822,6 +15878,15 @@
       "roku"
     ]
   },
+  "home.section.becauseYouEnjoy": "Because you enjoy {genres}",
+  "@home.section.becauseYouEnjoy": {
+    "description": "Title of a Discover or For You recommendation row the server words (shared title key `home.section.becauseYouEnjoy` from the row's title_key). Shown as a row heading on every client. A row built from one of the profile's taste clusters. Sentence case after the first word, unlike most row names. {genres}: genre names from metadata, already joined with \", \" by the server (\"Crime, Drama\"); not translated.",
+    "placeholders": {
+      "genres": {
+        "type": "String"
+      }
+    }
+  },
   "home.section.becauseYouWatched": "Because You Watched",
   "@home.section.becauseYouWatched": {
     "description": "Title of a home or library page row the server created (shared title key `home.section.becauseYouWatched` from section title_key). Shown as a row heading on every client."
@@ -15847,6 +15912,10 @@
   "@home.section.continueWatching": {
     "description": "Title of a home or library page row the server created (shared title key `home.section.continueWatching` from section title_key). Shown as a row heading on every client."
   },
+  "home.section.forYou": "For You",
+  "@home.section.forYou": {
+    "description": "Title of a Discover or For You recommendation row the server words (shared title key `home.section.forYou` from the row's title_key). Shown as a row heading on every client. The main row of the For You screen, picked for this profile."
+  },
   "home.section.hiddenGems": "Hidden Gems",
   "@home.section.hiddenGems": {
     "description": "Title of a home or library page row the server created (shared title key `home.section.hiddenGems` from section title_key). Shown as a row heading on every client."
@@ -15863,9 +15932,17 @@
   "@home.section.nextUp": {
     "description": "Title of a home or library page row the server created (shared title key `home.section.nextUp` from section title_key). Shown as a row heading on every client."
   },
+  "home.section.pickedFromYourHistory": "Picked from your history",
+  "@home.section.pickedFromYourHistory": {
+    "description": "Title of a Discover or For You recommendation row the server words (shared title key `home.section.pickedFromYourHistory` from the row's title_key). Shown as a row heading on every client. Titles picked from what this profile has watched. Sentence case after the first word, unlike most row names."
+  },
   "home.section.popularOnServer": "Popular on This Server",
   "@home.section.popularOnServer": {
     "description": "Title of a home or library page row the server created (shared title key `home.section.popularOnServer` from section title_key). Shown as a row heading on every client."
+  },
+  "home.section.profilesLikeYouEnjoyed": "Profiles Like You Enjoyed",
+  "@home.section.profilesLikeYouEnjoyed": {
+    "description": "Title of a Discover or For You recommendation row the server words (shared title key `home.section.profilesLikeYouEnjoyed` from the row's title_key). Shown as a row heading on every client. Titles that profiles with similar taste watched and liked."
   },
   "home.section.randomPicks": "Random Picks",
   "@home.section.randomPicks": {
@@ -15978,6 +16055,10 @@
   "home.section.topRatedTv": "Top Rated TV",
   "@home.section.topRatedTv": {
     "description": "Title of a home or library page row the server created (shared title key `home.section.topRatedTv` from section title_key). Shown as a row heading on every client."
+  },
+  "home.section.trendingOnServer": "Trending on Server",
+  "@home.section.trendingOnServer": {
+    "description": "Title of a home page row the server created (shared title key `home.section.trendingOnServer` from section title_key): the earlier default row of titles trending among this server's profiles, still stored on servers set up before it was renamed. Shown as a row heading on every client."
   },
   "home.section.trendingThisWeek": "Trending This Week",
   "@home.section.trendingThisWeek": {
@@ -17740,7 +17821,8 @@
     "description": "Android TV side navigation item for the Home screen. Short, space is limited.",
     "x-platforms": [
       "android"
-    ]
+    ],
+    "x-maxLength": 11
   },
   "nav.search": "Search",
   "@nav.search": {
@@ -18423,7 +18505,8 @@
       "apple",
       "android",
       "roku"
-    ]
+    ],
+    "x-maxLength": 30
   },
   "options.captionMute": "On mute",
   "@options.captionMute": {
@@ -18448,7 +18531,7 @@
   },
   "options.captions": "Captions",
   "@options.captions": {
-    "description": "Roku player options panel: row label for the closed captions setting.",
+    "description": "Roku player options panel: row label for the closed captions setting. Also the label of the Stats tab's row that shows the Roku's caption mode.",
     "x-platforms": [
       "roku"
     ]
@@ -21462,7 +21545,7 @@
   },
   "player.eyebrow.episode": "S{season}:E{episode}",
   "@player.eyebrow.episode": {
-    "description": "Android TV: player; season and episode code in the small line above the episode title, such as \"SEVERANCE · S2:E4\". {season}: season number; {episode}: episode number. Apple iOS/tvOS/macOS: season and episode code on the Up Next panel's next-episode card.",
+    "description": "Android TV: player; season and episode code in the small line above the episode title, such as \"SEVERANCE · S2:E4\". {season}: season number; {episode}: episode number. Apple iOS/tvOS/macOS: season and episode code on the Up Next panel's next-episode card. Roku: the episode's code beside its title on the Up Next panel, and in the player's title when the episode has no title of its own.",
     "placeholders": {
       "season": {
         "type": "String"
@@ -21473,7 +21556,8 @@
     },
     "x-platforms": [
       "apple",
-      "android"
+      "android",
+      "roku"
     ]
   },
   "player.eyebrow.movie": "Movie",
@@ -22781,6 +22865,34 @@
       "roku"
     ]
   },
+  "player.route.originalHttp": "Original http",
+  "@player.route.originalHttp": {
+    "description": "Roku player options panel, Info tab: value of the Route row when the server sends the original file as it is, over HTTP. HLS and HTTP are protocol names.",
+    "x-platforms": [
+      "roku"
+    ]
+  },
+  "player.route.serverRemuxHls": "Server remux hls",
+  "@player.route.serverRemuxHls": {
+    "description": "Roku player options panel, Info tab: value of the Route row when the server repackages the file without re-encoding it, as an HLS stream. HLS and HTTP are protocol names.",
+    "x-platforms": [
+      "roku"
+    ]
+  },
+  "player.route.serverRemuxProgressive": "Server remux progressive",
+  "@player.route.serverRemuxProgressive": {
+    "description": "Roku player options panel, Info tab: value of the Route row when the server repackages the file without re-encoding it, as one progressive download. HLS and HTTP are protocol names.",
+    "x-platforms": [
+      "roku"
+    ]
+  },
+  "player.route.serverTranscodeHls": "Server transcode hls",
+  "@player.route.serverTranscodeHls": {
+    "description": "Roku player options panel, Info tab: value of the Route row when the server re-encodes the video as an HLS stream. HLS and HTTP are protocol names.",
+    "x-platforms": [
+      "roku"
+    ]
+  },
   "player.scrubber.endsAt": "Ends {time}",
   "@player.scrubber.endsAt": {
     "description": "Android TV: player seek bar; clock time the title will finish at, after the time left, such as \"−42:10 · Ends 11:42 PM\". {time}: the clock time, already formatted.",
@@ -23369,13 +23481,28 @@
     "description": "Apple iOS/tvOS/macOS: playback stats panel (iPhone overlay, tvOS Info HUD Stats pane, Mac stats); row label for the total time frames were late, in seconds.",
     "x-platforms": [
       "apple"
-    ]
+    ],
+    "x-maxLength": 24
   },
   "player.stats.aetherCache": "Aether cache",
   "@player.stats.aetherCache": {
     "description": "Apple iOS/tvOS/macOS: playback stats panel (iPhone overlay, tvOS Info HUD Stats pane, Mac stats); row label for how much the playback engine (Aether, a name) holds in its cache, as a size.",
     "x-platforms": [
       "apple"
+    ]
+  },
+  "player.stats.answerNo": "no",
+  "@player.stats.answerNo": {
+    "description": "Roku player options panel, Stats tab: value of a yes-or-no row, such as Seek anywhere, in lowercase.",
+    "x-platforms": [
+      "roku"
+    ]
+  },
+  "player.stats.answerYes": "yes",
+  "@player.stats.answerYes": {
+    "description": "Roku player options panel, Stats tab: value of a yes-or-no row, such as Seek anywhere, in lowercase.",
+    "x-platforms": [
+      "roku"
     ]
   },
   "player.stats.appearOnceStarted": "Stats appear once playback starts.",
@@ -23392,6 +23519,21 @@
       "apple"
     ]
   },
+  "player.stats.audioChannels": "{codec} {channels} ch",
+  "@player.stats.audioChannels": {
+    "description": "Roku player options panel, Stats tab: the audio part of the Recipe row, such as aac 6 ch (ch: channels). {codec}: the audio codec's code; {channels}: the number of audio channels.",
+    "placeholders": {
+      "codec": {
+        "type": "String"
+      },
+      "channels": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "roku"
+    ]
+  },
   "player.stats.audioCodec": "Audio codec",
   "@player.stats.audioCodec": {
     "description": "Android phone: player playback stats panel; row label for the audio format being decoded, such as AAC.",
@@ -23404,6 +23546,13 @@
     "description": "Android phone: player playback stats panel; row label for the name of the audio decoder in use.",
     "x-platforms": [
       "android"
+    ]
+  },
+  "player.stats.audioFormat": "Audio format",
+  "@player.stats.audioFormat": {
+    "description": "Roku player options panel, Stats tab: row label for the audio format the Roku reports, such as eac3.",
+    "x-platforms": [
+      "roku"
     ]
   },
   "player.stats.audioUnderruns": "Audio underruns",
@@ -23425,7 +23574,8 @@
     "description": "Apple iOS/tvOS/macOS: playback stats panel (iPhone overlay, tvOS Info HUD Stats pane, Mac stats); row label for the average rate the source is read at.",
     "x-platforms": [
       "apple"
-    ]
+    ],
+    "x-maxLength": 24
   },
   "player.stats.backend": "Backend",
   "@player.stats.backend": {
@@ -23460,11 +23610,19 @@
       "android"
     ]
   },
+  "player.stats.decision": "Decision",
+  "@player.stats.decision": {
+    "description": "Roku player options panel, Stats tab: row label for the server's reason for its playback decision, which shows as the server's code.",
+    "x-platforms": [
+      "roku"
+    ]
+  },
   "player.stats.delivery": "Delivery",
   "@player.stats.delivery": {
-    "description": "Apple iOS/tvOS/macOS: playback stats panel (iPhone overlay, tvOS Info HUD Stats pane, Mac stats); row label for how the server delivers the stream, such as Server Remux HLS.",
+    "description": "Apple iOS/tvOS/macOS: playback stats panel (iPhone overlay, tvOS Info HUD Stats pane, Mac stats); row label for how the server delivers the stream, such as Server Remux HLS. Roku player options panel, Stats tab: row label for the plan's delivery, which shows as the server's code, such as original_http.",
     "x-platforms": [
-      "apple"
+      "apple",
+      "roku"
     ]
   },
   "player.stats.deliveryOriginal": "Original",
@@ -23529,6 +23687,13 @@
     "description": "Apple iOS/tvOS/macOS: playback stats panel (iPhone overlay, tvOS Info HUD Stats pane, Mac stats); row label for how many seconds of decoded video wait to be shown.",
     "x-platforms": [
       "apple"
+    ]
+  },
+  "player.stats.dolbyVisionClaimed": "DV claimed",
+  "@player.stats.dolbyVisionClaimed": {
+    "description": "Roku player options panel, Stats tab: row label for whether the server says the stream is Dolby Vision (DV); its value is yes or no.",
+    "x-platforms": [
+      "roku"
     ]
   },
   "player.stats.dolbyVisionProfile": "Dolby Vision Profile {profile}",
@@ -23622,6 +23787,26 @@
     "description": "Apple iOS/tvOS/macOS: playback stats panel (iPhone overlay, tvOS Info HUD Stats pane, Mac stats); row label for the current rate the source is read at.",
     "x-platforms": [
       "apple"
+    ],
+    "x-maxLength": 24
+  },
+  "player.stats.lastStop": "Last stop",
+  "@player.stats.lastStop": {
+    "description": "Roku player options panel, Stats tab: row label for how long the last stop took, in milliseconds.",
+    "x-platforms": [
+      "roku"
+    ]
+  },
+  "player.stats.milliseconds": "{value} ms",
+  "@player.stats.milliseconds": {
+    "description": "Roku player options panel, Stats tab: a time in milliseconds, such as 3411 ms, on the Last stop row. {value}: the number of milliseconds.",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "roku"
     ]
   },
   "player.stats.networkThroughput": "Network throughput",
@@ -23645,18 +23830,40 @@
       "android"
     ]
   },
+  "player.stats.noneYet": "None yet",
+  "@player.stats.noneYet": {
+    "description": "Roku player options panel, Stats tab: value of the Plan row before the server has answered with a playback plan.",
+    "x-platforms": [
+      "roku"
+    ]
+  },
   "player.stats.observedFrameRate": "Observed frame rate",
   "@player.stats.observedFrameRate": {
     "description": "Apple iOS/tvOS/macOS: playback stats panel (iPhone overlay, tvOS Info HUD Stats pane, Mac stats); row label for the frame rate actually measured, in fps.",
     "x-platforms": [
       "apple"
-    ]
+    ],
+    "x-maxLength": 24
   },
   "player.stats.offlineFile": "Offline file",
   "@player.stats.offlineFile": {
     "description": "Apple iOS/tvOS/macOS: playback stats panel (iPhone overlay, tvOS Info HUD Stats pane, Mac stats); value of the Source row when a downloaded file plays.",
     "x-platforms": [
       "apple"
+    ]
+  },
+  "player.stats.offset": "Offset",
+  "@player.stats.offset": {
+    "description": "Roku player options panel, Stats tab: row label for how far the stream's timeline is shifted from the title's, in seconds.",
+    "x-platforms": [
+      "roku"
+    ]
+  },
+  "player.stats.origin": "Origin",
+  "@player.stats.origin": {
+    "description": "Roku player options panel, Stats tab: row label for where the stream comes from, api or proxy (shown as those codes).",
+    "x-platforms": [
+      "roku"
     ]
   },
   "player.stats.overlayNote": "Live overlay on the player",
@@ -23722,6 +23929,13 @@
       "apple"
     ]
   },
+  "player.stats.plan": "Plan",
+  "@player.stats.plan": {
+    "description": "Roku player options panel, Stats tab: label of the only row before the server has answered with a playback plan (its value is None yet).",
+    "x-platforms": [
+      "roku"
+    ]
+  },
   "player.stats.playbackRate": "Playback rate",
   "@player.stats.playbackRate": {
     "description": "Apple iOS/tvOS/macOS: playback stats panel (iPhone overlay, tvOS Info HUD Stats pane, Mac stats); row label for the playback speed, such as 1.00x.",
@@ -23743,11 +23957,25 @@
       "apple"
     ]
   },
+  "player.stats.range": "Range",
+  "@player.stats.range": {
+    "description": "Roku player options panel, Stats tab: row label for the video's dynamic range, such as hdr10.",
+    "x-platforms": [
+      "roku"
+    ]
+  },
   "player.stats.readerRunway": "Reader runway",
   "@player.stats.readerRunway": {
     "description": "Apple iOS/tvOS/macOS: playback stats panel (iPhone overlay, tvOS Info HUD Stats pane, Mac stats); row label for how much data the file reader holds ahead of playback, as a size.",
     "x-platforms": [
       "apple"
+    ]
+  },
+  "player.stats.recipe": "Recipe",
+  "@player.stats.recipe": {
+    "description": "Roku player options panel, Stats tab: row label for the stream's video and audio codecs, such as h264/aac 6 ch.",
+    "x-platforms": [
+      "roku"
     ]
   },
   "player.stats.residentMemory": "Resident memory",
@@ -23792,6 +24020,18 @@
       "apple"
     ]
   },
+  "player.stats.seconds": "{value} s",
+  "@player.stats.seconds": {
+    "description": "Roku player options panel, Stats tab: a time in seconds, such as 0.0 s, on the Offset row. {value}: the number of seconds with one decimal.",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "roku"
+    ]
+  },
   "player.stats.sectionBuffer": "Buffer",
   "@player.stats.sectionBuffer": {
     "description": "Apple iOS/tvOS/macOS: playback stats panel (iPhone overlay, tvOS Info HUD Stats pane, Mac stats); section heading (shown in capitals on tvOS) over the playback status and buffer rows.",
@@ -23822,9 +24062,24 @@
   },
   "player.stats.sectionSource": "Source",
   "@player.stats.sectionSource": {
-    "description": "Apple iOS/tvOS/macOS: playback stats panel (iPhone overlay, tvOS Info HUD Stats pane, Mac stats); section heading (shown in capitals on tvOS) over the route, source, delivery and container rows.",
+    "description": "Apple iOS/tvOS/macOS: playback stats panel (iPhone overlay, tvOS Info HUD Stats pane, Mac stats); section heading (shown in capitals on tvOS) over the route, source, delivery and container rows. Roku player options panel, Stats tab: heading of the column of the playback plan's facts, and of the only column before there is a plan.",
     "x-platforms": [
-      "apple"
+      "apple",
+      "roku"
+    ]
+  },
+  "player.stats.seekAnywhere": "Seek anywhere",
+  "@player.stats.seekAnywhere": {
+    "description": "Roku player options panel, Stats tab: row label for whether the player can jump to any point in the stream; its value is yes or no.",
+    "x-platforms": [
+      "roku"
+    ]
+  },
+  "player.stats.slowStops": "Slow stops",
+  "@player.stats.slowStops": {
+    "description": "Roku player options panel, Stats tab: row label for how many times playback stopped slowly.",
+    "x-platforms": [
+      "roku"
     ]
   },
   "player.stats.source": "Source",
@@ -23832,6 +24087,13 @@
     "description": "Apple iOS/tvOS/macOS: playback stats panel (iPhone overlay, tvOS Info HUD Stats pane, Mac stats); row label for where the media comes from: the server host name, or Offline file.",
     "x-platforms": [
       "apple"
+    ]
+  },
+  "player.stats.stream": "Stream",
+  "@player.stats.stream": {
+    "description": "Roku player options panel, Stats tab: row label for the stream's protocol and container, such as hls/mpegts.",
+    "x-platforms": [
+      "roku"
     ]
   },
   "player.stats.subtitles": "Subtitles",
@@ -23891,6 +24153,32 @@
     "description": "Android phone: player playback stats panel; row label for the name of the video decoder in use.",
     "x-platforms": [
       "android"
+    ]
+  },
+  "player.stats.videoFormat": "Video format",
+  "@player.stats.videoFormat": {
+    "description": "Roku player options panel, Stats tab: row label for the video format the Roku reports, such as hevc.",
+    "x-platforms": [
+      "roku"
+    ]
+  },
+  "player.stats.videoMode": "Video mode",
+  "@player.stats.videoMode": {
+    "description": "Roku player options panel, Stats tab: row label for the display mode the Roku outputs, such as 2160p60b10.",
+    "x-platforms": [
+      "roku"
+    ]
+  },
+  "player.stats.videoOnly": "{codec}, no audio",
+  "@player.stats.videoOnly": {
+    "description": "Roku player options panel, Stats tab: the Recipe row for a stream without audio, such as h264, no audio. {codec}: the video codec's code.",
+    "placeholders": {
+      "codec": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "roku"
     ]
   },
   "player.stats.waiting": "Waiting for player data",
@@ -25663,7 +25951,8 @@
     "description": "Android phone and TV: profile create and edit forms; last step of the maximum rating ladder, meaning no rating limit.",
     "x-platforms": [
       "android"
-    ]
+    ],
+    "x-maxLength": 6
   },
   "profiles.access.ceiling": "Can watch titles rated {rating} and below.",
   "@profiles.access.ceiling": {
@@ -25838,7 +26127,7 @@
   },
   "profiles.avatar.pickerName": "Profile avatar",
   "@profiles.avatar.pickerName": {
-    "description": "Phone: name given to each avatar choice in the avatar picker of the profile form; screen readers read it as the avatar's name.",
+    "description": "Phone: screen reader label of each avatar choice in the avatar picker of the profile form.",
     "x-platforms": [
       "android"
     ]
@@ -28554,7 +28843,8 @@
       "apple",
       "roku",
       "android"
-    ]
+    ],
+    "x-maxLength": 12
   },
   "requests.short.declined": "Declined",
   "@requests.short.declined": {
@@ -28563,7 +28853,8 @@
       "apple",
       "roku",
       "android"
-    ]
+    ],
+    "x-maxLength": 12
   },
   "requests.short.downloading": "Downloading",
   "@requests.short.downloading": {
@@ -28572,7 +28863,8 @@
       "apple",
       "roku",
       "android"
-    ]
+    ],
+    "x-maxLength": 12
   },
   "requests.short.failed": "Failed",
   "@requests.short.failed": {
@@ -28581,7 +28873,8 @@
       "apple",
       "roku",
       "android"
-    ]
+    ],
+    "x-maxLength": 12
   },
   "requests.short.inLibrary": "In library",
   "@requests.short.inLibrary": {
@@ -28590,14 +28883,16 @@
       "apple",
       "roku",
       "android"
-    ]
+    ],
+    "x-maxLength": 12
   },
   "requests.short.needsAttention": "Needs attention",
   "@requests.short.needsAttention": {
     "description": "Apple (iPhone, iPad, Mac, Apple TV): short status label on a request card or chip when the request was declined or failed.",
     "x-platforms": [
       "apple"
-    ]
+    ],
+    "x-maxLength": 12
   },
   "requests.short.onTheWay": "On the way",
   "@requests.short.onTheWay": {
@@ -28606,7 +28901,8 @@
       "apple",
       "roku",
       "android"
-    ]
+    ],
+    "x-maxLength": 12
   },
   "requests.short.partly": "Partly in library",
   "@requests.short.partly": {
@@ -28615,7 +28911,8 @@
       "apple",
       "roku",
       "android"
-    ]
+    ],
+    "x-maxLength": 12
   },
   "requests.short.pending": "Pending",
   "@requests.short.pending": {
@@ -28624,7 +28921,8 @@
       "apple",
       "roku",
       "android"
-    ]
+    ],
+    "x-maxLength": 12
   },
   "requests.short.queued": "Queued",
   "@requests.short.queued": {
@@ -28633,7 +28931,8 @@
       "apple",
       "roku",
       "android"
-    ]
+    ],
+    "x-maxLength": 12
   },
   "requests.short.unavailable": "Unavailable",
   "@requests.short.unavailable": {
@@ -28642,7 +28941,8 @@
       "apple",
       "roku",
       "android"
-    ]
+    ],
+    "x-maxLength": 12
   },
   "requests.stage.approved": "Approved",
   "@requests.stage.approved": {
@@ -29047,10 +29347,11 @@
   },
   "rows.exploreAll": "Explore all",
   "@rows.exploreAll": {
-    "description": "Roku and Android phone home and library rows, and Android TV rows: label on the final card of a row that opens the row's full page. On the phone also the action name of the row's tappable header.",
+    "description": "Roku and Android phone home and library rows, and Android TV rows: label on the final card of a row that opens the row's full page. On the phone also the action name of the row's tappable header. Apple iOS, tvOS and macOS: label of the last card in Home and library rows, the start of that card's spoken label (Explore all, then the row's title), and the spoken hint of a row's header.",
     "x-platforms": [
       "android",
-      "roku"
+      "roku",
+      "apple"
     ]
   },
   "rows.moreAudio": "{label}, {title}",
@@ -30591,23 +30892,26 @@
   },
   "settings.cards.size.compact": "Compact",
   "@settings.cards.size.compact": {
-    "description": "Android phone and TV Settings > Cards & Posters: the smallest Poster Size choice, and its value on the row.",
+    "description": "Android phone and TV Settings > Cards & Posters: the smallest Poster Size choice, and its value on the row. Apple iOS, tvOS and macOS Settings > Interface: the same Poster Size choice, and its value on the row.",
     "x-platforms": [
-      "android"
+      "android",
+      "apple"
     ]
   },
   "settings.cards.size.large": "Large",
   "@settings.cards.size.large": {
-    "description": "Android phone and TV Settings > Cards & Posters: the largest Poster Size choice, and its value on the row.",
+    "description": "Android phone and TV Settings > Cards & Posters: the largest Poster Size choice, and its value on the row. Apple iOS, tvOS and macOS Settings > Interface: the same Poster Size choice, and its value on the row.",
     "x-platforms": [
-      "android"
+      "android",
+      "apple"
     ]
   },
   "settings.cards.size.standard": "Standard",
   "@settings.cards.size.standard": {
-    "description": "Android phone and TV Settings > Cards & Posters: the default Poster Size choice, and its value on the row.",
+    "description": "Android phone and TV Settings > Cards & Posters: the default Poster Size choice, and its value on the row. Apple iOS, tvOS and macOS Settings > Interface: the same Poster Size choice, and its value on the row.",
     "x-platforms": [
-      "android"
+      "android",
+      "apple"
     ]
   },
   "settings.cards.title": "Cards & Posters",
@@ -30998,7 +31302,8 @@
   },
   "settings.control.appLanguage": "App language",
   "@settings.control.appLanguage": {
-    "description": "Label of the settings row that picks the language of the app's own menus, buttons and messages for this profile. Not the audio, subtitle or metadata language."
+    "description": "Label of the settings row that picks the language of the app's own menus, buttons and messages for this profile. Not the audio, subtitle or metadata language.",
+    "x-maxLength": 75
   },
   "settings.control.audioLanguage": "Audio Language",
   "@settings.control.audioLanguage": {
@@ -31007,7 +31312,8 @@
       "apple",
       "android",
       "roku"
-    ]
+    ],
+    "x-maxLength": 75
   },
   "settings.control.autoplay": "Auto-Play Next Episode",
   "@settings.control.autoplay": {
@@ -31016,7 +31322,8 @@
       "apple",
       "android",
       "roku"
-    ]
+    ],
+    "x-maxLength": 75
   },
   "settings.control.behavior": "Behavior",
   "@settings.control.behavior": {
@@ -31025,7 +31332,8 @@
       "apple",
       "android",
       "roku"
-    ]
+    ],
+    "x-maxLength": 75
   },
   "settings.control.bitrate": "Maximum Bitrate",
   "@settings.control.bitrate": {
@@ -31034,28 +31342,32 @@
       "apple",
       "android",
       "roku"
-    ]
+    ],
+    "x-maxLength": 75
   },
   "settings.control.blurImages": "Blur unwatched episode images",
   "@settings.control.blurImages": {
     "description": "Toggle row label in Roku settings; blur thumbnails of episodes the user has not watched, to avoid spoilers.",
     "x-platforms": [
       "roku"
-    ]
+    ],
+    "x-maxLength": 75
   },
   "settings.control.bufferingQuality": "Lower Quality When Buffering",
   "@settings.control.bufferingQuality": {
     "description": "Row label in Roku Playback settings; controls whether Silo lowers video quality automatically when playback keeps buffering.",
     "x-platforms": [
       "roku"
-    ]
+    ],
+    "x-maxLength": 75
   },
   "settings.control.connectionSpeed": "Connection Speed",
   "@settings.control.connectionSpeed": {
     "description": "Row label in Roku Playback settings that shows and runs the connection speed test.",
     "x-platforms": [
       "roku"
-    ]
+    ],
+    "x-maxLength": 75
   },
   "settings.control.credits": "Skip Credits",
   "@settings.control.credits": {
@@ -31064,7 +31376,8 @@
       "apple",
       "android",
       "roku"
-    ]
+    ],
+    "x-maxLength": 75
   },
   "settings.control.forced": "Show Forced Subtitles",
   "@settings.control.forced": {
@@ -31073,14 +31386,16 @@
       "apple",
       "android",
       "roku"
-    ]
+    ],
+    "x-maxLength": 75
   },
   "settings.control.hideOverviews": "Hide unwatched episode descriptions",
   "@settings.control.hideOverviews": {
     "description": "Toggle row label in Roku settings; hide descriptions of episodes the user has not watched, to avoid spoilers.",
     "x-platforms": [
       "roku"
-    ]
+    ],
+    "x-maxLength": 75
   },
   "settings.control.intros": "Skip Intros",
   "@settings.control.intros": {
@@ -31089,7 +31404,8 @@
       "apple",
       "android",
       "roku"
-    ]
+    ],
+    "x-maxLength": 75
   },
   "settings.control.language": "Language",
   "@settings.control.language": {
@@ -31098,7 +31414,8 @@
       "apple",
       "android",
       "roku"
-    ]
+    ],
+    "x-maxLength": 75
   },
   "settings.control.metadataLanguage": "Metadata Language",
   "@settings.control.metadataLanguage": {
@@ -31107,7 +31424,8 @@
       "apple",
       "android",
       "roku"
-    ]
+    ],
+    "x-maxLength": 75
   },
   "settings.control.profileSelection": "Profile Selection",
   "@settings.control.profileSelection": {
@@ -31116,14 +31434,16 @@
       "apple",
       "android",
       "roku"
-    ]
+    ],
+    "x-maxLength": 75
   },
   "settings.control.recaps": "Auto-Skip Recaps",
   "@settings.control.recaps": {
     "description": "Toggle row label in Roku Playback settings; automatically skip the previously-on recap at the start of an episode.",
     "x-platforms": [
       "roku"
-    ]
+    ],
+    "x-maxLength": 75
   },
   "settings.control.resolution": "Resolution",
   "@settings.control.resolution": {
@@ -31132,7 +31452,8 @@
       "apple",
       "android",
       "roku"
-    ]
+    ],
+    "x-maxLength": 75
   },
   "settings.control.skipBack": "Skip Back",
   "@settings.control.skipBack": {
@@ -31141,7 +31462,8 @@
       "apple",
       "android",
       "roku"
-    ]
+    ],
+    "x-maxLength": 75
   },
   "settings.control.skipForward": "Skip Forward",
   "@settings.control.skipForward": {
@@ -31150,7 +31472,8 @@
       "apple",
       "android",
       "roku"
-    ]
+    ],
+    "x-maxLength": 75
   },
   "settings.control.themeMusic": "Play Theme Music",
   "@settings.control.themeMusic": {
@@ -31158,7 +31481,8 @@
     "x-platforms": [
       "roku",
       "apple"
-    ]
+    ],
+    "x-maxLength": 75
   },
   "settings.control.themeMusicLoop": "Loop Theme Music",
   "@settings.control.themeMusicLoop": {
@@ -31167,7 +31491,8 @@
       "apple",
       "android",
       "roku"
-    ]
+    ],
+    "x-maxLength": 75
   },
   "settings.control.titleArt": "Show Title Art",
   "@settings.control.titleArt": {
@@ -31175,7 +31500,8 @@
     "x-platforms": [
       "roku",
       "apple"
-    ]
+    ],
+    "x-maxLength": 75
   },
   "settings.description.diagnostics": "Send a report to help fix a problem with this app.",
   "@settings.description.diagnostics": {
@@ -32190,84 +32516,84 @@
   },
   "settings.month.1": "Jan",
   "@settings.month.1": {
-    "description": "Abbreviated month name January, used in short dates like Jan 5 in Roku settings.",
+    "description": "Abbreviated month name January, used in short dates like Jan 5 in Roku settings, and in short dates on cards, detail and person pages (catalog.date.short), such as Oct 4, 2015.",
     "x-platforms": [
       "roku"
     ]
   },
   "settings.month.10": "Oct",
   "@settings.month.10": {
-    "description": "Abbreviated month name October, used in short dates in Roku settings.",
+    "description": "Abbreviated month name October, used in short dates in Roku settings, and in short dates on cards, detail and person pages (catalog.date.short), such as Oct 4, 2015.",
     "x-platforms": [
       "roku"
     ]
   },
   "settings.month.11": "Nov",
   "@settings.month.11": {
-    "description": "Abbreviated month name November, used in short dates in Roku settings.",
+    "description": "Abbreviated month name November, used in short dates in Roku settings, and in short dates on cards, detail and person pages (catalog.date.short), such as Oct 4, 2015.",
     "x-platforms": [
       "roku"
     ]
   },
   "settings.month.12": "Dec",
   "@settings.month.12": {
-    "description": "Abbreviated month name December, used in short dates in Roku settings.",
+    "description": "Abbreviated month name December, used in short dates in Roku settings, and in short dates on cards, detail and person pages (catalog.date.short), such as Oct 4, 2015.",
     "x-platforms": [
       "roku"
     ]
   },
   "settings.month.2": "Feb",
   "@settings.month.2": {
-    "description": "Abbreviated month name February, used in short dates in Roku settings.",
+    "description": "Abbreviated month name February, used in short dates in Roku settings, and in short dates on cards, detail and person pages (catalog.date.short), such as Oct 4, 2015.",
     "x-platforms": [
       "roku"
     ]
   },
   "settings.month.3": "Mar",
   "@settings.month.3": {
-    "description": "Abbreviated month name March, used in short dates in Roku settings.",
+    "description": "Abbreviated month name March, used in short dates in Roku settings, and in short dates on cards, detail and person pages (catalog.date.short), such as Oct 4, 2015.",
     "x-platforms": [
       "roku"
     ]
   },
   "settings.month.4": "Apr",
   "@settings.month.4": {
-    "description": "Abbreviated month name April, used in short dates in Roku settings.",
+    "description": "Abbreviated month name April, used in short dates in Roku settings, and in short dates on cards, detail and person pages (catalog.date.short), such as Oct 4, 2015.",
     "x-platforms": [
       "roku"
     ]
   },
   "settings.month.5": "May",
   "@settings.month.5": {
-    "description": "Abbreviated month name May, used in short dates in Roku settings.",
+    "description": "Abbreviated month name May, used in short dates in Roku settings, and in short dates on cards, detail and person pages (catalog.date.short), such as Oct 4, 2015.",
     "x-platforms": [
       "roku"
     ]
   },
   "settings.month.6": "Jun",
   "@settings.month.6": {
-    "description": "Abbreviated month name June, used in short dates in Roku settings.",
+    "description": "Abbreviated month name June, used in short dates in Roku settings, and in short dates on cards, detail and person pages (catalog.date.short), such as Oct 4, 2015.",
     "x-platforms": [
       "roku"
     ]
   },
   "settings.month.7": "Jul",
   "@settings.month.7": {
-    "description": "Abbreviated month name July, used in short dates in Roku settings.",
+    "description": "Abbreviated month name July, used in short dates in Roku settings, and in short dates on cards, detail and person pages (catalog.date.short), such as Oct 4, 2015.",
     "x-platforms": [
       "roku"
     ]
   },
   "settings.month.8": "Aug",
   "@settings.month.8": {
-    "description": "Abbreviated month name August, used in short dates in Roku settings.",
+    "description": "Abbreviated month name August, used in short dates in Roku settings, and in short dates on cards, detail and person pages (catalog.date.short), such as Oct 4, 2015.",
     "x-platforms": [
       "roku"
     ]
   },
   "settings.month.9": "Sep",
   "@settings.month.9": {
-    "description": "Abbreviated month name September, used in short dates in Roku settings.",
+    "description": "Abbreviated month name September, used in short dates in Roku settings, and in short dates on cards, detail and person pages (catalog.date.short), such as Oct 4, 2015.",
     "x-platforms": [
       "roku"
     ]
@@ -32338,10 +32664,11 @@
   },
   "settings.noLimit": "No limit",
   "@settings.noLimit": {
-    "description": "Value on a Roku settings row (such as Maximum Bitrate) meaning no cap is applied. Android phone and TV Settings > Playback: the choice and value of Maximum Bitrate that sets no cap.",
+    "description": "Value on a Roku settings row (such as Maximum Bitrate) meaning no cap is applied. Android phone and TV Settings > Playback: the choice and value of Maximum Bitrate that sets no cap. Apple iOS, tvOS and macOS Settings > Playback: the Maximum Bitrate choice and value that sets no cap.",
     "x-platforms": [
       "roku",
-      "android"
+      "android",
+      "apple"
     ]
   },
   "settings.noPreference": "No preference",
@@ -38567,7 +38894,8 @@
       "apple",
       "android",
       "roku"
-    ]
+    ],
+    "x-maxLength": 9
   },
   "setup.scheme.http": "HTTP",
   "@setup.scheme.http": {
@@ -38697,14 +39025,14 @@
   },
   "shell.card.thisFilm": "This film",
   "@shell.card.thisFilm": {
-    "description": "Apple TV: part of a poster card's spoken label in a box set row marking the movie whose page is open, read after the title and year.",
+    "description": "Apple TV: part of a poster card's spoken label in a box set row marking the movie whose page is open, read after the title and year. Apple iOS and macOS: the same spoken label part on a poster card in a box set row (VoiceOver only).",
     "x-platforms": [
       "apple"
     ]
   },
   "shell.card.watched": "Watched",
   "@shell.card.watched": {
-    "description": "Android phone: accessibility label of the check-mark badge on a poster card for a title the user has watched. Apple TV: part of a poster card's spoken label for a watched title.",
+    "description": "Android phone: accessibility label of the check-mark badge on a poster card for a title the user has watched. Apple TV: part of a poster card's spoken label for a watched title. Apple iOS, tvOS and macOS: also part of the spoken label of poster cards and episode cards.",
     "x-platforms": [
       "apple",
       "android"
@@ -39462,7 +39790,8 @@
     "x-platforms": [
       "apple",
       "android"
-    ]
+    ],
+    "x-maxLength": 11
   },
   "shell.trailer.noApp": "No app is available to open this trailer",
   "@shell.trailer.noApp": {
@@ -41670,7 +41999,8 @@
     "x-platforms": [
       "apple",
       "android"
-    ]
+    ],
+    "x-maxLength": 11
   },
   "tab.home": "Home",
   "@tab.home": {
@@ -41708,7 +42038,8 @@
     "x-platforms": [
       "apple",
       "android"
-    ]
+    ],
+    "x-maxLength": 11
   },
   "topBar.calendar": "Calendar",
   "@topBar.calendar": {
@@ -41717,7 +42048,8 @@
       "apple",
       "android",
       "roku"
-    ]
+    ],
+    "x-maxLength": 11
   },
   "topBar.forYou": "For You",
   "@topBar.forYou": {
@@ -41726,7 +42058,8 @@
       "apple",
       "android",
       "roku"
-    ]
+    ],
+    "x-maxLength": 11
   },
   "topBar.hint.forYou": "Rest to choose Watchlist, Favorites, or Recommendations",
   "@topBar.hint.forYou": {
@@ -41756,7 +42089,8 @@
       "apple",
       "android",
       "roku"
-    ]
+    ],
+    "x-maxLength": 11
   },
   "topBar.movies": "Movies",
   "@topBar.movies": {
@@ -41765,7 +42099,8 @@
       "apple",
       "android",
       "roku"
-    ]
+    ],
+    "x-maxLength": 11
   },
   "topBar.music": "Music",
   "@topBar.music": {
@@ -41773,7 +42108,8 @@
     "x-platforms": [
       "apple",
       "android"
-    ]
+    ],
+    "x-maxLength": 11
   },
   "topBar.profile": "Profile, {name}",
   "@topBar.profile": {
@@ -41839,7 +42175,8 @@
       "apple",
       "android",
       "roku"
-    ]
+    ],
+    "x-maxLength": 11
   },
   "topBar.tabSpoken": "{title}, tab, {position} of {total}",
   "@topBar.tabSpoken": {
@@ -46490,7 +46827,8 @@
       "apple",
       "android",
       "roku"
-    ]
+    ],
+    "x-maxLength": 40
   },
   "watchParty.page.starting": "Starting your party",
   "@watchParty.page.starting": {
@@ -49835,7 +50173,8 @@
     "description": "Web: admin Activity page: placeholder of the IP address field in the IP Lookup panel; keep the example address.",
     "x-platforms": [
       "web"
-    ]
+    ],
+    "x-maxLength": 35
   },
   "web.admin.activity.ipLookup.reload": "Reload history",
   "@web.admin.activity.ipLookup.reload": {
@@ -68445,7 +68784,7 @@
   },
   "web.admin.dashboard.widgets.libraries.typeAndPaths": "{count, plural, one {{type} · {count_text} path} other {{type} · {count_text} paths}}",
   "@web.admin.dashboard.widgets.libraries.typeAndPaths": {
-    "description": "Web admin, Dashboard page, Libraries widget: library type and folder count under its name. {count}: number of folders (selects the plural). {type}: the library type as the server names it, such as \"movies\". {count_text}: the folder count, as printed.",
+    "description": "Web admin, Dashboard page, Libraries widget: library type and folder count under its name. {count}: number of folders (selects the plural). {type}: the library type's name, such as \"Movies\". {count_text}: the folder count, as printed.",
     "placeholders": {
       "count": {
         "type": "int"
@@ -70568,7 +70907,8 @@
     "description": "Web: admin Devices page: placeholder of the device search field.",
     "x-platforms": [
       "web"
-    ]
+    ],
+    "x-maxLength": 42
   },
   "web.admin.devices.separator": "·",
   "@web.admin.devices.separator": {
@@ -110752,6 +111092,13 @@
       "web"
     ]
   },
+  "web.admin.users.detail.overview.access.anyQuality": "Any quality",
+  "@web.admin.users.detail.overview.access.anyQuality": {
+    "description": "Web: admin account page, Overview tab, Access card, playback line: shown when the account has no playback quality limit.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.users.detail.overview.access.autoApprove": "Approved automatically",
   "@web.admin.users.detail.overview.access.autoApprove": {
     "description": "Web: admin account page, Overview tab, Access card, requests detail: requests need no approval.",
@@ -110859,7 +111206,7 @@
   },
   "web.admin.users.detail.overview.access.quality": "{quality} quality",
   "@web.admin.users.detail.overview.access.quality": {
-    "description": "Web: admin account page, Overview tab, Access card, playback line: the highest playback quality, e.g. '4K quality'. {quality}: the quality name.",
+    "description": "Web: admin account page, Overview tab, Access card, playback line: the highest playback quality, e.g. '4K quality'. {quality}: the quality name (\"1080p\" or \"4K\"). With no limit, web.admin.users.detail.overview.access.anyQuality is shown instead.",
     "placeholders": {
       "quality": {
         "type": "String"
@@ -122304,14 +122651,16 @@
     "description": "Web smart collection guided rules editor (library browse and collection builder): placeholder of the TV network filter.",
     "x-platforms": [
       "web"
-    ]
+    ],
+    "x-maxLength": 20
   },
   "web.collections.guidedRules.selectRating": "Select rating...",
   "@web.collections.guidedRules.selectRating": {
     "description": "Web smart collection guided rules editor (library browse and collection builder): placeholder of the content rating filter.",
     "x-platforms": [
       "web"
-    ]
+    ],
+    "x-maxLength": 20
   },
   "web.collections.guidedRules.selectSeries": "Select series...",
   "@web.collections.guidedRules.selectSeries": {
@@ -122325,7 +122674,8 @@
     "description": "Web smart collection guided rules editor (library browse and collection builder): placeholder of the studio filter.",
     "x-platforms": [
       "web"
-    ]
+    ],
+    "x-maxLength": 20
   },
   "web.collections.guidedRules.series": "Series",
   "@web.collections.guidedRules.series": {
@@ -143126,6 +143476,13 @@
       "web"
     ]
   },
+  "web.profiles.helpers.access.anyQuality": "Any quality",
+  "@web.profiles.helpers.access.anyQuality": {
+    "description": "Web Settings → Profiles: part of the access summary under a profile's name, joined with \" · \". Shown when the profile has no maximum playback quality.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.profiles.helpers.access.libraries": "{count, plural, one {{count_text} library} other {{count_text} libraries}}",
   "@web.profiles.helpers.access.libraries": {
     "description": "Web Settings → Profiles: part of the access summary under a profile's name, joined with \" · \". How many libraries the profile may open, when restricted. {count}: the number of libraries. {count_text}: the same number, as written.",
@@ -143143,7 +143500,7 @@
   },
   "web.profiles.helpers.access.quality": "{quality} quality",
   "@web.profiles.helpers.access.quality": {
-    "description": "Web Settings → Profiles: part of the access summary under a profile's name, joined with \" · \". The profile's maximum playback quality. {quality}: the quality name (\"Any\", \"Standard\" or \"4K\").",
+    "description": "Web Settings → Profiles: part of the access summary under a profile's name, joined with \" · \". The profile's maximum playback quality. {quality}: the quality name (\"Standard\" or \"4K\"). With no maximum, web.profiles.helpers.access.anyQuality is shown instead.",
     "placeholders": {
       "quality": {
         "type": "String"
@@ -153927,7 +154284,8 @@
     "description": "Web settings: placeholder (and screen-reader label) of the settings search box.",
     "x-platforms": [
       "web"
-    ]
+    ],
+    "x-maxLength": 26
   },
   "web.settings.secretField.clear": "Clear saved value",
   "@web.settings.secretField.clear": {
