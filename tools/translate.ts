@@ -328,6 +328,11 @@ function writeLanguage(root: string, checked: CheckedCatalog, locale: Locale, by
     }
   }
   writeFileSync(file, jsonText(canonicalArb(merged)));
+  writeState(root, checked, locale, state);
+}
+
+/** Writes state/<lang>.json with the entries of keys still in the catalog. */
+function writeState(root: string, checked: CheckedCatalog, locale: Locale, state: State) {
   const kept = Object.fromEntries(checked.catalog.entries.filter((e) => state[e.key]).map((e) => [e.key, state[e.key]!]));
   mkdirSync(join(root, "state"), { recursive: true });
   writeFileSync(join(root, "state", `${locale.tag}.json`), jsonText(canonicalState(kept)));
@@ -433,6 +438,11 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
       appendFileSync(log, JSON.stringify({ batch: i + 1, of: batches.length, first: keys[0], last: keys[keys.length - 1], keys: keys.length, accepted: r.accepted.size, calls: r.calls, seconds: Math.round((Date.now() - t0) / 1000), firstAttempt: Object.fromEntries(r.firstAttempt), failed: Object.fromEntries(r.failed) }) + "\n");
       console.error(`${locale.tag}: batch ${i + 1}/${batches.length} done (${done} finished) ${keys[0]} … ${keys[keys.length - 1]}: ${r.accepted.size}/${keys.length} accepted, ${r.firstAttempt.size} retried, ${r.failed.size} failed, ${Math.round((Date.now() - t0) / 1000)} s`);
     });
+    // select() records untracked human translations in state. With no batch to write them,
+    // save them here, so a later English change retranslates those keys instead of keeping them.
+    if (!batches.length && (Object.keys(state).length || existsSync(join(root, "state", `${locale.tag}.json`)))) {
+      writeState(root, checked, locale, state);
+    }
     report.seconds = (Date.now() - started) / 1000;
     for (const [k, w] of byKey) {
       if (!results.has(k) || changedDuringRun.has(k)) continue;

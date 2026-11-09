@@ -139,6 +139,17 @@ test("translate: a human edit whose English changed is retranslated and listed",
   assert.match(readFileSync(join(root, "out/translate-pr-body.md"), "utf8"), /\| es \| `common.cancel` \| Cancelar \| ES Cancel now \|/);
 });
 
+test("translate: a run with nothing to send still records human translations in state", () => {
+  const root = makeRepo({ en: entry("a.b", "Hello"), es: { "a.b": "Hola" } });
+  run(root, "--locale", "es");
+  const state = JSON.parse(readFileSync(join(root, "state/es.json"), "utf8")) as State;
+  assert.equal(state["a.b"]!.by, "human");
+  // The English changes: the recorded fingerprint no longer matches, so the key is retranslated.
+  writeArb(join(root, "catalog/en.arb"), entry("a.b", "Hello there"));
+  run(root, "--locale", "es");
+  assert.equal(JSON.parse(readFileSync(join(root, "catalog/es.arb"), "utf8"))["a.b"], "ES Hello there");
+});
+
 test("translate: --dry-run sends one batch and writes nothing", () => {
   const root = makeRepo(catalog());
   const out = run(root, "--locale", "es", "--dry-run");
