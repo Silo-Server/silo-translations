@@ -64,3 +64,10 @@ test("android: a plural whose English one prints no number ignores ImpliedQuanti
   // A file with no such plural declares no tools namespace.
   assert.match(file("values-de"), /<resources>\n/);
 });
+
+test("pseudo: en-XA lengthens text inside a tag too", () => {
+  const root = makeRepo({ en: entry("a.b", "<b>Hello world</b>", { "x-platforms": ["web"] }) });
+  const ast = JSON.parse(generateAll(root, "test").get("web")!.get("web/src/locales/en-XA.json")!)["a.b"] as { value?: string }[];
+  // 11 visible characters: about 40% longer is 5 tildes before the closing bracket.
+  assert.equal(ast.at(-1)!.value, "~~~~~⟧");
+});

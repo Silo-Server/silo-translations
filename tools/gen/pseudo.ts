@@ -40,8 +40,16 @@ function mergeLiterals(elements: MessageFormatElement[]): MessageFormatElement[]
   return out;
 }
 
+/** Visible text length: literals, tag contents, and the longest branch of a select or plural. */
 function textLength(elements: MessageFormatElement[]): number {
-  return elements.reduce((n, el) => n + (el.type === TYPE.literal ? [...el.value].length : 0), 0);
+  return elements.reduce((n, el) => {
+    if (el.type === TYPE.literal) return n + [...el.value].length;
+    if (el.type === TYPE.tag) return n + textLength(el.children);
+    if (el.type === TYPE.plural || el.type === TYPE.select) {
+      return n + Math.max(0, ...Object.values(el.options).map((o) => textLength(o.value)));
+    }
+    return n;
+  }, 0);
 }
 
 function lit(value: string): MessageFormatElement {
