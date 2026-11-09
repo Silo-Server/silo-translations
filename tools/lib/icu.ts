@@ -69,6 +69,15 @@ export function analyzeAst(ast: MessageFormatElement[], shared: boolean): Analys
           result.args.add(el.value);
           break;
         case TYPE.number:
+          result.args.add(el.value);
+          // Web-only keys may print a number in the locale's digits with a plain {name, number}
+          // (FormatJS formats it whatever the value's type); a style or skeleton may not.
+          if (shared) {
+            result.problems.push(`{${el.value}, number} is allowed only in web-only keys; format it in the caller and pass a String`);
+          } else if (el.style) {
+            result.problems.push(`{${el.value}, number} takes no style here; write {${el.value}, number} or format it in the caller`);
+          }
+          break;
         case TYPE.date:
         case TYPE.time:
           result.args.add(el.value);
