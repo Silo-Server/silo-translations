@@ -1,0 +1,67 @@
+name: release
+
+on:
+  push:
+    branches: [main]
+
+# One run per commit: a rerun of the same merge waits for the first. Different merges run side
+# by side; each tags its own commit (--target), so none replaces another. (A single shared
+# group would keep only one pending run and silently drop intermediate merges.)
+concurrency:
+  group: release-${{ github.sha }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - run: make ci
+      - name: Version
+        id: version
+        run: |
+          # The date comes from the commit, not the run, so a rerun after midnight UTC finds the
+          # release the first run made.
+          day="$(date -u -d "@$(git show -s --format=%ct "$GITHUB_SHA")" +%Y.%m.%d)"
+          version="$day-${GITHUB_SHA::7}"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          # A published release with its four tarballs and SHA256SUMS is done. A draft or a
+          # release missing assets is what an interrupted run leaves: delete it and publish again.
+          if state="$(gh release view "v$version" --json isDraft,assets --jq '"\(.isDraft) \(.assets | length)"' 2>/dev/null)"; then
+            if [ "$state" = "false 5" ]; then
+              echo "exists=true" >> "$GITHUB_OUTPUT"
+            else
+              gh release delete "v$version" --yes --cleanup-tag
+            fi
+          fi
+      - name: Build tarballs
+        if: steps.version.outputs.exists != 'true'
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          make generate OUT=out VERSION="$VERSION"
+          mkdir dist
+          for platform in web apple android roku; do
+            tar -C "out/$platform" --sort=name --owner=0 --group=0 --numeric-owner --mtime=@0 -cf - . \
+              | gzip -n > "dist/silo-translations-$platform-$VERSION.tar.gz"
+          done
+          (cd dist && sha256sum *.tar.gz > SHA256SUMS)
+      - name: Publish
+        if: steps.version.outputs.exists != 'true'
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          gh release create "v$VERSION" dist/* \
+            --target "$GITHUB_SHA" \
+            --title "$VERSION" \
+            --notes "Generated from $GITHUB_SHA. Install with scripts/sync-translations --version $VERSION."

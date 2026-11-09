@@ -1,0 +1,75 @@
+{
+  "catalog.parts": [
+    {
+      "type": 6,
+      "value": "count",
+      "options": {
+        "other": {
+          "value": [
+            {
+              "type": 0,
+              "value": "いくつかのパート"
+            }
+          ]
+        }
+      },
+      "offset": 0,
+      "pluralType": "cardinal"
+    }
+  ],
+  "catalog.seasons": [
+    {
+      "type": 6,
+      "value": "count",
+      "options": {
+        "other": {
+          "value": [
+            {
+              "type": 7
+            },
+            {
+              "type": 0,
+              "value": "シーズン"
+            }
+          ]
+        }
+      },
+      "offset": 0,
+      "pluralType": "cardinal"
+    }
+  ],
+  "web.greeting": [
+    {
+      "type": 5,
+      "value": "gender",
+      "options": {
+        "other": {
+          "value": [
+            {
+              "type": 0,
+              "value": "相手"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": 0,
+      "value": "が"
+    },
+    {
+      "type": 8,
+      "value": "b",
+      "children": [
+        {
+          "type": 1,
+          "value": "party"
+        }
+      ]
+    },
+    {
+      "type": 0,
+      "value": "に招待しました"
+    }
+  ]
+}

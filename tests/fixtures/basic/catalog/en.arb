@@ -1,0 +1,165 @@
+{
+  "@@locale": "en",
+  "apple.infoPlist.ios.nsLocalNetworkUsageDescription": "Silo uses your local network to find servers and TVs. 100% local.",
+  "@apple.infoPlist.ios.nsLocalNetworkUsageDescription": {
+    "description": "iOS permission prompt for local network access.",
+    "x-platforms": [
+      "apple"
+    ],
+    "x-plistKey": "NSLocalNetworkUsageDescription"
+  },
+  "apple.infoPlist.tvos.nsLocalNetworkUsageDescription": "Silo uses your local network to find servers.",
+  "@apple.infoPlist.tvos.nsLocalNetworkUsageDescription": {
+    "description": "tvOS permission prompt for local network access.",
+    "x-platforms": [
+      "apple"
+    ],
+    "x-plistKey": "NSLocalNetworkUsageDescription"
+  },
+  "catalog.extra.behind_the_scenes": "Behind the Scenes",
+  "@catalog.extra.behind_the_scenes": {
+    "description": "Extra type label; the last segment is the server's extra type."
+  },
+  "catalog.parts": "{count, plural, one {# part} other {# parts}}",
+  "@catalog.parts": {
+    "description": "Number of parts of a title. {count}: the number of parts.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "catalog.seasons": "{count, plural, one {# Season} other {# Seasons}}",
+  "@catalog.seasons": {
+    "description": "Number of seasons on a series page.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "common.cancel": "Cancel",
+  "@common.cancel": {
+    "description": "Button that closes a dialog without saving."
+  },
+  "companion.limit": "{count, plural, one {{name} can choose # item} other {{name} can choose # items}}",
+  "@companion.limit": {
+    "description": "How many items a profile may pick. {name} is the profile name; {count} the limit.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "downloads.deleteMixed": "{count, plural, one {Delete download} other {Delete # downloads}}",
+  "@downloads.deleteMixed": {
+    "description": "Button that deletes downloads; the one form names no number. {count}: the number of downloads.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "downloads.selected": "{count, plural, one {Delete {count_text} download} other {Delete {count_text} downloads}}",
+  "@downloads.selected": {
+    "description": "Button for the selected downloads; the count is printed as text, never as #. {count}: the number selected; {count_text}: the same number as text.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    }
+  },
+  "home.section.continueWatching": "Continue Watching",
+  "@home.section.continueWatching": {
+    "description": "Home row title -- items the profile started and has not finished.",
+    "x-maxLength": 24
+  },
+  "player.muted": "Muted",
+  "@player.muted": {
+    "description": "Shown when the volume is at zero --- the speaker icon is crossed out."
+  },
+  "player.progress": "{count, plural, one {# of {total} episode watched} other {# of {total} episodes watched}}",
+  "@player.progress": {
+    "description": "Series progress. {count}: episodes watched; {total}: episodes in the series.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "player.rate": "{rate}× speed, 100% volume",
+  "@player.rate": {
+    "description": "Player status line. {rate} is the playback rate as a number.",
+    "placeholders": {
+      "rate": {
+        "type": "double"
+      }
+    }
+  },
+  "player.volumeFull": "Volume 100%",
+  "@player.volumeFull": {
+    "description": "Shown when the volume is at its maximum."
+  },
+  "setup.headline": "Enter your\nserver address",
+  "@setup.headline": {
+    "description": "Setup headline, two lines.",
+    "x-platforms": [
+      "roku",
+      "android"
+    ]
+  },
+  "signIn.body": "Sign in to {server} as {account}.",
+  "@signIn.body": {
+    "description": "Sign-in screen body. {server} is the server name; {account} is the user name.",
+    "placeholders": {
+      "server": {
+        "type": "String"
+      },
+      "account": {
+        "type": "String"
+      }
+    }
+  },
+  "text.escapes": "@home \"quoted\" Tom’s 1 < 2 > 0 & co.  two spaces ",
+  "@text.escapes": {
+    "description": "Escaping test: leading @, quotes, typographic apostrophe, markup characters, repeated and trailing spaces.",
+    "x-platforms": [
+      "android",
+      "apple",
+      "roku"
+    ]
+  },
+  "vote.label": "{count, plural, one {VOTE} other {VOTES}}",
+  "@vote.label": {
+    "description": "Label after a vote count; the number is shown beside it, not in it. {count}: the number of votes.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "web.greeting": "{gender, select, female {She} male {He} other {They}} invited you to <b>{party}</b>",
+  "@web.greeting": {
+    "description": "Watch Together invitation (web only).",
+    "placeholders": {
+      "gender": {
+        "type": "String"
+      },
+      "party": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  }
+}
