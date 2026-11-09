@@ -29252,7 +29252,7 @@
   },
   "rowPage.close": "Close",
   "@rowPage.close": {
-    "description": "Apple iOS: VoiceOver label of the X button that closes a row's full page when it opens as a card.",
+    "description": "Apple iOS: VoiceOver label of the X button that closes a page opened as a card: a row's full page, or a title page on the folded iPhone Duo.",
     "x-platforms": [
       "apple"
     ]
@@ -29812,6 +29812,34 @@
       "android"
     ]
   },
+  "search.voiceDialogTitleTv": "Voice search",
+  "@search.voiceDialogTitleTv": {
+    "description": "Android TV: voice search dialog on devices that use the older speech recognizer: dialog title while listening and when microphone access is needed.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "search.voiceMicPermissionTv": "Allow microphone access for Silo in Settings to use voice search.",
+  "@search.voiceMicPermissionTv": {
+    "description": "Android TV: voice search dialog on devices that use the older speech recognizer: shown when Silo doesn't have microphone permission. 'Settings' is the device's Settings app.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "search.voiceNetworkErrorTv": "Couldn't connect to voice search. Check your connection and try again.",
+  "@search.voiceNetworkErrorTv": {
+    "description": "Android TV: voice search dialog on devices that use the older speech recognizer: shown when the recognizer can't reach its network service.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "search.voiceNoMatchTv": "Didn't hear a title. Close and try again.",
+  "@search.voiceNoMatchTv": {
+    "description": "Android TV: voice search dialog on devices that use the older speech recognizer: shown when no speech was recognized. 'Close' is the dialog's Cancel button.",
+    "x-platforms": [
+      "android"
+    ]
+  },
   "search.voicePrompt": "Search Silo",
   "@search.voicePrompt": {
     "description": "Android phone: prompt the system speech recognizer shows while listening for a spoken search.",
@@ -29822,6 +29850,20 @@
   "search.voicePromptTv": "Speak a title",
   "@search.voicePromptTv": {
     "description": "Android TV: prompt the system speech recognizer shows while listening for a spoken search.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "search.voiceServiceMicDeniedTv": "The voice service couldn't access the microphone. Check microphone access in device settings and try again.",
+  "@search.voiceServiceMicDeniedTv": {
+    "description": "Android TV: voice search dialog on devices that use the older speech recognizer: shown when Silo has microphone permission but the device's voice service doesn't.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "search.voiceStartFailedTv": "Voice search couldn't start. Close and try again.",
+  "@search.voiceStartFailedTv": {
+    "description": "Android TV: voice search dialog on devices that use the older speech recognizer: shown for any other recognizer error. 'Close' is the dialog's Cancel button.",
     "x-platforms": [
       "android"
     ]
@@ -50764,9 +50806,44 @@
       "web"
     ]
   },
+  "web.admin.apiKeys.access.full": "Full access",
+  "@web.admin.apiKeys.access.full": {
+    "description": "Web admin → API keys: a key with no scope limits; shown in the key list's Access column and as the create dialog's first access choice.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.apiKeys.checking": "Checking API key management…",
   "@web.admin.apiKeys.checking": {
     "description": "Web: admin API Keys page: shown while the page checks whether the server supports API key management.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.apiKeys.create.access": "Access",
+  "@web.admin.apiKeys.create.access": {
+    "description": "Web admin → API keys, create dialog: heading of the choice between full access and selected scopes.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.apiKeys.create.accessFullHint": "Everything the selected account can do.",
+  "@web.admin.apiKeys.create.accessFullHint": {
+    "description": "Web admin → API keys, create dialog: help under the full access choice.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.apiKeys.create.accessScoped": "Selected scopes",
+  "@web.admin.apiKeys.create.accessScoped": {
+    "description": "Web admin → API keys, create dialog: the choice that limits the key to the scopes ticked below.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.apiKeys.create.accessScopedHint": "Only the requests the chosen scopes allow.",
+  "@web.admin.apiKeys.create.accessScopedHint": {
+    "description": "Web admin → API keys, create dialog: help under the selected scopes choice.",
     "x-platforms": [
       "web"
     ]
@@ -50809,6 +50886,13 @@
   "web.admin.apiKeys.create.label": "Label",
   "@web.admin.apiKeys.create.label": {
     "description": "Web: admin API Keys page: create-key dialog field label for the key's name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.apiKeys.create.scopesHint": "Scopes only narrow a key: admin scopes work only on an admin account's key. A key's scopes can't be changed later.",
+  "@web.admin.apiKeys.create.scopesHint": {
+    "description": "Web admin → API keys, create dialog: note under the list of scopes. Scope names are shown as code and stay untranslated.",
     "x-platforms": [
       "web"
     ]
@@ -50967,6 +51051,13 @@
   "web.admin.apiKeys.error.requestFailed": "The request could not be completed.",
   "@web.admin.apiKeys.error.requestFailed": {
     "description": "Web: admin API Keys page: error text when a request failed without a message.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.apiKeys.list.column.access": "Access",
+  "@web.admin.apiKeys.list.column.access": {
+    "description": "Web admin → API keys: column header for what each key may do (full access or its scopes).",
     "x-platforms": [
       "web"
     ]
@@ -67878,7 +67969,7 @@
       "web"
     ]
   },
-  "web.admin.dashboard.widgetCatalog.serverResources.description": "CPU, memory, disk, network, and GPU usage on the API host",
+  "web.admin.dashboard.widgetCatalog.serverResources.description": "CPU, memory, and GPU usage on the API host",
   "@web.admin.dashboard.widgetCatalog.serverResources.description": {
     "description": "Web admin, Dashboard page: one-line summary of the \"server-resources\" widget (Server resources) under its name in the Add-widget sheet.",
     "x-platforms": [
@@ -69622,9 +69713,67 @@
       "web"
     ]
   },
+  "web.admin.dashboard.widgets.serverResources.cpu": "CPU",
+  "@web.admin.dashboard.widgets.serverResources.cpu": {
+    "description": "Web admin Dashboard, Server resources widget: row label for processor use.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgets.serverResources.footnote": "{label} {value}",
+  "@web.admin.dashboard.widgets.serverResources.footnote": {
+    "description": "Web admin Dashboard, Server resources widget footer: one reading, such as 'Silo process 412 MB'. {label} is the reading's name and {value} its amount.",
+    "placeholders": {
+      "label": {
+        "type": "String"
+      },
+      "value": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgets.serverResources.goHeap": "Go heap",
+  "@web.admin.dashboard.widgets.serverResources.goHeap": {
+    "description": "Web admin Dashboard, Server resources widget: footer label before the Go runtime heap size. Go is the programming language; keep it.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgets.serverResources.gpu": "GPU",
+  "@web.admin.dashboard.widgets.serverResources.gpu": {
+    "description": "Web admin Dashboard, Server resources widget: row label for graphics processor use.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.dashboard.widgets.serverResources.justNow": "just now",
   "@web.admin.dashboard.widgets.serverResources.justNow": {
     "description": "Web admin, Dashboard page, Server resources widget: sample time; relative-time label for a moment under a minute ago.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgets.serverResources.memory": "Memory",
+  "@web.admin.dashboard.widgets.serverResources.memory": {
+    "description": "Web admin Dashboard, Server resources widget: row label for memory use.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgets.serverResources.metricTitle": "{label}: {title}",
+  "@web.admin.dashboard.widgets.serverResources.metricTitle": {
+    "description": "Web admin Dashboard, Server resources widget: tooltip on a row. {label} names what was measured (for example container host memory) and {title} explains the reading.",
+    "placeholders": {
+      "label": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      }
+    },
     "x-platforms": [
       "web"
     ]
@@ -69649,6 +69798,13 @@
         "type": "String"
       }
     },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgets.serverResources.siloProcess": "Silo process",
+  "@web.admin.dashboard.widgets.serverResources.siloProcess": {
+    "description": "Web admin Dashboard, Server resources widget: footer label before the memory the Silo server process uses.",
     "x-platforms": [
       "web"
     ]
@@ -95944,6 +96100,30 @@
       "web"
     ]
   },
+  "web.admin.settings.playback.hwAccel.checkFailed": "{backend} failed its hardware check",
+  "@web.admin.settings.playback.hwAccel.checkFailed": {
+    "description": "Web admin → Playback, hardware acceleration: the server tried {backend} (a product name) and the check failed.",
+    "placeholders": {
+      "backend": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.playback.hwAccel.checkFailedNode": "{backend} failed its hardware check (transcode node)",
+  "@web.admin.settings.playback.hwAccel.checkFailedNode": {
+    "description": "Web admin → Playback, hardware acceleration: as checkFailed, reported by a transcode node.",
+    "placeholders": {
+      "backend": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.settings.playback.hwAccel.description": "Auto picks the best device. If startup fails, it keeps GPU encoding with CPU decoding before falling back to software.",
   "@web.admin.settings.playback.hwAccel.description": {
     "description": "Web admin, Playback settings page: help under Hardware acceleration. \"Auto\" is one of its options.",
@@ -96019,9 +96199,81 @@
       "web"
     ]
   },
+  "web.admin.settings.playback.hwAccel.needsNativeMac": "{backend} needs Silo running natively on macOS, not in Docker",
+  "@web.admin.settings.playback.hwAccel.needsNativeMac": {
+    "description": "Web admin → Playback, hardware acceleration: {backend} is VideoToolbox, which only works when Silo runs directly on a Mac.",
+    "placeholders": {
+      "backend": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.playback.hwAccel.needsNativeMacNode": "{backend} needs Silo running natively on macOS, not in Docker (transcode node)",
+  "@web.admin.settings.playback.hwAccel.needsNativeMacNode": {
+    "description": "Web admin → Playback, hardware acceleration: as needsNativeMac, reported by a transcode node.",
+    "placeholders": {
+      "backend": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.settings.playback.hwAccel.noneFound": "No supported graphics hardware found",
   "@web.admin.settings.playback.hwAccel.noneFound": {
     "description": "Web admin, Playback settings page and setup wizard: hardware detection result when no usable graphics hardware was found.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.playback.hwAccel.notAccessible": "{backend} devices aren't accessible to this server",
+  "@web.admin.settings.playback.hwAccel.notAccessible": {
+    "description": "Web admin → Playback, hardware acceleration: the configured {backend} devices (a product name such as VA-API) can't be opened by the server, so no check ran.",
+    "placeholders": {
+      "backend": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.playback.hwAccel.notAccessibleNode": "{backend} devices aren't accessible to this server (transcode node)",
+  "@web.admin.settings.playback.hwAccel.notAccessibleNode": {
+    "description": "Web admin → Playback, hardware acceleration: as notAccessible, reported by a transcode node.",
+    "placeholders": {
+      "backend": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.playback.hwAccel.notFound": "{backend} not found on this server",
+  "@web.admin.settings.playback.hwAccel.notFound": {
+    "description": "Web admin → Playback, hardware acceleration: the chosen {backend} (a product name) isn't present on the server.",
+    "placeholders": {
+      "backend": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.playback.hwAccel.notFoundNode": "{backend} not found on this server (transcode node)",
+  "@web.admin.settings.playback.hwAccel.notFoundNode": {
+    "description": "Web admin → Playback, hardware acceleration: as notFound, reported by a transcode node.",
+    "placeholders": {
+      "backend": {
+        "type": "String"
+      }
+    },
     "x-platforms": [
       "web"
     ]
@@ -96356,6 +96608,20 @@
   "web.admin.settings.playback.previews.trickplayExecution": "Generate seek previews on",
   "@web.admin.settings.playback.previews.trickplayExecution": {
     "description": "Web admin, Playback settings page, Preview images group: label of the select that chooses where seek previews are made.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.playback.previews.trickplayNodeCapacity": "Seek previews per transcode node",
+  "@web.admin.settings.playback.previews.trickplayNodeCapacity": {
+    "description": "Web admin → Playback → Previews: label of the number of files one transcode node makes seek previews for at once.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.playback.previews.trickplayNodeCapacityDescription": "How many files one transcode node makes seek previews for at once, across every server, 1 to 64. Each counts toward the node's job limit, so leave room for playback.",
+  "@web.admin.settings.playback.previews.trickplayNodeCapacityDescription": {
+    "description": "Web admin → Playback → Previews: help under the seek previews per transcode node field.",
     "x-platforms": [
       "web"
     ]
@@ -149465,6 +149731,70 @@
       "web"
     ]
   },
+  "web.settings.historyImport.plexHome.choose": "Choose a Plex Home user",
+  "@web.settings.historyImport.plexHome.choose": {
+    "description": "Web Settings → History Import: placeholder of the Plex Home user menu.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.historyImport.plexHome.hint": "Imports one person at a time. When an import finishes, choose the next Plex Home user and the profile their history goes into.",
+  "@web.settings.historyImport.plexHome.hint": {
+    "description": "Web Settings → History Import: help text under the Plex Home user menu.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.historyImport.plexHome.pin": "{name}'s Plex Home PIN",
+  "@web.settings.historyImport.plexHome.pin": {
+    "description": "Web Settings → History Import: label of the PIN field for a PIN-protected Plex Home user. {name} is that user's name; adapt the possessive to the language.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.historyImport.plexHome.switchFailed": "Could not switch to this Plex Home user.",
+  "@web.settings.historyImport.plexHome.switchFailed": {
+    "description": "Web Settings → History Import: error when switching the import to the chosen Plex Home user failed without a reason.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.historyImport.plexHome.user": "Plex Home user",
+  "@web.settings.historyImport.plexHome.user": {
+    "description": "Web Settings → History Import: label of the menu that picks which Plex Home user's history to import.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.historyImport.plexHome.userManaged": "{name} (managed)",
+  "@web.settings.historyImport.plexHome.userManaged": {
+    "description": "Web Settings → History Import, Plex Home user menu: a managed (restricted) Plex Home user. {name} is the Plex user's name.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.historyImport.plexHome.userYou": "{name} (you)",
+  "@web.settings.historyImport.plexHome.userYou": {
+    "description": "Web Settings → History Import, Plex Home user menu: the signed-in Plex account's own entry. {name} is the Plex user's name.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.settings.historyImport.plexSignInFailed": "Plex sign-in failed",
   "@web.settings.historyImport.plexSignInFailed": {
     "description": "Web Settings → History Import: heading of the error shown when signing in with Plex failed.",
@@ -163590,6 +163920,27 @@
   "web.watchTogether.startSheet.policyFailed": "Room created, but guests can't pause yet. Change it from the room.",
   "@web.watchTogether.startSheet.policyFailed": {
     "description": "Web title detail page, start a party sheet: error toast when the party was created but the guests-can-pause setting failed.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.watchTogether.startSheet.policyGuestsCanPause": "Guests can pause in this party. Change it from the room.",
+  "@web.watchTogether.startSheet.policyGuestsCanPause": {
+    "description": "Web start a party sheet: info toast when the saved choice couldn't be read and the new party lets guests play and pause.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.watchTogether.startSheet.policyHostOnly": "Only you control playback in this party. Change it from the room.",
+  "@web.watchTogether.startSheet.policyHostOnly": {
+    "description": "Web start a party sheet: info toast when the saved choice couldn't be read and only the host controls playback in the new party.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.watchTogether.startSheet.policyHostOnlyFailed": "Room created, but guests can still pause. Change it from the room.",
+  "@web.watchTogether.startSheet.policyHostOnlyFailed": {
+    "description": "Web start a party sheet: error toast when the party was created but switching it to host-only control failed.",
     "x-platforms": [
       "web"
     ]
