@@ -131,8 +131,8 @@ table above. Sync refuses any listed path that passes through a symlink in the c
 - `settingsManifest.*` keys are imported from silo-server's settings manifest
   (`label`, `description`, `unsetLabel`, `option.<value>`). Change them in silo-server. Each kind
   is scoped to the clients that render it (`MANIFEST_PLATFORMS` in
-  `tools/import-settings-manifest.ts`): web and Apple all of them, Android only `unsetLabel`,
-  Roku `option.<value>` and `unsetLabel`.
+  `tools/import-settings-manifest.ts`): web, Apple and Android all of them (Android for the
+  settings rows whose English matches the manifest's), Roku `option.<value>` and `unsetLabel`.
 
 ## Messages
 
