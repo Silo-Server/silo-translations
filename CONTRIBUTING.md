@@ -32,21 +32,26 @@ Rules the check enforces:
 - Keep within `x-maxLength` when the English entry has one (TV screens have little room).
 
 Once you edit a translation, `make translate` treats it as yours and doesn't overwrite it. If
-the English later changes, the next translation pass retranslates it and lists it in its pull
-request for review.
+the English later changes, `make translate` retranslates it and lists it for review in the pull
+request that changes the English. Send translation fixes as their own pull request, apart from
+English changes.
 
 ## Adding or changing English
 
 New strings come with the client change that uses them. Add the key, message and metadata to
-`catalog/en.arb` (rules in the README), run `make check`, and merge that pull request first;
-the merge publishes a release the client then syncs. Don't add translations in the same pull
-request; the next translation pass writes them.
+`catalog/en.arb` (rules in the README), run `make check`, and open a pull request. Before it
+merges, a maintainer runs `make translate` for the new and changed keys and adds the result to
+the same pull request as a separate commit, so English and translations are reviewed apart.
+Merge it before the client change: the merge publishes a release the client then syncs, and a
+release must not leave a shipped language with missing keys. Don't write the translations by
+hand.
 
 Changing an English message, its description or its placeholders marks every translation of
 it for retranslation. When the change adds, removes or renames a placeholder, `make check`
 warns about each translation that no longer matches and leaves it out of the generated files
-(English shows instead) until the next translation pass or a person fixes it; it does not block
-your pull request. Keep English byte-identical when moving strings out of a client.
+(English shows instead). The warning doesn't block your pull request; the maintainer's
+`make translate` commit in it retranslates those keys. Keep English byte-identical when moving
+strings out of a client.
 
 Don't edit `settingsManifest.*` keys; change the label in silo-server and run
 `make import-settings-manifest`.
@@ -80,7 +85,21 @@ It picks the keys that are missing or whose English changed, sends them to Claud
 (`claude -p --model claude-opus-5-5`) in batches of about 100 with their descriptions, the
 style guide, glossary terms and existing translations from the same area, validates every
 result, retries failures once, and writes `catalog/<lang>.arb`, `state/<lang>.json` and
-`out/translate-pr-body.md`. Values a person edited are kept. Then:
+`out/translate-pr-body.md`. Values a person edited are kept.
+
+For a pull request that adds or changes English, run it on that branch for those keys and commit
+the result on top of the English commit:
+
+```sh
+make translate LOCALE=all
+make check
+git add catalog state && git commit -m "chore(translations): <what the keys are> in seven languages"
+```
+
+Put the per-language table from `out/translate-pr-body.md` in the pull request description.
+
+A pass on its own, such as after a glossary or style guide change (`RETRANSLATE=<prefixes>`), is
+its own pull request:
 
 ```sh
 make check

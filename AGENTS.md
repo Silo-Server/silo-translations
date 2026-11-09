@@ -29,9 +29,13 @@ describes the formats; CONTRIBUTING describes the workflows.
   "1 items" may be fixed).
 - Don't hand-edit `state/*.json`. Don't edit `settingsManifest.*` keys; they come from
   `make import-settings-manifest`.
-- Don't write translations by hand in a change that adds English. `make translate` writes them
-  in its own pull request, run on a maintainer machine. Never add an Anthropic credential to
-  CI.
+- A pull request that adds or changes English also carries `make translate`'s output for those
+  keys in every language, in a separate commit after the English one: each merge publishes a
+  release, and a release must not leave a shipped language with missing keys. A maintainer runs
+  `make translate` on their own machine. Don't write those translations by hand, and never add
+  an Anthropic credential to CI.
+- Corrections to existing translations, from people or a retranslation pass, are their own pull
+  requests.
 
 ## Output contract
 
@@ -44,5 +48,5 @@ describes the formats; CONTRIBUTING describes the workflows.
 ## Pull requests
 
 - Conventional Commit titles (`feat:`, `fix:`, `chore(translations):`).
-- Additions-only English changes should merge quickly: each merge to `main` publishes a release
-  the client change waits for.
+- English changes, with their translations, should merge quickly: each merge to `main` publishes
+  a release the client change waits for.
