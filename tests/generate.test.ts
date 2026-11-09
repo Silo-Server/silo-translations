@@ -5,6 +5,7 @@ import assert from "node:assert/strict";
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join, relative } from "node:path";
 import { generateAll } from "../tools/generate.ts";
+import { escapeAndroid } from "../tools/gen/android.ts";
 import { entry, FIXTURE, makeRepo, REPO } from "./helpers.ts";
 
 const GOLDEN = join(REPO, "tests/golden");
@@ -70,4 +71,8 @@ test("pseudo: en-XA lengthens text inside a tag too", () => {
   const ast = JSON.parse(generateAll(root, "test").get("web")!.get("web/src/locales/en-XA.json")!)["a.b"] as { value?: string }[];
   // 11 visible characters: about 40% longer is 5 tildes before the closing bracket.
   assert.equal(ast.at(-1)!.value, "~~~~~⟧");
+});
+
+test("android: control characters XML can't hold become \\u escapes", () => {
+  assert.equal(escapeAndroid("x\u000by\rz", false), "x\\u000by\\u000dz");
 });

@@ -34,6 +34,9 @@ export function escapeAndroid(text: string, formatted: boolean): string {
     .replace(/\n/g, "\\n")
     .replace(/\t/g, "\\t");
   if (formatted) s = s.replace(/%/g, "%%");
+  // XML forbids most control characters, and AAPT folds a raw carriage return into a space:
+  // write them as Android \uXXXX escapes.
+  s = s.replace(/[\u0000-\u0008\u000B-\u001F\u007F]/g, (c) => `\\u${c.charCodeAt(0).toString(16).padStart(4, "0")}`);
   return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
