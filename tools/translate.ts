@@ -316,6 +316,10 @@ function writeLanguage(root: string, checked: CheckedCatalog, locale: Locale, by
   const file = catalogPath(root, locale.tag);
   const onDisk = readJson<Record<string, string>>(file, {});
   const merged: Record<string, string> = { "@@locale": locale.tag };
+  // File-level metadata other ARB tools write (@@last_modified, @@x-...) stays as it was.
+  for (const [key, value] of Object.entries(onDisk)) {
+    if (key.startsWith("@@") && key !== "@@locale") merged[key] = value;
+  }
   for (const entry of checked.catalog.entries) {
     // An empty string is how Weblate writes an untranslated unit; the loader treats it as missing.
     const raw = Object.hasOwn(onDisk, entry.key) ? onDisk[entry.key] : undefined;
@@ -414,6 +418,9 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const jobs = positiveInt(values.jobs, 1);
   const entries = checked.catalog.entries.filter((e) => checked.english.has(e.key) && (!only || only.some((p) => e.key.startsWith(p))));
   const reports: Report[] = [];
+  // Audit files are removed only once the PR body that lists them is on disk, so a run of
+  // several languages that stops in a later one still reports the earlier ones next time.
+  const audits: string[] = [];
   for (const locale of locales) {
     const state = readJson<State>(join(root, "state", `${locale.tag}.json`), {});
     const translations = checked.catalog.translations.get(locale.tag) ?? new Map();
@@ -478,7 +485,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
         edits.set(r.key, { ...r, before: edits.get(r.key)?.before ?? r.before });
       }
       report.humanEdits.push(...edits.values());
-      rmSync(audit);
+      audits.push(audit);
     }
     report.changedDuringRun = [...changedDuringRun];
     reports.push(report);
@@ -486,6 +493,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   if (!values["dry-run"]) {
     mkdirSync(join(root, "out"), { recursive: true });
     writeFileSync(join(root, "out/translate-pr-body.md"), prBody(reports));
+    for (const audit of audits) rmSync(audit);
     console.error("wrote out/translate-pr-body.md; run make check, review, and open the PR");
   }
 }
