@@ -38,6 +38,9 @@ function list(s: Iterable<string>): string {
 export function checkSource(entry: SourceEntry, en: Analysis, source: Locale): string[] {
   const problems = [...en.problems];
   const declared = new Set(entry.placeholders.map((p) => p.name));
+  // FormatJS reads arguments and tag handlers from one values object, so a name can't be both.
+  const both = [...en.args].filter((a) => en.tags.has(a));
+  if (both.length) problems.push(`${list(both)} used both as a placeholder and as a tag; rename one`);
   if (!sameSet(declared, en.args)) {
     problems.push(`placeholders declared (${list(declared)}) differ from those used (${list(en.args)})`);
   }

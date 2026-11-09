@@ -172,6 +172,11 @@ const cases: Case[] = [
     warnings: ["plurals select on name; English selects on count; left out until retranslated"],
   },
   { name: "translation select in web key", en: entry("a.b", "{name}", { ...NAME, "x-platforms": ["web"] }), tr: { de: { "a.b": "{name, select, a {A} other {B}}" } } },
+  {
+    name: "a name used as both a placeholder and a tag",
+    en: entry("a.b", "Hello {link}: <link>open</link>", { placeholders: { link: { type: "String" } }, "x-platforms": ["web"] }),
+    errors: ["link used both as a placeholder and as a tag"],
+  },
   { name: "max length warning", en: entry("a.b", "Hi", { "x-maxLength": 5 }), tr: { de: { "a.b": "Hallo Welt" } }, warnings: ["longer than x-maxLength 5"] },
   { name: "max length counts a wide character as two", en: entry("a.b", "Search", { "x-maxLength": 5 }), tr: { ja: { "a.b": "デバイス" } }, warnings: ["longer than x-maxLength 5"] },
   { name: "max length fits wide characters within the budget", en: entry("a.b", "Search", { "x-maxLength": 8 }), tr: { ja: { "a.b": "デバイス" }, "zh-Hans": { "a.b": "搜索设备" } } },
