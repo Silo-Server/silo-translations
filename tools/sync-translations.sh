@@ -122,6 +122,11 @@ else
 fi
 
 unsafe "$tmp/new-list" && die "$list of the new tree has unsafe paths"
+# Everything that gets copied must be a regular file named in the list, so the checks below
+# cover every write.
+( cd "$tmp/tree" && find . -type l ) | grep -q . && die "the generated tree contains symlinks"
+( cd "$tmp/tree" && find . -type f | sed 's|^\./||' | sort ) > "$tmp/tree-files"
+sort "$tmp/new-list" | cmp -s - "$tmp/tree-files" || die "the generated tree doesn't match its $list"
 # The sync's own metadata files are written too: the file list and the config (through its .tmp).
 for meta in "$list" .silo-translations .silo-translations.tmp; do
   contained "$meta" || die "$root/$meta is a symlink; refusing to write there"

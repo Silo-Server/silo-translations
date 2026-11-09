@@ -153,6 +153,15 @@ test("sync: never writes or removes through a symlinked directory", () => {
   assert.equal(readFileSync(join(outside, "strings.json"), "utf8"), "not yours");
 });
 
+test("sync: refuses a tree with files its list doesn't name", () => {
+  const v1 = release("1", { "locale/en_US/strings.json": "{}\n" }, (tree) => writeFileSync(join(tree, "unlisted.txt"), "x"));
+  const root = client();
+  const r = sync(root, v1.base, "--platform", "roku", "--version", "1");
+  assert.notEqual(r.status, 0);
+  assert.match(r.stderr, /doesn't match/);
+  assert.ok(!existsSync(join(root, "unlisted.txt")));
+});
+
 test("sync: never writes its metadata through a symlink", () => {
   for (const meta of [".silo-translations-files", ".silo-translations.tmp"]) {
     const v1 = release("1", { "locale/en_US/strings.json": "{}\n" });
