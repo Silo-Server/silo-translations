@@ -183,6 +183,11 @@ const cases: Case[] = [
     tr: { es: { "a.b": "{kind, select, pelicula {Película} other {Otro}}" } },
     warnings: ["select kind has options English doesn't (pelicula); use English's (movie, other)"],
   },
+  {
+    name: "translation flattens English's nested select on the same argument",
+    en: entry("a.b", "{kind, select, movie {Movie} other {{kind, select, show {Show} other {Other}}}}", { placeholders: { kind: { type: "String" } }, "x-platforms": ["web"] }),
+    tr: { es: { "a.b": "{kind, select, movie {Película} show {Serie} other {Otro}}" } },
+  },
   { name: "max length warning", en: entry("a.b", "Hi", { "x-maxLength": 5 }), tr: { de: { "a.b": "Hallo Welt" } }, warnings: ["longer than x-maxLength 5"] },
   { name: "max length counts a wide character as two", en: entry("a.b", "Search", { "x-maxLength": 5 }), tr: { ja: { "a.b": "デバイス" } }, warnings: ["longer than x-maxLength 5"] },
   { name: "max length fits wide characters within the budget", en: entry("a.b", "Search", { "x-maxLength": 8 }), tr: { ja: { "a.b": "デバイス" }, "zh-Hans": { "a.b": "搜索设备" } } },

@@ -38,12 +38,13 @@ function list(s: Iterable<string>): string {
 function selectOptions(elements: MessageFormatElement[], out = new Map<string, Set<string>>()): Map<string, Set<string>> {
   for (const el of elements) {
     if (el.type === TYPE.select) {
+      // Registered before recursing, so a nested select on the same argument adds to this set.
       const names = out.get(el.value) ?? new Set<string>();
+      out.set(el.value, names);
       for (const [name, option] of Object.entries(el.options)) {
         names.add(name);
         selectOptions(option.value, out);
       }
-      out.set(el.value, names);
     } else if (el.type === TYPE.plural) {
       for (const option of Object.values(el.options)) selectOptions(option.value, out);
     } else if (el.type === TYPE.tag) selectOptions(el.children, out);
