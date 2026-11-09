@@ -87,23 +87,34 @@ style guide, glossary terms and existing translations from the same area, valida
 result, retries failures once, and writes `catalog/<lang>.arb`, `state/<lang>.json` and
 `out/translate-pr-body.md`. Values a person edited are kept.
 
-For a pull request that adds or changes English, run it on that branch for those keys and commit
-the result on top of the English commit:
+For a pull request that adds or changes English, translate its keys and commit the result on top
+of the English commit. Run the tools from an up-to-date checkout of `main`, pointed at a
+checkout of the pull request with `--root`. That way the pull request's own `Makefile`, tools and
+dependencies never run on the machine signed into Claude Code. If the pull request changes
+anything besides the catalog, review those changes before you run anything from it.
 
 ```sh
-make translate LOCALE=all
-make check
+# in a checkout of main; <pr> is a checkout of the pull request branch
+node tools/translate.ts --root <pr> --locale all
+node tools/validate.ts <pr>
+```
+
+Check `<pr>/out/translate-pr-body.md` before committing. If it lists keys under "Left
+untranslated", run the pass again (it sends only those keys) until none are left. `make check`
+allows missing translations, so it won't catch them. Then, in `<pr>`:
+
+```sh
 git add catalog state && git commit -m "chore(translations): <what the keys are> in seven languages"
 ```
 
 Put the per-language table from `out/translate-pr-body.md` in the pull request description.
 
-A pass on its own, such as after a glossary or style guide change (`RETRANSLATE=<prefixes>`), is
-its own pull request:
+A pass on its own, such as after a glossary or style guide change, is its own pull request:
 
 ```sh
-make check
 git switch -c chore/opus-pass
+make translate LOCALE=all RETRANSLATE=<prefixes>
+make check
 git add catalog state && git commit -m "chore(translations): opus pass"
 gh pr create --title "chore(translations): opus pass" --body-file out/translate-pr-body.md
 ```
