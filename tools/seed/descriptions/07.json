@@ -1,0 +1,663 @@
+{
+ "watchParty.theHost": {
+  "description": "Roku Watch Party: stand-in for the host's name when the host has no display name. Used inside sentences such as banners and hints, so it reads as a noun phrase."
+ },
+ "watchParty.entry.watchParty": {
+  "description": "Roku: label of the entry button that opens Watch Party from a title's page."
+ },
+ "watchParty.entry.suggest": {
+  "description": "Roku: label of the entry button that lets a guest suggest the current title to the party they are in."
+ },
+ "watchParty.entry.lobbyOnly": {
+  "description": "Roku: message shown when someone tries to start a title from outside the party lobby. Titles can only be suggested from the lobby."
+ },
+ "watchParty.menu.open": {
+  "description": "Roku: menu item that opens Watch Party when no party is active."
+ },
+ "watchParty.menu.return": {
+  "description": "Roku: menu item that goes back to the lobby of the party the user is already in."
+ },
+ "watchParty.page.eyebrow": {
+  "description": "Roku: small all-caps heading above the headline on the Watch Party start page."
+ },
+ "watchParty.page.headline": {
+  "description": "Roku: large two-line headline on the Watch Party start page. The line break is intentional."
+ },
+ "watchParty.page.body": {
+  "description": "Roku: short intro paragraph on the Watch Party start page explaining that playback stays in sync for everyone."
+ },
+ "watchParty.page.host": {
+  "description": "Roku: small all-caps label above the card for hosting a party on the start page."
+ },
+ "watchParty.page.join": {
+  "description": "Roku: small all-caps label above the card for joining an existing party on the start page."
+ },
+ "watchParty.page.start": {
+  "description": "Roku: button that creates a new Watch Party where the host picks the title."
+ },
+ "watchParty.page.startVote": {
+  "description": "Roku: button that creates a new Watch Party where all members vote on the title."
+ },
+ "watchParty.page.joinWithCode": {
+  "description": "Roku: button on the start page that opens the code entry screen to join someone's party."
+ },
+ "watchParty.page.checkAgain": {
+  "description": "Roku: button that retries the check for Watch Party support after it failed."
+ },
+ "watchParty.page.checking": {
+  "description": "Roku: status text on the start page while the app checks whether the server supports Watch Party."
+ },
+ "watchParty.page.unavailable": {
+  "description": "Roku: message on the start page when the server or current profile cannot use Watch Party."
+ },
+ "watchParty.page.starting": {
+  "description": "Roku: loading text shown while a new party is being created."
+ },
+ "watchParty.rejoin.title": {
+  "description": "Roku: button to rejoin a recent party. {title}: the name of the movie or show the party was watching."
+ },
+ "watchParty.rejoin.recent": {
+  "description": "Roku: heading or button label for rejoining a party the profile recently left."
+ },
+ "watchParty.rejoin.continueHere": {
+  "description": "Roku: confirm button when rejoining a party that is active on another device."
+ },
+ "watchParty.rejoin.takeOver": {
+  "description": "Roku: warning under the rejoin button. Rejoining on this device kicks the same profile off the party on its other device."
+ },
+ "watchParty.code.title": {
+  "description": "Roku: title of the screen where the user types a party code."
+ },
+ "watchParty.code.body": {
+  "description": "Roku: instruction on the code entry screen. Party codes are 8 characters long."
+ },
+ "watchParty.code.join": {
+  "description": "Roku: short button on the code entry screen that submits the typed code."
+ },
+ "watchParty.code.joinParty": {
+  "description": "Roku: button on the code entry screen that joins the party with the entered code."
+ },
+ "watchParty.code.joining": {
+  "description": "Roku: button or status text shown while the code is being checked and the party joined."
+ },
+ "watchParty.code.delete": {
+  "description": "Roku: on-screen keypad key that deletes the last typed character of the code."
+ },
+ "watchParty.title": {
+  "description": "Roku: screen title for Watch Party."
+ },
+ "watchParty.connection.hostAway": {
+  "description": "Roku: short status pill in the lobby, shown to guests when the host has lost connection."
+ },
+ "watchParty.connection.open": {
+  "description": "Roku: short status pill in the lobby meaning the party is open and waiting for others to join."
+ },
+ "watchParty.connection.here": {
+  "description": "Roku: short status pill in the lobby giving how many members are connected. {count}: the number of members connected."
+ },
+ "watchParty.connection.connecting": {
+  "description": "Roku: short status pill in the lobby while first connecting to the party."
+ },
+ "watchParty.connection.reconnecting": {
+  "description": "Roku: short status pill in the lobby while the connection is being restored."
+ },
+ "watchParty.connection.disconnected": {
+  "description": "Roku: short status pill in the lobby when the party connection is lost."
+ },
+ "watchParty.codePill.label": {
+  "description": "Roku: small all-caps label beside the party code in the lobby, read as 'join with ABCD1234'. Also read aloud by the screen reader before the code."
+ },
+ "watchParty.options.button": {
+  "description": "Roku: lobby button that opens the party options dialog."
+ },
+ "watchParty.hero.upNext": {
+  "description": "Roku: all-caps eyebrow on the lobby hero when a title is chosen but not yet started."
+ },
+ "watchParty.hero.nowWatching": {
+  "description": "Roku: all-caps eyebrow on the lobby hero when the title is playing for the party."
+ },
+ "watchParty.hero.youChose": {
+  "description": "Roku: caption on the lobby hero saying the current user picked the title."
+ },
+ "watchParty.hero.hostChose": {
+  "description": "Roku: caption on the lobby hero. {host}: the host's display name."
+ },
+ "watchParty.hero.hidden": {
+  "description": "Roku: placeholder title on the lobby hero when the chosen title is hidden from this profile."
+ },
+ "watchParty.hero.loading": {
+  "description": "Roku: placeholder title on the lobby hero while the chosen title's details load."
+ },
+ "watchParty.hero.open": {
+  "description": "Roku: all-caps eyebrow on the lobby hero for a party that is open but has no title chosen yet."
+ },
+ "watchParty.hero.pick": {
+  "description": "Roku: two-line headline on the lobby hero shown to the host before a title is chosen. The line break is intentional."
+ },
+ "watchParty.hero.pickCaption": {
+  "description": "Roku: caption under the host's 'pick something' headline in the lobby. Tells the host friends can already join with the code."
+ },
+ "watchParty.hero.waiting": {
+  "description": "Roku: two-line headline on the lobby hero shown to guests before a title is chosen. {host}: the host's display name. The line break is intentional."
+ },
+ "watchParty.hero.waitingCaption": {
+  "description": "Roku: caption under the guests' waiting headline in the lobby. {host}: the host's display name."
+ },
+ "watchParty.hero.voting": {
+  "description": "Roku: all-caps eyebrow on the lobby hero while members vote. Counts the suggested titles being voted on; {count}: the number of titles."
+ },
+ "watchParty.hero.voteTitle": {
+  "description": "Roku: headline on the lobby hero while members vote on what to watch."
+ },
+ "watchParty.hero.voteCaption.manager": {
+  "description": "Roku: caption in the voting lobby shown to the host or manager, who starts the title currently leading."
+ },
+ "watchParty.hero.voteCaption.guest": {
+  "description": "Roku: caption in the voting lobby shown to guests. {host}: the host's display name."
+ },
+ "watchParty.banner.unavailable.manager": {
+  "description": "Roku: warning banner in the lobby shown to the host when the chosen title is not available to this profile."
+ },
+ "watchParty.banner.unavailable.guest": {
+  "description": "Roku: warning banner in the lobby shown to guests when the chosen title is not available to their profile. {host}: the host's display name."
+ },
+ "watchParty.banner.hostAway": {
+  "description": "Roku: warning banner in the lobby when the host's connection dropped. {host}: the host's display name."
+ },
+ "watchParty.banner.reconnecting": {
+  "description": "Roku: banner in the lobby while this device is reconnecting to the party."
+ },
+ "watchParty.seats.title": {
+  "description": "Roku: all-caps heading above the list of members currently in the lobby."
+ },
+ "watchParty.presence.nobody": {
+  "description": "Roku: short lobby status line beside the member list when no members are connected."
+ },
+ "watchParty.presence.onlyYou": {
+  "description": "Roku: short lobby status line beside the member list when the current user is the only one connected."
+ },
+ "watchParty.presence.ready": {
+  "description": "Roku: lobby status line counting members who marked themselves ready. {ready}: how many are ready; {total}: how many members are connected (the plural counts this)."
+ },
+ "watchParty.presence.watching": {
+  "description": "Roku: lobby status line counting members currently watching. {watching}: how many are watching; {total}: how many members are connected (the plural counts this)."
+ },
+ "watchParty.seat.host": {
+  "description": "Roku: small tag on the host's row in the member list."
+ },
+ "watchParty.seat.you": {
+  "description": "Roku: small tag on the current user's own row in the member list."
+ },
+ "watchParty.seat.notReady": {
+  "description": "Roku: lowercase status on a member's row meaning they have not marked ready."
+ },
+ "watchParty.seat.reconnecting": {
+  "description": "Roku: lowercase status on a member's row meaning their connection dropped and is coming back."
+ },
+ "watchParty.seat.buffering": {
+  "description": "Roku: lowercase status on a member's row meaning their video is buffering."
+ },
+ "watchParty.seat.syncing": {
+  "description": "Roku: lowercase status on a member's row meaning their playback is catching up to the party."
+ },
+ "watchParty.seat.joining": {
+  "description": "Roku: lowercase status on a member's row meaning they are still joining."
+ },
+ "watchParty.seat.invite": {
+  "description": "Roku: button at the end of the member list that shows the invite code."
+ },
+ "watchParty.button.returnToPlayback": {
+  "description": "Roku: lobby button that goes back to the video already playing for the party."
+ },
+ "watchParty.button.returnToLobby": {
+  "description": "Roku: button that sends every member back to the lobby from playback."
+ },
+ "watchParty.button.startWinner": {
+  "description": "Roku: lobby button that starts the winning vote. {title}: the name of the movie or show."
+ },
+ "watchParty.button.startForEveryone": {
+  "description": "Roku: lobby button that starts the chosen title for all members."
+ },
+ "watchParty.button.suggestTitle": {
+  "description": "Roku: lobby button that opens the picker to suggest a title to the party."
+ },
+ "watchParty.button.suggest": {
+  "description": "Roku: short lobby button to suggest a title."
+ },
+ "watchParty.button.chooseTitle": {
+  "description": "Roku: lobby button that opens the picker so the host can choose a title."
+ },
+ "watchParty.button.changeTitle": {
+  "description": "Roku: lobby button that reopens the picker to replace the chosen title."
+ },
+ "watchParty.button.chooseSomethingElse": {
+  "description": "Roku: lobby button shown when the chosen title is unavailable, to pick a different one."
+ },
+ "watchParty.button.imReady": {
+  "description": "Roku: lobby button where a member marks themselves ready to start."
+ },
+ "watchParty.button.youreReady": {
+  "description": "Roku: lobby button label after the member marked ready. Shown with a small 'tap to undo' line."
+ },
+ "watchParty.button.tapToUndo": {
+  "description": "Roku: small lowercase hint under the 'You're ready' button; selecting it clears ready."
+ },
+ "watchParty.hint.suggestToStart": {
+  "description": "Roku: hint line in the voting lobby shown when no titles have been suggested yet."
+ },
+ "watchParty.hint.noVotes": {
+  "description": "Roku: hint line in the voting lobby when there are suggestions but no votes."
+ },
+ "watchParty.hint.everyoneReady": {
+  "description": "Roku: hint line in the lobby when all members have marked ready."
+ },
+ "watchParty.hint.notReady.oneName": {
+  "description": "Roku: hint line shown to the host. {first}: the display name of the one member who has not marked ready."
+ },
+ "watchParty.hint.notReady.twoNames": {
+  "description": "Roku: hint line shown to the host. {first}: name of one member not ready; {second}: name of the other member not ready."
+ },
+ "watchParty.hint.notReady.moreNames": {
+  "description": "Roku: hint line shown to the host when three or more members are not ready. {first}: name of one such member; {second}: name of another; 'and others' covers the rest."
+ },
+ "watchParty.hint.hostStartsWinner": {
+  "description": "Roku: hint line shown to guests in a voting lobby. {host}: the host's display name; {title}: the name of the leading movie or show."
+ },
+ "watchParty.hint.hostStartsTheWinner": {
+  "description": "Roku: hint line shown to guests in a voting lobby. {host}: the host's display name."
+ },
+ "watchParty.hint.hostStarts": {
+  "description": "Roku: hint line shown to guests in a lobby. {host}: the host's display name."
+ },
+ "watchParty.ballot.votes": {
+  "description": "Roku: all-caps vote tally on a suggested title in the voting lobby. {count}: the number of votes it has."
+ },
+ "watchParty.ballot.addTitle": {
+  "description": "Roku: label of the card in the suggestions list that opens the picker to suggest a title."
+ },
+ "watchParty.ballot.addCaption": {
+  "description": "Roku: small caption under the add-a-title card telling members that any member may suggest titles."
+ },
+ "watchParty.ballot.note": {
+  "description": "Roku: a note a member attached to a suggestion, shown in quotation marks. {note}: the note text typed by the member."
+ },
+ "watchParty.ballot.startThis": {
+  "description": "Roku: button on a suggestion that lets the host start that title right away."
+ },
+ "watchParty.ballot.remove": {
+  "description": "Roku: button on a suggestion that removes it from the list."
+ },
+ "watchParty.strip.title": {
+  "description": "Roku: all-caps heading of the suggestions strip in the lobby. {count}: the number of suggestions."
+ },
+ "watchParty.strip.manager": {
+  "description": "Roku: caption of the suggestions strip for the host or manager, who can queue a suggestion to play next."
+ },
+ "watchParty.strip.guest": {
+  "description": "Roku: caption of the suggestions strip for guests; they can suggest but only the host picks."
+ },
+ "watchParty.error.suggestionsSaved": {
+  "description": "Roku: error message in the lobby. The user's change succeeded but the refresh failed. {error}: the error detail from the server, sometimes empty."
+ },
+ "watchParty.error.suggestionsRefresh": {
+  "description": "Roku: error message in the lobby when the suggestions list failed to refresh. {error}: the error detail from the server, sometimes empty."
+ },
+ "watchParty.invite.eyebrow": {
+  "description": "Roku: small all-caps heading on the invite dialog."
+ },
+ "watchParty.invite.title": {
+  "description": "Roku: title of the invite dialog, which shows the party code."
+ },
+ "watchParty.invite.body": {
+  "description": "Roku: explanation on the invite dialog saying who can use the code."
+ },
+ "watchParty.invite.scan": {
+  "description": "Roku: line beside a QR code on the invite dialog, which opens the invitation on a phone."
+ },
+ "watchParty.picker.select": {
+  "description": "Roku: title of the title picker when the host chooses what to play."
+ },
+ "watchParty.picker.suggest": {
+  "description": "Roku: title of the title picker when a guest suggests a title."
+ },
+ "watchParty.picker.search": {
+  "description": "Roku: button in the picker that opens search."
+ },
+ "watchParty.picker.close": {
+  "description": "Roku: button that closes the title picker."
+ },
+ "watchParty.picker.continueTogether": {
+  "description": "Roku: picker row heading listing titles the party could continue watching."
+ },
+ "watchParty.picker.watchlists": {
+  "description": "Roku: picker row heading for titles on members' watchlists."
+ },
+ "watchParty.picker.recentMovies": {
+  "description": "Roku: picker row heading for newly added movies."
+ },
+ "watchParty.picker.recentSeries": {
+  "description": "Roku: picker row heading for newly added TV series."
+ },
+ "watchParty.picker.emptyTitle": {
+  "description": "Roku: heading shown when the picker has no titles to offer."
+ },
+ "watchParty.picker.emptyBody": {
+  "description": "Roku: hint under the empty picker heading."
+ },
+ "watchParty.picker.searchPrompt": {
+  "description": "Roku: placeholder text in the picker's search field."
+ },
+ "watchParty.picker.noResults": {
+  "description": "Roku: heading shown when a picker search finds nothing."
+ },
+ "watchParty.picker.noResultsBody": {
+  "description": "Roku: hint under the no-results heading in the picker."
+ },
+ "watchParty.episodes.choose": {
+  "description": "Roku: all-caps heading of the episode picker when the host chooses an episode."
+ },
+ "watchParty.episodes.suggest": {
+  "description": "Roku: all-caps heading of the episode picker when a guest suggests an episode."
+ },
+ "watchParty.episodes.empty": {
+  "description": "Roku: message in the episode picker when the selected season has no episodes."
+ },
+ "watchParty.episodes.reload": {
+  "description": "Roku: button in the episode picker that reloads the list after an error."
+ },
+ "watchParty.episodes.line": {
+  "description": "Roku: short season and episode label on an episode card. {season}: the season number; {episode}: the episode number."
+ },
+ "watchParty.confirm.together": {
+  "description": "Roku: all-caps eyebrow on the title confirmation page when starting a title together."
+ },
+ "watchParty.confirm.suggest": {
+  "description": "Roku: all-caps eyebrow on the title confirmation page when suggesting a title."
+ },
+ "watchParty.confirm.addSuggestion": {
+  "description": "Roku: button on the confirmation page that adds the title as a suggestion."
+ },
+ "watchParty.confirm.choose": {
+  "description": "Roku: button on the confirmation page that sets the title as the party's pick."
+ },
+ "watchParty.confirm.playForEveryone": {
+  "description": "Roku: button on the confirmation page that starts the title for all members."
+ },
+ "watchParty.confirm.allEpisodes": {
+  "description": "Roku: button on a series confirmation page that opens the episode list."
+ },
+ "watchParty.whoSeen.checking": {
+  "description": "Roku: status text on the confirmation page while members' viewing history loads."
+ },
+ "watchParty.whoSeen.title": {
+  "description": "Roku: heading of the confirmation page section listing which members have seen the title."
+ },
+ "watchParty.whoSeen.watched": {
+  "description": "Roku: a member's status in the who's-seen-it list: they finished the title."
+ },
+ "watchParty.whoSeen.inProgress": {
+  "description": "Roku: a member's status in the who's-seen-it list: they started but did not finish."
+ },
+ "watchParty.whoSeen.notWatched": {
+  "description": "Roku: a member's status in the who's-seen-it list: they have not watched it."
+ },
+ "watchParty.whoSeen.noHistory": {
+  "description": "Roku: status in the who's-seen-it list when no history is available for that member."
+ },
+ "watchParty.whoSeen.watchlist": {
+  "description": "Roku: a member's status line in the who's-seen-it list when the title is on their watchlist. {state}: their watch status, such as Watched or Not watched."
+ },
+ "watchParty.whoSeen.error": {
+  "description": "Roku: error text in the who's-seen-it list when history failed to load. {error}: the error detail from the server, sometimes empty."
+ },
+ "watchParty.options.title": {
+  "description": "Roku: title of the party options dialog."
+ },
+ "watchParty.options.whoChooses": {
+  "description": "Roku: section heading in the options dialog for how the next title is chosen."
+ },
+ "watchParty.options.everyoneVotes": {
+  "description": "Roku: option in the options dialog: members vote on the next title."
+ },
+ "watchParty.options.hostChooses": {
+  "description": "Roku: option in the options dialog: only the host picks the next title."
+ },
+ "watchParty.options.playbackControls": {
+  "description": "Roku: section heading in the options dialog for who may control playback."
+ },
+ "watchParty.options.guestsPlayPause": {
+  "description": "Roku: option in the options dialog: guests can play and pause for everyone."
+ },
+ "watchParty.options.hostOnly": {
+  "description": "Roku: option in the options dialog: only the host can control playback."
+ },
+ "watchParty.options.returnToLobby": {
+  "description": "Roku: button in the options dialog that sends every member back to the lobby."
+ },
+ "watchParty.options.end": {
+  "description": "Roku: destructive button in the options dialog that ends the party for all members."
+ },
+ "watchParty.options.leave": {
+  "description": "Roku: button in the options dialog for leaving the party while it continues for others."
+ },
+ "watchParty.options.close": {
+  "description": "Roku: button that closes the options dialog."
+ },
+ "watchParty.end.confirmTitle": {
+  "description": "Roku: question title of the confirmation dialog for ending the party."
+ },
+ "watchParty.end.confirm": {
+  "description": "Roku: destructive confirm button in the end-party dialog."
+ },
+ "watchParty.player.reconnecting": {
+  "description": "Roku: on-screen notice during playback while the party connection is restored."
+ },
+ "watchParty.player.syncing": {
+  "description": "Roku: on-screen notice during playback while this device catches up to the party."
+ },
+ "watchParty.player.hostOnlySeek": {
+  "description": "Roku: brief on-screen notice shown when a guest tries to seek but only the host may."
+ },
+ "watchParty.player.hostOnlyPlayPause": {
+  "description": "Roku: brief on-screen notice shown when a guest tries to play or pause but only the host may."
+ },
+ "watchParty.player.waitingForClock": {
+  "description": "Roku: playback notice when synchronized timing from the party has not arrived yet."
+ },
+ "watchParty.player.versionUnavailable": {
+  "description": "Roku: playback error when the media version the party chose cannot be played on this device."
+ },
+ "watchParty.player.notAllowed": {
+  "description": "Roku: playback notice when a requested action, such as pausing, is not permitted by the party's settings."
+ },
+ "watchParty.ended.ended": {
+  "description": "Roku: message shown when the party was ended by the host."
+ },
+ "watchParty.ended.replaced": {
+  "description": "Roku: message shown on this device when the same profile joined the party elsewhere, taking over."
+ },
+ "watchParty.ended.expired": {
+  "description": "Roku: message shown when the party connection expired or the party is gone."
+ },
+ "watchParty.error.alreadyInParty": {
+  "description": "Roku: error shown when joining while already in another party."
+ },
+ "watchParty.error.notFound": {
+  "description": "Roku: error shown when the entered party code matches no party."
+ },
+ "watchParty.error.unavailable": {
+  "description": "Roku: error shown when the server version is too old to support synchronized Watch Party playback for this profile."
+ },
+ "watchParty.error.recentElsewhere": {
+  "description": "Roku: error shown when trying to rejoin a recent party that belongs to a different server, account or profile."
+ },
+ "watchParty.error.generic": {
+  "description": "Roku: generic fallback error for Watch Party actions."
+ },
+ "watchParty.error.network": {
+  "description": "Roku: error for Watch Party actions when the server could not be reached."
+ },
+ "watchParty.error.forbidden": {
+  "description": "Roku: error when a guest attempts an action reserved for the host."
+ },
+ "watchParty.error.full": {
+  "description": "Roku: error when adding a suggestion fails because the suggestion list is at its limit."
+ },
+ "watchParty.error.supportCheck": {
+  "description": "Roku: error on the start page when the support check failed. {error}: the error detail, sometimes empty."
+ },
+ "subtitle.trackUnsupportedFormat": {
+  "description": "Android: secondary line under a subtitle track in the subtitle picker (player and detail page, phone and TV). Marks a track that is listed but cannot be selected because the app cannot display its format."
+ },
+ "account.downloads.count": {
+  "description": "Android phone: count of offline downloads on the Accounts and Change account screens, also inside other sentences. {count}: the number of downloads.",
+  "placeholders": {
+   "arg1": "count"
+  }
+ },
+ "account.profiles.count": {
+  "description": "Android phone: count of profiles on an account card on the Accounts and Change account screens. {count}: the number of profiles.",
+  "placeholders": {
+   "arg1": "count"
+  }
+ },
+ "account.downloads": {
+  "description": "Android phone: row label on an account's page for its offline downloads."
+ },
+ "account.downloads.none": {
+  "description": "Android phone: value of the Downloads row on an account's page when it has no downloads."
+ },
+ "account.downloads.value": {
+  "description": "Android phone: value of the Downloads row on an account's page. {downloads}: the download count, such as 12 downloads; {size}: the total storage size, such as 8.4 GB.",
+  "placeholders": {
+   "arg1": "downloads",
+   "arg2": "size"
+  }
+ },
+ "account.fallbackName": {
+  "description": "Android phone: stand-in used in place of an account's username when it has none, in sentences such as sign-out questions and cards. Must read as a noun phrase."
+ },
+ "account.needsSignInFooter": {
+  "description": "Android phone: footer note on an account's page when its session expired. Downloads are kept on the device."
+ },
+ "account.profiles": {
+  "description": "Android phone: row label on an account's page for its profiles."
+ },
+ "account.server": {
+  "description": "Android phone: row label on an account's page for the server it belongs to."
+ },
+ "account.signInAgain": {
+  "description": "Android phone: button on an account whose session expired, to sign in again."
+ },
+ "account.signOut.downloads": {
+  "description": "Android phone: warning line in the sign-out confirmation dialog, also shown when replacing an expired account. {downloads}: the download count, such as 12 downloads; {size}: the storage size, such as 8.4 GB.",
+  "placeholders": {
+   "arg1": "downloads",
+   "arg2": "size"
+  }
+ },
+ "account.signOut.question": {
+  "description": "Android phone: title of the sign-out confirmation dialog. {account}: the account's username; {server}: the server's display name.",
+  "placeholders": {
+   "arg1": "account",
+   "arg2": "server"
+  }
+ },
+ "account.signOut.removeServer": {
+  "description": "Android phone: destructive confirm button that signs out of the last account and also removes the server from the app."
+ },
+ "account.username": {
+  "description": "Android phone: row label on an account's page for the sign-in username."
+ },
+ "app.name": {
+  "description": "The app's name, shown on both phone and TV. Brand name, normally not translated."
+ },
+ "bufferingQuality.autoLimited": {
+  "description": "Android phone and TV: Auto row of the player's Quality menu while the app is holding Auto at a lower quality after repeated buffering. Keep short; the TV menu is cramped."
+ },
+ "bufferingQuality.cantLower": {
+  "description": "Android phone and TV: short notice in the player when buffering persists but no lower quality is available for this video."
+ },
+ "bufferingQuality.lowered": {
+  "description": "Android phone and TV: short notice in the player saying the app automatically reduced video quality because of buffering."
+ },
+ "bufferingQuality.prompt.keep": {
+  "description": "Android phone and TV: button on the buffering prompt that keeps the current quality."
+ },
+ "bufferingQuality.prompt.lower": {
+  "description": "Android phone and TV: button on the buffering prompt that reduces the video quality."
+ },
+ "bufferingQuality.prompt.title": {
+  "description": "Android phone and TV: title of the player pill that appears when playback keeps stalling, with buttons to lower or keep quality."
+ },
+ "bufferingQuality.restore": {
+  "description": "Android phone and TV: button in the player that returns video to the quality that was lowered automatically."
+ },
+ "changeAccount.addAccount": {
+  "description": "Android phone: button on the Change account screen that starts signing in with another account."
+ },
+ "changeAccount.current": {
+  "description": "Android phone: small badge on the Change account screen marking the account currently in use."
+ },
+ "changeAccount.menu": {
+  "description": "Android phone: profile menu item that opens the Change account screen."
+ },
+ "changeAccount.moreBelow": {
+  "description": "Android phone: hint on the Change account screen that the list scrolls and has more accounts below."
+ },
+ "changeAccount.signInOn": {
+  "description": "Android phone: button on the Change account screen to sign in on a server. {server}: the server's display name.",
+  "placeholders": {
+   "arg1": "server"
+  }
+ },
+ "changeAccount.title": {
+  "description": "Android phone: title of the Change account screen."
+ },
+ "status.comingSoon": {
+  "description": "Android phone and TV: placeholder text on a feature screen that is not built yet."
+ },
+ "status.emptyGeneric": {
+  "description": "Android phone: generic empty-state message on a list or screen with no content."
+ },
+ "status.errorGeneric": {
+  "description": "Android phone and TV: generic error message when loading or an action failed."
+ },
+ "status.loading": {
+  "description": "Android phone and TV: generic loading indicator text."
+ },
+ "introSkip.pill.skip": {
+  "description": "Android phone and TV: button over the video during a show's intro that jumps past the intro."
+ },
+ "introSkip.pill.undo": {
+  "description": "Android phone and TV: button shown briefly after skipping an intro, to go back and watch it."
+ },
+ "introSkip.pill.undoCaption": {
+  "description": "Android phone and TV: caption shown with the Watch Intro button, saying the intro was skipped automatically."
+ },
+ "loginReplace.body": {
+  "description": "Android phone: body of the dialog on the sign-in screen asking whether to replace an expired account. {new_account}: the username just signed in; {old_account}: the username of the expired account that would be signed out.",
+  "placeholders": {
+   "arg1": "new_account",
+   "arg2": "old_account"
+  }
+ },
+ "loginReplace.confirm": {
+  "description": "Android phone: confirm button of the replace-account dialog; signs out the expired account."
+ },
+ "loginReplace.failed": {
+  "description": "Android phone: error in the replace-account dialog when signing out the old account failed. {account}: the username of the expired account.",
+  "placeholders": {
+   "arg1": "account"
+  }
+ },
+ "loginReplace.keep": {
+  "description": "Android phone: button of the replace-account dialog that keeps both accounts."
+ },
+ "loginReplace.title": {
+  "description": "Android phone: title of the dialog asking whether to replace an expired account. {account}: the username of the expired account.",
+  "placeholders": {
+   "arg1": "account"
+  }
+ }
+}
