@@ -279,7 +279,9 @@ function androidEntries(repo: string): DraftEntry[] {
           for (const [n, t] of c.args) args.set(n, t);
           forms.push(`${q} {${c.message}}`);
         }
-        countArg = [...args].find(([, t]) => t === "int")![0];
+        const count = [...args].find(([, t]) => t === "int");
+        if (!count) throw new Error(`android plurals ${name} has no %d count argument`);
+        countArg = count[0];
         message = `{arg${countArg}, plural, ${forms.map((f) => f.replaceAll(`{arg${countArg}}`, "#")).join(" ")}}`;
       }
       const positions = [...args.keys()].sort((a, b) => a - b);
