@@ -174,6 +174,26 @@ test("translate: keeps translations of English keys added while it runs", () => 
   assert.equal(es["zzz.added"], "Añadido");
 });
 
+test("translate: an answer over x-maxLength goes back once with the limit", () => {
+  const root = makeRepo({ en: entry("a.b", "Hello", { "x-maxLength": 6 }), es: {} });
+  run(root, "--locale", "es");
+  const prompts = readFileSync(join(root, "prompts.log"), "utf8").split("\n=====\n").filter(Boolean);
+  assert.equal(prompts.length, 2);
+  assert.match(prompts[1]!, /longer than maxLength 6/);
+  // The second answer is accepted; make check warns about the length.
+  assert.equal(JSON.parse(readFileSync(join(root, "catalog/es.arb"), "utf8"))["a.b"], "ES Hello");
+});
+
+test("translate: a key named like an Object property is translated and tracked", () => {
+  const root = makeRepo({ en: { ...entry("toString", "Hi"), ...entry("constructor", "Yo") }, es: {} });
+  run(root, "--locale", "es");
+  const es = JSON.parse(readFileSync(join(root, "catalog/es.arb"), "utf8"));
+  assert.equal(es["toString"], "ES Hi");
+  assert.equal(es["constructor"], "ES Yo");
+  const state = JSON.parse(readFileSync(join(root, "state/es.json"), "utf8")) as State;
+  assert.equal(state["toString"]!.by, "opus");
+});
+
 test("translate: --dry-run sends one batch and writes nothing", () => {
   const root = makeRepo(catalog());
   const out = run(root, "--locale", "es", "--dry-run");

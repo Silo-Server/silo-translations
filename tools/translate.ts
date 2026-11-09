@@ -30,6 +30,7 @@ import { tmpdir } from "node:os";
 import { parseArgs } from "node:util";
 import { fileURLToPath } from "node:url";
 import { checkRepository, checkTranslation, type CheckedCatalog } from "./lib/check.ts";
+import { literalLength } from "./lib/icu.ts";
 import { catalogPath, type SourceEntry } from "./lib/catalog.ts";
 import { termsIn } from "./lib/glossary.ts";
 import { categoriesFor } from "./lib/plural.ts";
@@ -86,7 +87,7 @@ export function select(
   const work: Work[] = [];
   for (const entry of entries) {
     const current = translations.get(entry.key);
-    const st = state[entry.key];
+    const st = Object.hasOwn(state, entry.key) ? state[entry.key] : undefined;
     const fp = fingerprint(entry);
     if (current === undefined) {
       work.push({ entry, reason: "missing" });
@@ -280,6 +281,12 @@ export async function translateBatch(root: string, checked: CheckedCatalog, loca
       // An empty answer is no answer: it would erase the value and read as missing next time.
       const checkedMessage = message === undefined || message.trim() === "" ? undefined : checkTranslation(w.entry, checked.english.get(w.entry.key)!, locale, message);
       const problems = checkedMessage ? [...checkedMessage.problems, ...checkedMessage.mismatches] : ["no translation returned"];
+      // x-maxLength is advisory: an answer over it goes back once with the limit, and the
+      // second answer is accepted (make check warns if it is still too long).
+      const max = w.entry.maxLength;
+      if (!problems.length && attempt === 0 && max !== undefined && literalLength(checkedMessage!.analysis.ast) > max) {
+        problems.push(`longer than maxLength ${max} (a CJK character counts as two); write a shorter rendering`);
+      }
       if (problems.length) feedback.set(w.entry.key, problems);
       else accepted.set(w.entry.key, message!);
     }
@@ -311,7 +318,8 @@ function writeLanguage(root: string, checked: CheckedCatalog, locale: Locale, by
   const merged: Record<string, string> = { "@@locale": locale.tag };
   for (const entry of checked.catalog.entries) {
     // An empty string is how Weblate writes an untranslated unit; the loader treats it as missing.
-    const now = onDisk[entry.key] === "" ? undefined : onDisk[entry.key];
+    const raw = Object.hasOwn(onDisk, entry.key) ? onDisk[entry.key] : undefined;
+    const now = raw === "" ? undefined : raw;
     const w = byKey.get(entry.key);
     const next = results.get(entry.key);
     if (w && next !== undefined && !changedDuringRun.has(entry.key)) {
@@ -331,7 +339,7 @@ function writeLanguage(root: string, checked: CheckedCatalog, locale: Locale, by
   // translations instead of pruning them as orphans.
   const english = readJson<Record<string, unknown>>(catalogPath(root, checked.locales.source.tag), {});
   for (const [key, value] of Object.entries(onDisk)) {
-    if (!key.startsWith("@") && !(key in merged) && key in english && value !== "") merged[key] = value;
+    if (!key.startsWith("@") && !Object.hasOwn(merged, key) && Object.hasOwn(english, key) && value !== "") merged[key] = value;
   }
   writeFileSync(file, jsonText(canonicalArb(merged)));
   writeState(root, checked, locale, state);
