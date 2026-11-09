@@ -29812,6 +29812,34 @@
       "android"
     ]
   },
+  "search.voiceDialogTitleTv": "Voice search",
+  "@search.voiceDialogTitleTv": {
+    "description": "Android TV: voice search dialog on devices that use the older speech recognizer: dialog title while listening and when microphone access is needed.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "search.voiceMicPermissionTv": "Allow microphone access for Silo in Settings to use voice search.",
+  "@search.voiceMicPermissionTv": {
+    "description": "Android TV: voice search dialog on devices that use the older speech recognizer: shown when Silo doesn't have microphone permission. 'Settings' is the device's Settings app.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "search.voiceNetworkErrorTv": "Couldn't connect to voice search. Check your connection and try again.",
+  "@search.voiceNetworkErrorTv": {
+    "description": "Android TV: voice search dialog on devices that use the older speech recognizer: shown when the recognizer can't reach its network service.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "search.voiceNoMatchTv": "Didn't hear a title. Close and try again.",
+  "@search.voiceNoMatchTv": {
+    "description": "Android TV: voice search dialog on devices that use the older speech recognizer: shown when no speech was recognized. 'Close' is the dialog's Cancel button.",
+    "x-platforms": [
+      "android"
+    ]
+  },
   "search.voicePrompt": "Search Silo",
   "@search.voicePrompt": {
     "description": "Android phone: prompt the system speech recognizer shows while listening for a spoken search.",
@@ -29822,6 +29850,20 @@
   "search.voicePromptTv": "Speak a title",
   "@search.voicePromptTv": {
     "description": "Android TV: prompt the system speech recognizer shows while listening for a spoken search.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "search.voiceServiceMicDeniedTv": "The voice service couldn't access the microphone. Check microphone access in device settings and try again.",
+  "@search.voiceServiceMicDeniedTv": {
+    "description": "Android TV: voice search dialog on devices that use the older speech recognizer: shown when Silo has microphone permission but the device's voice service doesn't.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "search.voiceStartFailedTv": "Voice search couldn't start. Close and try again.",
+  "@search.voiceStartFailedTv": {
+    "description": "Android TV: voice search dialog on devices that use the older speech recognizer: shown for any other recognizer error. 'Close' is the dialog's Cancel button.",
     "x-platforms": [
       "android"
     ]
