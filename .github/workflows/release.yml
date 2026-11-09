@@ -32,8 +32,14 @@ jobs:
         run: |
           version="$(date -u +%Y.%m.%d)-${GITHUB_SHA::7}"
           echo "version=$version" >> "$GITHUB_OUTPUT"
-          if gh release view "v$version" >/dev/null 2>&1; then
-            echo "exists=true" >> "$GITHUB_OUTPUT"
+          # A published release with its four tarballs and SHA256SUMS is done. A draft or a
+          # release missing assets is what an interrupted run leaves: delete it and publish again.
+          if state="$(gh release view "v$version" --json isDraft,assets --jq '"\(.isDraft) \(.assets | length)"' 2>/dev/null)"; then
+            if [ "$state" = "false 5" ]; then
+              echo "exists=true" >> "$GITHUB_OUTPUT"
+            else
+              gh release delete "v$version" --yes --cleanup-tag
+            fi
           fi
       - name: Build tarballs
         if: steps.version.outputs.exists != 'true'
