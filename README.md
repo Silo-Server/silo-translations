@@ -172,7 +172,8 @@ Keys that reach Apple, Android or Roku use a shared subset of ICU MessageFormat:
 argument, with exactly the CLDR categories of the language and `#` for the number. No
 `select`, `selectordinal`, `=N`, `offset`, typed arguments (`{n, number}`, dates) or tags.
 Callers format dates, sizes and durations and pass them as `String`. Web-only keys may also
-use `select` and rich-text tags. Prefer the apostrophe `’`. An ASCII `'` is accepted where ICU
+use `select`, rich-text tags and a plain `{name, number}`, which prints a number in the locale's
+digits (for a translation that prints an argument English selects on). Prefer the apostrophe `’`. An ASCII `'` is accepted where ICU
 reads it literally (`Couldn't`, `{name}'s`) and rejected right before `{`, `}`, `#`, `|`, `<` or
 another `'`, where ICU (and FormatJS, for `<`) reads it as the start of an escape.
 
