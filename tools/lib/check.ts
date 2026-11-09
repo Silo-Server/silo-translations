@@ -1,5 +1,5 @@
 import { CATEGORY_ORDER, categoriesFor } from "./plural.ts";
-import { analyze, literalLength, type Analysis } from "./icu.ts";
+import { analyze, literalLength, TYPE, type Analysis, type MessageFormatElement } from "./icu.ts";
 import { catalogPath, INFO_PLIST_APPS, INFO_PLIST_PREFIX, infoPlistApp, inScope, isInfoPlist, isShared, loadCatalog, PLIST_KEY_PATTERN, type Catalog, type Issue, type SourceEntry } from "./catalog.ts";
 import { loadGlossary, termsIn, usesRendering, type GlossaryTerm } from "./glossary.ts";
 import { loadLocales, type Locale, type Locales } from "./locales.ts";
@@ -32,6 +32,23 @@ function sameSet(a: Set<string>, b: Set<string>): boolean {
 function list(s: Iterable<string>): string {
   const items = [...s].sort();
   return items.length ? items.join(", ") : "none";
+}
+
+/** Every select argument in a message with the union of its option names. */
+function selectOptions(elements: MessageFormatElement[], out = new Map<string, Set<string>>()): Map<string, Set<string>> {
+  for (const el of elements) {
+    if (el.type === TYPE.select) {
+      const names = out.get(el.value) ?? new Set<string>();
+      for (const [name, option] of Object.entries(el.options)) {
+        names.add(name);
+        selectOptions(option.value, out);
+      }
+      out.set(el.value, names);
+    } else if (el.type === TYPE.plural) {
+      for (const option of Object.values(el.options)) selectOptions(option.value, out);
+    } else if (el.type === TYPE.tag) selectOptions(el.children, out);
+  }
+  return out;
 }
 
 /** Problems with the English message and its metadata. */
@@ -114,6 +131,16 @@ export function checkTranslation(
     if (!sameSet(selectors(tr), selectors(en))) {
       mismatches.push(`plurals select on ${list(selectors(tr))}; English selects on ${list(selectors(en))}`);
     }
+  }
+  // Callers pass the English option values, so an option English doesn't have is never chosen.
+  // A translation may drop options (Japanese keeps only `other` for a gender select) or print
+  // the argument instead (a day number that English selects on only for its ordinal suffix).
+  const trSelects = selectOptions(tr.ast);
+  for (const [arg, want] of selectOptions(en.ast)) {
+    const got = trSelects.get(arg);
+    if (!got) continue;
+    const extra = [...got].filter((o) => !want.has(o));
+    if (extra.length) mismatches.push(`select ${arg} has options English doesn't (${list(extra)}); use English's (${list(want)})`);
   }
   problems.push(...pluralCategoryProblems(tr, locale));
   return { problems, mismatches, analysis: tr };
