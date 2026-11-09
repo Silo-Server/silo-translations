@@ -20860,26 +20860,41 @@
       "android"
     ]
   },
-  "player.aiTranslate.window.day": "24 hours",
+  "player.aiTranslate.window.day": "{hours, plural, one {# hour} other {# hours}}",
   "@player.aiTranslate.window.day": {
-    "description": "Android phone: player AI subtitle sheet; the transcription quota window for a daily limit, inserted into the quota line (\"…for the last 24 hours\").",
+    "description": "Android phone: player AI subtitle sheet; the transcription quota window for a daily limit, inserted into the quota line (\"…for the last 24 hours\"). {hours}: the window in hours (24 today).",
     "x-platforms": [
       "android"
-    ]
+    ],
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
   },
-  "player.aiTranslate.window.month": "30 days",
+  "player.aiTranslate.window.month": "{days, plural, one {# day} other {# days}}",
   "@player.aiTranslate.window.month": {
-    "description": "Android phone: player AI subtitle sheet; the transcription quota window for a monthly limit, inserted into the quota line (\"…for the last 30 days\").",
+    "description": "Android phone: player AI subtitle sheet; the transcription quota window for a monthly limit, inserted into the quota line (\"…for the last 30 days\"). {days}: the window in days (30 today).",
     "x-platforms": [
       "android"
-    ]
+    ],
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
   },
-  "player.aiTranslate.window.week": "7 days",
+  "player.aiTranslate.window.week": "{days, plural, one {# day} other {# days}}",
   "@player.aiTranslate.window.week": {
-    "description": "Android phone: player AI subtitle sheet; the transcription quota window for a weekly limit, inserted into the quota line (\"…for the last 7 days\").",
+    "description": "Android phone: player AI subtitle sheet; the transcription quota window for a weekly limit, inserted into the quota line (\"…for the last 7 days\"). {days}: the window in days (7 today).",
     "x-platforms": [
       "android"
-    ]
+    ],
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
   },
   "player.aspect.fill": "Fill",
   "@player.aspect.fill": {
@@ -22949,15 +22964,17 @@
   },
   "player.seekInterval.choice": "{seconds, plural, one {# second} other {# seconds}}",
   "@player.seekInterval.choice": {
-    "description": "Apple iOS/tvOS/macOS: skip interval settings (video and audiobook skip back/forward); one interval choice in the picker. 1: the interval in seconds (5 to 90). Android phone and TV Settings: a skip interval choice, and the value of a skip interval row.",
+    "description": "A skip interval in seconds (video and audiobook skip back/forward, 5 to 90): Apple iOS/tvOS/macOS skip interval picker choices; Android phone and TV Settings, a skip interval choice and the value of a skip interval row; web and Roku, the skip interval choices that showed the settings manifest's literal labels (\"10 seconds\"). {seconds}: the interval in seconds.",
     "placeholders": {
       "seconds": {
         "type": "int"
       }
     },
     "x-platforms": [
+      "web",
       "apple",
-      "android"
+      "android",
+      "roku"
     ]
   },
   "player.seekInterval.loadFailed": "Couldn't load skip intervals from the server.",
@@ -23107,19 +23124,29 @@
       "apple"
     ]
   },
-  "player.settings.bufferAheadExtended": "Extended (5 minutes)",
+  "player.settings.bufferAheadExtended": "{minutes, plural, one {Extended (# minute)} other {Extended (# minutes)}}",
   "@player.settings.bufferAheadExtended": {
-    "description": "Apple iOS/tvOS/macOS: device-only playback settings; Buffer ahead choice: about 5 minutes, for connections that drop out.",
+    "description": "Apple iOS/tvOS/macOS: device-only playback settings; Buffer ahead choice for connections that drop out. {minutes}: the window in minutes (about 5 today).",
     "x-platforms": [
       "apple"
-    ]
+    ],
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
   },
-  "player.settings.bufferAheadStandard": "Standard (40 seconds)",
+  "player.settings.bufferAheadStandard": "{seconds, plural, one {Standard (# second)} other {Standard (# seconds)}}",
   "@player.settings.bufferAheadStandard": {
-    "description": "Apple iOS/tvOS/macOS: device-only playback settings; Buffer ahead choice: the engine's default window of about 40 seconds.",
+    "description": "Apple iOS/tvOS/macOS: device-only playback settings; Buffer ahead choice: the engine's default window. {seconds}: the window in seconds (about 40 today).",
     "x-platforms": [
       "apple"
-    ]
+    ],
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
   },
   "player.settings.bufferAheadUnlimited": "Unlimited",
   "@player.settings.bufferAheadUnlimited": {
@@ -128011,12 +128038,17 @@
       "web"
     ]
   },
-  "web.detail.actions.startFromFirstEpisode": "Start From Episode 1",
+  "web.detail.actions.startFromFirstEpisode": "Start From Episode {episode}",
   "@web.detail.actions.startFromFirstEpisode": {
-    "description": "Web: primary button on an unstarted or fully watched series page; plays the first episode.",
+    "description": "Web: primary button on an unstarted or fully watched series page; plays the first episode. {episode}: the episode number it starts from (1 today), formatted in the app's digits.",
     "x-platforms": [
       "web"
-    ]
+    ],
+    "placeholders": {
+      "episode": {
+        "type": "int"
+      }
+    }
   },
   "web.detail.actions.startWatchParty": "Start a Watch Party",
   "@web.detail.actions.startWatchParty": {
@@ -140513,19 +140545,32 @@
       "web"
     ]
   },
-  "web.player.bitrateLimit.invalid": "Enter a value above 0 Mbps, such as 8 or 1.5 (up to 3 decimal places).",
+  "web.player.bitrateLimit.invalid": "{places, plural, one {Enter a value above {min} Mbps, such as 8 or 1.5 (up to # decimal place).} other {Enter a value above {min} Mbps, such as 8 or 1.5 (up to # decimal places).}}",
   "@web.player.bitrateLimit.invalid": {
-    "description": "Web: hint under the custom stream bitrate limit box, and the browser's validation message, while the box holds no valid value.",
+    "description": "Web: hint under the custom stream bitrate limit box, and the browser's validation message, while the box holds no valid value. {places}: how many decimal places the box accepts (3 today; selects the plural). {min}: the lower bound in Mbps (0 today). \"8\" and \"1.5\" are examples of what to type: keep them as written.",
     "x-platforms": [
       "web"
-    ]
+    ],
+    "placeholders": {
+      "places": {
+        "type": "int"
+      },
+      "min": {
+        "type": "int"
+      }
+    }
   },
-  "web.player.bitrateLimit.lowWarning": "Below 1 Mbps, streams are transcoded to very low quality.",
+  "web.player.bitrateLimit.lowWarning": "Below {mbps} Mbps, streams are transcoded to very low quality.",
   "@web.player.bitrateLimit.lowWarning": {
-    "description": "Web: warning under the custom stream bitrate limit box when the typed limit is below 1 Mbps.",
+    "description": "Web: warning under the custom stream bitrate limit box when the typed limit is below the threshold. {mbps}: the threshold in megabits per second (1 today).",
     "x-platforms": [
       "web"
-    ]
+    ],
+    "placeholders": {
+      "mbps": {
+        "type": "int"
+      }
+    }
   },
   "web.player.bitrateLimit.unit": "Mbps",
   "@web.player.bitrateLimit.unit": {
@@ -159964,26 +160009,41 @@
       "web"
     ]
   },
-  "web.subtitles.quotaWindow.day": "24 hours",
+  "web.subtitles.quotaWindow.day": "{hours, plural, one {# hour} other {# hours}}",
   "@web.subtitles.quotaWindow.day": {
-    "description": "Web: the rolling window of a daily AI transcription quota, inside sentences such as “… for the last 24 hours.” in the subtitle transcription dialog and in admin AI settings.",
+    "description": "Web: the rolling window of a daily AI transcription quota, inside sentences such as “… for the last 24 hours.” in the subtitle transcription dialog and in admin AI settings. {hours}: the window in hours (24 today).",
     "x-platforms": [
       "web"
-    ]
+    ],
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
   },
-  "web.subtitles.quotaWindow.month": "30 days",
+  "web.subtitles.quotaWindow.month": "{days, plural, one {# day} other {# days}}",
   "@web.subtitles.quotaWindow.month": {
-    "description": "Web: the rolling window of a monthly AI transcription quota, inside sentences such as “… for the last 30 days.” in the subtitle transcription dialog and in admin AI settings.",
+    "description": "Web: the rolling window of a monthly AI transcription quota, inside sentences such as “… for the last 30 days.” in the subtitle transcription dialog and in admin AI settings. {days}: the window in days (30 today).",
     "x-platforms": [
       "web"
-    ]
+    ],
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
   },
-  "web.subtitles.quotaWindow.week": "7 days",
+  "web.subtitles.quotaWindow.week": "{days, plural, one {# day} other {# days}}",
   "@web.subtitles.quotaWindow.week": {
-    "description": "Web: the rolling window of a weekly AI transcription quota, inside sentences such as “… for the last 7 days.” in the subtitle transcription dialog and in admin AI settings.",
+    "description": "Web: the rolling window of a weekly AI transcription quota, inside sentences such as “… for the last 7 days.” in the subtitle transcription dialog and in admin AI settings. {days}: the window in days (7 today).",
     "x-platforms": [
       "web"
-    ]
+    ],
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
   },
   "web.subtitles.search.downloadFailed": "Download failed",
   "@web.subtitles.search.downloadFailed": {
@@ -160716,12 +160776,17 @@
       "web"
     ]
   },
-  "web.subtitles.upload.help": "Drag and drop or browse for SRT, VTT, ASS, SSA, or SUB files up to 5 MB. Language is detected automatically when possible.",
+  "web.subtitles.upload.help": "Drag and drop or browse for SRT, VTT, ASS, SSA, or SUB files up to {megabytes} MB. Language is detected automatically when possible.",
   "@web.subtitles.upload.help": {
-    "description": "Web: help text under the subtitle upload form's heading. The format names are file types; keep them.",
+    "description": "Web: help text under the subtitle upload form's heading. The format names are file types; keep them. {megabytes}: the largest file size accepted, in megabytes (5 today).",
     "x-platforms": [
       "web"
-    ]
+    ],
+    "placeholders": {
+      "megabytes": {
+        "type": "int"
+      }
+    }
   },
   "web.subtitles.upload.languageLabel": "Upload language",
   "@web.subtitles.upload.languageLabel": {
