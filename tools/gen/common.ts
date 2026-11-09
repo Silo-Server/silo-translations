@@ -88,7 +88,30 @@ export function hasPercent(elements: MessageFormatElement[]): boolean {
   });
 }
 
-/** Pretty JSON with a trailing newline. */
+/**
+ * Bidirectional control characters (ALM, LRM, RLM, the embeddings and overrides, the isolates).
+ * Repositories that vendor the output refuse them as literal characters, so generated files
+ * carry them only as escapes that decode to the same string.
+ */
+export const BIDI_CONTROL = /[\u061C\u200E\u200F\u202A-\u202E\u2066-\u2069]/;
+const BIDI_CONTROLS = new RegExp(BIDI_CONTROL.source, "g");
+
+/** Writes each bidi control as a \uXXXX escape. Only for text where that escape means the character. */
+export function escapeBidi(text: string): string {
+  return text.replace(BIDI_CONTROLS, (c) => `\\u${c.charCodeAt(0).toString(16).toUpperCase().padStart(4, "0")}`);
+}
+
+/** The generated files that contain a literal bidi control, with the first one's code point. */
+export function literalBidi(files: Files): { path: string; codePoint: string }[] {
+  const found: { path: string; codePoint: string }[] = [];
+  for (const [path, text] of files) {
+    const m = BIDI_CONTROL.exec(text);
+    if (m) found.push({ path, codePoint: `U+${m[0].charCodeAt(0).toString(16).toUpperCase().padStart(4, "0")}` });
+  }
+  return found;
+}
+
+/** Pretty JSON with a trailing newline. Bidi controls are \uXXXX escapes. */
 export function json(value: unknown): string {
-  return JSON.stringify(value, null, 2) + "\n";
+  return escapeBidi(JSON.stringify(value, null, 2)) + "\n";
 }
