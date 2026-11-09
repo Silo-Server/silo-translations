@@ -1,0 +1,781 @@
+{
+ "marker.skipCredits": {
+  "description": "Button shown during video playback, on phone and TV, that jumps past the end credits."
+ },
+ "marker.skipRecap": {
+  "description": "Button shown during video playback, on phone and TV, that jumps past the recap of earlier episodes."
+ },
+ "picker.add": {
+  "description": "Short button label on the phone's profile and account picker for adding a new entry. Opens a choice of adding a server, account or profile."
+ },
+ "picker.addAccount": {
+  "description": "Phone picker menu row title for adding another account on a server already saved on this device."
+ },
+ "picker.addAccountDetail": {
+  "description": "Smaller explanatory line under the Add an account row in the phone picker."
+ },
+ "picker.addProfile": {
+  "description": "Phone picker menu row title for adding a new profile under the current account."
+ },
+ "picker.addProfileDetail": {
+  "description": "Smaller explanatory line under the Add a profile row in the phone picker."
+ },
+ "picker.addServer": {
+  "description": "Phone picker menu row title for connecting to an additional Silo server."
+ },
+ "picker.addServerDetail": {
+  "description": "Smaller explanatory line under the Add a server row in the phone picker."
+ },
+ "picker.changeAccount": {
+  "description": "Phone picker button or row for switching to a different account on the current server."
+ },
+ "picker.signInAgain": {
+  "description": "Phone picker button for an account whose session expired, so the user signs in to it again."
+ },
+ "platform.androidTv": {
+  "description": "Device type name for an Android TV, shown on the phone when a TV asks to be signed in."
+ },
+ "platform.appleTv": {
+  "description": "Device type name for an Apple TV, shown on the phone when a TV asks to be signed in."
+ },
+ "remote.battery.message": {
+  "description": "Body of a phone dialog explaining that battery restrictions can disconnect Remote Control (controlling a TV or player from the phone) once the app is in the background. Names the system settings entries to choose."
+ },
+ "remote.battery.notNow": {
+  "description": "Dialog button on the phone that dismisses the Remote Control battery prompt without changing settings."
+ },
+ "remote.battery.settings": {
+  "description": "Dialog button on the phone that opens the system battery settings for the app."
+ },
+ "remote.battery.title": {
+  "description": "Title of the phone dialog about battery restrictions affecting the Remote Control connection."
+ },
+ "remote.replace.title": {
+  "description": "Title of a phone confirmation dialog in Remote Control, asked before starting new media on a device that is already playing something."
+ },
+ "signInTv.accountUnconfirmed": {
+  "description": "Phone message when the app could not verify the signed-in account on a server. {server}: the server name.",
+  "placeholders": {
+   "arg1": "server"
+  }
+ },
+ "signInTv.addAccount": {
+  "description": "Phone button on the Sign in a TV screen to add an account on a server, so it can be used to approve the TV. {server}: the server name.",
+  "placeholders": {
+   "arg1": "server"
+  }
+ },
+ "signInTv.approve": {
+  "description": "Phone button on the Sign in a TV screen that approves the TV's sign-in request."
+ },
+ "signInTv.cardTitle": {
+  "description": "Phone card title asking whether to sign in a named TV. {device}: the name of the TV, for example Living Room TV.",
+  "placeholders": {
+   "arg1": "device"
+  }
+ },
+ "signInTv.cardTitleGeneric": {
+  "description": "Phone card title asking whether to sign in a TV whose name is unknown."
+ },
+ "signInTv.checkCode": {
+  "description": "Phone label above the sign-in code, telling the user to check that the TV displays the same code."
+ },
+ "signInTv.chooseAccountBody": {
+  "description": "Phone body text on the account choice screen, for approving a TV with a different account. {server}: the server name.",
+  "placeholders": {
+   "arg1": "server"
+  }
+ },
+ "signInTv.chooseAccountTitle": {
+  "description": "Phone screen title for picking which account approves the TV."
+ },
+ "signInTv.codeLabel": {
+  "description": "Phone label for the text field where the user types the sign-in code shown on the TV."
+ },
+ "signInTv.continue": {
+  "description": "Phone button that submits the entered TV code and moves to the next step."
+ },
+ "signInTv.declined": {
+  "description": "Phone message shown after the user declined the TV sign-in request."
+ },
+ "signInTv.error.alreadySignedIn": {
+  "description": "Phone error when the TV was already signed in by an earlier approval."
+ },
+ "signInTv.error.canceled": {
+  "description": "Phone error when the TV cancelled the sign-in attempt before it was approved."
+ },
+ "signInTv.error.declined": {
+  "description": "Phone error when the sign-in request was declined."
+ },
+ "signInTv.error.enterCode": {
+  "description": "Phone validation error when the user submits without a code from the TV."
+ },
+ "signInTv.error.expired": {
+  "description": "Phone error when the entered code had expired. The TV has generated a new code the user should scan or enter."
+ },
+ "signInTv.error.generic": {
+  "description": "Phone generic error when approving the TV's sign-in failed."
+ },
+ "signInTv.error.network": {
+  "description": "Phone error for a network failure while approving the TV sign-in."
+ },
+ "signInTv.error.notFound": {
+  "description": "Phone error when the entered code does not match any TV sign-in request."
+ },
+ "signInTv.error.notFoundOn": {
+  "description": "Phone error when the entered code was not found on the selected server. {server}: the server name.",
+  "placeholders": {
+   "arg1": "server"
+  }
+ },
+ "signInTv.error.providerUnavailable": {
+  "description": "Phone error when the external sign-in provider could not be reached to confirm the account. The user remains signed in on the phone."
+ },
+ "signInTv.error.signInFirst": {
+  "description": "Phone error shown when the user tries to approve a TV without being signed in on the phone."
+ },
+ "signInTv.followCanceled": {
+  "description": "Phone status after approval, saying the TV stopped the sign-in."
+ },
+ "signInTv.followDenied": {
+  "description": "Phone status after approval, saying the sign-in was declined."
+ },
+ "signInTv.followExpired": {
+  "description": "Phone status saying the code expired before the TV finished signing in."
+ },
+ "signInTv.followTimedOut": {
+  "description": "Phone status after approval when the app stopped waiting for confirmation. Tells the user to look at the TV to see whether it signed in."
+ },
+ "signInTv.network": {
+  "description": "Phone line on the TV request card naming the network the request came from. {network}: the network or location name, for example an IP address or city.",
+  "placeholders": {
+   "arg1": "network"
+  }
+ },
+ "signInTv.notNow": {
+  "description": "Phone button that dismisses the TV sign-in request without approving it."
+ },
+ "signInTv.platformRequested": {
+  "description": "Phone card subtitle about a TV sign-in request. {platform}: the TV type, such as Android TV; {time}: when it was requested, such as 5 minutes ago or just now.",
+  "placeholders": {
+   "arg1": "platform",
+   "arg2": "time"
+  }
+ },
+ "signInTv.profilesNote": {
+  "description": "Phone note on the TV approval screen about privacy: profiles are visible to anyone using that TV, and PIN-protected profiles stay locked."
+ },
+ "signInTv.requested": {
+  "description": "Phone card line saying when the TV sign-in request was made. {time}: relative time, such as 5 minutes ago or just now.",
+  "placeholders": {
+   "arg1": "time"
+  }
+ },
+ "signInTv.requestedJustNow": {
+  "description": "Phone relative-time phrase for a request made moments ago, inserted into the Requested line."
+ },
+ "signInTv.serverAccount": {
+  "description": "Phone text on the TV approval card explaining what will happen. {server}: the server name; {account}: the account name that will be used.",
+  "placeholders": {
+   "arg1": "server",
+   "arg2": "account"
+  }
+ },
+ "signInTv.serverHint": {
+  "description": "Phone hint under the server row, telling the user the TV shows the name of the server it is signing in to."
+ },
+ "signInTv.serverLabel": {
+  "description": "Phone row label above the name of the server the TV will sign in to."
+ },
+ "signInTv.serverOnly": {
+  "description": "Phone text on the TV approval card explaining what will happen. {server}: the server name.",
+  "placeholders": {
+   "arg1": "server"
+  }
+ },
+ "signInTv.serverWithHost": {
+  "description": "Phone display of a server with its address in parentheses. {server}: the server's display name; {host}: its host address, such as media.example.com.",
+  "placeholders": {
+   "arg1": "server",
+   "arg2": "host"
+  }
+ },
+ "signInTv.settingsLabel": {
+  "description": "Phone Settings row label that opens the screen for approving a TV's sign-in request."
+ },
+ "signInTv.signInFirst": {
+  "description": "Phone button shown when the user is not signed in, leading to the sign-in screen before approving a TV."
+ },
+ "signInTv.signedIn": {
+  "description": "Phone success message after the TV has finished signing in."
+ },
+ "signInTv.signingIn": {
+  "description": "Phone success message after approval while the TV completes its sign-in."
+ },
+ "signInTv.subtitle": {
+  "description": "Phone subtitle under the Sign in a TV title, instructing the user to type the TV's code."
+ },
+ "signInTv.switchAccount": {
+  "description": "Phone link below the account name, for users who are signed in as the wrong person and want to switch accounts."
+ },
+ "signInTv.switchThisServer": {
+  "description": "Phone fallback word for the server name inside the add-account button when no server name is available. Reads as part of Add an account on this server."
+ },
+ "signInTv.title": {
+  "description": "Phone screen title for approving a TV's device sign-in."
+ },
+ "signInTv.tryServer": {
+  "description": "Phone button suggesting a different saved server to try for the entered code. {server}: the server's display name.",
+  "placeholders": {
+   "arg1": "server"
+  }
+ },
+ "signInTv.warning": {
+  "description": "Phone safety warning on the approval card: only approve a TV that the user can see and started themselves."
+ },
+ "tab.downloads": {
+  "description": "Phone bottom navigation tab label for downloaded offline media."
+ },
+ "tab.home": {
+  "description": "Phone bottom navigation tab label for the Home screen."
+ },
+ "tab.search": {
+  "description": "Phone bottom navigation tab label for Search."
+ },
+ "tab.settings": {
+  "description": "Phone bottom navigation tab label for Settings."
+ },
+ "nav.browse": {
+  "description": "Android TV side navigation item for browsing the library. Short, space is limited."
+ },
+ "nav.home": {
+  "description": "Android TV side navigation item for the Home screen. Short, space is limited."
+ },
+ "nav.search": {
+  "description": "Android TV side navigation item for Search. Short, space is limited."
+ },
+ "nav.settings": {
+  "description": "Android TV side navigation item for Settings. Short, space is limited."
+ },
+ "tvPair.error.alreadySignedIn": {
+  "description": "Android TV error when another device is already signed in with this pairing request."
+ },
+ "tvPair.error.canceled": {
+  "description": "Android TV error when the phone or other device stopped the sign-in."
+ },
+ "tvPair.error.declined": {
+  "description": "Android TV error when the sign-in was declined."
+ },
+ "tvPair.error.enterCode": {
+  "description": "Android TV validation error on the screen where this TV approves another device's sign-in, when no code was entered."
+ },
+ "tvPair.error.expired": {
+  "description": "Android TV error when the entered code expired. The other device shows a replacement code."
+ },
+ "tvPair.error.generic": {
+  "description": "Android TV generic error when approving another device failed."
+ },
+ "tvPair.error.network": {
+  "description": "Android TV error for a network failure while approving another device."
+ },
+ "tvPair.error.notFound": {
+  "description": "Android TV error when the entered code does not match any pending request on the other device."
+ },
+ "tvPair.error.notFoundOn": {
+  "description": "Android TV error when the entered code was not found on a server. {server}: the server name.",
+  "placeholders": {
+   "arg1": "server"
+  }
+ },
+ "tvPair.error.providerUnavailable": {
+  "description": "Android TV error when the external sign-in provider could not be reached to confirm the account. The user is still signed in on the TV."
+ },
+ "tvPair.error.signInFirst": {
+  "description": "Android TV error shown when approving another device without being signed in on this TV."
+ },
+ "tvPairing.accountOnServer": {
+  "description": "Android TV line combining an account and server. {account}: the account name; {server}: the server name.",
+  "placeholders": {
+   "arg1": "account",
+   "arg2": "server"
+  }
+ },
+ "tvPairing.allow": {
+  "description": "Android TV button that accepts a nearby phone's setup or sign-in request."
+ },
+ "tvPairing.card.consentNote": {
+  "description": "Android TV note on a side card, shown while waiting for the user to Allow; a code to compare with the phone appears after allowing."
+ },
+ "tvPairing.card.noAnswer": {
+  "description": "Android TV side card heading for the failure state where the TV could not reach the address the phone sent."
+ },
+ "tvPairing.card.noAnswerNote": {
+  "description": "Android TV side card note explaining the failure: the TV could not connect to the server address the phone provided."
+ },
+ "tvPairing.card.notFinished": {
+  "description": "Android TV side card heading for a failed pairing state where setup or sign-in did not finish."
+ },
+ "tvPairing.card.notFinishedNote": {
+  "description": "Android TV side card note in the failure state. {server}: the server name that was not signed in.",
+  "placeholders": {
+   "arg1": "server"
+  }
+ },
+ "tvPairing.card.onPhone": {
+  "description": "Android TV side card heading telling the user the next step takes place on their phone."
+ },
+ "tvPairing.card.onPhoneNote": {
+  "description": "Android TV side card note: on the phone, choose which accounts to send to this TV, then tap Continue."
+ },
+ "tvPairing.card.onPhoneNoteSignin": {
+  "description": "Android TV side card note: the user should approve the sign-in on the phone."
+ },
+ "tvPairing.chip.approving": {
+  "description": "Android TV small status chip above the headline: the phone is currently approving the sign-in."
+ },
+ "tvPairing.chip.connected": {
+  "description": "Android TV small status chip above the headline: a phone or tablet has connected."
+ },
+ "tvPairing.chip.consent": {
+  "description": "Android TV small status chip: a nearby phone is trying to set up this TV, and the user is asked to allow it."
+ },
+ "tvPairing.chip.consentSignin": {
+  "description": "Android TV small status chip: a nearby phone is trying to sign in this TV, and the user is asked to allow it."
+ },
+ "tvPairing.chip.waiting": {
+  "description": "Android TV small status chip: the TV is waiting for the user's phone to respond."
+ },
+ "tvPairing.chip.working": {
+  "description": "Android TV small status chip: the TV is requesting a sign-in code from the server."
+ },
+ "tvPairing.completedChooseAccount": {
+  "description": "Android TV message after pairing when several accounts were signed in, prompting the user to choose one. {count}: number of accounts.",
+  "placeholders": {
+   "arg1": "count"
+  }
+ },
+ "tvPairing.completedNamed": {
+  "description": "Android TV message after pairing succeeded, before the profile screen appears. {servers}: the server name or comma-separated names.",
+  "placeholders": {
+   "arg1": "servers"
+  }
+ },
+ "tvPairing.completedNone": {
+  "description": "Android TV message after pairing, saying the TV is moving to the profile selection screen."
+ },
+ "tvPairing.completedTitle": {
+  "description": "Android TV headline shown when pairing has completed successfully."
+ },
+ "tvPairing.confirmDetail": {
+  "description": "Android TV instruction under the code: confirm that the phone or tablet shows the same code, then approve there."
+ },
+ "tvPairing.confirmDetailAutomatic": {
+  "description": "Android TV text saying the phone or tablet verifies the code automatically, so the user need not compare it."
+ },
+ "tvPairing.confirmOlderPhones": {
+  "description": "Android TV fallback note for older phone app versions that show match words instead of the code. {words}: the match words, such as a few random words.",
+  "placeholders": {
+   "arg1": "words"
+  }
+ },
+ "tvPairing.confirmTitle": {
+  "description": "Android TV large headline asking the user to confirm on the phone. Line break is intentional."
+ },
+ "tvPairing.confirmTitleAutomatic": {
+  "description": "Android TV large headline while the phone verifies the code automatically and the TV signs in."
+ },
+ "tvPairing.connectedDetail": {
+  "description": "Android TV instruction under the headline: on the phone or tablet, choose which accounts this TV should sign in to."
+ },
+ "tvPairing.connectedDetailSignin": {
+  "description": "Android TV instruction under the headline telling the user to continue on the phone or tablet."
+ },
+ "tvPairing.connectedTitle": {
+  "description": "Android TV large headline telling the user to choose accounts on their phone. Line break is intentional."
+ },
+ "tvPairing.connectedTitleSignin": {
+  "description": "Android TV large headline telling the user to continue on their phone. Line break is intentional."
+ },
+ "tvPairing.consentDetail": {
+  "description": "Android TV dialog body when a nearby phone or tablet requests to sign in this TV. {server}: the server name.",
+  "placeholders": {
+   "arg1": "server"
+  }
+ },
+ "tvPairing.consentNote": {
+  "description": "Android TV warning on the setup request: allow only if the user started setup on their own device."
+ },
+ "tvPairing.consentNoteSignin": {
+  "description": "Android TV warning on the sign-in request: allow only if the user started the sign-in on their own device."
+ },
+ "tvPairing.consentTitle": {
+  "description": "Android TV large headline asking whether to allow a nearby phone's setup. Line break is intentional."
+ },
+ "tvPairing.consentTitleSignin": {
+  "description": "Android TV large headline asking whether to allow a nearby phone's sign-in. Line break is intentional."
+ },
+ "tvPairing.consentUnencrypted": {
+  "description": "Android TV security warning shown when the server address uses plain HTTP rather than HTTPS. {host}: the server address, such as 192.168.1.5:8096.",
+  "placeholders": {
+   "arg1": "host"
+  }
+ },
+ "tvPairing.continue": {
+  "description": "Android TV button to continue after a pairing step."
+ },
+ "tvPairing.dontAllow": {
+  "description": "Android TV button that rejects a nearby phone's setup or sign-in request."
+ },
+ "tvPairing.failedDenied": {
+  "description": "Android TV failure message when the phone's sign-in was declined. {server}: the server name.",
+  "placeholders": {
+   "arg1": "server"
+  }
+ },
+ "tvPairing.failedExpired": {
+  "description": "Android TV failure message when the code expired before approval. {server}: the server name.",
+  "placeholders": {
+   "arg1": "server"
+  }
+ },
+ "tvPairing.failedGeneric": {
+  "description": "Android TV failure message for an unknown error during pairing. {server}: the server name.",
+  "placeholders": {
+   "arg1": "server"
+  }
+ },
+ "tvPairing.failedIdentity": {
+  "description": "Android TV failure message when the address sent by the phone reached a different server than expected. {server}: the name of the server the phone meant.",
+  "placeholders": {
+   "arg1": "server"
+  }
+ },
+ "tvPairing.failedIdentitySignin": {
+  "description": "Android TV failure message when the phone offered a server that this TV does not use. {server}: the server name the phone offered.",
+  "placeholders": {
+   "arg1": "server"
+  }
+ },
+ "tvPairing.failedTitle": {
+  "description": "Android TV headline when pairing for server setup failed."
+ },
+ "tvPairing.failedTitleSignin": {
+  "description": "Android TV headline when pairing for sign-in failed."
+ },
+ "tvPairing.failedUnreachable": {
+  "description": "Android TV failure message when the TV cannot connect to the server. {server}: the server name.",
+  "placeholders": {
+   "arg1": "server"
+  }
+ },
+ "tvPairing.failedUpdate": {
+  "description": "Android TV failure message when a version mismatch blocks sign-in. {server}: the server name, which may need updating.",
+  "placeholders": {
+   "arg1": "server"
+  }
+ },
+ "tvPairing.finishing": {
+  "description": "Android TV progress message while the phone or tablet completes the final pairing step."
+ },
+ "tvPairing.signedIn": {
+  "description": "Android TV label for a successful sign-in when a single account was signed in."
+ },
+ "tvPairing.signedInCount": {
+  "description": "Android TV headline after multiple accounts were signed in. Line break is intentional. {count}: number of accounts.",
+  "placeholders": {
+   "arg1": "count"
+  }
+ },
+ "tvPairing.unreachableProvider": {
+  "description": "Android TV failure message when the server is only reachable via a network provider app such as a VPN. {server}: the server name; {provider}: the network provider app name, mentioned twice.",
+  "placeholders": {
+   "arg1": "server",
+   "arg2": "provider"
+  }
+ },
+ "tvPairing.unreachablePublic": {
+  "description": "Android TV failure message when the server's public address does not respond. {server}: the server name; {address}: its public address.",
+  "placeholders": {
+   "arg1": "server",
+   "arg2": "address"
+  }
+ },
+ "tvPairing.unreachableTitle": {
+  "description": "Android TV large headline when the server cannot be reached. Line break is intentional. {server}: the server name.",
+  "placeholders": {
+   "arg1": "server"
+  }
+ },
+ "tvPairing.useAlternate": {
+  "description": "Android TV button to retry with another server address. {address}: the alternate host address.",
+  "placeholders": {
+   "arg1": "address"
+  }
+ },
+ "tvPairing.workingDetail": {
+  "description": "Android TV detail line while the TV requests its sign-in code."
+ },
+ "tvPairing.workingTitle": {
+  "description": "Android TV large headline while signing in to a server. Line break is intentional. {server}: the server name.",
+  "placeholders": {
+   "arg1": "server"
+  }
+ },
+ "tvPairing.workingTitleAccount": {
+  "description": "Android TV large headline while signing in an account. Line break is intentional. {account}: the account name; {server}: the server name.",
+  "placeholders": {
+   "arg1": "account",
+   "arg2": "server"
+  }
+ },
+ "tvSetup.phoneDetail": {
+  "description": "Android TV first-run setup text describing the phone method: open Silo on a phone or tablet on the same Wi-Fi and accept the setup card."
+ },
+ "tvSetup.phoneLooking": {
+  "description": "Android TV first-run setup progress line while it searches for nearby phones or tablets."
+ },
+ "tvSetup.phonePill": {
+  "description": "Android TV first-run setup pill label, in capitals, marking the recommended option of setting up with a phone."
+ },
+ "tvSetup.subtitle": {
+  "description": "Android TV first-run setup subtitle offering two ways to connect: phone or tablet, or typing the server address with the remote."
+ },
+ "tvSignIn.action.newCode": {
+  "description": "Android TV button on the sign-in screen that requests a fresh sign-in code."
+ },
+ "tvSignIn.action.password": {
+  "description": "Android TV button that opens the username and password sign-in form."
+ },
+ "tvSignIn.codeLabel": {
+  "description": "Android TV accessibility (TalkBack) label for the sign-in code displayed on screen."
+ },
+ "tvSignIn.declinedLead": {
+  "description": "Android TV text shown after a sign-in was declined, replacing the scan instructions, telling the user to request a new code."
+ },
+ "tvSignIn.error.accountDisabled": {
+  "description": "Android TV sign-in error when the user's account has been disabled."
+ },
+ "tvSignIn.error.accountRequired": {
+  "description": "Android TV sign-in error when the person has no account on the server. The server admin must add them."
+ },
+ "tvSignIn.error.cleanupIncomplete": {
+  "description": "Android TV message when sign-in worked but clearing local diagnostics data did not finish."
+ },
+ "tvSignIn.error.emailInUse": {
+  "description": "Android TV sign-in error when an account with the same email exists but is not linked. {provider}: the sign-in provider name, such as Google.",
+  "placeholders": {
+   "arg1": "provider"
+  }
+ },
+ "tvSignIn.error.identityChanged": {
+  "description": "Android TV sign-in error when the account or server changed mid-process, so sign-in must restart."
+ },
+ "tvSignIn.error.identityLinkedElsewhere": {
+  "description": "Android TV sign-in error when an external identity is already linked to another account. {provider}: the sign-in provider name, such as Google.",
+  "placeholders": {
+   "arg1": "provider"
+  }
+ },
+ "tvSignIn.error.invalidCredentials": {
+  "description": "Android TV password form error for a wrong username or password."
+ },
+ "tvSignIn.error.invalidCredentialsProvider": {
+  "description": "Android TV password form error for wrong credentials, adding a hint for users who use an external sign-in. {provider}: the provider name.",
+  "placeholders": {
+   "arg1": "provider"
+  }
+ },
+ "tvSignIn.error.localLoginDisabled": {
+  "description": "Android TV error when the server has turned off password sign-in."
+ },
+ "tvSignIn.error.loginFailed": {
+  "description": "Android TV generic error title or message when login failed."
+ },
+ "tvSignIn.error.network": {
+  "description": "Android TV sign-in error for a network failure."
+ },
+ "tvSignIn.error.networkEmailInUse": {
+  "description": "Android TV sign-in error when a network provider sign-in matches an existing account by email. {provider}: the network provider name, such as Tailscale.",
+  "placeholders": {
+   "arg1": "provider"
+  }
+ },
+ "tvSignIn.error.networkIdentityRequired": {
+  "description": "Android TV sign-in error telling the user to open the server through a provider's network address. {provider}: the network provider name, such as Tailscale.",
+  "placeholders": {
+   "arg1": "provider"
+  }
+ },
+ "tvSignIn.error.networkNotPermitted": {
+  "description": "Android TV sign-in error when the network provider blocks this device from the server. {provider}: the network provider name.",
+  "placeholders": {
+   "arg1": "provider"
+  }
+ },
+ "tvSignIn.error.networkProviderGone": {
+  "description": "Android TV sign-in error when a network sign-in provider was removed from the server. {provider}: the provider name.",
+  "placeholders": {
+   "arg1": "provider"
+  }
+ },
+ "tvSignIn.error.notPermitted": {
+  "description": "Android TV sign-in error when the account is not allowed to use this server."
+ },
+ "tvSignIn.error.passwordExpired": {
+  "description": "Android TV sign-in error when the password has expired and must be changed elsewhere."
+ },
+ "tvSignIn.error.passwordRequired": {
+  "description": "Android TV validation error under the password field when it is empty."
+ },
+ "tvSignIn.error.providerUnavailable": {
+  "description": "Android TV sign-in error when the external sign-in service cannot be reached."
+ },
+ "tvSignIn.error.rateLimited": {
+  "description": "Android TV sign-in error after too many failed attempts."
+ },
+ "tvSignIn.error.saveFailed": {
+  "description": "Android TV sign-in error when the signed-in session could not be stored on the device."
+ },
+ "tvSignIn.error.usernameRequired": {
+  "description": "Android TV validation error under the username field when it is empty."
+ },
+ "tvSignIn.eyebrow": {
+  "description": "Android TV small label above the sign-in headline, for the account section."
+ },
+ "tvSignIn.form.createAccount": {
+  "description": "Android TV button on the password sign-in form that starts creating a new account."
+ },
+ "tvSignIn.form.hidePassword": {
+  "description": "Android TV accessibility label for the toggle that hides the typed password."
+ },
+ "tvSignIn.form.passwordPlaceholder": {
+  "description": "Android TV placeholder text in the empty password field."
+ },
+ "tvSignIn.form.providerHint": {
+  "description": "Android TV hint under the password form for users who normally use an external sign-in. {provider}: the provider name.",
+  "placeholders": {
+   "arg1": "provider"
+  }
+ },
+ "tvSignIn.form.showPassword": {
+  "description": "Android TV accessibility label for the toggle that reveals the typed password."
+ },
+ "tvSignIn.form.submit": {
+  "description": "Android TV button that submits the username and password form."
+ },
+ "tvSignIn.form.submitting": {
+  "description": "Android TV button label while the password sign-in request is running."
+ },
+ "tvSignIn.form.title": {
+  "description": "Android TV title of the username and password sign-in form."
+ },
+ "tvSignIn.form.usePhone": {
+  "description": "Android TV button on the password form returning to the phone-based sign-in with a code."
+ },
+ "tvSignIn.form.usernamePlaceholder": {
+  "description": "Android TV placeholder text in the empty username field."
+ },
+ "tvSignIn.nearbyHint": {
+  "description": "Android TV hint on the sign-in screen saying nearby phones with Silo on the same Wi-Fi can sign in this TV."
+ },
+ "tvSignIn.network.continueAs": {
+  "description": "Android TV button that signs in with the identity a network provider (such as Tailscale) reports for this device. {account}: that identity's name.",
+  "placeholders": {
+   "arg1": "account"
+  }
+ },
+ "tvSignIn.network.continueWith": {
+  "description": "Android TV button to sign in using a network provider. {provider}: the provider's name.",
+  "placeholders": {
+   "arg1": "provider"
+  }
+ },
+ "tvSignIn.network.via": {
+  "description": "Android TV small label showing the network provider used to reach the server. {provider}: the provider's name.",
+  "placeholders": {
+   "arg1": "provider"
+  }
+ },
+ "tvSignIn.passwordOnly": {
+  "description": "Android TV note that the server offers only password sign-in, not code or phone approval."
+ },
+ "tvSignIn.providerFallback": {
+  "description": "Android TV fallback phrase used in place of a provider name when none is known. It is inserted into other sentences."
+ },
+ "tvSignIn.qrDescription": {
+  "description": "Android TV accessibility (TalkBack) description of the sign-in QR code. {host}: the activation website address; {code}: the sign-in code read aloud character by character.",
+  "placeholders": {
+   "arg1": "host",
+   "arg2": "code"
+  }
+ },
+ "tvSignIn.sessionExpired": {
+  "description": "Android TV message when the saved session ended, prompting a new sign-in. {server}: the server name.",
+  "placeholders": {
+   "arg1": "server"
+  }
+ },
+ "tvSignIn.status.couldntFinish": {
+  "description": "Android TV status when sign-in did not complete on this TV."
+ },
+ "tvSignIn.status.denied": {
+  "description": "Android TV status when the sign-in request was declined."
+ },
+ "tvSignIn.status.failed": {
+  "description": "Android TV status when requesting a sign-in code failed."
+ },
+ "tvSignIn.status.gettingCode": {
+  "description": "Android TV status while the TV requests a sign-in code."
+ },
+ "tvSignIn.status.newCode": {
+  "description": "Android TV status after a code refresh, while waiting for approval on the phone."
+ },
+ "tvSignIn.status.opened": {
+  "description": "Android TV status when the user has opened the request on their phone and should continue there."
+ },
+ "tvSignIn.status.paused": {
+  "description": "Android TV status when the sign-in process has paused."
+ },
+ "tvSignIn.status.signedIn": {
+  "description": "Android TV status when sign-in succeeded."
+ },
+ "tvSignIn.status.signedInAs": {
+  "description": "Android TV status when sign-in succeeded. {account}: the account name.",
+  "placeholders": {
+   "arg1": "account"
+  }
+ },
+ "tvSignIn.status.tooMany": {
+  "description": "Android TV status when too many requests were made. The TV retries automatically."
+ },
+ "tvSignIn.status.unreachable": {
+  "description": "Android TV status when the server cannot be contacted. {host}: the server's host name.",
+  "placeholders": {
+   "arg1": "host"
+  }
+ },
+ "tvSignIn.status.updateRequired": {
+  "description": "Android TV status when the server's version is too old to support TV sign-in."
+ },
+ "tvSignIn.status.waiting": {
+  "description": "Android TV status while the code is displayed and approval has not happened yet."
+ },
+ "tvSignIn.step.approve": {
+  "description": "Android TV instruction step: approve the sign-in on the phone, after which the TV signs in automatically."
+ },
+ "tvSignIn.step.scan": {
+  "description": "Android TV instruction step next to the QR code: scan it with a phone camera."
+ },
+ "tvSignIn.step.url": {
+  "description": "Android TV instruction step: visit a web page and type the code. {url}: the activation website address.",
+  "placeholders": {
+   "arg1": "url"
+  }
+ },
+ "tvSignIn.title": {
+  "description": "Android TV sign-in screen title. {server}: the server name.",
+  "placeholders": {
+   "arg1": "server"
+  }
+ }
+}

@@ -1,0 +1,573 @@
+{
+ "common.back": {
+  "description": "Button label on Roku, for example in the Up Next panel and on screens that cannot load content. Returns to the previous screen."
+ },
+ "common.cancel": {
+  "description": "Button label that dismisses a dialog, pairing prompt or confirmation without making a change. Used on phone and TV."
+ },
+ "common.changeServer": {
+  "description": "Button on the TV sign-in screen and on Roku that leads to choosing or entering a different Silo server."
+ },
+ "common.done": {
+  "description": "Button label that closes a finished dialog or pairing step. Used on phone and Roku."
+ },
+ "common.loading": {
+  "description": "Short status text on Roku, also read aloud by the screen reader, while content is loading."
+ },
+ "common.signOut": {
+  "description": "Button label that signs the current account out, including the confirm button in the sign-out dialog. Used on phone and Roku."
+ },
+ "common.tryAgain": {
+  "description": "Button shown after a failed sign-in, pairing or load that repeats the attempt. Used on phone, Android TV and Roku."
+ },
+ "common.navigateBack": {
+  "description": "Accessibility (TalkBack) label for the back arrow icon in a screen's top bar on the phone app. Not visible text."
+ },
+ "common.retry": {
+  "description": "Button label that repeats a failed action or load, shown on error states. Used on phone and Android TV."
+ },
+ "common.save": {
+  "description": "Button label that saves the changes made in a form or dialog on the phone app."
+ },
+ "common.signIn": {
+  "description": "Button label that starts or submits sign-in. Title case, used on phone and Android TV."
+ },
+ "common.signOutTitle": {
+  "description": "Title of the sign-out confirmation dialog on the phone app. Title case."
+ },
+ "common.connect": {
+  "description": "Button on the Android TV app that connects to a server or device."
+ },
+ "common.play": {
+  "description": "Button on the Android TV app that starts playback of the selected item."
+ },
+ "setup.headline": {
+  "description": "Large heading on the Roku first-run screen asking for the server address. The line break splits the heading over two lines; keep it."
+ },
+ "setup.body": {
+  "description": "Short helper text under the heading on the Roku server address screen, telling the user which address to type."
+ },
+ "setup.field": {
+  "description": "Label of the text field on Roku where the user types the server address."
+ },
+ "setup.placeholder": {
+  "description": "Example server address shown as placeholder hint in the Roku address field. Probably keep as is."
+ },
+ "setup.connect": {
+  "description": "Button on the Roku server address screen that checks the address and connects to the server."
+ },
+ "setup.connecting": {
+  "description": "Button or status text on Roku shown while the app is checking the entered server address."
+ },
+ "setup.error.empty": {
+  "description": "Error on the Roku server address screen shown when the user submits an empty address field."
+ },
+ "setup.error.invalidAddress": {
+  "description": "Error on the Roku server address screen when the entered host is not a valid address."
+ },
+ "setup.error.unsupportedScheme": {
+  "description": "Error on the Roku server address screen when the address starts with something other than https:// or http://. Keep those prefixes unchanged."
+ },
+ "setup.error.credentials": {
+  "description": "Error on the Roku server address screen when the address contains a user name and password, which are not allowed there."
+ },
+ "setup.error.unreachable": {
+  "description": "Error on the Roku server address screen when no Silo server answers at the entered address."
+ },
+ "setup.error.originMismatch": {
+  "description": "Error on the Roku server address screen when the server replied as a different address than the one entered, for example behind a proxy."
+ },
+ "setup.cleartext.title": {
+  "description": "Title of a Roku warning dialog shown when the user connects to a server over plain HTTP, without encryption."
+ },
+ "setup.cleartext.body": {
+  "description": "Body of the Roku unencrypted-connection warning dialog. {host}: the server address the user is about to connect to."
+ },
+ "setup.cleartext.connect": {
+  "description": "Confirm button in the Roku unencrypted-connection warning dialog, to connect anyway."
+ },
+ "setup.phone.chip": {
+  "description": "Small status chip with a spinner on the Roku server screen while it searches the local network for a phone or tablet running Silo."
+ },
+ "setup.phone.headline": {
+  "description": "Large heading on the Roku screen offering to set up the server from a nearby phone. The line break splits it over two lines; keep it."
+ },
+ "setup.phone.body": {
+  "description": "Text under the heading on the Roku phone-setup screen, explaining that using the phone avoids typing with the remote."
+ },
+ "setup.phone.aside": {
+  "description": "Small lead-in text on Roku above the option to type the server address manually instead of using a phone."
+ },
+ "setup.phone.enterAddress": {
+  "description": "Button on the Roku phone-setup screen that switches to typing the server address with the remote."
+ },
+ "setup.step.open": {
+  "description": "First of three short numbered steps on Roku for setting up with a phone: open the Silo app on the phone."
+ },
+ "setup.step.tap": {
+  "description": "Second of three numbered steps on Roku for phone setup: tap the Set Up button in the phone app. Matches the button label in setup.step.setUp."
+ },
+ "setup.step.finish": {
+  "description": "Third of three numbered steps on Roku for phone setup: complete the remaining setup on the phone."
+ },
+ "setup.step.audio": {
+  "description": "Screen reader text on Roku for one phone-setup step. {number}: the step number, such as 1; {title}: the text of that step."
+ },
+ "setup.step.setUp": {
+  "description": "Name of the Set Up button in the Silo phone app, quoted in the Roku setup steps. Must match the phone app's button text."
+ },
+ "setup.advanced.show": {
+  "description": "Toggle button on the Roku server address screen that reveals extra options for protocol and port."
+ },
+ "setup.advanced.hide": {
+  "description": "Toggle button on the Roku server address screen that hides the advanced protocol and port options."
+ },
+ "setup.scheme.auto": {
+  "description": "Option in the Roku advanced protocol selector that lets the app choose between HTTPS and HTTP automatically."
+ },
+ "setup.scheme.https": {
+  "description": "Option in the Roku advanced protocol selector for secure connections. Protocol name, normally not translated."
+ },
+ "setup.scheme.http": {
+  "description": "Option in the Roku advanced protocol selector for unencrypted connections. Protocol name, normally not translated."
+ },
+ "setup.port.placeholder": {
+  "description": "Placeholder hint in the empty port field on the Roku advanced options, meaning the port is chosen automatically."
+ },
+ "setup.port.field": {
+  "description": "Label of the optional server port number field in the Roku advanced options."
+ },
+ "setup.error.invalidPort": {
+  "description": "Error on the Roku server address screen when the port entered is not a whole number from 1 to 65535."
+ },
+ "setup.error.httpsOnly": {
+  "description": "Error on the Roku server address screen when no Silo server answers over HTTPS at the entered address and HTTPS was required."
+ },
+ "update.headline": {
+  "description": "Heading on a Roku full-screen message saying the connected server software is too old for this app."
+ },
+ "update.body": {
+  "description": "Body of the Roku message shown when the server runs an older Silo version that this app no longer supports."
+ },
+ "update.originBody": {
+  "description": "Body of the Roku message shown when the server cannot confirm its address, so the server needs updating before signing in on Roku."
+ },
+ "update.mismatchHeadline": {
+  "description": "Heading on a Roku full-screen message when the server answers from a different address than entered. The line break splits it over two lines; keep it."
+ },
+ "update.mismatchBody": {
+  "description": "Body of the Roku address-mismatch message. {server}: the name or address of the server the user tried to connect to."
+ },
+ "servers.headline": {
+  "description": "Heading of the Roku screen listing saved servers to switch between."
+ },
+ "servers.body": {
+  "description": "Helper text under the heading of the Roku saved servers screen."
+ },
+ "servers.add": {
+  "description": "Button or row on the Roku saved servers screen that starts adding another server."
+ },
+ "servers.remove": {
+  "description": "Button on a saved server row on Roku that removes that server from the device."
+ },
+ "servers.removeAudio": {
+  "description": "Screen reader label on Roku for the remove button of a server row. {server}: the name of that server."
+ },
+ "servers.connecting": {
+  "description": "Status text on Roku shown while switching to the chosen saved server."
+ },
+ "servers.badge.current": {
+  "description": "Small badge on a saved server row on Roku marking the server currently in use."
+ },
+ "servers.badge.signedOut": {
+  "description": "Small badge on a saved server row on Roku showing that no account is signed in on that server."
+ },
+ "servers.rowAudio": {
+  "description": "Screen reader text for a saved server row on Roku. {server}: the server name; {address}: its web address."
+ },
+ "servers.rowAudioBadge": {
+  "description": "Screen reader text for a saved server row on Roku with a status badge. {server}: the server name; {address}: its web address; {badge}: the badge text, such as Current."
+ },
+ "servers.error.unreachable": {
+  "description": "Error on the Roku saved servers screen when switching to a server fails because it cannot be reached. {server}: the server name."
+ },
+ "servers.error.remove": {
+  "description": "Error on the Roku saved servers screen when removing a server fails. {server}: the server name."
+ },
+ "servers.error.mismatch": {
+  "description": "Error on the Roku saved servers screen when a server answered from a different address. {server}: the server name."
+ },
+ "servers.remove.title": {
+  "description": "Title of the Roku confirmation dialog for removing a saved server. {server}: the server name."
+ },
+ "servers.remove.body": {
+  "description": "Body of the Roku remove-server dialog explaining that all accounts on that server will be signed out on this TV."
+ },
+ "servers.remove.currentBody": {
+  "description": "Body of the Roku remove-server dialog when the server being removed is the active one. {server}: the server being removed; {next}: the server the TV will switch to."
+ },
+ "servers.remove.lastBody": {
+  "description": "Body of the Roku remove-server dialog when it is the last saved server. {server}: the server being removed."
+ },
+ "servers.remove.confirm": {
+  "description": "Confirm button in the Roku remove-server dialog that removes the server."
+ },
+ "accounts.headline": {
+  "description": "Heading of the Roku screen where the user picks a server and then an account to switch to."
+ },
+ "accounts.body": {
+  "description": "Helper text under the heading of the Roku change-account screen."
+ },
+ "accounts.addAccount": {
+  "description": "Row on the Roku change-account screen that signs in with another account."
+ },
+ "accounts.addAccountOn": {
+  "description": "Row on the Roku change-account screen to sign in on a particular server. {server}: that server's name."
+ },
+ "accounts.addServer": {
+  "description": "Row on the Roku change-account screen that adds a new server."
+ },
+ "accounts.rowAudioBadge": {
+  "description": "Screen reader text for an account row on the Roku change-account screen. {account}: the account name; {server}: the server it belongs to; {badge}: a status badge such as Current."
+ },
+ "accounts.error.change": {
+  "description": "Error on the Roku change-account screen when switching to the chosen account fails."
+ },
+ "accounts.addAccountOnServer": {
+  "description": "Row label in the phone Accounts settings to sign in with another account on a server. {server}: the server's display name.",
+  "placeholders": {
+   "arg1": "server"
+  }
+ },
+ "accounts.addAServer": {
+  "description": "Row label in the phone Accounts settings that starts adding a new server."
+ },
+ "accounts.remove.body": {
+  "description": "Body of the phone dialog for removing a server from Accounts settings. {server}: the server's display name, shown in bold.",
+  "placeholders": {
+   "arg1": "server"
+  }
+ },
+ "accounts.remove.downloads": {
+  "description": "Extra sentence in the phone remove-server dialog about the downloads that would be deleted. {downloads}: the count as text, such as 12 downloads; {size}: their total size, such as 8.4 GB.",
+  "placeholders": {
+   "arg1": "downloads",
+   "arg2": "size"
+  }
+ },
+ "accounts.remove.failedBody": {
+  "description": "Body of the phone error dialog shown when removing a server did not finish because signing out one of its accounts failed."
+ },
+ "accounts.remove.failedTitle": {
+  "description": "Title of the phone error dialog shown when removing a server failed. {server}: the server's display name.",
+  "placeholders": {
+   "arg1": "server"
+  }
+ },
+ "accounts.remove.server": {
+  "description": "Destructive confirm button in the phone remove-server dialog."
+ },
+ "accounts.remove.title": {
+  "description": "Title of the phone confirmation dialog for removing a server. {server}: the server's display name.",
+  "placeholders": {
+   "arg1": "server"
+  }
+ },
+ "accounts.rename": {
+  "description": "Menu item in the phone Accounts settings that renames a server or account."
+ },
+ "accounts.title": {
+  "description": "Title of the Accounts settings screen on the phone app, listing servers and accounts."
+ },
+ "passwordOff.headline": {
+  "description": "Heading on a Roku full-screen message when the server does not allow password sign-in. The line break splits it over two lines; keep it."
+ },
+ "passwordOff.body": {
+  "description": "Body of the Roku message when password sign-in is disabled. {server}: the name of the server."
+ },
+ "notReady.headline": {
+  "description": "Heading on a Roku full-screen message when the server's setup has not been finished. The line break splits it over two lines; keep it."
+ },
+ "notReady.body": {
+  "description": "Body of the Roku not-ready message, asking the user to have the administrator finish setup and then check again."
+ },
+ "notReady.badge": {
+  "description": "Small badge on Roku marking a server that still needs administrator setup."
+ },
+ "notReady.check": {
+  "description": "Button on the Roku not-ready message that checks the server's setup state again."
+ },
+ "notReady.checking": {
+  "description": "Button text on Roku while the server's setup state is being rechecked."
+ },
+ "notReady.still": {
+  "description": "Message on Roku after rechecking, saying the server still needs administrator setup."
+ },
+ "notReady.unreachable": {
+  "description": "Message on Roku after rechecking when the server could not be reached."
+ },
+ "signIn.headline": {
+  "description": "Heading of the Roku username and password sign-in screen. The line break splits it over two lines; keep it."
+ },
+ "signIn.body": {
+  "description": "Helper text on the Roku password sign-in screen. {server}: the name of the server being signed in to."
+ },
+ "signIn.username": {
+  "description": "Label of the user name field on the Roku sign-in screen."
+ },
+ "signIn.password": {
+  "description": "Label of the password field on the Roku sign-in screen."
+ },
+ "signIn.show": {
+  "description": "Short button next to the Roku password field that shows the typed password in plain text."
+ },
+ "signIn.hide": {
+  "description": "Short button next to the Roku password field that hides the password again."
+ },
+ "signIn.showPassword": {
+  "description": "Screen reader label on Roku for the button that reveals the password."
+ },
+ "signIn.hidePassword": {
+  "description": "Screen reader label on Roku for the button that hides the password."
+ },
+ "signIn.submit": {
+  "description": "Button on the Roku password sign-in screen that submits the user name and password."
+ },
+ "signIn.submitting": {
+  "description": "Button text on the Roku sign-in screen while the sign-in request is in progress."
+ },
+ "signIn.error.username": {
+  "description": "Validation error under the user name field on the Roku sign-in screen when it is empty."
+ },
+ "signIn.error.password": {
+  "description": "Validation error under the password field on the Roku sign-in screen when it is empty."
+ },
+ "signIn.error.invalid": {
+  "description": "Error on the Roku sign-in screen when the user name or password is wrong."
+ },
+ "signIn.error.rateLimited": {
+  "description": "Error on the Roku sign-in screen when the server blocks sign-in because of too many attempts."
+ },
+ "signIn.error.network": {
+  "description": "Error on the Roku sign-in screen when a network problem prevented sign-in."
+ },
+ "signIn.error.disabled": {
+  "description": "Error on the Roku sign-in screen when the account has been disabled by an administrator."
+ },
+ "signIn.error.unavailable": {
+  "description": "Error on the Roku sign-in screen when the sign-in service cannot be reached."
+ },
+ "signIn.error.passwordOff": {
+  "description": "Error on the Roku sign-in screen when the server has turned off password sign-in."
+ },
+ "signIn.error.notPermitted": {
+  "description": "Error on the Roku sign-in screen when the account is not allowed to use this server."
+ },
+ "signIn.error.passwordExpired": {
+  "description": "Error on the Roku sign-in screen when the account password has expired and must be changed elsewhere."
+ },
+ "signIn.error.emailInUse": {
+  "description": "Error on the Roku sign-in screen: an account with this email already exists and an admin must link it to the external sign-in provider."
+ },
+ "signIn.error.linkedElsewhere": {
+  "description": "Error on the Roku sign-in screen: the external sign-in provider account is already linked to a different Silo account."
+ },
+ "signIn.error.accountRequired": {
+  "description": "Error on the Roku sign-in screen: the person has no account on this server and an admin must add one."
+ },
+ "signIn.error.failed": {
+  "description": "Generic fallback error on the Roku sign-in screen when login fails for an unknown reason."
+ },
+ "signIn.error.providers": {
+  "description": "Error on the Roku sign-in screen when the server could not be contacted to load sign-in options. {server}: the server name."
+ },
+ "signIn.code.headline": {
+  "description": "Heading of the Roku code sign-in screen, which shows a QR code and a short code. {server}: the server name."
+ },
+ "signIn.code.lead": {
+  "description": "Instruction on the Roku code sign-in screen: scan the QR code or visit a web page and enter the code. {page}: the address of the page to visit, or the phrase from signIn.code.leadNoPage."
+ },
+ "signIn.code.leadEnded": {
+  "description": "Instruction on the Roku code sign-in screen after the code expired or ended, when password sign-in is also available."
+ },
+ "signIn.code.leadEndedNoPassword": {
+  "description": "Instruction on the Roku code sign-in screen after the code expired or ended, when password sign-in is not available."
+ },
+ "signIn.code.leadNoPage": {
+  "description": "Phrase on Roku that fills the page slot in the code sign-in instruction when no page address is known. It must read naturally in place of a web address. Keep /activate unchanged."
+ },
+ "signIn.code.nearby": {
+  "description": "Hint on the Roku code sign-in screen suggesting the user open the Silo phone app on the same Wi-Fi network to sign in this TV."
+ },
+ "signIn.code.usePassword": {
+  "description": "Button on the Roku code sign-in screen that switches to user name and password sign-in."
+ },
+ "signIn.code.showNewCode": {
+  "description": "Button on the Roku code sign-in screen that requests a fresh code."
+ },
+ "signIn.code.usePhone": {
+  "description": "Button on Roku that switches from typing to signing in with a nearby phone."
+ },
+ "signIn.code.qrAudio": {
+  "description": "Screen reader text on Roku for the sign-in QR code. {page}: the web page address to visit; {code}: the short code to enter there."
+ },
+ "signIn.status.gettingCode": {
+  "description": "Status line on the Roku code sign-in screen while a sign-in code is being requested."
+ },
+ "signIn.status.waiting": {
+  "description": "Status line on the Roku code sign-in screen while waiting for the user to approve the sign-in on another device."
+ },
+ "signIn.status.renewed": {
+  "description": "Status line on Roku shown when a new sign-in code replaced the old one and approval is awaited."
+ },
+ "signIn.status.opened": {
+  "description": "Status line on Roku shown after the user opened the sign-in page on their phone, telling them to continue there."
+ },
+ "signIn.status.approvedAs": {
+  "description": "Status line on Roku after sign-in was approved on another device. {account}: the name of the account signed in."
+ },
+ "signIn.status.approved": {
+  "description": "Status line on Roku after sign-in was approved, used when the account name is unknown."
+ },
+ "signIn.status.couldNotFinish": {
+  "description": "Status line on Roku when approval succeeded but the TV could not complete the sign-in."
+ },
+ "signIn.status.denied": {
+  "description": "Status line on Roku when the person declined the sign-in request on their phone."
+ },
+ "signIn.status.paused": {
+  "description": "Status line on Roku when code sign-in is paused, for example because the app was in the background."
+ },
+ "signIn.status.unreachable": {
+  "description": "Status line on the Roku code sign-in screen when the server cannot be reached. {server}: the server name."
+ },
+ "signIn.status.rateLimited": {
+  "description": "Status line on the Roku code sign-in screen when the server asked for fewer requests; the app will retry automatically."
+ },
+ "signIn.status.failed": {
+  "description": "Generic status line on the Roku code sign-in screen for an unexpected failure."
+ },
+ "signIn.passwordOnly": {
+  "description": "Note on the Roku sign-in screen explaining the server offers only password sign-in, with no code or phone option."
+ },
+ "signIn.phoneHint": {
+  "description": "Hint on the Roku password sign-in screen for accounts that use an external provider. {name}: the provider's name, such as the identity service."
+ },
+ "signIn.phoneHintSso": {
+  "description": "Hint on the Roku password sign-in screen for accounts that use single sign-on, when no provider name is known."
+ },
+ "signIn.expired": {
+  "description": "Message on the Roku sign-in screen shown when the saved session ended. {server}: the server name."
+ },
+ "firstRun.help.title": {
+  "description": "Title of a Roku help popup on the first-run screens about typing text more easily."
+ },
+ "firstRun.help.body": {
+  "description": "Body of the Roku typing help popup: select a field, then type with the remote or the Roku mobile app keyboard on the same network."
+ },
+ "firstRun.badge.secure": {
+  "description": "Small badge on Roku next to a server address meaning the connection is encrypted (HTTPS)."
+ },
+ "firstRun.badge.http": {
+  "description": "Small badge on Roku next to a server address meaning the connection uses plain HTTP. Protocol name, usually not translated."
+ },
+ "firstRun.badge.update": {
+  "description": "Small badge on Roku next to a server that needs a software update before it can be used."
+ },
+ "firstRun.badge.mismatch": {
+  "description": "Small badge on Roku next to a server whose reply came from a different address than expected."
+ },
+ "profiles.headline": {
+  "description": "Heading of the Roku profile picker screen, asking which person is watching."
+ },
+ "profiles.signedInAs": {
+  "description": "Subtitle on the Roku profile picker screen. {name}: the name of the signed-in account."
+ },
+ "profiles.pinProtected": {
+  "description": "Screen reader text on Roku for a profile tile that needs a PIN to open."
+ },
+ "profiles.kidsProfile": {
+  "description": "Screen reader text on Roku for a profile tile that is a children's profile."
+ },
+ "profiles.kids": {
+  "description": "Small uppercase badge on a Roku profile tile marking a children's profile. Keep it very short."
+ },
+ "profiles.empty": {
+  "description": "Message on the Roku profile picker when the account has no profiles; the user must add one in the web app."
+ },
+ "profiles.error.load": {
+  "description": "Error on the Roku profile picker when profiles could not be loaded."
+ },
+ "profiles.error.passwordChange": {
+  "description": "Error on the Roku profile picker when the account must set a new password in the web app before use."
+ },
+ "profiles.error.select": {
+  "description": "Error on the Roku profile picker when the chosen profile could not be opened."
+ },
+ "profiles.add": {
+  "description": "Tile or button on the Roku profile picker that opens the add choices (profile, account or server)."
+ },
+ "profiles.changeAccount": {
+  "description": "Button on the Roku profile picker that opens the change-account screen."
+ },
+ "profiles.addChoice.title": {
+  "description": "Title of the Roku dialog asking what to add: a profile, an account or a server."
+ },
+ "profiles.addChoice.profile": {
+  "description": "Option in the Roku add dialog for adding a profile to the current account."
+ },
+ "profiles.addChoice.profileDetail": {
+  "description": "Secondary line under the Roku add-a-profile option."
+ },
+ "profiles.addChoice.account": {
+  "description": "Option in the Roku add dialog for signing in with another account."
+ },
+ "profiles.addChoice.accountDetail": {
+  "description": "Secondary line under the Roku add-an-account option."
+ },
+ "profiles.addChoice.server": {
+  "description": "Option in the Roku add dialog for adding another Silo server."
+ },
+ "profiles.addChoice.serverDetail": {
+  "description": "Secondary line under the Roku add-a-server option."
+ },
+ "profiles.signInAgain": {
+  "description": "Button on the Roku profile picker shown when the session ended, to sign in again."
+ },
+ "launch.offer.title": {
+  "description": "Title of a Roku dialog offering to skip the profile picker next time. {name}: the profile name."
+ },
+ "launch.offer.body": {
+  "description": "Body of the Roku auto-open dialog. Mentions a path in Roku settings, Settings > General > Profile Selection; keep that path consistent with the app's settings labels."
+ },
+ "launch.offer.remember": {
+  "description": "Button in the Roku auto-open dialog that opens this profile automatically from now on."
+ },
+ "launch.offer.ask": {
+  "description": "Button in the Roku auto-open dialog that keeps showing the profile picker at each start. Title case."
+ },
+ "pin.prompt": {
+  "description": "Prompt on the Roku PIN entry screen for a protected profile."
+ },
+ "pin.checking": {
+  "description": "Status text on the Roku PIN screen while the entered PIN is being verified."
+ },
+ "pin.audio": {
+  "description": "Screen reader prompt on the Roku PIN screen. {name}: the profile name."
+ },
+ "pin.wrong": {
+  "description": "Error on the Roku PIN screen when the PIN entered is incorrect."
+ },
+ "pin.lockout": {
+  "description": "Error on the Roku PIN screen after too many wrong PINs; counts the minutes the user must wait. {minutes}: the number of minutes."
+ },
+ "pin.lockout.later": {
+  "description": "Error on the Roku PIN screen after too many wrong PINs when the wait time is unknown."
+ },
+ "pin.error.network": {
+  "description": "Error on the Roku PIN screen when a network problem prevented checking the PIN."
+ },
+ "pin.error.failed": {
+  "description": "Error on the Roku PIN screen when the PIN check failed for another reason."
+ }
+}

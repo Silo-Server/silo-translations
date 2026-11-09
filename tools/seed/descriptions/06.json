@@ -1,0 +1,356 @@
+{
+ "cardMenu.play": {
+  "description": "Menu row on Roku, in the Options menu of a focused poster card. Starts playback of the item from the beginning."
+ },
+ "cardMenu.resume": {
+  "description": "Menu row on Roku, in the Options menu of a focused poster card. Continues playback of a partly watched item where it stopped."
+ },
+ "cardMenu.addWatchlist": {
+  "description": "Menu row on Roku, in the Options menu of a focused poster card. Saves the item to the user's Watchlist."
+ },
+ "cardMenu.removeContinueWatching": {
+  "description": "Menu row on Roku, in the Options menu of a card in the Continue Watching row. Removes the item from that row."
+ },
+ "cardMenu.removeNextUp": {
+  "description": "Menu row on Roku, in the Options menu of a card in the Next Up row. Removes the item from that row."
+ },
+ "requests.yourRequests": {
+  "description": "Heading of the row of the user's own media requests on the Roku Requests screen."
+ },
+ "requests.myRequests": {
+  "description": "Title of the Roku screen listing all of the user's media requests, opened from the See all link."
+ },
+ "requests.seeAll": {
+  "description": "Short link at the end of the requests row on Roku that opens the full list of the user's requests."
+ },
+ "requests.loading": {
+  "description": "Loading message on the Roku Requests screen while the user's media requests are fetched."
+ },
+ "requests.empty": {
+  "description": "Heading of the empty state on the Roku Requests screen when the user has made no requests."
+ },
+ "requests.emptyBody": {
+  "description": "Body text of the empty state on the Roku Requests screen. Tells the user to use the Search screen to find a title to request."
+ },
+ "requests.mediaType.movie": {
+  "description": "Label on a request card on Roku saying the requested title is a movie."
+ },
+ "requests.mediaType.series": {
+  "description": "Label on a request card on Roku saying the requested title is a TV series."
+ },
+ "requests.requestedOn": {
+  "description": "Info line on a request card on Roku. {date}: the short date the request was made, such as Mar 5."
+ },
+ "requests.createdBy": {
+  "description": "Line on a Roku request detail or card naming who made the request. {names}: comma-separated names of the requesting users."
+ },
+ "requests.moreLikeThis": {
+  "description": "Heading of the row of similar titles at the bottom of the Roku request detail screen."
+ },
+ "requests.searchScope": {
+  "description": "Label of the search filter segment on Roku that limits results to titles that can be requested from the server."
+ },
+ "requests.searchEmptyBody": {
+  "description": "Message on the Roku Search screen when the Request filter is chosen and no requestable titles match the query."
+ },
+ "requests.date": {
+  "description": "Short date on a Roku request, combining month and day in the locale's order. {month}: the abbreviated month name, such as Mar; {day}: the day of the month number."
+ },
+ "requests.month.1": {
+  "description": "Abbreviated name of January, used in the short request date on Roku (for example in the date a request was made)."
+ },
+ "requests.month.2": {
+  "description": "Abbreviated name of February, used in the short request date on Roku (for example in the date a request was made)."
+ },
+ "requests.month.3": {
+  "description": "Abbreviated name of March, used in the short request date on Roku (for example in the date a request was made)."
+ },
+ "requests.month.4": {
+  "description": "Abbreviated name of April, used in the short request date on Roku (for example in the date a request was made)."
+ },
+ "requests.month.5": {
+  "description": "Abbreviated name of May, used in the short request date on Roku (for example in the date a request was made)."
+ },
+ "requests.month.6": {
+  "description": "Abbreviated name of June, used in the short request date on Roku (for example in the date a request was made)."
+ },
+ "requests.month.7": {
+  "description": "Abbreviated name of July, used in the short request date on Roku (for example in the date a request was made)."
+ },
+ "requests.month.8": {
+  "description": "Abbreviated name of August, used in the short request date on Roku (for example in the date a request was made)."
+ },
+ "requests.month.9": {
+  "description": "Abbreviated name of September, used in the short request date on Roku (for example in the date a request was made)."
+ },
+ "requests.month.10": {
+  "description": "Abbreviated name of October, used in the short request date on Roku (for example in the date a request was made)."
+ },
+ "requests.month.11": {
+  "description": "Abbreviated name of November, used in the short request date on Roku (for example in the date a request was made)."
+ },
+ "requests.month.12": {
+  "description": "Abbreviated name of December, used in the short request date on Roku (for example in the date a request was made)."
+ },
+ "requests.short.pending": {
+  "description": "Short status label on a Roku request card: the request is waiting for an admin to approve it."
+ },
+ "requests.short.partly": {
+  "description": "Short status label on a Roku request card: only some of the requested episodes or seasons are in the library."
+ },
+ "requests.short.downloading": {
+  "description": "Short status label on a Roku request card: the requested title is currently being downloaded."
+ },
+ "requests.short.adding": {
+  "description": "Short status label on a Roku request card: the downloaded title is being added to the library."
+ },
+ "requests.short.queued": {
+  "description": "Short status label on a Roku request card: the request is queued and download has not started."
+ },
+ "requests.short.onTheWay": {
+  "description": "Short status label on a Roku request card: approved and on its way to the library."
+ },
+ "requests.short.inLibrary": {
+  "description": "Short status label on a Roku request card: the requested title is now in the library."
+ },
+ "requests.short.declined": {
+  "description": "Short status label on a Roku request card: an admin declined the request."
+ },
+ "requests.short.failed": {
+  "description": "Short status label on a Roku request card: the request failed."
+ },
+ "requests.short.unavailable": {
+  "description": "Short status label on a Roku request card: the title cannot be requested or its status is unknown."
+ },
+ "requests.long.pending": {
+  "description": "Longer status text on the Roku request detail screen: the request is waiting for approval."
+ },
+ "requests.long.partly": {
+  "description": "Longer status text on the Roku request detail screen: only part of the title is in the user's library."
+ },
+ "requests.long.downloading": {
+  "description": "Longer status text on the Roku request detail screen: the title is being downloaded."
+ },
+ "requests.long.adding": {
+  "description": "Longer status text on the Roku request detail screen: the title is being added to the library."
+ },
+ "requests.long.queued": {
+  "description": "Longer status text on the Roku request detail screen: the title is queued for download."
+ },
+ "requests.long.onTheWay": {
+  "description": "Longer status text on the Roku request detail screen: the approved title is on its way to the library."
+ },
+ "requests.long.inLibrary": {
+  "description": "Longer status text on the Roku request detail screen: the title is in the user's library."
+ },
+ "requests.long.declined": {
+  "description": "Longer status text on the Roku request detail screen: the request was declined."
+ },
+ "requests.long.failed": {
+  "description": "Longer status text on the Roku request detail screen: the request failed."
+ },
+ "requests.detailTitle.pending": {
+  "description": "Title at the top of the Roku request detail screen for a request still awaiting approval. The dot separates the two parts."
+ },
+ "requests.detailTitle.onTheWay": {
+  "description": "Title at the top of the Roku request detail screen for an approved request that is on its way to the library."
+ },
+ "requests.detailTitle.inLibrary": {
+  "description": "Title at the top of the Roku request detail screen when the requested title is in the library."
+ },
+ "requests.detailTitle.declined": {
+  "description": "Title at the top of the Roku request detail screen for a declined request. A reason may follow after a separator."
+ },
+ "requests.detailTitle.failed": {
+  "description": "Title at the top of the Roku request detail screen when the request failed."
+ },
+ "requests.detailTitle.unavailable": {
+  "description": "Title at the top of the Roku request detail screen when the title cannot be requested or its status is unknown."
+ },
+ "requests.reason.already_requested": {
+  "description": "Reason shown on the Roku request detail screen: someone has already requested this title."
+ },
+ "requests.reason.already_available": {
+  "description": "Reason shown on the Roku request detail screen: the title is already in the user's library, so it cannot be requested."
+ },
+ "requests.reason.quota_exceeded": {
+  "description": "Reason shown on the Roku request detail screen: the user has used up their allowed number of requests."
+ },
+ "requests.reason.requests_disabled": {
+  "description": "Reason shown on the Roku request detail screen: the server has turned off media requests."
+ },
+ "requests.reason.blocked": {
+  "description": "Reason shown on the Roku request detail screen: the user is currently blocked from making requests."
+ },
+ "requests.reason.validation_failed": {
+  "description": "Reason shown on Roku when the server rejected a request as invalid."
+ },
+ "requests.reason.invalid_state": {
+  "description": "Reason shown on Roku when the request has progressed too far to be cancelled or changed."
+ },
+ "requests.reason.not_found": {
+  "description": "Reason shown on Roku when the requested title no longer exists on the server or the request source."
+ },
+ "requests.reason.request_unconfirmed": {
+  "description": "Status reason on the Roku request detail screen: the app could not confirm that the request went through."
+ },
+ "requests.action.request": {
+  "description": "Button on the Roku request detail screen that asks the server to add this title."
+ },
+ "requests.action.requestAgain": {
+  "description": "Button on the Roku request detail screen shown after a declined or failed request, to submit it again."
+ },
+ "requests.action.requesting": {
+  "description": "Button label on the Roku request detail screen while a request is being submitted."
+ },
+ "requests.action.openInLibrary": {
+  "description": "Button on the Roku request detail screen that opens the title in the library once it is available."
+ },
+ "requests.action.notify": {
+  "description": "Button on the Roku request detail screen to be notified when the requested title becomes available."
+ },
+ "requests.action.stopNotify": {
+  "description": "Button on the Roku request detail screen to turn off the availability notification for this title."
+ },
+ "requests.action.cancel": {
+  "description": "Button or menu option on Roku that cancels the user's pending request."
+ },
+ "requests.notice.following": {
+  "description": "Toast on Roku after the user turns on notifications for a request. Promises a notice when the title is available."
+ },
+ "requests.notice.unfollowed": {
+  "description": "Toast on Roku confirming the availability notification for a request was turned off."
+ },
+ "requests.notice.unconfirmedCreate": {
+  "description": "Toast on Roku when the app could not confirm a new request went through. My Requests is the screen listing the user's requests."
+ },
+ "requests.notice.unconfirmedCancel": {
+  "description": "Toast on Roku when the app could not confirm a request was cancelled. My Requests is the screen listing the user's requests."
+ },
+ "requests.error.create": {
+  "description": "Error toast on Roku when submitting a new media request fails."
+ },
+ "requests.error.cancel": {
+  "description": "Error toast on Roku when cancelling a media request fails."
+ },
+ "requests.error.follow": {
+  "description": "Error toast on Roku when turning the availability notification for a request on or off fails."
+ },
+ "requests.error.network": {
+  "description": "Error toast on Roku when the server cannot be reached while handling a request."
+ },
+ "requests.error.permission": {
+  "description": "Error toast on Roku when the user lacks permission for a request action. Suggests asking the server admin."
+ },
+ "requests.error.load": {
+  "description": "Generic error heading on the Roku Requests screens when loading fails."
+ },
+ "requests.error.missing": {
+  "description": "Error on the Roku request detail screen when the requested title can no longer be found."
+ },
+ "requests.strip.status": {
+  "description": "Column heading, in capitals, of the status strip on the Roku request detail screen, above the request's current status."
+ },
+ "requests.strip.requested": {
+  "description": "Column heading, in capitals, of the status strip on the Roku request detail screen, above the date or person who made the request."
+ },
+ "requests.strip.quality": {
+  "description": "Column heading, in capitals, of the status strip on the Roku request detail screen, above the requested video quality."
+ },
+ "requests.stage.requested": {
+  "description": "Label under the first segment of the four-step progress bar on the Roku request detail screen: the request was made."
+ },
+ "requests.stage.approved": {
+  "description": "Label under the second segment of the four-step progress bar on the Roku request detail screen: the request was approved."
+ },
+ "requests.stage.downloading": {
+  "description": "Label under the third segment of the four-step progress bar on the Roku request detail screen: the title is downloading."
+ },
+ "requests.stage.library": {
+  "description": "Label under the last segment of the four-step progress bar on the Roku request detail screen: the title is in the library."
+ },
+ "subtitleSearch.title": {
+  "description": "Title of the subtitle search panel in the Roku video player options, where the user finds subtitles online."
+ },
+ "subtitleSearch.explainer": {
+  "description": "Intro text in the Roku subtitle search panel above the language list. Tells the user to pick a language."
+ },
+ "subtitleSearch.searchingIn": {
+  "description": "Progress heading in the Roku subtitle search panel while a search runs. {language}: the language name being searched, such as French."
+ },
+ "subtitleSearch.searching": {
+  "description": "Progress message in the Roku subtitle search panel while subtitle providers (online services) are queried."
+ },
+ "subtitleSearch.searchingNote": {
+  "description": "Note under the progress message in the Roku subtitle search panel, warning that the search may be slow."
+ },
+ "subtitleSearch.resultCount": {
+  "description": "Heading above the results in the Roku subtitle search panel. {language}: the language name, such as French; {count}: the number of subtitles found."
+ },
+ "subtitleSearch.failedTitle": {
+  "description": "Heading in the Roku subtitle search panel when a search fails."
+ },
+ "subtitleSearch.preferredHeader": {
+  "description": "Section header in the Roku subtitle search language list, above the user's preferred subtitle language."
+ },
+ "subtitleSearch.allHeader": {
+  "description": "Section header in the Roku subtitle search language list, above every available language."
+ },
+ "subtitleSearch.languageHeader": {
+  "description": "Header in the Roku subtitle search panel for the language choice."
+ },
+ "subtitleSearch.preferred": {
+  "description": "Small tag on a language row in the Roku subtitle search panel marking the user's preferred language."
+ },
+ "subtitleSearch.chooseAnother": {
+  "description": "Button in the Roku subtitle search panel that goes back to the language list to try a different language."
+ },
+ "subtitleSearch.noResults": {
+  "description": "Message in the Roku subtitle search panel when nothing was found. {language}: the language name that was searched."
+ },
+ "subtitleSearch.untitled": {
+  "description": "Placeholder name for a subtitle result in the Roku search panel that has no release name."
+ },
+ "subtitleSearch.downloads": {
+  "description": "Detail on a subtitle result row in the Roku search panel. {count}: how many times the subtitle has been downloaded."
+ },
+ "subtitleSearch.match": {
+  "description": "Detail on a subtitle result row in the Roku search panel. {score}: how closely the subtitle matches this video, as a number out of 100."
+ },
+ "subtitleSearch.hearingImpaired": {
+  "description": "Very short tag on a subtitle result row in the Roku search panel. Abbreviation for subtitles made for deaf or hard-of-hearing viewers."
+ },
+ "subtitleSearch.selectHint": {
+  "description": "Hint at the foot of the Roku subtitle search results, telling the user that selecting a result downloads and applies it."
+ },
+ "subtitleSearch.adding": {
+  "description": "Progress message in the Roku subtitle search panel while the chosen subtitle is downloaded and added."
+ },
+ "subtitleSearch.notSetUp": {
+  "description": "Message in the Roku subtitle search panel when the server has no subtitle search provider configured."
+ },
+ "subtitleSearch.searchFailed": {
+  "description": "Error message in the Roku subtitle search panel when the search fails for an unspecific reason."
+ },
+ "subtitleSearch.rateLimited": {
+  "description": "Error message in the Roku subtitle search panel when the online providers are throttling requests."
+ },
+ "subtitleSearch.notAllowed": {
+  "description": "Error message in the Roku subtitle search panel when the server's rules or the user's permissions block subtitle downloads."
+ },
+ "subtitleSearch.notFound": {
+  "description": "Error message in the Roku subtitle search panel when the chosen subtitle has disappeared from the provider."
+ },
+ "subtitleSearch.downloadFailed": {
+  "description": "Error message in the Roku subtitle search panel when downloading the chosen subtitle fails."
+ },
+ "subtitleSearch.stored": {
+  "description": "Message in the Roku player after a subtitle was downloaded but could not be switched on during this playback."
+ },
+ "subtitleSearch.notTurnedOn": {
+  "description": "Message in the Roku player after a subtitle was downloaded but could not be switched on. Tracks and Subtitles are menu names in the player options."
+ },
+ "subtitleSearch.unconfirmed": {
+  "description": "Message in the Roku player when the server did not confirm the subtitle download. Silo is the app name."
+ }
+}
