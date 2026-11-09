@@ -38356,6 +38356,44 @@
       "android"
     ]
   },
+  "settingsManifest.watch_party.guest_control_policy.description": "Who can play and pause in Watch Parties you host. Changing it in a party saves it for your next one.",
+  "@settingsManifest.watch_party.guest_control_policy.description": {
+    "description": "Help text under the watch_party.guest_control_policy setting. From the server's settings manifest.",
+    "x-platforms": [
+      "web",
+      "apple",
+      "android"
+    ]
+  },
+  "settingsManifest.watch_party.guest_control_policy.label": "Watch Party playback controls",
+  "@settingsManifest.watch_party.guest_control_policy.label": {
+    "description": "Label of the watch_party.guest_control_policy setting in settings screens. From the server's settings manifest.",
+    "x-platforms": [
+      "web",
+      "apple",
+      "android"
+    ]
+  },
+  "settingsManifest.watch_party.guest_control_policy.option.guest_play_pause": "Host and guests",
+  "@settingsManifest.watch_party.guest_control_policy.option.guest_play_pause": {
+    "description": "Choice \"guest_play_pause\" for the watch_party.guest_control_policy setting. From the server's settings manifest.",
+    "x-platforms": [
+      "web",
+      "apple",
+      "android",
+      "roku"
+    ]
+  },
+  "settingsManifest.watch_party.guest_control_policy.option.host_only": "Host only",
+  "@settingsManifest.watch_party.guest_control_policy.option.host_only": {
+    "description": "Choice \"host_only\" for the watch_party.guest_control_policy setting. From the server's settings manifest.",
+    "x-platforms": [
+      "web",
+      "apple",
+      "android",
+      "roku"
+    ]
+  },
   "setup.advanced.collapsed": "Collapsed",
   "@setup.advanced.collapsed": {
     "description": "Android phone server setup screen (first screen with no server): accessibility (TalkBack) state of the Advanced options toggle when it is closed. Apple (iPhone, iPad, Mac): same VoiceOver value of the Advanced options toggle.",
