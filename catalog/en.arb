@@ -23482,7 +23482,7 @@
     "x-platforms": [
       "apple"
     ],
-    "x-maxLength": 24
+    "x-maxLength": 22
   },
   "player.stats.aetherCache": "Aether cache",
   "@player.stats.aetherCache": {
@@ -23575,7 +23575,7 @@
     "x-platforms": [
       "apple"
     ],
-    "x-maxLength": 24
+    "x-maxLength": 22
   },
   "player.stats.backend": "Backend",
   "@player.stats.backend": {
@@ -23788,7 +23788,7 @@
     "x-platforms": [
       "apple"
     ],
-    "x-maxLength": 24
+    "x-maxLength": 22
   },
   "player.stats.lastStop": "Last stop",
   "@player.stats.lastStop": {
@@ -23821,7 +23821,8 @@
     "description": "Apple iOS/tvOS/macOS: playback stats panel (iPhone overlay, tvOS Info HUD Stats pane, Mac stats); row label for how much data playback has downloaded, as a size.",
     "x-platforms": [
       "apple"
-    ]
+    ],
+    "x-maxLength": 22
   },
   "player.stats.no": "No",
   "@player.stats.no": {
@@ -23843,7 +23844,7 @@
     "x-platforms": [
       "apple"
     ],
-    "x-maxLength": 24
+    "x-maxLength": 22
   },
   "player.stats.offlineFile": "Offline file",
   "@player.stats.offlineFile": {
@@ -38714,7 +38715,8 @@
       "apple",
       "android",
       "roku"
-    ]
+    ],
+    "x-maxLength": 12
   },
   "setup.protocol.field": "Protocol",
   "@setup.protocol.field": {
@@ -68545,14 +68547,16 @@
     "description": "Web admin, Dashboard page, Egress now stat tile: tile label (current outgoing network rate).",
     "x-platforms": [
       "web"
-    ]
+    ],
+    "x-maxLength": 20
   },
   "web.admin.dashboard.widgets.egressNow.source": "node + server egress",
   "@web.admin.dashboard.widgets.egressNow.source": {
     "description": "Web admin, Dashboard page, Egress now stat tile: note under the rate saying it sums stream nodes and the server.",
     "x-platforms": [
       "web"
-    ]
+    ],
+    "x-maxLength": 24
   },
   "web.admin.dashboard.widgets.egressNow.waiting": "waiting for a sample",
   "@web.admin.dashboard.widgets.egressNow.waiting": {
@@ -68566,7 +68570,8 @@
     "description": "Web admin, Dashboard page, Health strip widget: note under the version when the server was built from uncommitted changes.",
     "x-platforms": [
       "web"
-    ]
+    ],
+    "x-maxLength": 20
   },
   "web.admin.dashboard.widgets.healthStrip.errors24h": "Errors · 24h",
   "@web.admin.dashboard.widgets.healthStrip.errors24h": {
@@ -69134,7 +69139,8 @@
     "description": "Web admin, Dashboard page, Profiles active stat tile: note under the profile count.",
     "x-platforms": [
       "web"
-    ]
+    ],
+    "x-maxLength": 24
   },
   "web.admin.dashboard.widgets.profilesActive.label": "Profiles · 24h",
   "@web.admin.dashboard.widgets.profilesActive.label": {
@@ -84426,7 +84432,8 @@
     "description": "Web admin, Plugins page, Installed tab: placeholder and label of the search field.",
     "x-platforms": [
       "web"
-    ]
+    ],
+    "x-maxLength": 36
   },
   "web.admin.plugins.list.clearFilters": "Clear search and filters",
   "@web.admin.plugins.list.clearFilters": {
@@ -93027,7 +93034,8 @@
     "description": "Web admin, Library & Metadata settings page: option that hides unrated titles from profiles with a rating limit.",
     "x-platforms": [
       "web"
-    ]
+    ],
+    "x-maxLength": 26
   },
   "web.admin.settings.libraryMetadata.maturity.unrated.label": "Titles with no age rating",
   "@web.admin.settings.libraryMetadata.maturity.unrated.label": {
@@ -97921,7 +97929,8 @@
     "description": "Web admin, Requests settings page, General: Approval choice: an admin approves each request.",
     "x-platforms": [
       "web"
-    ]
+    ],
+    "x-maxLength": 26
   },
   "web.admin.settings.requests.general.approvalAuto": "Approve automatically",
   "@web.admin.settings.requests.general.approvalAuto": {
@@ -111531,7 +111540,8 @@
     "description": "Web: admin account page, Overview tab, stat tile: watch time over 30 days.",
     "x-platforms": [
       "web"
-    ]
+    ],
+    "x-maxLength": 30
   },
   "web.admin.users.detail.overview.watching.position": "{position} of {duration} min",
   "@web.admin.users.detail.overview.watching.position": {
@@ -154285,7 +154295,7 @@
     "x-platforms": [
       "web"
     ],
-    "x-maxLength": 26
+    "x-maxLength": 22
   },
   "web.settings.secretField.clear": "Clear saved value",
   "@web.settings.secretField.clear": {
