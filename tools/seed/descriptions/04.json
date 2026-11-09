@@ -1,0 +1,419 @@
+{
+ "library.empty": {
+  "description": "Roku library screen: heading of the empty-state message shown when a library has no items."
+ },
+ "library.emptyBody": {
+  "description": "Roku library screen: supporting line under the empty-state heading when a library has no items."
+ },
+ "library.emptyNamed": {
+  "description": "Roku library screen: empty-state heading naming the library that has no items. {name}: the library's name, such as Movies."
+ },
+ "library.emptyNamedBody": {
+  "description": "Roku library screen: supporting line under the named empty-state heading, telling the user media must be added on the server."
+ },
+ "library.noMatches": {
+  "description": "Roku library screen: empty-state heading shown when the active filters hide every title."
+ },
+ "library.clearFilters": {
+  "description": "Roku library screen: button under the no-matches message that removes all active filters."
+ },
+ "library.recommended": {
+  "description": "Roku library section label (tab) for the recommended titles view of a library; also used in the library section list."
+ },
+ "library.browse": {
+  "description": "Roku library section label (tab) for browsing all titles in a library; also used in the library section list."
+ },
+ "library.collections": {
+  "description": "Roku library section label (tab) for the library's collections; also used in the library section list."
+ },
+ "library.list.movies": {
+  "description": "Roku header of the list of movie libraries, shown in the home screen's library picker panel."
+ },
+ "library.list.series": {
+  "description": "Roku header of the list of series (TV show) libraries, shown in the home screen's library picker panel."
+ },
+ "library.list.hint": {
+  "description": "Roku remote-control hint at the bottom of the library picker. OK, the right arrow and Back refer to remote buttons; short, TV screen is cramped."
+ },
+ "library.list.hintSingle": {
+  "description": "Roku remote-control hint shown in the library picker when a library has one section. OK and Back refer to remote buttons."
+ },
+ "library.sortPill": {
+  "description": "Roku library screen: label on the sort pill button, showing the current sort. {name}: the active sort field, such as Title or Date Added."
+ },
+ "library.sortSpoken": {
+  "description": "Roku screen reader announcement for the sort pill. {name}: the sort field, such as Title; {direction}: the order, such as A-Z or Newest."
+ },
+ "library.sortBy": {
+  "description": "Roku library screen: header of the sort menu listing sort fields."
+ },
+ "library.direction.az": {
+  "description": "Roku sort order label for alphabetical ascending, shown next to a sort field in the library sort menu and spoken by the screen reader."
+ },
+ "library.direction.za": {
+  "description": "Roku sort order label for alphabetical descending, shown next to a sort field in the library sort menu and spoken by the screen reader."
+ },
+ "library.direction.newest": {
+  "description": "Roku sort order label for newest first (date-based sorts), shown in the library sort menu and spoken by the screen reader."
+ },
+ "library.direction.oldest": {
+  "description": "Roku sort order label for oldest first (date-based sorts), shown in the library sort menu and spoken by the screen reader."
+ },
+ "library.direction.highest": {
+  "description": "Roku sort order label for highest value first (such as ratings), shown in the library sort menu and spoken by the screen reader."
+ },
+ "library.direction.lowest": {
+  "description": "Roku sort order label for lowest value first (such as ratings), shown in the library sort menu and spoken by the screen reader."
+ },
+ "library.direction.longest": {
+  "description": "Roku sort order label for longest first (runtime sorts), shown in the library sort menu and spoken by the screen reader."
+ },
+ "library.direction.shortest": {
+  "description": "Roku sort order label for shortest first (runtime sorts), shown in the library sort menu and spoken by the screen reader."
+ },
+ "library.filterPill": {
+  "description": "Roku library screen: label on the pill button that opens the filter panel."
+ },
+ "library.filterSpoken": {
+  "description": "Roku screen reader announcement for the filter pill when filters are applied. {count}: the number of active filters."
+ },
+ "library.shufflePill": {
+  "description": "Roku library and collection screens: label on the pill button that plays the titles in random order."
+ },
+ "collections.empty": {
+  "description": "Roku library Collections view: empty-state heading when the library has no collections."
+ },
+ "collections.emptyBody": {
+  "description": "Roku library Collections view: supporting line under the empty heading, saying collections are created on the server."
+ },
+ "collections.emptyItems": {
+  "description": "Roku collection screen: empty-state message when the opened collection contains no items."
+ },
+ "collections.item": {
+  "description": "Roku collection screen: item count label in uppercase above the grid. Counts the items in the collection. {count}: the number of items."
+ },
+ "collections.audio": {
+  "description": "Roku screen reader announcement for a collection card. {name}: the collection's name; {count}: the item count text, such as 12 items."
+ },
+ "collections.back": {
+  "description": "Roku collection screen: action button on the empty or error state that returns to the list of collections."
+ },
+ "boxSets.label": {
+  "description": "Roku tag in uppercase on a box set's card and detail page identifying it as a box set (a group of related movies)."
+ },
+ "boxSets.searchHeading": {
+  "description": "Roku search results: section heading above the box sets (groups of related movies) that match the search."
+ },
+ "boxSets.movies": {
+  "description": "Roku box set screen: section heading above the grid of movies that belong to the box set."
+ },
+ "boxSets.film": {
+  "description": "Roku box set card and detail page: number of films in the box set. Counts the movies in it. {count}: the number of films."
+ },
+ "boxSets.watchedCard": {
+  "description": "Roku box set card: watched progress caption. Counts the movies in the box set. {played}: how many have been watched; {count}: the total number of movies."
+ },
+ "boxSets.watchedFact": {
+  "description": "Roku box set detail page: watched progress fact in the metadata line. {played}: how many movies have been watched; {count}: the total number of movies in the box set."
+ },
+ "boxSets.play": {
+  "description": "Roku box set detail page: label of the play button for a box set not yet started. {title}: the title of the movie that will play."
+ },
+ "boxSets.continue": {
+  "description": "Roku box set detail page: label of the play button that resumes a started box set. {title}: the title of the movie to continue."
+ },
+ "boxSets.audio": {
+  "description": "Roku screen reader announcement for a box set card. {title}: the box set's name; {films}: the film count text, such as 3 films."
+ },
+ "boxSets.thisFilm": {
+  "description": "Roku movie detail page: uppercase flag on the card, among the box set's other films, for the film currently being viewed."
+ },
+ "boxSets.thisFilmAudio": {
+  "description": "Roku screen reader announcement for the card of the film currently viewed within its box set. {title}: the film's title."
+ },
+ "boxSets.unavailable": {
+  "description": "Roku box set screen: error heading when the box set cannot be shown."
+ },
+ "boxSets.unavailableBody": {
+  "description": "Roku box set screen: explanation under the unavailable heading, giving possible reasons the box set cannot be shown."
+ },
+ "boxSets.error": {
+  "description": "Roku box set screen: error message when loading the box set fails, with a retry button; says to check the TV's network connection."
+ },
+ "rows.exploreAll": {
+  "description": "Roku home and library rows: label on the final card of a row that opens the row's full page."
+ },
+ "rows.moreAudio": {
+  "description": "Roku screen reader announcement for the last card of a row that opens the full page. {label}: the card's label, such as Explore all; {title}: the row's title."
+ },
+ "rowPage.item": {
+  "description": "Roku full row page: item count shown in the header. Counts the items in the row. {count}: the number of items."
+ },
+ "rowPage.empty": {
+  "description": "Roku full row page: empty-state heading when the row has no items."
+ },
+ "rowPage.emptyBody": {
+  "description": "Roku full row page: supporting line under the empty heading."
+ },
+ "rowPage.unavailable": {
+  "description": "Roku full row page: heading shown when the row can no longer be loaded."
+ },
+ "rowPage.unavailableBody": {
+  "description": "Roku full row page: supporting line under the unavailable heading."
+ },
+ "filters.eyebrowList": {
+  "description": "Roku filter panel: small uppercase line above the title when the list of filter categories is shown."
+ },
+ "filters.eyebrowValues": {
+  "description": "Roku filter panel: small uppercase line above the title when the values of one filter category are shown."
+ },
+ "filters.title": {
+  "description": "Roku filter panel: title at the top of the panel."
+ },
+ "filters.facet.itemType": {
+  "description": "Roku filter panel: category row for filtering by kind of item (movies or series)."
+ },
+ "filters.facet.genre": {
+  "description": "Roku filter panel: category row for filtering by genre."
+ },
+ "filters.facet.decade": {
+  "description": "Roku filter panel: category row for filtering by decade of release."
+ },
+ "filters.facet.watchStatus": {
+  "description": "Roku filter panel: category row for filtering by watched state."
+ },
+ "filters.facet.contentRating": {
+  "description": "Roku filter panel: category row for filtering by age or content rating, such as PG-13."
+ },
+ "filters.facet.resolution": {
+  "description": "Roku filter panel: category row for filtering by video resolution, such as 4K."
+ },
+ "filters.facet.dynamicRange": {
+  "description": "Roku filter panel: category row for filtering by video dynamic range (HDR or Dolby Vision)."
+ },
+ "filters.facet.studio": {
+  "description": "Roku filter panel: category row for filtering by production studio."
+ },
+ "filters.facet.network": {
+  "description": "Roku filter panel: category row for filtering by the TV network that aired a show."
+ },
+ "filters.facet.country": {
+  "description": "Roku filter panel: category row for filtering by country of origin."
+ },
+ "filters.facet.audioLanguage": {
+  "description": "Roku filter panel: category row for filtering by the language of the audio track."
+ },
+ "filters.facet.subtitleLanguage": {
+  "description": "Roku filter panel: category row for filtering by subtitle language."
+ },
+ "filters.facet.originalLanguage": {
+  "description": "Roku filter panel: category row for filtering by the title's original language."
+ },
+ "filters.value.movie": {
+  "description": "Roku filter panel: option under the Type category to show only movies."
+ },
+ "filters.value.series": {
+  "description": "Roku filter panel: option under the Type category to show only TV series."
+ },
+ "filters.value.hdr": {
+  "description": "Roku filter panel: option under the Dynamic Range category for HDR video (high dynamic range)."
+ },
+ "filters.value.dolby_vision": {
+  "description": "Roku filter panel: option under the Dynamic Range category for Dolby Vision video. Dolby Vision is a brand name."
+ },
+ "filters.value.unwatched": {
+  "description": "Roku filter panel: option under Watch Status to show titles not yet watched."
+ },
+ "filters.value.inProgress": {
+  "description": "Roku filter panel: option under Watch Status to show titles partly watched."
+ },
+ "filters.value.watched": {
+  "description": "Roku filter panel: option under Watch Status to show titles already watched."
+ },
+ "filters.value.favorited": {
+  "description": "Roku filter panel: option under Watch Status to show titles the user marked as favorites."
+ },
+ "filters.value.watchlist": {
+  "description": "Roku filter panel: option under Watch Status to show titles on the user's watchlist."
+ },
+ "filters.decade": {
+  "description": "Roku filter panel: option under the Decade category. {year}: the first year of the decade, such as 1990, so the text reads like 1990s."
+ },
+ "filters.any": {
+  "description": "Roku filter panel: value shown on a category row when no option in it is selected."
+ },
+ "filters.selected": {
+  "description": "Roku filter panel: value shown on a category row summarizing how many options are chosen. {count}: the number of selected options."
+ },
+ "filters.none": {
+  "description": "Roku filter panel: message shown when no filter categories are available for the library."
+ },
+ "filters.allFilters": {
+  "description": "Roku filter panel: row at the top of a category's values that goes back to the list of all filter categories."
+ },
+ "filters.clearFacet": {
+  "description": "Roku filter panel: row that clears the selections in one category. {facet}: the category name, such as Genre."
+ },
+ "filters.match": {
+  "description": "Roku filter panel: section header above the choice of how multiple selected filters combine."
+ },
+ "filters.matchAll": {
+  "description": "Roku filter panel: radio option meaning a title must match every selected filter."
+ },
+ "filters.matchAny": {
+  "description": "Roku filter panel: radio option meaning a title may match any one of the selected filters."
+ },
+ "filters.options": {
+  "description": "Roku filter panel: section header above extra settings, such as remembering sort and filters."
+ },
+ "filters.preserve": {
+  "description": "Roku filter panel: checkbox row that keeps the sort and filters when the user returns to the library later."
+ },
+ "filters.reset": {
+  "description": "Roku filter panel: row that clears all filters and returns to defaults."
+ },
+ "filters.done": {
+  "description": "Roku filter panel: row at the bottom that applies the choices and closes the panel."
+ },
+ "filters.selectedSpoken": {
+  "description": "Roku screen reader word added after a filter option's name when that option is selected."
+ },
+ "shuffle.failedTitle": {
+  "description": "Roku shuffle error notice: short title used as the first part of the notice when shuffle playback cannot start."
+ },
+ "shuffle.failedNotice": {
+  "description": "Roku shuffle error toast combining a title and a reason. {title}: the short error title, such as Couldn't Shuffle; {message}: the reason it failed."
+ },
+ "shuffle.nothingToPlay": {
+  "description": "Roku shuffle error reason when the library or collection has no playable items."
+ },
+ "shuffle.notFound": {
+  "description": "Roku shuffle error reason when the library or collection no longer exists on the server."
+ },
+ "shuffle.failed": {
+  "description": "Roku shuffle generic error reason for any other failure to start shuffle playback."
+ },
+ "browse.error.load": {
+  "description": "Roku error message on browse screens (home, library, calendar, requests and others) when content fails to load; shown with a retry button. Says to check the TV's connection."
+ },
+ "buffering.promptTitle": {
+  "description": "Roku player: title of the pill prompt that appears when playback keeps stalling to buffer."
+ },
+ "buffering.promptMessage": {
+  "description": "Roku player: message in the buffering prompt suggesting a lower video quality so playback can continue."
+ },
+ "buffering.lower": {
+  "description": "Roku player: primary button in the buffering prompt that lowers the video quality."
+ },
+ "buffering.keep": {
+  "description": "Roku player: secondary button in the buffering prompt that leaves the video quality unchanged."
+ },
+ "buffering.undoCaption": {
+  "description": "Roku player: caption of the pill shown after quality was lowered automatically, next to a button to undo it."
+ },
+ "buffering.restore": {
+  "description": "Roku player: button in the pill shown after quality was lowered, which restores the previous quality."
+ },
+ "buffering.lowered": {
+  "description": "Roku player: brief on-screen notice that quality was lowered to stop buffering."
+ },
+ "buffering.cantLower": {
+  "description": "Roku player: brief on-screen notice when the quality cannot be lowered for the current video."
+ },
+ "options.tabInfo": {
+  "description": "Roku player options panel: tab name for the tab showing information about the video."
+ },
+ "options.tabStats": {
+  "description": "Roku player options panel: tab name for the tab showing technical playback statistics."
+ },
+ "options.tabVideo": {
+  "description": "Roku player options panel: tab name for the video settings tab, such as quality."
+ },
+ "options.tabAudio": {
+  "description": "Roku player options panel: tab name for the tab where the audio track is chosen."
+ },
+ "options.tabSubtitles": {
+  "description": "Roku player options panel: tab name for the tab where the subtitle track is chosen."
+ },
+ "options.quality": {
+  "description": "Roku player options panel: row label for the streaming quality setting on the Video tab."
+ },
+ "options.auto": {
+  "description": "Roku player options panel: quality option where quality is chosen automatically."
+ },
+ "options.autoLimited": {
+  "description": "Roku player options panel: quality row value showing automatic quality is currently capped because of earlier buffering."
+ },
+ "options.quality4k": {
+  "description": "Roku player options panel: quality option name for 4K resolution."
+ },
+ "options.qualityUpTo": {
+  "description": "Roku player options panel: quality option capping the stream resolution. {resolution}: the highest resolution, such as 1080p."
+ },
+ "options.qualityUpToHd": {
+  "description": "Roku player options panel: quality option capping the stream resolution, marked HD. {resolution}: the highest resolution, such as 720p."
+ },
+ "options.autoplayNext": {
+  "description": "Roku player options panel: row label for the setting that automatically plays the next episode."
+ },
+ "options.on": {
+  "description": "Roku player options panel: value shown when a setting such as auto-play next is switched on."
+ },
+ "options.off": {
+  "description": "Roku player options panel: value shown when a setting is switched off."
+ },
+ "options.captions": {
+  "description": "Roku player options panel: row label for the closed captions setting."
+ },
+ "options.captionOn": {
+  "description": "Roku player options panel: captions option meaning captions are always shown."
+ },
+ "options.captionReplay": {
+  "description": "Roku player options panel: captions option meaning captions show only during an instant replay."
+ },
+ "options.captionMute": {
+  "description": "Roku player options panel: captions option meaning captions show only while the sound is muted."
+ },
+ "options.track": {
+  "description": "Roku player options panel: fallback name for an audio or subtitle track that has no language or title. {number}: the track's position, such as 2."
+ },
+ "options.default": {
+  "description": "Roku player options panel: small tag on an audio or subtitle track flagged as the default track."
+ },
+ "options.forced": {
+  "description": "Roku player options panel: small tag on a subtitle track flagged as forced (shows only foreign-language dialogue)."
+ },
+ "options.sdh": {
+  "description": "Roku player options panel: tag on a subtitle track made for the deaf and hard of hearing (SDH)."
+ },
+ "options.selected": {
+  "description": "Roku player options panel: screen reader word added after the track or option that is currently selected."
+ },
+ "options.notShowing": {
+  "description": "Roku player options panel: status shown when no subtitle track is displayed."
+ },
+ "options.loading": {
+  "description": "Roku player options panel: placeholder shown while track or subtitle lists are loading."
+ },
+ "options.unsupported": {
+  "description": "Roku player options panel: note on a track whose format the Roku cannot play."
+ },
+ "options.tabChapters": {
+  "description": "Roku player options panel: tab name for the tab listing the video's chapters."
+ },
+ "options.chapters": {
+  "description": "Roku player options panel: heading of the chapter list."
+ },
+ "options.chapter": {
+  "description": "Roku player options panel: fallback label for a chapter without a title."
+ },
+ "options.chapterNumbered": {
+  "description": "Roku player options panel: fallback name for a chapter without a title. {number}: the chapter's position, such as 3."
+ },
+ "options.playing": {
+  "description": "Roku player options panel: screen reader word added after the chapter that is currently playing."
+ },
+ "options.searchSubtitles": {
+  "description": "Roku player options panel: row on the Subtitles tab that opens online subtitle search."
+ }
+}

@@ -1,0 +1,695 @@
+{
+ "companion.consent.headline": {
+  "description": "Roku (TV screen) headline asking whether to allow a nearby phone or tablet to sign in this Roku. Line break is intentional."
+ },
+ "companion.consent.body": {
+  "description": "Roku body text under the consent headline. {server}: the name of the server the nearby device wants to sign in to."
+ },
+ "companion.consent.http": {
+  "description": "Roku warning line on the consent screen when the server address uses plain http rather than https."
+ },
+ "companion.allow": {
+  "description": "Roku button on the consent screen that approves the nearby phone or tablet's sign-in or setup request."
+ },
+ "companion.deny": {
+  "description": "Roku button on the consent screen that refuses the nearby device's request."
+ },
+ "companion.reaching.headline": {
+  "description": "Roku headline while the Roku tests which address it can use to contact the server. {server}: the server name. Line break is intentional."
+ },
+ "companion.reaching.body": {
+  "description": "Roku body text under the connecting headline, shown while it tries the addresses sent by the phone."
+ },
+ "companion.unreachable.headline": {
+  "description": "Roku headline when the server cannot be contacted. {server}: the server name. Line break is intentional."
+ },
+ "companion.unreachable.body": {
+  "description": "Roku body text when no connection could be made. {server}: the server name; {address}: the web address the Roku tried."
+ },
+ "companion.unreachable.alternate": {
+  "description": "Roku line offering a second known address for the server. {server}: the server name; {alternate}: the other address."
+ },
+ "companion.useAlternate": {
+  "description": "Roku button that retries with the server's other address. {alternate}: the host name or address to use."
+ },
+ "companion.code.headline": {
+  "description": "Roku headline telling the user to confirm a code on their phone. Line break is intentional."
+ },
+ "companion.code.body": {
+  "description": "Roku body text shown above a verification code; the user compares it with the code on their phone or tablet before approving."
+ },
+ "companion.code.bodyAccount": {
+  "description": "Roku body text shown above a verification code when the account is known. {account}: the account username; {server}: the server name."
+ },
+ "companion.code.match": {
+  "description": "Roku note under the code for older phone apps that show words instead of digits. {words}: the matching words to compare."
+ },
+ "companion.failed.headline": {
+  "description": "Roku headline when the phone-assisted sign-in failed or stopped."
+ },
+ "companion.failed.denied": {
+  "description": "Roku message when the sign-in was declined on the phone. {server}: the server name."
+ },
+ "companion.failed.expired": {
+  "description": "Roku message when the verification code timed out before approval. {server}: the server name."
+ },
+ "companion.failed.unreachable": {
+  "description": "Roku message when the Roku cannot reach the server. {server}: the server name."
+ },
+ "companion.failed.identity_mismatch": {
+  "description": "Roku error during setup when the address sent by the phone belongs to a different server. {server}: the server name the phone offered."
+ },
+ "companion.failed.update_required": {
+  "description": "Roku error shown when the server or the phone app is too old for Roku sign-in. Silo is the app name."
+ },
+ "companion.failed.auth_failed": {
+  "description": "Roku generic error when sign-in fails for an unspecified reason. {server}: the server name."
+ },
+ "companion.signedIn.headline": {
+  "description": "Roku headline once the sign-in has succeeded, before the phone finishes."
+ },
+ "companion.signedIn.body": {
+  "description": "Roku body text after sign-in succeeds while the phone or tablet completes its remaining steps."
+ },
+ "companion.signedIn.bodyAccount": {
+  "description": "Roku body text after sign-in succeeds. {account}: the account username; {server}: the server name."
+ },
+ "companion.completed.headline": {
+  "description": "Roku headline when phone-assisted sign-in or setup has fully finished."
+ },
+ "companion.completed.body": {
+  "description": "Roku body text when sign-in is complete, before the profile picker opens. {server}: the server name."
+ },
+ "companion.completed.bodyAccounts": {
+  "description": "Roku body text when several accounts were signed in, before choosing one. Plural counts the signed-in accounts; {count}: that number."
+ },
+ "companion.completed.continue": {
+  "description": "Roku button that leaves the completion screen and goes to the profile chooser."
+ },
+ "companion.consent.chipSignIn": {
+  "description": "Small status chip at the top of the Roku consent screen saying a nearby phone is signing in this Roku."
+ },
+ "companion.consent.chipSetup": {
+  "description": "Small status chip at the top of the Roku consent screen saying a nearby phone is setting up this Roku."
+ },
+ "companion.consent.headlineSetup": {
+  "description": "Roku headline asking whether to allow a nearby phone's setup of this Roku. Line break is intentional."
+ },
+ "companion.consent.note": {
+  "description": "Roku security note under the consent headline, advising to allow only a sign-in the user started."
+ },
+ "companion.consent.noteSetup": {
+  "description": "Roku security note under the consent headline, advising to allow only a setup the user started."
+ },
+ "companion.consent.cardNote": {
+  "description": "Roku hint in the side card on the consent screen explaining that a code will appear next."
+ },
+ "companion.reaching.chip": {
+  "description": "Small status chip on the Roku screen while it checks which server address works."
+ },
+ "companion.linked.chip": {
+  "description": "Small status chip on the Roku screen once the phone or tablet is connected."
+ },
+ "companion.linked.headline": {
+  "description": "Roku headline telling the user to carry on with sign-in on their phone. Line break is intentional."
+ },
+ "companion.linked.headlineSetup": {
+  "description": "Roku headline telling the user to choose servers on their phone during setup. Line break is intentional."
+ },
+ "companion.linked.body": {
+  "description": "Roku body text telling the user to continue on their phone or tablet."
+ },
+ "companion.linked.bodySetup": {
+  "description": "Roku body text during setup asking the user to pick, on the phone, which servers this Roku signs in to."
+ },
+ "companion.linked.cardTitle": {
+  "description": "Title of the Roku side card pointing the user to their phone."
+ },
+ "companion.linked.cardNote": {
+  "description": "Roku side card hint telling the user to approve the sign-in on the phone."
+ },
+ "companion.linked.cardNoteSetup": {
+  "description": "Roku side card hint during setup; Continue is a button on the phone app."
+ },
+ "companion.preparing.chip": {
+  "description": "Small status chip on the Roku screen while it requests a sign-in code."
+ },
+ "companion.preparing.headline": {
+  "description": "Roku headline while a sign-in code is being requested. {server}: the server name. Line break is intentional."
+ },
+ "companion.preparing.headlineAccount": {
+  "description": "Roku headline while a code is requested for a known account. {account}: the account username; {server}: the server name. Line break is intentional."
+ },
+ "companion.preparing.body": {
+  "description": "Roku body text while the Roku fetches its sign-in code from the server."
+ },
+ "companion.reaching.cardNote": {
+  "description": "Roku side card hint while it tries the server addresses supplied by the phone."
+ },
+ "companion.unreachable.cardTitle": {
+  "description": "Title of the Roku side card when the server did not respond."
+ },
+ "companion.unreachable.cardNote": {
+  "description": "Roku side card hint when none of the addresses sent by the phone could be reached."
+ },
+ "companion.code.chip": {
+  "description": "Small status chip on the Roku screen while it waits for the phone to approve the code."
+ },
+ "companion.code.cardTitle": {
+  "description": "Title of the Roku side card that displays the sign-in verification code."
+ },
+ "companion.failed.headlineSetup": {
+  "description": "Roku headline when phone-assisted setup failed or stopped."
+ },
+ "companion.failed.cardTitle": {
+  "description": "Title of the Roku side card on a failed sign-in or setup."
+ },
+ "companion.failed.cardNote": {
+  "description": "Roku side card hint on failure. {server}: the server name."
+ },
+ "companion.failed.identity_mismatchSignIn": {
+  "description": "Roku error when the phone offered a server other than the one this Roku uses. {server}: the server name the phone offered."
+ },
+ "companion.signedIn.cardTitle": {
+  "description": "Title of the Roku side card after a successful sign-in."
+ },
+ "companion.chooseLimit": {
+  "description": "Phone/tablet list-heading for choosing accounts; plural counts the sign-ins the TV or Roku can keep. {device}: the name of the TV or Roku being set up; {limit}: the maximum number of sign-ins.",
+  "placeholders": {
+   "arg1": "device",
+   "arg2": "limit"
+  }
+ },
+ "companion.continueCount": {
+  "description": "Phone/tablet Continue button label during TV setup; plural counts the accounts chosen. {count}: the number of selected accounts.",
+  "placeholders": {
+   "arg1": "count"
+  }
+ },
+ "companion.accountSignInAgain": {
+  "description": "Phone label on an account row whose session expired, offering to sign in again on this phone."
+ },
+ "companion.accountSignInAgainTablet": {
+  "description": "Tablet label on an account row whose session expired, offering to sign in again on this tablet."
+ },
+ "companion.accountThisPhone": {
+  "description": "Phone account row label marking the account as the one signed in on this phone. {account}: the account username.",
+  "placeholders": {
+   "arg1": "account"
+  }
+ },
+ "companion.accountThisTablet": {
+  "description": "Tablet account row label marking the account as the one signed in on this tablet. {account}: the account username.",
+  "placeholders": {
+   "arg1": "account"
+  }
+ },
+ "companion.accountUnnamed": {
+  "description": "Phone/tablet placeholder name for an account with no username in the account chooser."
+ },
+ "companion.chooseAccountTitle": {
+  "description": "Phone/tablet title of the picker for a single account to send to an older TV or Roku."
+ },
+ "companion.chooseAccountsTitle": {
+  "description": "Phone/tablet title of the picker for selecting multiple accounts to send to the TV."
+ },
+ "companion.chooseOnePerServer": {
+  "description": "Phone/tablet note in the account picker that the target keeps only one account per server. {device}: the name of the TV or Roku.",
+  "placeholders": {
+   "arg1": "device"
+  }
+ },
+ "companion.chooseServerTitle": {
+  "description": "Phone/tablet title of the single-select server chooser used when setting up a Roku."
+ },
+ "companion.chooseServersBody": {
+  "description": "Phone/tablet lead-in above the server list during TV setup. {device}: the name of the TV or Roku being set up.",
+  "placeholders": {
+   "arg1": "device"
+  }
+ },
+ "companion.chooseServersTitle": {
+  "description": "Phone/tablet title of the multi-select server chooser used when setting up a TV."
+ },
+ "companion.close": {
+  "description": "Phone/tablet button that dismisses the nearby TV pairing sheet."
+ },
+ "companion.confirmCheck": {
+  "description": "Phone/tablet prompt above a verification code, asking the user to compare it with the TV. {device}: the TV or Roku name.",
+  "placeholders": {
+   "arg1": "device"
+  }
+ },
+ "companion.confirmCheckFor": {
+  "description": "Phone/tablet prompt asking the user to compare a code shown on the TV. {device}: the TV or Roku name; {account}: the account username; {server}: the server name.",
+  "placeholders": {
+   "arg1": "device",
+   "arg2": "account",
+   "arg3": "server"
+  }
+ },
+ "companion.confirmCheckForServer": {
+  "description": "Phone/tablet prompt asking the user to compare a code shown on the TV. {device}: the TV or Roku name; {server}: the server name.",
+  "placeholders": {
+   "arg1": "device",
+   "arg2": "server"
+  }
+ },
+ "companion.confirmNo": {
+  "description": "Phone/tablet button saying the code on the TV does not match, which cancels the approval."
+ },
+ "companion.confirmOlderTv": {
+  "description": "Phone/tablet note for older TV apps that show a different code format. {code}: the alternative code or words to compare.",
+  "placeholders": {
+   "arg1": "code"
+  }
+ },
+ "companion.confirmYes": {
+  "description": "Phone/tablet button confirming that the code on the TV matches, which approves the sign-in."
+ },
+ "companion.connecting": {
+  "description": "Phone/tablet status text while connecting to the nearby TV."
+ },
+ "companion.continue": {
+  "description": "Phone/tablet button to proceed to the next step of TV setup when no accounts are counted."
+ },
+ "companion.offerNotNow": {
+  "description": "Phone/tablet button that dismisses the offer to set up a nearby TV."
+ },
+ "companion.offerSetupAction": {
+  "description": "Phone/tablet button that starts setting up a nearby TV."
+ },
+ "companion.offerSetupBody": {
+  "description": "Phone body text of the nearby TV setup offer. {device}: the name of the TV or Roku.",
+  "placeholders": {
+   "arg1": "device"
+  }
+ },
+ "companion.offerSetupBodyTablet": {
+  "description": "Tablet body text of the nearby TV setup offer. {device}: the name of the TV or Roku.",
+  "placeholders": {
+   "arg1": "device"
+  }
+ },
+ "companion.offerSetupTitle": {
+  "description": "Phone/tablet title of the offer to set up a nearby TV over the local network. {device}: the TV or Roku name.",
+  "placeholders": {
+   "arg1": "device"
+  }
+ },
+ "companion.offerSigninAction": {
+  "description": "Phone/tablet button that starts signing in a nearby TV or Roku."
+ },
+ "companion.offerSigninAs": {
+  "description": "Phone/tablet label above the account that will be signed in on the nearby TV."
+ },
+ "companion.offerSigninBody": {
+  "description": "Phone/tablet body text of the offer to sign in a nearby TV that is on its sign-in screen. {device}: the TV name, as claimed by the TV.",
+  "placeholders": {
+   "arg1": "device"
+  }
+ },
+ "companion.offerSigninBodyRoku": {
+  "description": "Phone/tablet body text of the offer to sign in a nearby Roku on its sign-in screen. {device}: the Roku name, as claimed by the Roku.",
+  "placeholders": {
+   "arg1": "device"
+  }
+ },
+ "companion.offerSigninTitle": {
+  "description": "Phone/tablet title of the offer to sign in a nearby TV, phrased as a question. {device}: the TV or Roku name; {server}: the server name.",
+  "placeholders": {
+   "arg1": "device",
+   "arg2": "server"
+  }
+ },
+ "companion.paneTitle": {
+  "description": "Phone/tablet pane title for the nearby Android TV pairing sheet."
+ },
+ "companion.paneTitleRoku": {
+  "description": "Phone/tablet pane title for the nearby Roku pairing sheet."
+ },
+ "companion.progressApproving": {
+  "description": "Phone or tablet progress line while it approves a TV's sign-in. {server}: the server name; {device}: the TV's name.",
+  "placeholders": {
+   "arg1": "server",
+   "arg2": "device"
+  }
+ },
+ "companion.progressPosition": {
+  "description": "Phone/tablet progress suffix showing the current step in a series. {label}: the step text; {position}: the current number; {total}: the total number.",
+  "placeholders": {
+   "arg1": "label",
+   "arg2": "position",
+   "arg3": "total"
+  }
+ },
+ "companion.progressSignedIn": {
+  "description": "Phone or tablet progress line once the TV is signed in to a server. {server}: the server name.",
+  "placeholders": {
+   "arg1": "server"
+  }
+ },
+ "companion.progressSigningInAccount": {
+  "description": "Phone/tablet progress line while signing in an account on a server. {account}: the account username; {server}: the server name.",
+  "placeholders": {
+   "arg1": "account",
+   "arg2": "server"
+  }
+ },
+ "companion.progressSigningInServer": {
+  "description": "Phone/tablet progress line while signing in to a server. {server}: the server name.",
+  "placeholders": {
+   "arg1": "server"
+  }
+ },
+ "companion.progressWait": {
+  "description": "Phone/tablet generic progress line asking the user to wait."
+ },
+ "companion.progressWaitingCode": {
+  "description": "Phone/tablet progress line while waiting for the TV to display its code. {device}: the TV or Roku name.",
+  "placeholders": {
+   "arg1": "device"
+  }
+ },
+ "companion.setupDoneBody": {
+  "description": "Phone/tablet body text when TV setup succeeded. {device}: the TV or Roku name.",
+  "placeholders": {
+   "arg1": "device"
+  }
+ },
+ "companion.setupDoneTitle": {
+  "description": "Phone/tablet title when TV setup succeeded. {device}: the TV or Roku name.",
+  "placeholders": {
+   "arg1": "device"
+  }
+ },
+ "companion.setupDoneTitleGeneric": {
+  "description": "Phone/tablet title when setup of an Android TV finished, used when the TV name is unknown."
+ },
+ "companion.setupDoneTitleGenericRoku": {
+  "description": "Phone/tablet title when setup of a Roku finished, used when the name is unknown."
+ },
+ "companion.setupFailedTitle": {
+  "description": "Phone/tablet title when TV setup did not complete."
+ },
+ "companion.setupPartialTitle": {
+  "description": "Phone/tablet title when TV setup finished but some servers failed. {device}: the TV or Roku name.",
+  "placeholders": {
+   "arg1": "device"
+  }
+ },
+ "companion.setupProgressAllow": {
+  "description": "Phone progress text prompting the user to accept the setup on the TV. {device}: the TV or Roku name.",
+  "placeholders": {
+   "arg1": "device"
+  }
+ },
+ "companion.setupProgressAllowTablet": {
+  "description": "Tablet progress text prompting the user to accept the setup on the TV. {device}: the TV or Roku name.",
+  "placeholders": {
+   "arg1": "device"
+  }
+ },
+ "companion.setupProgressTitle": {
+  "description": "Phone/tablet title shown while TV setup is in progress."
+ },
+ "companion.signinDoneBody": {
+  "description": "Phone/tablet body text when the TV sign-in succeeded. {server}: the server name.",
+  "placeholders": {
+   "arg1": "server"
+  }
+ },
+ "companion.signinDoneTitle": {
+  "description": "Phone or tablet title when the TV sign-in succeeded. {device}: the TV's name.",
+  "placeholders": {
+   "arg1": "device"
+  }
+ },
+ "companion.signinFailedTitle": {
+  "description": "Phone/tablet title when signing in a TV did not complete."
+ },
+ "companion.signinProgressAllow": {
+  "description": "Phone/tablet progress text prompting the user to allow the sign-in on the TV. {device}: the TV or Roku name.",
+  "placeholders": {
+   "arg1": "device"
+  }
+ },
+ "companion.signinProgressTitle": {
+  "description": "Phone/tablet title shown while a TV sign-in is in progress."
+ },
+ "search.hint": {
+  "description": "Roku search screen: placeholder hint in the text field."
+ },
+ "search.filter.all": {
+  "description": "Roku search screen: filter button showing both movies and series."
+ },
+ "search.filter.movies": {
+  "description": "Roku search screen: filter button limiting results to movies."
+ },
+ "search.filter.series": {
+  "description": "Roku search screen: filter button limiting results to TV series."
+ },
+ "search.filterSelected": {
+  "description": "Roku screen reader announcement for the selected search filter. {name}: the filter label, such as Movies."
+ },
+ "search.searching": {
+  "description": "Roku search screen: status text while results load."
+ },
+ "search.result": {
+  "description": "Roku search screen: result count label. Plural counts the search results; {count}: that number."
+ },
+ "search.initial": {
+  "description": "Roku search screen: empty-state title before anything is typed."
+ },
+ "search.initialBody": {
+  "description": "Roku search screen: empty-state hint before anything is typed."
+ },
+ "search.empty": {
+  "description": "Roku search screen: empty-state title when the search found nothing."
+ },
+ "search.emptyBody": {
+  "description": "Roku search screen: hint under the no-results title."
+ },
+ "search.error": {
+  "description": "Roku search screen: error title when the search request failed."
+ },
+ "search.errorBody": {
+  "description": "Roku search screen: hint under the error title."
+ },
+ "states.retry": {
+  "description": "Roku button on error screens that tries the failed action again."
+ },
+ "states.refresh": {
+  "description": "Roku button on empty-state screens such as Home and For You that reloads the content."
+ },
+ "home.empty": {
+  "description": "Roku Home screen: empty-state title when there is nothing to show."
+ },
+ "home.emptyBody": {
+  "description": "Roku Home screen: empty-state hint under the title."
+ },
+ "home.timeLeft": {
+  "description": "Roku Home row subtitle for continue-watching items. {time}: the remaining duration, such as 25m."
+ },
+ "home.seasonEpisode": {
+  "description": "Roku Home card subtitle for an episode. {season}: the season number; {episode}: the episode number. S and E abbreviate Season and Episode."
+ },
+ "home.seasonOnly": {
+  "description": "Roku Home card subtitle for a season. {season}: the season number."
+ },
+ "home.episodeOnly": {
+  "description": "Roku Home card subtitle for an episode without a season. {episode}: the episode number."
+ },
+ "forYou.recommendations": {
+  "description": "Roku menu item and screen title for personalised recommendations."
+ },
+ "forYou.empty": {
+  "description": "Roku For You screen: empty-state title when no recommendations exist."
+ },
+ "forYou.emptyBody": {
+  "description": "Roku For You screen: hint under the empty title explaining how recommendations are built."
+ },
+ "calendar.filter.following": {
+  "description": "Roku Calendar screen: filter for releases from shows the user follows."
+ },
+ "calendar.filter.trending": {
+  "description": "Roku Calendar screen: filter for trending releases."
+ },
+ "calendar.filter.all": {
+  "description": "Roku Calendar screen: filter showing every release."
+ },
+ "calendar.today": {
+  "description": "Roku Calendar screen: heading label for today's date."
+ },
+ "calendar.tomorrow": {
+  "description": "Roku Calendar screen: heading label for tomorrow's date."
+ },
+ "calendar.thisWeek": {
+  "description": "Roku Calendar screen: button that jumps back to the current week."
+ },
+ "calendar.previousWeek": {
+  "description": "Roku Calendar screen: button that goes to the previous week."
+ },
+ "calendar.nextWeek": {
+  "description": "Roku Calendar screen: button that goes to the next week."
+ },
+ "calendar.nothingScheduled": {
+  "description": "Roku Calendar screen: text for a day with no releases."
+ },
+ "calendar.dayHeading": {
+  "description": "Roku Calendar screen: day heading. {weekday}: the full weekday name; {month}: the month name; {day}: the day number."
+ },
+ "calendar.monthYear": {
+  "description": "Roku Calendar screen: month and year header. {month}: the month name; {year}: the four-digit year."
+ },
+ "calendar.weekday.1": {
+  "description": "Roku Calendar screen: full name of weekday 1 of the week (1 = Monday)."
+ },
+ "calendar.weekday.2": {
+  "description": "Roku Calendar screen: full name of weekday 2 of the week (1 = Monday)."
+ },
+ "calendar.weekday.3": {
+  "description": "Roku Calendar screen: full name of weekday 3 of the week (1 = Monday)."
+ },
+ "calendar.weekday.4": {
+  "description": "Roku Calendar screen: full name of weekday 4 of the week (1 = Monday)."
+ },
+ "calendar.weekday.5": {
+  "description": "Roku Calendar screen: full name of weekday 5 of the week (1 = Monday)."
+ },
+ "calendar.weekday.6": {
+  "description": "Roku Calendar screen: full name of weekday 6 of the week (1 = Monday)."
+ },
+ "calendar.weekday.7": {
+  "description": "Roku Calendar screen: full name of weekday 7 of the week (1 = Monday)."
+ },
+ "calendar.weekdayShort.1": {
+  "description": "Roku Calendar screen: short, abbreviated name of weekday 1 (1 = Monday), in a cramped column header."
+ },
+ "calendar.weekdayShort.2": {
+  "description": "Roku Calendar screen: short, abbreviated name of weekday 2 (1 = Monday), in a cramped column header."
+ },
+ "calendar.weekdayShort.3": {
+  "description": "Roku Calendar screen: short, abbreviated name of weekday 3 (1 = Monday), in a cramped column header."
+ },
+ "calendar.weekdayShort.4": {
+  "description": "Roku Calendar screen: short, abbreviated name of weekday 4 (1 = Monday), in a cramped column header."
+ },
+ "calendar.weekdayShort.5": {
+  "description": "Roku Calendar screen: short, abbreviated name of weekday 5 (1 = Monday), in a cramped column header."
+ },
+ "calendar.weekdayShort.6": {
+  "description": "Roku Calendar screen: short, abbreviated name of weekday 6 (1 = Monday), in a cramped column header."
+ },
+ "calendar.weekdayShort.7": {
+  "description": "Roku Calendar screen: short, abbreviated name of weekday 7 (1 = Monday), in a cramped column header."
+ },
+ "calendar.month.1": {
+  "description": "Roku Calendar screen: name of month 1 of the year (1 = January) in headings."
+ },
+ "calendar.month.2": {
+  "description": "Roku Calendar screen: name of month 2 of the year (1 = January) in headings."
+ },
+ "calendar.month.3": {
+  "description": "Roku Calendar screen: name of month 3 of the year (1 = January) in headings."
+ },
+ "calendar.month.4": {
+  "description": "Roku Calendar screen: name of month 4 of the year (1 = January) in headings."
+ },
+ "calendar.month.5": {
+  "description": "Roku Calendar screen: name of month 5 of the year (1 = January) in headings."
+ },
+ "calendar.month.6": {
+  "description": "Roku Calendar screen: name of month 6 of the year (1 = January) in headings."
+ },
+ "calendar.month.7": {
+  "description": "Roku Calendar screen: name of month 7 of the year (1 = January) in headings."
+ },
+ "calendar.month.8": {
+  "description": "Roku Calendar screen: name of month 8 of the year (1 = January) in headings."
+ },
+ "calendar.month.9": {
+  "description": "Roku Calendar screen: name of month 9 of the year (1 = January) in headings."
+ },
+ "calendar.month.10": {
+  "description": "Roku Calendar screen: name of month 10 of the year (1 = January) in headings."
+ },
+ "calendar.month.11": {
+  "description": "Roku Calendar screen: name of month 11 of the year (1 = January) in headings."
+ },
+ "calendar.month.12": {
+  "description": "Roku Calendar screen: name of month 12 of the year (1 = January) in headings."
+ },
+ "calendar.movie": {
+  "description": "Roku Calendar screen: label on a card identifying a movie release."
+ },
+ "calendar.season": {
+  "description": "Roku Calendar screen: label for a season on an episode card. {season}: the season number."
+ },
+ "calendar.seasonShort": {
+  "description": "Roku Calendar screen: abbreviated season label on a small card. {season}: the season number."
+ },
+ "calendar.episodeShort": {
+  "description": "Roku Calendar screen: abbreviated episode label on a small card. {episode}: the episode number."
+ },
+ "calendar.badge.series_premiere": {
+  "description": "Roku Calendar screen: short uppercase badge for the first episode of a new series."
+ },
+ "calendar.badge.season_premiere": {
+  "description": "Roku Calendar screen: short uppercase badge for the first episode of a new season."
+ },
+ "calendar.badge.finale": {
+  "description": "Roku Calendar screen: short uppercase badge for a season or series finale."
+ },
+ "calendar.watched": {
+  "description": "Roku Calendar screen: label on an item the user has already watched."
+ },
+ "calendar.time12": {
+  "description": "Roku Calendar screen: 12-hour clock time. {hour}: the hour; {minute}: the two-digit minutes; {period}: the AM or PM marker."
+ },
+ "calendar.time24": {
+  "description": "Roku Calendar screen: 24-hour clock time. {hour}: the hour; {minute}: the two-digit minutes."
+ },
+ "calendar.am": {
+  "description": "Roku Calendar screen: morning marker used in 12-hour times."
+ },
+ "calendar.pm": {
+  "description": "Roku Calendar screen: afternoon/evening marker used in 12-hour times."
+ },
+ "calendar.empty.following": {
+  "description": "Roku Calendar screen: empty-state title for the Following filter."
+ },
+ "calendar.empty.followingBody": {
+  "description": "Roku Calendar screen: empty-state hint for the Following filter; lists what counts as followed."
+ },
+ "calendar.empty.trending": {
+  "description": "Roku Calendar screen: empty-state title for the Trending filter."
+ },
+ "calendar.empty.trendingBody": {
+  "description": "Roku Calendar screen: empty-state hint for the Trending filter."
+ },
+ "calendar.empty.everything": {
+  "description": "Roku Calendar screen: empty-state title for the All filter."
+ },
+ "calendar.empty.everythingBody": {
+  "description": "Roku Calendar screen: empty-state hint for the All filter."
+ },
+ "shell.signOut.title": {
+  "description": "Roku sign-out confirmation dialog: title when no account name is known. Also used as a settings row label."
+ },
+ "shell.signOut.titleNamed": {
+  "description": "Roku sign-out confirmation dialog title phrased as a question. {account}: the account username; {server}: the server name."
+ },
+ "shell.signOut.messageAccount": {
+  "description": "Roku sign-out dialog message when other accounts remain on the Roku."
+ },
+ "shell.signOut.messageLastAccount": {
+  "description": "Roku sign-out dialog message when this is the last account, so the server is removed. {server}: the server name."
+ },
+ "shell.signOut.confirm": {
+  "description": "Roku destructive confirm button in the sign-out dialog; also the remove option in the expired-account dialog."
+ },
+ "shell.signOut.cancel": {
+  "description": "Roku cancel button in sign-out and account-removal dialogs."
+ }
+}
