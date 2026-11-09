@@ -34,7 +34,7 @@ sha256() {
 
 root=${SILO_TRANSLATIONS_ROOT:-$(git rev-parse --show-toplevel)}
 config=$root/.silo-translations
-platform= version= sha= local=
+platform='' version='' sha='' local=''
 
 if [ -f "$config" ]; then
   platform=$(sed -n 's/^platform=//p' "$config")
@@ -92,6 +92,8 @@ list=.silo-translations-files
 # The new list is set aside and installed only after copying and pruning, so a failed run leaves
 # the old list in place and a retry still knows which files to remove.
 mv "$tmp/tree/$list" "$tmp/new-list"
+# Every check below reads the list line by line; a final entry without a newline would skip them.
+[ -z "$(tail -c 1 "$tmp/new-list")" ] || die "$list does not end with a newline"
 
 # A listed path must be relative and stay inside the client.
 unsafe() { grep -E '^/|(^|/)\.\.(/|$)|^$' "$1"; }
@@ -105,6 +107,23 @@ contained() {
     [ -L "$cur" ] && return 1
   done
   return 0
+}
+# True when $1 is $2, then one path segment, then $3.
+one() {
+  case $1 in "$2"*"$3") ;; *) return 1 ;; esac
+  mid=${1#"$2"} mid=${mid%"$3"}
+  case $mid in "" | */*) return 1 ;; esac
+}
+# Only this platform's generated outputs may be installed or removed.
+allowed() {
+  case $platform in
+    web) one "$1" web/src/locales/ .json || [ "$1" = web/src/locales/keys.ts ] ;;
+    apple) [ "$1" = iosApp/iosApp/Localizable.xcstrings ] || one "$1" iosApp/InfoPlist/ /InfoPlist.xcstrings ;;
+    android) [ "$1" = android-shared/silo-locales.properties ] || [ "$1" = android-shared/src/androidMain/res/values/strings_catalog.xml ] ||
+      one "$1" android-shared/src/androidMain/res/values- /strings_catalog.xml ;;
+    roku) [ "$1" = locale/languages.json ] || one "$1" locale/ /strings.json || one "$1" i18n-charsets/ .txt || [ "$1" = source/util/pluralRules.bs ] ;;
+    *) return 1 ;;
+  esac
 }
 
 if [ -f "$root/$list" ]; then
@@ -122,6 +141,9 @@ else
 fi
 
 unsafe "$tmp/new-list" && die "$list of the new tree has unsafe paths"
+while IFS= read -r path; do
+  allowed "$path" || die "$path is not a generated $platform output; refusing to install it"
+done < "$tmp/new-list"
 # Everything that gets copied must be a regular file named in the list, so the checks below
 # cover every write.
 ( cd "$tmp/tree" && find . -type l ) | grep -q . && die "the generated tree contains symlinks"
@@ -138,6 +160,7 @@ sort "$tmp/old-list" > "$tmp/old-sorted"
 sort "$tmp/new-list" > "$tmp/new-sorted"
 comm -23 "$tmp/old-sorted" "$tmp/new-sorted" > "$tmp/remove"
 while IFS= read -r path; do
+  allowed "$path" || die "$path is not a generated $platform output; refusing to remove it"
   contained "$path" || die "$path goes through a symlink in the client; refusing to remove it"
 done < "$tmp/remove"
 
