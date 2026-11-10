@@ -39672,6 +39672,41 @@
       "apple"
     ]
   },
+  "shell.searchIntent.description": "Opens Search in Silo with your search term.",
+  "@shell.searchIntent.description": {
+    "description": "Apple Siri and Shortcuts: one-line description of the Search Silo action in the Shortcuts app.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "shell.searchIntent.prompt": "What do you want to search for?",
+  "@shell.searchIntent.prompt": {
+    "description": "Apple Siri and Shortcuts: question Siri asks when the Search Silo action has no search term yet.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "shell.searchIntent.shortTitle": "Search",
+  "@shell.searchIntent.shortTitle": {
+    "description": "Apple Shortcuts and Spotlight: short name of the app shortcut that searches Silo.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "shell.searchIntent.term": "Search Term",
+  "@shell.searchIntent.term": {
+    "description": "Apple Siri and Shortcuts: name of the Search Silo action's input, the words to search for.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "shell.searchIntent.title": "Search Silo",
+  "@shell.searchIntent.title": {
+    "description": "Apple (iPhone, iPad, Apple TV) Siri and Shortcuts: name of the app action that opens Search in Silo with a spoken or typed term.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "shell.section.seeAll": "See all",
   "@shell.section.seeAll": {
     "description": "Android TV: link at the end of a row's section header that opens the row's full page.",
@@ -39823,41 +39858,6 @@
     "description": "Android TV: title of the sign-out confirmation dialog when neither the account nor the server name is known.",
     "x-platforms": [
       "android"
-    ]
-  },
-  "shell.siri.searchDescription": "Opens Search in Silo with your search term.",
-  "@shell.siri.searchDescription": {
-    "description": "Apple Siri and Shortcuts: one-line description of the Search Silo action in the Shortcuts app.",
-    "x-platforms": [
-      "apple"
-    ]
-  },
-  "shell.siri.searchPrompt": "What do you want to search for?",
-  "@shell.siri.searchPrompt": {
-    "description": "Apple Siri and Shortcuts: question Siri asks when the Search Silo action has no search term yet.",
-    "x-platforms": [
-      "apple"
-    ]
-  },
-  "shell.siri.searchShortTitle": "Search",
-  "@shell.siri.searchShortTitle": {
-    "description": "Apple Shortcuts and Spotlight: short name of the app shortcut that searches Silo.",
-    "x-platforms": [
-      "apple"
-    ]
-  },
-  "shell.siri.searchTerm": "Search Term",
-  "@shell.siri.searchTerm": {
-    "description": "Apple Siri and Shortcuts: name of the Search Silo action's input, the words to search for.",
-    "x-platforms": [
-      "apple"
-    ]
-  },
-  "shell.siri.searchTitle": "Search Silo",
-  "@shell.siri.searchTitle": {
-    "description": "Apple (iPhone, iPad, Apple TV) Siri and Shortcuts: name of the app action that opens Search in Silo with a spoken or typed term.",
-    "x-platforms": [
-      "apple"
     ]
   },
   "shell.sortFilter.filterCount": "Filter · {count}",
