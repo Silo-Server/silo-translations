@@ -4037,10 +4037,11 @@
   },
   "collections.collection": "Collection",
   "@collections.collection": {
-    "description": "The word Collection used where no better name or type is known: the secondary line under a collection on a library's Collections tab, the type on a library collection card, and the title of a collection's page while its name loads (Android phone, Apple iOS and tvOS).",
+    "description": "The word Collection used where no better name or type is known: the secondary line under a collection on a library's Collections tab, the type on a library collection card, and the title of a collection's page while its name loads (Android phone, Apple iOS and tvOS). Web: the small label above the title on a collection page.",
     "x-platforms": [
+      "android",
       "apple",
-      "android"
+      "web"
     ]
   },
   "collections.create.action": "Create Collection",
@@ -14236,9 +14237,17 @@
   "@error.field.invalid": {
     "description": "Error shown next to or about one request field when the server reports the field-error code `invalid`. Clients show it instead of the server's English detail in a translated interface."
   },
+  "error.field.invalid_entity_tag": "Expected \"*\" or a comma-separated list of quoted entity-tags.",
+  "@error.field.invalid_entity_tag": {
+    "description": "Error shown next to or about one request field when the server reports the field-error code `invalid_entity_tag`, for an If-Match or If-None-Match header that is not \"*\" or a list of quoted entity-tags. Clients show it instead of the server's English detail in a translated interface. \"*\" is the literal asterisk character."
+  },
   "error.field.invalid_enum": "Choose one of the allowed values.",
   "@error.field.invalid_enum": {
     "description": "Error shown next to or about one request field when the server reports the field-error code `invalid_enum`. Clients show it instead of the server's English detail in a translated interface."
+  },
+  "error.field.invalid_sort_field": "Sort names a field this operation does not sort by, or names one twice.",
+  "@error.field.invalid_sort_field": {
+    "description": "Error shown next to or about one request field when the server reports the field-error code `invalid_sort_field`. Clients show it instead of the server's English detail in a translated interface. The server also sends this code when a list that sorts by one field at a time is given several."
   },
   "error.field.invalid_type": "This value has the wrong type.",
   "@error.field.invalid_type": {
@@ -15848,6 +15857,382 @@
       "apple"
     ]
   },
+  "home.recipe.aclBlank.description": "Admin-curated, item-by-item ordered list.",
+  "@home.recipe.aclBlank.description": {
+    "description": "One-line description of the Editor's Picks preset in the Add row gallery (shared key `home.recipe.aclBlank.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.aclBlank.name": "Editor's Picks",
+  "@home.recipe.aclBlank.name": {
+    "description": "Name of the Editor's Picks preset in the Add row gallery (shared key `home.recipe.aclBlank.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.anniversariesDefault.description": "Titles celebrating a milestone release anniversary this month.",
+  "@home.recipe.anniversariesDefault.description": {
+    "description": "One-line description of the Anniversaries preset in the Add row gallery (shared key `home.recipe.anniversariesDefault.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.anniversariesDefault.name": "Anniversaries",
+  "@home.recipe.anniversariesDefault.name": {
+    "description": "Name of the Anniversaries preset in the Add row gallery (shared key `home.recipe.anniversariesDefault.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.awCannes.description": "Cannes Festival selections.",
+  "@home.recipe.awCannes.description": {
+    "description": "One-line description of the Cannes Selections preset in the Add row gallery (shared key `home.recipe.awCannes.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.awCannes.name": "Cannes Selections",
+  "@home.recipe.awCannes.name": {
+    "description": "Name of the Cannes Selections preset in the Add row gallery (shared key `home.recipe.awCannes.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.awEmmy.description": "Emmy-winning shows.",
+  "@home.recipe.awEmmy.description": {
+    "description": "One-line description of the Emmy Winners preset in the Add row gallery (shared key `home.recipe.awEmmy.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.awEmmy.name": "Emmy Winners",
+  "@home.recipe.awEmmy.name": {
+    "description": "Name of the Emmy Winners preset in the Add row gallery (shared key `home.recipe.awEmmy.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.awOscar.description": "Academy Award winners in your library.",
+  "@home.recipe.awOscar.description": {
+    "description": "One-line description of the Oscar Winners preset in the Add row gallery (shared key `home.recipe.awOscar.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.awOscar.name": "Oscar Winners",
+  "@home.recipe.awOscar.name": {
+    "description": "Name of the Oscar Winners preset in the Add row gallery (shared key `home.recipe.awOscar.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.bcwAuto.description": "Picks based on your most recent watch.",
+  "@home.recipe.bcwAuto.description": {
+    "description": "One-line description of the Because You Watched preset in the Add row gallery (shared key `home.recipe.bcwAuto.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.caImdb.description": "Rated 8.0+ on TMDB with 500+ votes.",
+  "@home.recipe.caImdb.description": {
+    "description": "One-line description of the Critically Acclaimed preset in the Add row gallery (shared key `home.recipe.caImdb.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.caImdb.name": "Critically Acclaimed",
+  "@home.recipe.caImdb.name": {
+    "description": "Name of the Critically Acclaimed preset in the Add row gallery (shared key `home.recipe.caImdb.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.collectionPick.description": "Show items from a library or curated collection.",
+  "@home.recipe.collectionPick.description": {
+    "description": "One-line description of the Collection preset in the Add row gallery (shared key `home.recipe.collectionPick.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.collectionPick.name": "Collection",
+  "@home.recipe.collectionPick.name": {
+    "description": "Name of the Collection preset in the Add row gallery (shared key `home.recipe.collectionPick.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.continueListeningDefault.description": "Pick up audiobooks where you left off.",
+  "@home.recipe.continueListeningDefault.description": {
+    "description": "One-line description of the Continue Listening preset in the Add row gallery (shared key `home.recipe.continueListeningDefault.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.continueWatchingDefault.description": "Pick up movies and episodes where you left off.",
+  "@home.recipe.continueWatchingDefault.description": {
+    "description": "One-line description of the Continue Watching preset in the Add row gallery (shared key `home.recipe.continueWatchingDefault.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.esActor.description": "Weekly spotlight on an actor in your library.",
+  "@home.recipe.esActor.description": {
+    "description": "One-line description of the Actor Spotlight preset in the Add row gallery (shared key `home.recipe.esActor.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.esActor.name": "Actor Spotlight",
+  "@home.recipe.esActor.name": {
+    "description": "Name of the Actor Spotlight preset in the Add row gallery (shared key `home.recipe.esActor.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.esDirectorAuto.description": "Weekly spotlight on a director in your library.",
+  "@home.recipe.esDirectorAuto.description": {
+    "description": "One-line description of the Director Spotlight preset in the Add row gallery (shared key `home.recipe.esDirectorAuto.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.esDirectorAuto.name": "Director Spotlight",
+  "@home.recipe.esDirectorAuto.name": {
+    "description": "Name of the Director Spotlight preset in the Add row gallery (shared key `home.recipe.esDirectorAuto.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.esEra80s.description": "Films from the 1980s.",
+  "@home.recipe.esEra80s.description": {
+    "description": "One-line description of the The 80s preset in the Add row gallery (shared key `home.recipe.esEra80s.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.esEra80s.name": "The 80s",
+  "@home.recipe.esEra80s.name": {
+    "description": "Name of the The 80s preset in the Add row gallery (shared key `home.recipe.esEra80s.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.esStudio.description": "Weekly spotlight on a studio in your library.",
+  "@home.recipe.esStudio.description": {
+    "description": "One-line description of the Studio Spotlight preset in the Add row gallery (shared key `home.recipe.esStudio.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.esStudio.name": "Studio Spotlight",
+  "@home.recipe.esStudio.name": {
+    "description": "Name of the Studio Spotlight preset in the Add row gallery (shared key `home.recipe.esStudio.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.favoritesDefault.description": "Your favorites.",
+  "@home.recipe.favoritesDefault.description": {
+    "description": "One-line description of the Favorites preset in the Add row gallery (shared key `home.recipe.favoritesDefault.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.favoritesDefault.name": "Favorites",
+  "@home.recipe.favoritesDefault.name": {
+    "description": "Name of the Favorites preset in the Add row gallery (shared key `home.recipe.favoritesDefault.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.ffDefault.description": "Rated 7.0+ on TMDB with 100+ votes, and not watched in the past year.",
+  "@home.recipe.ffDefault.description": {
+    "description": "One-line description of the Forgotten Favorites preset in the Add row gallery (shared key `home.recipe.ffDefault.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.ffDefault.name": "Forgotten Favorites",
+  "@home.recipe.ffDefault.name": {
+    "description": "Name of the Forgotten Favorites preset in the Add row gallery (shared key `home.recipe.ffDefault.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.forYou.description": "Per-profile picks from the recommendation engine.",
+  "@home.recipe.forYou.description": {
+    "description": "One-line description of the Recommended For You preset in the Add row gallery (shared key `home.recipe.forYou.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.forYou.name": "Recommended For You",
+  "@home.recipe.forYou.name": {
+    "description": "Name of the Recommended For You preset in the Add row gallery (shared key `home.recipe.forYou.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.fs4k.description": "Titles available in 4K UHD.",
+  "@home.recipe.fs4k.description": {
+    "description": "One-line description of the 4K Showcase preset in the Add row gallery (shared key `home.recipe.fs4k.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.fs4k.name": "4K Showcase",
+  "@home.recipe.fs4k.name": {
+    "description": "Name of the 4K Showcase preset in the Add row gallery (shared key `home.recipe.fs4k.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.fs4kRecent.description": "Recently added 4K UHD titles.",
+  "@home.recipe.fs4kRecent.description": {
+    "description": "One-line description of the New in 4K preset in the Add row gallery (shared key `home.recipe.fs4kRecent.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.fs4kRecent.name": "New in 4K",
+  "@home.recipe.fs4kRecent.name": {
+    "description": "Name of the New in 4K preset in the Add row gallery (shared key `home.recipe.fs4kRecent.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.fsDv.description": "Dolby Vision titles.",
+  "@home.recipe.fsDv.description": {
+    "description": "One-line description of the Dolby Vision Picks preset in the Add row gallery (shared key `home.recipe.fsDv.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.fsDv.name": "Dolby Vision Picks",
+  "@home.recipe.fsDv.name": {
+    "description": "Name of the Dolby Vision Picks preset in the Add row gallery (shared key `home.recipe.fsDv.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.fsHdr.description": "HDR-mastered titles.",
+  "@home.recipe.fsHdr.description": {
+    "description": "One-line description of the HDR Highlights preset in the Add row gallery (shared key `home.recipe.fsHdr.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.fsHdr.name": "HDR Highlights",
+  "@home.recipe.fsHdr.name": {
+    "description": "Name of the HDR Highlights preset in the Add row gallery (shared key `home.recipe.fsHdr.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.genreRouletteWeekly.description": "A different genre every week, rated 6.0+ on TMDB with 100+ votes.",
+  "@home.recipe.genreRouletteWeekly.description": {
+    "description": "One-line description of the Genre Roulette preset in the Add row gallery (shared key `home.recipe.genreRouletteWeekly.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.genreRouletteWeekly.name": "Genre Roulette",
+  "@home.recipe.genreRouletteWeekly.name": {
+    "description": "Name of the Genre Roulette preset in the Add row gallery (shared key `home.recipe.genreRouletteWeekly.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.hiddenGemsDefault.description": "Rated 7.5+ on TMDB with 100+ votes, and watched twice or less.",
+  "@home.recipe.hiddenGemsDefault.description": {
+    "description": "One-line description of the Hidden Gems preset in the Add row gallery (shared key `home.recipe.hiddenGemsDefault.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.moodAfterMidnight.description": "Horror or Thriller, rated 6.0+ on TMDB with 100+ votes.",
+  "@home.recipe.moodAfterMidnight.description": {
+    "description": "One-line description of the After Midnight preset in the Add row gallery (shared key `home.recipe.moodAfterMidnight.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.moodAfterMidnight.name": "After Midnight",
+  "@home.recipe.moodAfterMidnight.name": {
+    "description": "Name of the After Midnight preset in the Add row gallery (shared key `home.recipe.moodAfterMidnight.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.moodComfort.description": "Comedy, Romance or Family, rated 6.0+ on TMDB with 100+ votes.",
+  "@home.recipe.moodComfort.description": {
+    "description": "One-line description of the Comfort Rewatches preset in the Add row gallery (shared key `home.recipe.moodComfort.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.moodComfort.name": "Comfort Rewatches",
+  "@home.recipe.moodComfort.name": {
+    "description": "Name of the Comfort Rewatches preset in the Add row gallery (shared key `home.recipe.moodComfort.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.moodDateNight.description": "Romance or Comedy, rated 6.0+ on TMDB with 100+ votes.",
+  "@home.recipe.moodDateNight.description": {
+    "description": "One-line description of the Date Night preset in the Add row gallery (shared key `home.recipe.moodDateNight.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.moodDateNight.name": "Date Night",
+  "@home.recipe.moodDateNight.name": {
+    "description": "Name of the Date Night preset in the Add row gallery (shared key `home.recipe.moodDateNight.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.moodEdgeOfSeat.description": "Thriller or Action, rated 6.5+ on TMDB with 100+ votes.",
+  "@home.recipe.moodEdgeOfSeat.description": {
+    "description": "One-line description of the Edge of Your Seat preset in the Add row gallery (shared key `home.recipe.moodEdgeOfSeat.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.moodEdgeOfSeat.name": "Edge of Your Seat",
+  "@home.recipe.moodEdgeOfSeat.name": {
+    "description": "Name of the Edge of Your Seat preset in the Add row gallery (shared key `home.recipe.moodEdgeOfSeat.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.moodFeelGood.description": "Comedy or Family, rated 6.5+ on TMDB with 100+ votes.",
+  "@home.recipe.moodFeelGood.description": {
+    "description": "One-line description of the Feel-Good Comedies preset in the Add row gallery (shared key `home.recipe.moodFeelGood.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.moodFeelGood.name": "Feel-Good Comedies",
+  "@home.recipe.moodFeelGood.name": {
+    "description": "Name of the Feel-Good Comedies preset in the Add row gallery (shared key `home.recipe.moodFeelGood.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.moodMindBending.description": "Science Fiction or Mystery, rated 7.0+ on TMDB with 100+ votes.",
+  "@home.recipe.moodMindBending.description": {
+    "description": "One-line description of the Mind-Bending Sci-Fi preset in the Add row gallery (shared key `home.recipe.moodMindBending.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.moodMindBending.name": "Mind-Bending Sci-Fi",
+  "@home.recipe.moodMindBending.name": {
+    "description": "Name of the Mind-Bending Sci-Fi preset in the Add row gallery (shared key `home.recipe.moodMindBending.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.moodQuietSunday.description": "Drama or Documentary, rated 7.0+ on TMDB with 100+ votes.",
+  "@home.recipe.moodQuietSunday.description": {
+    "description": "One-line description of the Quiet Sunday Cinema preset in the Add row gallery (shared key `home.recipe.moodQuietSunday.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.moodQuietSunday.name": "Quiet Sunday Cinema",
+  "@home.recipe.moodQuietSunday.name": {
+    "description": "Name of the Quiet Sunday Cinema preset in the Add row gallery (shared key `home.recipe.moodQuietSunday.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.moodTearjerker.description": "Drama or Romance, rated 7.0+ on TMDB with 100+ votes.",
+  "@home.recipe.moodTearjerker.description": {
+    "description": "One-line description of the Tearjerkers preset in the Add row gallery (shared key `home.recipe.moodTearjerker.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.moodTearjerker.name": "Tearjerkers",
+  "@home.recipe.moodTearjerker.name": {
+    "description": "Name of the Tearjerkers preset in the Add row gallery (shared key `home.recipe.moodTearjerker.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.mwMonth.description": "Top plays in the last 30 days.",
+  "@home.recipe.mwMonth.description": {
+    "description": "One-line description of the Most Watched This Month preset in the Add row gallery (shared key `home.recipe.mwMonth.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.mwMonth.name": "Most Watched This Month",
+  "@home.recipe.mwMonth.name": {
+    "description": "Name of the Most Watched This Month preset in the Add row gallery (shared key `home.recipe.mwMonth.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.mwWeek.description": "Top plays in the last 7 days.",
+  "@home.recipe.mwWeek.description": {
+    "description": "One-line description of the Most Watched This Week preset in the Add row gallery (shared key `home.recipe.mwWeek.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.mwWeek.name": "Most Watched This Week",
+  "@home.recipe.mwWeek.name": {
+    "description": "Name of the Most Watched This Week preset in the Add row gallery (shared key `home.recipe.mwWeek.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.nextInSeriesDefault.description": "The next audiobook in series you've finished.",
+  "@home.recipe.nextInSeriesDefault.description": {
+    "description": "One-line description of the Next in Series preset in the Add row gallery (shared key `home.recipe.nextInSeriesDefault.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.nextInSeriesDefault.name": "Next in Series",
+  "@home.recipe.nextInSeriesDefault.name": {
+    "description": "Name of the Next in Series preset in the Add row gallery (shared key `home.recipe.nextInSeriesDefault.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.nextUpDefault.description": "Next episodes ready to watch.",
+  "@home.recipe.nextUpDefault.description": {
+    "description": "One-line description of the Next Up preset in the Add row gallery (shared key `home.recipe.nextUpDefault.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.ntl30.description": "Added in the last 30 days.",
+  "@home.recipe.ntl30.description": {
+    "description": "One-line description of the New to Library This Month preset in the Add row gallery (shared key `home.recipe.ntl30.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.ntl30.name": "New to Library This Month",
+  "@home.recipe.ntl30.name": {
+    "description": "Name of the New to Library This Month preset in the Add row gallery (shared key `home.recipe.ntl30.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.paHousehold.description": "Recent watches across all other profiles.",
+  "@home.recipe.paHousehold.description": {
+    "description": "One-line description of the What Others Just Watched preset in the Add row gallery (shared key `home.recipe.paHousehold.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.paHousehold.name": "What Others Just Watched",
+  "@home.recipe.paHousehold.name": {
+    "description": "Name of the What Others Just Watched preset in the Add row gallery (shared key `home.recipe.paHousehold.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.randomDefault.description": "A random selection from your library.",
+  "@home.recipe.randomDefault.description": {
+    "description": "One-line description of the Surprise Me preset in the Add row gallery (shared key `home.recipe.randomDefault.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.randomDefault.name": "Surprise Me",
+  "@home.recipe.randomDefault.name": {
+    "description": "Name of the Surprise Me preset in the Add row gallery (shared key `home.recipe.randomDefault.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.recentlyAddedDefault.description": "Latest additions to your library.",
+  "@home.recipe.recentlyAddedDefault.description": {
+    "description": "One-line description of the Recently Added preset in the Add row gallery (shared key `home.recipe.recentlyAddedDefault.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.recentlyReleasedDefault.description": "Recently released titles.",
+  "@home.recipe.recentlyReleasedDefault.description": {
+    "description": "One-line description of the New Releases preset in the Add row gallery (shared key `home.recipe.recentlyReleasedDefault.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.recentlyReleasedDefault.name": "New Releases",
+  "@home.recipe.recentlyReleasedDefault.name": {
+    "description": "Name of the New Releases preset in the Add row gallery (shared key `home.recipe.recentlyReleasedDefault.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.returningShowsDefault.description": "Shows you've watched with a brand-new season in your library.",
+  "@home.recipe.returningShowsDefault.description": {
+    "description": "One-line description of the Returning Shows preset in the Add row gallery (shared key `home.recipe.returningShowsDefault.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.seAuto.description": "Cycles automatically — Halloween in October, Christmas in December, etc.",
+  "@home.recipe.seAuto.description": {
+    "description": "One-line description of the Seasonal Picks preset in the Add row gallery (shared key `home.recipe.seAuto.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.seAuto.details": "One section that swaps in curated holiday picks based on the calendar. Choose the holidays, a vibe for each, and add your own holidays.",
+  "@home.recipe.seAuto.details": {
+    "description": "Longer description of the Seasonal Picks preset in the Add row gallery (shared key `home.recipe.seAuto.details`, sent as description_long_key). Shown when a client opens the preset."
+  },
+  "home.recipe.seFamilyMovieNight.description": "Family picks on Friday and Saturday evenings.",
+  "@home.recipe.seFamilyMovieNight.description": {
+    "description": "One-line description of the Family Movie Night preset in the Add row gallery (shared key `home.recipe.seFamilyMovieNight.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.seFamilyMovieNight.name": "Family Movie Night",
+  "@home.recipe.seFamilyMovieNight.name": {
+    "description": "Name of the Family Movie Night preset in the Add row gallery (shared key `home.recipe.seFamilyMovieNight.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.shortWatchesDefault.description": "Movies of 95 minutes or less, rated 6.0+ on TMDB with 100+ votes.",
+  "@home.recipe.shortWatchesDefault.description": {
+    "description": "One-line description of the Short & Sweet preset in the Add row gallery (shared key `home.recipe.shortWatchesDefault.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.shortWatchesDefault.name": "Short & Sweet",
+  "@home.recipe.shortWatchesDefault.name": {
+    "description": "Name of the Short & Sweet preset in the Add row gallery (shared key `home.recipe.shortWatchesDefault.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.similar.description": "What similar profiles are loving.",
+  "@home.recipe.similar.description": {
+    "description": "One-line description of the Profiles Like You Enjoyed preset in the Add row gallery (shared key `home.recipe.similar.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.tasteTop.description": "Best matches for your strongest taste — set a genre to narrow it.",
+  "@home.recipe.tasteTop.description": {
+    "description": "One-line description of the Top Picks Today preset in the Add row gallery (shared key `home.recipe.tasteTop.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.tdiscTmdbDay.description": "Today's trending movies & shows from TMDB, matched to your library.",
+  "@home.recipe.tdiscTmdbDay.description": {
+    "description": "One-line description of the TMDB Trending Today preset in the Add row gallery (shared key `home.recipe.tdiscTmdbDay.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.tdiscTmdbDay.name": "TMDB Trending Today",
+  "@home.recipe.tdiscTmdbDay.name": {
+    "description": "Name of the TMDB Trending Today preset in the Add row gallery (shared key `home.recipe.tdiscTmdbDay.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.tdiscTmdbWeek.description": "This week's trending movies & shows from TMDB, matched to your library.",
+  "@home.recipe.tdiscTmdbWeek.description": {
+    "description": "One-line description of the TMDB Trending This Week preset in the Add row gallery (shared key `home.recipe.tdiscTmdbWeek.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.tdiscTmdbWeek.name": "TMDB Trending This Week",
+  "@home.recipe.tdiscTmdbWeek.name": {
+    "description": "Name of the TMDB Trending This Week preset in the Add row gallery (shared key `home.recipe.tdiscTmdbWeek.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.tr24h.description": "Most-played in the last day.",
+  "@home.recipe.tr24h.description": {
+    "description": "One-line description of the Trending Now (24h) preset in the Add row gallery (shared key `home.recipe.tr24h.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.tr24h.name": "Trending Now (24h)",
+  "@home.recipe.tr24h.name": {
+    "description": "Name of the Trending Now (24h) preset in the Add row gallery (shared key `home.recipe.tr24h.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.tr30d.description": "Most-played in the last month.",
+  "@home.recipe.tr30d.description": {
+    "description": "One-line description of the Trending This Month preset in the Add row gallery (shared key `home.recipe.tr30d.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.tr30d.name": "Trending This Month",
+  "@home.recipe.tr30d.name": {
+    "description": "Name of the Trending This Month preset in the Add row gallery (shared key `home.recipe.tr30d.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
+  "home.recipe.tr7d.description": "Most-played in the last week.",
+  "@home.recipe.tr7d.description": {
+    "description": "One-line description of the Trending This Week preset in the Add row gallery (shared key `home.recipe.tr7d.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.watchlistDefault.description": "Items you've saved to watch.",
+  "@home.recipe.watchlistDefault.description": {
+    "description": "One-line description of the Watchlist preset in the Add row gallery (shared key `home.recipe.watchlistDefault.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.watchlistDefault.name": "Watchlist",
+  "@home.recipe.watchlistDefault.name": {
+    "description": "Name of the Watchlist preset in the Add row gallery (shared key `home.recipe.watchlistDefault.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
+  },
   "home.seasonEpisode": "S{season} E{episode}",
   "@home.seasonEpisode": {
     "description": "Home card subtitle (Roku) and Home marquee line (Apple tvOS) for an episode. {season}: the season number; {episode}: the episode number. S and E abbreviate Season and Episode. Apple iOS and macOS: the first fact on a downloaded episode's offline page.",
@@ -15911,6 +16296,42 @@
   "home.section.continueWatching": "Continue Watching",
   "@home.section.continueWatching": {
     "description": "Title of a home or library page row the server created (shared title key `home.section.continueWatching` from section title_key). Shown as a row heading on every client."
+  },
+  "home.section.discoverGenres": "Genres",
+  "@home.section.discoverGenres": {
+    "description": "Title of the built-in `genres` row on the Requests Discover page (shared title key `home.section.discoverGenres` from title_key on the Discover layout rows). Shown as the row heading on every client, and in the admin Discover layout editor, while the row still has its default title. A carousel of studio cards."
+  },
+  "home.section.discoverNetworks": "Networks",
+  "@home.section.discoverNetworks": {
+    "description": "Title of the built-in `networks` row on the Requests Discover page (shared title key `home.section.discoverNetworks` from title_key on the Discover layout rows). Shown as the row heading on every client, and in the admin Discover layout editor, while the row still has its default title. A carousel of studio cards."
+  },
+  "home.section.discoverOnAirSeries": "On Air Series",
+  "@home.section.discoverOnAirSeries": {
+    "description": "Title of the built-in `on_air_series` row on the Requests Discover page (shared title key `home.section.discoverOnAirSeries` from title_key on the Discover layout rows). Shown as the row heading on every client, and in the admin Discover layout editor, while the row still has its default title. A row of titles."
+  },
+  "home.section.discoverPopularMovies": "Popular Movies",
+  "@home.section.discoverPopularMovies": {
+    "description": "Title of the built-in `popular_movies` row on the Requests Discover page (shared title key `home.section.discoverPopularMovies` from title_key on the Discover layout rows). Shown as the row heading on every client, and in the admin Discover layout editor, while the row still has its default title. A row of titles."
+  },
+  "home.section.discoverPopularSeries": "Popular Series",
+  "@home.section.discoverPopularSeries": {
+    "description": "Title of the built-in `popular_series` row on the Requests Discover page (shared title key `home.section.discoverPopularSeries` from title_key on the Discover layout rows). Shown as the row heading on every client, and in the admin Discover layout editor, while the row still has its default title. A row of titles."
+  },
+  "home.section.discoverStudios": "Studios",
+  "@home.section.discoverStudios": {
+    "description": "Title of the built-in `studios` row on the Requests Discover page (shared title key `home.section.discoverStudios` from title_key on the Discover layout rows). Shown as the row heading on every client, and in the admin Discover layout editor, while the row still has its default title. A carousel of studio cards."
+  },
+  "home.section.discoverTrendingMovies": "Trending Movies",
+  "@home.section.discoverTrendingMovies": {
+    "description": "Title of the built-in `trending_movies` row on the Requests Discover page (shared title key `home.section.discoverTrendingMovies` from title_key on the Discover layout rows). Shown as the row heading on every client, and in the admin Discover layout editor, while the row still has its default title. A row of titles."
+  },
+  "home.section.discoverTrendingSeries": "Trending Series",
+  "@home.section.discoverTrendingSeries": {
+    "description": "Title of the built-in `trending_series` row on the Requests Discover page (shared title key `home.section.discoverTrendingSeries` from title_key on the Discover layout rows). Shown as the row heading on every client, and in the admin Discover layout editor, while the row still has its default title. A row of titles."
+  },
+  "home.section.discoverUpcomingMovies": "Upcoming Movies",
+  "@home.section.discoverUpcomingMovies": {
+    "description": "Title of the built-in `upcoming_movies` row on the Requests Discover page (shared title key `home.section.discoverUpcomingMovies` from title_key on the Discover layout rows). Shown as the row heading on every client, and in the admin Discover layout editor, while the row still has its default title. A row of titles."
   },
   "home.section.forYou": "For You",
   "@home.section.forYou": {
@@ -16031,6 +16452,142 @@
   "@home.section.returningShows": {
     "description": "Title of a home or library page row the server created (shared title key `home.section.returningShows` from section title_key). Shown as a row heading on every client."
   },
+  "home.section.seasonal.christmas.classics": "Christmas Classics",
+  "@home.section.seasonal.christmas.classics": {
+    "description": "Title a Seasonal Picks row shows while Christmas is in season and its \"Christmas classics\" list is chosen (shared title key `home.section.seasonal.christmas.classics` from title_key on the row). Shown as the row heading on every client."
+  },
+  "home.section.seasonal.christmas.comedies": "Christmas Comedies",
+  "@home.section.seasonal.christmas.comedies": {
+    "description": "Title a Seasonal Picks row shows while Christmas is in season and its \"Christmas comedies\" list is chosen (shared title key `home.section.seasonal.christmas.comedies` from title_key on the row). Shown as the row heading on every client."
+  },
+  "home.section.seasonal.christmas.family": "Family Christmas",
+  "@home.section.seasonal.christmas.family": {
+    "description": "Title a Seasonal Picks row shows while Christmas is in season and its \"Family Christmas\" list is chosen (shared title key `home.section.seasonal.christmas.family` from title_key on the row). Shown as the row heading on every client."
+  },
+  "home.section.seasonal.christmas.favorites": "Christmas Favorites",
+  "@home.section.seasonal.christmas.favorites": {
+    "description": "Title a Seasonal Picks row shows while Christmas is in season and its \"Christmas favorites\" list is chosen (shared title key `home.section.seasonal.christmas.favorites` from title_key on the row). Shown as the row heading on every client."
+  },
+  "home.section.seasonal.christmas.hallmark": "Hallmark Christmas",
+  "@home.section.seasonal.christmas.hallmark": {
+    "description": "Title a Seasonal Picks row shows while Christmas is in season and its \"Hallmark Christmas\" list is chosen (shared title key `home.section.seasonal.christmas.hallmark` from title_key on the row). Shown as the row heading on every client."
+  },
+  "home.section.seasonal.christmas.romcoms": "Christmas Rom-Coms",
+  "@home.section.seasonal.christmas.romcoms": {
+    "description": "Title a Seasonal Picks row shows while Christmas is in season and its \"Christmas rom-coms\" list is chosen (shared title key `home.section.seasonal.christmas.romcoms` from title_key on the row). Shown as the row heading on every client."
+  },
+  "home.section.seasonal.easter.faith": "Easter Stories",
+  "@home.section.seasonal.easter.faith": {
+    "description": "Title a Seasonal Picks row shows while Easter is in season and its \"Faith and Easter stories\" list is chosen (shared title key `home.section.seasonal.easter.faith` from title_key on the row). Shown as the row heading on every client."
+  },
+  "home.section.seasonal.easter.family": "Easter Movies",
+  "@home.section.seasonal.easter.family": {
+    "description": "Title a Seasonal Picks row shows while Easter is in season and its \"Easter movies\" list is chosen (shared title key `home.section.seasonal.easter.family` from title_key on the row). Shown as the row heading on every client."
+  },
+  "home.section.seasonal.familyMovieNight.favorites": "Family Favorites",
+  "@home.section.seasonal.familyMovieNight.favorites": {
+    "description": "Title a Seasonal Picks row shows while Family Movie Night is in season and its \"Family favorites\" list is chosen (shared title key `home.section.seasonal.familyMovieNight.favorites` from title_key on the row). Shown as the row heading on every client."
+  },
+  "home.section.seasonal.familyMovieNight.liveAction": "Family Movie Night",
+  "@home.section.seasonal.familyMovieNight.liveAction": {
+    "description": "Title a Seasonal Picks row shows while Family Movie Night is in season and its \"Live-action family\" list is chosen (shared title key `home.section.seasonal.familyMovieNight.liveAction` from title_key on the row). Shown as the row heading on every client."
+  },
+  "home.section.seasonal.familyMovieNight.new": "Family Movie Night",
+  "@home.section.seasonal.familyMovieNight.new": {
+    "description": "Title a Seasonal Picks row shows while Family Movie Night is in season and its \"New and popular\" list is chosen (shared title key `home.section.seasonal.familyMovieNight.new` from title_key on the row). Shown as the row heading on every client."
+  },
+  "home.section.seasonal.halloween.animated": "Animated Halloween",
+  "@home.section.seasonal.halloween.animated": {
+    "description": "Title a Seasonal Picks row shows while Halloween is in season and its \"Animated Halloween\" list is chosen (shared title key `home.section.seasonal.halloween.animated` from title_key on the row). Shown as the row heading on every client."
+  },
+  "home.section.seasonal.halloween.family": "Family Halloween",
+  "@home.section.seasonal.halloween.family": {
+    "description": "Title a Seasonal Picks row shows while Halloween is in season and its \"Family Halloween\" list is chosen (shared title key `home.section.seasonal.halloween.family` from title_key on the row). Shown as the row heading on every client."
+  },
+  "home.section.seasonal.halloween.favorites": "Halloween Favorites",
+  "@home.section.seasonal.halloween.favorites": {
+    "description": "Title a Seasonal Picks row shows while Halloween is in season and its \"Halloween favorites\" list is chosen (shared title key `home.section.seasonal.halloween.favorites` from title_key on the row). Shown as the row heading on every client."
+  },
+  "home.section.seasonal.halloween.horror": "Halloween Horror",
+  "@home.section.seasonal.halloween.horror": {
+    "description": "Title a Seasonal Picks row shows while Halloween is in season and its \"Halloween horror\" list is chosen (shared title key `home.section.seasonal.halloween.horror` from title_key on the row). Shown as the row heading on every client."
+  },
+  "home.section.seasonal.halloween.tv": "Halloween TV",
+  "@home.section.seasonal.halloween.tv": {
+    "description": "Title a Seasonal Picks row shows while Halloween is in season and its \"Halloween TV\" list is chosen (shared title key `home.section.seasonal.halloween.tv` from title_key on the row). Shown as the row heading on every client."
+  },
+  "home.section.seasonal.newYear.favorites": "New Year's Movies",
+  "@home.section.seasonal.newYear.favorites": {
+    "description": "Title a Seasonal Picks row shows while New Year's is in season and its \"New Year's movies\" list is chosen (shared title key `home.section.seasonal.newYear.favorites` from title_key on the row). Shown as the row heading on every client."
+  },
+  "home.section.seasonal.saturdayMorning.cartoons": "Saturday Morning Cartoons",
+  "@home.section.seasonal.saturdayMorning.cartoons": {
+    "description": "Title a Seasonal Picks row shows while Saturday Morning is in season and its \"Saturday morning cartoons\" list is chosen (shared title key `home.section.seasonal.saturdayMorning.cartoons` from title_key on the row). Shown as the row heading on every client."
+  },
+  "home.section.seasonal.saturdayMorning.modern": "Saturday Morning Favorites",
+  "@home.section.seasonal.saturdayMorning.modern": {
+    "description": "Title a Seasonal Picks row shows while Saturday Morning is in season and its \"Modern cartoons\" list is chosen (shared title key `home.section.seasonal.saturdayMorning.modern` from title_key on the row). Shown as the row heading on every client."
+  },
+  "home.section.seasonal.saturdayMorning.nineties": "90s Saturday Mornings",
+  "@home.section.seasonal.saturdayMorning.nineties": {
+    "description": "Title a Seasonal Picks row shows while Saturday Morning is in season and its \"90s cartoons\" list is chosen (shared title key `home.section.seasonal.saturdayMorning.nineties` from title_key on the row). Shown as the row heading on every client."
+  },
+  "home.section.seasonal.stPatricks.irishFilm": "Irish Film",
+  "@home.section.seasonal.stPatricks.irishFilm": {
+    "description": "Title a Seasonal Picks row shows while St. Patrick's Day is in season and its \"Irish film\" list is chosen (shared title key `home.section.seasonal.stPatricks.irishFilm` from title_key on the row). Shown as the row heading on every client."
+  },
+  "home.section.seasonal.stPatricks.irishTv": "Irish TV",
+  "@home.section.seasonal.stPatricks.irishTv": {
+    "description": "Title a Seasonal Picks row shows while St. Patrick's Day is in season and its \"Irish TV\" list is chosen (shared title key `home.section.seasonal.stPatricks.irishTv` from title_key on the row). Shown as the row heading on every client."
+  },
+  "home.section.seasonal.summer.blockbusters": "Summer Blockbusters",
+  "@home.section.seasonal.summer.blockbusters": {
+    "description": "Title a Seasonal Picks row shows while Summer is in season and its \"Blockbusters\" list is chosen (shared title key `home.section.seasonal.summer.blockbusters` from title_key on the row). Shown as the row heading on every client."
+  },
+  "home.section.seasonal.summer.classicSummer": "Classic Summer Movies",
+  "@home.section.seasonal.summer.classicSummer": {
+    "description": "Title a Seasonal Picks row shows while Summer is in season and its \"Classic summer movies\" list is chosen (shared title key `home.section.seasonal.summer.classicSummer` from title_key on the row). Shown as the row heading on every client."
+  },
+  "home.section.seasonal.summer.nostalgia": "Summer Nostalgia",
+  "@home.section.seasonal.summer.nostalgia": {
+    "description": "Title a Seasonal Picks row shows while Summer is in season and its \"Summer nostalgia\" list is chosen (shared title key `home.section.seasonal.summer.nostalgia` from title_key on the row). Shown as the row heading on every client."
+  },
+  "home.section.seasonal.summerBlockbuster.blockbusters": "Summer Blockbusters",
+  "@home.section.seasonal.summerBlockbuster.blockbusters": {
+    "description": "Title a Seasonal Picks row shows while Summer is in season and its \"Blockbusters\" list is chosen (shared title key `home.section.seasonal.summerBlockbuster.blockbusters` from title_key on the row). Shown as the row heading on every client."
+  },
+  "home.section.seasonal.summerBlockbuster.classicSummer": "Classic Summer Movies",
+  "@home.section.seasonal.summerBlockbuster.classicSummer": {
+    "description": "Title a Seasonal Picks row shows while Summer is in season and its \"Classic summer movies\" list is chosen (shared title key `home.section.seasonal.summerBlockbuster.classicSummer` from title_key on the row). Shown as the row heading on every client."
+  },
+  "home.section.seasonal.summerBlockbuster.nostalgia": "Summer Nostalgia",
+  "@home.section.seasonal.summerBlockbuster.nostalgia": {
+    "description": "Title a Seasonal Picks row shows while Summer is in season and its \"Summer nostalgia\" list is chosen (shared title key `home.section.seasonal.summerBlockbuster.nostalgia` from title_key on the row). Shown as the row heading on every client."
+  },
+  "home.section.seasonal.thanksgiving.favorites": "Thanksgiving Movies",
+  "@home.section.seasonal.thanksgiving.favorites": {
+    "description": "Title a Seasonal Picks row shows while Thanksgiving is in season and its \"Thanksgiving movies\" list is chosen (shared title key `home.section.seasonal.thanksgiving.favorites` from title_key on the row). Shown as the row heading on every client."
+  },
+  "home.section.seasonal.thanksgiving.feelGood": "Feel-Good Favorites",
+  "@home.section.seasonal.thanksgiving.feelGood": {
+    "description": "Title a Seasonal Picks row shows while Thanksgiving is in season and its \"Feel-good favorites\" list is chosen (shared title key `home.section.seasonal.thanksgiving.feelGood` from title_key on the row). Shown as the row heading on every client."
+  },
+  "home.section.seasonal.valentines.favorites": "Valentine's Favorites",
+  "@home.section.seasonal.valentines.favorites": {
+    "description": "Title a Seasonal Picks row shows while Valentine's Day is in season and its \"Valentine's favorites\" list is chosen (shared title key `home.section.seasonal.valentines.favorites` from title_key on the row). Shown as the row heading on every client."
+  },
+  "home.section.seasonal.valentines.loveStories": "Classic Love Stories",
+  "@home.section.seasonal.valentines.loveStories": {
+    "description": "Title a Seasonal Picks row shows while Valentine's Day is in season and its \"Classic love stories\" list is chosen (shared title key `home.section.seasonal.valentines.loveStories` from title_key on the row). Shown as the row heading on every client."
+  },
+  "home.section.seasonal.valentines.romanticDramas": "Romantic Dramas",
+  "@home.section.seasonal.valentines.romanticDramas": {
+    "description": "Title a Seasonal Picks row shows while Valentine's Day is in season and its \"Romantic dramas\" list is chosen (shared title key `home.section.seasonal.valentines.romanticDramas` from title_key on the row). Shown as the row heading on every client."
+  },
+  "home.section.seasonal.valentines.romcoms": "Valentine's Rom-Coms",
+  "@home.section.seasonal.valentines.romcoms": {
+    "description": "Title a Seasonal Picks row shows while Valentine's Day is in season and its \"Rom-coms\" list is chosen (shared title key `home.section.seasonal.valentines.romcoms` from title_key on the row). Shown as the row heading on every client."
+  },
   "home.section.seasonalPicks": "Seasonal Picks",
   "@home.section.seasonalPicks": {
     "description": "Title of a home or library page row the server created (shared title key `home.section.seasonalPicks` from section title_key). Shown as a row heading on every client."
@@ -16043,6 +16600,10 @@
         "type": "String"
       }
     }
+  },
+  "home.section.topPicksToday": "Top Picks Today",
+  "@home.section.topPicksToday": {
+    "description": "Name of the Top Picks Today preset in the Add row gallery (shared key `home.section.topPicksToday`, sent as display_name_key). A heading over the best matches for the profile's strongest taste, which a section made from the preset can show as its title."
   },
   "home.section.topRated": "Top Rated",
   "@home.section.topRated": {
@@ -39957,10 +40518,11 @@
   },
   "shuffle.nothingToPlay": "Nothing here can be played.",
   "@shuffle.nothingToPlay": {
-    "description": "Roku and Apple iOS and tvOS shuffle error reason when the library or collection has no playable items.",
+    "description": "Roku and Apple iOS and tvOS shuffle error reason when the library or collection has no playable items. Web: error toast when starting a shuffle was refused because nothing in the scope can play.",
     "x-platforms": [
+      "apple",
       "roku",
-      "apple"
+      "web"
     ]
   },
   "shuffle.ok": "OK",
@@ -62788,6 +63350,13 @@
       "web"
     ]
   },
+  "web.admin.common.jobHistory.jobType.backupRestore": "Backup Restore",
+  "@web.admin.common.jobHistory.jobType.backupRestore": {
+    "description": "Web admin, Job history: badge naming a backup restore job.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.common.jobHistory.jobType.catalogExport": "Catalog Export",
   "@web.admin.common.jobHistory.jobType.catalogExport": {
     "description": "Web admin, Job History panel: badge naming a job's kind.",
@@ -62826,6 +63395,20 @@
   "web.admin.common.jobHistory.jobType.libraryRefresh": "Library Refresh",
   "@web.admin.common.jobHistory.jobType.libraryRefresh": {
     "description": "Web admin, Job History panel: badge naming a job's kind.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.common.jobHistory.jobType.storageTransition": "Storage Transition",
+  "@web.admin.common.jobHistory.jobType.storageTransition": {
+    "description": "Web admin, Job history: badge naming a job that moves stored media images between storage backends.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.common.jobHistory.jobType.templateBundleApply": "Template Bundle Apply",
+  "@web.admin.common.jobHistory.jobType.templateBundleApply": {
+    "description": "Web admin, Job history: badge naming a job that applies a template bundle.",
     "x-platforms": [
       "web"
     ]
@@ -66307,6 +66890,20 @@
   "web.admin.common.taskStatus.failed": "failed",
   "@web.admin.common.taskStatus.failed": {
     "description": "Web admin, task status badge (Tasks page, task detail, marker tasks): status of a task run that failed. Lower case.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.common.taskStatus.queued": "queued",
+  "@web.admin.common.taskStatus.queued": {
+    "description": "Status badge for an admin job or task that is queued, in the admin job history and task lists. Lowercase like the other status badges.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.common.taskStatus.running": "running",
+  "@web.admin.common.taskStatus.running": {
+    "description": "Status badge for an admin job or task that is running, in the admin job history and task lists. Lowercase like the other status badges.",
     "x-platforms": [
       "web"
     ]
@@ -69971,6 +70568,25 @@
       "web"
     ]
   },
+  "web.admin.dashboard.widgets.transcodeNodes.buildDiffersFlag": "Build differs",
+  "@web.admin.dashboard.widgets.transcodeNodes.buildDiffersFlag": {
+    "description": "Web admin, dashboard Nodes widget: warning flag beside a node running a different build than the server.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgets.transcodeNodes.buildDiffersTitle": "Build differs from the server. {detail}",
+  "@web.admin.dashboard.widgets.transcodeNodes.buildDiffersTitle": {
+    "description": "Web admin, dashboard Nodes widget: tooltip of the build warning flag. {detail}: the node's revision and build date.",
+    "placeholders": {
+      "detail": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.dashboard.widgets.transcodeNodes.buildOutdated": "build {label} · differs from server",
   "@web.admin.dashboard.widgets.transcodeNodes.buildOutdated": {
     "description": "Web admin, Dashboard page, Nodes widget: the build a node reported, flagged because it differs from this server's. {label}: build number and version, such as \"7 · aaaaaaaa\".",
@@ -70002,6 +70618,18 @@
       "web"
     ]
   },
+  "web.admin.dashboard.widgets.transcodeNodes.capSeparator": "/ {max}",
+  "@web.admin.dashboard.widgets.transcodeNodes.capSeparator": {
+    "description": "Web admin, dashboard Nodes widget: the capacity after a node's current value, such as \"3 / 8\" or \"120 / 500\". {max}: the configured maximum, already formatted.",
+    "placeholders": {
+      "max": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.dashboard.widgets.transcodeNodes.checked": "checked {time}",
   "@web.admin.dashboard.widgets.transcodeNodes.checked": {
     "description": "Web admin, Dashboard page, Nodes widget: when the node's health was last checked. {time}: relative time such as \"5m ago\", or the text \"never checked\".",
@@ -70010,6 +70638,34 @@
         "type": "String"
       }
     },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgets.transcodeNodes.column.active": "Active",
+  "@web.admin.dashboard.widgets.transcodeNodes.column.active": {
+    "description": "Web admin, dashboard Nodes widget: table column heading for a node's running work count.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgets.transcodeNodes.column.build": "Build",
+  "@web.admin.dashboard.widgets.transcodeNodes.column.build": {
+    "description": "Web admin, dashboard Nodes widget: table column heading for a node's software build.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgets.transcodeNodes.column.mbps": "Mbps",
+  "@web.admin.dashboard.widgets.transcodeNodes.column.mbps": {
+    "description": "Web admin, dashboard Nodes widget: table column heading for a node's egress in megabits per second.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgets.transcodeNodes.column.node": "Node",
+  "@web.admin.dashboard.widgets.transcodeNodes.column.node": {
+    "description": "Web admin, dashboard Nodes widget: table column heading for the node name.",
     "x-platforms": [
       "web"
     ]
@@ -70028,9 +70684,36 @@
       "web"
     ]
   },
+  "web.admin.dashboard.widgets.transcodeNodes.groupCount": "{count, plural, one {# group} other {# groups}}",
+  "@web.admin.dashboard.widgets.transcodeNodes.groupCount": {
+    "description": "Web admin, dashboard Nodes widget header summary: number of node groups. {count}: group count.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.dashboard.widgets.transcodeNodes.healthy": "Healthy",
   "@web.admin.dashboard.widgets.transcodeNodes.healthy": {
     "description": "Web admin, Dashboard page, Nodes widget: status of a node passing health checks.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgets.transcodeNodes.healthyCount": "{healthy}/{enabled} healthy",
+  "@web.admin.dashboard.widgets.transcodeNodes.healthyCount": {
+    "description": "Web admin, dashboard Nodes widget header summary: healthy nodes out of enabled nodes. {healthy}: healthy node count; {enabled}: enabled node count.",
+    "placeholders": {
+      "healthy": {
+        "type": "int"
+      },
+      "enabled": {
+        "type": "int"
+      }
+    },
     "x-platforms": [
       "web"
     ]
@@ -70094,9 +70777,36 @@
       "web"
     ]
   },
+  "web.admin.dashboard.widgets.transcodeNodes.loadPercent": "{percent}%",
+  "@web.admin.dashboard.widgets.transcodeNodes.loadPercent": {
+    "description": "Web admin, dashboard Nodes widget: a node's CPU, RAM or GPU load. {percent}: whole-number percentage.",
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.dashboard.widgets.transcodeNodes.manage": "Manage ›",
   "@web.admin.dashboard.widgets.transcodeNodes.manage": {
     "description": "Web admin, Dashboard page, Nodes widget: link to the Nodes admin page.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgets.transcodeNodes.meterLabel": "{node} {metric}",
+  "@web.admin.dashboard.widgets.transcodeNodes.meterLabel": {
+    "description": "Web admin, dashboard Nodes widget: accessible name of a node's load meter. {node}: node name; {metric}: the reading, such as \"CPU\" or \"RAM\".",
+    "placeholders": {
+      "node": {
+        "type": "String"
+      },
+      "metric": {
+        "type": "String"
+      }
+    },
     "x-platforms": [
       "web"
     ]
@@ -70123,6 +70833,76 @@
   "web.admin.dashboard.widgets.transcodeNodes.revisionUnavailable": "Revision unavailable",
   "@web.admin.dashboard.widgets.transcodeNodes.revisionUnavailable": {
     "description": "Web admin, Dashboard page, Nodes widget: tooltip part when the node reported no revision.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgets.transcodeNodes.staleDisabledTitle": "This node is switched off, so health checks no longer update it.",
+  "@web.admin.dashboard.widgets.transcodeNodes.staleDisabledTitle": {
+    "description": "Web admin, dashboard Nodes widget: tooltip on the Active and Mbps cells of a disabled node, whose counts are not current.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgets.transcodeNodes.staleUnreachableTitle": "The last health check did not reach this node.",
+  "@web.admin.dashboard.widgets.transcodeNodes.staleUnreachableTitle": {
+    "description": "Web admin, dashboard Nodes widget: tooltip on the Active and Mbps cells of an unhealthy node, whose counts are not current.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgets.transcodeNodes.storageFlag": "Storage {fill}%",
+  "@web.admin.dashboard.widgets.transcodeNodes.storageFlag": {
+    "description": "Web admin, dashboard Nodes widget: warning flag beside a node whose transcode directory is nearly full. {fill}: whole-number percent full.",
+    "placeholders": {
+      "fill": {
+        "type": "int"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgets.transcodeNodes.storageTitle": "Transcode directory {fill}% full. {detail}",
+  "@web.admin.dashboard.widgets.transcodeNodes.storageTitle": {
+    "description": "Web admin, dashboard Nodes widget: tooltip of the storage warning flag. {fill}: whole-number percent full; {detail}: sentence with the disk reading.",
+    "placeholders": {
+      "fill": {
+        "type": "int"
+      },
+      "detail": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgets.transcodeNodes.streamCount": "{count, plural, one {{count_text} stream} other {{count_text} streams}}",
+  "@web.admin.dashboard.widgets.transcodeNodes.streamCount": {
+    "description": "Web admin, dashboard Nodes widget header summary: active relayed streams across proxy nodes. {count}: stream count for plural; {count_text}: the count formatted for display.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgets.transcodeNodes.streamsAbbr": "strm",
+  "@web.admin.dashboard.widgets.transcodeNodes.streamsAbbr": {
+    "description": "Web admin, dashboard Nodes widget: short unit after a proxy node's active stream count; its tooltip is the full word.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgets.transcodeNodes.streamsTitle": "streams",
+  "@web.admin.dashboard.widgets.transcodeNodes.streamsTitle": {
+    "description": "Web admin, dashboard Nodes widget: tooltip of the short unit after a proxy node's active count.",
     "x-platforms": [
       "web"
     ]
@@ -70172,6 +70952,35 @@
   "web.admin.dashboard.widgets.transcodeNodes.title": "Nodes",
   "@web.admin.dashboard.widgets.transcodeNodes.title": {
     "description": "Web admin, Dashboard page, Nodes widget: card title (remote transcode and streaming nodes).",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgets.transcodeNodes.transcodeCount": "{count, plural, one {{count_text} transcode} other {{count_text} transcodes}}",
+  "@web.admin.dashboard.widgets.transcodeNodes.transcodeCount": {
+    "description": "Web admin, dashboard Nodes widget header summary: active transcodes across transcode nodes. {count}: transcode count for plural; {count_text}: the count formatted for display.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgets.transcodeNodes.transcodesAbbr": "trns",
+  "@web.admin.dashboard.widgets.transcodeNodes.transcodesAbbr": {
+    "description": "Web admin, dashboard Nodes widget: short unit after a transcode node's active transcode count; its tooltip is the full word.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgets.transcodeNodes.transcodesTitle": "transcodes",
+  "@web.admin.dashboard.widgets.transcodeNodes.transcodesTitle": {
+    "description": "Web admin, dashboard Nodes widget: tooltip of the short unit after a transcode node's active count.",
     "x-platforms": [
       "web"
     ]
@@ -76636,6 +77445,322 @@
       "web"
     ]
   },
+  "web.admin.errors.activityCursorRepeated": "Activity cursor repeated. Reload history.",
+  "@web.admin.errors.activityCursorRepeated": {
+    "description": "Web admin, client error message. Error when the IP activity listing's paging loops.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.activityItemsInvalid": "Invalid activity items. Reload history.",
+  "@web.admin.errors.activityItemsInvalid": {
+    "description": "Web admin, client error message. Error when IP activity entries are malformed.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.activityPageInvalid": "Invalid activity page. Reload history.",
+  "@web.admin.errors.activityPageInvalid": {
+    "description": "Web admin, client error message. Error when a page of IP activity is malformed.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.apiKeyCursorRepeated": "Repeated API key cursor. Reload the list.",
+  "@web.admin.errors.apiKeyCursorRepeated": {
+    "description": "Web admin, client error message. Error when the API key listing's paging loops.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.apiKeyPaginationInvalid": "Invalid API key pagination. Reload the list.",
+  "@web.admin.errors.apiKeyPaginationInvalid": {
+    "description": "Web admin, client error message. Error when the API key listing's paging is malformed.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.apiKeyReloadBeforeSaving": "Reload this API key before saving: a strong ETag is required.",
+  "@web.admin.errors.apiKeyReloadBeforeSaving": {
+    "description": "Web admin, client error message. Error when an API key can't be saved because its version is unknown.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.apiKeysProfileChanged": "Reload API keys after changing profiles.",
+  "@web.admin.errors.apiKeysProfileChanged": {
+    "description": "Web admin, client error message. Error when the profile changed while API keys were loading.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.artworkCacheIncomplete": "Artwork caching did not finish. Inspect administrator diagnostics for details.",
+  "@web.admin.errors.artworkCacheIncomplete": {
+    "description": "Web admin, client error message. Warning on a finished item-refresh job: some artwork was not cached.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.artworkUpdateFailed": "Artwork update failed",
+  "@web.admin.errors.artworkUpdateFailed": {
+    "description": "Web admin, client error message. Fallback reason when saving a collection's poster or backdrop fails without a message.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.catalogRevisionMissing": "Catalog revision unavailable. Reload before editing.",
+  "@web.admin.errors.catalogRevisionMissing": {
+    "description": "Web admin, client error message. Error when plugin catalog settings can't be saved because their version is unknown.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.collectionOrderChanged": "Collection order changed while loading. Reload before reordering.",
+  "@web.admin.errors.collectionOrderChanged": {
+    "description": "Web admin, client error message. Error when collections were reordered elsewhere while the order was loading.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.devicesTooMany": "Too many devices to display. Reload the list.",
+  "@web.admin.errors.devicesTooMany": {
+    "description": "Web admin, client error message. Error when the device list is longer than the page can show.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.diagnosticDownloadFailed": "Diagnostic report download failed ({status}).",
+  "@web.admin.errors.diagnosticDownloadFailed": {
+    "description": "Web admin, client error message when downloading a diagnostic report fails. {status}: HTTP status code.",
+    "placeholders": {
+      "status": {
+        "type": "int"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.diagnosticFormatUnexpected": "The server returned an unexpected diagnostic report format.",
+  "@web.admin.errors.diagnosticFormatUnexpected": {
+    "description": "Web admin, client error message. Error when a downloaded diagnostic report is in an unknown format.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.diagnosticsAvailabilityUnknown": "Unrecognized diagnostics availability. Reload before changing upload settings.",
+  "@web.admin.errors.diagnosticsAvailabilityUnknown": {
+    "description": "Web admin, client error message. Error when the server reports a diagnostics upload state this page doesn't know.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.historyImportConfigReload": "Reload this configuration before saving.",
+  "@web.admin.errors.historyImportConfigReload": {
+    "description": "Web admin, client error message. Error when a history import configuration can't be saved because its version is unknown.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.historyImportPageIncomplete": "Incomplete history import page. Reload to try again.",
+  "@web.admin.errors.historyImportPageIncomplete": {
+    "description": "Web admin, client error message. Error when a page of history import results is incomplete.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.historyImportStatusMissing": "The accepted import did not include its expected status location. Refresh runs before trying again.",
+  "@web.admin.errors.historyImportStatusMissing": {
+    "description": "Web admin, client error message. Error after starting a history import when the server did not say where to follow its progress.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.imageChoicesChanged": "Image choices changed. Reload to try again.",
+  "@web.admin.errors.imageChoicesChanged": {
+    "description": "Web admin, client error message. Error when the list of artwork choices changed while it was being loaded.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.integrationPageIncomplete": "Incomplete integration page. Reload to try again.",
+  "@web.admin.errors.integrationPageIncomplete": {
+    "description": "Web admin, client error message. Error when a page of request integrations is incomplete.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.itemFilesIncomplete": "Incomplete item file list. Reload to try again.",
+  "@web.admin.errors.itemFilesIncomplete": {
+    "description": "Web admin, client error message. Error when an item's file list is incomplete.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.layoutRevisionMissing": "Server layout write revision missing; reload before saving again.",
+  "@web.admin.errors.layoutRevisionMissing": {
+    "description": "Web admin, client error message. Error when the dashboard layout can't be saved because its version is unknown.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.nodeWriteAckMissing": "Node write acknowledgement is unavailable. Inspect current state before saving again.",
+  "@web.admin.errors.nodeWriteAckMissing": {
+    "description": "Web admin, client error message. Error when the server's reply to a node change can't be confirmed.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.nodesReloadReopen": "Reload nodes and reopen this action to obtain its original version.",
+  "@web.admin.errors.nodesReloadReopen": {
+    "description": "Web admin, client error message. Error when a node action can't be saved because its version is unknown.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.playbackHistoryInvalid": "Invalid playback history page. Reload the page.",
+  "@web.admin.errors.playbackHistoryInvalid": {
+    "description": "Web admin, client error message. Error when a page of playback history is malformed.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.requestPageIncomplete": "Incomplete request page. Reload to try again.",
+  "@web.admin.errors.requestPageIncomplete": {
+    "description": "Web admin, client error message. Error when a page of requests is incomplete.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.requestsEditorReload": "Reload this editor before saving.",
+  "@web.admin.errors.requestsEditorReload": {
+    "description": "Web admin, client error message. Error when a Requests setting can't be saved because its version is unknown.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.scheduleRevisionMissing": "Schedule revision unavailable. Reload before editing.",
+  "@web.admin.errors.scheduleRevisionMissing": {
+    "description": "Web admin, client error message. Error when a task schedule can't be saved because its version is unknown.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.seekPreviewsNoneQueued": "No seek previews were queued",
+  "@web.admin.errors.seekPreviewsNoneQueued": {
+    "description": "Web admin, client error message. Toast after asking to generate seek previews for an item when no file needed one.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.seekPreviewsQueueFailed": "Could not queue seek previews",
+  "@web.admin.errors.seekPreviewsQueueFailed": {
+    "description": "Web admin, client error message. Toast fallback when queueing seek previews fails without a message.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.seekPreviewsQueued": "{count, plural, one {Seek previews queued for # file} other {Seek previews queued for # files}}",
+  "@web.admin.errors.seekPreviewsQueued": {
+    "description": "Web admin, toast after asking to generate seek previews for an item. {count}: number of files queued.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.sessionsTooMany": "Too many sessions to display. Reload the list.",
+  "@web.admin.errors.sessionsTooMany": {
+    "description": "Web admin, client error message. Error when the session list is longer than the page can show.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.settingsPageInvalid": "Invalid settings page. Reload the settings.",
+  "@web.admin.errors.settingsPageInvalid": {
+    "description": "Web admin, client error message. Shown as an error when the server's settings listing is malformed or cut short.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.subtitleDeleteAttempted": "This deletion was already attempted. Close and review the subtitle again.",
+  "@web.admin.errors.subtitleDeleteAttempted": {
+    "description": "Web admin, client error message. Error when a subtitle delete confirmation is used a second time.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.subtitleDownloadFailed": "Subtitle download failed ({status}).",
+  "@web.admin.errors.subtitleDownloadFailed": {
+    "description": "Web admin, client error message when downloading a subtitle file fails. {status}: HTTP status code.",
+    "placeholders": {
+      "status": {
+        "type": "int"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.subtitleDownloadUnexpected": "Unexpected subtitle download response.",
+  "@web.admin.errors.subtitleDownloadUnexpected": {
+    "description": "Web admin, client error message. Error when a downloaded subtitle file is not what was asked for.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.subtitleIdentityChanged": "Subtitle identity changed. Reload the list.",
+  "@web.admin.errors.subtitleIdentityChanged": {
+    "description": "Web admin, client error message. Error when the subtitle being edited no longer matches the list.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.subtitleListInvalid": "Invalid subtitle list. Reload the page.",
+  "@web.admin.errors.subtitleListInvalid": {
+    "description": "Web admin, client error message. Error when the subtitle listing is malformed.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.subtitleValidatorRequired": "A strong subtitle edit validator is required. Reopen the editor.",
+  "@web.admin.errors.subtitleValidatorRequired": {
+    "description": "Web admin, client error message. Error when a subtitle edit can't be saved because its version is unknown.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.translationCancelFailed": "Failed to cancel translation",
+  "@web.admin.errors.translationCancelFailed": {
+    "description": "Web admin, client error message. Toast fallback when canceling a library's translation job fails without a message.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.userPaginationInvalid": "Invalid user pagination. Reload the list.",
+  "@web.admin.errors.userPaginationInvalid": {
+    "description": "Web admin, client error message. Error when the user listing's paging is malformed.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.userReloadBeforeSaving": "Reload this user before saving: a strong ETag is required.",
+  "@web.admin.errors.userReloadBeforeSaving": {
+    "description": "Web admin, client error message. Error when a user can't be saved because its version is unknown.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.errors.watchHistoryInvalid": "Invalid watch history page. Reload the page.",
+  "@web.admin.errors.watchHistoryInvalid": {
+    "description": "Web admin, client error message. Error when a page of a user's watch history is malformed.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.history.column.ended": "Ended",
   "@web.admin.history.column.ended": {
     "description": "Web: admin Playback History page: table column header for when the play ended.",
@@ -78654,6 +79779,27 @@
         "type": "String"
       }
     },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.homeRows.row.cantCopyToLibraries": "This row can't be added to other libraries.",
+  "@web.admin.homeRows.row.cantCopyToLibraries": {
+    "description": "Web admin Home sections: error shown when Add to other libraries is used on a row that cannot be copied.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.homeRows.row.moveFailed": "Could not move this row",
+  "@web.admin.homeRows.row.moveFailed": {
+    "description": "Web admin Home sections: error shown when moving a row failed and the server gave no message.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.homeRows.row.saveFailed": "Could not save this row",
+  "@web.admin.homeRows.row.saveFailed": {
+    "description": "Web admin Home sections: error shown when saving a row failed and the server gave no message.",
     "x-platforms": [
       "web"
     ]
@@ -84246,6 +85392,39 @@
       "web"
     ]
   },
+  "web.admin.plugins.detail.updateFailed": "<b>Silo couldn't update {name} to {version}.</b> {reason}",
+  "@web.admin.plugins.detail.updateFailed": {
+    "description": "Web admin, plugin page: warning banner after a failed update. <b>…</b> is bold. {name}: the plugin's name; {version}: the version it tried; {reason}: the reason text sent by the server.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "version": {
+        "type": "String"
+      },
+      "reason": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.plugins.detail.updateFailedStays": "It stays on version {version}. Last tried {date}.",
+  "@web.admin.plugins.detail.updateFailedStays": {
+    "description": "Web admin, plugin page: second line of the failed-update banner. {version}: the version still installed; {date}: date and time of the last failed attempt, already formatted.",
+    "placeholders": {
+      "version": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.plugins.detail.updateTo": "Update to {version}",
   "@web.admin.plugins.detail.updateTo": {
     "description": "Web admin, plugin page: menu item that installs a new version. {version}: the new version.",
@@ -85351,6 +86530,18 @@
   "web.admin.plugins.tile.updateAvailable": "{version} available",
   "@web.admin.plugins.tile.updateAvailable": {
     "description": "Web admin, Plugins page, plugin tile: badge on an installed plugin with a newer version. {version}: the new version.",
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.plugins.tile.updateFailed": "Update to {version} failed",
+  "@web.admin.plugins.tile.updateFailed": {
+    "description": "Web admin, Plugins page, installed plugin tile footer: shown when Silo refused or failed an automatic update. {version}: the version it tried.",
     "placeholders": {
       "version": {
         "type": "String"
@@ -107931,6 +109122,13 @@
       "web"
     ]
   },
+  "web.admin.tasks.detail.maxRuntimeLabel": "Max runtime:",
+  "@web.admin.tasks.detail.maxRuntimeLabel": {
+    "description": "Web admin, task detail page: schedule editor label before a trigger's maximum runtime in minutes; the server stops a run that exceeds it.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.tasks.detail.maxRuntimeNone": "None",
   "@web.admin.tasks.detail.maxRuntimeNone": {
     "description": "Web admin, task detail page: placeholder of the empty maximum runtime field (no limit).",
@@ -108353,6 +109551,13 @@
       "web"
     ]
   },
+  "web.admin.tasks.refreshReason.providerIdIncomplete": "Provider ID incomplete",
+  "@web.admin.tasks.refreshReason.providerIdIncomplete": {
+    "description": "Web admin, Tasks page and task detail: label of the refresh-queue reason where an item is missing a provider ID that other providers could supply.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.tasks.refreshReason.refreshFailure": "Refresh failure",
   "@web.admin.tasks.refreshReason.refreshFailure": {
     "description": "Web admin, Scheduled Tasks page and task detail page: reason an item is queued for a metadata refresh: an earlier refresh failed.",
@@ -108465,6 +109670,930 @@
   "web.admin.tasks.row.stopping": "Stopping...",
   "@web.admin.tasks.row.stopping": {
     "description": "Web admin, Scheduled Tasks page: button label while a task run is being stopped.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.autoscan_poll.description": "Poll installed scan-source providers for changes and enqueue rescans",
+  "@web.admin.tasks.task.autoscan_poll.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `autoscan_poll`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.autoscan_poll.name": "Autoscan poll",
+  "@web.admin.tasks.task.autoscan_poll.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `autoscan_poll`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.autoscan_webhook_retry.description": "Retry durably accepted Autoscan webhook deliveries",
+  "@web.admin.tasks.task.autoscan_webhook_retry.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `autoscan_webhook_retry`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.autoscan_webhook_retry.name": "Autoscan webhook retry",
+  "@web.admin.tasks.task.autoscan_webhook_retry.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `autoscan_webhook_retry`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.backfill_ebook_metadata.description": "Enriches the legacy ebook backlog without competing with scheduled metadata sync",
+  "@web.admin.tasks.task.backfill_ebook_metadata.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `backfill_ebook_metadata`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.backfill_ebook_metadata.name": "Backfill Ebook Metadata",
+  "@web.admin.tasks.task.backfill_ebook_metadata.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `backfill_ebook_metadata`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.backfill_hdr10_plus.description": "Reads the first frame of HDR video scanned before Silo detected HDR10+, once per file, so HDR10+ files are labeled HDR10+ instead of HDR10.",
+  "@web.admin.tasks.task.backfill_hdr10_plus.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `backfill_hdr10_plus`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.backfill_hdr10_plus.name": "Detect HDR10+ Video",
+  "@web.admin.tasks.task.backfill_hdr10_plus.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `backfill_hdr10_plus`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.backfill_matroska_track_numbers.description": "Reads the track list of MKV files with text subtitles scanned before Silo recorded subtitle track numbers, once per file, so apps can show embedded subtitles without server extraction.",
+  "@web.admin.tasks.task.backfill_matroska_track_numbers.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `backfill_matroska_track_numbers`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.backfill_matroska_track_numbers.name": "Record Matroska Subtitle Track Numbers",
+  "@web.admin.tasks.task.backfill_matroska_track_numbers.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `backfill_matroska_track_numbers`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.backfill_media_item_aliases.description": "Seeds searchable aliases from existing original and localized media titles in resumable batches.",
+  "@web.admin.tasks.task.backfill_media_item_aliases.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `backfill_media_item_aliases`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.backfill_media_item_aliases.name": "Backfill Media Item Aliases",
+  "@web.admin.tasks.task.backfill_media_item_aliases.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `backfill_media_item_aliases`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.backfill_metadata_images.description": "Manually discovers and caches missing provider artwork across the full catalog",
+  "@web.admin.tasks.task.backfill_metadata_images.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `backfill_metadata_images`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.backfill_metadata_images.name": "Backfill Metadata Images",
+  "@web.admin.tasks.task.backfill_metadata_images.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `backfill_metadata_images`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.backup.description": "Backs up the database and uploaded files to the backup destination, then deletes backups beyond the configured count",
+  "@web.admin.tasks.task.backup.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `backup`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.backup.name": "Back Up Server",
+  "@web.admin.tasks.task.backup.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `backup`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.bulk_metadata_enrichment.description": "Looks up movies and series with enrichment providers that batch requests, such as MDBList, many titles at a time",
+  "@web.admin.tasks.task.bulk_metadata_enrichment.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `bulk_metadata_enrichment`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.bulk_metadata_enrichment.name": "Bulk Metadata Enrichment",
+  "@web.admin.tasks.task.bulk_metadata_enrichment.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `bulk_metadata_enrichment`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.cache_metadata_images.description": "Processes only artwork already queued by scans, refreshes, and metadata changes",
+  "@web.admin.tasks.task.cache_metadata_images.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `cache_metadata_images`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.cache_metadata_images.name": "Cache Metadata Images",
+  "@web.admin.tasks.task.cache_metadata_images.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `cache_metadata_images`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.chapter_thumbnail_backfill.description": "Generates missing chapter thumbnails for opted-in libraries",
+  "@web.admin.tasks.task.chapter_thumbnail_backfill.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `chapter_thumbnail_backfill`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.chapter_thumbnail_backfill.name": "Chapter Thumbnail Backfill",
+  "@web.admin.tasks.task.chapter_thumbnail_backfill.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `chapter_thumbnail_backfill`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.check_plugin_updates.description": "Fetches plugin repositories and applies or records available plugin updates",
+  "@web.admin.tasks.task.check_plugin_updates.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `check_plugin_updates`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.check_plugin_updates.name": "Check Plugin Updates",
+  "@web.admin.tasks.task.check_plugin_updates.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `check_plugin_updates`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.cleanup_activity_log.description": "Prunes expired activity log rows and partitions",
+  "@web.admin.tasks.task.cleanup_activity_log.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `cleanup_activity_log`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.cleanup_activity_log.name": "Cleanup Activity Log",
+  "@web.admin.tasks.task.cleanup_activity_log.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `cleanup_activity_log`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.cleanup_artwork_revisions.description": "Deletes unpublished or displaced immutable artwork revisions after a grace period when no catalog record references them.",
+  "@web.admin.tasks.task.cleanup_artwork_revisions.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `cleanup_artwork_revisions`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.cleanup_artwork_revisions.name": "Clean Artwork Revisions",
+  "@web.admin.tasks.task.cleanup_artwork_revisions.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `cleanup_artwork_revisions`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.cleanup_auth_sessions.description": "Deletes login sessions whose expiry has passed, revoked or not",
+  "@web.admin.tasks.task.cleanup_auth_sessions.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `cleanup_auth_sessions`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.cleanup_auth_sessions.name": "Cleanup Expired Login Sessions",
+  "@web.admin.tasks.task.cleanup_auth_sessions.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `cleanup_auth_sessions`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.cleanup_autoscan_events.description": "Prunes old autoscan poll and webhook events from the Activity history",
+  "@web.admin.tasks.task.cleanup_autoscan_events.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `cleanup_autoscan_events`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.cleanup_autoscan_events.name": "Cleanup Autoscan Events",
+  "@web.admin.tasks.task.cleanup_autoscan_events.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `cleanup_autoscan_events`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.cleanup_catalog_search_index_events.description": "Prunes acknowledged catalog search outbox events after the recovery window.",
+  "@web.admin.tasks.task.cleanup_catalog_search_index_events.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `cleanup_catalog_search_index_events`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.cleanup_catalog_search_index_events.name": "Cleanup Catalog Search Index Events",
+  "@web.admin.tasks.task.cleanup_catalog_search_index_events.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `cleanup_catalog_search_index_events`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.cleanup_chapter_thumbnail_originals.description": "Deletes full-size chapter thumbnail images stored by earlier versions. Clients only load the 300px thumbnail; the task stops once storage holds none.",
+  "@web.admin.tasks.task.cleanup_chapter_thumbnail_originals.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `cleanup_chapter_thumbnail_originals`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.cleanup_chapter_thumbnail_originals.name": "Clean Up Full-Size Chapter Thumbnails",
+  "@web.admin.tasks.task.cleanup_chapter_thumbnail_originals.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `cleanup_chapter_thumbnail_originals`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.cleanup_client_diagnostics.description": "Prunes expired client diagnostic reports and orphaned bundles",
+  "@web.admin.tasks.task.cleanup_client_diagnostics.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `cleanup_client_diagnostics`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.cleanup_client_diagnostics.name": "Cleanup Client Diagnostics",
+  "@web.admin.tasks.task.cleanup_client_diagnostics.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `cleanup_client_diagnostics`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.cleanup_device_logins.description": "Deletes device sign-in requests long past their expiry",
+  "@web.admin.tasks.task.cleanup_device_logins.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `cleanup_device_logins`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.cleanup_device_logins.name": "Cleanup Expired Device Sign-in Requests",
+  "@web.admin.tasks.task.cleanup_device_logins.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `cleanup_device_logins`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.cleanup_oauth_flows.description": "Deletes OAuth sign-in flows long past their expiry",
+  "@web.admin.tasks.task.cleanup_oauth_flows.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `cleanup_oauth_flows`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.cleanup_oauth_flows.name": "Cleanup Expired OAuth Sign-in Flows",
+  "@web.admin.tasks.task.cleanup_oauth_flows.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `cleanup_oauth_flows`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.cleanup_operational_log.description": "Prunes expired operational log rows and partitions",
+  "@web.admin.tasks.task.cleanup_operational_log.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `cleanup_operational_log`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.cleanup_operational_log.name": "Cleanup Operational Log",
+  "@web.admin.tasks.task.cleanup_operational_log.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `cleanup_operational_log`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.cleanup_orphaned_media_items.description": "Deletes detached provisional media items that have no files, library memberships, or durable user/sync references.",
+  "@web.admin.tasks.task.cleanup_orphaned_media_items.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `cleanup_orphaned_media_items`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.cleanup_orphaned_media_items.name": "Clean Orphaned Media Items",
+  "@web.admin.tasks.task.cleanup_orphaned_media_items.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `cleanup_orphaned_media_items`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.cleanup_policy_decision_log.description": "Prunes expired policy decision log rows and partitions",
+  "@web.admin.tasks.task.cleanup_policy_decision_log.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `cleanup_policy_decision_log`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.cleanup_policy_decision_log.name": "Cleanup Policy Decision Log",
+  "@web.admin.tasks.task.cleanup_policy_decision_log.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `cleanup_policy_decision_log`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.cleanup_removed_media_images.description": "Deletes the chapter thumbnails and seek previews of media files removed from the catalog, and seek previews that were replaced, after a grace period.",
+  "@web.admin.tasks.task.cleanup_removed_media_images.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `cleanup_removed_media_images`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.cleanup_removed_media_images.name": "Clean Removed Media Images",
+  "@web.admin.tasks.task.cleanup_removed_media_images.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `cleanup_removed_media_images`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.cleanup_task_history.description": "Prunes old background task execution history",
+  "@web.admin.tasks.task.cleanup_task_history.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `cleanup_task_history`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.cleanup_task_history.name": "Cleanup Task History",
+  "@web.admin.tasks.task.cleanup_task_history.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `cleanup_task_history`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.contribute_markers.description": "Sends eligible intros and credits detected on this server to providers with automatic sharing enabled, and manual corrections a save could not deliver to providers that accept corrections.",
+  "@web.admin.tasks.task.contribute_markers.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `contribute_markers`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.contribute_markers.name": "Share detected markers",
+  "@web.admin.tasks.task.contribute_markers.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `contribute_markers`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.database_maintenance.description": "Prunes expired activity and policy logs, task history, autoscan events, login sessions, device sign-in requests, OAuth sign-in flows, search index events, and notifications, and prepares upcoming log partitions",
+  "@web.admin.tasks.task.database_maintenance.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `database_maintenance`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.database_maintenance.name": "Database Maintenance",
+  "@web.admin.tasks.task.database_maintenance.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `database_maintenance`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.detect_intro_markers.description": "Analyzes files for intros and credits in libraries with marker detection enabled.",
+  "@web.admin.tasks.task.detect_intro_markers.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `detect_intro_markers`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.detect_intro_markers.name": "Detect markers on this server",
+  "@web.admin.tasks.task.detect_intro_markers.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `detect_intro_markers`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.encode_download_artifacts.description": "Encodes queued remux/transcode download artifacts, recovers stranded jobs, and evicts old artifacts",
+  "@web.admin.tasks.task.encode_download_artifacts.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `encode_download_artifacts`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.encode_download_artifacts.name": "Prepare Download Artifacts",
+  "@web.admin.tasks.task.encode_download_artifacts.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `encode_download_artifacts`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.generate_extra_stills.description": "Takes a frame from each local extra that has no image file beside it",
+  "@web.admin.tasks.task.generate_extra_stills.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `generate_extra_stills`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.generate_extra_stills.name": "Generate Extra Thumbnails",
+  "@web.admin.tasks.task.generate_extra_stills.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `generate_extra_stills`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.match_media.description": "Matches unmatched media files to metadata from providers",
+  "@web.admin.tasks.task.match_media.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `match_media`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.match_media.name": "Match Media Files",
+  "@web.admin.tasks.task.match_media.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `match_media`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.notifications_retention.description": "Prunes old notifications and processed release events according to the retention settings.",
+  "@web.admin.tasks.task.notifications_retention.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `notifications_retention`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.notifications_retention.name": "Clean Up Notifications",
+  "@web.admin.tasks.task.notifications_retention.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `notifications_retention`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.queue_seek_previews.description": "Queues seek-bar previews for the video files of libraries that have them turned on, and requeues previews that no longer match their file or settings.",
+  "@web.admin.tasks.task.queue_seek_previews.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `queue_seek_previews`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.queue_seek_previews.name": "Queue Seek Previews",
+  "@web.admin.tasks.task.queue_seek_previews.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `queue_seek_previews`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.rebuild_catalog_search_index.description": "Rebuilds the configured Meilisearch catalog index from PostgreSQL.",
+  "@web.admin.tasks.task.rebuild_catalog_search_index.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `rebuild_catalog_search_index`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.rebuild_catalog_search_index.name": "Rebuild Catalog Search Index",
+  "@web.admin.tasks.task.rebuild_catalog_search_index.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `rebuild_catalog_search_index`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.rebuild_release_interest.description": "Recomputes which profiles care about which series (favorites, watchlist, watch progress) for new-episode notifications.",
+  "@web.admin.tasks.task.rebuild_release_interest.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `rebuild_release_interest`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.rebuild_release_interest.name": "Rebuild Notification Interest",
+  "@web.admin.tasks.task.rebuild_release_interest.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `rebuild_release_interest`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.recheck_external_identities.description": "Asks the external sign-in provider about accounts that hold API keys or idle sessions, and revokes the access of accounts the provider no longer admits",
+  "@web.admin.tasks.task.recheck_external_identities.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `recheck_external_identities`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.recheck_external_identities.name": "Re-check External Sign-in Accounts",
+  "@web.admin.tasks.task.recheck_external_identities.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `recheck_external_identities`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.reconcile_artwork_cache.description": "Manually verifies cached artwork against object storage; missing records may be reset across the full library and require an explicit metadata image backfill",
+  "@web.admin.tasks.task.reconcile_artwork_cache.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `reconcile_artwork_cache`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.reconcile_artwork_cache.name": "Reconcile Artwork Cache",
+  "@web.admin.tasks.task.reconcile_artwork_cache.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `reconcile_artwork_cache`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.reconcile_requests.description": "Checks approved and active media requests against Radarr, Sonarr, and the Silo catalog",
+  "@web.admin.tasks.task.reconcile_requests.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `reconcile_requests`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.reconcile_requests.name": "Reconcile Requests",
+  "@web.admin.tasks.task.reconcile_requests.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `reconcile_requests`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.reconcile_watch_history.description": "Re-resolves orphaned watch history rows against the current media catalog using stored stable identities.",
+  "@web.admin.tasks.task.reconcile_watch_history.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `reconcile_watch_history`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.reconcile_watch_history.name": "Reconcile Watch History",
+  "@web.admin.tasks.task.reconcile_watch_history.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `reconcile_watch_history`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.refresh_all_library_metadata.description": "Re-fetches provider metadata for every item in all enabled libraries. Runs only when started manually; large libraries can take hours and make many provider requests",
+  "@web.admin.tasks.task.refresh_all_library_metadata.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `refresh_all_library_metadata`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.refresh_all_library_metadata.name": "Refresh All Library Metadata",
+  "@web.admin.tasks.task.refresh_all_library_metadata.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `refresh_all_library_metadata`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.refresh_anime_ids.description": "Downloads the AniDB-based anime list that request routing uses to recognize anime TMDB does not tag",
+  "@web.admin.tasks.task.refresh_anime_ids.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `refresh_anime_ids`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.refresh_anime_ids.name": "Refresh Anime List",
+  "@web.admin.tasks.task.refresh_anime_ids.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `refresh_anime_ids`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.refresh_metadata.description": "Refreshes stale metadata from providers for existing media items",
+  "@web.admin.tasks.task.refresh_metadata.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `refresh_metadata`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.refresh_metadata.name": "Refresh Metadata",
+  "@web.admin.tasks.task.refresh_metadata.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `refresh_metadata`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.refresh_request_discover_lists.description": "Downloads the TMDB and MDBList lists behind the Requests Discover page's list rows",
+  "@web.admin.tasks.task.refresh_request_discover_lists.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `refresh_request_discover_lists`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.refresh_request_discover_lists.name": "Refresh Request Discover Lists",
+  "@web.admin.tasks.task.refresh_request_discover_lists.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `refresh_request_discover_lists`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.refresh_request_downloads.description": "Refreshes the download progress of media requests that Radarr, Sonarr, or another request plugin is downloading",
+  "@web.admin.tasks.task.refresh_request_downloads.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `refresh_request_downloads`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.refresh_request_downloads.name": "Refresh Request Downloads",
+  "@web.admin.tasks.task.refresh_request_downloads.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `refresh_request_downloads`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.refresh_seasonal_lists.description": "Downloads the curated MDBList lists behind Seasonal Picks home rows ahead of each holiday",
+  "@web.admin.tasks.task.refresh_seasonal_lists.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `refresh_seasonal_lists`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.refresh_seasonal_lists.name": "Refresh Seasonal Lists",
+  "@web.admin.tasks.task.refresh_seasonal_lists.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `refresh_seasonal_lists`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.refresh_series_air_dates.description": "Updates the latest-aired episode date of series whose next known episode has aired.",
+  "@web.admin.tasks.task.refresh_series_air_dates.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `refresh_series_air_dates`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.refresh_series_air_dates.name": "Refresh Series Air Dates",
+  "@web.admin.tasks.task.refresh_series_air_dates.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `refresh_series_air_dates`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.refresh_trending_discover.description": "Refreshes the persisted external trending lists (TMDB) for Trending Discover home sections and the calendar's Trending view",
+  "@web.admin.tasks.task.refresh_trending_discover.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `refresh_trending_discover`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.refresh_trending_discover.name": "Refresh Trending Discover",
+  "@web.admin.tasks.task.refresh_trending_discover.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `refresh_trending_discover`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.release_stored_artwork.description": "While provider artwork is not saved to storage, points stored artwork back at its providers and queues refreshes for artwork only a provider can replace",
+  "@web.admin.tasks.task.release_stored_artwork.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `release_stored_artwork`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.release_stored_artwork.name": "Release Stored Artwork",
+  "@web.admin.tasks.task.release_stored_artwork.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `release_stored_artwork`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.repair_provider_id_integrity.description": "Repairs drift between media_items provider ID columns and normalized provider ID rows.",
+  "@web.admin.tasks.task.repair_provider_id_integrity.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `repair_provider_id_integrity`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.repair_provider_id_integrity.name": "Repair Provider ID Integrity",
+  "@web.admin.tasks.task.repair_provider_id_integrity.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `repair_provider_id_integrity`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.scan_libraries.description": "Queues durable full-library scans for all enabled libraries; actual scan progress continues in Admin Libraries and Server Activity",
+  "@web.admin.tasks.task.scan_libraries.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `scan_libraries`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.scan_libraries.name": "Queue Media Library Scans",
+  "@web.admin.tasks.task.scan_libraries.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `scan_libraries`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.seed_content_availability.description": "Records the existing episode and movie back-catalog as already-released so new-content notifications only fire for items that arrive afterwards.",
+  "@web.admin.tasks.task.seed_content_availability.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `seed_content_availability`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.seed_content_availability.name": "Seed Content Availability",
+  "@web.admin.tasks.task.seed_content_availability.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `seed_content_availability`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.setting_mutations_retention.description": "Deletes expired settings-mutation idempotency receipts from every user's store.",
+  "@web.admin.tasks.task.setting_mutations_retention.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `setting_mutations_retention`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.setting_mutations_retention.name": "Clean Up Setting Mutation Receipts",
+  "@web.admin.tasks.task.setting_mutations_retention.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `setting_mutations_retention`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.summarize_api_usage.description": "Counts API requests per sign-in session for the dashboard's API clients card",
+  "@web.admin.tasks.task.summarize_api_usage.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `summarize_api_usage`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.summarize_api_usage.name": "Summarize API Usage",
+  "@web.admin.tasks.task.summarize_api_usage.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `summarize_api_usage`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.sweep_artwork_storage.description": "Deletes cached artwork objects that no catalog record references, reclaiming revisions the artwork garbage collector never saw",
+  "@web.admin.tasks.task.sweep_artwork_storage.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `sweep_artwork_storage`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.sweep_artwork_storage.name": "Sweep Artwork Storage",
+  "@web.admin.tasks.task.sweep_artwork_storage.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `sweep_artwork_storage`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.sweep_orphaned_media_images.description": "Finds stored chapter thumbnails and seek previews that nothing references any more and schedules them for deletion.",
+  "@web.admin.tasks.task.sweep_orphaned_media_images.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `sweep_orphaned_media_images`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.sweep_orphaned_media_images.name": "Sweep Orphaned Media Images",
+  "@web.admin.tasks.task.sweep_orphaned_media_images.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `sweep_orphaned_media_images`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.sync_audiobook_metadata.description": "Fetches metadata (cover art, overview, narrator) for audiobooks that have not yet been enriched",
+  "@web.admin.tasks.task.sync_audiobook_metadata.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `sync_audiobook_metadata`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.sync_audiobook_metadata.name": "Sync Audiobook Metadata",
+  "@web.admin.tasks.task.sync_audiobook_metadata.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `sync_audiobook_metadata`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.sync_catalog_search_index.description": "Builds or upgrades the Meilisearch catalog index when needed, then syncs pending catalog changes.",
+  "@web.admin.tasks.task.sync_catalog_search_index.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `sync_catalog_search_index`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.sync_catalog_search_index.name": "Sync Catalog Search Index",
+  "@web.admin.tasks.task.sync_catalog_search_index.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `sync_catalog_search_index`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.sync_collections.description": "Syncs collections that have a scheduled automatic sync",
+  "@web.admin.tasks.task.sync_collections.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `sync_collections`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.sync_collections.name": "Sync Collections",
+  "@web.admin.tasks.task.sync_collections.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `sync_collections`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.sync_ebook_metadata.description": "Fetches metadata for new ebooks and ebooks due for a recurring refresh",
+  "@web.admin.tasks.task.sync_ebook_metadata.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `sync_ebook_metadata`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.sync_ebook_metadata.name": "Sync Ebook Metadata",
+  "@web.admin.tasks.task.sync_ebook_metadata.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `sync_ebook_metadata`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.sync_manga_metadata.description": "Fetches metadata (cover art, overview, authors) for manga that have not yet been enriched",
+  "@web.admin.tasks.task.sync_manga_metadata.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `sync_manga_metadata`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.sync_manga_metadata.name": "Sync Manga Metadata",
+  "@web.admin.tasks.task.sync_manga_metadata.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `sync_manga_metadata`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.sync_markers.description": "Fetches missing markers from enabled online providers and refreshes saved markers. Requires Save to library.",
+  "@web.admin.tasks.task.sync_markers.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `sync_markers`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.sync_markers.name": "Sync online markers",
+  "@web.admin.tasks.task.sync_markers.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `sync_markers`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.sync_movie_box_sets.description": "Looks up which TMDB collection each movie belongs to in libraries with box sets on, and refreshes the collections' names, artwork, and order.",
+  "@web.admin.tasks.task.sync_movie_box_sets.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `sync_movie_box_sets`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.sync_movie_box_sets.name": "Sync Movie Box Sets",
+  "@web.admin.tasks.task.sync_movie_box_sets.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `sync_movie_box_sets`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.sync_podcast_feeds.description": "Refreshes RSS podcast feeds that are due for polling and upserts new episodes",
+  "@web.admin.tasks.task.sync_podcast_feeds.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `sync_podcast_feeds`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.sync_podcast_feeds.name": "Sync Podcast Feeds",
+  "@web.admin.tasks.task.sync_podcast_feeds.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `sync_podcast_feeds`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.sync_user_collections.description": "Refreshes profile-owned imported collections (TMDB, MDBList) on their schedule",
+  "@web.admin.tasks.task.sync_user_collections.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `sync_user_collections`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.sync_user_collections.name": "Sync User Collections",
+  "@web.admin.tasks.task.sync_user_collections.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `sync_user_collections`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.sync_watch_providers.description": "Checks linked watch providers for due automatic sync work",
+  "@web.admin.tasks.task.sync_watch_providers.description": {
+    "description": "Web admin, task detail page: description of the scheduled task with id `sync_watch_providers`. Shown only when the interface language has it; otherwise the server's English description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.sync_watch_providers.name": "Sync Watch Providers",
+  "@web.admin.tasks.task.sync_watch_providers.name": {
+    "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `sync_watch_providers`. Shown only when the interface language has it; otherwise the server's English name.",
     "x-platforms": [
       "web"
     ]
@@ -111939,6 +114068,76 @@
   "web.admin.users.detail.preferences.add.series": "Add a setting for this series",
   "@web.admin.users.detail.preferences.add.series": {
     "description": "Web: admin user detail, Preferences tab: button that opens the list of settings to add to the selected level (a series level).",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.preferences.category.appearance": "Appearance",
+  "@web.admin.users.detail.preferences.category.appearance": {
+    "description": "Web admin, user detail Preferences tab: heading of the group of appearance settings (setting category `appearance`).",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.preferences.category.catalog": "Catalog",
+  "@web.admin.users.detail.preferences.category.catalog": {
+    "description": "Web admin, user detail Preferences tab: heading of the group of catalog settings (setting category `catalog`).",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.preferences.category.downloads": "Downloads",
+  "@web.admin.users.detail.preferences.category.downloads": {
+    "description": "Web admin, user detail Preferences tab: heading of the group of download settings (setting category `downloads`).",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.preferences.category.nav": "Nav",
+  "@web.admin.users.detail.preferences.category.nav": {
+    "description": "Web admin, user detail Preferences tab: heading of the group of sidebar settings (setting category `nav`).",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.preferences.category.navigation": "Navigation",
+  "@web.admin.users.detail.preferences.category.navigation": {
+    "description": "Web admin, user detail Preferences tab: heading of the group of navigation settings (setting category `navigation`).",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.preferences.category.playback": "Playback",
+  "@web.admin.users.detail.preferences.category.playback": {
+    "description": "Web admin, user detail Preferences tab: heading of the group of playback settings (setting category `playback`).",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.preferences.category.player": "Player",
+  "@web.admin.users.detail.preferences.category.player": {
+    "description": "Web admin, user detail Preferences tab: heading of the group of player settings (setting category `player`).",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.preferences.category.requests": "Requests",
+  "@web.admin.users.detail.preferences.category.requests": {
+    "description": "Web admin, user detail Preferences tab: heading of the group of request settings (setting category `requests`).",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.preferences.category.search": "Search",
+  "@web.admin.users.detail.preferences.category.search": {
+    "description": "Web admin, user detail Preferences tab: heading of the group of search settings (setting category `search`).",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.preferences.category.watch_party": "Watch Party",
+  "@web.admin.users.detail.preferences.category.watch_party": {
+    "description": "Web admin, user detail Preferences tab: heading of the group of Watch Party settings (setting category `watch_party`).",
     "x-platforms": [
       "web"
     ]
@@ -116321,6 +118520,13 @@
       "web"
     ]
   },
+  "web.auth.loginSubtitle.default": "Sign in with an existing account.",
+  "@web.auth.loginSubtitle.default": {
+    "description": "Web sign-in, sign-up and password pages: the line under the server name when the administrator has not set a login subtitle. A subtitle the administrator typed shows as typed.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.auth.networkSignIn.addressRequired": "Open this server at its {provider} address to sign in this way.",
   "@web.auth.networkSignIn.addressRequired": {
     "description": "Web sign-in page: error for a network sign-in (such as Tailscale) opened from an address outside that network. {provider}: the provider's display name.",
@@ -117663,6 +119869,25 @@
       "web"
     ]
   },
+  "web.catalog.history.removeFailed": "Failed to remove history",
+  "@web.catalog.history.removeFailed": {
+    "description": "Web: error toast when removing watch data failed and the server gave no message.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.catalog.history.removed": "{count, plural, one {Removed watch data} other {Removed watch data for # items}}",
+  "@web.catalog.history.removed": {
+    "description": "Web: success toast after watch data was removed. {count}: how many items it was removed for.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "web.catalog.letters.letterNoTitles": "{letter}, no titles",
   "@web.catalog.letters.letterNoTitles": {
     "description": "Web: screen-reader label of a greyed-out letter in the A–Z jump bar with no titles under it. {letter}: the letter, or “Numbers and symbols”.",
@@ -118075,6 +120300,21 @@
     "x-platforms": [
       "web"
     ]
+  },
+  "web.catalog.page.titleCount": "{count, plural, one {{shown} title} other {{shown} titles}}",
+  "@web.catalog.page.titleCount": {
+    "description": "Web catalog page of a collection: title count in the filter bar. {count}: number of titles. {shown}: the same number as printed.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "shown": {
+        "type": "String"
+      }
+    }
   },
   "web.catalog.page.watchlist": "Watchlist",
   "@web.catalog.page.watchlist": {
@@ -119327,6 +121567,20 @@
   "web.collections.copy.addAsARow": "Add as a row",
   "@web.collections.copy.addAsARow": {
     "description": "Web collections: collection editor, button that opens the menu for adding the collection as a Home or library page row.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.collections.copy.addAtLeastOneRule": "Add at least one rule.",
+  "@web.collections.copy.addAtLeastOneRule": {
+    "description": "Web collections: hint beside the disabled Save button of a saved Smart collection whose last rule was removed.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.collections.copy.addRuleThenCreate": "Add a rule, then create it.",
+  "@web.collections.copy.addRuleThenCreate": {
+    "description": "Web collections: hint beside the disabled Create button of a Smart collection with no complete rule.",
     "x-platforms": [
       "web"
     ]
@@ -120765,6 +123019,13 @@
       "web"
     ]
   },
+  "web.collections.copy.pickWhereItShowsFirst": "Pick the libraries it shows in, then create it.",
+  "@web.collections.copy.pickWhereItShowsFirst": {
+    "description": "Web collections: hint beside the disabled Create button of a server Smart collection that shows in no library yet.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.collections.copy.pinEveryLibrary": "This applies in every library it's in.",
   "@web.collections.copy.pinEveryLibrary": {
     "description": "Web collections: added after Pin or Unpin help when the collection is in several libraries.",
@@ -120881,13 +123142,6 @@
       "web"
     ]
   },
-  "web.collections.copy.previewEveryLibrary": "From every library until you pick some",
-  "@web.collections.copy.previewEveryLibrary": {
-    "description": "Web collections: Smart collection editor, beside the preview count while a server collection has no library picked.",
-    "x-platforms": [
-      "web"
-    ]
-  },
   "web.collections.copy.previewFailed": "The preview didn't load. You can still save.",
   "@web.collections.copy.previewFailed": {
     "description": "Web collections: Smart collection editor when the preview failed.",
@@ -120913,6 +123167,20 @@
         "type": "String"
       }
     },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.collections.copy.previewNeedsRule": "Add a rule to see what it matches",
+  "@web.collections.copy.previewNeedsRule": {
+    "description": "Web collections: Smart collection editor preview heading while no rule is complete.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.collections.copy.previewNeedsRuleHelp": "A smart collection needs at least one rule. Without one it would hold every title.",
+  "@web.collections.copy.previewNeedsRuleHelp": {
+    "description": "Web collections: Smart collection editor preview text under the heading while no rule is complete.",
     "x-platforms": [
       "web"
     ]
@@ -121049,6 +123317,18 @@
   "web.collections.copy.saveFailed": "Couldn't save",
   "@web.collections.copy.saveFailed": {
     "description": "Web collections: collection editor, save error without a server reason.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.collections.copy.saveFailedWithError": "Couldn't save · {error}",
+  "@web.collections.copy.saveFailedWithError": {
+    "description": "Web collections: collection editor save bar when saving fails with a reason. {error}: the reason, usually from the server.",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    },
     "x-platforms": [
       "web"
     ]
@@ -121267,6 +123547,13 @@
   "web.collections.copy.smartCreateHintNone": "Nothing matches yet. Titles that match later join on their own.",
   "@web.collections.copy.smartCreateHintNone": {
     "description": "Web collections: save bar hint on a new Smart collection with no matches.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.collections.copy.smartLibrariesHelp": "Their Collections tabs list it. Its rules pick where titles come from.",
+  "@web.collections.copy.smartLibrariesHelp": {
+    "description": "Web collections: help text on the Libraries row of a server Smart collection, saying the chosen libraries are where it shows.",
     "x-platforms": [
       "web"
     ]
@@ -123554,6 +125841,20 @@
       "web"
     ]
   },
+  "web.collections.page.emptyAll": "There are no collections yet.",
+  "@web.collections.page.emptyAll": {
+    "description": "Web Collections page: empty message under the All filter when there are no collections at all.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.collections.page.emptyMine": "You haven't made any collections yet.",
+  "@web.collections.page.emptyMine": {
+    "description": "Web Collections page: empty message under the My collections filter when the viewer has made none.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.collections.page.filterAll": "All",
   "@web.collections.page.filterAll": {
     "description": "Web Collections page: filter pill that shows every collection.",
@@ -125441,6 +127742,55 @@
       "web"
     ]
   },
+  "web.collections.toast.addFailed": "Failed to add to collection",
+  "@web.collections.toast.addFailed": {
+    "description": "Web collections: error toast when adding a title to a collection failed and the server gave no message.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.collections.toast.notShared": "Only you see it now",
+  "@web.collections.toast.notShared": {
+    "description": "Web collections: toast after the viewer turned off sharing for a collection of theirs.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.collections.toast.removeItemFailed": "Failed to remove item",
+  "@web.collections.toast.removeItemFailed": {
+    "description": "Web collections: error toast when removing a title from a collection failed and the server gave no message.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.collections.toast.reorderFailed": "Failed to reorder",
+  "@web.collections.toast.reorderFailed": {
+    "description": "Web collections: error toast when moving a collection in the list failed and the server gave no message.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.collections.toast.reorderItemsFailed": "Failed to reorder items",
+  "@web.collections.toast.reorderItemsFailed": {
+    "description": "Web collections: error toast when moving a title inside a collection failed and the server gave no message.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.collections.toast.sharedWithProfiles": "Shown to other profiles",
+  "@web.collections.toast.sharedWithProfiles": {
+    "description": "Web collections: toast after the viewer turned on sharing for a collection of theirs.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.collections.toast.sharingFailed": "Couldn't change sharing",
+  "@web.collections.toast.sharingFailed": {
+    "description": "Web collections: error toast when turning sharing on or off failed and the server gave no message.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.collections.types.kindManual": "Manual",
   "@web.collections.types.kindManual": {
     "description": "Web collections: the Manual collection type's name, in lists, pickers and the editor header.",
@@ -125521,6 +127871,13 @@
   "web.collections.whereItShows.heading": "Where it shows",
   "@web.collections.whereItShows.heading": {
     "description": "Web collection editor: heading of the Where it shows card.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.collections.whereItShows.librariesTrigger": "Show in libraries",
+  "@web.collections.whereItShows.librariesTrigger": {
+    "description": "Web collections: accessible name of the library picker button on the Libraries row of a server Smart collection.",
     "x-platforms": [
       "web"
     ]
@@ -126318,6 +128675,20 @@
       "web"
     ]
   },
+  "web.common.job.cancelled": "Job cancelled",
+  "@web.common.job.cancelled": {
+    "description": "Web: error toast shown when a background job (for example a metadata refresh) is cancelled and the server sent no message.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.common.job.failed": "Job failed",
+  "@web.common.job.failed": {
+    "description": "Web: error toast shown when a background job (for example a metadata refresh) fails and the server sent no reason.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.common.markers.sharingDisclosure": "Help other Silo servers skip intros, credits, recaps and previews. Silo shares the movie, show and episode IDs, each file's hash, size and length, and the marker times it finds or you edit, including sections you mark as missing, with how each was found and how sure it is. It never shares file names, paths or your library list.",
   "@web.common.markers.sharingDisclosure": {
     "description": "Web, setup wizard Features step (Share markers with Silo toggle) and admin marker provider tiles for providers that share by default: what the server sends when it shares skip markers.",
@@ -126336,6 +128707,27 @@
         "type": "String"
       }
     },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.common.overlays.previewPlaceholder.movie": "Movie preview",
+  "@web.common.overlays.previewPlaceholder.movie": {
+    "description": "Web admin Appearance settings: faint label on the empty poster in the card overlay preview when the movie sample is chosen. Shown in capitals.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.common.overlays.previewPlaceholder.requested": "Requested preview",
+  "@web.common.overlays.previewPlaceholder.requested": {
+    "description": "Web admin Appearance settings: faint label on the empty poster in the card overlay preview when the requested-title sample is chosen. Shown in capitals.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.common.overlays.previewPlaceholder.show": "Show preview",
+  "@web.common.overlays.previewPlaceholder.show": {
+    "description": "Web admin Appearance settings: faint label on the empty poster in the card overlay preview when the show sample is chosen. Shown in capitals.",
     "x-platforms": [
       "web"
     ]
@@ -126364,6 +128756,18 @@
   "web.common.overlays.previewVariant.show": "Show",
   "@web.common.overlays.previewVariant.show": {
     "description": "Web, overlay settings: button that makes the overlay preview show a TV show (to preview show-only overlays such as network and status).",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.common.overlays.sampleDownloading": "Downloading {percent}%",
+  "@web.common.overlays.sampleDownloading": {
+    "description": "Web card overlay preview: the request status badge on the requested-title sample, which shows a download in progress. {percent}: the download percentage.",
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    },
     "x-platforms": [
       "web"
     ]
@@ -126801,6 +129205,98 @@
   "web.common.sort.tmdbRating": "TMDB Rating",
   "@web.common.sort.tmdbRating": {
     "description": "Web, sort menus of library, catalog and collection screens: sort option that orders titles by their TMDB user rating.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.common.sortable.canceled": "Moving {name} was canceled.",
+  "@web.common.sortable.canceled": {
+    "description": "Web: screen-reader announcement when moving a list item is canceled. {name}: the item's name.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.common.sortable.dropped": "{name} dropped.",
+  "@web.common.sortable.dropped": {
+    "description": "Web: screen-reader announcement when a list item is dropped outside the list. {name}: the item's name.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.common.sortable.droppedAt": "{name} dropped at position {position} of {total}.",
+  "@web.common.sortable.droppedAt": {
+    "description": "Web: screen-reader announcement when a moved list item is dropped. {name}: the item's name. {position}: its place. {total}: number of items.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "position": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.common.sortable.fallbackName": "Item",
+  "@web.common.sortable.fallbackName": {
+    "description": "Web: screen-reader name for a list item that is being moved when its real name is not known.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.common.sortable.instructions": "To move an item, focus its handle and press Space or Enter. Use the arrow keys to move it, Space or Enter to drop it, or Escape to cancel.",
+  "@web.common.sortable.instructions": {
+    "description": "Web: screen-reader instructions read when a drag handle of a reorderable list gets focus (libraries, home sections).",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.common.sortable.over": "{name} is now at position {position} of {total}.",
+  "@web.common.sortable.over": {
+    "description": "Web: screen-reader announcement while a list item is moved to a new place. {name}: the item's name. {position}: its new place. {total}: number of items.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "position": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.common.sortable.pickedUp": "Picked up {name}, position {position} of {total}.",
+  "@web.common.sortable.pickedUp": {
+    "description": "Web: screen-reader announcement when a list item is picked up for moving. {name}: the item's name. {position}: its place in the list. {total}: number of items.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "position": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    },
     "x-platforms": [
       "web"
     ]
@@ -131668,6 +134164,13 @@
       "web"
     ]
   },
+  "web.home.addRow.params.trendingShow": "Show",
+  "@web.home.addRow.params.trendingShow": {
+    "description": "Web: Add row dialog, Trending row options: label of the choice between both, movies and TV shows.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.home.addRow.personalSentence": "{sentence} Different for each viewer.",
   "@web.home.addRow.personalSentence": {
     "description": "Web: text under the title of the Add row dialog's step 2 for a kind of row whose titles differ per viewer. {sentence}: one sentence describing the kind of row, ending in a full stop.",
@@ -131907,13 +134410,6 @@
       "web"
     ]
   },
-  "web.home.addRow.rules.chooseLibraries": "choose libraries",
-  "@web.home.addRow.rules.chooseLibraries": {
-    "description": "Web: Smart collection rule builder, what the library picker shows inside the sentence 'Show … from [choose libraries]' when a library must be picked. Lower case.",
-    "x-platforms": [
-      "web"
-    ]
-  },
   "web.home.addRow.rules.group": "Group {number}",
   "@web.home.addRow.rules.group": {
     "description": "Web: rule builder, accessible name of one group of rules when there are several. {number}: the group's position, from 1.",
@@ -131994,9 +134490,9 @@
       "web"
     ]
   },
-  "web.home.addRow.rules.noRulesCollection": "No rules yet, so the collection holds every title from these libraries.",
-  "@web.home.addRow.rules.noRulesCollection": {
-    "description": "Web: Smart collection rule builder, shown while there are no rules.",
+  "web.home.addRow.rules.noRulesCollectionYet": "No rules yet. Add one to choose which titles it holds.",
+  "@web.home.addRow.rules.noRulesCollectionYet": {
+    "description": "Web: rule builder for a collection row, shown while no rule has been added.",
     "x-platforms": [
       "web"
     ]
@@ -134136,6 +136632,21 @@
       }
     }
   },
+  "web.home.rows.describe.trendingDiscoverFiltered": "{media, select, movie {Movies trending} other {TV shows trending}} on TMDB {window, select, day {today} other {this week}}, from what you have",
+  "@web.home.rows.describe.trendingDiscoverFiltered": {
+    "description": "Web: Home rows editor, row list: description of a Trending worldwide row limited to movies or to TV shows. {media}: movie, or other (TV shows). {window}: day, or other (week).",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "media": {
+        "type": "String"
+      },
+      "window": {
+        "type": "String"
+      }
+    }
+  },
   "web.home.rows.describe.trendingHere": "Most played here in the last {window, select, hours24 {24 hours} days7 {7 days} other {30 days}}",
   "@web.home.rows.describe.trendingHere": {
     "description": "Web: Home rows editor on a library page: description of a Trending on this server row. {window}: the time window: hours24, days7 or other (30 days).",
@@ -135003,6 +137514,13 @@
   "web.home.rows.links.rowGone": "That row no longer exists.",
   "@web.home.rows.links.rowGone": {
     "description": "Web: error toast when a link asked to edit a Home row that no longer exists.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.home.rows.links.rowMissing": "This row is no longer on this page.",
+  "@web.home.rows.links.rowMissing": {
+    "description": "Web: error when a row's editor was opened for a row that has since left the profile's Home rows page.",
     "x-platforms": [
       "web"
     ]
@@ -137107,6 +139625,27 @@
       "web"
     ]
   },
+  "web.item.editMetadata.resetDescriptionEpisode": "This will unlock this episode's title, overview, runtime and air date and refresh metadata from your providers. Any manual edits to them will be overwritten.",
+  "@web.item.editMetadata.resetDescriptionEpisode": {
+    "description": "Web edit metadata dialog: body of the confirmation to reset an episode to provider metadata.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.item.editMetadata.resetDescriptionSeason": "This will unlock this season's title, overview and air date and refresh metadata from your providers. Any manual edits to them will be overwritten. Artwork you picked stays locked on the series; reset the series to replace it.",
+  "@web.item.editMetadata.resetDescriptionSeason": {
+    "description": "Web edit metadata dialog: body of the confirmation to reset a season to provider metadata.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.item.editMetadata.resetDescriptionSeries": "This will unlock all fields on this series and refresh metadata from your providers. Any manual edits to the series will be overwritten. Locked seasons and episodes keep their edits.",
+  "@web.item.editMetadata.resetDescriptionSeries": {
+    "description": "Web edit metadata dialog: body of the confirmation to reset a series to provider metadata.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.item.editMetadata.resetToProvider": "Reset to Provider",
   "@web.item.editMetadata.resetToProvider": {
     "description": "Web: button in the Edit Metadata footer, and title of its confirmation dialog, that unlocks all fields and refreshes from metadata providers.",
@@ -138088,6 +140627,13 @@
   "web.item.rating.label": "Rating",
   "@web.item.rating.label": {
     "description": "Web: screen-reader name of the row of five stars a person uses to rate a title.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.item.rating.remove": "Remove rating",
+  "@web.item.rating.remove": {
+    "description": "Web: tooltip on the star that matches the current rating; selecting it clears the rating.",
     "x-platforms": [
       "web"
     ]
@@ -139185,6 +141731,141 @@
   "web.library.watchlist.removed": "Removed from watchlist",
   "@web.library.watchlist.removed": {
     "description": "Web: success toast after removing a title from the profile's watchlist.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.library.watchlist.statusApprovedWaiting": "Approved · waiting for a download",
+  "@web.library.watchlist.statusApprovedWaiting": {
+    "description": "Web watchlist, Not in your library yet tab: caption on a title whose request was approved and has not started downloading.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.library.watchlist.statusAwaitingApproval": "Awaiting approval",
+  "@web.library.watchlist.statusAwaitingApproval": {
+    "description": "Web watchlist, Not in your library yet tab: badge and caption on a title whose request waits for an admin to approve it.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.library.watchlist.statusDownloading": "Downloading {percent}%",
+  "@web.library.watchlist.statusDownloading": {
+    "description": "Web watchlist, Not in your library yet tab: badge on a title whose request is downloading. {percent}: download progress from 0 to 100.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "web.library.watchlist.statusListedTwice": "TMDB lists it twice",
+  "@web.library.watchlist.statusListedTwice": {
+    "description": "Web watchlist, Not in your library yet tab: caption under a title that needs review because TMDB lists it twice.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.library.watchlist.statusNeedsAttention": "Needs attention",
+  "@web.library.watchlist.statusNeedsAttention": {
+    "description": "Web watchlist, Not in your library yet tab: badge and status on a title that TMDB lists twice and needs the viewer's review.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.library.watchlist.statusNoLongerListed": "No longer listed on TMDB",
+  "@web.library.watchlist.statusNoLongerListed": {
+    "description": "Web watchlist, Not in your library yet tab: caption under a saved title that TMDB no longer has.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.library.watchlist.statusNotOnTmdb": "Not on TMDB",
+  "@web.library.watchlist.statusNotOnTmdb": {
+    "description": "Web watchlist, Not in your library yet tab: badge on a saved title that TMDB no longer has.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.library.watchlist.statusNotRequested": "Not requested",
+  "@web.library.watchlist.statusNotRequested": {
+    "description": "Web watchlist, Not in your library yet tab: badge and caption on a title with no active request.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.library.watchlist.statusNotRequestedOut": "Not requested · out {date}",
+  "@web.library.watchlist.statusNotRequestedOut": {
+    "description": "Web watchlist, Not in your library yet tab: caption on a title with no request and a future release date. {date}: the release day in lower case, such as \"dec 18\".",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "web.library.watchlist.statusNotRequestedReason": "Not requested · {reason}",
+  "@web.library.watchlist.statusNotRequestedReason": {
+    "description": "Web watchlist, Not in your library yet tab: caption on a title that cannot be requested. {reason}: why, in lower case, such as \"already requested\".",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "reason": {
+        "type": "String"
+      }
+    }
+  },
+  "web.library.watchlist.statusOut": "Out {date}",
+  "@web.library.watchlist.statusOut": {
+    "description": "Web watchlist, Not in your library yet tab: badge on a title with a future release date. {date}: the release day as a short date such as \"Dec 18\".",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "web.library.watchlist.statusOutApproved": "Out {date} · approved",
+  "@web.library.watchlist.statusOutApproved": {
+    "description": "Web watchlist, Not in your library yet tab: caption on a title with a future release date whose request was approved. {date}: the release day as a short date such as \"Dec 18\".",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "web.library.watchlist.statusOutAwaitingApproval": "Out {date} · awaiting approval",
+  "@web.library.watchlist.statusOutAwaitingApproval": {
+    "description": "Web watchlist, Not in your library yet tab: caption on a title with a future release date whose request waits for approval. {date}: the release day as a short date such as \"Dec 18\".",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "web.library.watchlist.titlesHint": "These titles aren't in the library yet, so they can't be played. When one arrives, it moves to In your library.",
+  "@web.library.watchlist.titlesHint": {
+    "description": "Web watchlist, Not in your library yet tab: paragraph at the top when adding a title does not request it. \"In your library\" names the other tab.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.library.watchlist.titlesHintRequested": "These titles aren't in the library yet, so they can't be played. They've been requested for you. When one arrives, it moves to In your library and you get a notification.",
+  "@web.library.watchlist.titlesHintRequested": {
+    "description": "Web watchlist, Not in your library yet tab: paragraph at the top when adding a title requests it for the viewer. \"In your library\" names the other tab.",
     "x-platforms": [
       "web"
     ]
@@ -140414,6 +143095,68 @@
       "web"
     ]
   },
+  "web.notifications.toast.followedArrived": "A title you asked to hear about has arrived in the library.",
+  "@web.notifications.toast.followedArrived": {
+    "description": "Web: description under the toast that a followed title is now available.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.toast.newEpisode": "New episode of {series}",
+  "@web.notifications.toast.newEpisode": {
+    "description": "Web: toast title when a new episode of a followed series arrives in the library. {series}: the series title.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "series": {
+        "type": "String"
+      }
+    }
+  },
+  "web.notifications.toast.requestApprovedTitle": "Request approved: {title}",
+  "@web.notifications.toast.requestApprovedTitle": {
+    "description": "Web: toast title when an admin approved the viewer's request. {title}: the requested title.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "web.notifications.toast.requestArrived": "Your media request has arrived in the library.",
+  "@web.notifications.toast.requestArrived": {
+    "description": "Web: description under the toast that the viewer's own media request is now available.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.toast.requestDeclinedTitle": "Request declined: {title}",
+  "@web.notifications.toast.requestDeclinedTitle": {
+    "description": "Web: toast title when an admin declined the viewer's request. {title}: the requested title.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "web.notifications.toast.seriesAvailable": "{series} is now available",
+  "@web.notifications.toast.seriesAvailable": {
+    "description": "Web: toast title when a requested or followed series arrives in the library. {series}: the series title.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "series": {
+        "type": "String"
+      }
+    }
+  },
   "web.onboarding.gate.progressFailed": "Progress could not be saved. Reload to continue.",
   "@web.onboarding.gate.progressFailed": {
     "description": "Web home screen: alert when saving that the first-run tour was skipped failed.",
@@ -141573,6 +144316,39 @@
       "web"
     ]
   },
+  "web.player.hud.episode": "S{season} · E{episode}",
+  "@web.player.hud.episode": {
+    "description": "Web video player, title strip over the video: season and episode of the current episode when it has no title of its own. {season}: season number in Latin digits, {episode}: episode number in Latin digits.",
+    "placeholders": {
+      "season": {
+        "type": "String"
+      },
+      "episode": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.player.hud.episodeWithTitle": "S{season} · E{episode} — {title}",
+  "@web.player.hud.episodeWithTitle": {
+    "description": "Web video player, title strip over the video: season, episode and the episode's title. {season}: season number in Latin digits, {episode}: episode number in Latin digits, {title}: the episode's title.",
+    "placeholders": {
+      "season": {
+        "type": "String"
+      },
+      "episode": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.player.info.audioBitrate": "Audio bitrate",
   "@web.player.info.audioBitrate": {
     "description": "Web player: row label in the playback info panel for the source file's audio bitrate.",
@@ -142643,6 +145419,13 @@
         "type": "String"
       }
     },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.player.tracks.resetAudioFailed": "Failed to reset audio preference",
+  "@web.player.tracks.resetAudioFailed": {
+    "description": "Web: error toast when clearing the viewer's saved audio track choice for a series or movie failed.",
     "x-platforms": [
       "web"
     ]
@@ -144103,6 +146886,13 @@
   "web.profiles.libraryAccess.label": "Library Access",
   "@web.profiles.libraryAccess.label": {
     "description": "Web admin user, access group and invitation forms: label of the library access picker.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.profiles.libraryAccess.primaryNote": "The primary profile sees every library the account can access. It can hide libraries in Settings → Libraries.",
+  "@web.profiles.libraryAccess.primaryNote": {
+    "description": "Web profile editor, Libraries section: note shown for the account's primary profile instead of the library checkboxes.",
     "x-platforms": [
       "web"
     ]
@@ -149816,20 +152606,17 @@
       "web"
     ]
   },
-  "web.settings.historyImport.processed": "{processed} / {fetched} processed",
-  "@web.settings.historyImport.processed": {
-    "description": "Web Settings → History Import: progress under the progress bar of a running import. {processed}: items processed so far; {fetched}: items fetched from the source.",
+  "web.settings.historyImport.processedSoFar": "{processed} processed so far",
+  "@web.settings.historyImport.processedSoFar": {
+    "description": "Web Settings → History Import: progress under the bar of a running import. {processed}: items processed so far, formatted.",
+    "x-platforms": [
+      "web"
+    ],
     "placeholders": {
       "processed": {
         "type": "String"
-      },
-      "fetched": {
-        "type": "String"
       }
-    },
-    "x-platforms": [
-      "web"
-    ]
+    }
   },
   "web.settings.historyImport.reconnectPlex": "Reconnect Plex Account",
   "@web.settings.historyImport.reconnectPlex": {
@@ -151927,6 +154714,34 @@
       "web"
     ]
   },
+  "web.settings.notifications.push.error.incompleteSubscription": "The browser returned an incomplete push subscription",
+  "@web.settings.notifications.push.error.incompleteSubscription": {
+    "description": "Web notification settings: error toast when turning on browser notifications and the browser's push subscription lacks its endpoint or keys.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.notifications.push.error.permissionDenied": "Notification permission was not granted",
+  "@web.settings.notifications.push.error.permissionDenied": {
+    "description": "Web notification settings: error toast when the person dismisses or denies the browser's notification permission prompt.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.notifications.push.error.unsubscribeFailed": "Server registration removed, but the browser subscription could not be removed.",
+  "@web.settings.notifications.push.error.unsubscribeFailed": {
+    "description": "Web notification settings: error toast when turning off browser notifications removed this browser from the server but the browser would not drop its own push subscription.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.notifications.push.error.unsupported": "This browser does not support push notifications",
+  "@web.settings.notifications.push.error.unsupported": {
+    "description": "Web notification settings: error toast when turning on browser notifications in a browser without push support.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.settings.notifications.push.lastDeliveredAt": "Last delivered {when}",
   "@web.settings.notifications.push.lastDeliveredAt": {
     "description": "Web Settings → Notifications: Browser Notifications: device status. {when}: relative time (\"2 hours ago\").",
@@ -152646,6 +155461,13 @@
       "web"
     ]
   },
+  "web.settings.overlays.badge.multiAudio.value": "Multi-Audio",
+  "@web.settings.overlays.badge.multiAudio.value": {
+    "description": "Web poster cards: short badge on a title that offers more than one audio track.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.settings.overlays.badge.multiSub.description": "Shown when the file has any subtitle track",
   "@web.settings.overlays.badge.multiSub.description": {
     "description": "Web Settings → Navigation & Cards → Badges, and admin Settings → Appearance: explanation under the Subtitles Available badge's name in the badge list.",
@@ -152859,6 +155681,34 @@
   "web.settings.overlays.badge.showStatus.label": "Show Status",
   "@web.settings.overlays.badge.showStatus.label": {
     "description": "Web Settings → Navigation & Cards → Badges, and admin Settings → Appearance: name of a card badge in the badge list (the badge's id is show_status). Badge text itself, such as 4K or Atmos, is data and not translated.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.overlays.badge.showStatus.value.cancelled": "Cancelled",
+  "@web.settings.overlays.badge.showStatus.value.cancelled": {
+    "description": "Web poster cards: text of the show status badge for a series that is cancelled.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.overlays.badge.showStatus.value.ended": "Ended",
+  "@web.settings.overlays.badge.showStatus.value.ended": {
+    "description": "Web poster cards: text of the show status badge for a series that is ended.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.overlays.badge.showStatus.value.returning": "Returning",
+  "@web.settings.overlays.badge.showStatus.value.returning": {
+    "description": "Web poster cards: text of the show status badge for a series that is still returning or in production.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.overlays.badge.showStatus.value.upcoming": "Upcoming",
+  "@web.settings.overlays.badge.showStatus.value.upcoming": {
+    "description": "Web poster cards: text of the show status badge for a series that is upcoming or planned.",
     "x-platforms": [
       "web"
     ]
@@ -154332,6 +157182,65 @@
       "web"
     ]
   },
+  "web.settings.plexAuth.homeUserNoServerAccess": "{name} does not have access to this Plex server. Share the server with them in Plex, or choose another server.",
+  "@web.settings.plexAuth.homeUserNoServerAccess": {
+    "description": "Web history import settings: error shown when the chosen Plex Home user cannot see the Plex server picked for the import. {name}: the Plex Home user's name.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.plexAuth.homeUserNoSignIn": "Plex did not return a sign-in for this Plex Home user.",
+  "@web.settings.plexAuth.homeUserNoSignIn": {
+    "description": "Web history import settings: error shown when plex.tv accepts the switch to a Plex Home user but returns no sign-in token.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.plexAuth.homeUserPinRejected": "Plex did not accept that PIN. Check the PIN for this Plex Home user and try again.",
+  "@web.settings.plexAuth.homeUserPinRejected": {
+    "description": "Web history import settings: error shown when plex.tv rejects the PIN typed for a Plex Home user.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.plexAuth.homeUserPinRequired": "This Plex Home user is protected by a PIN. Enter their PIN and try again.",
+  "@web.settings.plexAuth.homeUserPinRequired": {
+    "description": "Web history import settings: error shown when a Plex Home user needs a PIN and none was entered.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.plexAuth.invalidPinResponse": "Plex sign-in returned an invalid PIN response.",
+  "@web.settings.plexAuth.invalidPinResponse": {
+    "description": "Web history import and webhook sync settings: error shown when plex.tv answers the request to start a Plex sign-in without a usable PIN.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.plexAuth.requestFailed": "Plex request failed with status {status}",
+  "@web.settings.plexAuth.requestFailed": {
+    "description": "Web history import and webhook sync settings: error shown when a plex.tv request fails and plex.tv sent no explanation. {status}: the HTTP status code.",
+    "placeholders": {
+      "status": {
+        "type": "int"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.plexAuth.signInIncomplete": "Plex sign-in was not completed. Please try again.",
+  "@web.settings.plexAuth.signInIncomplete": {
+    "description": "Web history import and webhook sync settings: error shown when the person returns from plex.tv without having finished signing in.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.settings.profileLaunch.ask": "Ask who's watching",
   "@web.settings.profileLaunch.ask": {
     "description": "Web Settings → This browser: choice that shows the profile picker each time Silo opens in a new tab or window.",
@@ -154476,6 +157385,18 @@
     "x-platforms": [
       "web"
     ]
+  },
+  "web.settings.profiles.limitReached": "{count, plural, one {This account can have # profile. An administrator can raise the limit.} other {This account can have # profiles. An administrator can raise the limit.}}",
+  "@web.settings.profiles.limitReached": {
+    "description": "Web Settings → Profiles: sentence shown in place of New profile once the account has all the profiles it may have. {count}: the account's profile limit.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
   },
   "web.settings.profiles.newProfile": "New profile",
   "@web.settings.profiles.newProfile": {
@@ -160171,6 +163092,13 @@
   "web.shell.unsavedChanges.title": "Discard unsaved changes?",
   "@web.shell.unsavedChanges.title": {
     "description": "Web confirmation dialog shown when leaving a settings or editor page with edits that were not saved: title.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.shuffle.startFailed": "Couldn't start shuffle.",
+  "@web.shuffle.startFailed": {
+    "description": "Web: error toast when starting a shuffle failed.",
     "x-platforms": [
       "web"
     ]
