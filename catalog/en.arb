@@ -18068,6 +18068,15 @@
       "android"
     ]
   },
+  "menu.addProfile": "Add Profile",
+  "@menu.addProfile": {
+    "description": "Row in the Roku avatar menu and the Android TV profile menu, shown in Switch Profile's place while the account has one profile and may have more; opens the New Profile form (after the primary profile's PIN when it has one). Apple (iPhone, iPad, Mac, Apple TV): same row in the profile menu.",
+    "x-platforms": [
+      "apple",
+      "android",
+      "roku"
+    ]
+  },
   "menu.card.markUnwatched": "Mark as Unwatched",
   "@menu.card.markUnwatched": {
     "description": "Android phone: row in the long-press menu of a poster or Continue Watching card that marks the item (movie, series or episode) as not watched.",
