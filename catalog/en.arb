@@ -143534,6 +143534,13 @@
       "web"
     ]
   },
+  "web.player.audioMenu.onlyOneTrack": "Only one audio track",
+  "@web.player.audioMenu.onlyOneTrack": {
+    "description": "Web player: tooltip on the audio button in the video player controls when the file has only one audio track.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.player.audioMenu.trackFallback": "Track {number}",
   "@web.player.audioMenu.trackFallback": {
     "description": "Web player: name of an audio track with no title in the video player's audio menu. {number}: the track's position in the list, from 1.",
@@ -143549,6 +143556,18 @@
   "web.player.audioMenu.trigger": "Audio tracks",
   "@web.player.audioMenu.trigger": {
     "description": "Web player: button in the video player controls (and item in the overflow menu) that opens the audio track menu.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.player.audioMenu.triggerWithTrack": "Audio tracks, {track}",
+  "@web.player.audioMenu.triggerWithTrack": {
+    "description": "Web player: screen-reader name of the audio button in the video player controls. {track}: the playing track's language and channels, e.g. English 5.1.",
+    "placeholders": {
+      "track": {
+        "type": "String"
+      }
+    },
     "x-platforms": [
       "web"
     ]
@@ -143731,6 +143750,18 @@
       "web"
     ]
   },
+  "web.player.buffering.loadingFrom": "Loading from {time}",
+  "@web.player.buffering.loadingFrom": {
+    "description": "Web player: second line of the card shown while the video buffers. {time}: the position playback resumes from, formatted as a clock time such as 12:34.",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.player.buffering.undoCaption": "Quality lowered to stop buffering",
   "@web.player.buffering.undoCaption": {
     "description": "Web player: caption of the pill shown after the player lowered the quality on its own, above a Restore quality button.",
@@ -143748,6 +143779,18 @@
   "web.player.chaptersMenu.heading": "Chapters",
   "@web.player.chaptersMenu.heading": {
     "description": "Web player: heading at the top of the video player's chapter list.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.player.chaptersMenu.nowPlaying": "{time} · <now>Now playing</now>",
+  "@web.player.chaptersMenu.nowPlaying": {
+    "description": "Web player: second line of the playing chapter in the chapters menu. Keep the now tags around the words (they are highlighted). {time}: the chapter's start time, such as 12:34.",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    },
     "x-platforms": [
       "web"
     ]
@@ -143822,6 +143865,13 @@
       "web"
     ]
   },
+  "web.player.controls.exitFullscreenShortcut": "Exit fullscreen (F)",
+  "@web.player.controls.exitFullscreenShortcut": {
+    "description": "Web player: tooltip on the fullscreen button while the player is fullscreen; F is the keyboard shortcut.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.player.controls.fillScreen": "Fill screen",
   "@web.player.controls.fillScreen": {
     "description": "Web player: button (and its tooltip) in the video player controls and overflow menu that crops the video to fill the screen.",
@@ -143832,6 +143882,20 @@
   "web.player.controls.fullscreen": "Fullscreen",
   "@web.player.controls.fullscreen": {
     "description": "Web player: accessible name of the video player button that enters fullscreen.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.player.controls.fullscreenShortcut": "Fullscreen (F)",
+  "@web.player.controls.fullscreenShortcut": {
+    "description": "Web player: tooltip on the fullscreen button; F is the keyboard shortcut.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.player.controls.more": "More",
+  "@web.player.controls.more": {
+    "description": "Web player: tooltip on the More button in the video player controls, and the heading of its menu (fill screen, playback info, markers, picture in picture).",
     "x-platforms": [
       "web"
     ]
@@ -143864,6 +143928,13 @@
       "web"
     ]
   },
+  "web.player.controls.pictureInPictureItem": "Picture in picture",
+  "@web.player.controls.pictureInPictureItem": {
+    "description": "Web player: item in the video player's More menu that opens picture in picture.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.player.controls.pictureInPictureShortcut": "Picture in Picture (P)",
   "@web.player.controls.pictureInPictureShortcut": {
     "description": "Web player: accessible name and tooltip of the video player button that plays the video picture-in-picture; P is its keyboard shortcut.",
@@ -143888,6 +143959,30 @@
   "web.player.controls.previousEpisode": "Previous episode",
   "@web.player.controls.previousEpisode": {
     "description": "Web player: accessible name of the button in the video player controls that plays the previous episode.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.player.controls.remainingTime": "−{time}",
+  "@web.player.controls.remainingTime": {
+    "description": "Web player: time remaining, shown at the end of the timeline with a minus sign (U+2212). {time}: the remaining duration, such as 1:23:45.",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.player.controls.remainingTimeLabel": "Remaining {time}",
+  "@web.player.controls.remainingTimeLabel": {
+    "description": "Web player: screen-reader text for the time remaining at the end of the timeline. {time}: the remaining duration, such as 1:23:45.",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    },
     "x-platforms": [
       "web"
     ]
@@ -144590,6 +144685,13 @@
       "web"
     ]
   },
+  "web.player.info.heading": "Playback info",
+  "@web.player.info.heading": {
+    "description": "Web player: heading and screen-reader name of the playback info panel.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.player.info.playMethod": "Play method",
   "@web.player.info.playMethod": {
     "description": "Web player: row label in the playback info panel for direct play, direct streaming or transcode.",
@@ -144781,6 +144883,54 @@
       "web"
     ]
   },
+  "web.player.nextEpisode.playNow": "Play now",
+  "@web.player.nextEpisode.playNow": {
+    "description": "Web player: main button on the next-episode card shown during the credits; starts the next episode at once.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.player.nextEpisode.regionLabel": "Up next",
+  "@web.player.nextEpisode.regionLabel": {
+    "description": "Web player: screen-reader name of the next-episode card shown during the credits.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.player.nextEpisode.seasonEpisode": "Season {season} · Episode {episode}",
+  "@web.player.nextEpisode.seasonEpisode": {
+    "description": "Web player: line under the countdown on the next-episode card shown during the credits. {season}: season number; {episode}: episode number.",
+    "placeholders": {
+      "season": {
+        "type": "int"
+      },
+      "episode": {
+        "type": "int"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.player.nextEpisode.upNextIn": "{count, plural, one {Up next in <num>#s</num>} other {Up next in <num>#s</num>}}",
+  "@web.player.nextEpisode.upNextIn": {
+    "description": "Web player: countdown on the next-episode card shown during the credits. Keep the num tags around the number (it is shown in the accent colour). {count}: seconds until the next episode starts.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.player.postRoll.stillPlaying": "Still playing · Click to return",
+  "@web.player.postRoll.stillPlaying": {
+    "description": "Web player: caption on the small corner player on the end-of-episode screen; the credits keep playing there and clicking it returns to the video.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.player.quality.auto": "Auto",
   "@web.player.quality.auto": {
     "description": "Web player: quality option in the video player's settings menu that lets Silo choose the quality.",
@@ -144826,6 +144976,20 @@
       "web"
     ]
   },
+  "web.player.quality.sourceFile": "Source file",
+  "@web.player.quality.sourceFile": {
+    "description": "Web player: heading above the list of file versions in the video player's settings menu.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.player.quality.streamingQuality": "Streaming quality",
+  "@web.player.quality.streamingQuality": {
+    "description": "Web player: heading above the list of quality options in the video player's settings menu.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.player.quality.title": "Quality",
   "@web.player.quality.title": {
     "description": "Web player: heading of the quality list in the video player's settings menu, the menu button's name when it has only qualities, and its label before a quality is known.",
@@ -144838,6 +145002,39 @@
     "description": "Web player: accessible name of the video player's gear button when the playback speed is not 1×. {menu}: the button's name, such as Playback settings; {speed}: the speed, such as 1.5×.",
     "placeholders": {
       "menu": {
+        "type": "String"
+      },
+      "speed": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.player.quality.triggerWithValue": "{menu}, {value}",
+  "@web.player.quality.triggerWithValue": {
+    "description": "Web player: screen-reader name of the settings button in the video player controls. {menu}: the menu's name, such as Playback settings; {value}: the current quality shown on the button, such as 1080p.",
+    "placeholders": {
+      "menu": {
+        "type": "String"
+      },
+      "value": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.player.quality.triggerWithValueAndSpeed": "{menu}, {value}, {speed}",
+  "@web.player.quality.triggerWithValueAndSpeed": {
+    "description": "Web player: screen-reader name of the settings button when the playback speed is not 1×. {menu}: the menu's name; {value}: the current quality, such as 1080p; {speed}: the playback speed, such as 1.5×.",
+    "placeholders": {
+      "menu": {
+        "type": "String"
+      },
+      "value": {
         "type": "String"
       },
       "speed": {
@@ -145537,6 +145734,13 @@
       "web"
     ]
   },
+  "web.player.upNext.autoplay": "Auto-play",
+  "@web.player.upNext.autoplay": {
+    "description": "Web player: label of the auto-play switch on the Up Next screen at the end of playback.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.player.upNext.autoplayOff": "Auto-play is off",
   "@web.player.upNext.autoplayOff": {
     "description": "Web player: toggle button on the Up Next screen while auto-play of the next episode is off; selecting it turns auto-play on.",
@@ -145582,6 +145786,20 @@
       "web"
     ]
   },
+  "web.player.upNext.heading": "Up next",
+  "@web.player.upNext.heading": {
+    "description": "Web player: small heading above the next episode on the Up Next screen at the end of playback.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.player.upNext.headingShuffle": "Up next at random",
+  "@web.player.upNext.headingShuffle": {
+    "description": "Web player: the same heading on the Up Next screen while a shuffle is playing.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.player.upNext.minutesLeft": "{count, plural, one {{minutes} min left} other {{minutes} min left}}",
   "@web.player.upNext.minutesLeft": {
     "description": "Web player: under an On Deck item on the Up Next screen, how much of it is left to watch, such as “42 min left” (abbreviated minutes). {count}: the whole minutes, which picks the plural form. {minutes}: the same number as shown.",
@@ -145618,9 +145836,42 @@
       "web"
     ]
   },
+  "web.player.upNext.onDeckScrollBack": "Scroll On Deck back",
+  "@web.player.upNext.onDeckScrollBack": {
+    "description": "Web player: screen-reader name of the back arrow on the On Deck row of the Up Next screen.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.player.upNext.onDeckScrollForward": "Scroll On Deck forward",
+  "@web.player.upNext.onDeckScrollForward": {
+    "description": "Web player: screen-reader name of the forward arrow on the On Deck row of the Up Next screen.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.player.upNext.playingNext": "Playing Next",
   "@web.player.upNext.playingNext": {
     "description": "Web player: small heading on the Up Next screen at the end of playback when a next episode is lined up.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.player.upNext.startsAfterCredits": "Starts on its own when the credits end",
+  "@web.player.upNext.startsAfterCredits": {
+    "description": "Web player: shown on the Up Next screen instead of the countdown while the credits still play and auto-play is on.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.player.upNext.startsIn": "{count, plural, one {Starts in #s} other {Starts in #s}}",
+  "@web.player.upNext.startsIn": {
+    "description": "Web player: beside the countdown ring on the Up Next screen after the video ends. {count}: seconds until the next episode starts.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    },
     "x-platforms": [
       "web"
     ]
@@ -163274,6 +163525,13 @@
       "web"
     ]
   },
+  "web.subtitles.menu.heading": "Subtitles",
+  "@web.subtitles.menu.heading": {
+    "description": "Web player: heading and screen-reader name of the subtitles panel.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.subtitles.menu.noMatch": "Doesn't match this video's audio; probably for another release.",
   "@web.subtitles.menu.noMatch": {
     "description": "Web player: warning under the subtitle menu's timing controls when a sync found that the subtitle does not fit this video at all.",
@@ -163326,6 +163584,20 @@
   "web.subtitles.menu.source.external": "External",
   "@web.subtitles.menu.source.external": {
     "description": "Web player: small uppercase tag on a subtitle menu row for a subtitle file stored next to the video file.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.subtitles.menu.subtitlesOffShortcut": "Subtitles off (C)",
+  "@web.subtitles.menu.subtitlesOffShortcut": {
+    "description": "Web player: tooltip on the subtitles button while subtitles are off; C is the keyboard shortcut.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.subtitles.menu.subtitlesShortcut": "Subtitles (C)",
+  "@web.subtitles.menu.subtitlesShortcut": {
+    "description": "Web player: tooltip on the subtitles button while subtitles are on; C is the keyboard shortcut.",
     "x-platforms": [
       "web"
     ]
@@ -163384,9 +163656,35 @@
       "web"
     ]
   },
+  "web.subtitles.menu.toolsLabel": "Subtitle tools",
+  "@web.subtitles.menu.toolsLabel": {
+    "description": "Web player: screen-reader name of the group with Add subtitles, Translate and Appearance in the subtitles panel.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.subtitles.menu.tracksLabel": "Subtitle tracks",
+  "@web.subtitles.menu.tracksLabel": {
+    "description": "Web player: screen-reader name of the track list in the subtitles panel.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.subtitles.menu.translateWithAi": "Translate with AI…",
   "@web.subtitles.menu.translateWithAi": {
     "description": "Web player: subtitle menu item that opens the dialog to translate subtitles or generate them from the audio with AI.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.subtitles.menu.triggerWithValue": "Subtitles, {value}",
+  "@web.subtitles.menu.triggerWithValue": {
+    "description": "Web player: screen-reader name of the subtitles button in the video player controls. {value}: the language of the subtitles shown, or Off.",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    },
     "x-platforms": [
       "web"
     ]
