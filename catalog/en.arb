@@ -39717,6 +39717,34 @@
       "android"
     ]
   },
+  "shell.card.yearRange": "{first} – {last}",
+  "@shell.card.yearRange": {
+    "description": "Apple iOS, tvOS and macOS: the years a series ran, shown under its poster card in library grids, search results and Home rows once it has ended, such as 2019 – 2023. {first}: the year it started; {last}: the year its last episode aired. Both are already written in the app's digits.",
+    "placeholders": {
+      "first": {
+        "type": "String"
+      },
+      "last": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "shell.card.yearsToPresent": "{first} – Present",
+  "@shell.card.yearsToPresent": {
+    "description": "Apple iOS, tvOS and macOS: the years line under the poster card of a series that is still running, in library grids, search results and Home rows, such as 2021 – Present. {first}: the year it started, already written in the app's digits. Use the same dash and spacing as shell.card.yearRange, and keep it short: it sits under a narrow poster.",
+    "placeholders": {
+      "first": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple"
+    ],
+    "x-maxLength": 12
+  },
   "shell.downloadButton.download": "Download",
   "@shell.downloadButton.download": {
     "description": "Android phone: accessibility label of the button that downloads a title to the device for offline playback.",
