@@ -16311,11 +16311,11 @@
   },
   "home.section.discoverPopularMovies": "Popular Movies",
   "@home.section.discoverPopularMovies": {
-    "description": "Title of the built-in `popular_movies` row on the Requests Discover page (shared title key `home.section.discoverPopularMovies` from title_key on the Discover layout rows). Shown as the row heading on every client, and in the admin Discover layout editor, while the row still has its default title. A row of titles."
+    "description": "Title of the built-in `popular_movies` row on the Requests Discover page (shared title key `home.section.discoverPopularMovies` from title_key on the Discover layout rows). Shown as the row heading on every client, and in the admin Discover layout editor, while the row still has its default title. A row of titles. The same page has a separate \"Trending Movies\" row, so the two headings must read differently."
   },
   "home.section.discoverPopularSeries": "Popular Series",
   "@home.section.discoverPopularSeries": {
-    "description": "Title of the built-in `popular_series` row on the Requests Discover page (shared title key `home.section.discoverPopularSeries` from title_key on the Discover layout rows). Shown as the row heading on every client, and in the admin Discover layout editor, while the row still has its default title. A row of titles."
+    "description": "Title of the built-in `popular_series` row on the Requests Discover page (shared title key `home.section.discoverPopularSeries` from title_key on the Discover layout rows). Shown as the row heading on every client, and in the admin Discover layout editor, while the row still has its default title. A row of titles. The same page has a separate \"Trending Series\" row, so the two headings must read differently."
   },
   "home.section.discoverStudios": "Studios",
   "@home.section.discoverStudios": {
@@ -16323,11 +16323,11 @@
   },
   "home.section.discoverTrendingMovies": "Trending Movies",
   "@home.section.discoverTrendingMovies": {
-    "description": "Title of the built-in `trending_movies` row on the Requests Discover page (shared title key `home.section.discoverTrendingMovies` from title_key on the Discover layout rows). Shown as the row heading on every client, and in the admin Discover layout editor, while the row still has its default title. A row of titles."
+    "description": "Title of the built-in `trending_movies` row on the Requests Discover page (shared title key `home.section.discoverTrendingMovies` from title_key on the Discover layout rows). Shown as the row heading on every client, and in the admin Discover layout editor, while the row still has its default title. A row of titles. The same page has a separate \"Popular Movies\" row, so the two headings must read differently."
   },
   "home.section.discoverTrendingSeries": "Trending Series",
   "@home.section.discoverTrendingSeries": {
-    "description": "Title of the built-in `trending_series` row on the Requests Discover page (shared title key `home.section.discoverTrendingSeries` from title_key on the Discover layout rows). Shown as the row heading on every client, and in the admin Discover layout editor, while the row still has its default title. A row of titles."
+    "description": "Title of the built-in `trending_series` row on the Requests Discover page (shared title key `home.section.discoverTrendingSeries` from title_key on the Discover layout rows). Shown as the row heading on every client, and in the admin Discover layout editor, while the row still has its default title. A row of titles. The same page has a separate \"Popular Series\" row, so the two headings must read differently."
   },
   "home.section.discoverUpcomingMovies": "Upcoming Movies",
   "@home.section.discoverUpcomingMovies": {
@@ -128685,6 +128685,55 @@
   "web.common.job.failed": "Job failed",
   "@web.common.job.failed": {
     "description": "Web: error toast shown when a background job (for example a metadata refresh) fails and the server sent no reason.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.common.libraryType.audiobooks": "Audiobooks",
+  "@web.common.libraryType.audiobooks": {
+    "description": "Web: name of the audiobooks library type. Shown as a library's type badge in Settings → Libraries, which every profile can open, and on the type picker and library lists in web admin.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.common.libraryType.ebooks": "Ebooks",
+  "@web.common.libraryType.ebooks": {
+    "description": "Web: name of the ebooks library type. Shown as a library's type badge in Settings → Libraries, which every profile can open, and on the type picker and library lists in web admin.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.common.libraryType.manga": "Manga",
+  "@web.common.libraryType.manga": {
+    "description": "Web: name of the manga library type. Shown as a library's type badge in Settings → Libraries, which every profile can open, and on the type picker and library lists in web admin.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.common.libraryType.mixed": "Mixed",
+  "@web.common.libraryType.mixed": {
+    "description": "Web: name of the mixed library type. Shown as a library's type badge in Settings → Libraries, which every profile can open, and on the type picker and library lists in web admin.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.common.libraryType.movies": "Movies",
+  "@web.common.libraryType.movies": {
+    "description": "Web: name of the movies library type. Shown as a library's type badge in Settings → Libraries, which every profile can open, and on the type picker and library lists in web admin.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.common.libraryType.podcasts": "Podcasts",
+  "@web.common.libraryType.podcasts": {
+    "description": "Web: name of the podcasts library type. Shown as a library's type badge in Settings → Libraries, which every profile can open, and on the type picker and library lists in web admin.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.common.libraryType.series": "Series",
+  "@web.common.libraryType.series": {
+    "description": "Web: name of the series library type. Shown as a library's type badge in Settings → Libraries, which every profile can open, and on the type picker and library lists in web admin.",
     "x-platforms": [
       "web"
     ]
