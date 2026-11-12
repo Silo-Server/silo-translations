@@ -101,8 +101,7 @@ scripts/sync-translations                                                # reins
 scripts/sync-translations --local ~/src/silo-translations                # before a release exists
 ```
 
-The repository is private, so downloads use `gh release download` and need `gh` signed in
-with read access. `SILO_TRANSLATIONS_PUBLIC=1` switches to `curl` once it is public. The script
+Releases are public, so the script downloads them with `curl` and needs no sign-in. It
 verifies the checksum and unpacks into a temporary directory before touching the client,
 rejects links and paths outside the tree, and writes `.silo-translations` last. Each tree carries
 `.silo-translations-files`, the list of generated paths; after installing, sync removes the files
