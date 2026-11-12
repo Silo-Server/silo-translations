@@ -1955,6 +1955,13 @@
       "android"
     ]
   },
+  "bufferingQuality.autoLimitedDetail": "Adjusted for your connection",
+  "@bufferingQuality.autoLimitedDetail": {
+    "description": "Android phone: Quality menu; line under the Auto row while Auto is held at a lower quality after repeated buffering.",
+    "x-platforms": [
+      "android"
+    ]
+  },
   "bufferingQuality.cantLower": "Can't lower quality for this video",
   "@bufferingQuality.cantLower": {
     "description": "Android phone and TV: short notice in the player when buffering persists but no lower quality is available for this video. Apple iOS/tvOS/macOS: notice card over the player when no lower quality exists.",
@@ -18050,6 +18057,43 @@
       "android"
     ]
   },
+  "marker.creditsCard.autoPlayOff": "auto-play is off",
+  "@marker.creditsCard.autoPlayOff": {
+    "description": "Android TV: Up next card; words after the countdown chip and a “·”, when auto-play is off.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "marker.creditsCard.endsIn": "Credits end in",
+  "@marker.creditsCard.endsIn": {
+    "description": "Android TV: Up next card during the end credits; words before the countdown, which is drawn separately as a time chip: “Credits end in [1:59] · then it plays”.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "marker.creditsCard.notNow": "Not now",
+  "@marker.creditsCard.notNow": {
+    "description": "Player, Up next card during the end credits: secondary button. This episode won’t start the next one by itself; the auto-play setting stays as it is.",
+    "x-platforms": [
+      "apple",
+      "android"
+    ]
+  },
+  "marker.creditsCard.thenItPlays": "then it plays",
+  "@marker.creditsCard.thenItPlays": {
+    "description": "Android TV: Up next card; words after the countdown chip and a “·”, when auto-play is on. “it” is the next episode.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "marker.playNextEpisode": "Play next episode",
+  "@marker.playNextEpisode": {
+    "description": "Player, during the end credits when a next episode is lined up: the button that plays it now, in place of Skip Credits (Android phone and TV, iPhone, iPad, Apple TV).",
+    "x-platforms": [
+      "apple",
+      "android"
+    ]
+  },
   "marker.skipCredits": "Skip Credits",
   "@marker.skipCredits": {
     "description": "Button shown during video playback, on phone and TV, that jumps past the end credits. Apple iOS/tvOS: Skip Credits button over the video during the end credits.",
@@ -21575,6 +21619,27 @@
       "roku"
     ]
   },
+  "player.chapters.a11yNowPlaying": "Now playing",
+  "@player.chapters.a11yNowPlaying": {
+    "description": "Apple iOS: chapters sheet; screen-reader value of the chapter that is playing.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "player.chapters.columnLength": "Length",
+  "@player.chapters.columnLength": {
+    "description": "Android phone and TV: chapters panel; column heading over each chapter’s length (shown in capitals).",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.chapters.columnStarts": "Starts",
+  "@player.chapters.columnStarts": {
+    "description": "Android phone and TV: chapters panel; column heading over each chapter’s start time (shown in capitals).",
+    "x-platforms": [
+      "android"
+    ]
+  },
   "player.chapters.count": "{count, plural, one {# chapter} other {# chapters}}",
   "@player.chapters.count": {
     "description": "Android phone: player chapters panel; line under the title giving how many chapters the video has. {count}: the number of chapters.",
@@ -21613,6 +21678,24 @@
     "description": "Android phone: player chapters panel; screen reader action on a chapter row that starts playback at that chapter. {chapter}: the chapter's title, such as Opening Credits or Chapter 3.",
     "placeholders": {
       "chapter": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.chapters.rowDescription": "{chapter}, starts {start}, {length} long",
+  "@player.chapters.rowDescription": {
+    "description": "Android TV: chapters panel; screen-reader label of a chapter row. {chapter}: chapter title; {start}: start time such as 12:34; {length}: chapter length such as 4:10.",
+    "placeholders": {
+      "chapter": {
+        "type": "String"
+      },
+      "start": {
+        "type": "String"
+      },
+      "length": {
         "type": "String"
       }
     },
@@ -21797,6 +21880,20 @@
       "android"
     ]
   },
+  "player.creditsUpNext.autoPlay": "Starts automatically after the credits",
+  "@player.creditsUpNext.autoPlay": {
+    "description": "Android phone: Up next card during the end credits; status line when auto-play is on.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.creditsUpNext.autoPlayOff": "Auto-play is off",
+  "@player.creditsUpNext.autoPlayOff": {
+    "description": "Android phone: Up next card during the end credits; status line when auto-play is off.",
+    "x-platforms": [
+      "android"
+    ]
+  },
   "player.error.audioTrackSetupFailed": "Playback could not be set up with the selected audio track.",
   "@player.error.audioTrackSetupFailed": {
     "description": "Apple iOS/tvOS/macOS: video player error screen when the video could not start with the audio track the viewer picked.",
@@ -21804,9 +21901,42 @@
       "apple"
     ]
   },
+  "player.error.cantPlayTitle": "Can’t play this title",
+  "@player.error.cantPlayTitle": {
+    "description": "Apple iOS: heading of the player’s error screen.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "player.error.connectionLost": "Connection lost\nSilo couldn't reconnect to the server. Check your connection, then try again to continue where you left off.",
   "@player.error.connectionLost": {
     "description": "Apple iOS/tvOS/macOS: video player error screen after reconnecting to the server failed; the first line is a heading, the second the explanation, shown above a Try again button.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "player.error.couldNotStart": "Silo couldn’t start this video. Go back and choose it again.",
+  "@player.error.couldNotStart": {
+    "description": "Apple iOS: player error screen; guidance when no retry is offered.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "player.error.couldNotStartRetry": "Silo couldn’t start this video. Try again, or go back and choose it again.",
+  "@player.error.couldNotStartRetry": {
+    "description": "Apple iOS: player error screen; guidance when a retry is offered.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "player.error.details": "Details: {message}",
+  "@player.error.details": {
+    "description": "Apple iOS: player error screen; small line under the guidance. {message}: the server’s error text.",
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    },
     "x-platforms": [
       "apple"
     ]
@@ -22230,6 +22360,14 @@
       "roku"
     ]
   },
+  "player.hud.about": "About",
+  "@player.hud.about": {
+    "description": "TV player (Android TV, Apple TV), Info tab: column heading over the title, runtime and synopsis (shown in capitals).",
+    "x-platforms": [
+      "apple",
+      "android"
+    ]
+  },
   "player.hud.alternateVersion": "Alternate version",
   "@player.hud.alternateVersion": {
     "description": "Android TV: player Info panel; value of the Source row when the server plays another file version of the title than the one requested.",
@@ -22296,9 +22434,23 @@
       "android"
     ]
   },
+  "player.hud.audioDelayHardwareDecodes": "Not while the TV’s audio hardware decodes",
+  "@player.hud.audioDelayHardwareDecodes": {
+    "description": "Android TV: Audio tab; line under the Audio delay row when the delay is unavailable because the TV’s audio hardware decodes the audio (offload).",
+    "x-platforms": [
+      "android"
+    ]
+  },
   "player.hud.audioDelayPcmOnly": "Delay (PCM only)",
   "@player.hud.audioDelayPcmOnly": {
     "description": "Android TV: player Audio panel; row label for the audio delay setting, which works only when the device decodes the sound to PCM.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.hud.audioDelayReceiverDecodes": "Not while your receiver decodes",
+  "@player.hud.audioDelayReceiverDecodes": {
+    "description": "Android TV: Audio tab; line under the Audio delay row when the delay is unavailable because an AV receiver decodes the audio.",
     "x-platforms": [
       "android"
     ]
@@ -22370,6 +22522,27 @@
       "apple"
     ]
   },
+  "player.hud.decoded": "Decoded",
+  "@player.hud.decoded": {
+    "description": "Android TV: Audio tab, output column; row label for where the audio is decoded, shown only when the app doesn’t decode it.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.hud.decodedByReceiver": "By your receiver",
+  "@player.hud.decodedByReceiver": {
+    "description": "Android TV: Audio tab; value of the Decoded row during passthrough to an AV receiver.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.hud.decodedByTvHardware": "TV audio hardware",
+  "@player.hud.decodedByTvHardware": {
+    "description": "Android TV: Audio tab; value of the Decoded row when the TV’s audio hardware decodes it (offload).",
+    "x-platforms": [
+      "android"
+    ]
+  },
   "player.hud.decoder": "Decoder",
   "@player.hud.decoder": {
     "description": "Android TV: player Audio panel, Output section; row label for the name of the audio decoder in use.",
@@ -22388,6 +22561,90 @@
   "player.hud.delayUnavailableBurnedIn": "Unavailable for burned-in subtitles",
   "@player.hud.delayUnavailableBurnedIn": {
     "description": "Android TV: player Subtitles panel, Timing page; value of the Delay row when the subtitles are part of the picture and cannot be shifted.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.hud.deliveryAudioAsStored": "Audio as stored",
+  "@player.hud.deliveryAudioAsStored": {
+    "description": "Android TV: technical details; line under Video transcoded.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.hud.deliveryAudioConverted": "Audio converted",
+  "@player.hud.deliveryAudioConverted": {
+    "description": "Android TV: technical details, Delivery reading; only the audio is converted.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.hud.deliveryDirectPlay": "Direct play",
+  "@player.hud.deliveryDirectPlay": {
+    "description": "Android TV: technical details, Delivery reading; the file plays as stored.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.hud.deliveryDirectPlayDetail": "The file as stored",
+  "@player.hud.deliveryDirectPlayDetail": {
+    "description": "Android TV: technical details; line under Direct play.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.hud.deliveryPreparedOnTv": "Prepared on this TV",
+  "@player.hud.deliveryPreparedOnTv": {
+    "description": "Android TV: technical details, Delivery reading; the TV adjusts the stream itself before playing it.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.hud.deliveryRepackaged": "Repackaged",
+  "@player.hud.deliveryRepackaged": {
+    "description": "Android TV: technical details, Delivery reading; the same streams in a new container (remux).",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.hud.deliveryRepackagedDetail": "Same streams, new container",
+  "@player.hud.deliveryRepackagedDetail": {
+    "description": "Android TV: technical details; line under Repackaged.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.hud.deliveryTranscoded": "Transcoded",
+  "@player.hud.deliveryTranscoded": {
+    "description": "Android TV: technical details, Delivery reading; video and audio are re-encoded.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.hud.deliveryTranscodedBoth": "Video and audio re-encoded",
+  "@player.hud.deliveryTranscodedBoth": {
+    "description": "Android TV: technical details; line under Transcoded.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.hud.deliveryTranscodedByServer": "Re-encoded by the server",
+  "@player.hud.deliveryTranscodedByServer": {
+    "description": "Android TV: technical details; line under Transcoded when the server transcodes.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.hud.deliveryVideoAsStored": "Video as stored",
+  "@player.hud.deliveryVideoAsStored": {
+    "description": "Android TV: technical details; line under Audio converted.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.hud.deliveryVideoTranscoded": "Video transcoded",
+  "@player.hud.deliveryVideoTranscoded": {
+    "description": "Android TV: technical details, Delivery reading; only the video is re-encoded.",
     "x-platforms": [
       "android"
     ]
@@ -22420,11 +22677,33 @@
       "android"
     ]
   },
+  "player.hud.formatConvertedFrom": "{format}, from {source}",
+  "@player.hud.formatConvertedFrom": {
+    "description": "Android TV: Info tab Audio row and Audio tab “Plays as” value, when the audio was converted. {format}: delivered format with channel layout, such as AAC · Stereo; {source}: source format, such as DTS.",
+    "placeholders": {
+      "format": {
+        "type": "String"
+      },
+      "source": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "android"
+    ]
+  },
   "player.hud.hdrPassthrough": "HDR passthrough",
   "@player.hud.hdrPassthrough": {
     "description": "Android TV: player Video panel, Output section; on/off row that sends HDR video to the display unchanged.",
     "x-platforms": [
       "android"
+    ]
+  },
+  "player.hud.hideTechnicalDetails": "Hide technical details",
+  "@player.hud.hideTechnicalDetails": {
+    "description": "Apple tvOS: Info tab; the Technical details button while the diagnostics are shown.",
+    "x-platforms": [
+      "apple"
     ]
   },
   "player.hud.infoDetails": "Info details",
@@ -22439,6 +22718,13 @@
     "description": "Android TV: player Audio panel, Output section; row label for how the sound leaves the device (decoded to PCM, passthrough, or hardware offload).",
     "x-platforms": [
       "android"
+    ]
+  },
+  "player.hud.more": "More",
+  "@player.hud.more": {
+    "description": "Apple tvOS: cue under a player panel list that continues below.",
+    "x-platforms": [
+      "apple"
     ]
   },
   "player.hud.none": "—",
@@ -22459,6 +22745,14 @@
   "@player.hud.nowPlaying": {
     "description": "Android TV: player Info panel; heading shown in place of the title when the title is blank.",
     "x-platforms": [
+      "android"
+    ]
+  },
+  "player.hud.nowPlayingHeading": "Now playing",
+  "@player.hud.nowPlayingHeading": {
+    "description": "TV player (Android TV, Apple TV), Info tab: column heading over the Video, Audio, Subtitles and Chapter rows (shown in capitals).",
+    "x-platforms": [
+      "apple",
       "android"
     ]
   },
@@ -22541,6 +22835,13 @@
       "apple"
     ]
   },
+  "player.hud.picture": "Picture",
+  "@player.hud.picture": {
+    "description": "Apple tvOS: Settings tab; column heading over Quality and Aspect (shown in capitals).",
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "player.hud.playback": "Playback",
   "@player.hud.playback": {
     "description": "Section heading in the Roku playback info panel for playback state, such as direct play or transcode; in the Android TV player Video panel, for the version, quality, speed and aspect rows. Apple iOS/tvOS/macOS: row label in the player settings sheet and Mac options route section, next to how the video reaches the player (Original, Server Remux). Apple tvOS: column heading of the player info panel's Video tab (shown in capitals).",
@@ -22548,6 +22849,13 @@
       "apple",
       "android",
       "roku"
+    ]
+  },
+  "player.hud.playsAs": "Plays as",
+  "@player.hud.playsAs": {
+    "description": "Android TV: Audio tab, output column; row label for the audio format that reaches the TV.",
+    "x-platforms": [
+      "android"
     ]
   },
   "player.hud.qualitySwitching": "Switching...",
@@ -22587,6 +22895,131 @@
       "android"
     ]
   },
+  "player.hud.statsAsStored": "As stored",
+  "@player.hud.statsAsStored": {
+    "description": "Android TV: technical details, Audio reading; line under the format when it was not converted.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.hud.statsAudioDropouts": "{count, plural, one {Audio dropped out {count_text} time} other {Audio dropped out {count_text} times}}",
+  "@player.hud.statsAudioDropouts": {
+    "description": "Android TV: technical details; headline when the audio dropped out. {count}: number of dropouts (selects the plural); {count_text}: the same number as text.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.hud.statsBuffered": "{count, plural, one {Buffered {count_text} time} other {Buffered {count_text} times}}",
+  "@player.hud.statsBuffered": {
+    "description": "Android TV: technical details; headline when playback has buffered. {count}: number of times (selects the plural); {count_text}: the same number as text.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.hud.statsBufferedWaited": "Waited {seconds} s in total for the stream to catch up",
+  "@player.hud.statsBufferedWaited": {
+    "description": "Android TV: technical details; line under the buffering headline. {seconds}: total seconds waited.",
+    "placeholders": {
+      "seconds": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.hud.statsConnection": "Connection",
+  "@player.hud.statsConnection": {
+    "description": "Android TV: technical details; reading title for the measured download speed (shown in capitals).",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.hud.statsConvertedFrom": "Converted from {format}",
+  "@player.hud.statsConvertedFrom": {
+    "description": "Android TV: technical details, Audio reading; line under the format when it was converted. {format}: the source format, such as DTS.",
+    "placeholders": {
+      "format": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.hud.statsDownloadSpeed": "Download speed",
+  "@player.hud.statsDownloadSpeed": {
+    "description": "Android TV: technical details; line under the Connection value, such as 151.3 Mbps.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.hud.statsFramesDropped": "{count, plural, one {{count_text} frame dropped} other {{count_text} frames dropped}}",
+  "@player.hud.statsFramesDropped": {
+    "description": "Android TV: technical details; headline when many video frames were dropped. {count}: number of frames (selects the plural); {count_text}: the same number as text.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.hud.statsFramesDroppedDetail": "The TV fell behind decoding the video",
+  "@player.hud.statsFramesDroppedDetail": {
+    "description": "Android TV: technical details; line under the dropped-frames headline.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.hud.statsHealthy": "No playback problems",
+  "@player.hud.statsHealthy": {
+    "description": "Android TV: technical details; headline when playback is healthy.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.hud.statsHealthyDetail": "No buffering or dropped frames so far",
+  "@player.hud.statsHealthyDetail": {
+    "description": "Android TV: technical details; line under the healthy headline, shown only when nothing has buffered or dropped.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.hud.statsPlayer": "Player",
+  "@player.hud.statsPlayer": {
+    "description": "Android TV: technical details; label of the row naming the playback engine and route.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.hud.statsSubtitleRenderer": "Subtitle renderer",
+  "@player.hud.statsSubtitleRenderer": {
+    "description": "Android TV: technical details; label of the row naming the subtitle renderer.",
+    "x-platforms": [
+      "android"
+    ]
+  },
   "player.hud.statsUnavailable": "Stats unavailable",
   "@player.hud.statsUnavailable": {
     "description": "Android TV: player Stats panel; shown when the player has no playback statistics to show yet.",
@@ -22603,9 +23036,30 @@
       "roku"
     ]
   },
+  "player.hud.style": "Style",
+  "@player.hud.style": {
+    "description": "Apple tvOS: Subtitles tab; heading over the subtitle appearance options (shown in capitals).",
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "player.hud.styleAndColors": "Style and colors",
   "@player.hud.styleAndColors": {
     "description": "Apple tvOS: title of the subtitle appearance dialog in the player info panel's Subtitles tab.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "player.hud.styleThisAppleTvOnly": "Style for this Apple TV only",
+  "@player.hud.styleThisAppleTvOnly": {
+    "description": "Apple tvOS: switch in the subtitle appearance dialog; keeps the style on this Apple TV.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "player.hud.styleThisAppleTvOnlyDetail": "Leaves your other devices’ style alone",
+  "@player.hud.styleThisAppleTvOnlyDetail": {
+    "description": "Apple tvOS: line under that switch.",
     "x-platforms": [
       "apple"
     ]
@@ -22723,6 +23177,28 @@
   "player.hud.syncNotAllowed": "Not allowed",
   "@player.hud.syncNotAllowed": {
     "description": "Android TV: player Subtitles panel, Timing page; short value of the Sync to audio row when this profile may not sync subtitles. A line below gives the full reason.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.hud.technicalDetails": "Technical details",
+  "@player.hud.technicalDetails": {
+    "description": "TV player (Android TV, Apple TV), Info tab: the button or row that shows playback diagnostics, and on Apple TV the heading over them (shown in capitals).",
+    "x-platforms": [
+      "apple",
+      "android"
+    ]
+  },
+  "player.hud.technicalDetailsHide": "Hide",
+  "@player.hud.technicalDetailsHide": {
+    "description": "Android TV: Info tab; value of the Technical details row while the diagnostics are shown.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.hud.technicalDetailsShow": "Show",
+  "@player.hud.technicalDetailsShow": {
+    "description": "Android TV: Info tab; value of the Technical details row while the diagnostics are hidden.",
     "x-platforms": [
       "android"
     ]
@@ -23694,6 +24170,34 @@
       "apple"
     ]
   },
+  "player.settings.blackBars": "Black bars",
+  "@player.settings.blackBars": {
+    "description": "Android phone: player settings; row label for expanding widescreen video past its black bars, and the title of those choices.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.settings.blackBarsAvoidCamera": "Fill, avoid camera",
+  "@player.settings.blackBarsAvoidCamera": {
+    "description": "Android phone: Black bars choice; expand the video but keep it clear of the camera cutout.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.settings.blackBarsFillFullWidth": "Fill full width",
+  "@player.settings.blackBarsFillFullWidth": {
+    "description": "Android phone: Black bars choice; expand the video across the whole display, even under the camera cutout.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "player.settings.blackBarsKeep": "Keep black bars",
+  "@player.settings.blackBarsKeep": {
+    "description": "Android phone: Black bars choice; don’t expand the video.",
+    "x-platforms": [
+      "android"
+    ]
+  },
   "player.settings.bufferAheadExtended": "{minutes, plural, one {Extended (# minute)} other {Extended (# minutes)}}",
   "@player.settings.bufferAheadExtended": {
     "description": "Apple iOS/tvOS/macOS: device-only playback settings; Buffer ahead choice for connections that drop out. {minutes}: the window in minutes (about 5 today).",
@@ -24073,6 +24577,27 @@
       "android"
     ]
   },
+  "player.stats.a11yHide": "Hide playback stats",
+  "@player.stats.a11yHide": {
+    "description": "Apple iOS: screen-reader label of the close button on the iPhone stats overlay.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "player.stats.a11yShowAll": "Show all playback stats",
+  "@player.stats.a11yShowAll": {
+    "description": "Apple iOS: screen-reader label of the All details button on the iPhone stats overlay.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "player.stats.a11yShowSummary": "Show stats summary",
+  "@player.stats.a11yShowSummary": {
+    "description": "Apple iOS: screen-reader label of the Summary button on the iPhone stats overlay.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "player.stats.accumulatedFrameDelay": "Accumulated frame delay",
   "@player.stats.accumulatedFrameDelay": {
     "description": "Apple iOS/tvOS/macOS: playback stats panel (iPhone overlay, tvOS Info HUD Stats pane, Mac stats); row label for the total time frames were late, in seconds.",
@@ -24084,6 +24609,13 @@
   "player.stats.aetherCache": "Aether cache",
   "@player.stats.aetherCache": {
     "description": "Apple iOS/tvOS/macOS: playback stats panel (iPhone overlay, tvOS Info HUD Stats pane, Mac stats); row label for how much the playback engine (Aether, a name) holds in its cache, as a size.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "player.stats.allDetails": "All details",
+  "@player.stats.allDetails": {
+    "description": "Apple: iPhone stats overlay button that shows every stat; on Apple TV, the cue under the summary in Info → Technical details.",
     "x-platforms": [
       "apple"
     ]
@@ -24216,8 +24748,9 @@
   },
   "player.stats.delivery": "Delivery",
   "@player.stats.delivery": {
-    "description": "Apple iOS/tvOS/macOS: playback stats panel (iPhone overlay, tvOS Info HUD Stats pane, Mac stats); row label for how the server delivers the stream, such as Server Remux HLS. Roku player options panel, Stats tab: row label for the plan's delivery, which shows as the server's code, such as original_http.",
+    "description": "Apple iOS/tvOS/macOS: playback stats panel (iPhone overlay, tvOS Info HUD Stats pane, Mac stats); row label for how the server delivers the stream, such as Server Remux HLS. Roku player options panel, Stats tab: row label for the plan's delivery, which shows as the server's code, such as original_http. Android TV: technical details; reading title for how the file reaches the TV (shown in capitals).",
     "x-platforms": [
+      "android",
       "apple",
       "roku"
     ]
@@ -24534,6 +25067,27 @@
       "roku"
     ]
   },
+  "player.stats.playMethodDirectPlay": "Direct play",
+  "@player.stats.playMethodDirectPlay": {
+    "description": "Apple iOS/tvOS: stats summary; line under the status naming how the file plays, followed by its container.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "player.stats.playMethodRemuxed": "Remuxed by the server",
+  "@player.stats.playMethodRemuxed": {
+    "description": "Apple iOS/tvOS: stats summary; the same line when the server repackages the file.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "player.stats.playMethodTranscoded": "Transcoded by the server",
+  "@player.stats.playMethodTranscoded": {
+    "description": "Apple iOS/tvOS: stats summary; the same line when the server transcodes the file.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "player.stats.playbackRate": "Playback rate",
   "@player.stats.playbackRate": {
     "description": "Apple iOS/tvOS/macOS: playback stats panel (iPhone overlay, tvOS Info HUD Stats pane, Mac stats); row label for the playback speed, such as 1.00x.",
@@ -24727,6 +25281,89 @@
         "type": "String"
       }
     },
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "player.stats.summaryBuffered": "{seconds} s buffered",
+  "@player.stats.summaryBuffered": {
+    "description": "Apple iOS/tvOS: stats summary; line under the Frames tile. {seconds}: seconds of buffered media, with one decimal.",
+    "placeholders": {
+      "seconds": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "player.stats.summaryButton": "Summary",
+  "@player.stats.summaryButton": {
+    "description": "Apple iOS: button on the iPhone stats overlay that goes back to the summary.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "player.stats.summaryCurrentReadRate": "Current read rate",
+  "@player.stats.summaryCurrentReadRate": {
+    "description": "Apple iOS/tvOS: stats summary; line under the Stream tile’s bitrate.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "player.stats.summaryDropped": "{count, plural, one {{count_text} dropped} other {{count_text} dropped}}",
+  "@player.stats.summaryDropped": {
+    "description": "Apple iOS/tvOS: stats summary; Frames tile value. {count}: dropped frames (selects the plural); {count_text}: the same number as text.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "player.stats.summaryFrames": "Frames",
+  "@player.stats.summaryFrames": {
+    "description": "Apple iOS/tvOS: stats summary; title of the tile showing dropped frames (shown in capitals).",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "player.stats.summaryNoneDropped": "None dropped",
+  "@player.stats.summaryNoneDropped": {
+    "description": "Apple iOS/tvOS: stats summary; Frames tile value when no frames were dropped.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "player.stats.summaryPicture": "Picture",
+  "@player.stats.summaryPicture": {
+    "description": "Apple iOS/tvOS: stats summary; title of the tile showing the resolution (shown in capitals).",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "player.stats.summaryPlayingSmoothly": "Playing smoothly",
+  "@player.stats.summaryPlayingSmoothly": {
+    "description": "Apple iOS/tvOS: stats summary status while playing with no dropped frames.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "player.stats.summarySound": "Sound",
+  "@player.stats.summarySound": {
+    "description": "Apple iOS/tvOS: stats summary; title of the tile showing the audio format (shown in capitals).",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "player.stats.summaryWaiting": "Waiting for playback",
+  "@player.stats.summaryWaiting": {
+    "description": "Apple iOS/tvOS: stats summary status before the first reading.",
     "x-platforms": [
       "apple"
     ]
@@ -45029,6 +45666,30 @@
       "apple",
       "android",
       "roku"
+    ]
+  },
+  "upNext.creditsEndAutoPlayOff": "Credits end in {time} · auto-play is off",
+  "@upNext.creditsEndAutoPlayOff": {
+    "description": "Apple iOS/tvOS: Up next card during the end credits, when auto-play is off. {time}: time left in the credits, such as 1:59, shown in bold.",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "upNext.creditsEndThenPlays": "Credits end in {time} · then it plays",
+  "@upNext.creditsEndThenPlays": {
+    "description": "Apple iOS/tvOS: Up next card during the end credits, when auto-play is on. {time}: time left in the credits, such as 1:59, shown in bold. “it” is the next episode.",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple"
     ]
   },
   "upNext.endOfPlayback": "End of playback",
