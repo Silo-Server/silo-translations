@@ -49363,6 +49363,20 @@
       "web"
     ]
   },
+  "web.admin.access.groups.members.noMatches": "No members match your search.",
+  "@web.admin.access.groups.members.noMatches": {
+    "description": "Web admin, Access Groups: shown in place of the member list when the search matches no member of the group.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.members.search": "Search members",
+  "@web.admin.access.groups.members.search": {
+    "description": "Web admin, Access Groups: accessible name of the search field above a group's member list.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.access.groups.newGroup": "New group",
   "@web.admin.access.groups.newGroup": {
     "description": "Web: admin Access Groups page: header button that opens the field for creating a group.",
@@ -81152,6 +81166,39 @@
       "web"
     ]
   },
+  "web.admin.libraries.list.hidePaths": "Hide paths",
+  "@web.admin.libraries.list.hidePaths": {
+    "description": "Web admin, Libraries list on narrow screens: the same button once the folder paths are shown; it collapses them.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.list.moreActions": "More actions for {name}",
+  "@web.admin.libraries.list.moreActions": {
+    "description": "Web admin, Libraries list on narrow screens: accessible name of the menu button on a library card; also used for the menu button on an invitation row in Invitations. {name}: the library's or invitation's name.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.list.moveDown": "Move down",
+  "@web.admin.libraries.list.moveDown": {
+    "description": "Web admin, Libraries list on narrow screens: menu item on a library card that moves the library one place later in the order.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.list.moveUp": "Move up",
+  "@web.admin.libraries.list.moveUp": {
+    "description": "Web admin, Libraries list on narrow screens: menu item on a library card that moves the library one place earlier in the order.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.libraries.list.neverScanned": "Never",
   "@web.admin.libraries.list.neverScanned": {
     "description": "Web admin, Libraries page: Last Scanned column when the library has never been scanned.",
@@ -81183,6 +81230,13 @@
   "web.admin.libraries.list.scanLibrary": "Scan Library",
   "@web.admin.libraries.list.scanLibrary": {
     "description": "Web admin, Libraries page: tooltip and accessible label of the row button that starts a scan of the library.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.list.showPaths": "Show paths",
+  "@web.admin.libraries.list.showPaths": {
+    "description": "Web admin, Libraries list on narrow screens: button on a library card that expands the list of the library's folder paths.",
     "x-platforms": [
       "web"
     ]
@@ -116550,6 +116604,18 @@
       "web"
     ]
   },
+  "web.admin.users.list.moreActions": "More actions for {username}",
+  "@web.admin.users.list.moreActions": {
+    "description": "Web admin, Users list on narrow screens: accessible name of the menu button on a user's row. {username}: the account's username.",
+    "placeholders": {
+      "username": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.users.list.nextPage": "Next",
   "@web.admin.users.list.nextPage": {
     "description": "Web: admin Users page: button under the table that shows the next page of accounts.",
@@ -116560,6 +116626,13 @@
   "web.admin.users.list.noGroup": "No group",
   "@web.admin.users.list.noGroup": {
     "description": "Web: admin Users page: an account that belongs to no access group, in the group filter, the table's Group column, and the create dialog's group menu.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.list.noMatches": "No users match your search or filter.",
+  "@web.admin.users.list.noMatches": {
+    "description": "Web admin, Users list on narrow screens: shown in place of the list when the search or filter matches no account.",
     "x-platforms": [
       "web"
     ]
