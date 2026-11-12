@@ -40,7 +40,7 @@ function sync(root: string, base: string, ...args: string[]) {
   return spawnSync("sh", [SCRIPT, ...args], {
     cwd: root,
     encoding: "utf8",
-    env: { ...process.env, SILO_TRANSLATIONS_PUBLIC: "1", SILO_TRANSLATIONS_BASE_URL: `file://${base}` },
+    env: { ...process.env, SILO_TRANSLATIONS_BASE_URL: `file://${base}` },
   });
 }
 
