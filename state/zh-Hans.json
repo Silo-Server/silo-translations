@@ -102701,6 +102701,12 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.player.audioMenu.onlyOneTrack": {
+    "source": "9e61fe802c5a49f5",
+    "value": "210c42a669ae8fe6",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.player.audioMenu.trackFallback": {
     "source": "2cc438c365d0d90f",
     "value": "e233e139322ebf7b",
@@ -102710,6 +102716,12 @@
   "web.player.audioMenu.trigger": {
     "source": "51176fe16ec72e30",
     "value": "b6dd16ff52ebd549",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.player.audioMenu.triggerWithTrack": {
+    "source": "95d7156d407f705e",
+    "value": "171af3d1b69fbda0",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -102833,6 +102845,12 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.player.buffering.loadingFrom": {
+    "source": "9689f0a8c9d824d0",
+    "value": "8529701b306f974f",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.player.buffering.undoCaption": {
     "source": "d927aa20e3f1a43f",
     "value": "c7e3a70cb818906f",
@@ -102848,6 +102866,12 @@
   "web.player.chaptersMenu.heading": {
     "source": "87cf97e398b752cc",
     "value": "f12d1c90df4de378",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.player.chaptersMenu.nowPlaying": {
+    "source": "7f427bfba24b66e2",
+    "value": "06070a97cd076686",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -102911,6 +102935,12 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.player.controls.exitFullscreenShortcut": {
+    "source": "30daf3b474672b11",
+    "value": "accf935b46fc7c43",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.player.controls.fillScreen": {
     "source": "9095d98ff7914172",
     "value": "589493a0b316568b",
@@ -102920,6 +102950,18 @@
   "web.player.controls.fullscreen": {
     "source": "fb1f7b960944f9ed",
     "value": "22ea3f47fee80536",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.player.controls.fullscreenShortcut": {
+    "source": "bce1d93c52b1000d",
+    "value": "2319d5f0b6abea3d",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.player.controls.more": {
+    "source": "5409064acbe69875",
+    "value": "38844b135cf70dfc",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -102947,6 +102989,12 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.player.controls.pictureInPictureItem": {
+    "source": "4ad7c48fe4aac551",
+    "value": "850875a7534d2ae8",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.player.controls.pictureInPictureShortcut": {
     "source": "80e899ed6db72580",
     "value": "e7e2dcd3c600358b",
@@ -102968,6 +103016,18 @@
   "web.player.controls.previousEpisode": {
     "source": "76203663dfacefdb",
     "value": "9af8d8483d0b527d",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.player.controls.remainingTime": {
+    "source": "50cf0585d83499c3",
+    "value": "1dc181129baaa651",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.player.controls.remainingTimeLabel": {
+    "source": "86c326560e166a1a",
+    "value": "8a5d9e933c2b812c",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -103511,6 +103571,12 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.player.info.heading": {
+    "source": "57ea852489b4b2db",
+    "value": "e3c4de288d23d5b4",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.player.info.playMethod": {
     "source": "84ab472a9044441c",
     "value": "480f515cfb29aad2",
@@ -103661,6 +103727,36 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.player.nextEpisode.playNow": {
+    "source": "57e21aca54b9e030",
+    "value": "79aaf3909d9fc9c0",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.player.nextEpisode.regionLabel": {
+    "source": "620663106e88c8e8",
+    "value": "f2f5516bf28163bc",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.player.nextEpisode.seasonEpisode": {
+    "source": "385bfe525a4ade7b",
+    "value": "88e3543130f4ef0b",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.player.nextEpisode.upNextIn": {
+    "source": "2fc64e6d66381d85",
+    "value": "d2a2fc5bad58c69f",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.player.postRoll.stillPlaying": {
+    "source": "0515d62dcfec94fd",
+    "value": "68e3d0400dd87986",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.player.quality.auto": {
     "source": "275989537071b5b5",
     "value": "7eb336e42cb5076b",
@@ -103691,6 +103787,18 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.player.quality.sourceFile": {
+    "source": "d5192a87e45d8ee0",
+    "value": "ad8bac986414cf97",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.player.quality.streamingQuality": {
+    "source": "b8f7fcf7a4e74870",
+    "value": "6dcc657fbe61ab78",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.player.quality.title": {
     "source": "5d53aeb3626a50e8",
     "value": "77ccdb7ba817da96",
@@ -103700,6 +103808,18 @@
   "web.player.quality.triggerWithSpeed": {
     "source": "7f9a4331dab3b0da",
     "value": "750e9594d741b2a0",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.player.quality.triggerWithValue": {
+    "source": "316776e43e36857e",
+    "value": "0b7ab2f26f9f5afd",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.player.quality.triggerWithValueAndSpeed": {
+    "source": "d61ad3b8071251e4",
+    "value": "d2f8e6e04fa3ab3b",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -104183,6 +104303,12 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.player.upNext.autoplay": {
+    "source": "7ae4935ef3b073cd",
+    "value": "a5a25e880c5e12bd",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.player.upNext.autoplayOff": {
     "source": "57ba81e81fac0b33",
     "value": "6b60053202b014c4",
@@ -104213,6 +104339,18 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.player.upNext.heading": {
+    "source": "c2e6b2d81bbd405d",
+    "value": "f2f5516bf28163bc",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.player.upNext.headingShuffle": {
+    "source": "e463e0af91230fa4",
+    "value": "29c60f308fd57b85",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.player.upNext.minutesLeft": {
     "source": "e57cb1071a2f8522",
     "value": "73397ba9b905976a",
@@ -104237,9 +104375,33 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.player.upNext.onDeckScrollBack": {
+    "source": "4749a5bffe88a23e",
+    "value": "3bc0a1dcffdd2408",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.player.upNext.onDeckScrollForward": {
+    "source": "03785234c8ed5d7c",
+    "value": "e5826e08421db82a",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.player.upNext.playingNext": {
     "source": "1ab2e7daadf7a7ff",
     "value": "f2f5516bf28163bc",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.player.upNext.startsAfterCredits": {
+    "source": "3e1ce11066f84418",
+    "value": "4e52dcb276117b12",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.player.upNext.startsIn": {
+    "source": "abd43f15836fecd7",
+    "value": "b85a198a74303702",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -117707,6 +117869,12 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.subtitles.menu.heading": {
+    "source": "298617b353aa1820",
+    "value": "60033a3bf561e656",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.subtitles.menu.noMatch": {
     "source": "60440066b8dbf0b6",
     "value": "f253a9b0b59d5d8d",
@@ -117755,6 +117923,18 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.subtitles.menu.subtitlesOffShortcut": {
+    "source": "d8358e262631ea43",
+    "value": "7df67336d4c8a2bc",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.subtitles.menu.subtitlesShortcut": {
+    "source": "ab2c603601193bf2",
+    "value": "7e8bb525ace03597",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.subtitles.menu.syncHint": {
     "source": "57f778b513be6cf0",
     "value": "a2cdd436c0490dff",
@@ -117797,9 +117977,27 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.subtitles.menu.toolsLabel": {
+    "source": "63407640c71644ed",
+    "value": "d591989b54422918",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.subtitles.menu.tracksLabel": {
+    "source": "2e32199fc6fb817c",
+    "value": "3ee8442acfa69b4b",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.subtitles.menu.translateWithAi": {
     "source": "5c0d4133ec48f18d",
     "value": "5ed9a449b06b5174",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.subtitles.menu.triggerWithValue": {
+    "source": "9003767c93492cac",
+    "value": "2e77e25355d2635d",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
