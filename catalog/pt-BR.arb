@@ -11740,7 +11740,7 @@
   "web.admin.settings.playback.transcoding.backBufferHint": "Mantém esta quantidade de mídia já baixada para retroceder instantaneamente e depois libera os segmentos de transcodificação mais antigos. Use 0 para desativar a limpeza; valores ativados devem ser de pelo menos 120 segundos. Combine com a limitação da transcodificação para restringir o uso de disco tanto atrás quanto à frente do cliente.",
   "web.admin.settings.playback.transcoding.bufferAhead": "Buffer à frente",
   "web.admin.settings.playback.transcoding.copyKeyframePlaylist": "Playlists completas para vídeo copiado",
-  "web.admin.settings.playback.transcoding.copyKeyframePlaylistDescription": "Experimental. Quando o Silo copia o vídeo de um arquivo, lista todos os segmentos desde o início, usando os quadros-chave do arquivo, em vez de uma playlist que cresce conforme o Silo copia. Evita que o Safari trave no meio da reprodução. Um avanço além do que o Silo já copiou aguarda até que ele chegue lá.",
+  "web.admin.settings.playback.transcoding.copyKeyframePlaylistDescription": "Experimental. Quando o Silo copia o vídeo de um arquivo, lista todos os segmentos desde o início, usando os quadros-chave do arquivo, em vez de uma playlist que cresce conforme o Silo copia. Evita que o Safari trave no meio da reprodução. Uma busca muito além do que o Silo já copiou reinicia a cópia a partir desse ponto.",
   "web.admin.settings.playback.transcoding.dir": "Diretório de transcodificação",
   "web.admin.settings.playback.transcoding.dirDescription": "Use um armazenamento local rápido e com bastante espaço livre. Deixe em branco para usar {path}.",
   "web.admin.settings.playback.transcoding.enabled": "Transcodificação de vídeo",

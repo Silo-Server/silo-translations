@@ -11740,7 +11740,7 @@
   "web.admin.settings.playback.transcoding.backBufferHint": "ダウンロード済みのメディアをこの長さだけ保持して即座に巻き戻しシークできるようにし、それより古いトランスコードセグメントを解放します。0にするとクリーンアップを無効にします。有効にする場合は120秒以上にしてください。トランスコードのスロットリングと組み合わせると、クライアントの前後両方のディスク使用量を制限できます。",
   "web.admin.settings.playback.transcoding.bufferAhead": "先読みバッファー",
   "web.admin.settings.playback.transcoding.copyKeyframePlaylist": "コピーした動画の完全なプレイリスト",
-  "web.admin.settings.playback.transcoding.copyKeyframePlaylistDescription": "試験運用。Siloがファイルの動画をコピーするとき、コピーに合わせて伸びるプレイリストではなく、ファイルのキーフレームを使って最初からすべてのセグメントを一覧にします。Safariが途中でフリーズするのを防ぎます。Siloがコピーした位置より先にシークすると、そこまでコピーされるまで待機します。",
+  "web.admin.settings.playback.transcoding.copyKeyframePlaylistDescription": "試験運用。Siloがファイルの動画をコピーするとき、コピーに合わせて伸びるプレイリストではなく、ファイルのキーフレームを使って最初からすべてのセグメントを一覧にします。Safariが途中でフリーズするのを防ぎます。Siloがコピーした位置より大きく先にシークすると、その位置からコピーをやり直します。",
   "web.admin.settings.playback.transcoding.dir": "トランスコードディレクトリ",
   "web.admin.settings.playback.transcoding.dirDescription": "空き容量に余裕のある高速なローカルストレージを使用してください。空欄にすると{path}を使用します。",
   "web.admin.settings.playback.transcoding.enabled": "動画のトランスコード",

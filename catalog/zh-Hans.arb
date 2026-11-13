@@ -11740,7 +11740,7 @@
   "web.admin.settings.playback.transcoding.backBufferHint": "保留这么长时间的已下载媒体，以便即时向后拖动，然后回收更早的转码分段。设为0可停用清理；启用时的值必须至少为120秒。与转码限速配合使用，可同时限制客户端播放位置前后的磁盘用量。",
   "web.admin.settings.playback.transcoding.bufferAhead": "预先缓冲",
   "web.admin.settings.playback.transcoding.copyKeyframePlaylist": "为复制的视频提供完整播放列表",
-  "web.admin.settings.playback.transcoding.copyKeyframePlaylistDescription": "实验性功能。当Silo复制文件的视频时，根据文件的关键帧从一开始就列出所有分段，而不是使用随Silo复制而增长的播放列表。可防止Safari在播放中途卡住。如果拖动到Silo尚未复制的位置，需要等待复制到那里。",
+  "web.admin.settings.playback.transcoding.copyKeyframePlaylistDescription": "实验性功能。当Silo复制文件的视频时，根据文件的关键帧从一开始就列出所有分段，而不是使用随Silo复制而增长的播放列表。可防止Safari在播放中途卡住。如果跳转到远超Silo已复制部分的位置，Silo会从该处重新开始复制。",
   "web.admin.settings.playback.transcoding.dir": "转码目录",
   "web.admin.settings.playback.transcoding.dirDescription": "请使用空间充足的快速本地存储。留空则使用{path}。",
   "web.admin.settings.playback.transcoding.enabled": "视频转码",
