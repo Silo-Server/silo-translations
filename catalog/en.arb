@@ -48981,6 +48981,86 @@
       "web"
     ]
   },
+  "web.admin.access.groups.addUsers.addSelected": "Add selected",
+  "@web.admin.access.groups.addUsers.addSelected": {
+    "description": "Web: admin Access Groups page, group editor: Add users dialog: button that adds the selected accounts, shown while none are selected.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.addUsers.addSelectedCount": "Add {count} selected",
+  "@web.admin.access.groups.addUsers.addSelectedCount": {
+    "description": "Web: admin Access Groups page, group editor: Add users dialog: button that adds the selected accounts. {count}: how many are selected, already formatted.",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.addUsers.description": "Regular accounts outside this group. Admin accounts can’t join groups.",
+  "@web.admin.access.groups.addUsers.description": {
+    "description": "Web: admin Access Groups page, group editor: Add users dialog: description under the title.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.addUsers.noGroup": "No group",
+  "@web.admin.access.groups.addUsers.noGroup": {
+    "description": "Web: admin Access Groups page, group editor: Add users dialog: shown next to an account that is in no access group.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.addUsers.noMatches": "No users match your search.",
+  "@web.admin.access.groups.addUsers.noMatches": {
+    "description": "Web: admin Access Groups page, group editor: Add users dialog: shown when no account matches the search.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.addUsers.none": "Every regular account is already here.",
+  "@web.admin.access.groups.addUsers.none": {
+    "description": "Web: admin Access Groups page, group editor: Add users dialog: shown when every regular account is already in this group.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.addUsers.search": "Search users",
+  "@web.admin.access.groups.addUsers.search": {
+    "description": "Web: admin Access Groups page, group editor: Add users dialog: accessible name of the account search box.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.addUsers.searchPlaceholder": "Search by username or email",
+  "@web.admin.access.groups.addUsers.searchPlaceholder": {
+    "description": "Web: admin Access Groups page, group editor: Add users dialog: placeholder of the account search box.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.addUsers.title": "Add users to {group}",
+  "@web.admin.access.groups.addUsers.title": {
+    "description": "Web: admin Access Groups page, group editor: Add users dialog: title. {group}: the name of the group being edited.",
+    "placeholders": {
+      "group": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.addUsers.unknownGroup": "Unknown group",
+  "@web.admin.access.groups.addUsers.unknownGroup": {
+    "description": "Web: admin Access Groups page, group editor: Add users dialog: shown next to an account whose access group Silo can't name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.access.groups.allGroups": "All groups",
   "@web.admin.access.groups.allGroups": {
     "description": "Web: admin Access Groups page, group editor: back button that returns to the group list.",
@@ -49071,6 +49151,165 @@
         "type": "String"
       }
     },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.changes.allPermissions": "All",
+  "@web.admin.access.groups.changes.allPermissions": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: list of settings that change. Value for a group that grants every extra permission.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.changes.allowed": "Allowed",
+  "@web.admin.access.groups.changes.allowed": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: list of settings that change. Value for a feature the group allows.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.changes.audioTranscoding": "Audio transcoding",
+  "@web.admin.access.groups.changes.audioTranscoding": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: list of settings that change. Setting name: whether audio can be transcoded.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.changes.concurrentStreams": "Concurrent streams",
+  "@web.admin.access.groups.changes.concurrentStreams": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: list of settings that change. Setting name: how many streams can play at once.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.changes.concurrentTranscodes": "Concurrent transcodes",
+  "@web.admin.access.groups.changes.concurrentTranscodes": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: list of settings that change. Setting name: how many transcodes can run at once.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.changes.convertedDownloads": "Converted downloads",
+  "@web.admin.access.groups.changes.convertedDownloads": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: list of settings that change. Setting name: whether downloads can be converted to another format.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.changes.downloads": "Downloads",
+  "@web.admin.access.groups.changes.downloads": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: list of settings that change. Setting name: whether downloads are allowed.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.changes.householdProfiles": "Household profiles",
+  "@web.admin.access.groups.changes.householdProfiles": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: list of settings that change. Setting name: how many household profiles an account can have.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.changes.libraries": "Libraries",
+  "@web.admin.access.groups.changes.libraries": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: list of settings that change. Setting name: which libraries the group can use.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.changes.libraryId": "#{id}",
+  "@web.admin.access.groups.changes.libraryId": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: list of settings that change. Stands in for a library whose name Silo can't load. {id}: the library's number.",
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.changes.localBitrate": "Local stream bitrate",
+  "@web.admin.access.groups.changes.localBitrate": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: list of settings that change. Setting name: the stream bitrate limit on the local network.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.changes.noLibraries": "No libraries",
+  "@web.admin.access.groups.changes.noLibraries": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: list of settings that change. Value for a group that can use no library.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.changes.noPermissions": "None",
+  "@web.admin.access.groups.changes.noPermissions": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: list of settings that change. Value for a group that grants no extra permission.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.changes.notAllowed": "Not allowed",
+  "@web.admin.access.groups.changes.notAllowed": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: list of settings that change. Value for a feature the group doesn't allow.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.changes.permissions": "Permissions",
+  "@web.admin.access.groups.changes.permissions": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: list of settings that change. Setting name: the extra permissions the group grants.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.changes.playbackQuality": "Playback quality",
+  "@web.admin.access.groups.changes.playbackQuality": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: list of settings that change. Setting name: the highest playback quality.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.changes.remoteBitrate": "Remote stream bitrate",
+  "@web.admin.access.groups.changes.remoteBitrate": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: list of settings that change. Setting name: the stream bitrate limit outside the local network.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.changes.requestApproval": "Request approval",
+  "@web.admin.access.groups.changes.requestApproval": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: list of settings that change. Setting name: whether media requests need approval.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.changes.requestLimit": "Request limit",
+  "@web.admin.access.groups.changes.requestLimit": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: list of settings that change. Setting name: how many media requests an account can make.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.changes.requests": "Requests",
+  "@web.admin.access.groups.changes.requests": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: list of settings that change. Setting name: whether accounts can make media requests.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.changes.unlimited": "Unlimited",
+  "@web.admin.access.groups.changes.unlimited": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: list of settings that change. Value for a limit that is not set.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.changes.videoTranscoding": "Video transcoding",
+  "@web.admin.access.groups.changes.videoTranscoding": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: list of settings that change. Setting name: whether video can be transcoded.",
     "x-platforms": [
       "web"
     ]
@@ -49317,9 +49556,81 @@
       "web"
     ]
   },
+  "web.admin.access.groups.members.addFailed": "Some users could not be added:",
+  "@web.admin.access.groups.members.addFailed": {
+    "description": "Web: admin Access Groups page, group editor: Members section: heading of the list of accounts that could not be added. Each entry follows on its own line.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.members.addUsers": "Add users",
+  "@web.admin.access.groups.members.addUsers": {
+    "description": "Web: admin Access Groups page, group editor: Members section: button that opens the dialog for adding accounts to the group.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.members.added": "{count, plural, one {Added # user to {group}} other {Added # users to {group}}}",
+  "@web.admin.access.groups.members.added": {
+    "description": "Web: admin Access Groups page, group editor: Members section: notification after accounts were added. {count}: how many; {group}: the group's name.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "group": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.members.couldNotAdd": "could not be added",
+  "@web.admin.access.groups.members.couldNotAdd": {
+    "description": "Web: admin Access Groups page, group editor: Members section: reason shown for an account when adding it failed without a message from the server.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.members.couldNotMove": "could not be moved",
+  "@web.admin.access.groups.members.couldNotMove": {
+    "description": "Web: admin Access Groups page, group editor: Members section: reason shown for an account when moving it failed without a message from the server.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.access.groups.members.empty": "No members yet.",
   "@web.admin.access.groups.members.empty": {
     "description": "Web: admin Access Groups page, group editor: shown when no account belongs to the group.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.members.failure": "{username}: {reason}",
+  "@web.admin.access.groups.members.failure": {
+    "description": "Web: admin Access Groups page, group editor: Members section: one entry in the list of accounts that could not be moved or added. {username}: the account's username; {reason}: why it failed.",
+    "placeholders": {
+      "username": {
+        "type": "String"
+      },
+      "reason": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.members.groupChanged": "This account changed after you confirmed. Check the change and try again.",
+  "@web.admin.access.groups.members.groupChanged": {
+    "description": "Web: admin Access Groups page, group editor: Members section: reason shown when an account's group or request setting changed after the admin confirmed the move.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.members.groupsLoadFailed": "Could not load access groups, so members can’t be moved yet. <retry>Retry</retry>",
+  "@web.admin.access.groups.members.groupsLoadFailed": {
+    "description": "Web: admin Access Groups page, group editor: Members section: error when the list of access groups fails to load. <retry> wraps the button that tries again.",
     "x-platforms": [
       "web"
     ]
@@ -49352,6 +49663,68 @@
       "web"
     ]
   },
+  "web.admin.access.groups.members.manageHelp": "Move members to another group, or add users to this one.",
+  "@web.admin.access.groups.members.manageHelp": {
+    "description": "Web: admin Access Groups page, group editor: Members section: help text under the section heading.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.members.moveFailed": "Some users could not be moved:",
+  "@web.admin.access.groups.members.moveFailed": {
+    "description": "Web: admin Access Groups page, group editor: Members section: heading of the list of accounts that could not be moved. Each entry follows on its own line.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.members.moveSelected": "Move selected",
+  "@web.admin.access.groups.members.moveSelected": {
+    "description": "Web: admin Access Groups page, group editor: Members section: button that moves the selected members, shown while none are selected.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.members.moveSelectedCount": "Move {count} selected",
+  "@web.admin.access.groups.members.moveSelectedCount": {
+    "description": "Web: admin Access Groups page, group editor: Members section: button that moves the selected members. {count}: how many are selected, already formatted.",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.members.moveTarget": "Move selected members to",
+  "@web.admin.access.groups.members.moveTarget": {
+    "description": "Web: admin Access Groups page, group editor: Members section: accessible name of the menu that picks the group to move members to.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.members.moveTargetPlaceholder": "Move to group...",
+  "@web.admin.access.groups.members.moveTargetPlaceholder": {
+    "description": "Web: admin Access Groups page, group editor: Members section: placeholder of the menu that picks the group to move members to.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.members.moved": "{count, plural, one {Moved # user to {group}} other {Moved # users to {group}}}",
+  "@web.admin.access.groups.members.moved": {
+    "description": "Web: admin Access Groups page, group editor: Members section: notification after members were moved. {count}: how many; {group}: the group they moved to.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "group": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.access.groups.members.noMatches": "No members match your search.",
   "@web.admin.access.groups.members.noMatches": {
     "description": "Web admin, Access Groups: shown in place of the member list when the search matches no member of the group.",
@@ -49362,6 +49735,154 @@
   "web.admin.access.groups.members.search": "Search members",
   "@web.admin.access.groups.members.search": {
     "description": "Web admin, Access Groups: accessible name of the search field above a group's member list.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.members.selectMember": "Select {username}",
+  "@web.admin.access.groups.members.selectMember": {
+    "description": "Web: admin Access Groups page, group editor: Members section: accessible name of a member's checkbox. {username}: the member's username.",
+    "placeholders": {
+      "username": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.members.selectedHidden": "{count, plural, one {# selected member isn’t shown, and a move includes it.} other {# selected members aren’t shown, and a move includes them.}}",
+  "@web.admin.access.groups.members.selectedHidden": {
+    "description": "Web: admin Access Groups page, group editor: Members section: note when selected members are hidden by the search or the page. {count}: how many.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.moveConfirm.change": "{label}: {from} → {to}",
+  "@web.admin.access.groups.moveConfirm.change": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: one setting that changes for the moved accounts. {label}: the setting's name; {from}: its current value; {to}: its value in the new group.",
+    "placeholders": {
+      "label": {
+        "type": "String"
+      },
+      "from": {
+        "type": "String"
+      },
+      "to": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.moveConfirm.description": "Settings a user has overridden on their own account stay as they are. They get the new access right away, without being signed out.",
+  "@web.admin.access.groups.moveConfirm.description": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: description under the title.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.moveConfirm.fromGroup": "{count} from {group}",
+  "@web.admin.access.groups.moveConfirm.fromGroup": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: heading for the accounts coming from one group. {count}: how many accounts, already formatted; {group}: that group's name.",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      },
+      "group": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.moveConfirm.fromNoGroup": "{count} from no group",
+  "@web.admin.access.groups.moveConfirm.fromNoGroup": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: heading for the accounts that are in no group. {count}: how many accounts, already formatted.",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.moveConfirm.fromUnknownGroup": "{count} from group #{id}",
+  "@web.admin.access.groups.moveConfirm.fromUnknownGroup": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: heading for the accounts coming from a group Silo can't name. {count}: how many accounts, already formatted; {id}: the group's number.",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      },
+      "id": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.moveConfirm.loadingTerms": "Loading request settings…",
+  "@web.admin.access.groups.moveConfirm.loadingTerms": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: shown while the groups' request settings load.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.moveConfirm.move": "Move",
+  "@web.admin.access.groups.moveConfirm.move": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: button that moves the accounts.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.moveConfirm.moving": "Moving...",
+  "@web.admin.access.groups.moveConfirm.moving": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: the move button's label while the move runs.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.moveConfirm.noChanges": "No inherited settings change.",
+  "@web.admin.access.groups.moveConfirm.noChanges": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: shown when no setting the accounts inherit changes.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.moveConfirm.sourceUnknown": "Their current group couldn’t be loaded, so the settings that change are unknown.",
+  "@web.admin.access.groups.moveConfirm.sourceUnknown": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: shown when the accounts' current group couldn't be loaded.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.moveConfirm.termsFailed": "The groups’ request settings couldn’t be loaded, so the settings that change are unknown.",
+  "@web.admin.access.groups.moveConfirm.termsFailed": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: shown when the groups' request settings couldn't be loaded.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.access.groups.moveConfirm.title": "{count, plural, one {Move # user to {group}?} other {Move # users to {group}?}}",
+  "@web.admin.access.groups.moveConfirm.title": {
+    "description": "Web: admin Access Groups page, group editor: move confirmation dialog: title. {count}: how many accounts; {group}: the group they move to.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "group": {
+        "type": "String"
+      }
+    },
     "x-platforms": [
       "web"
     ]
