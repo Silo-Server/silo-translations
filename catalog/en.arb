@@ -2027,6 +2027,7 @@
   "@calendar.badge.digital": {
     "description": "Android phone and TV Calendar: short uppercase badge on a poster for a movie's digital release.",
     "x-platforms": [
+      "apple",
       "android"
     ]
   },
@@ -2043,6 +2044,7 @@
   "@calendar.badge.physical": {
     "description": "Android phone and TV Calendar: short uppercase badge on a poster for a movie's disc release.",
     "x-platforms": [
+      "apple",
       "android"
     ]
   },
@@ -6252,14 +6254,6 @@
       "roku"
     ]
   },
-  "detail.audioButton": "Audio Tracks",
-  "@detail.audioButton": {
-    "description": "Button on a title page (Roku; Apple tvOS, where it shows on focus) that opens a picker for the audio track to play.",
-    "x-platforms": [
-      "roku",
-      "apple"
-    ]
-  },
   "detail.audioSpoken": "Audio, {value}",
   "@detail.audioSpoken": {
     "description": "Apple iOS and tvOS: accessibility label of the Audio control on a title page. {value}: the chosen audio track.",
@@ -7161,7 +7155,8 @@
     "description": "Android phone and TV: label of the control on a title page that shows and changes which edition (such as Theatrical or Director's Cut) to play; shown only when a title has several editions.",
     "x-platforms": [
       "apple",
-      "android"
+      "android",
+      "roku"
     ]
   },
   "detail.editionSpoken": "Edition, {value}",
@@ -7180,7 +7175,8 @@
   "@detail.editionStandard": {
     "description": "Apple iOS and macOS: name of a title's unnamed edition (the version with no edition label, as opposed to e.g. Director's Cut), shown as the Edition value on a title page and in its edition picker.",
     "x-platforms": [
-      "apple"
+      "apple",
+      "roku"
     ]
   },
   "detail.editionVersionCount": "{count, plural, one {# version} other {# versions}}",
@@ -7192,7 +7188,8 @@
       }
     },
     "x-platforms": [
-      "apple"
+      "apple",
+      "roku"
     ]
   },
   "detail.episode": "Episode {number}",
@@ -9050,14 +9047,6 @@
     },
     "x-platforms": [
       "android"
-    ]
-  },
-  "detail.versionsButton": "Versions",
-  "@detail.versionsButton": {
-    "description": "Button on a title page (Roku; Apple tvOS, where it shows on focus) that opens a picker of the available file versions (for example different resolutions).",
-    "x-platforms": [
-      "roku",
-      "apple"
     ]
   },
   "detail.watched": "Watched",
@@ -133239,7 +133228,8 @@
   "@web.detail.mediaInfo.bitDepth": {
     "description": "Web: a video or audio track's bit depth, in track details. {depth}: the bit depth, e.g. 10.",
     "x-platforms": [
-      "web"
+      "web",
+      "apple"
     ],
     "placeholders": {
       "depth": {
@@ -133355,7 +133345,8 @@
   "@web.detail.mediaInfo.frameRate": {
     "description": "Web: a video track's frame rate in frames per second, in track details. {rate}: the frame rate, e.g. 23.976.",
     "x-platforms": [
-      "web"
+      "web",
+      "apple"
     ],
     "placeholders": {
       "rate": {
@@ -133421,14 +133412,16 @@
   "@web.detail.mediaInfo.row.bitDepthLabel": {
     "description": "Web: row label in the Media Info dialog of a detail page (a table of a file's technical details).",
     "x-platforms": [
-      "web"
+      "web",
+      "apple"
     ]
   },
   "web.detail.mediaInfo.row.bitrate": "Bitrate",
   "@web.detail.mediaInfo.row.bitrate": {
     "description": "Web: row label in the Media Info dialog of a detail page (a table of a file's technical details).",
     "x-platforms": [
-      "web"
+      "web",
+      "apple"
     ]
   },
   "web.detail.mediaInfo.row.channels": "Channels",
@@ -133547,7 +133540,8 @@
   "@web.detail.mediaInfo.row.frameRateLabel": {
     "description": "Web: row label in the Media Info dialog of a detail page (a table of a file's technical details).",
     "x-platforms": [
-      "web"
+      "web",
+      "apple"
     ]
   },
   "web.detail.mediaInfo.row.hearingImpaired": "Hearing Impaired",
@@ -133695,7 +133689,8 @@
   "@web.detail.mediaInfo.title": {
     "description": "Web: title of the dialog listing a title's files with their technical details (codecs, tracks, bitrate).",
     "x-platforms": [
-      "web"
+      "web",
+      "apple"
     ]
   },
   "web.detail.mediaInfo.video": "Video",
