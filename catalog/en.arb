@@ -7161,7 +7161,8 @@
     "description": "Android phone and TV: label of the control on a title page that shows and changes which edition (such as Theatrical or Director's Cut) to play; shown only when a title has several editions.",
     "x-platforms": [
       "apple",
-      "android"
+      "android",
+      "roku"
     ]
   },
   "detail.editionSpoken": "Edition, {value}",
@@ -7180,7 +7181,8 @@
   "@detail.editionStandard": {
     "description": "Apple iOS and macOS: name of a title's unnamed edition (the version with no edition label, as opposed to e.g. Director's Cut), shown as the Edition value on a title page and in its edition picker.",
     "x-platforms": [
-      "apple"
+      "apple",
+      "roku"
     ]
   },
   "detail.editionVersionCount": "{count, plural, one {# version} other {# versions}}",
@@ -7192,7 +7194,8 @@
       }
     },
     "x-platforms": [
-      "apple"
+      "apple",
+      "roku"
     ]
   },
   "detail.episode": "Episode {number}",
