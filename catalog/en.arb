@@ -2027,6 +2027,7 @@
   "@calendar.badge.digital": {
     "description": "Android phone and TV Calendar: short uppercase badge on a poster for a movie's digital release.",
     "x-platforms": [
+      "apple",
       "android"
     ]
   },
@@ -2043,6 +2044,7 @@
   "@calendar.badge.physical": {
     "description": "Android phone and TV Calendar: short uppercase badge on a poster for a movie's disc release.",
     "x-platforms": [
+      "apple",
       "android"
     ]
   },
@@ -132705,7 +132707,8 @@
   "@web.detail.mediaInfo.bitDepth": {
     "description": "Web: a video or audio track's bit depth, in track details. {depth}: the bit depth, e.g. 10.",
     "x-platforms": [
-      "web"
+      "web",
+      "apple"
     ],
     "placeholders": {
       "depth": {
@@ -132821,7 +132824,8 @@
   "@web.detail.mediaInfo.frameRate": {
     "description": "Web: a video track's frame rate in frames per second, in track details. {rate}: the frame rate, e.g. 23.976.",
     "x-platforms": [
-      "web"
+      "web",
+      "apple"
     ],
     "placeholders": {
       "rate": {
@@ -132887,14 +132891,16 @@
   "@web.detail.mediaInfo.row.bitDepthLabel": {
     "description": "Web: row label in the Media Info dialog of a detail page (a table of a file's technical details).",
     "x-platforms": [
-      "web"
+      "web",
+      "apple"
     ]
   },
   "web.detail.mediaInfo.row.bitrate": "Bitrate",
   "@web.detail.mediaInfo.row.bitrate": {
     "description": "Web: row label in the Media Info dialog of a detail page (a table of a file's technical details).",
     "x-platforms": [
-      "web"
+      "web",
+      "apple"
     ]
   },
   "web.detail.mediaInfo.row.channels": "Channels",
@@ -133013,7 +133019,8 @@
   "@web.detail.mediaInfo.row.frameRateLabel": {
     "description": "Web: row label in the Media Info dialog of a detail page (a table of a file's technical details).",
     "x-platforms": [
-      "web"
+      "web",
+      "apple"
     ]
   },
   "web.detail.mediaInfo.row.hearingImpaired": "Hearing Impaired",
@@ -133161,7 +133168,8 @@
   "@web.detail.mediaInfo.title": {
     "description": "Web: title of the dialog listing a title's files with their technical details (codecs, tracks, bitrate).",
     "x-platforms": [
-      "web"
+      "web",
+      "apple"
     ]
   },
   "web.detail.mediaInfo.video": "Video",
