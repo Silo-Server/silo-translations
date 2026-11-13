@@ -87576,6 +87576,96 @@
       "web"
     ]
   },
+  "web.admin.plugins.signature.invalid": "Failed the check",
+  "@web.admin.plugins.signature.invalid": {
+    "description": "Web admin, plugin page: release signature row when a signature came with the plugin and did not prove where it was built.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.plugins.signature.invalidBanner": "<b>The release signature check failed for {name}.</b> The signature that came with this version doesn't prove which repository built it. The server log has the details.",
+  "@web.admin.plugins.signature.invalidBanner": {
+    "description": "Web admin, plugin page: warning banner when the installed plugin's release signature failed the check. <b>…</b> is bold. {name}: the plugin's name.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.plugins.signature.label": "Release signature",
+  "@web.admin.plugins.signature.label": {
+    "description": "Web admin, plugin page: label of the details row that says whether the installed plugin's release signature was checked and what it proved.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.plugins.signature.tileInvalid": "Signature failed",
+  "@web.admin.plugins.signature.tileInvalid": {
+    "description": "Web admin, plugins list: short warning on a plugin's card when its release signature failed the check.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.plugins.signature.tileVerified": "Signed release built from {repository}",
+  "@web.admin.plugins.signature.tileVerified": {
+    "description": "Web admin, plugins list: hover text and screen reader label of the small check mark on a plugin's card when its release signature was verified. {repository}: the GitHub repository that built the plugin, as owner/name.",
+    "placeholders": {
+      "repository": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.plugins.signature.unknown": "Not checked",
+  "@web.admin.plugins.signature.unknown": {
+    "description": "Web admin, plugin page: release signature row when Silo never checked the signature, for example for a plugin installed before Silo checked signatures.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.plugins.signature.unsigned": "Not signed",
+  "@web.admin.plugins.signature.unsigned": {
+    "description": "Web admin, plugin page: release signature row when the plugin came with no signature to check, as for an uploaded file.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.plugins.signature.verified": "Built from <link>{repository}</link>",
+  "@web.admin.plugins.signature.verified": {
+    "description": "Web admin, plugin page: release signature row when the signature was verified. <link>…</link> links to the repository. {repository}: the GitHub repository that built the plugin, as owner/name.",
+    "placeholders": {
+      "repository": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.plugins.signature.verifiedAt": "Verified {date}",
+  "@web.admin.plugins.signature.verifiedAt": {
+    "description": "Web admin, plugin page: second line of the release signature row when it was verified. {date}: date and time Silo verified it, already formatted.",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.plugins.signature.verifiedNoRepository": "Verified",
+  "@web.admin.plugins.signature.verifiedNoRepository": {
+    "description": "Web admin, plugin page: release signature row when the signature was verified but the server did not name the repository that built the plugin.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.plugins.source.approvedCommunity": "Approved community",
   "@web.admin.plugins.source.approvedCommunity": {
     "description": "Web admin, Plugins page and plugin page: where a plugin comes from: the approved community catalog.",
