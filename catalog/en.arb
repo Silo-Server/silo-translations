@@ -98762,7 +98762,7 @@
       "web"
     ]
   },
-  "web.admin.settings.playback.transcoding.copyKeyframePlaylistDescription": "Experimental. When Silo copies a file's video, list every segment from the start, using the file's keyframes, instead of a playlist that grows as Silo copies. Stops Safari freezing partway through. A seek ahead of what Silo has copied waits for it to get there.",
+  "web.admin.settings.playback.transcoding.copyKeyframePlaylistDescription": "Experimental. When Silo copies a file's video, list every segment from the start, using the file's keyframes, instead of a playlist that grows as Silo copies. Stops Safari freezing partway through. A seek well past what Silo has copied starts the copy again from there.",
   "@web.admin.settings.playback.transcoding.copyKeyframePlaylistDescription": {
     "description": "Web admin, Playback settings page: help under \"Complete playlists for copied video\". Silo and Safari are product names.",
     "x-platforms": [
