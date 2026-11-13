@@ -11740,7 +11740,7 @@
   "web.admin.settings.playback.transcoding.backBufferHint": "Behält so viel bereits heruntergeladene Medien für sofortiges Zurückspulen und gibt danach ältere transkodierte Segmente frei. Mit 0 wird die Bereinigung deaktiviert; aktivierte Werte müssen mindestens 120 Sekunden betragen. Kombiniere dies mit gedrosseltem Transkodieren, um den Speicherplatz hinter und vor dem Client zu begrenzen.",
   "web.admin.settings.playback.transcoding.bufferAhead": "Vorauspuffer",
   "web.admin.settings.playback.transcoding.copyKeyframePlaylist": "Vollständige Playlists für kopiertes Video",
-  "web.admin.settings.playback.transcoding.copyKeyframePlaylistDescription": "Experimentell. Wenn Silo das Video einer Datei kopiert, werden anhand der Keyframes der Datei alle Segmente von Anfang an aufgelistet, statt einer Playlist, die beim Kopieren wächst. Verhindert, dass Safari mittendrin einfriert. Ein Sprung über den bereits kopierten Teil hinaus wartet, bis Silo dort angekommen ist.",
+  "web.admin.settings.playback.transcoding.copyKeyframePlaylistDescription": "Experimentell. Wenn Silo das Video einer Datei kopiert, werden anhand der Keyframes der Datei alle Segmente von Anfang an aufgelistet, statt einer Playlist, die beim Kopieren wächst. Verhindert, dass Safari mittendrin einfriert. Ein Sprung weit über den bereits kopierten Teil hinaus startet das Kopieren ab dieser Stelle neu.",
   "web.admin.settings.playback.transcoding.dir": "Transkodierungsverzeichnis",
   "web.admin.settings.playback.transcoding.dirDescription": "Verwende schnellen lokalen Speicher mit ausreichend freiem Platz. Leer lassen, um {path} zu verwenden.",
   "web.admin.settings.playback.transcoding.enabled": "Video-Transkodierung",
