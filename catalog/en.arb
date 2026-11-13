@@ -143742,6 +143742,74 @@
       "web"
     ]
   },
+  "web.markers.report.action": "Report issue",
+  "@web.markers.report.action": {
+    "description": "Web player: the button drawn under the skip prompt that reports the segment on screen to TheIntroDB as incorrect. This is the control before it is pressed.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.markers.report.alreadyReported": "Already reported",
+  "@web.markers.report.alreadyReported": {
+    "description": "Web player: the report control's confirmation when this account had already reported the same media. TheIntroDB keeps one report per account per media, so this is an outcome rather than a failure.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.markers.report.confirm": "Confirm report",
+  "@web.markers.report.confirm": {
+    "description": "Web player: the button that sends the report, shown after the report control is pressed once. A report cannot be taken back, so sending takes two presses.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.markers.report.reported": "Reported",
+  "@web.markers.report.reported": {
+    "description": "Web player: the report control's confirmation once the report was sent to TheIntroDB.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.markers.report.retry": "Retry the report",
+  "@web.markers.report.retry": {
+    "description": "Web player: the tooltip of the report control after a report failed; pressing it returns the control to its un-pressed state.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.markers.report.sending": "Reporting…",
+  "@web.markers.report.sending": {
+    "description": "Web player: the report control while the report is being sent. It is disabled in this state.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.markers.report.sessionExpired": "Your session expired — sign in and try again",
+  "@web.markers.report.sessionExpired": {
+    "description": "Web player: replaces the report control when Silo or the plugin refused the report as unauthenticated.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.markers.report.title": "Report this segment as incorrect to TheIntroDB",
+  "@web.markers.report.title": {
+    "description": "Web player: the report button's tooltip when the segment on screen has no kind to name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.markers.report.titleForKind": "Report the {kind} segment as incorrect to TheIntroDB",
+  "@web.markers.report.titleForKind": {
+    "description": "Web player: the report button's tooltip when the segment on screen has a kind, e.g. \"Report the Intro segment as incorrect to TheIntroDB\". {kind}: the segment's own name, already translated.",
+    "placeholders": {
+      "kind": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.markers.save": "Save",
   "@web.markers.save": {
     "description": "Web: button in the marker editors that saves the changed markers.",
@@ -158613,6 +158681,69 @@
   "web.settings.playback.subtitle": "The defaults this profile starts playback with. A library, a series, or one of your devices can override some of them.",
   "@web.settings.playback.subtitle": {
     "description": "Web Settings → Playback: page subtitle under the heading.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.playback.theintrodb.description": "Contest a segment TheIntroDB got wrong. Reports are sent using this server’s TheIntroDB key.",
+  "@web.settings.playback.theintrodb.description": {
+    "description": "Web settings, Playback: the line under the TheIntroDB heading that says what the setting below it does.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.playback.theintrodb.enabled": "Report button enabled.",
+  "@web.settings.playback.theintrodb.enabled": {
+    "description": "Web settings, Playback: the toast after the viewer turns the TheIntroDB reporting switch on.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.playback.theintrodb.hidden": "Report button hidden.",
+  "@web.settings.playback.theintrodb.hidden": {
+    "description": "Web settings, Playback: the toast after the viewer turns the TheIntroDB reporting switch off.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.playback.theintrodb.hint": "Draws a button under the skip prompt. It asks for confirmation before sending, because a report cannot be taken back from here.",
+  "@web.settings.playback.theintrodb.hint": {
+    "description": "Web settings, Playback: what the TheIntroDB reporting setting does, shown while the switch can be changed.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.playback.theintrodb.label": "Show a Report button under the skip prompt",
+  "@web.settings.playback.theintrodb.label": {
+    "description": "Web settings, Playback: the name of the TheIntroDB reporting setting, a switch.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.playback.theintrodb.loadFailed": "Could not load this account’s plugin settings, so this switch stays off until they load.",
+  "@web.settings.playback.theintrodb.loadFailed": {
+    "description": "Web settings, Playback: shown in place of the reporting setting's usual line when this account's plugin settings could not be read, which is why the switch is off.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.playback.theintrodb.saveFailed": "Could not change the reporting setting.",
+  "@web.settings.playback.theintrodb.saveFailed": {
+    "description": "Web settings, Playback: the error toast when saving the TheIntroDB reporting switch failed.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.playback.theintrodb.title": "TheIntroDB",
+  "@web.settings.playback.theintrodb.title": {
+    "description": "Web settings, Playback: the heading of the group holding this server's TheIntroDB reporting setting. It is the provider's product name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.playback.theintrodb.unavailable": "Unavailable: this server has no TheIntroDB API key. An administrator can add one under the plugin’s settings.",
+  "@web.settings.playback.theintrodb.unavailable": {
+    "description": "Web settings, Playback: shown in place of the reporting setting's usual line when the server holds no TheIntroDB key, which is why the switch cannot be turned on.",
     "x-platforms": [
       "web"
     ]
