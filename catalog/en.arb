@@ -63817,6 +63817,20 @@
       "web"
     ]
   },
+  "web.admin.common.downloadAccess.conversionOff": "The server isn't preparing device-friendly copies, so every download is the original file. Turn it on in <link>Settings → Downloads</link>.",
+  "@web.admin.common.downloadAccess.conversionOff": {
+    "description": "Web admin: note beside the converted-downloads permission of an access group or an account when the server-wide Prepare device-friendly copies setting is off. <link>…</link> links to the Downloads settings page; keep the page's name as the settings sidebar shows it.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.common.downloadAccess.serverOff": "Downloads are turned off for the whole server, so nobody can download. Turn them on in <link>Settings → Downloads</link>.",
+  "@web.admin.common.downloadAccess.serverOff": {
+    "description": "Web admin: note beside the download permissions of an access group or an account when the server-wide Allow downloads setting is off. <link>…</link> links to the Downloads settings page; keep the page's name as the settings sidebar shows it.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.common.editorConflict.message": "This was changed by another administrator. Your edits have been kept. Reload to review the latest version before saving again.",
   "@web.admin.common.editorConflict.message": {
     "description": "Web admin, editors that save with a version check (for example collections and policies): alert shown when a save failed because someone else changed the record first.",
@@ -92995,6 +93009,13 @@
       "web"
     ]
   },
+  "web.admin.settings.downloads.enabled.description": "The switch for the whole server. On, access groups and accounts decide who may download. Off, nobody can.",
+  "@web.admin.settings.downloads.enabled.description": {
+    "description": "Web admin, Downloads settings page: what the Allow downloads switch does, and that access groups and accounts choose who may download while it is on.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.settings.downloads.enabled.label": "Allow downloads",
   "@web.admin.settings.downloads.enabled.label": {
     "description": "Web admin, Downloads settings page: label of the switch that turns offline downloads on.",
@@ -114350,6 +114371,13 @@
   "web.admin.users.detail.overview.access.downloadsNotAllowed": "Downloads not allowed",
   "@web.admin.users.detail.overview.access.downloadsNotAllowed": {
     "description": "Web: admin account page, Overview tab, Access card: the account may not download media.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.overview.access.downloadsServerOff": "Downloads are off for the whole server",
+  "@web.admin.users.detail.overview.access.downloadsServerOff": {
+    "description": "Web: admin user detail, Overview tab, Access card: the downloads line when downloads are disabled server-wide, whatever the account's own permission says.",
     "x-platforms": [
       "web"
     ]
