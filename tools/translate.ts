@@ -150,6 +150,71 @@ export function makeBatches(work: Work[], size = BATCH_SIZE): Work[][] {
   return batches;
 }
 
+const LABEL_MAX = 40;
+const LABELS_PER_NAME = 8;
+const NAMED_LIMIT = 40;
+interface Span {
+  /** Index into the batch's strings that can name a label. */
+  message: number;
+  start: number;
+  end: number;
+}
+
+/**
+ * Labels that English messages in the batch name as a step in a menu path (Settings → General)
+ * or in quotation marks, with their current translations: the style guides ask for a named
+ * label's own wording, and the label usually lives in another namespace than the message.
+ * A label English shared by several keys lists them (up to LABELS_PER_NAME: those on the
+ * naming string's platform first, then titles and labels), with descriptions, so the model can
+ * pick the right one. A label found only inside a longer named label ("Home" in "Home
+ * Sections") is left out.
+ */
+export function namedLabels(checked: CheckedCatalog, batch: Work[], known: Map<string, string>) {
+  const sep = String.raw`(?:→|›|\s>\s)`;
+  const prose = batch
+    .map((w) => ({ text: w.entry.message.replace(/<\/?[A-Za-z][\w-]*>/g, ""), platforms: w.entry.platforms }))
+    .filter((m) => /→|›|\s>\s|[“"«]/.test(m.text));
+  if (!prose.length) return [];
+  const inBatch = new Set(batch.map((w) => w.entry.key));
+  const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const byLabel = new Map<string, SourceEntry[]>();
+  for (const e of checked.catalog.entries) {
+    const label = e.message.trim();
+    if (label.length < 2 || label.length > LABEL_MAX || /[{}<>#.?!:→›]/.test(label) || !/^\p{Lu}/u.test(label)) continue;
+    const list = byLabel.get(label) ?? [];
+    list.push(e);
+    byLabel.set(label, list);
+  }
+  // Where each label is named in `prose`.
+  const spans = new Map<string, Span[]>();
+  for (const label of byLabel.keys()) {
+    const l = escape(label);
+    const named = new RegExp(`(?<=${sep}\\s*)${l}(?![\\p{L}\\p{N}])|(?<![\\p{L}\\p{N}])${l}(?=\\s*${sep})|(?<=[“"«])${l}(?=[”"»])`, "gu");
+    const found: Span[] = [];
+    prose.forEach((m, message) => {
+      for (const match of m.text.matchAll(named)) found.push({ message, start: match.index, end: match.index + label.length });
+    });
+    if (found.length) spans.set(label, found);
+  }
+  const all = [...spans.values()].flat();
+  // A span strictly inside a longer one in the same message.
+  const insideLonger = (a: Span) =>
+    all.some((b) => b.message === a.message && b.start <= a.start && a.end <= b.end && b.end - b.start > a.end - a.start);
+  const out: { key: string; english: string; description: string; message: string }[] = [];
+  for (const [label, found] of spans) {
+    const naming = found.filter((f) => !insideLonger(f)).map((f) => prose[f.message]!);
+    if (!naming.length) continue;
+    const onNamingPlatform = (e: SourceEntry) => naming.some((m) => m.platforms.some((p) => e.platforms.includes(p)));
+    const isTitle = (e: SourceEntry) => /\.(title|label|settingsLabel)$/.test(e.key);
+    const rank = (e: SourceEntry) => (onNamingPlatform(e) ? 0 : 2) + (isTitle(e) ? 0 : 1);
+    const candidates = byLabel.get(label)!.filter((x) => !inBatch.has(x.key) && known.has(x.key));
+    for (const e of candidates.sort((a, b) => rank(a) - rank(b)).slice(0, LABELS_PER_NAME)) {
+      out.push({ key: e.key, english: e.message, description: e.description, message: known.get(e.key)! });
+    }
+  }
+  return out.slice(0, NAMED_LIMIT);
+}
+
 export function buildPrompt(root: string, checked: CheckedCatalog, locale: Locale, batch: Work[], known: Map<string, string>, feedback?: Map<string, string[]>): string {
   const style = existsSync(join(root, "style", `${locale.tag}.md`)) ? readFileSync(join(root, "style", `${locale.tag}.md`), "utf8") : "";
   const english = batch.map((w) => w.entry.message).join("\n");
@@ -163,6 +228,7 @@ export function buildPrompt(root: string, checked: CheckedCatalog, locale: Local
     .filter(([k]) => spaces.has(namespaceOf(k)) && !inBatch.has(k))
     .slice(0, CONTEXT_LIMIT)
     .map(([key, message]) => ({ key, english: checked.catalog.byKey.get(key)?.message, message }));
+  const labels = namedLabels(checked, batch, known);
   const items = batch.map((w) => ({
     key: w.entry.key,
     english: w.entry.message,
@@ -191,7 +257,10 @@ ${JSON.stringify(glossary, null, 2)}
 
 Existing ${locale.tag} translations in the same areas (for consistent wording):
 ${JSON.stringify(existing, null, 2)}
-
+${labels.length ? `
+Labels these strings name in a menu path or in quotation marks, with their current ${locale.tag} wording. When a string names one of these screens, menus, rows or buttons, write that label exactly as below (inflect only where the grammar requires it); use the description to pick the label on the string's platform:
+${JSON.stringify(labels, null, 2)}
+` : ""}
 Strings to translate:
 ${JSON.stringify(items, null, 2)}
 `;

@@ -5,7 +5,8 @@ import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { fingerprint, makeBatches, select, valueHash, type State, type Work } from "../tools/translate.ts";
+import { fingerprint, makeBatches, namedLabels, select, valueHash, type State, type Work } from "../tools/translate.ts";
+import { checkRepository } from "../tools/lib/check.ts";
 import type { SourceEntry } from "../tools/lib/catalog.ts";
 import { canonicalText } from "../tools/lib/format.ts";
 import { entry, makeRepo, REPO, writeArb } from "./helpers.ts";
@@ -307,4 +308,43 @@ test("translate: --retranslate resends Opus values under a prefix and keeps a pe
     .flatMap((p) => (JSON.parse(p.slice(p.indexOf("Strings to translate:") + 21)) as { key: string }[]).map((i) => i.key));
   assert.ok(sent.includes("common.cancel") && sent.includes("catalog.seasons"));
   assert.ok(!sent.includes("common.kept"), "the person's value is not resent");
+});
+
+test("translate: the prompt carries the current wording of labels a string names", () => {
+  const root = makeRepo({
+    en: {
+      ...entry("home.body", "Choose rows in Settings → General → Home Sections."),
+      ...entry("home.quoted", "Turn on “Seek Cache” first."),
+      ...entry("nav.home", "Home"),
+      ...entry("settings.general", "General"),
+      ...entry("settings.homeSections.title", "Home Sections"),
+      ...entry("settings.seekCache", "Seek Cache"),
+      ...entry("settings.title", "Settings"),
+      ...entry("web.unrelated", "Unrelated"),
+    },
+    es: {
+      "@@locale": "es",
+      "nav.home": "Inicio",
+      "settings.general": "Generales",
+      "settings.homeSections.title": "Secciones de Inicio",
+      "settings.seekCache": "Caché de búsqueda",
+      "settings.title": "Ajustes",
+    },
+  });
+  const checked = checkRepository(root);
+  const known = checked.catalog.translations.get("es")!;
+  const work = (key: string): Work => ({ entry: checked.catalog.byKey.get(key)!, reason: "missing" });
+  const labels = namedLabels(checked, [work("home.body"), work("home.quoted")], known);
+  assert.deepEqual(labels.map((l) => [l.key, l.message]).sort(), [
+    ["settings.general", "Generales"],
+    ["settings.homeSections.title", "Secciones de Inicio"],
+    ["settings.seekCache", "Caché de búsqueda"],
+    ["settings.title", "Ajustes"],
+  ]);
+  // "Home" only occurs inside "Home Sections", and a string naming no label gets none.
+  assert.deepEqual(namedLabels(checked, [work("web.unrelated")], known), []);
+  run(root, "--locale", "es", "--only", "home.");
+  const prompt = readFileSync(join(root, "prompts.log"), "utf8");
+  assert.match(prompt, /Labels these strings name/);
+  assert.match(prompt, /"message": "Generales"/);
 });
