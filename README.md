@@ -76,7 +76,7 @@ shipped languages get files, so clients read the list instead of hard-coding one
 | roku | `locale/languages.json` |
 
 Separately from translations, `locales.json` can keep a language off a platform: Roku doesn't
-ship `ar` (no right-to-left or Arabic shaping in SceneGraph), `ar-XB`, or `ja`, `zh-Hans` and `zh-Hant`
+ship `ar` (no right-to-left or Arabic shaping in SceneGraph), `ar-XB`, or `ja`, `ko`, `zh-Hans` and `zh-Hant`
 (held until a low-memory device check passes with the CJK subset font) yet. On Android, `platforms`
 can name one app (`android-phone`, `android-tv`). Both apps read `android-shared`'s
 resources, so the language is still generated, and the app that doesn't ship it leaves it out
