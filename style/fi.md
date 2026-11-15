@@ -27,6 +27,10 @@
   *järjestäjä* for whoever hosts a party (not *isäntä* or *emäntä*); avoid *-mies* compounds.
 - No colloquial forms (*me mennään*, *sä*), no clitics such as *-han* or *-pa*. Plain, friendly
   standard Finnish (*yleiskieli*), as Netflix and Apple write it.
+- Keep every word that narrows what a sentence covers: *with {provider}*, *on this device*,
+  *only*, *for this profile*. A warning that the user can't sign in *with* a method says so
+  (*Et voi kirjautua tälle tilille palvelun {provider} kautta …*); dropping the method turns it
+  into a warning that the account is locked.
 
 ## Placeholders and case endings
 
@@ -110,7 +114,10 @@ usual capitals, *HTTP*, *HLS*, even where the English lowercases them), and keyb
 (*Space*, *Enter*).
 
 When a sentence names another screen, button, row, task or setting, use the Finnish label that
-element has in the catalog, not the English one. The glossary lists the names that recur.
+element has in the catalog, not the English one. Write that label word for word, also inside a menu
+path (*Settings → General → …*): don’t swap in a synonym or another wording of the same idea.
+When the prompt lists the labels a string names, use the one on the string’s platform. The
+glossary lists the names that recur.
 
 ## Plurals and numbers
 

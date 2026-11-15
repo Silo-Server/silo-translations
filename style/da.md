@@ -84,6 +84,7 @@
 | rating (stars) / rating (age) | *bedømmelse* / *aldersgrænse* |
 | cast (people) | *medvirkende* |
 | buffering | *Bufferer …* (status) |
+| seek (move to another point in playback) / search (find by name) | *spole*, *spoling*, *springe til* (*Kunne ikke spole*, *spolecache*, *spoleforhåndsvisninger*); never *søg*, *søgning* or *søge-* for a seek / *søg*, *søgning* |
 | pair (a device) | *par*, *parring* |
 | Couldn't… | *Kunne ikke …* |
 | Try again (sentence) / Retry (button) | *Prøv igen.* / *Prøv igen* |
@@ -99,7 +100,10 @@ usual capitals, *HTTP*, *HLS*, even where the English lowercases them), and keyb
 (*Space*, *Enter*).
 
 When a sentence names another screen, button, row, task or setting, use the Danish label that
-element has in the catalog, not the English one. The glossary lists the names that recur.
+element has in the catalog, not the English one. Write that label word for word, also inside a menu
+path (*Settings → General → …*): don’t swap in a synonym or another wording of the same idea.
+When the prompt lists the labels a string names, use the one on the string’s platform. The
+glossary lists the names that recur.
 
 ## Plurals and numbers
 

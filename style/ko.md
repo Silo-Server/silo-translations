@@ -111,7 +111,10 @@ units (*Mbps*, *kbps*, *GB*), resolutions (*1080p*), codec, protocol and format 
 usual capitals, *HTTP*, *HLS*), and keyboard keys (*Space*, *Enter*).
 
 When a sentence names another screen, button, row, task or setting, use the Korean label that
-element has in the catalog, not the English one. The glossary lists the names that recur.
+element has in the catalog, not the English one. Write that label word for word, also inside a menu
+path (*Settings → General → …*): don’t swap in a synonym or another wording of the same idea.
+When the prompt lists the labels a string names, use the one on the string’s platform. The
+glossary lists the names that recur.
 
 ## Plurals and numbers
 

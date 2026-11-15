@@ -93,7 +93,10 @@ A placeholder can't take a Swedish ending, so don't put it where Swedish would i
 {device}*, *den här enheten ({device})*, *servern {server}*.
 
 When a sentence names another screen, button, row, task or setting, use the Swedish label that
-element has in the catalog, not the English one. The glossary lists the names that recur.
+element has in the catalog, not the English one. Write that label word for word, also inside a menu
+path (*Settings → General → …*): don’t swap in a synonym or another wording of the same idea.
+When the prompt lists the labels a string names, use the one on the string’s platform. The
+glossary lists the names that recur.
 
 ## Plurals and numbers
 

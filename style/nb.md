@@ -69,6 +69,7 @@
 | rating (stars) / rating (age) | *vurdering* / *aldersgrense* |
 | cast (people) | *rolleliste* |
 | buffering | *Bufrer* (status) |
+| seek (move to another point in playback) / search (find by name) | *spole*, *spoling*, *hoppe til* (*Kunne ikke spole*, *spolebuffer*, *spoleforhåndsvisninger*); never *søk* or *søke-* for a seek / *søk*, *søke* |
 | pair (a device) | *sammenkoble*, *sammenkobling*; connect: *koble til* |
 | sign in / sign out | *logg på* / *logg ut* |
 | Couldn't… | *Kunne ikke …* or *… mislyktes* |
@@ -85,7 +86,10 @@ usual capitals, *HTTP*, *HLS*, even where the English lowercases them), and keyb
 (*Space*, *Enter*).
 
 When a sentence names another screen, button, row, task or setting, use the Norwegian label that
-element has in the catalog, not the English one. The glossary lists the names that recur.
+element has in the catalog, not the English one. Write that label word for word, also inside a menu
+path (*Settings → General → …*): don’t swap in a synonym or another wording of the same idea.
+When the prompt lists the labels a string names, use the one on the string’s platform. The
+glossary lists the names that recur.
 
 ## Plurals and numbers
 

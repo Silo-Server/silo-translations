@@ -121,7 +121,10 @@ Units are written the Ukrainian way, as Apple and Google do: *ГБ*, *МБ*, *Т
 unit), *Мбіт/с*, *кбіт/с*, *мс*, *Гц*.
 
 When a sentence names another screen, button, row, task or setting, use the Ukrainian label that
-element has in the catalog, not the English one. The glossary lists the names that recur.
+element has in the catalog, not the English one. Write that label word for word, also inside a menu
+path (*Settings → General → …*): don’t swap in a synonym or another wording of the same idea.
+When the prompt lists the labels a string names, use the one on the string’s platform. The
+glossary lists the names that recur.
 
 ## Plurals and numbers
 
