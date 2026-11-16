@@ -145521,6 +145521,13 @@
       "web"
     ]
   },
+  "web.notifications.inbox.emptyHintNextUp": "You’ll be notified here when a new episode arrives for a series you’re caught up on.",
+  "@web.notifications.inbox.emptyHintNextUp": {
+    "description": "Web Notifications page: explanation under the empty inbox. A profile is told about a new episode only when it becomes its Next Up: it is caught up on the series and the next episode arrives.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.notifications.inbox.emptyUnread": "No unread notifications",
   "@web.notifications.inbox.emptyUnread": {
     "description": "Web Notifications page: empty state under the Unread filter.",
@@ -146267,6 +146274,13 @@
       "web"
     ]
   },
+  "web.notifications.series.afterCatchUp": "After you catch up",
+  "@web.notifications.series.afterCatchUp": {
+    "description": "Web Notifications page, Series view: under a series that will notify only once the profile has watched the episodes already available, when the next new episode becomes its Next Up.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.notifications.series.allReasons": "All reasons",
   "@web.notifications.series.allReasons": {
     "description": "Web Notifications page, Series view: reason filter option that shows every series.",
@@ -146335,9 +146349,23 @@
       "web"
     ]
   },
+  "web.notifications.series.emptyHintNextUp": "Series show up here after you finish an episode. A new episode notifies you once you’re caught up.",
+  "@web.notifications.series.emptyHintNextUp": {
+    "description": "Web Notifications page, Series view: explanation under the empty state. A profile is told about a new episode only when it becomes its Next Up: it is caught up on the series and the next episode arrives.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.notifications.series.filterByReason": "Filter by reason",
   "@web.notifications.series.filterByReason": {
     "description": "Web Notifications page, Series view: screen-reader label of the reason filter menu.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.series.filterLabel": "Filter series",
+  "@web.notifications.series.filterLabel": {
+    "description": "Web Notifications page, Series view: screen-reader label of the All/Muted filter buttons.",
     "x-platforms": [
       "web"
     ]
@@ -146421,6 +146449,13 @@
   "web.notifications.series.noMatch": "No series match. Try another search or reason.",
   "@web.notifications.series.noMatch": {
     "description": "Web Notifications page, Series view: empty state when a search or reason filter matches nothing.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.series.noMatchFilter": "No series match. Try another search or filter.",
+  "@web.notifications.series.noMatchFilter": {
+    "description": "Web Notifications page, Series view: empty state when a search, or the All/Muted filter, matches nothing.",
     "x-platforms": [
       "web"
     ]
@@ -158384,6 +158419,13 @@
   "web.settings.notifications.episodes.enableHint": "Master switch for this profile",
   "@web.settings.notifications.episodes.enableHint": {
     "description": "Web Settings → Notifications: New Episode Notifications: hint under Enable notifications.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.notifications.episodes.nextUpDescription": "Get notified when a new episode arrives for a series you’re caught up on.",
+  "@web.settings.notifications.episodes.nextUpDescription": {
+    "description": "Web Settings → Notifications: description of New Episode Notifications. A profile is told about a new episode only when it becomes its Next Up: it is caught up on the series and the next episode arrives.",
     "x-platforms": [
       "web"
     ]
