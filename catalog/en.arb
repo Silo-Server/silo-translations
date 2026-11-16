@@ -20591,6 +20591,13 @@
       "apple"
     ]
   },
+  "personal.favorites.emptyAudiobooksTitle": "No Favorite Audiobooks",
+  "@personal.favorites.emptyAudiobooksTitle": {
+    "description": "Apple iOS: empty-state heading on Favorites when the Audiobooks tab has no titles.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "personal.favorites.emptyBody": "Add favorites from a detail page and they will appear here.",
   "@personal.favorites.emptyBody": {
     "description": "Explanation on an empty Favorites screen (Roku) or empty Favorites tab (Apple iOS) on how to add favorites.",
@@ -20649,6 +20656,13 @@
       "apple"
     ]
   },
+  "personal.favorites.noAudiobooks": "No favorite audiobooks",
+  "@personal.favorites.noAudiobooks": {
+    "description": "Apple tvOS: empty-state heading on Favorites when the Audiobooks tab has no titles.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "personal.favorites.noMovies": "No favorite movies",
   "@personal.favorites.noMovies": {
     "description": "Apple tvOS: empty-state heading on Favorites when the Movies tab has no titles.",
@@ -20677,6 +20691,13 @@
       "apple",
       "android",
       "roku"
+    ]
+  },
+  "personal.filter.audiobooks": "Audiobooks",
+  "@personal.filter.audiobooks": {
+    "description": "Chip or tab on the Favorites and Watchlist lists, and option in the iPhone For You tab's media type menu, that shows only audiobooks (Apple iOS and tvOS). Shown only when audiobooks are turned on.",
+    "x-platforms": [
+      "apple"
     ]
   },
   "personal.filter.movies": "Movies",
@@ -20856,6 +20877,13 @@
       "apple",
       "android",
       "roku"
+    ]
+  },
+  "personal.watchlist.emptyAudiobooksTitle": "No Watchlist Audiobooks",
+  "@personal.watchlist.emptyAudiobooksTitle": {
+    "description": "Apple iOS: empty-state heading on Watchlist when the Audiobooks tab has no titles.",
+    "x-platforms": [
+      "apple"
     ]
   },
   "personal.watchlist.emptyBody": "Add titles from a detail page and they will appear here.",
