@@ -1278,7 +1278,15 @@
       }
     },
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
+    ]
+  },
+  "audiobook.miniPlayer.openAction": "Open the full player",
+  "@audiobook.miniPlayer.openAction": {
+    "description": "Android phone: audiobook mini player bar above the tab bar; TalkBack action label for the part that reopens the full player. TalkBack speaks it after its own “Double-tap to”, so write it as the action that follows that phrase in your language (an infinitive verb phrase, not a description of what happens).",
+    "x-platforms": [
+      "android"
     ]
   },
   "audiobook.miniPlayer.openHint": "Opens the full player",
