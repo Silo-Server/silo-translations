@@ -16071,6 +16071,14 @@
   "@home.recipe.collectionPick.name": {
     "description": "Name of the Collection preset in the Add row gallery (shared key `home.recipe.collectionPick.name`, sent as display_name_key). Shown wherever clients list home row presets, and as the default title of a row made from it."
   },
+  "home.recipe.collectionPostersPick.description": "Show several collections as posters. Each one opens its collection.",
+  "@home.recipe.collectionPostersPick.description": {
+    "description": "One-line description of the row-of-collections preset in the Add row gallery (shared key `home.recipe.collectionPostersPick.description`, sent as description_short_key). Shown under or beside the preset's name."
+  },
+  "home.recipe.collectionPostersPick.name": "A row of collections",
+  "@home.recipe.collectionPostersPick.name": {
+    "description": "Name of the row-of-collections preset in the Add row gallery (shared key `home.recipe.collectionPostersPick.name`, sent as display_name_key). Shown wherever clients list home row presets. The row it makes shows several collections as poster cards, each opening its collection."
+  },
   "home.recipe.continueListeningDefault.description": "Pick up audiobooks where you left off.",
   "@home.recipe.continueListeningDefault.description": {
     "description": "One-line description of the Continue Listening preset in the Add row gallery (shared key `home.recipe.continueListeningDefault.description`, sent as description_short_key). Shown under or beside the preset's name."
@@ -124703,6 +124711,21 @@
       "web"
     ]
   },
+  "web.collections.copy.deleteWithRowChangesLabel": "{count, plural, one {Delete it and change {count_text} row} other {Delete it and change {count_text} rows}}",
+  "@web.collections.copy.deleteWithRowChangesLabel": {
+    "description": "Web: delete server collection dialog, button label when some rows that show the collection are rows of collections that keep their other collections and only lose this one, while any others are deleted. {count}: how many rows change (chooses the form). {count_text}: the same number, as digits.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    }
+  },
   "web.collections.copy.deleteWithRowsLabel": "{count, plural, one {Delete it and its {count_text} row} other {Delete it and its {count_text} rows}}",
   "@web.collections.copy.deleteWithRowsLabel": {
     "description": "Web collections: delete confirmation button that deletes the collection and the rows that show it. {count}: how many rows. {count_text}: the same number, as written.",
@@ -125798,6 +125821,18 @@
     "x-platforms": [
       "web"
     ]
+  },
+  "web.collections.copy.removedFromRow": "Removes it from the row “{title}”. The row keeps its other collections.",
+  "@web.collections.copy.removedFromRow": {
+    "description": "Web: delete server collection dialog, line under a row of collections that also lists other collections: deleting the collection takes it out of that row instead of deleting the row. {title}: the row's name.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
   },
   "web.collections.copy.removedTitle": "Removed {title}",
   "@web.collections.copy.removedTitle": {
@@ -136512,6 +136547,218 @@
       "web"
     ]
   },
+  "web.home.addRow.collections.add": "Add",
+  "@web.home.addRow.collections.add": {
+    "description": "Web: Add/Edit row dialog for a row of collections: label on a collection in the list that is not in the row yet; pressing the collection adds it at the end.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.home.addRow.collections.addLabel": "Add collections",
+  "@web.home.addRow.collections.addLabel": {
+    "description": "Web: Add/Edit row dialog for a row of collections: heading over the searchable list of collections to add to the row.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.home.addRow.collections.added": "Added",
+  "@web.home.addRow.collections.added": {
+    "description": "Web: Add/Edit row dialog for a row of collections: label, shown with a check mark, on a collection already in the row; pressing it takes the collection out.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.home.addRow.collections.chosenLabel": "Collections in this row",
+  "@web.home.addRow.collections.chosenLabel": {
+    "description": "Web: Add/Edit row dialog for a row of collections: heading over the ordered list of the collections the row shows.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.home.addRow.collections.count": "{count, plural, one {{count_text} collection, shown in this order} other {{count_text} collections, shown in this order}}",
+  "@web.home.addRow.collections.count": {
+    "description": "Web: Add/Edit row dialog for a row of collections: line beside the list heading. {count}: how many collections the row lists (chooses the form). {count_text}: the same number, as digits.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    }
+  },
+  "web.home.addRow.collections.drag.canceled": "Moving {collection} was canceled.",
+  "@web.home.addRow.collections.drag.canceled": {
+    "description": "Web: screen-reader announcement when moving a collection in a row of collections is canceled. {collection}: the collection's name.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "collection": {
+        "type": "String"
+      }
+    }
+  },
+  "web.home.addRow.collections.drag.dropped": "{collection} dropped.",
+  "@web.home.addRow.collections.drag.dropped": {
+    "description": "Web: screen-reader announcement when a moved collection in a row of collections is dropped outside the list. {collection}: the collection's name.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "collection": {
+        "type": "String"
+      }
+    }
+  },
+  "web.home.addRow.collections.drag.droppedAt": "{collection} dropped at position {position} of {total}.",
+  "@web.home.addRow.collections.drag.droppedAt": {
+    "description": "Web: screen-reader announcement when a moved collection in a row of collections is dropped. {collection}: the collection's name. {position}: its new place, as digits. {total}: number of collections, as digits.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "collection": {
+        "type": "String"
+      },
+      "position": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "web.home.addRow.collections.drag.instructions": "To move a collection, focus its handle and press Space or Enter. Use the up and down arrow keys to move it, Space or Enter to drop it, or Escape to cancel.",
+  "@web.home.addRow.collections.drag.instructions": {
+    "description": "Web: Add/Edit row dialog for a row of collections: screen-reader instructions for moving a collection in the row's list with the keyboard.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.home.addRow.collections.drag.over": "{collection} is now at position {position} of {total}.",
+  "@web.home.addRow.collections.drag.over": {
+    "description": "Web: screen-reader announcement while a collection in a row of collections is moved over a new place. {collection}: the collection's name. {position}: the place, as digits. {total}: number of collections, as digits.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "collection": {
+        "type": "String"
+      },
+      "position": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "web.home.addRow.collections.drag.pickedUp": "Picked up {collection}, position {position} of {total}.",
+  "@web.home.addRow.collections.drag.pickedUp": {
+    "description": "Web: screen-reader announcement when a collection in a row of collections is picked up for moving. {collection}: the collection's name. {position}: its place in the list, as digits. {total}: number of collections, as digits.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "collection": {
+        "type": "String"
+      },
+      "position": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "web.home.addRow.collections.dragHandle": "Reorder {collection}",
+  "@web.home.addRow.collections.dragHandle": {
+    "description": "Web: Add/Edit row dialog for a row of collections: accessible name of the grip a collection is dragged by to change its place in the row. {collection}: the collection's name.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "collection": {
+        "type": "String"
+      }
+    }
+  },
+  "web.home.addRow.collections.empty": "Add at least one collection below.",
+  "@web.home.addRow.collections.empty": {
+    "description": "Web: Add/Edit row dialog for a row of collections: text in the dashed box where the row's collections are listed, while it lists none.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.home.addRow.collections.limit": "{count, plural, one {A row holds up to {count_text} collection.} other {A row holds up to {count_text} collections.}}",
+  "@web.home.addRow.collections.limit": {
+    "description": "Web: Add/Edit row dialog for a row of collections: shown when the row is full and no more collections can be added. {count}: the most a row holds (chooses the form). {count_text}: the same number, as digits.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    }
+  },
+  "web.home.addRow.collections.moveDown": "Move {collection} down",
+  "@web.home.addRow.collections.moveDown": {
+    "description": "Web: Add/Edit row dialog for a row of collections: accessible name of the down-arrow button that moves a collection one place later. {collection}: the collection's name.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "collection": {
+        "type": "String"
+      }
+    }
+  },
+  "web.home.addRow.collections.moveUp": "Move {collection} up",
+  "@web.home.addRow.collections.moveUp": {
+    "description": "Web: Add/Edit row dialog for a row of collections: accessible name of the up-arrow button that moves a collection one place earlier. {collection}: the collection's name.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "collection": {
+        "type": "String"
+      }
+    }
+  },
+  "web.home.addRow.collections.remove": "Remove {collection}",
+  "@web.home.addRow.collections.remove": {
+    "description": "Web: Add/Edit row dialog for a row of collections: accessible name of the button that takes a collection out of the row. {collection}: the collection's name.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "collection": {
+        "type": "String"
+      }
+    }
+  },
+  "web.home.addRow.collections.unavailable": "No longer available",
+  "@web.home.addRow.collections.unavailable": {
+    "description": "Web: Add/Edit row dialog for a row of collections: shown in place of the name of a collection the row lists that was deleted, hidden or is no longer shared, as a warning.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.home.addRow.collections.yours": "Yours",
+  "@web.home.addRow.collections.yours": {
+    "description": "Web: Add/Edit row dialog for a row of collections: in a personal collection's details, saying the viewer made it (another profile's shared collection says “by Name” instead).",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.home.addRow.conflict": "This row changed since you opened it. Your changes are kept. Reload the row to see what changed, then save again.",
   "@web.home.addRow.conflict": {
     "description": "Web: Edit row dialog, warning shown when saving fails because someone else changed the row meanwhile; next to the 'Reload row' button.",
@@ -139112,6 +139359,21 @@
       }
     }
   },
+  "web.home.rows.describe.collectionCount": "{count, plural, one {{count_text} collection} other {{count_text} collections}}",
+  "@web.home.rows.describe.collectionCount": {
+    "description": "Web: Home rows list: how many collections a row of collections lists, in the row's details line in place of its title count. {count}: the number of collections (chooses the form). {count_text}: the same number, as digits.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    }
+  },
   "web.home.rows.describe.collectionGone": "Collection no longer available",
   "@web.home.rows.describe.collectionGone": {
     "description": "Web: Home rows editor, row list: warning in place of the description of a collection row whose collection was deleted.",
@@ -139119,12 +139381,60 @@
       "web"
     ]
   },
+  "web.home.rows.describe.collectionList": "{count, plural, one {{count_text} collection: {names}} other {{count_text} collections: {names}}}",
+  "@web.home.rows.describe.collectionList": {
+    "description": "Web: Home rows list: what a row of collections shows, e.g. “3 collections: Marvel, Pixar and Ghibli”. {count}: how many collections the row lists (chooses the form). {count_text}: the same number, as digits. {names}: the collections' names joined as a list, each in bold, ending in “2 more” when there are over three.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      },
+      "names": {
+        "type": "String"
+      }
+    }
+  },
+  "web.home.rows.describe.collectionListMore": "{count, plural, one {{count_text} more} other {{count_text} more}}",
+  "@web.home.rows.describe.collectionListMore": {
+    "description": "Web: Home rows list: the last part of a row of collections' list of names when it lists over three, as in “Marvel, Pixar and 3 more”. Joined to the names by the interface language's list words. {count}: how many collections are not named (chooses the form). {count_text}: the same number, as digits.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    }
+  },
   "web.home.rows.describe.collectionUnknown": "A collection",
   "@web.home.rows.describe.collectionUnknown": {
     "description": "Web: Home rows editor, row list: description of a collection row while its collection's details are still loading.",
     "x-platforms": [
       "web"
     ]
+  },
+  "web.home.rows.describe.collectionsGone": "{count, plural, one {{count_text} collection no longer available} other {{count_text} collections no longer available}}",
+  "@web.home.rows.describe.collectionsGone": {
+    "description": "Web: Home rows list: warning after a row of collections' description when some collections it lists were deleted, hidden or are no longer shared. {count}: how many (chooses the form). {count_text}: the same number, as digits.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    }
   },
   "web.home.rows.describe.curated": "Hand-picked titles",
   "@web.home.rows.describe.curated": {
@@ -139764,6 +140074,13 @@
       "web"
     ]
   },
+  "web.home.rows.draft.addCollection": "Add a collection to see the row.",
+  "@web.home.rows.draft.addCollection": {
+    "description": "Web: Add/Edit row dialog, admin: text in the empty preview strip of a row of collections before any collection is added.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.home.rows.draft.addTitles": "Add titles to see them here.",
   "@web.home.rows.draft.addTitles": {
     "description": "Web: Add/Edit row dialog, admin: text in the empty preview strip of an Editor's picks row with no titles yet.",
@@ -140022,6 +140339,13 @@
       "web"
     ]
   },
+  "web.home.rows.kindSentences.collectionPosters": "Show several collections as posters. Each one opens its collection.",
+  "@web.home.rows.kindSentences.collectionPosters": {
+    "description": "Web: Add row dialog: one sentence on the picker card for the “A row of collections” kind of row, saying what the row shows.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.home.rows.kindSentences.continueWatching": "Pick up where each viewer left off.",
   "@web.home.rows.kindSentences.continueWatching": {
     "description": "Web: Add row dialog: one sentence on the picker card for the “Continue watching” kind of row, saying what the row shows.",
@@ -140256,6 +140580,13 @@
   "web.home.rows.kinds.collection": "A collection",
   "@web.home.rows.kinds.collection": {
     "description": "Web: Home rows editor: plain name of the “collection” kind of Home row. Shown on its picker card, as the Add row dialog title, on a row's “Shows” line and as a row's description when nothing more specific applies.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.home.rows.kinds.collectionPosters": "A row of collections",
+  "@web.home.rows.kinds.collectionPosters": {
+    "description": "Web: Home rows editor: plain name of the “collection_posters” kind of Home row, a row whose cards are collections (each opens its collection) instead of titles. Shown on its picker card, as the Add row dialog title, on a row's “Shows” line and as a row's description when nothing more specific applies.",
     "x-platforms": [
       "web"
     ]
