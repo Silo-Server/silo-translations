@@ -6413,14 +6413,16 @@
   "@detail.audiobook.authors": {
     "description": "Apple iOS: heading of the authors rail on an audiobook page when the book lists authors but no narrators.",
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.audiobook.authorsAndNarrators": "Authors & Narrators",
   "@detail.audiobook.authorsAndNarrators": {
     "description": "Apple iOS: heading of the people rail on an audiobook page when the book lists both authors and narrators.",
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.audiobook.bookNumber": "Book {number}",
@@ -6444,7 +6446,8 @@
       }
     },
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.audiobook.byAuthorReadBy": "by {author}  ·  read by {narrator}",
@@ -6459,7 +6462,8 @@
       }
     },
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.audiobook.byAuthors": "By {names}",
@@ -6471,7 +6475,8 @@
       }
     },
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.audiobook.chapter": "Chapter {number}",
@@ -6546,14 +6551,16 @@
       }
     },
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.audiobook.chaptersShowLess": "Show less",
   "@detail.audiobook.chaptersShowLess": {
     "description": "Apple iOS: button under an audiobook's expanded chapter list that shortens it again.",
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.audiobook.currentChapter": "Chapter {number} · {title}",
@@ -6568,21 +6575,24 @@
       }
     },
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.audiobook.finished": "Finished",
   "@detail.audiobook.finished": {
     "description": "Apple iOS: label under the button on an audiobook page that marks the book as finished or not; the book version of Watched.",
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.audiobook.inProgress": "In progress",
   "@detail.audiobook.inProgress": {
     "description": "Apple tvOS: status line on an audiobook page for a book the user has started, when it has no chapters and no listened time to show.",
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.audiobook.intoChapter": "{time} into the chapter",
@@ -6594,7 +6604,8 @@
       }
     },
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.audiobook.label": "AUDIOBOOK",
@@ -6614,7 +6625,8 @@
       }
     },
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.audiobook.leftInBook": "{time} left in the book",
@@ -6626,7 +6638,8 @@
       }
     },
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.audiobook.listened": "{time} listened",
@@ -6638,21 +6651,24 @@
       }
     },
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.audiobook.markFinished": "Mark as Finished",
   "@detail.audiobook.markFinished": {
     "description": "Apple iOS: spoken label of the Finished button on an audiobook page when the book is not marked finished.",
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.audiobook.markNotFinished": "Mark as Not Finished",
   "@detail.audiobook.markNotFinished": {
     "description": "Apple iOS: spoken label of the Finished button on an audiobook page when the book is marked finished.",
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.audiobook.moreByAuthor": "More by Author",
@@ -6672,14 +6688,16 @@
       }
     },
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.audiobook.moreByTheseAuthors": "More by These Authors",
   "@detail.audiobook.moreByTheseAuthors": {
     "description": "Apple iOS and tvOS: heading of the rail of other books by an audiobook's authors, when it has more than one.",
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.audiobook.narrations": "Narrations",
@@ -6693,14 +6711,16 @@
   "@detail.audiobook.narrators": {
     "description": "Apple iOS: heading of the narrators rail on an audiobook page when the book lists narrators but no authors.",
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.audiobook.notStarted": "Not started",
   "@detail.audiobook.notStarted": {
     "description": "Apple tvOS: status line on an audiobook page for a book the user hasn't started.",
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.audiobook.nowBadge": "NOW",
@@ -6749,7 +6769,8 @@
       }
     },
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.audiobook.parts": "Parts",
@@ -6772,7 +6793,8 @@
       }
     },
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.audiobook.readBy": "read by {narrator}",
@@ -6784,7 +6806,8 @@
       }
     },
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.audiobook.related": "Related",
@@ -6799,21 +6822,24 @@
   "@detail.audiobook.roleAuthor": {
     "description": "Apple iOS: caption under a person in an audiobook's people rail: this person wrote the book.",
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.audiobook.roleAuthorAndNarrator": "Author & Narrator",
   "@detail.audiobook.roleAuthorAndNarrator": {
     "description": "Apple iOS: caption under a person in an audiobook's people rail: this person both wrote and reads the book.",
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.audiobook.roleNarrator": "Narrator",
   "@detail.audiobook.roleNarrator": {
     "description": "Apple iOS: caption under a person in an audiobook's people rail: this person reads the book.",
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.audiobook.series": "Series",
@@ -6836,7 +6862,8 @@
       }
     },
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.audiobook.seriesLineOf": "{series} · Book {number} of {total}",
@@ -6854,7 +6881,8 @@
       }
     },
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.audiobook.speed": "Speed {speed}",
@@ -6885,21 +6913,24 @@
   "@detail.audiobook.wantToListen": {
     "description": "Apple iOS: label under the button on an audiobook page that saves the book to, or removes it from, the user's watchlist; the book version of Watchlist.",
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.audiobook.wantToListenAdd": "Add to Want to Listen",
   "@detail.audiobook.wantToListenAdd": {
     "description": "Apple iOS: spoken label of the Want to Listen button on an audiobook page when the book is not saved yet.",
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.audiobook.wantToListenRemove": "Remove from Want to Listen",
   "@detail.audiobook.wantToListenRemove": {
     "description": "Apple iOS: spoken label of the Want to Listen button on an audiobook page when the book is already saved.",
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.auto": "Auto",
@@ -7547,7 +7578,8 @@
       }
     },
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.facts.firstAired": "First aired",
@@ -7561,7 +7593,8 @@
   "@detail.facts.format": {
     "description": "Apple iOS and tvOS: row label in an audiobook page's Details section for its file format, such as AAC · M4B.",
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.facts.lastAired": "Last aired",
@@ -7575,7 +7608,8 @@
   "@detail.facts.length": {
     "description": "Apple iOS and tvOS: row label in an audiobook page's Details section for its total running time.",
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.facts.narrator": "{count, plural, one {Narrator} other {Narrators}}",
@@ -7587,14 +7621,16 @@
       }
     },
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.facts.publisher": "Publisher",
   "@detail.facts.publisher": {
     "description": "Apple iOS and tvOS: row label in an audiobook page's Details section for its publisher.",
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.facts.rated": "Rated",
@@ -8406,7 +8442,8 @@
   "@detail.resume": {
     "description": "Apple iOS and tvOS: primary button on a title page that continues playback where the user stopped.",
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.resumeAt": "Resume {time}",
@@ -8506,7 +8543,8 @@
       }
     },
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.season": "Season {number}",
