@@ -145350,6 +145350,34 @@
       "web"
     ]
   },
+  "web.notifications.inbox.dayOlder": "Older",
+  "@web.notifications.inbox.dayOlder": {
+    "description": "Web Notifications page, Inbox view: heading over the notifications received a week or more ago.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.inbox.dayToday": "Today",
+  "@web.notifications.inbox.dayToday": {
+    "description": "Web Notifications page, Inbox view: heading over the notifications received today.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.inbox.dayWeek": "Last 7 days",
+  "@web.notifications.inbox.dayWeek": {
+    "description": "Web Notifications page, Inbox view: heading over the notifications received two to six days ago.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.inbox.dayYesterday": "Yesterday",
+  "@web.notifications.inbox.dayYesterday": {
+    "description": "Web Notifications page, Inbox view: heading over the notifications received yesterday.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.notifications.inbox.daysAgo": "{days}d ago",
   "@web.notifications.inbox.daysAgo": {
     "description": "Web Notifications page: compact time of a notification that arrived under a week ago. {days}: whole days, 1 to 6.",
@@ -145383,11 +145411,59 @@
       "web"
     ]
   },
+  "web.notifications.inbox.episodeCount": "{count, plural, one {{count_text} new episode} other {{count_text} new episodes}}",
+  "@web.notifications.inbox.episodeCount": {
+    "description": "Web Notifications page, Inbox view: second line of a row that groups a series' new episodes, used when the episodes have no season and episode numbers. {count}: episodes on the row (selects the plural). {count_text}: the same number, already formatted.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.notifications.inbox.episodeLine": "{code} — {title}",
   "@web.notifications.inbox.episodeLine": {
     "description": "Web Notifications page: body of a new-episode notification. {code}: the episode code, such as “S1 · E2”; {title}: the episode title from the server.",
     "placeholders": {
       "code": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.inbox.episodeRange": "{first} – {last}",
+  "@web.notifications.inbox.episodeRange": {
+    "description": "Web Notifications page, Inbox view: second line of a row that groups a series' new episodes: the first and last episode codes. {first}: the earliest episode code, such as S5E2. {last}: the latest episode code, such as S5E4.",
+    "placeholders": {
+      "first": {
+        "type": "String"
+      },
+      "last": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.inbox.episodeRangeLatest": "{first} – {last} · latest “{title}”",
+  "@web.notifications.inbox.episodeRangeLatest": {
+    "description": "Web Notifications page, Inbox view: second line of a row that groups a series' new episodes: the first and last episode codes and the latest episode's title. {first}: the earliest episode code, such as S5E2. {last}: the latest episode code, such as S5E4. {title}: the latest episode's title.",
+    "placeholders": {
+      "first": {
+        "type": "String"
+      },
+      "last": {
         "type": "String"
       },
       "title": {
@@ -145532,6 +145608,21 @@
       "web"
     ]
   },
+  "web.notifications.inbox.newCount": "{count, plural, one {{count_text} new} other {{count_text} new}}",
+  "@web.notifications.inbox.newCount": {
+    "description": "Web Notifications page, Inbox view: badge beside a series title on a row that groups several new episodes of the series, counting the unread ones. {count}: unread episodes (selects the plural). {count_text}: the same number, already formatted.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.notifications.inbox.newEpisode": "New episode available",
   "@web.notifications.inbox.newEpisode": {
     "description": "Web Notifications page: title of a new-episode notification without a series name, and its body when the episode has no number or title.",
@@ -145579,6 +145670,13 @@
       "web"
     ]
   },
+  "web.notifications.inbox.requestTag": "Request",
+  "@web.notifications.inbox.requestTag": {
+    "description": "Web Notifications page, Inbox view: small tag beside the title of a notification about a media request (approved, declined or now available).",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.notifications.inbox.requestedMovieAvailable": "Your requested movie is now available",
   "@web.notifications.inbox.requestedMovieAvailable": {
     "description": "Web Notifications page: body of a notification that the profile's movie request has arrived.",
@@ -145610,6 +145708,35 @@
   "web.notifications.inbox.unread": "Unread",
   "@web.notifications.inbox.unread": {
     "description": "Web Notifications page: screen-reader label of the dot that marks an unread notification.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.inbox.unreadBadge": "{count, plural, one {{count_text} unread} other {{count_text} unread}}",
+  "@web.notifications.inbox.unreadBadge": {
+    "description": "Web Notifications page: small count beside the Inbox option of the view switch. {count}: unread notifications (selects the plural). {count_text}: the same number, already formatted.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.inbox.viewInbox": "Inbox",
+  "@web.notifications.inbox.viewInbox": {
+    "description": "Web Notifications page: option of the view switch that shows the notifications received (the other option is Series).",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.inbox.views": "Notification views",
+  "@web.notifications.inbox.views": {
+    "description": "Web Notifications page: screen-reader name of the control that switches between the Inbox and Series views.",
     "x-platforms": [
       "web"
     ]
@@ -145797,11 +145924,33 @@
       "web"
     ]
   },
+  "web.notifications.queries.muteManyFailed": "Couldn’t mute the selected series",
+  "@web.notifications.queries.muteManyFailed": {
+    "description": "Web Notifications page: error toast when muting several series at once fails.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.notifications.queries.muted": "Muted {title}",
   "@web.notifications.queries.muted": {
     "description": "Web Notifications page and bell: toast after muting new-episode notifications for a series. {title}: the series title.",
     "placeholders": {
       "title": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.queries.mutedMany": "{count, plural, one {Muted {count_text} series} other {Muted {count_text} series}}",
+  "@web.notifications.queries.mutedMany": {
+    "description": "Web Notifications page: toast after muting several series at once; it offers Undo. {count}: series muted (selects the plural). {count_text}: the same number, already formatted.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
         "type": "String"
       }
     },
@@ -145847,6 +145996,28 @@
   "web.notifications.queries.unmuteFailed": "Failed to unmute the series",
   "@web.notifications.queries.unmuteFailed": {
     "description": "Web Notifications page and bell: error toast when unmuting a series' notifications failed.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.queries.unmuteManyFailed": "Couldn’t unmute the selected series",
+  "@web.notifications.queries.unmuteManyFailed": {
+    "description": "Web Notifications page: error toast when unmuting several series at once fails.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.queries.unmutedMany": "{count, plural, one {Unmuted {count_text} series} other {Unmuted {count_text} series}}",
+  "@web.notifications.queries.unmutedMany": {
+    "description": "Web Notifications page: toast after unmuting several series at once. {count}: series unmuted (selects the plural). {count_text}: the same number, already formatted.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
     "x-platforms": [
       "web"
     ]
@@ -145900,6 +146071,85 @@
       "web"
     ]
   },
+  "web.notifications.selection.clear": "Clear selection",
+  "@web.notifications.selection.clear": {
+    "description": "Web Notifications page: label of the close button on the bar that appears while rows are selected; it deselects every row.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.selection.count": "{count, plural, one {{count_text} selected} other {{count_text} selected}}",
+  "@web.notifications.selection.count": {
+    "description": "Web Notifications page: how many rows are selected, on the bar of actions on them. {count}: selected rows (selects the plural). {count_text}: the same number, already formatted.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.selection.inboxLabel": "Selected notifications",
+  "@web.notifications.selection.inboxLabel": {
+    "description": "Web Notifications page, Inbox view: screen-reader name of the bar of actions on the selected rows.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.selection.markRead": "Mark read",
+  "@web.notifications.selection.markRead": {
+    "description": "Web Notifications page, Inbox view: selection bar button that marks every notification in the selected rows read.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.selection.muteSeries": "Mute series",
+  "@web.notifications.selection.muteSeries": {
+    "description": "Web Notifications page, Inbox view: selection bar button that mutes new-episode notifications for the series of the selected rows.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.selection.notificationCount": "{count, plural, one {· {count_text} notification} other {· {count_text} notifications}}",
+  "@web.notifications.selection.notificationCount": {
+    "description": "Web Notifications page, Inbox view: after the selected count on the selection bar: how many notifications the selected rows hold (a row can group several episodes). {count}: notifications (selects the plural). {count_text}: the same number, already formatted.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.selection.select": "Select",
+  "@web.notifications.selection.select": {
+    "description": "Web Notifications page: button that turns on selecting inbox rows, to mark them read or mute their series together.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.selection.selectAllMatching": "Select all matching",
+  "@web.notifications.selection.selectAllMatching": {
+    "description": "Web Notifications page, Series view: link on the selection bar that selects every series the current search and filter match, including ones not loaded yet.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.selection.seriesLabel": "Selected series",
+  "@web.notifications.selection.seriesLabel": {
+    "description": "Web Notifications page, Series view: screen-reader name of the bar of actions on the selected series.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.notifications.series.allReasons": "All reasons",
   "@web.notifications.series.allReasons": {
     "description": "Web Notifications page, Series view: reason filter option that shows every series.",
@@ -145922,6 +146172,34 @@
   "web.notifications.series.anyNewEpisode": "Any new episode",
   "@web.notifications.series.anyNewEpisode": {
     "description": "Web Notifications page, Series view: under a series, which new episodes notify: all of them.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.series.columnNotifiesFor": "Notifies for",
+  "@web.notifications.series.columnNotifiesFor": {
+    "description": "Web Notifications page, Series view: table column heading over which new episodes notify, such as “Any new episode” or “Muted”.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.series.columnNotify": "Notify",
+  "@web.notifications.series.columnNotify": {
+    "description": "Web Notifications page, Series view: table column heading over the switches that turn a series' notifications on or off.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.series.columnReasons": "Why",
+  "@web.notifications.series.columnReasons": {
+    "description": "Web Notifications page, Series view: table column heading over the reasons a series notifies, such as Favorite or Next Up.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.series.columnSeries": "Series",
+  "@web.notifications.series.columnSeries": {
+    "description": "Web Notifications page, Series view: table column heading over the series titles.",
     "x-platforms": [
       "web"
     ]
@@ -146037,6 +146315,18 @@
       "web"
     ]
   },
+  "web.notifications.series.notifySwitch": "Notify me about new episodes of {title}",
+  "@web.notifications.series.notifySwitch": {
+    "description": "Web Notifications page, Series view: screen-reader label of a row's switch; off mutes the series. {title}: the series title.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.notifications.series.reasonOff": "(off)",
   "@web.notifications.series.reasonOff": {
     "description": "Web Notifications page, Series view: screen-reader text after a reason pill whose switch is off or whose series is muted.",
@@ -146059,6 +146349,25 @@
   "web.notifications.series.search": "Search series",
   "@web.notifications.series.search": {
     "description": "Web Notifications page, Series view: placeholder and label of the series search box.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.series.selectSeries": "Select {title}",
+  "@web.notifications.series.selectSeries": {
+    "description": "Web Notifications page, Series view: screen-reader label of a row's checkbox. {title}: the series title.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.series.selectShown": "Select all shown series",
+  "@web.notifications.series.selectShown": {
+    "description": "Web Notifications page, Series view: screen-reader label of the checkbox in the table heading that selects every listed series.",
     "x-platforms": [
       "web"
     ]
