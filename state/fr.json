@@ -103912,6 +103912,30 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.notifications.inbox.dayOlder": {
+    "source": "215819e263c319ce",
+    "value": "785394bfb7202c26",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.notifications.inbox.dayToday": {
+    "source": "59942fa97867afdc",
+    "value": "f2de9e072a83f7c9",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.notifications.inbox.dayWeek": {
+    "source": "205e2b34abaad6a2",
+    "value": "1ffaa48893f192a7",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.notifications.inbox.dayYesterday": {
+    "source": "859a4357abba7639",
+    "value": "477a18d2c0f6cf2b",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.notifications.inbox.daysAgo": {
     "source": "8b4f35205489b1cd",
     "value": "d825c80fc2d15f80",
@@ -103936,9 +103960,27 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.notifications.inbox.episodeCount": {
+    "source": "aed9257b2ac8f1ab",
+    "value": "53baa33d4306de16",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.notifications.inbox.episodeLine": {
     "source": "1cb047f5ec08ee78",
     "value": "0066076024752447",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.notifications.inbox.episodeRange": {
+    "source": "e0dc5d15c624637c",
+    "value": "9e3d1890c019242f",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.notifications.inbox.episodeRangeLatest": {
+    "source": "8048a9827de7f923",
+    "value": "e332258548cc4658",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -104044,6 +104086,12 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.notifications.inbox.newCount": {
+    "source": "a60f77ad29c058d1",
+    "value": "61e17547d703da2a",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.notifications.inbox.newEpisode": {
     "source": "fb16b0fd5ab4fca7",
     "value": "e929d29cd8347eba",
@@ -104080,6 +104128,12 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.notifications.inbox.requestTag": {
+    "source": "494189727b3427b4",
+    "value": "e79fa141dd58db3b",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.notifications.inbox.requestedMovieAvailable": {
     "source": "3cfead2049ce0d0e",
     "value": "9de9a6abdd2d9e95",
@@ -104107,6 +104161,24 @@
   "web.notifications.inbox.unread": {
     "source": "b9ef0b8c76c73cbb",
     "value": "71672b7a7e87b491",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.notifications.inbox.unreadBadge": {
+    "source": "f64865c78c17d18d",
+    "value": "510795a1134a37e5",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.notifications.inbox.viewInbox": {
+    "source": "133fa91af020ec3c",
+    "value": "1be28e157b5866fa",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.notifications.inbox.views": {
+    "source": "acf3c36f4c31c8ff",
+    "value": "25092a3a2b6fb1a8",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -104260,9 +104332,21 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.notifications.queries.muteManyFailed": {
+    "source": "fb57167aa776251c",
+    "value": "28fe094eb149577a",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.notifications.queries.muted": {
     "source": "1f240e7d8d24c959",
     "value": "6cd7b2b4fa9411ee",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.notifications.queries.mutedMany": {
+    "source": "11f72fe156220d17",
+    "value": "631388c92401dbd3",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -104299,6 +104383,18 @@
   "web.notifications.queries.unmuteFailed": {
     "source": "14ba99f646d74934",
     "value": "d07e6c0e29952f8d",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.notifications.queries.unmuteManyFailed": {
+    "source": "0e30c4ab69bcba9f",
+    "value": "a2aba1b3ff43133f",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.notifications.queries.unmutedMany": {
+    "source": "0c60282ce8fe5580",
+    "value": "23a833f5d75d6f35",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -104344,6 +104440,60 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.notifications.selection.clear": {
+    "source": "5882aa84495fa3e4",
+    "value": "5b6950be027e7d0e",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.notifications.selection.count": {
+    "source": "0a1ec1f03ebaabc2",
+    "value": "2a27a69d5d97e3b7",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.notifications.selection.inboxLabel": {
+    "source": "e63cfe75eb2fcd51",
+    "value": "9df5487b8128a6f3",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.notifications.selection.markRead": {
+    "source": "1fcb56d15f7847dd",
+    "value": "dfd66ad1c2be4bb0",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.notifications.selection.muteSeries": {
+    "source": "99ae9d769e3b5182",
+    "value": "55f82386c95d684e",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.notifications.selection.notificationCount": {
+    "source": "8a63285c2ea8063c",
+    "value": "b427a6e9802f46b6",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.notifications.selection.select": {
+    "source": "f7243e0b7f4d1e9d",
+    "value": "bec8087f7b1777df",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.notifications.selection.selectAllMatching": {
+    "source": "70aa2ea5f4d6b300",
+    "value": "d11692cfa705e6de",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.notifications.selection.seriesLabel": {
+    "source": "26ee54db0dc04319",
+    "value": "56134bfc634500ad",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.notifications.series.allReasons": {
     "source": "9c696cfe93a1274c",
     "value": "ae6917e0f3ef09b6",
@@ -104359,6 +104509,30 @@
   "web.notifications.series.anyNewEpisode": {
     "source": "913fc7204a739a10",
     "value": "c7f9fe5cc0361653",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.notifications.series.columnNotifiesFor": {
+    "source": "2e9eca53c9198bf3",
+    "value": "db21252cc0d6e865",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.notifications.series.columnNotify": {
+    "source": "f41a47dfa9abc675",
+    "value": "882ddccbcdd98935",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.notifications.series.columnReasons": {
+    "source": "766056589bacfed6",
+    "value": "d2b63ab064dad2d1",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.notifications.series.columnSeries": {
+    "source": "10131ad3443f76c7",
+    "value": "70191500542dfe7b",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -104446,6 +104620,12 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.notifications.series.notifySwitch": {
+    "source": "257d66937b52bac9",
+    "value": "3215b4d777005028",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.notifications.series.reasonOff": {
     "source": "87d04488f361fda2",
     "value": "9b65c4b571f1d4e9",
@@ -104461,6 +104641,18 @@
   "web.notifications.series.search": {
     "source": "521f243ea6c7cd23",
     "value": "0bedd68eeeb4b771",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.notifications.series.selectSeries": {
+    "source": "9930b03f58c2dd39",
+    "value": "6abcd74399566877",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.notifications.series.selectShown": {
+    "source": "aff878a6f03e2f65",
+    "value": "aec7663febf58e74",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
