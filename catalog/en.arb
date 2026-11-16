@@ -145521,9 +145521,9 @@
       "web"
     ]
   },
-  "web.notifications.inbox.emptyHintNextUp": "You’ll be notified here when a new episode arrives for a series you’re caught up on.",
+  "web.notifications.inbox.emptyHintNextUp": "You’ll be notified here when a new episode arrives for a series you’re caught up on, or when a title you watchlisted or requested arrives.",
   "@web.notifications.inbox.emptyHintNextUp": {
-    "description": "Web Notifications page: explanation under the empty inbox. A profile is told about a new episode only when it becomes its Next Up: it is caught up on the series and the next episode arrives.",
+    "description": "Web Notifications page: explanation under the empty inbox. A profile is told about a new episode only when it becomes its Next Up: it is caught up on the series and the next episode arrives. It is also told when a title it put on its watchlist, or requested, arrives in the library.",
     "x-platforms": [
       "web"
     ]
@@ -145861,6 +145861,34 @@
   "web.notifications.inbox.views": "Notification views",
   "@web.notifications.inbox.views": {
     "description": "Web Notifications page: screen-reader name of the control that switches between the Inbox and Series views.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.inbox.watchlistAvailable": "Watchlist title available",
+  "@web.notifications.inbox.watchlistAvailable": {
+    "description": "Web Notifications page: title of a notification that a title on the profile's watchlist has arrived in the library, when the notification has no title name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.inbox.watchlistMovieAvailable": "A movie on your watchlist is now available",
+  "@web.notifications.inbox.watchlistMovieAvailable": {
+    "description": "Web Notifications page: body of a notification that a movie the profile put on its watchlist before the library had it has arrived.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.inbox.watchlistSeriesAvailable": "A series on your watchlist is now available",
+  "@web.notifications.inbox.watchlistSeriesAvailable": {
+    "description": "Web Notifications page: body of a notification that a series the profile put on its watchlist before the library had it has arrived.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.inbox.watchlistTitleAvailable": "A title on your watchlist is now available",
+  "@web.notifications.inbox.watchlistTitleAvailable": {
+    "description": "Web Notifications page: body of a notification that a title of unknown media type on the profile's watchlist has arrived; also the web toast title when the title's name is missing.",
     "x-platforms": [
       "web"
     ]
@@ -146667,6 +146695,13 @@
         "type": "String"
       }
     }
+  },
+  "web.notifications.toast.watchlistArrived": "A title on your watchlist has arrived in the library.",
+  "@web.notifications.toast.watchlistArrived": {
+    "description": "Web: description under the toast that a title the profile put on its watchlist before the library had it is now available.",
+    "x-platforms": [
+      "web"
+    ]
   },
   "web.onboarding.gate.progressFailed": "Progress could not be saved. Reload to continue.",
   "@web.onboarding.gate.progressFailed": {
@@ -158423,9 +158458,9 @@
       "web"
     ]
   },
-  "web.settings.notifications.episodes.nextUpDescription": "Get notified when a new episode arrives for a series you’re caught up on.",
+  "web.settings.notifications.episodes.nextUpDescription": "Get notified when a new episode arrives for a series you’re caught up on, or when a title you watchlisted or requested arrives.",
   "@web.settings.notifications.episodes.nextUpDescription": {
-    "description": "Web Settings → Notifications: description of New Episode Notifications. A profile is told about a new episode only when it becomes its Next Up: it is caught up on the series and the next episode arrives.",
+    "description": "Web Settings → Notifications: description of New Episode Notifications, whose master switch covers every notification. A profile is told about a new episode only when it becomes its Next Up: it is caught up on the series and the next episode arrives. It is also told when a title it put on its watchlist, or requested, arrives in the library.",
     "x-platforms": [
       "web"
     ]
@@ -158744,9 +158779,9 @@
       "web"
     ]
   },
-  "web.settings.notifications.reason.requests": "Requests",
+  "web.settings.notifications.reason.requests": "Requests and watchlist",
   "@web.settings.notifications.reason.requests": {
-    "description": "Web Settings → Notifications: webhook dialog toggle for notifying when a media request is fulfilled, also listed on webhook cards.",
+    "description": "Web Settings → Notifications: webhook dialog toggle for notifying when a requested or followed title, or a title on the profile's watchlist, arrives in the library; also listed on webhook cards.",
     "x-platforms": [
       "web"
     ]
