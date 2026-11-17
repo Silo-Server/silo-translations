@@ -6,7 +6,7 @@ import { cpSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { addToLocalesJson, newLocale, setGlossaryColumn } from "../tools/add-locale.ts";
 import { loadLocales } from "../tools/lib/locales.ts";
-import { entry, makeRepo, REPO, testSlotPort } from "./helpers.ts";
+import { entry, FIXTURE, makeRepo, REPO, testSlotPort } from "./helpers.ts";
 
 test("add-locale: derives the identifiers the existing languages use", () => {
   const real = JSON.parse(readFileSync(join(REPO, "locales.json"), "utf8")) as { locales: { tag: string; name: string }[] };
@@ -26,19 +26,21 @@ test("add-locale: right-to-left and scripts Roku's fonts lack stay off Roku; And
   assert.throws(() => newLocale("pt-pt"), /write the tag as pt-PT/);
 });
 
+// The tests below add Hungarian to the fixture's locales.json, which doesn't have it; the real one
+// may already list any language.
 test("add-locale: appends one line to locales.json and keeps the rest as written", () => {
-  const before = readFileSync(join(REPO, "locales.json"), "utf8");
+  const before = readFileSync(join(FIXTURE, "locales.json"), "utf8");
   const after = addToLocalesJson(before, newLocale("hu"));
   const added = after.split("\n").filter((l) => !before.split("\n").includes(l));
   assert.deepEqual(added, [
-    `    { "tag": "ar", "name": "العربية", "dir": "rtl", "cldr": "ar", "android": "values-ar", "roku": "ar", "platforms": ["web", "apple", "android"] },`,
+    `    { "tag": "ar", "name": "العربية", "dir": "rtl", "cldr": "ar", "android": "values-ar", "roku": "ar", "platforms": ["web", "apple", "android-phone"] },`,
     `    { "tag": "hu", "name": "Magyar", "dir": "ltr", "cldr": "hu", "android": "values-hu", "roku": "hu" }`,
   ]);
   assert.throws(() => addToLocalesJson(after, newLocale("hu")), /already in locales.json/);
 });
 
 test("add-locale: sets one glossary column and leaves the others byte for byte", () => {
-  const text = readFileSync(join(REPO, "glossary.csv"), "utf8");
+  const text = 'term,note,es,de\nSilo,Product name,Silo,Silo\nWi-Fi,"Technical term, written as is",Wi-Fi,WLAN|Wi-Fi\n';
   const out = setGlossaryColumn(text, "hu", new Map([["Silo", "Silo"]]));
   const original = text.split("\n");
   out.split("\n").forEach((line, i) => {
@@ -52,7 +54,7 @@ test("add-locale: sets one glossary column and leaves the others byte for byte",
 
 test("add-locale: the CLI writes the files, and translate waits for the style guide and glossary", () => {
   const root = makeRepo({ en: entry("a.b", "Hello") }, "term,note,es\nSilo,Product name,Silo\n");
-  cpSync(join(REPO, "locales.json"), join(root, "locales.json"));
+  cpSync(join(FIXTURE, "locales.json"), join(root, "locales.json"));
   const cli = (...args: string[]) => execFileSync(process.execPath, [join(REPO, "tools/add-locale.ts"), "--root", root, ...args], { encoding: "utf8" });
   cli("hu");
   assert.equal(loadLocales(root).targets.at(-1)!.tag, "hu");

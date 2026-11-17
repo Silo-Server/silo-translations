@@ -50,8 +50,9 @@ test("format: repeated keys are found in any object, not in strings or arrays", 
 
 test("check: a broken ARB outside locales.json is reported", () => {
   const root = makeRepo({ en: entry("a.x", "A") });
-  writeFileSync(join(root, "catalog/pt-PT.arb"), '{"a": "b", "c');
-  assert.ok(checkRepository(root).issues.some((i) => i.file.endsWith("pt-PT.arb") && i.message === "not a JSON object"));
+  // qaa is reserved for private use, so locales.json never lists it.
+  writeFileSync(join(root, "catalog/qaa.arb"), '{"a": "b", "c');
+  assert.ok(checkRepository(root).issues.some((i) => i.file.endsWith("qaa.arb") && i.message === "not a JSON object"));
 });
 
 test("generate ignores layout, make check does not", () => {
