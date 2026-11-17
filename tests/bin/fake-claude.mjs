@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Stand-in for `claude -p --output-format json --json-schema ...` in translate tests.
 // Translates by prefixing literal text with "ES " and expanding English plurals to the
-// es categories. A key containing "empty" always gets "". A key containing "flaky" drops its placeholders on the first attempt so
+// es categories. A key containing "empty" always gets "", and one containing "space" gets " ". A key containing "flaky" drops its placeholders on the first attempt so
 // the retry path runs; a key containing "broken" always fails.
 import { execFileSync } from "node:child_process";
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
@@ -43,6 +43,7 @@ const translations = items.map((it) => {
   if (it.key.includes("flaky") && !it.problemsWithLastAttempt) message = "ES sin marcador";
   if (it.key.includes("broken")) message = "ES {roto";
   if (it.key.includes("empty")) message = "";
+  if (it.key.includes("space")) message = " ";
   // A key containing "shaky" fails its first two attempts (one batch's attempt and its retry),
   // counted across calls in a file next to the prompt log, and succeeds after that.
   if (it.key.includes("shaky") && log) {

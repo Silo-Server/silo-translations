@@ -350,6 +350,15 @@ async function callWithRetry(prompt: string, onCall: () => void): Promise<Map<st
   }
 }
 
+/**
+ * An empty answer is no answer: it would erase the value and read as missing next time. A
+ * whitespace-only answer counts too, unless the English is only punctuation and spaces: a
+ * separator such as ", " is a single space in Thai.
+ */
+function isBlank(message: string, english: string): boolean {
+  return message === "" || (message.trim() === "" && /[\p{L}\p{N}]/u.test(english));
+}
+
 /** Translates one batch, validates every message, and retries the failures once. */
 export async function translateBatch(root: string, checked: CheckedCatalog, locale: Locale, batch: Work[], known: Map<string, string>): Promise<BatchResult> {
   const accepted = new Map<string, string>();
@@ -367,8 +376,7 @@ export async function translateBatch(root: string, checked: CheckedCatalog, loca
     feedback = new Map();
     for (const w of pending) {
       const message = got.get(w.entry.key);
-      // An empty answer is no answer: it would erase the value and read as missing next time.
-      const checkedMessage = message === undefined || message.trim() === "" ? undefined : checkTranslation(w.entry, checked.english.get(w.entry.key)!, locale, message);
+      const checkedMessage = message === undefined || isBlank(message, w.entry.message) ? undefined : checkTranslation(w.entry, checked.english.get(w.entry.key)!, locale, message);
       const problems = checkedMessage ? [...checkedMessage.problems, ...checkedMessage.mismatches] : ["no translation returned"];
       // x-maxLength is advisory: an answer over it goes back once with the limit, and the
       // second answer is accepted (make check warns if it is still too long).

@@ -266,6 +266,16 @@ test("translate: an empty answer keeps the existing value and is reported", () =
   assert.match(readFileSync(join(root, "out/translate-pr-body.md"), "utf8"), /es `common.empty`: no translation returned/);
 });
 
+test("translate: a space is an answer for a separator, not for words", () => {
+  const cat = catalog();
+  const root = makeRepo({ en: { ...cat.en, ...entry("common.spaceSeparator", ", "), ...entry("common.spaceWords", "Cancel now") } });
+  run(root, "--locale", "es");
+  const es = JSON.parse(readFileSync(join(root, "catalog/es.arb"), "utf8"));
+  assert.equal(es["common.spaceSeparator"], " ");
+  assert.equal(es["common.spaceWords"], undefined);
+  assert.match(readFileSync(join(root, "out/translate-pr-body.md"), "utf8"), /es `common.spaceWords`: no translation returned/);
+});
+
 test("translate: batches keep namespaces together", () => {
   const w = (key: string): Work => ({ entry: e(key, "x"), reason: "missing" });
   const keys = [...Array.from({ length: 3 }, (_, i) => `a.k${i}`), ...Array.from({ length: 4 }, (_, i) => `b.k${i}`), ...Array.from({ length: 5 }, (_, i) => `web.admin.x.k${i}`), "web.admin.y.k0"];
