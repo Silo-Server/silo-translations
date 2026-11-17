@@ -4645,6 +4645,18 @@
       "apple"
     ]
   },
+  "collections.posterCard.byOwner": "by {owner}",
+  "@collections.posterCard.byOwner": {
+    "description": "Android phone and Android TV: line under a personal collection's name on a Home or library row of collections, when another profile on the account made the collection and shared it. {owner}: that profile's name.",
+    "x-platforms": [
+      "android"
+    ],
+    "placeholders": {
+      "owner": {
+        "type": "String"
+      }
+    }
+  },
   "collections.reload": "Reload",
   "@collections.reload": {
     "description": "Apple iOS and tvOS: button in a collection or group sheet that reads the current version again after a conflict or an unconfirmed change.",
@@ -15782,6 +15794,21 @@
     "x-platforms": [
       "apple"
     ]
+  },
+  "home.editor.collectionCount": "{count, plural, one {{count_text} collection} other {{count_text} collections}}",
+  "@home.editor.collectionCount": {
+    "description": "Android phone, Home Sections editor: line under the name of a row of collections, counting the collections it shows. {count}: the number of collections, which selects the plural; {count_text}: the same number as digits.",
+    "x-platforms": [
+      "android"
+    ],
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    }
   },
   "home.editor.empty": "No Home sections",
   "@home.editor.empty": {
