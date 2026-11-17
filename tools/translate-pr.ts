@@ -22,7 +22,7 @@
 //   --trailer <line>     add a trailer line to the commit message (repeatable)
 //   --repo <dir>         the checkout to make the worktree in (default: this one)
 import { execFileSync } from "node:child_process";
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parseArgs } from "node:util";
@@ -202,8 +202,24 @@ export async function translatePr(o: Options): Promise<string | undefined> {
     run("git", ["commit", "--quiet", "-F", "-"], dir, commitMessage(subject, o.trailers ?? []));
     say(`committed: chore(translations): ${subject} in every language`);
   }
-  // A commit from an earlier run whose push failed is pushed now.
+  // Written before the push and removed once the description is updated: a rerun after a push
+  // whose description update failed finds its commit as the pull request's head, and publishes
+  // the description (with the record of replaced human values the worktree keeps) then.
+  const pending = join(dir, "out", "translate-pr-pending.json");
+  const tags = checked.locales.targets.map((l) => l.tag);
+  const publishAndRemove = (base: string) => {
+    const written = changedStrings(dir, base, tags);
+    gh(["pr", "edit", String(pr.number), "--body-file", "-"], o.repo, bodyWithSection(pr.body, reports, tags.length, written));
+    rmSync(pending);
+    say(`updated the description of ${pr.url}`);
+    git(["worktree", "remove", "--force", dir], o.repo);
+  };
+
   if (git(["rev-parse", "HEAD"], dir) === pr.headRefOid) {
+    if (existsSync(pending)) {
+      publishAndRemove((JSON.parse(readFileSync(pending, "utf8")) as { base: string }).base);
+      return dir;
+    }
     say(`#${pr.number}: every language already has every key; nothing to commit`);
     git(["worktree", "remove", "--force", dir], o.repo);
     return undefined;
@@ -213,13 +229,13 @@ export async function translatePr(o: Options): Promise<string | undefined> {
     return dir;
   }
 
+  // A commit from an earlier run whose push failed is pushed now.
   const remote = pr.isCrossRepository ? `https://github.com/${pr.headRepositoryOwner!.login}/${pr.headRepository!.name}.git` : "origin";
+  mkdirSync(join(dir, "out"), { recursive: true });
+  writeFileSync(pending, JSON.stringify({ base: pr.headRefOid }) + "\n");
   git(["push", "--quiet", remote, `HEAD:refs/heads/${pr.headRefName}`], dir);
-  const tags = checked.locales.targets.map((l) => l.tag);
-  const written = changedStrings(dir, pr.headRefOid, tags);
-  gh(["pr", "edit", String(pr.number), "--body-file", "-"], o.repo, bodyWithSection(pr.body, reports, tags.length, written));
-  say(`pushed to ${pr.headRefName} and updated the description of ${pr.url}`);
-  git(["worktree", "remove", "--force", dir], o.repo);
+  say(`pushed to ${pr.headRefName}`);
+  publishAndRemove(pr.headRefOid);
   return dir;
 }
 

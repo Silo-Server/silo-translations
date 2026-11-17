@@ -67,11 +67,15 @@ function setUp(prFiles: (seed: string) => void = () => {}, mainFiles: (seed: str
 }
 
 function translatePr(s: ReturnType<typeof setUp>, ...args: string[]) {
+  return translatePrEnv(s, {}, ...args);
+}
+
+function translatePrEnv(s: ReturnType<typeof setUp>, env: Record<string, string>, ...args: string[]) {
   return execFileSync(process.execPath, [join(REPO, "tools/translate-pr.ts"), "7", "--repo", s.repo, ...args], {
     encoding: "utf8",
     stdio: ["ignore", "pipe", "pipe"],
     // FAKE_CLAUDE_LOG also counts the attempts of "shaky" keys across runs.
-    env: { ...process.env, ...IDENTITY, SILO_GH_BIN: join(REPO, "tests/bin/fake-gh.mjs"), FAKE_GH_PR: s.prJson, FAKE_GH_BODY: s.body, SILO_CLAUDE_BIN: join(REPO, "tests/bin/fake-claude.mjs"), FAKE_CLAUDE_LOG: join(s.dir, "prompts.log"), SILO_TRANSLATE_SLOTS_DIR: join(s.dir, "slots"), SILO_TRANSLATE_RETRY_MS: "0" },
+    env: { ...process.env, ...IDENTITY, SILO_GH_BIN: join(REPO, "tests/bin/fake-gh.mjs"), FAKE_GH_PR: s.prJson, FAKE_GH_BODY: s.body, SILO_CLAUDE_BIN: join(REPO, "tests/bin/fake-claude.mjs"), FAKE_CLAUDE_LOG: join(s.dir, "prompts.log"), SILO_TRANSLATE_SLOTS_DIR: join(s.dir, "slots"), SILO_TRANSLATE_RETRY_MS: "0", ...env },
   });
 }
 
@@ -145,10 +149,12 @@ test("translate-pr: changed English whose retranslation keeps failing stops befo
   assert.equal(git(join(s.repo, "out/pr/7"), "rev-parse", "HEAD"), s.head, "nothing committed");
 });
 
-test("translate-pr: a rerun after a stop still reports the human values the first run replaced", () => {
-  // Main has a.edit written by a person for older English; the pull request changes that English
-  // and adds a.shaky, whose first two attempts fail (the first language's attempt and retry).
-  const s = setUp(
+/**
+ * Main has a.edit written by a person for older English; the pull request changes that English
+ * and adds a.shaky, whose first two attempts fail (the first language's attempt and retry).
+ */
+function humanEditSetUp() {
+  return setUp(
     (seed) => writeArb(join(seed, "catalog/en.arb"), { ...entry("a.b", "Hello"), ...entry("a.edit", "New English"), ...entry("a.shaky", "Shaky") }),
     (seed, tags) => {
       writeArb(join(seed, "catalog/en.arb"), { ...entry("a.b", "Hello"), ...entry("a.edit", "Old English") });
@@ -161,6 +167,10 @@ test("translate-pr: a rerun after a stop still reports the human values the firs
       }
     },
   );
+}
+
+test("translate-pr: a rerun after a stop still reports the human values the first run replaced", () => {
+  const s = humanEditSetUp();
   // One round, one call at a time: the first language keeps failing a.shaky, so the run stops.
   assert.throws(() => translatePr(s, "--rounds", "1", "--jobs", "1"), (e: { stderr: string }) => /nothing committed/.test(e.stderr));
   translatePr(s);
@@ -168,4 +178,22 @@ test("translate-pr: a rerun after a stop still reports the human values the firs
   assert.match(body, /\| es \| `a\.edit` \| es by a person \| ES New English \|/, "the first run's replacement is listed for review");
   // Every language got a.edit and a.shaky, across both runs.
   assert.match(body, new RegExp(`translated ${s.tags.length * 2} strings`));
+});
+
+test("translate-pr: a rerun after a failed description update publishes it", () => {
+  const s = humanEditSetUp();
+  // The push lands, then the description update fails.
+  assert.throws(() => translatePrEnv(s, { FAKE_GH_EDIT_FAIL: "1" }), (e: { stderr: string }) => /HTTP 502/.test(e.stderr));
+  const pushed = git(s.origin, "rev-parse", "refs/heads/feat/x");
+  assert.notEqual(pushed, s.head);
+  assert.equal(existsSync(s.body), false);
+  // GitHub now reports the pushed commit as the head.
+  const pr = JSON.parse(readFileSync(s.prJson, "utf8"));
+  writeFileSync(s.prJson, JSON.stringify({ ...pr, headRefOid: pushed }));
+  translatePr(s);
+  const body = readFileSync(s.body, "utf8");
+  assert.match(body, /\| es \| `a\.edit` \| es by a person \| ES New English \|/);
+  assert.match(body, new RegExp(`translated ${s.tags.length * 2} strings`));
+  assert.equal(git(s.origin, "rev-parse", "refs/heads/feat/x"), pushed, "nothing pushed again");
+  assert.equal(existsSync(join(s.repo, "out/pr/7")), false, "the worktree goes once the description is out");
 });
