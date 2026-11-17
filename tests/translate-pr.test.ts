@@ -3,11 +3,13 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
-import { cpSync, existsSync, mkdirSync, mkdtempSync, readFileSync, writeFileSync } from "node:fs";
+import { cpSync, existsSync, mkdirSync, mkdtempSync, readFileSync, symlinkSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { bodyWithSection, commitMessage, filesNeedingReview, subjectFromTitle } from "../tools/translate-pr.ts";
 import { loadLocales } from "../tools/lib/locales.ts";
+import { checkRepository } from "../tools/lib/check.ts";
+import { fingerprint, valueHash } from "../tools/translate.ts";
 import { entry, REPO, writeArb } from "./helpers.ts";
 
 test("translate-pr: subject, files to review, description section", () => {
@@ -28,8 +30,11 @@ test("translate-pr: subject, files to review, description section", () => {
 const git = (cwd: string, ...args: string[]) => execFileSync("git", args, { cwd, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] }).trim();
 const IDENTITY = { GIT_AUTHOR_NAME: "T", GIT_AUTHOR_EMAIL: "t@example.com", GIT_COMMITTER_NAME: "T", GIT_COMMITTER_EMAIL: "t@example.com" };
 
-/** origin.git with main (one key, every language translated) and pull request 7 adding a key. */
-function setUp(prFiles: (seed: string) => void = () => {}) {
+/**
+ * origin.git with main (one key, every language translated) and pull request 7 adding a key.
+ * `mainFiles` and `prFiles` change the seed checkout before main's and the pull request's commit.
+ */
+function setUp(prFiles: (seed: string) => void = () => {}, mainFiles: (seed: string, tags: string[]) => void = () => {}) {
   const dir = mkdtempSync(join(tmpdir(), "silo-translate-pr-test-"));
   const origin = join(dir, "origin.git");
   const seed = join(dir, "seed");
@@ -42,6 +47,7 @@ function setUp(prFiles: (seed: string) => void = () => {}) {
   const tags = loadLocales(seed).targets.map((l) => l.tag);
   writeArb(join(seed, "catalog/en.arb"), entry("a.b", "Hello"));
   for (const tag of tags) writeArb(join(seed, `catalog/${tag}.arb`), { "@@locale": tag, "a.b": `${tag} Hello` });
+  mainFiles(seed, tags);
   git(seed, "add", ".");
   git(seed, "commit", "--quiet", "-m", "main");
   git(seed, "push", "--quiet", "origin", "main");
@@ -98,8 +104,42 @@ test("translate-pr: a pull request that changes more than the catalog waits for 
 
 test("translate-pr: a key left untranslated stops before the commit and keeps the rest for the rerun", () => {
   const s = setUp((seed) => writeArb(join(seed, "catalog/en.arb"), { ...entry("a.b", "Hello"), ...entry("a.c", "New words"), ...entry("a.broken", "Never") }));
-  assert.throws(() => translatePr(s), (e: { stderr: string }) => /keys still untranslated \(nothing committed\)/.test(e.stderr) && /es: a.broken/.test(e.stderr));
+  assert.throws(() => translatePr(s), (e: { stderr: string }) => /keys still untranslated or out of date \(nothing committed\)/.test(e.stderr) && /es: a.broken/.test(e.stderr));
   const wt = join(s.repo, "out/pr/7");
   assert.equal(git(wt, "rev-parse", "HEAD"), s.head, "nothing committed");
   assert.equal(JSON.parse(readFileSync(join(wt, "catalog/es.arb"), "utf8"))["a.c"], "ES New words", "the rest is kept for the rerun");
+});
+
+test("translate-pr: a pull request with a symbolic link is refused before anything is written", () => {
+  let outside = "";
+  const s = setUp((seed) => {
+    // The link points at a file outside the checkout, as ../../../../catalog/es.arb would.
+    outside = join(seed, "..", "outside-es.arb");
+    writeFileSync(outside, readFileSync(join(seed, "catalog/es.arb")));
+    git(seed, "rm", "--quiet", "catalog/es.arb");
+    symlinkSync(outside, join(seed, "catalog/es.arb"));
+  });
+  const before = readFileSync(outside, "utf8");
+  assert.throws(() => translatePr(s, "--no-push"), (e: { stderr: string }) => /symbolic link.*catalog\/es\.arb/.test(e.stderr));
+  assert.equal(readFileSync(outside, "utf8"), before, "the file the link points at is untouched");
+});
+
+test("translate-pr: changed English whose retranslation keeps failing stops before the commit", () => {
+  // Main has a.broken translated everywhere, with state recording the English it was written for.
+  const s = setUp(
+    (seed) => writeArb(join(seed, "catalog/en.arb"), { ...entry("a.b", "Hello"), ...entry("a.broken", "New wording") }),
+    (seed, tags) => {
+      writeArb(join(seed, "catalog/en.arb"), { ...entry("a.b", "Hello"), ...entry("a.broken", "Old wording") });
+      const old = checkRepository(seed).catalog.byKey.get("a.broken")!;
+      mkdirSync(join(seed, "state"));
+      for (const tag of tags) {
+        const value = `${tag} Old wording`;
+        writeArb(join(seed, `catalog/${tag}.arb`), { "@@locale": tag, "a.b": `${tag} Hello`, "a.broken": value });
+        writeFileSync(join(seed, `state/${tag}.json`), JSON.stringify({ "a.broken": { source: fingerprint(old), value: valueHash(value), by: "opus", model: "m" } }, null, 2) + "\n");
+      }
+    },
+  );
+  assert.throws(() => translatePr(s), (e: { stderr: string }) => /nothing committed/.test(e.stderr) && /es: a\.broken/.test(e.stderr));
+  assert.equal(git(s.origin, "rev-parse", "refs/heads/feat/x"), s.head, "nothing pushed");
+  assert.equal(git(join(s.repo, "out/pr/7"), "rev-parse", "HEAD"), s.head, "nothing committed");
 });

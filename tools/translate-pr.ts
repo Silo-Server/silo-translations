@@ -26,7 +26,7 @@ import { existsSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parseArgs } from "node:util";
-import { missingTranslations } from "./check-complete.ts";
+import { incompleteTranslations } from "./check-complete.ts";
 import { checkRepository, formatIssue } from "./lib/check.ts";
 import { DEFAULT_JOBS, DEFAULT_ROUNDS, intOption, prBody, runTranslate, TranslateError, type Report } from "./translate.ts";
 
@@ -110,6 +110,14 @@ function gitSucceeds(args: string[], repo: string): boolean {
 const hasRef = (repo: string, ref: string) => gitSucceeds(["rev-parse", "--verify", "--quiet", ref], repo);
 const isAncestor = (repo: string, a: string, b: string) => gitSucceeds(["merge-base", "--is-ancestor", a, b], repo);
 
+/** Tracked paths in the worktree that are symbolic links (git mode 120000). */
+export function symbolicLinks(dir: string): string[] {
+  return git(["ls-files", "--stage", "-z"], dir)
+    .split("\0")
+    .filter((line) => line.startsWith("120000 "))
+    .map((line) => line.slice(line.indexOf("\t") + 1));
+}
+
 export interface Options {
   pr: number;
   repo: string;
@@ -157,14 +165,18 @@ export async function translatePr(o: Options): Promise<string | undefined> {
     say(`checked out #${pr.number} (${pr.headRefOid.slice(0, 7)}) in ${dir}`);
   }
 
+  // The pass writes catalog/, state/ and out/ through whatever the pull request put at those
+  // paths; a symbolic link would send the writes outside the worktree.
+  const links = symbolicLinks(dir);
+  if (links.length) throw new TranslatePrError(`#${pr.number} has symbolic links (${links.join(", ")}); the pass writes into the checkout, so it refuses them`);
   const reports = await runTranslate({ root: dir, locales: "all", jobs: o.jobs, rounds: o.rounds, log: say });
   const checked = checkRepository(dir);
   const errors = checked.issues.filter((i) => i.level === "error");
   if (errors.length) throw new TranslatePrError(`make check fails in ${dir}:\n${errors.map((i) => formatIssue(dir, i)).join("\n")}`);
-  const missing = missingTranslations(checked);
-  if (missing.size) {
-    const lines = [...missing].map(([tag, keys]) => `${tag}: ${keys.slice(0, 5).join(", ")}${keys.length > 5 ? ` and ${keys.length - 5} more` : ""}`);
-    throw new TranslatePrError(`keys still untranslated (nothing committed); run again to send only these:\n${lines.join("\n")}\nFailures are in ${join(dir, "out/translate-pr-body.md")}.`);
+  const incomplete = incompleteTranslations(dir, checked);
+  if (incomplete.size) {
+    const lines = [...incomplete].map(([tag, keys]) => `${tag}: ${keys.slice(0, 5).join(", ")}${keys.length > 5 ? ` and ${keys.length - 5} more` : ""}`);
+    throw new TranslatePrError(`keys still untranslated or out of date (nothing committed); run again to send only these:\n${lines.join("\n")}\nFailures are in ${join(dir, "out/translate-pr-body.md")}.`);
   }
 
   if (git(["status", "--porcelain", "--", "catalog", "state"], dir)) {

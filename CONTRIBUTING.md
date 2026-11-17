@@ -88,11 +88,13 @@ request title; `SUBJECT=` overrides it), pushes the commit to the pull request's
 the per-language table in its description. Only this checkout's tools run: nothing from the pull
 request (its `Makefile`, tools or dependencies) runs on the machine signed in to Claude Code. A
 pull request that changes anything besides `catalog/*.arb` and `state/*.json` stops until you
-have reviewed those changes; then run it again with `REVIEWED=1`. A fork's pull request needs
+have reviewed those changes; then run it again with `REVIEWED=1`. One that adds a symbolic link
+is refused outright, since the pass writes through it. A fork's pull request needs
 "Allow edits by maintainers"; otherwise use `NO_PUSH=1` and hand the commit over.
 
-If keys are still untranslated after the pass (each failed key is sent again, up to three rounds
-in all), the command lists them and commits nothing. Run it again: only those keys are sent, and
+If keys are still untranslated after the pass (each failed key is sent again, up to three
+rounds in all), or a key whose English changed still has the translation written for the old
+English, the command lists them and commits nothing. Run it again: only those keys are sent, and
 an interrupted run resumes in the same worktree. Check the "please review" table it prints for
 values a person wrote that the English change replaced.
 
