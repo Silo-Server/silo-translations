@@ -88,11 +88,13 @@ request title; `SUBJECT=` overrides it), pushes the commit to the pull request's
 the per-language table in its description. Only this checkout's tools run: nothing from the pull
 request (its `Makefile`, tools or dependencies) runs on the machine signed in to Claude Code. A
 pull request that changes anything besides `catalog/*.arb` and `state/*.json` stops until you
-have reviewed those changes; then run it again with `REVIEWED=1`. A fork's pull request needs
+have reviewed those changes; then run it again with `REVIEWED=1`. One that adds a symbolic link
+is refused outright, since the pass writes through it. A fork's pull request needs
 "Allow edits by maintainers"; otherwise use `NO_PUSH=1` and hand the commit over.
 
-If keys are still untranslated after the pass (each failed key is sent again, up to three rounds
-in all), the command lists them and commits nothing. Run it again: only those keys are sent, and
+If keys are still untranslated after the pass (each failed key is sent again, up to three
+rounds in all), or a key whose English changed still has the translation written for the old
+English, the command lists them and commits nothing. Run it again: only those keys are sent, and
 an interrupted run resumes in the same worktree. Check the "please review" table it prints for
 values a person wrote that the English change replaced.
 
@@ -101,7 +103,8 @@ Claude Code in batches of about 100 with their descriptions, the style guide, gl
 existing translations from the same area, validates every result, and retries failures. The
 batches of all languages share one pool of `JOBS` calls (default 4). Every call also takes one of
 `SILO_TRANSLATE_MAX_CALLS` slots (default 6) shared by every run on the machine, so several
-pull requests translated at once don't multiply the load; a run waits for a free slot. Values a
+pull requests translated at once don't multiply the load; a run waits for a free slot. A slot is
+a local port from `SILO_TRANSLATE_SLOT_PORT` (default 47360) on, which a killed run frees at once. Values a
 person edited are kept.
 
 The pass on its own, for a branch you are on (a new language, or after a glossary or style guide

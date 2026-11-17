@@ -8,8 +8,9 @@ check:
 	$(NODE) tools/validate.ts .
 	$(NODE) tools/import-settings-manifest.ts --check
 
-## check-complete: every language has a valid translation of every key it ships (CI runs it;
-## a merge publishes a release, which must not leave a shipped language with missing keys)
+## check-complete: every language has a valid translation, written for today's English, of every
+## key it ships (CI runs it; a merge publishes a release, which must not leave a shipped language
+## with missing keys)
 check-complete:
 	$(NODE) tools/check-complete.ts .
 

@@ -9,7 +9,7 @@ import { fingerprint, makeBatches, namedLabels, select, valueHash, type State, t
 import { checkRepository } from "../tools/lib/check.ts";
 import type { SourceEntry } from "../tools/lib/catalog.ts";
 import { canonicalText } from "../tools/lib/format.ts";
-import { entry, makeRepo, REPO, writeArb } from "./helpers.ts";
+import { entry, makeRepo, REPO, testSlotPort, writeArb } from "./helpers.ts";
 
 const e = (key: string, message: string, description = "Test string."): SourceEntry => ({ key, message, description, placeholders: [], platforms: ["web"] });
 
@@ -65,7 +65,7 @@ function run(root: string, ...args: string[]) {
 function runEnv(root: string, env: Record<string, string>, ...args: string[]) {
   return execFileSync(process.execPath, [join(REPO, "tools/translate.ts"), "--root", root, ...args], {
     encoding: "utf8",
-    env: { ...process.env, SILO_CLAUDE_BIN: join(REPO, "tests/bin/fake-claude.mjs"), FAKE_CLAUDE_LOG: join(root, "prompts.log"), SILO_TRANSLATE_RETRY_MS: "0", SILO_TRANSLATE_SLOTS_DIR: join(root, "slots"), ...env },
+    env: { ...process.env, SILO_CLAUDE_BIN: join(REPO, "tests/bin/fake-claude.mjs"), FAKE_CLAUDE_LOG: join(root, "prompts.log"), SILO_TRANSLATE_RETRY_MS: "0", SILO_TRANSLATE_SLOT_PORT: String(testSlotPort()), ...env },
     stdio: ["ignore", "pipe", "pipe"],
   });
 }

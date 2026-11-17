@@ -32,7 +32,7 @@ make ci                         # typecheck + check + test (what CI runs)
 make generate OUT=<dir>         # write every platform's files under <dir>
 make golden                     # rewrite tests/golden after an intended generator change
 make import-settings-manifest REPO=<silo-server checkout> REF=<rev>
-make check-complete             # every language has every key it ships (CI)
+make check-complete             # every language has a current translation of every key it ships (CI)
 make translate-pr PR=<number>   # maintainers only: translate a pull request; see CONTRIBUTING.md
 make translate LOCALE=<tag>[,<tag>…]|all [DRY_RUN=1]   # maintainers only: the pass on a branch
 make add-locale TAG=<bcp47>     # set up a new language; see CONTRIBUTING.md

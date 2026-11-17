@@ -29,3 +29,11 @@ export function entry(key: string, message: string, meta: Record<string, unknown
 export function writeArb(file: string, content: Record<string, unknown>): void {
   writeFileSync(file, jsonText(canonicalArb(content)));
 }
+
+/**
+ * A random base port for the Claude Code slots (tools/lib/slots.ts) of one test process, so tests
+ * neither wait for a real translate run on the machine nor for each other.
+ */
+export function testSlotPort(): number {
+  return 20000 + 16 * Math.floor(Math.random() * 2500);
+}

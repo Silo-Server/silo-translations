@@ -6,7 +6,7 @@ import { cpSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { addToLocalesJson, newLocale, setGlossaryColumn } from "../tools/add-locale.ts";
 import { loadLocales } from "../tools/lib/locales.ts";
-import { entry, makeRepo, REPO } from "./helpers.ts";
+import { entry, makeRepo, REPO, testSlotPort } from "./helpers.ts";
 
 test("add-locale: derives the identifiers the existing languages use", () => {
   const real = JSON.parse(readFileSync(join(REPO, "locales.json"), "utf8")) as { locales: { tag: string; name: string }[] };
@@ -65,7 +65,7 @@ test("add-locale: the CLI writes the files, and translate waits for the style gu
   const translate = () =>
     execFileSync(process.execPath, [join(REPO, "tools/translate.ts"), "--root", root, "--locale", "hu"], {
       encoding: "utf8",
-      env: { ...process.env, SILO_CLAUDE_BIN: join(REPO, "tests/bin/fake-claude.mjs"), SILO_TRANSLATE_SLOTS_DIR: join(root, "slots") },
+      env: { ...process.env, SILO_CLAUDE_BIN: join(REPO, "tests/bin/fake-claude.mjs"), SILO_TRANSLATE_SLOT_PORT: String(testSlotPort()) },
       stdio: ["ignore", "pipe", "pipe"],
     });
   assert.throws(translate, (e: { stderr: string }) => /style\/hu.md still has TODO\(add-locale\)/.test(e.stderr) && /glossary.csv has no hu renderings/.test(e.stderr));

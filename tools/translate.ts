@@ -17,7 +17,8 @@
 // The batches of every language share one pool of Claude Code calls, so a pull request that
 // adds a few keys sends one batch per language side by side instead of one language at a time.
 // Keys that still fail after a batch's own retry go round again (--rounds). Every call also takes
-// one of SILO_TRANSLATE_MAX_CALLS (default 6) slots shared by all runs on the machine.
+// one of SILO_TRANSLATE_MAX_CALLS (default 6) slots shared by all runs on the machine: local
+// ports from SILO_TRANSLATE_SLOT_PORT (default 47360), see tools/lib/slots.ts.
 //
 // Writes catalog/<tag>.arb, state/<tag>.json, out/translate-pr-body.md and a per-batch log,
 // out/translate-<tag>.log.jsonl. It does not create branches or pull requests; translate-pr.ts
@@ -492,6 +493,12 @@ export interface TranslateOptions {
   only?: string[];
   retranslate?: string[];
   dryRun?: boolean;
+  /**
+   * Leave the record of replaced human values (out/translate-<tag>.human-edits.jsonl) in place
+   * after writing the PR body, for a caller that publishes the report only once a later run
+   * completes: each run then reports every value replaced since the first.
+   */
+  keepAudit?: boolean;
   log?: (line: string) => void;
 }
 
@@ -664,7 +671,7 @@ export async function runTranslate(o: TranslateOptions): Promise<Report[]> {
   // Audit files are removed only once the PR body that lists them is on disk, so a run that
   // stops before this point still reports the values it replaced next time.
   writeFileSync(join(root, "out/translate-pr-body.md"), prBody(reports));
-  for (const audit of audits) rmSync(audit);
+  if (!o.keepAudit) for (const audit of audits) rmSync(audit);
   return reports;
 }
 
