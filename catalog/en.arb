@@ -94572,6 +94572,20 @@
       "web"
     ]
   },
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrant": "Play without sign-in from the same address",
+  "@web.admin.settings.compatibilityProxies.advanced.addressStreamGrant": {
+    "description": "Web admin, Compatibility settings page: label of an on/off switch that lets Jellyfin apps which open playback and download links without signing in play a file that a signed-in app at the same network address started playing recently.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrantDescription": "Some Jellyfin apps, such as Findroid, open direct-play and download links without signing in. When this is on, Silo serves such a request if a signed-in app at the same network address asked to play that file in the last two hours. Anyone who shares that address, such as people on the same home network, mobile carrier or VPN, can then play that file too. Turn it on only if you use one of those apps.",
+  "@web.admin.settings.compatibilityProxies.advanced.addressStreamGrantDescription": {
+    "description": "Web admin, Compatibility settings page: description of Play without sign-in from the same address. Findroid is the name of a Jellyfin app for Android. “Network address” means IP address. Direct play means playing the original file without converting it.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.settings.compatibilityProxies.advanced.playbackTtl": "End playback sessions after",
   "@web.admin.settings.compatibilityProxies.advanced.playbackTtl": {
     "description": "Web admin, Compatibility settings page: label of how long a Jellyfin playback session lasts.",
