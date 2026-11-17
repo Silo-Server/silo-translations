@@ -492,6 +492,12 @@ export interface TranslateOptions {
   only?: string[];
   retranslate?: string[];
   dryRun?: boolean;
+  /**
+   * Leave the record of replaced human values (out/translate-<tag>.human-edits.jsonl) in place
+   * after writing the PR body, for a caller that publishes the report only once a later run
+   * completes: each run then reports every value replaced since the first.
+   */
+  keepAudit?: boolean;
   log?: (line: string) => void;
 }
 
@@ -664,7 +670,7 @@ export async function runTranslate(o: TranslateOptions): Promise<Report[]> {
   // Audit files are removed only once the PR body that lists them is on disk, so a run that
   // stops before this point still reports the values it replaced next time.
   writeFileSync(join(root, "out/translate-pr-body.md"), prBody(reports));
-  for (const audit of audits) rmSync(audit);
+  if (!o.keepAudit) for (const audit of audits) rmSync(audit);
   return reports;
 }
 

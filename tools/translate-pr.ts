@@ -22,7 +22,7 @@
 //   --trailer <line>     add a trailer line to the commit message (repeatable)
 //   --repo <dir>         the checkout to make the worktree in (default: this one)
 import { execFileSync } from "node:child_process";
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parseArgs } from "node:util";
@@ -64,8 +64,7 @@ const START = "<!-- translate-pr -->";
 const END = "<!-- /translate-pr -->";
 
 /** The pull request description with the translation section replaced or appended. */
-export function bodyWithSection(body: string, reports: Report[], languages: number): string {
-  const written = reports.reduce((n, r) => n + r.written, 0);
+export function bodyWithSection(body: string, reports: Report[], languages: number, written: number): string {
   const table = prBody(reports).split("\n").slice(2).join("\n").trim();
   const section = [
     START,
@@ -73,7 +72,7 @@ export function bodyWithSection(body: string, reports: Report[], languages: numb
     "",
     `\`make translate-pr\`${written ? ` translated ${written} strings;` : ""} all ${languages} languages have every key (\`make check-complete\`).`,
     "",
-    "<details><summary>Per language</summary>",
+    "<details><summary>Last pass, per language</summary>",
     "",
     table,
     "",
@@ -91,7 +90,8 @@ export function commitMessage(subject: string, trailers: string[]): string {
 }
 
 function run(cmd: string, args: string[], cwd?: string, input?: string): string {
-  return execFileSync(cmd, args, { cwd, encoding: "utf8", input, stdio: [input === undefined ? "ignore" : "pipe", "pipe", "pipe"] }).trim();
+  // maxBuffer: git show prints whole catalog files (several MB).
+  return execFileSync(cmd, args, { cwd, encoding: "utf8", input, maxBuffer: 1 << 30, stdio: [input === undefined ? "ignore" : "pipe", "pipe", "pipe"] }).trim();
 }
 
 const gh = (args: string[], cwd: string, input?: string) => run(process.env.SILO_GH_BIN ?? "gh", args, cwd, input);
@@ -116,6 +116,21 @@ export function symbolicLinks(dir: string): string[] {
     .split("\0")
     .filter((line) => line.startsWith("120000 "))
     .map((line) => line.slice(line.indexOf("\t") + 1));
+}
+
+/**
+ * Translations the worktree's catalog adds or changes since `base`, over every language: the count
+ * for the description, which a pass resumed after a stop can't give.
+ */
+export function changedStrings(dir: string, base: string, tags: string[]): number {
+  let n = 0;
+  for (const tag of tags) {
+    const path = `catalog/${tag}.arb`;
+    const before = gitSucceeds(["cat-file", "-e", `${base}:${path}`], dir) ? (JSON.parse(git(["show", `${base}:${path}`], dir)) as Record<string, string>) : {};
+    const after = existsSync(join(dir, path)) ? (JSON.parse(readFileSync(join(dir, path), "utf8")) as Record<string, string>) : {};
+    for (const [key, value] of Object.entries(after)) if (!key.startsWith("@") && before[key] !== value) n++;
+  }
+  return n;
 }
 
 export interface Options {
@@ -169,7 +184,9 @@ export async function translatePr(o: Options): Promise<string | undefined> {
   // paths; a symbolic link would send the writes outside the worktree.
   const links = symbolicLinks(dir);
   if (links.length) throw new TranslatePrError(`#${pr.number} has symbolic links (${links.join(", ")}); the pass writes into the checkout, so it refuses them`);
-  const reports = await runTranslate({ root: dir, locales: "all", jobs: o.jobs, rounds: o.rounds, log: say });
+  // The record of replaced human values stays in the worktree until the description that lists
+  // them is published (the worktree is removed then), so a run resumed after a stop reports them.
+  const reports = await runTranslate({ root: dir, locales: "all", jobs: o.jobs, rounds: o.rounds, log: say, keepAudit: true });
   const checked = checkRepository(dir);
   const errors = checked.issues.filter((i) => i.level === "error");
   if (errors.length) throw new TranslatePrError(`make check fails in ${dir}:\n${errors.map((i) => formatIssue(dir, i)).join("\n")}`);
@@ -198,7 +215,9 @@ export async function translatePr(o: Options): Promise<string | undefined> {
 
   const remote = pr.isCrossRepository ? `https://github.com/${pr.headRepositoryOwner!.login}/${pr.headRepository!.name}.git` : "origin";
   git(["push", "--quiet", remote, `HEAD:refs/heads/${pr.headRefName}`], dir);
-  gh(["pr", "edit", String(pr.number), "--body-file", "-"], o.repo, bodyWithSection(pr.body, reports, checked.locales.targets.length));
+  const tags = checked.locales.targets.map((l) => l.tag);
+  const written = changedStrings(dir, pr.headRefOid, tags);
+  gh(["pr", "edit", String(pr.number), "--body-file", "-"], o.repo, bodyWithSection(pr.body, reports, tags.length, written));
   say(`pushed to ${pr.headRefName} and updated the description of ${pr.url}`);
   git(["worktree", "remove", "--force", dir], o.repo);
   return dir;

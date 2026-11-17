@@ -18,11 +18,11 @@ test("translate-pr: subject, files to review, description section", () => {
   assert.deepEqual(filesNeedingReview(["catalog/en.arb", "state/es.json", "tools/translate.ts", "catalog/sub/x.arb", "locales.json"]), ["tools/translate.ts", "catalog/sub/x.arb", "locales.json"]);
   assert.equal(commitMessage("the x keys", ["Co-Authored-By: A <a@b>"]), "chore(translations): the x keys in every language\n\nCo-Authored-By: A <a@b>\n");
   const report = { locale: "es", written: 2, humanEdits: [], failed: new Map(), changedDuringRun: [], batches: 1, calls: 1, seconds: 60 };
-  const once = bodyWithSection("## Problem\n\nText.", [report], 21);
+  const once = bodyWithSection("## Problem\n\nText.", [report], 21, 2);
   assert.match(once, /^## Problem\n\nText\.\n\n<!-- translate-pr -->\n## Translations\n/);
   assert.match(once, /translated 2 strings; all 21 languages have every key/);
   assert.match(once, /\| es \| 2 \| 0 \| 1 \| 1 \| 1 min \|/);
-  const twice = bodyWithSection(once, [{ ...report, written: 5 }], 21);
+  const twice = bodyWithSection(once, [{ ...report, written: 5 }], 21, 5);
   assert.equal(twice.match(/<!-- translate-pr -->/g)!.length, 1, "a rerun replaces the section");
   assert.match(twice, /translated 5 strings/);
 });
@@ -70,7 +70,8 @@ function translatePr(s: ReturnType<typeof setUp>, ...args: string[]) {
   return execFileSync(process.execPath, [join(REPO, "tools/translate-pr.ts"), "7", "--repo", s.repo, ...args], {
     encoding: "utf8",
     stdio: ["ignore", "pipe", "pipe"],
-    env: { ...process.env, ...IDENTITY, SILO_GH_BIN: join(REPO, "tests/bin/fake-gh.mjs"), FAKE_GH_PR: s.prJson, FAKE_GH_BODY: s.body, SILO_CLAUDE_BIN: join(REPO, "tests/bin/fake-claude.mjs"), SILO_TRANSLATE_SLOTS_DIR: join(s.dir, "slots"), SILO_TRANSLATE_RETRY_MS: "0" },
+    // FAKE_CLAUDE_LOG also counts the attempts of "shaky" keys across runs.
+    env: { ...process.env, ...IDENTITY, SILO_GH_BIN: join(REPO, "tests/bin/fake-gh.mjs"), FAKE_GH_PR: s.prJson, FAKE_GH_BODY: s.body, SILO_CLAUDE_BIN: join(REPO, "tests/bin/fake-claude.mjs"), FAKE_CLAUDE_LOG: join(s.dir, "prompts.log"), SILO_TRANSLATE_SLOTS_DIR: join(s.dir, "slots"), SILO_TRANSLATE_RETRY_MS: "0" },
   });
 }
 
@@ -142,4 +143,29 @@ test("translate-pr: changed English whose retranslation keeps failing stops befo
   assert.throws(() => translatePr(s), (e: { stderr: string }) => /nothing committed/.test(e.stderr) && /es: a\.broken/.test(e.stderr));
   assert.equal(git(s.origin, "rev-parse", "refs/heads/feat/x"), s.head, "nothing pushed");
   assert.equal(git(join(s.repo, "out/pr/7"), "rev-parse", "HEAD"), s.head, "nothing committed");
+});
+
+test("translate-pr: a rerun after a stop still reports the human values the first run replaced", () => {
+  // Main has a.edit written by a person for older English; the pull request changes that English
+  // and adds a.shaky, whose first two attempts fail (the first language's attempt and retry).
+  const s = setUp(
+    (seed) => writeArb(join(seed, "catalog/en.arb"), { ...entry("a.b", "Hello"), ...entry("a.edit", "New English"), ...entry("a.shaky", "Shaky") }),
+    (seed, tags) => {
+      writeArb(join(seed, "catalog/en.arb"), { ...entry("a.b", "Hello"), ...entry("a.edit", "Old English") });
+      const old = checkRepository(seed).catalog.byKey.get("a.edit")!;
+      mkdirSync(join(seed, "state"));
+      for (const tag of tags) {
+        const value = `${tag} by a person`;
+        writeArb(join(seed, `catalog/${tag}.arb`), { "@@locale": tag, "a.b": `${tag} Hello`, "a.edit": value });
+        writeFileSync(join(seed, `state/${tag}.json`), JSON.stringify({ "a.edit": { source: fingerprint(old), value: valueHash(value), by: "human" } }, null, 2) + "\n");
+      }
+    },
+  );
+  // One round, one call at a time: the first language keeps failing a.shaky, so the run stops.
+  assert.throws(() => translatePr(s, "--rounds", "1", "--jobs", "1"), (e: { stderr: string }) => /nothing committed/.test(e.stderr));
+  translatePr(s);
+  const body = readFileSync(s.body, "utf8");
+  assert.match(body, /\| es \| `a\.edit` \| es by a person \| ES New English \|/, "the first run's replacement is listed for review");
+  // Every language got a.edit and a.shaky, across both runs.
+  assert.match(body, new RegExp(`translated ${s.tags.length * 2} strings`));
 });
