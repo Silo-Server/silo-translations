@@ -108443,6 +108443,13 @@
       "web"
     ]
   },
+  "web.admin.settings.signIn.page.apiKeysGroup": "API keys",
+  "@web.admin.settings.signIn.page.apiKeysGroup": {
+    "description": "Web admin, Sign-in settings page: heading of the group about who may create API keys.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.settings.signIn.page.breakGlassAdmins": "{count, plural, one {Break-glass admin: {names}} other {Break-glass admins: {names}}}",
   "@web.admin.settings.signIn.page.breakGlassAdmins": {
     "description": "Web admin, Sign-in settings page: status under the password switch listing the break-glass admins. {count}: number of break-glass admins (selects the plural). {names}: their user names, comma-separated.",
@@ -108595,6 +108602,20 @@
   "web.admin.settings.signIn.page.title": "Sign-in",
   "@web.admin.settings.signIn.page.title": {
     "description": "Web admin, Sign-in settings page: page heading.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.signIn.page.userApiKeysDescription": "Any account can create keys for its own profiles in Settings → API Keys. These keys can read and change watch history, lists and requests, and can't play or download media. Turning this off stops new keys; existing ones keep working until revoked.",
+  "@web.admin.settings.signIn.page.userApiKeysDescription": {
+    "description": "Web admin, Sign-in settings page: description of the switch that lets users create API keys.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.signIn.page.userApiKeysLabel": "Let users create API keys",
+  "@web.admin.settings.signIn.page.userApiKeysLabel": {
+    "description": "Web admin, Sign-in settings page: label of the switch that lets accounts that are not admins create API keys for themselves.",
     "x-platforms": [
       "web"
     ]
@@ -132428,6 +132449,13 @@
       "web"
     ]
   },
+  "web.common.title.settings.apiKeys": "API Keys Settings",
+  "@web.common.title.settings.apiKeys": {
+    "description": "Web, browser tab title of a personal settings page (the server name follows it): the “API Keys Settings” page.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.common.title.settings.connectApps": "Connect Apps Settings",
   "@web.common.title.settings.connectApps": {
     "description": "Web, browser tab title of a personal settings page (the server name follows it): the “Connect Apps Settings” page.",
@@ -154853,6 +154881,378 @@
       "web"
     ]
   },
+  "web.settings.apiKeys.create.access": "Access",
+  "@web.settings.apiKeys.create.access": {
+    "description": "Web Settings → API Keys, create dialog: heading of the list of things the key may do.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.create.accessHint": "Choose at least one. No key can play, stream or download media.",
+  "@web.settings.apiKeys.create.accessHint": {
+    "description": "Web Settings → API Keys, create dialog: help text under the access list.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.create.actsAs": "Acts as",
+  "@web.settings.apiKeys.create.actsAs": {
+    "description": "Web Settings → API Keys, create dialog: label of the choice between the whole account and one profile.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.create.actsAsHint": "A key for one profile always acts as that profile and keeps its limits. A whole-account key can act as any profile on your account.",
+  "@web.settings.apiKeys.create.actsAsHint": {
+    "description": "Web Settings → API Keys, create dialog: help text under the “Acts as” choice.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.create.copied": "Copied to clipboard",
+  "@web.settings.apiKeys.create.copied": {
+    "description": "Web Settings → API Keys: toast after the new key was copied.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.create.copyAndClose": "Copy & Close",
+  "@web.settings.apiKeys.create.copyAndClose": {
+    "description": "Web Settings → API Keys, create dialog: button that copies the new key and closes the dialog.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.create.copyFailed": "Couldn't copy. Select the key and copy it manually.",
+  "@web.settings.apiKeys.create.copyFailed": {
+    "description": "Web Settings → API Keys, create dialog: shown when copying the new key fails.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.create.creating": "Creating…",
+  "@web.settings.apiKeys.create.creating": {
+    "description": "Web Settings → API Keys, create dialog: submit button text while the request runs.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.create.description": "The full key is shown only once.",
+  "@web.settings.apiKeys.create.description": {
+    "description": "Web Settings → API Keys, create dialog: line under the title.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.create.label": "Label",
+  "@web.settings.apiKeys.create.label": {
+    "description": "Web Settings → API Keys, create dialog: label of the field that names the key.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.create.secretNotice": "Copy your API key now. You can't see it again.",
+  "@web.settings.apiKeys.create.secretNotice": {
+    "description": "Web Settings → API Keys, create dialog: shown above the new key after it is created.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.create.submit": "Create",
+  "@web.settings.apiKeys.create.submit": {
+    "description": "Web Settings → API Keys, create dialog: submit button.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.create.title": "Create API Key",
+  "@web.settings.apiKeys.create.title": {
+    "description": "Web Settings → API Keys, create dialog: title.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.create.uncertain": "The result is uncertain. Reload the page before creating another key.",
+  "@web.settings.apiKeys.create.uncertain": {
+    "description": "Web Settings → API Keys, create dialog: shown when the create request failed without a clear answer from the server.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.createKey": "Create Key",
+  "@web.settings.apiKeys.createKey": {
+    "description": "Web Settings → API Keys: button that opens the create dialog.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.disabled": "This server doesn't let users create API keys. Ask its admin to turn that on.",
+  "@web.settings.apiKeys.disabled": {
+    "description": "Web Settings → API Keys: shown instead of the Create Key button when the server setting that allows user keys is off.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.empty": "No API keys yet.",
+  "@web.settings.apiKeys.empty": {
+    "description": "Web Settings → API Keys: shown when the list has no keys.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.limitReached": "You've reached the limit of {max} keys. Revoke one to create another.",
+  "@web.settings.apiKeys.limitReached": {
+    "description": "Web Settings → API Keys: shown instead of the Create Key button when the account holds the most keys it may. {max}: the limit.",
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.list.created": "Created {date}",
+  "@web.settings.apiKeys.list.created": {
+    "description": "Web Settings → API Keys, key list: when the key was created. {date}: a formatted date.",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.list.heading": "Your keys",
+  "@web.settings.apiKeys.list.heading": {
+    "description": "Web Settings → API Keys: heading of the key list.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.list.lastUsed": "Last used {date}",
+  "@web.settings.apiKeys.list.lastUsed": {
+    "description": "Web Settings → API Keys, key list: when the key was last used. {date}: a formatted date.",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.list.loadMore": "Load more",
+  "@web.settings.apiKeys.list.loadMore": {
+    "description": "Web Settings → API Keys, key list: button that loads the next page of keys.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.list.neverUsed": "Never used",
+  "@web.settings.apiKeys.list.neverUsed": {
+    "description": "Web Settings → API Keys, key list: the key has not been used yet.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.list.profile": "Profile: {profile}",
+  "@web.settings.apiKeys.list.profile": {
+    "description": "Web Settings → API Keys, key list: the one profile a key is tied to. {profile}: the profile's name.",
+    "placeholders": {
+      "profile": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.list.revoke": "Revoke",
+  "@web.settings.apiKeys.list.revoke": {
+    "description": "Web Settings → API Keys, key list: button that opens the revoke confirmation for one key.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.list.revokeNamed": "Revoke {label}",
+  "@web.settings.apiKeys.list.revokeNamed": {
+    "description": "Web Settings → API Keys, key list: accessible name of the Revoke button. {label}: the key's label.",
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.list.wholeAccount": "Whole account",
+  "@web.settings.apiKeys.list.wholeAccount": {
+    "description": "Web Settings → API Keys, key list and create dialog: a key that is not tied to one profile and can act as any profile on the account.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.loadFailed": "Couldn't load your API keys.",
+  "@web.settings.apiKeys.loadFailed": {
+    "description": "Web Settings → API Keys: shown when the key list request fails.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.loading": "Loading API keys…",
+  "@web.settings.apiKeys.loading": {
+    "description": "Web Settings → API Keys: shown while the key list loads.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.revoke.description": "{label} stops working at once. This can't be undone.",
+  "@web.settings.apiKeys.revoke.description": {
+    "description": "Web Settings → API Keys, revoke dialog: what revoking does. {label}: the key's label.",
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.revoke.done": "API key revoked",
+  "@web.settings.apiKeys.revoke.done": {
+    "description": "Web Settings → API Keys: toast after a key was revoked.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.revoke.failed": "Couldn't revoke the key. Reload the page and try again.",
+  "@web.settings.apiKeys.revoke.failed": {
+    "description": "Web Settings → API Keys, revoke dialog: shown when revoking fails.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.revoke.title": "Revoke API key",
+  "@web.settings.apiKeys.revoke.title": {
+    "description": "Web Settings → API Keys, revoke dialog: title.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.revoke.working": "Revoking…",
+  "@web.settings.apiKeys.revoke.working": {
+    "description": "Web Settings → API Keys, revoke dialog: button text while the request runs.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.scope.catalogRead": "Browse what the profile can see: libraries, home and library rows, titles, people and search.",
+  "@web.settings.apiKeys.scope.catalogRead": {
+    "description": "Web Settings → API Keys, create dialog: what a key with the “catalog:read” access may do, shown under that access's name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.scope.librariesRead": "See which libraries the profile has.",
+  "@web.settings.apiKeys.scope.librariesRead": {
+    "description": "Web Settings → API Keys, create dialog: what a key with the “libraries:read” access may do, shown under that access's name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.scope.notifications": "Read the profile's notifications as they arrive and mark them read.",
+  "@web.settings.apiKeys.scope.notifications": {
+    "description": "Web Settings → API Keys, create dialog: what a key with the “notifications” access may do, shown under that access's name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.scope.requests": "Browse requestable titles and create, follow and cancel media requests.",
+  "@web.settings.apiKeys.scope.requests": {
+    "description": "Web Settings → API Keys, create dialog: what a key with the “requests” access may do, shown under that access's name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.scope.watchRead": "Read the profile's watch history, progress, ratings, favorites, watchlist and hidden titles, and export its data.",
+  "@web.settings.apiKeys.scope.watchRead": {
+    "description": "Web Settings → API Keys, create dialog: what a key with the “watch:read” access may do, shown under that access's name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.scope.watchWrite": "Mark titles watched or unwatched, sync progress, remove history, and edit ratings, favorites, watchlist and hidden titles.",
+  "@web.settings.apiKeys.scope.watchWrite": {
+    "description": "Web Settings → API Keys, create dialog: what a key with the “watch:write” access may do, shown under that access's name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.subtitle": "Keys let scripts and apps read and update your Silo data without your password.",
+  "@web.settings.apiKeys.subtitle": {
+    "description": "Web Settings → API Keys: line under the page heading.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.title": "API Keys",
+  "@web.settings.apiKeys.title": {
+    "description": "Web Settings → API Keys: page heading and the page's name in the settings navigation.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.usage.accountKey": "This key can act as any profile on your account. Choose one per request with this header. The example uses {profile}; {endpoint} lists every profile's ID.",
+  "@web.settings.apiKeys.usage.accountKey": {
+    "description": "Web Settings → API Keys, the dialog that shows a new key once: shown for a whole-account key, above an example X-Profile-Id header. {profile}: the name of the profile whose ID the example uses; {endpoint}: an API request, shown as code, that lists profile IDs.",
+    "placeholders": {
+      "profile": {
+        "type": "String"
+      },
+      "endpoint": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.usage.docs": "API reference",
+  "@web.settings.apiKeys.usage.docs": {
+    "description": "Web Settings → API Keys, the dialog that shows a new key once: link to the server's API documentation page.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.usage.header": "Send it with every request in this header:",
+  "@web.settings.apiKeys.usage.header": {
+    "description": "Web Settings → API Keys, the dialog that shows a new key once: line above the Authorization header the key is sent in.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.usage.profileKey": "This key always acts as {profile}. It needs no profile header.",
+  "@web.settings.apiKeys.usage.profileKey": {
+    "description": "Web Settings → API Keys, the dialog that shows a new key once: shown for a key tied to one profile. {profile}: that profile's name.",
+    "placeholders": {
+      "profile": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.usage.title": "How to use this key",
+  "@web.settings.apiKeys.usage.title": {
+    "description": "Web Settings → API Keys, the dialog that shows a new key once: heading of the short instructions under the key.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.settings.cardOverlay.adjust": "Adjust",
   "@web.settings.cardOverlay.adjust": {
     "description": "Web Settings → Navigation & Cards → Badges: button on a badge row that opens its position, color and icon options.",
@@ -158136,6 +158536,13 @@
   "web.settings.nav.account.description": "The password and sign-in providers every household profile shares.",
   "@web.settings.nav.account.description": {
     "description": "Web settings index (the phone settings list): one-line summary under the \"Account\" page's name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.nav.apiKeys.description": "Keys for scripts and apps that work with your watch history and lists.",
+  "@web.settings.nav.apiKeys.description": {
+    "description": "Web settings index (the phone settings list): one-line summary under the \"API Keys\" page's name.",
     "x-platforms": [
       "web"
     ]
