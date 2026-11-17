@@ -4169,6 +4169,18 @@
       "roku"
     ]
   },
+  "collections.card.byOwner": "by {owner}",
+  "@collections.card.byOwner": {
+    "description": "Line under a collection poster card in a Home or library page row of collections, for a personal collection another profile on the same account made and shared. {owner}: the name of the profile that made it.",
+    "placeholders": {
+      "owner": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "collections.collection": "Collection",
   "@collections.collection": {
     "description": "The word Collection used where no better name or type is known: the secondary line under a collection on a library's Collections tab, the type on a library collection card, and the title of a collection's page while its name loads (Android phone, Apple iOS and tvOS). Web: the small label above the title on a collection page.",
