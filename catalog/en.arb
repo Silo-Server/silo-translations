@@ -89474,6 +89474,18 @@
       "web"
     ]
   },
+  "web.admin.recommendations.embedding.lockConflictNoProvider": "No embedding provider is chosen. Choose a provider that serves \"{locked_model}\", or reset embeddings to use another model.",
+  "@web.admin.recommendations.embedding.lockConflictNoProvider": {
+    "description": "Web admin, Recommendations page: warning sent by the server when stored embeddings exist but no embedding provider is selected. {locked_model}: the model that created the stored embeddings, a model name kept as entered.",
+    "placeholders": {
+      "locked_model": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.recommendations.embedding.model": "Model",
   "@web.admin.recommendations.embedding.model": {
     "description": "Web admin, Recommendations page: label of the embedding model field.",
@@ -167079,6 +167091,20 @@
       "web"
     ]
   },
+  "web.setup.storage.applyingBody": "Silo is restarting to use the new storage. Setup continues when it’s back.",
+  "@web.setup.storage.applyingBody": {
+    "description": "Web setup wizard, Storage step: text under \"Applying storage settings\" while Silo restarts itself to use the saved storage settings. The wizard moves to the next step on its own once the server answers again.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.setup.storage.applyingTitle": "Applying storage settings",
+  "@web.setup.storage.applyingTitle": {
+    "description": "Web setup wizard, Storage step: heading of the status shown while Silo restarts itself to start using the storage settings the person just saved.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.setup.storage.authCloudflare": "Cloudflare signed token",
   "@web.setup.storage.authCloudflare": {
     "description": "Web first-run setup wizard, storage step: option in \"How asset links are authorized\": links signed with a Cloudflare token.",
@@ -167404,6 +167430,20 @@
   "web.setup.storage.redisUrlLabel": "Connection URL",
   "@web.setup.storage.redisUrlLabel": {
     "description": "Web first-run setup wizard, storage step: label of the Redis connection URL setting.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.setup.storage.restartSlowBody": "Silo comes back on its own only if Docker, Kubernetes or systemd is set to restart it. Otherwise, start Silo again yourself. Setup continues when it’s back.",
+  "@web.setup.storage.restartSlowBody": {
+    "description": "Web setup wizard, Storage step: text under \"Silo hasn’t restarted yet\". Docker, Kubernetes and systemd are product names (service managers that restart programs). The wizard keeps checking and moves on by itself once the server answers again.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.setup.storage.restartSlowTitle": "Silo hasn’t restarted yet",
+  "@web.setup.storage.restartSlowTitle": {
+    "description": "Web setup wizard, Storage step: heading of the alert shown when Silo was asked to restart to use the saved storage settings but has not come back after about a minute, or the restart could not be requested.",
     "x-platforms": [
       "web"
     ]
