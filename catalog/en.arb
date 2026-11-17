@@ -89474,6 +89474,18 @@
       "web"
     ]
   },
+  "web.admin.recommendations.embedding.lockConflictNoProvider": "No embedding provider is chosen. Choose a provider that serves \"{locked_model}\", or reset embeddings to use another model.",
+  "@web.admin.recommendations.embedding.lockConflictNoProvider": {
+    "description": "Web admin, Recommendations page: warning sent by the server when stored embeddings exist but no embedding provider is selected. {locked_model}: the model that created the stored embeddings, a model name kept as entered.",
+    "placeholders": {
+      "locked_model": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.recommendations.embedding.model": "Model",
   "@web.admin.recommendations.embedding.model": {
     "description": "Web admin, Recommendations page: label of the embedding model field.",
