@@ -2611,6 +2611,13 @@
       "roku"
     ]
   },
+  "cardMenu.notInterested": "Not Interested",
+  "@cardMenu.notInterested": {
+    "description": "Apple iOS, iPadOS, macOS and tvOS: action in a movie or series card's long-press menu and in a title page's More menu. Marks the title Not interested, so the profile's recommendation rows leave it out and similar titles rank lower.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "cardMenu.play": "Play",
   "@cardMenu.play": {
     "description": "Menu row that starts playback of the item: in the Options menu of a focused poster card on Roku (from the beginning), and in a card's long-press menu on Android TV.",
@@ -2644,6 +2651,13 @@
       "apple",
       "android",
       "roku"
+    ]
+  },
+  "cardMenu.showInRecommendations": "Show in Recommendations",
+  "@cardMenu.showInRecommendations": {
+    "description": "Apple iOS, iPadOS, macOS and tvOS: action in a movie or series card's long-press menu and in a title page's More menu, shown instead of Not Interested once the title is marked. Clears the mark so the title can be recommended again.",
+    "x-platforms": [
+      "apple"
     ]
   },
   "cast.button": "Cast",
