@@ -146474,6 +146474,25 @@
       "web"
     ]
   },
+  "web.notifications.series.nextEpisodeAfter": "The next episode after {code}",
+  "@web.notifications.series.nextEpisodeAfter": {
+    "description": "Web Notifications page, Series view: under a series the profile is caught up on, which new episode notifies: only the first one to arrive after the episode it is up to. {code}: the episode code the profile is up to, such as “S1 · E2”.",
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.series.nextNewEpisode": "The next new episode",
+  "@web.notifications.series.nextNewEpisode": {
+    "description": "Web Notifications page, Series view: under a series the profile is caught up on, which new episode notifies: only the first one to arrive. Shown when there is no earlier episode to name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.notifications.series.noMatch": "No series match. Try another search or reason.",
   "@web.notifications.series.noMatch": {
     "description": "Web Notifications page, Series view: empty state when a search or reason filter matches nothing.",
