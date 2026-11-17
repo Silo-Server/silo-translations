@@ -150268,6 +150268,13 @@
       "web"
     ]
   },
+  "web.player.watchTogether.redisRequired": "Watch Party needs Redis, which this server doesn't have set up. Ask your server administrator to configure it.",
+  "@web.player.watchTogether.redisRequired": {
+    "description": "Web player: explanation under the Watch Party unavailable heading when the server is current but has no Redis configured, which Watch Party rooms need. \"Redis\" is a product name; keep it untranslated.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.player.watchTogether.selfName": "{name} (you)",
   "@web.player.watchTogether.selfName": {
     "description": "Web player: the viewer's own entry in the Watch Party panel's member list. {name}: the viewer's display name.",
