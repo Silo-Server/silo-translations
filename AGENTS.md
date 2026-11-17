@@ -32,9 +32,9 @@ describes the formats; CONTRIBUTING describes the workflows.
 - A pull request that adds or changes English also carries `make translate`'s output for those
   keys in every language, in a separate commit after the English one: each merge publishes a
   release, and a release must not leave a shipped language with missing keys. A maintainer runs
-  the translator on their own machine, from a checkout of `main` pointed at the pull request
-  (CONTRIBUTING has the commands), and reruns it until no key is left untranslated. Don't write
-  those translations by hand, and never add an Anthropic credential to CI.
+  `make translate-pr PR=<number>` on their own machine, from a checkout of `main` (CONTRIBUTING
+  has the details); CI's `translations-complete` check fails until every language has every key.
+  Don't write those translations by hand, and never add an Anthropic credential to CI.
 - Corrections to existing translations, from people or a retranslation pass, are their own pull
   requests.
 

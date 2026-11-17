@@ -32,7 +32,10 @@ make ci                         # typecheck + check + test (what CI runs)
 make generate OUT=<dir>         # write every platform's files under <dir>
 make golden                     # rewrite tests/golden after an intended generator change
 make import-settings-manifest REPO=<silo-server checkout> REF=<rev>
-make translate LOCALE=<tag>|all [DRY_RUN=1]    # maintainers only; see CONTRIBUTING.md
+make check-complete             # every language has every key it ships (CI)
+make translate-pr PR=<number>   # maintainers only: translate a pull request; see CONTRIBUTING.md
+make translate LOCALE=<tag>[,<tag>…]|all [DRY_RUN=1]   # maintainers only: the pass on a branch
+make add-locale TAG=<bcp47>     # set up a new language; see CONTRIBUTING.md
 ```
 
 The aapt2 acceptance test needs the Android SDK (`ANDROID_HOME`, or `~/Android/Sdk`). It is
@@ -75,9 +78,11 @@ shipped languages get files, so clients read the list instead of hard-coding one
 | android | the `values-<qualifier>` directories (so AGP's generated `localeConfig`), and per app `silo-locales.properties` |
 | roku | `locale/languages.json` |
 
-Separately from translations, `locales.json` can keep a language off a platform: Roku doesn't
-ship `ar` (no right-to-left or Arabic shaping in SceneGraph), `ar-XB`, or `ja`, `ko`, `zh-Hans` and `zh-Hant`
-(held until a low-memory device check passes with the CJK subset font) yet. On Android, `platforms`
+Separately from translations, `locales.json` can keep a language off a platform (`platforms`).
+Roku leaves out right-to-left languages and `ar-XB` (no right-to-left layout or Arabic shaping in
+SceneGraph), scripts its packaged fonts don't draw (they have Latin, Greek and Cyrillic), and
+Chinese, Japanese and Korean, held until a low-memory device check passes with the CJK subset
+font. On Android, `platforms`
 can name one app (`android-phone`, `android-tv`). Both apps read `android-shared`'s
 resources, so the language is still generated, and the app that doesn't ship it leaves it out
 with `localeFilters` from `silo-locales.properties`. Nothing uses that today: `ar` ships on both

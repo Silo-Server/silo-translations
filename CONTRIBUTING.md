@@ -5,9 +5,8 @@
 Most translations here were written by a model (Claude Opus) and nobody has reviewed them
 yet. Corrections from people who speak the language are the most useful contribution.
 
-1. Open `catalog/<lang>.arb` for your language: `es`, `de`, `fr`, `pt-BR`, `nl`, `it`, `pl`, `tr`,
-   `sv`, `da`, `nb`, `fi`, `cs`, `hr`, `ru`, `uk`, `ja`, `ko`, `zh-Hans`, `zh-Hant` or `ar`. Each
-   line is a key and its translation.
+1. Open `catalog/<lang>.arb` for your language (`locales.json` lists them all). Each line is a
+   key and its translation.
 2. Find the English and the context in `catalog/en.arb`: the same key, plus
    `@key.description`, which says where the text appears and what each `{placeholder}` holds.
 3. Read `style/<lang>.md` (tone, formality) and the language's column in `glossary.csv`
@@ -19,21 +18,9 @@ Rules the check enforces:
 
 - Keep every `{placeholder}` exactly as in English. You can move them; don't rename or drop
   them.
-- A plural keeps its structure and lists exactly your language's categories:
-
-  | Language | Categories |
-  |---|---|
-  | `de`, `nl`, `tr`, `sv`, `da`, `nb`, `fi` | `one other` |
-  | `es`, `fr`, `pt-BR`, `it` | `one many other` (`many` is for whole millions: “1 000 000 de saisons”) |
-  | `ja`, `ko`, `zh-Hans`, `zh-Hant` | `other` |
-  | `ar` | `zero one two few many other` |
-  | `cs` | `one few many other` (`few` is 2–4, `many` is for fractions: “1,5 dílu”) |
-  | `ru` | `one few many other` (`other` is only for fractions) |
-  | `pl` | `one few many other` (`few` is 2–4, 22–24, …; `many` is 0, 5–21, 25–31, …; `other` is fractions) |
-  | `uk` | `one few many other` (`one` is also 21, 31, 101: always print `#`) |
-  | `hr` | `one few other` (`one` is also 21, 31…; `few` is 2–4, 22–24…) |
-
-  Write `#` where the number goes: `{count, plural, one {# temporada} many {# de temporadas} other {# temporadas}}`.
+- A plural keeps its structure and lists exactly your language's CLDR categories, which the
+  "Plurals and numbers" section of `style/<lang>.md` names with examples. Write `#` where the
+  number goes: `{count, plural, one {# temporada} many {# de temporadas} other {# temporadas}}`.
 - Use the typographic apostrophe `’`, not `'`.
 - Keep within `x-maxLength` when the English entry has one (TV screens have little room).
 
@@ -46,8 +33,9 @@ English changes.
 
 New strings come with the client change that uses them. Add the key, message and metadata to
 `catalog/en.arb` (rules in the README), run `make check`, and open a pull request. Before it
-merges, a maintainer runs `make translate` for the new and changed keys and adds the result to
-the same pull request as a separate commit, so English and translations are reviewed apart.
+merges, a maintainer runs `make translate-pr PR=<number>`, which adds the translations of the new
+and changed keys to the same pull request as a separate commit, so English and translations are
+reviewed apart. Until then CI's `translations-complete` check fails; that is expected.
 Merge it before the client change: the merge publishes a release the client then syncs, and a
 release must not leave a shipped language with missing keys. Don't write the translations by
 hand.
@@ -82,50 +70,75 @@ When you extract strings from a client while other branches do the same:
    The client records `version=local-<commit>`, with `-dirty` when your catalog changes are
    not committed yet; commit them first so the client points at a real commit.
 
-## Maintainers: the translation pass
+## Maintainers: translating a pull request
 
-`make translate LOCALE=<tag>|all` runs on a maintainer machine with Claude Code signed in. CI
-never runs it and holds no Anthropic credential.
+The translation pass runs on a maintainer machine with Claude Code signed in
+(`claude -p --model claude-opus-5-5`). CI never runs it and holds no Anthropic credential.
 
-It picks the keys that are missing or whose English changed, sends them to Claude Code
-(`claude -p --model claude-opus-5-5`) in batches of about 100 with their descriptions, the
-style guide, glossary terms and existing translations from the same area, validates every
-result, retries failures once, and writes `catalog/<lang>.arb`, `state/<lang>.json` and
-`out/translate-pr-body.md`. Values a person edited are kept.
-
-For a pull request that adds or changes English, translate its keys and commit the result on top
-of the English commit. Run the tools from an up-to-date checkout of `main`, pointed at a
-checkout of the pull request with `--root`. That way the pull request's own `Makefile`, tools and
-dependencies never run on the machine signed into Claude Code. If the pull request changes
-anything besides the catalog, review those changes before you run anything from it.
+For a pull request that adds or changes English, run this from an up-to-date checkout of `main`:
 
 ```sh
-# in a checkout of main; <pr> is a checkout of the pull request branch
-node tools/translate.ts --root <pr> --locale all
-node tools/validate.ts <pr>
+make translate-pr PR=<number>
 ```
 
-Check `<pr>/out/translate-pr-body.md` before committing. If it lists keys under "Left
-untranslated", run the pass again (it sends only those keys) until none are left. `make check`
-allows missing translations, so it won't catch them. Then, in `<pr>`:
+It checks out the pull request in `out/pr/<number>`, translates what every language is missing
+or has stale, runs `make check` and `make check-complete` on the result, commits `catalog/` and
+`state/` as `chore(translations): <subject> in every language` (the subject comes from the pull
+request title; `SUBJECT=` overrides it), pushes the commit to the pull request's branch and puts
+the per-language table in its description. Only this checkout's tools run: nothing from the pull
+request (its `Makefile`, tools or dependencies) runs on the machine signed in to Claude Code. A
+pull request that changes anything besides `catalog/*.arb` and `state/*.json` stops until you
+have reviewed those changes; then run it again with `REVIEWED=1`. A fork's pull request needs
+"Allow edits by maintainers"; otherwise use `NO_PUSH=1` and hand the commit over.
 
-```sh
-git add catalog state && git commit -m "chore(translations): <what the keys are> in twenty-one languages"
-```
+If keys are still untranslated after the pass (each failed key is sent again, up to three rounds
+in all), the command lists them and commits nothing. Run it again: only those keys are sent, and
+an interrupted run resumes in the same worktree. Check the "please review" table it prints for
+values a person wrote that the English change replaced.
 
-Put the per-language table from `out/translate-pr-body.md` in the pull request description.
+How the pass works: it picks the keys that are missing or whose English changed, sends them to
+Claude Code in batches of about 100 with their descriptions, the style guide, glossary terms and
+existing translations from the same area, validates every result, and retries failures. The
+batches of all languages share one pool of `JOBS` calls (default 4). Every call also takes one of
+`SILO_TRANSLATE_MAX_CALLS` slots (default 6) shared by every run on the machine, so several
+pull requests translated at once don't multiply the load; a run waits for a free slot. Values a
+person edited are kept.
 
-A pass on its own, such as after a glossary or style guide change, is its own pull request:
+The pass on its own, for a branch you are on (a new language, or after a glossary or style guide
+change), is `make translate`:
 
 ```sh
 git switch -c chore/opus-pass
-make translate LOCALE=all RETRANSLATE=<prefixes>
-make check
+make translate LOCALE=all RETRANSLATE=<prefixes>     # or LOCALE=hu or LOCALE=hu,ro
+make check check-complete
 git add catalog state && git commit -m "chore(translations): opus pass"
 gh pr create --title "chore(translations): opus pass" --body-file out/translate-pr-body.md
 ```
 
 `DRY_RUN=1` sends only the first batch and prints the result without writing anything.
+
+## Maintainers: adding a language
+
+```sh
+make add-locale TAG=hu                      # NAME="Bahasa Indonesia" where the default reads oddly
+```
+
+This adds the language's line to `locales.json`, with identifiers derived from the tag (CLDR
+plural key, Android directory, including Android's old codes `iw` and `in` for Hebrew and
+Indonesian, Roku folder, direction). Right-to-left languages and scripts that Roku's fonts don't
+have (anything but Latin, Greek and Cyrillic) are kept off Roku; `PLATFORMS=web,apple,android`
+keeps any language off Roku, whose package has a size budget. It also adds an empty `glossary.csv`
+column and writes `style/<tag>.md` from a template: the plural section comes from CLDR, and every
+`TODO(add-locale)` section is yours to write, modelled on the guide of the closest language.
+Fill the glossary column with `make add-locale TAG=hu GLOSSARY=<file>` (a `term,rendering` CSV);
+rerun it the same way when a rebase conflicts in `glossary.csv`. `make translate` refuses the
+language until the style guide has no `TODO(add-locale)` left and the glossary column has
+renderings.
+
+Then run `make translate LOCALE=hu` (about 250 batches for the whole catalog) and
+`make check check-complete`, and open one pull request with the setup and the translations as
+separate commits. Merge it soon: until it does, English pull requests merged meanwhile need
+`make translate LOCALE=hu` again on the branch.
 
 ## Changing the tools
 
