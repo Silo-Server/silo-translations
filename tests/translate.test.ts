@@ -65,7 +65,7 @@ function run(root: string, ...args: string[]) {
 function runEnv(root: string, env: Record<string, string>, ...args: string[]) {
   return execFileSync(process.execPath, [join(REPO, "tools/translate.ts"), "--root", root, ...args], {
     encoding: "utf8",
-    env: { ...process.env, SILO_CLAUDE_BIN: join(REPO, "tests/bin/fake-claude.mjs"), FAKE_CLAUDE_LOG: join(root, "prompts.log"), SILO_TRANSLATE_RETRY_MS: "0", ...env },
+    env: { ...process.env, SILO_CLAUDE_BIN: join(REPO, "tests/bin/fake-claude.mjs"), FAKE_CLAUDE_LOG: join(root, "prompts.log"), SILO_TRANSLATE_RETRY_MS: "0", SILO_TRANSLATE_SLOTS_DIR: join(root, "slots"), ...env },
     stdio: ["ignore", "pipe", "pipe"],
   });
 }
@@ -158,7 +158,7 @@ test("translate: a run that stops keeps the record of human values it replaced f
   writeArb(esPath, { ...JSON.parse(readFileSync(esPath, "utf8")), "a.edit": "Hola (corregido)" });
   writeArb(join(root, "catalog/en.arb"), { ...entry("a.edit", "Hello there"), ...entry("zzz.kill", "Stop here") });
   try {
-    runEnv(root, { FAKE_CLAUDE_KILL: "1", SILO_TRANSLATE_BATCH_SIZE: "1" }, "--locale", "es");
+    runEnv(root, { FAKE_CLAUDE_KILL: "1", SILO_TRANSLATE_BATCH_SIZE: "1" }, "--locale", "es", "--jobs", "1");
   } catch {
     // killed mid-run
   }
@@ -175,7 +175,7 @@ test("translate: a run of all languages that stops in a later one still reports 
   writeArb(esPath, { ...JSON.parse(readFileSync(esPath, "utf8")), "a.edit": "Hola (corregido)", "zzz.kill": "Alto" });
   writeArb(join(root, "catalog/en.arb"), { ...entry("a.edit", "Hello there"), ...entry("zzz.kill", "Stop here") });
   try {
-    runEnv(root, { FAKE_CLAUDE_KILL: "1", SILO_TRANSLATE_BATCH_SIZE: "1" }, "--locale", "all");
+    runEnv(root, { FAKE_CLAUDE_KILL: "1", SILO_TRANSLATE_BATCH_SIZE: "1" }, "--locale", "all", "--jobs", "1");
   } catch {
     // killed in German
   }
@@ -347,4 +347,38 @@ test("translate: the prompt carries the current wording of labels a string names
   const prompt = readFileSync(join(root, "prompts.log"), "utf8");
   assert.match(prompt, /Labels these strings name/);
   assert.match(prompt, /"message": "Generales"/);
+});
+
+test("translate: a list of languages runs side by side and reports each", () => {
+  const root = makeRepo({ en: entry("a.b", "Hello"), es: {}, de: {} });
+  run(root, "--locale", "es,de");
+  for (const tag of ["es", "de"]) assert.equal(JSON.parse(readFileSync(join(root, `catalog/${tag}.arb`), "utf8"))["a.b"], "ES Hello");
+  assert.equal(existsSync(join(root, "catalog/fr.arb")), false);
+  const body = readFileSync(join(root, "out/translate-pr-body.md"), "utf8");
+  assert.match(body, /\| es \| 1 \| 0 \|/);
+  assert.match(body, /\| de \| 1 \| 0 \|/);
+});
+
+test("translate: an unknown language tag is refused before anything is sent", () => {
+  const root = makeRepo({ en: entry("a.b", "Hello") });
+  assert.throws(() => run(root, "--locale", "es,xx"), (e: { status: number; stderr: string }) => e.status === 2 && /unknown locale xx/.test(e.stderr));
+  assert.equal(existsSync(join(root, "prompts.log")), false);
+});
+
+test("translate: a key that fails a round goes round again", () => {
+  const root = makeRepo({ en: { ...entry("a.shaky", "Hello"), ...entry("a.fine", "Fine") }, es: {} });
+  run(root, "--locale", "es");
+  assert.equal(JSON.parse(readFileSync(join(root, "catalog/es.arb"), "utf8"))["a.shaky"], "ES Hello");
+  const body = readFileSync(join(root, "out/translate-pr-body.md"), "utf8");
+  assert.match(body, /\| es \| 2 \| 0 \| 2 \|/, "two batches: the first round's and the second's");
+  assert.doesNotMatch(body, /Left untranslated/);
+  const log = readFileSync(join(root, "out/translate-es.log.jsonl"), "utf8").trim().split("\n").map((l) => JSON.parse(l));
+  assert.deepEqual(log.map((b) => b.round), [1, 2]);
+});
+
+test("translate: --rounds 1 leaves a failed key for the next run", () => {
+  const root = makeRepo({ en: entry("a.shaky", "Hello"), es: {} });
+  run(root, "--locale", "es", "--rounds", "1");
+  assert.equal(JSON.parse(readFileSync(join(root, "catalog/es.arb"), "utf8"))["a.shaky"], undefined);
+  assert.match(readFileSync(join(root, "out/translate-pr-body.md"), "utf8"), /Left untranslated[\s\S]*es `a.shaky`/);
 });

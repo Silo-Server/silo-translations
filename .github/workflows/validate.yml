@@ -21,3 +21,16 @@ jobs:
       # ships the Android SDK; the aapt2 test fails rather than skips when CI is set.
       - run: make ci
       - run: make generate OUT="$RUNNER_TEMP/out"
+
+  # Separate from validate so a pull request whose English is not translated yet shows one
+  # clear failure: a maintainer runs make translate-pr PR=<number> (CONTRIBUTING.md).
+  translations-complete:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - run: make check-complete

@@ -20,6 +20,9 @@ export interface Locale {
   platforms?: LocalePlatform[];
 }
 
+/** Marks a section of a style guide that make add-locale left for a person to write. */
+export const STYLE_TODO = "TODO(add-locale)";
+
 export const ANDROID_APPS = ["phone", "tv"] as const;
 export type AndroidApp = (typeof ANDROID_APPS)[number];
 export type LocalePlatform = Platform | `android-${AndroidApp}`;

@@ -1,5 +1,5 @@
-// make translate LOCALE=<tag>|all [DRY_RUN=1]: the Opus pass, run through Claude Code on a
-// maintainer machine. CI never runs this and holds no Anthropic credential.
+// make translate LOCALE=<tag>[,<tag>…]|all [DRY_RUN=1]: the Opus pass, run through Claude Code
+// on a maintainer machine. CI never runs this and holds no Anthropic credential.
 //
 // Per language and key:
 //   - no translation                          -> translate
@@ -14,11 +14,18 @@
 // together; the prompt also carries the namespace's existing translations. The catalog and
 // state are written after every batch, so an interrupted run resumes where it stopped.
 //
+// The batches of every language share one pool of Claude Code calls, so a pull request that
+// adds a few keys sends one batch per language side by side instead of one language at a time.
+// Keys that still fail after a batch's own retry go round again (--rounds). Every call also takes
+// one of SILO_TRANSLATE_MAX_CALLS (default 6) slots shared by all runs on the machine.
+//
 // Writes catalog/<tag>.arb, state/<tag>.json, out/translate-pr-body.md and a per-batch log,
-// out/translate-<tag>.log.jsonl. It does not create branches or pull requests.
+// out/translate-<tag>.log.jsonl. It does not create branches or pull requests; translate-pr.ts
+// does that for a pull request.
 //
 //   --dry-run                 send only the first batch and write nothing
-//   --jobs N                  run N Claude Code calls at once (default 1)
+//   --jobs N                  run N Claude Code calls at once, across languages (default 4)
+//   --rounds N                send keys that failed again, up to N rounds in all (default 3)
 //   --only <p1,p2>            consider only keys starting with these prefixes
 //   --retranslate <p1,p2>     also retranslate keys the Opus pass wrote under these prefixes
 //                             (after a glossary or style fix); a person's values are kept
@@ -35,7 +42,8 @@ import { catalogPath, type SourceEntry } from "./lib/catalog.ts";
 import { termsIn } from "./lib/glossary.ts";
 import { categoriesFor } from "./lib/plural.ts";
 import { canonicalArb, canonicalState, jsonText } from "./lib/format.ts";
-import type { Locale } from "./lib/locales.ts";
+import { STYLE_TODO, type Locale } from "./lib/locales.ts";
+import { acquireSlot, DEFAULT_MAX_CALLS } from "./lib/slots.ts";
 
 export const MODEL = "claude-opus-5-5";
 /** A positive integer from text, or the fallback. */
@@ -317,16 +325,27 @@ export interface BatchResult {
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 const RETRY_DELAYS_MS = (process.env.SILO_TRANSLATE_RETRY_MS ?? "30000,120000").split(",").map(Number);
 
-/** One Claude Code call, retried after a delay when the call itself fails. */
+const MAX_CALLS = positiveInt(process.env.SILO_TRANSLATE_MAX_CALLS, DEFAULT_MAX_CALLS);
+let toldWaiting = false;
+
+/** One Claude Code call in a machine-wide slot, retried after a delay when the call itself fails. */
 async function callWithRetry(prompt: string, onCall: () => void): Promise<Map<string, string>> {
   for (let i = 0; ; i++) {
     onCall();
+    const release = await acquireSlot(MAX_CALLS, () => {
+      if (toldWaiting) return;
+      toldWaiting = true;
+      console.error(`waiting: all ${MAX_CALLS} Claude Code slots on this machine are in use (SILO_TRANSLATE_MAX_CALLS)`);
+    });
     try {
       return await callClaude(prompt);
     } catch (e) {
       if (i >= RETRY_DELAYS_MS.length) throw e;
-      await sleep(RETRY_DELAYS_MS[i]!);
+    } finally {
+      release();
     }
+    // The slot is free while this call waits to try again.
+    await sleep(RETRY_DELAYS_MS[i]!);
   }
 }
 
@@ -366,7 +385,7 @@ export async function translateBatch(root: string, checked: CheckedCatalog, loca
   return result;
 }
 
-interface Report {
+export interface Report {
   locale: string;
   written: number;
   humanEdits: { key: string; before: string; after: string }[];
@@ -453,6 +472,215 @@ async function pool<T>(items: T[], jobs: number, run: (item: T, index: number) =
   );
 }
 
+/** A problem with the options or the catalog; the CLI prints the message and exits with `code`. */
+export class TranslateError extends Error {
+  code: number;
+  constructor(message: string, code: number) {
+    super(message);
+    this.code = code;
+  }
+}
+
+export interface TranslateOptions {
+  root: string;
+  /** Language tags, or "all" for every language in locales.json. */
+  locales: string[] | "all";
+  /** Claude Code calls at once, across languages. */
+  jobs?: number;
+  /** Rounds in all: keys that fail a round are sent again in the next. */
+  rounds?: number;
+  only?: string[];
+  retranslate?: string[];
+  dryRun?: boolean;
+  log?: (line: string) => void;
+}
+
+export const DEFAULT_JOBS = 4;
+export const DEFAULT_ROUNDS = 3;
+
+/** One language's share of a run. */
+interface LanguageRun {
+  locale: Locale;
+  state: State;
+  work: Work[];
+  /** What the prompt shows as existing wording: the catalog's values plus this run's results. */
+  known: Map<string, string>;
+  byKey: Map<string, Work>;
+  results: Map<string, string>;
+  changedDuringRun: Set<string>;
+  report: Report;
+  logFile: string;
+  audit: string;
+  sent: number;
+  started?: number;
+  ended?: number;
+}
+
+/** The languages `wanted` names, or every language for "all". */
+export function pickLocales(targets: Locale[], wanted: string[] | "all"): Locale[] {
+  if (wanted === "all") return targets;
+  const unknown = wanted.filter((tag) => !targets.some((l) => l.tag === tag));
+  if (unknown.length || !wanted.length) {
+    throw new TranslateError(`unknown locale ${unknown.join(", ") || "(none)"}; use one or more of ${targets.map((l) => l.tag).join(", ")}, or all`, 2);
+  }
+  return targets.filter((l) => wanted.includes(l.tag));
+}
+
+/**
+ * Translates what each language is missing or has stale, writes the catalog, state and
+ * out/translate-pr-body.md, and returns one report per language. Throws TranslateError when the
+ * options or the catalog don't allow a run.
+ */
+export async function runTranslate(o: TranslateOptions): Promise<Report[]> {
+  const say = o.log ?? ((line: string) => console.error(line));
+  const root = o.root;
+  const jobs = o.jobs ?? DEFAULT_JOBS;
+  const rounds = o.rounds ?? DEFAULT_ROUNDS;
+  const checked = checkRepository(root);
+  // Errors block the run; warnings (such as translations an English change left stale) don't,
+  // since retranslating them is part of the run.
+  if (checked.issues.some((i) => i.level === "error" && i.rule !== "layout")) {
+    throw new TranslateError("the catalog has validation errors; run make check first", 1);
+  }
+  const locales = pickLocales(checked.locales.targets, o.locales);
+  // A language make add-locale added isn't ready until a person has written its style guide and
+  // glossary column: the prompt would otherwise carry the template's instructions.
+  const unready = locales.flatMap((l) => {
+    const style = join(root, "style", `${l.tag}.md`);
+    const problems: string[] = [];
+    if (existsSync(style) && readFileSync(style, "utf8").includes(STYLE_TODO)) problems.push(`style/${l.tag}.md still has ${STYLE_TODO} sections`);
+    if (checked.glossary.length && !checked.glossary.some((g) => g.renderings.has(l.tag))) problems.push(`glossary.csv has no ${l.tag} renderings`);
+    return problems;
+  });
+  if (unready.length) throw new TranslateError(`not ready to translate: ${unready.join("; ")}`, 1);
+  const again = o.retranslate ?? [];
+  const entries = checked.catalog.entries.filter((e) => checked.english.has(e.key) && (!o.only || o.only.some((p) => e.key.startsWith(p))));
+
+  const runs: LanguageRun[] = locales.map((locale) => {
+    const state = readJson<State>(join(root, "state", `${locale.tag}.json`), {});
+    const translations = checked.catalog.translations.get(locale.tag) ?? new Map<string, string>();
+    const valid = new Set(checked.valid.get(locale.tag)?.keys() ?? []);
+    const work = select(entries, translations, state, valid, (k) => again.some((p) => k.startsWith(p)));
+    return {
+      locale,
+      state,
+      work,
+      known: new Map(translations),
+      byKey: new Map(work.map((w) => [w.entry.key, w])),
+      results: new Map(),
+      changedDuringRun: new Set(),
+      report: { locale: locale.tag, written: 0, humanEdits: [], failed: new Map(), changedDuringRun: [], batches: 0, calls: 0, seconds: 0 },
+      logFile: join(root, "out", `translate-${locale.tag}.log.jsonl`),
+      audit: join(root, "out", `translate-${locale.tag}.human-edits.jsonl`),
+      sent: 0,
+    };
+  });
+
+  if (o.dryRun) {
+    const first = runs.find((r) => r.work.length);
+    if (first) {
+      const batch = makeBatches(first.work)[0]!;
+      const r = await translateBatch(root, checked, first.locale, batch, first.known);
+      console.log(JSON.stringify({ locale: first.locale.tag, batch: batch.length, accepted: Object.fromEntries(r.accepted), failed: Object.fromEntries(r.failed) }, null, 2));
+    }
+    return [];
+  }
+
+  mkdirSync(join(root, "out"), { recursive: true });
+  for (const run of runs) {
+    // select() records untracked human translations in state. With no batch to write them,
+    // save them now, so a later English change retranslates those keys instead of keeping them.
+    if (!run.work.length && (Object.keys(run.state).length || existsSync(join(root, "state", `${run.locale.tag}.json`)))) {
+      writeState(root, checked, run.locale, run.state);
+    }
+  }
+
+  const batchesFor = (run: LanguageRun, work: Work[]) => {
+    const batches = makeBatches(work);
+    run.report.batches += batches.length;
+    return batches.map((batch) => ({ run, batch }));
+  };
+  let tasks = runs.flatMap((run) => batchesFor(run, run.work));
+  for (const run of runs) if (run.work.length) say(`${run.locale.tag}: ${run.work.length} keys to translate in ${run.report.batches} batches`);
+  say(`${tasks.length} batches in ${runs.filter((r) => r.work.length).length} languages, ${jobs} at a time`);
+  let finished = 0;
+  for (let round = 1; tasks.length; round++) {
+    await pool(tasks, jobs, async ({ run, batch }) => {
+      const t0 = Date.now();
+      run.started ??= t0;
+      const r = await translateBatch(root, checked, run.locale, batch, run.known);
+      for (const [k, v] of r.accepted) {
+        run.results.set(k, v);
+        run.known.set(k, v);
+      }
+      for (const [k, v] of r.failed) run.report.failed.set(k, v);
+      run.report.calls += r.calls;
+      writeLanguage(root, checked, run.locale, run.byKey, run.results, run.state, run.changedDuringRun);
+      // The record of human values replaced goes to disk with the batch, so a run that stops
+      // before the end still reports them on the next run.
+      for (const w of batch) {
+        const k = w.entry.key;
+        if ((w.reason === "human-edit-source-changed" || w.reason === "invalid") && r.accepted.has(k) && !run.changedDuringRun.has(k)) {
+          appendFileSync(run.audit, JSON.stringify({ key: k, before: w.previous!, after: run.results.get(k)! }) + "\n");
+        }
+      }
+      const n = ++run.sent;
+      finished++;
+      run.ended = Date.now();
+      const seconds = Math.round((run.ended - t0) / 1000);
+      const keys = batch.map((w) => w.entry.key);
+      appendFileSync(run.logFile, JSON.stringify({ batch: n, of: run.report.batches, round, first: keys[0], last: keys[keys.length - 1], keys: keys.length, accepted: r.accepted.size, calls: r.calls, seconds, firstAttempt: Object.fromEntries(r.firstAttempt), failed: Object.fromEntries(r.failed) }) + "\n");
+      say(`${run.locale.tag}: batch ${n}/${run.report.batches} done (${finished} finished in all) ${keys[0]} … ${keys[keys.length - 1]}: ${r.accepted.size}/${keys.length} accepted, ${r.firstAttempt.size} retried, ${r.failed.size} failed, ${seconds} s`);
+    });
+    if (round >= rounds) break;
+    // Keys that still failed go round again; a later round that fails them reports them again.
+    tasks = runs.flatMap((run) => {
+      const retry = [...run.report.failed.keys()].map((k) => run.byKey.get(k)!);
+      run.report.failed.clear();
+      return retry.length ? batchesFor(run, retry) : [];
+    });
+    if (tasks.length) say(`round ${round + 1} of ${rounds}: sending ${tasks.reduce((n, t) => n + t.batch.length, 0)} keys that failed again`);
+  }
+
+  const audits: string[] = [];
+  for (const run of runs) {
+    run.report.seconds = run.started !== undefined ? (run.ended! - run.started) / 1000 : 0;
+    for (const k of run.byKey.keys()) {
+      if (run.results.has(k) && !run.changedDuringRun.has(k)) run.report.written++;
+    }
+    // Human values replaced by this run and by any earlier run that stopped before reporting.
+    if (existsSync(run.audit)) {
+      const edits = new Map<string, { key: string; before: string; after: string }>();
+      for (const line of readFileSync(run.audit, "utf8").split("\n").filter(Boolean)) {
+        const r = JSON.parse(line) as { key: string; before: string; after: string };
+        edits.set(r.key, { ...r, before: edits.get(r.key)?.before ?? r.before });
+      }
+      run.report.humanEdits.push(...edits.values());
+      audits.push(run.audit);
+    }
+    run.report.changedDuringRun = [...run.changedDuringRun];
+  }
+  const reports = runs.map((r) => r.report);
+  // Audit files are removed only once the PR body that lists them is on disk, so a run that
+  // stops before this point still reports the values it replaced next time.
+  writeFileSync(join(root, "out/translate-pr-body.md"), prBody(reports));
+  for (const audit of audits) rmSync(audit);
+  return reports;
+}
+
+/** Splits a comma-separated list of prefixes or tags; undefined when absent. */
+function list(v?: string): string[] | undefined {
+  return v ? v.split(",").map((s) => s.trim()).filter(Boolean) : undefined;
+}
+
+/** A positive integer option; a TranslateError (exit 2) names the option otherwise. */
+export function intOption(name: string, v: string | undefined, fallback: number): number {
+  if (v === undefined) return fallback;
+  const n = Number(v);
+  if (!(Number.isInteger(n) && n > 0)) throw new TranslateError(`--${name} must be a positive integer, not ${v}`, 2);
+  return n;
+}
+
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const { values } = parseArgs({
     options: {
@@ -460,109 +688,26 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
       "dry-run": { type: "boolean" },
       root: { type: "string" },
       jobs: { type: "string" },
+      rounds: { type: "string" },
       only: { type: "string" },
       retranslate: { type: "string" },
     },
   });
-  const root = resolve(values.root ?? resolve(import.meta.dirname, ".."));
-  const checked = checkRepository(root);
-  // Errors block the run; warnings (such as translations an English change left stale) don't,
-  // since retranslating them is part of the run.
-  if (checked.issues.some((i) => i.level === "error" && i.rule !== "layout")) {
-    console.error("the catalog has validation errors; run make check first");
-    process.exit(1);
-  }
-  const locales = values.locale === "all" ? checked.locales.targets : checked.locales.targets.filter((l) => l.tag === values.locale);
-  if (!locales.length) {
-    console.error(`unknown locale ${values.locale}; use one of ${checked.locales.targets.map((l) => l.tag).join(", ")} or all`);
-    process.exit(2);
-  }
-  const prefixes = (v?: string) => (v ? v.split(",").filter(Boolean) : undefined);
-  const only = prefixes(values.only);
-  const again = prefixes(values.retranslate) ?? [];
-  if (values.jobs !== undefined && !(Number.isInteger(Number(values.jobs)) && Number(values.jobs) > 0)) {
-    console.error(`--jobs must be a positive integer, not ${values.jobs}`);
-    process.exit(2);
-  }
-  const jobs = positiveInt(values.jobs, 1);
-  const entries = checked.catalog.entries.filter((e) => checked.english.has(e.key) && (!only || only.some((p) => e.key.startsWith(p))));
-  const reports: Report[] = [];
-  // Audit files are removed only once the PR body that lists them is on disk, so a run of
-  // several languages that stops in a later one still reports the earlier ones next time.
-  const audits: string[] = [];
-  for (const locale of locales) {
-    const state = readJson<State>(join(root, "state", `${locale.tag}.json`), {});
-    const translations = checked.catalog.translations.get(locale.tag) ?? new Map();
-    const valid = new Set(checked.valid.get(locale.tag)?.keys() ?? []);
-    const work = select(entries, translations, state, valid, (k) => again.some((p) => k.startsWith(p)));
-    const batches = makeBatches(work);
-    console.error(`${locale.tag}: ${work.length} keys to translate in ${batches.length} batches, ${jobs} at a time`);
-    // What the prompt shows as existing wording: the catalog's values plus this run's results.
-    const known = new Map(translations);
-    if (values["dry-run"]) {
-      if (!batches.length) continue;
-      const r = await translateBatch(root, checked, locale, batches[0]!, known);
-      console.log(JSON.stringify({ locale: locale.tag, batch: batches[0]!.length, accepted: Object.fromEntries(r.accepted), failed: Object.fromEntries(r.failed) }, null, 2));
-      break;
-    }
-    mkdirSync(join(root, "out"), { recursive: true });
-    const log = join(root, "out", `translate-${locale.tag}.log.jsonl`);
-    const audit = join(root, "out", `translate-${locale.tag}.human-edits.jsonl`);
-    const byKey = new Map(work.map((w) => [w.entry.key, w]));
-    const results = new Map<string, string>();
-    const changedDuringRun = new Set<string>();
-    const report: Report = { locale: locale.tag, written: 0, humanEdits: [], failed: new Map(), changedDuringRun: [], batches: batches.length, calls: 0, seconds: 0 };
-    const started = Date.now();
-    let done = 0;
-    await pool(batches, jobs, async (batch, i) => {
-      const t0 = Date.now();
-      const r = await translateBatch(root, checked, locale, batch, known);
-      for (const [k, v] of r.accepted) {
-        results.set(k, v);
-        known.set(k, v);
-      }
-      for (const [k, v] of r.failed) report.failed.set(k, v);
-      report.calls += r.calls;
-      writeLanguage(root, checked, locale, byKey, results, state, changedDuringRun);
-      // The record of human values replaced goes to disk with the batch, so a run that stops
-      // before the end still reports them on the next run.
-      for (const w of batch) {
-        const k = w.entry.key;
-        if ((w.reason === "human-edit-source-changed" || w.reason === "invalid") && r.accepted.has(k) && !changedDuringRun.has(k)) {
-          appendFileSync(audit, JSON.stringify({ key: k, before: w.previous!, after: results.get(k)! }) + "\n");
-        }
-      }
-      done++;
-      const keys = batch.map((w) => w.entry.key);
-      appendFileSync(log, JSON.stringify({ batch: i + 1, of: batches.length, first: keys[0], last: keys[keys.length - 1], keys: keys.length, accepted: r.accepted.size, calls: r.calls, seconds: Math.round((Date.now() - t0) / 1000), firstAttempt: Object.fromEntries(r.firstAttempt), failed: Object.fromEntries(r.failed) }) + "\n");
-      console.error(`${locale.tag}: batch ${i + 1}/${batches.length} done (${done} finished) ${keys[0]} … ${keys[keys.length - 1]}: ${r.accepted.size}/${keys.length} accepted, ${r.firstAttempt.size} retried, ${r.failed.size} failed, ${Math.round((Date.now() - t0) / 1000)} s`);
+  try {
+    const root = resolve(values.root ?? resolve(import.meta.dirname, ".."));
+    await runTranslate({
+      root,
+      locales: values.locale === "all" ? "all" : (list(values.locale) ?? []),
+      jobs: intOption("jobs", values.jobs, DEFAULT_JOBS),
+      rounds: intOption("rounds", values.rounds, DEFAULT_ROUNDS),
+      only: list(values.only),
+      retranslate: list(values.retranslate),
+      dryRun: values["dry-run"],
     });
-    // select() records untracked human translations in state. With no batch to write them,
-    // save them here, so a later English change retranslates those keys instead of keeping them.
-    if (!batches.length && (Object.keys(state).length || existsSync(join(root, "state", `${locale.tag}.json`)))) {
-      writeState(root, checked, locale, state);
-    }
-    report.seconds = (Date.now() - started) / 1000;
-    for (const k of byKey.keys()) {
-      if (results.has(k) && !changedDuringRun.has(k)) report.written++;
-    }
-    // Human values replaced by this run and by any earlier run that stopped before reporting.
-    if (existsSync(audit)) {
-      const edits = new Map<string, { key: string; before: string; after: string }>();
-      for (const line of readFileSync(audit, "utf8").split("\n").filter(Boolean)) {
-        const r = JSON.parse(line) as { key: string; before: string; after: string };
-        edits.set(r.key, { ...r, before: edits.get(r.key)?.before ?? r.before });
-      }
-      report.humanEdits.push(...edits.values());
-      audits.push(audit);
-    }
-    report.changedDuringRun = [...changedDuringRun];
-    reports.push(report);
-  }
-  if (!values["dry-run"]) {
-    mkdirSync(join(root, "out"), { recursive: true });
-    writeFileSync(join(root, "out/translate-pr-body.md"), prBody(reports));
-    for (const audit of audits) rmSync(audit);
-    console.error("wrote out/translate-pr-body.md; run make check, review, and open the PR");
+    if (!values["dry-run"]) console.error("wrote out/translate-pr-body.md; run make check, review, and open the PR");
+  } catch (e) {
+    if (!(e instanceof TranslateError)) throw e;
+    console.error(e.message);
+    process.exit(e.code);
   }
 }
