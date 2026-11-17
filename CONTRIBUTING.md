@@ -103,7 +103,8 @@ Claude Code in batches of about 100 with their descriptions, the style guide, gl
 existing translations from the same area, validates every result, and retries failures. The
 batches of all languages share one pool of `JOBS` calls (default 4). Every call also takes one of
 `SILO_TRANSLATE_MAX_CALLS` slots (default 6) shared by every run on the machine, so several
-pull requests translated at once don't multiply the load; a run waits for a free slot. Values a
+pull requests translated at once don't multiply the load; a run waits for a free slot. A slot is
+a local port from `SILO_TRANSLATE_SLOT_PORT` (default 47360) on, which a killed run frees at once. Values a
 person edited are kept.
 
 The pass on its own, for a branch you are on (a new language, or after a glossary or style guide

@@ -10,7 +10,7 @@ import { bodyWithSection, commitMessage, filesNeedingReview, subjectFromTitle } 
 import { loadLocales } from "../tools/lib/locales.ts";
 import { checkRepository } from "../tools/lib/check.ts";
 import { fingerprint, valueHash } from "../tools/translate.ts";
-import { entry, REPO, writeArb } from "./helpers.ts";
+import { entry, REPO, testSlotPort, writeArb } from "./helpers.ts";
 
 test("translate-pr: subject, files to review, description section", () => {
   assert.equal(subjectFromTitle("feat(catalog): add the row of collections wording"), "the row of collections wording");
@@ -75,7 +75,7 @@ function translatePrEnv(s: ReturnType<typeof setUp>, env: Record<string, string>
     encoding: "utf8",
     stdio: ["ignore", "pipe", "pipe"],
     // FAKE_CLAUDE_LOG also counts the attempts of "shaky" keys across runs.
-    env: { ...process.env, ...IDENTITY, SILO_GH_BIN: join(REPO, "tests/bin/fake-gh.mjs"), FAKE_GH_PR: s.prJson, FAKE_GH_BODY: s.body, SILO_CLAUDE_BIN: join(REPO, "tests/bin/fake-claude.mjs"), FAKE_CLAUDE_LOG: join(s.dir, "prompts.log"), SILO_TRANSLATE_SLOTS_DIR: join(s.dir, "slots"), SILO_TRANSLATE_RETRY_MS: "0", ...env },
+    env: { ...process.env, ...IDENTITY, SILO_GH_BIN: join(REPO, "tests/bin/fake-gh.mjs"), FAKE_GH_PR: s.prJson, FAKE_GH_BODY: s.body, SILO_CLAUDE_BIN: join(REPO, "tests/bin/fake-claude.mjs"), FAKE_CLAUDE_LOG: join(s.dir, "prompts.log"), SILO_TRANSLATE_SLOT_PORT: String(testSlotPort()), SILO_TRANSLATE_RETRY_MS: "0", ...env },
   });
 }
 

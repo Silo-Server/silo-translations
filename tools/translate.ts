@@ -17,7 +17,8 @@
 // The batches of every language share one pool of Claude Code calls, so a pull request that
 // adds a few keys sends one batch per language side by side instead of one language at a time.
 // Keys that still fail after a batch's own retry go round again (--rounds). Every call also takes
-// one of SILO_TRANSLATE_MAX_CALLS (default 6) slots shared by all runs on the machine.
+// one of SILO_TRANSLATE_MAX_CALLS (default 6) slots shared by all runs on the machine: local
+// ports from SILO_TRANSLATE_SLOT_PORT (default 47360), see tools/lib/slots.ts.
 //
 // Writes catalog/<tag>.arb, state/<tag>.json, out/translate-pr-body.md and a per-batch log,
 // out/translate-<tag>.log.jsonl. It does not create branches or pull requests; translate-pr.ts
