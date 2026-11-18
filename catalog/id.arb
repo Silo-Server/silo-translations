@@ -11153,6 +11153,8 @@
   "web.admin.settings.autoscan.polling.interval.label": "Interval pemeriksaan default",
   "web.admin.settings.autoscan.polling.unitSeconds": "detik",
   "web.admin.settings.autoscan.title": "Autoscan",
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrant": "Putar tanpa masuk dari alamat yang sama",
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrantDescription": "Beberapa aplikasi Jellyfin, seperti Findroid, membuka tautan putar langsung dan unduhan tanpa masuk. Saat opsi ini aktif, Silo melayani permintaan seperti itu jika aplikasi yang sudah masuk di alamat jaringan yang sama meminta untuk memutar file itu dalam dua jam terakhir. Siapa pun yang berbagi alamat itu, seperti orang di jaringan rumah, operator seluler, atau VPN yang sama, kemudian juga dapat memutar file itu. Aktifkan hanya jika Anda menggunakan salah satu aplikasi tersebut.",
   "web.admin.settings.compatibilityProxies.advanced.playbackTtl": "Akhiri sesi pemutaran setelah",
   "web.admin.settings.compatibilityProxies.advanced.playbackTtlDescription": "Dihitung sejak pemutaran dimulai, dijeda atau tidak. Misalnya 24h.",
   "web.admin.settings.compatibilityProxies.advanced.reportVersion": "Versi Jellyfin yang dilaporkan",

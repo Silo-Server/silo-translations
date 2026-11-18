@@ -11153,6 +11153,8 @@
   "web.admin.settings.autoscan.polling.interval.label": "Типовий інтервал перевірки",
   "web.admin.settings.autoscan.polling.unitSeconds": "секунд",
   "web.admin.settings.autoscan.title": "Autoscan",
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrant": "Відтворювати без входу з тієї самої адреси",
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrantDescription": "Деякі застосунки Jellyfin, як-от Findroid, відкривають посилання для прямого відтворення й завантаження без входу. Коли цей параметр увімкнено, Silo обслуговує такий запит, якщо застосунок із тієї самої мережевої адреси, у якому виконано вхід, запитував відтворення цього файлу протягом останніх двох годин. Тоді будь-хто з тією самою адресою, наприклад люди в тій самій домашній мережі, у того самого мобільного оператора чи VPN, також зможе відтворити цей файл. Вмикайте його, лише якщо використовуєте один із цих застосунків.",
   "web.admin.settings.compatibilityProxies.advanced.playbackTtl": "Завершувати сеанси відтворення через",
   "web.admin.settings.compatibilityProxies.advanced.playbackTtlDescription": "Відлік іде від початку відтворення, незалежно від паузи. Наприклад, 24h.",
   "web.admin.settings.compatibilityProxies.advanced.reportVersion": "Версія Jellyfin, яку повідомляти",

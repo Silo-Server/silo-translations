@@ -11153,6 +11153,8 @@
   "web.admin.settings.autoscan.polling.interval.label": "Zadani interval provjere",
   "web.admin.settings.autoscan.polling.unitSeconds": "sekundi",
   "web.admin.settings.autoscan.title": "Autoscan",
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrant": "Reprodukcija bez prijave s iste adrese",
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrantDescription": "Neke aplikacije za Jellyfin, poput aplikacije Findroid, otvaraju poveznice za izravnu reprodukciju i preuzimanje bez prijave. Kada je ovo uključeno, Silo poslužuje takav zahtjev ako je prijavljena aplikacija s iste mrežne adrese zatražila reprodukciju te datoteke u posljednja dva sata. Tada tu datoteku može reproducirati i svatko tko dijeli tu adresu, primjerice osobe na istoj kućnoj mreži, kod istog mobilnog operatera ili na istom VPN-u. Uključite ovo samo ako koristite neku od tih aplikacija.",
   "web.admin.settings.compatibilityProxies.advanced.playbackTtl": "Završi sesije reprodukcije nakon",
   "web.admin.settings.compatibilityProxies.advanced.playbackTtlDescription": "Računa se od početka reprodukcije, bez obzira na pauzu. Na primjer 24h.",
   "web.admin.settings.compatibilityProxies.advanced.reportVersion": "Verzija Jellyfina koja se javlja aplikacijama",

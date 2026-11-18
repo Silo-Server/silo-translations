@@ -11153,6 +11153,8 @@
   "web.admin.settings.autoscan.polling.interval.label": "Khoảng thời gian kiểm tra mặc định",
   "web.admin.settings.autoscan.polling.unitSeconds": "giây",
   "web.admin.settings.autoscan.title": "Autoscan",
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrant": "Phát không cần đăng nhập từ cùng địa chỉ",
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrantDescription": "Một số ứng dụng Jellyfin, chẳng hạn Findroid, mở liên kết phát trực tiếp và liên kết tải xuống mà không đăng nhập. Khi bật tùy chọn này, Silo sẽ phục vụ yêu cầu như vậy nếu một ứng dụng đã đăng nhập ở cùng địa chỉ mạng đã yêu cầu phát tệp đó trong hai giờ qua. Khi đó, bất kỳ ai dùng chung địa chỉ đó, chẳng hạn những người trên cùng mạng gia đình, cùng nhà mạng di động hoặc cùng VPN, cũng có thể phát tệp đó. Chỉ bật tùy chọn này nếu bạn dùng một trong những ứng dụng đó.",
   "web.admin.settings.compatibilityProxies.advanced.playbackTtl": "Kết thúc phiên phát sau",
   "web.admin.settings.compatibilityProxies.advanced.playbackTtlDescription": "Tính từ lúc bắt đầu phát, dù có tạm dừng hay không. Ví dụ: 24h.",
   "web.admin.settings.compatibilityProxies.advanced.reportVersion": "Phiên bản Jellyfin báo cho ứng dụng",

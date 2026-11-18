@@ -11153,6 +11153,8 @@
   "web.admin.settings.autoscan.polling.interval.label": "Intervalle de vérification par défaut",
   "web.admin.settings.autoscan.polling.unitSeconds": "secondes",
   "web.admin.settings.autoscan.title": "Autoscan",
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrant": "Lire sans connexion depuis la même adresse",
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrantDescription": "Certaines applications Jellyfin, comme Findroid, ouvrent les liens de lecture directe et de téléchargement sans connexion. Lorsque cette option est activée, Silo répond à une telle demande si une application connectée depuis la même adresse réseau a demandé à lire ce fichier au cours des deux dernières heures. Toute personne qui partage cette adresse, par exemple sur le même réseau domestique, chez le même opérateur mobile ou sur le même VPN, peut alors lire ce fichier elle aussi. Activez-la uniquement si vous utilisez l’une de ces applications.",
   "web.admin.settings.compatibilityProxies.advanced.playbackTtl": "Terminer les sessions de lecture après",
   "web.admin.settings.compatibilityProxies.advanced.playbackTtlDescription": "Compté à partir du début de la lecture, en pause ou non. Par exemple 24h.",
   "web.admin.settings.compatibilityProxies.advanced.reportVersion": "Version de Jellyfin à annoncer",

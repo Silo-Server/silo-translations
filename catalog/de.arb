@@ -11153,6 +11153,8 @@
   "web.admin.settings.autoscan.polling.interval.label": "Standard-Prüfintervall",
   "web.admin.settings.autoscan.polling.unitSeconds": "Sekunden",
   "web.admin.settings.autoscan.title": "Autoscan",
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrant": "Ohne Anmeldung von derselben Adresse abspielen",
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrantDescription": "Einige Jellyfin-Apps wie Findroid öffnen Links zur Direktwiedergabe und zum Download ohne Anmeldung. Ist diese Option aktiviert, bedient Silo eine solche Anfrage, sofern eine angemeldete App unter derselben Netzwerkadresse in den letzten zwei Stunden angefragt hat, diese Datei abzuspielen. Alle, die diese Adresse teilen, etwa Personen im selben Heimnetz, beim selben Mobilfunkanbieter oder im selben VPN, können diese Datei dann ebenfalls abspielen. Aktiviere die Option nur, wenn du eine dieser Apps verwendest.",
   "web.admin.settings.compatibilityProxies.advanced.playbackTtl": "Wiedergabesitzungen beenden nach",
   "web.admin.settings.compatibilityProxies.advanced.playbackTtlDescription": "Gezählt ab Beginn der Wiedergabe, ob pausiert oder nicht. Zum Beispiel 24h.",
   "web.admin.settings.compatibilityProxies.advanced.reportVersion": "Zu meldende Jellyfin-Version",

@@ -11153,6 +11153,8 @@
   "web.admin.settings.autoscan.polling.interval.label": "Predvolený interval kontroly",
   "web.admin.settings.autoscan.polling.unitSeconds": "sekúnd",
   "web.admin.settings.autoscan.title": "Autoscan",
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrant": "Prehrávanie bez prihlásenia z rovnakej adresy",
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrantDescription": "Niektoré aplikácie Jellyfin, napríklad Findroid, otvárajú odkazy na priame prehrávanie a stiahnutie bez prihlásenia. Keď je táto možnosť zapnutá, Silo vybaví takúto požiadavku, ak si prihlásená aplikácia z rovnakej sieťovej adresy za posledné dve hodiny vyžiadala prehratie tohto súboru. Tento súbor potom môže prehrať aj ktokoľvek, kto zdieľa túto adresu, napríklad ľudia v rovnakej domácej sieti, u rovnakého mobilného operátora alebo v rovnakej VPN. Zapnite ju, iba ak používate niektorú z týchto aplikácií.",
   "web.admin.settings.compatibilityProxies.advanced.playbackTtl": "Ukončiť relácie prehrávania po",
   "web.admin.settings.compatibilityProxies.advanced.playbackTtlDescription": "Počíta sa od začiatku prehrávania bez ohľadu na pozastavenie. Napríklad 24h.",
   "web.admin.settings.compatibilityProxies.advanced.reportVersion": "Verzia Jellyfin, ktorá sa má hlásiť",

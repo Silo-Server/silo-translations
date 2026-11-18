@@ -11153,6 +11153,8 @@
   "web.admin.settings.autoscan.polling.interval.label": "デフォルトの確認間隔",
   "web.admin.settings.autoscan.polling.unitSeconds": "秒",
   "web.admin.settings.autoscan.title": "Autoscan",
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrant": "同じアドレスからサインインなしで再生",
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrantDescription": "Findroidなど一部のJellyfinアプリは、サインインせずにダイレクト再生やダウンロードのリンクを開きます。オンにすると、同じネットワークアドレスでサインインしているアプリが過去2時間以内にそのファイルの再生をリクエストしていた場合、Siloはそのようなリクエストに応答します。その場合、同じ自宅のネットワーク、モバイル通信事業者、VPNを使う人など、そのアドレスを共有する人もそのファイルを再生できるようになります。これらのアプリを使用する場合にのみオンにしてください。",
   "web.admin.settings.compatibilityProxies.advanced.playbackTtl": "再生セッションの終了までの時間",
   "web.admin.settings.compatibilityProxies.advanced.playbackTtlDescription": "一時停止の有無に関係なく、再生開始時から計算します。例：24h",
   "web.admin.settings.compatibilityProxies.advanced.reportVersion": "通知するJellyfinのバージョン",

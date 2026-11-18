@@ -11153,6 +11153,8 @@
   "web.admin.settings.autoscan.polling.interval.label": "Interval implicit de verificare",
   "web.admin.settings.autoscan.polling.unitSeconds": "secunde",
   "web.admin.settings.autoscan.title": "Autoscan",
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrant": "Redare fără conectare de la aceeași adresă",
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrantDescription": "Unele aplicații Jellyfin, precum Findroid, deschid linkurile de redare directă și de descărcare fără conectare. Când această opțiune este activată, Silo onorează o astfel de cerere dacă o aplicație conectată de la aceeași adresă de rețea a solicitat redarea fișierului respectiv în ultimele două ore. Oricine folosește aceeași adresă, cum ar fi persoanele din aceeași rețea de acasă, de la același operator de telefonie mobilă sau din același VPN, poate reda apoi și fișierul respectiv. Activați opțiunea doar dacă folosiți una dintre aceste aplicații.",
   "web.admin.settings.compatibilityProxies.advanced.playbackTtl": "Încheierea sesiunilor de redare după",
   "web.admin.settings.compatibilityProxies.advanced.playbackTtlDescription": "Se calculează de la pornirea redării, indiferent dacă este în pauză. De exemplu, 24h.",
   "web.admin.settings.compatibilityProxies.advanced.reportVersion": "Versiunea Jellyfin de raportat",

@@ -11153,6 +11153,8 @@
   "web.admin.settings.autoscan.polling.interval.label": "Стандартен интервал на проверка",
   "web.admin.settings.autoscan.polling.unitSeconds": "сек",
   "web.admin.settings.autoscan.title": "Autoscan",
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrant": "Възпроизвеждане без вход от същия адрес",
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrantDescription": "Някои приложения за Jellyfin, като Findroid, отварят връзките за директно възпроизвеждане и изтегляне без вход. Когато тази опция е включена, Silo обслужва такава заявка, ако приложение с изпълнен вход от същия мрежов адрес е заявило възпроизвеждане на този файл през последните два часа. Тогава всеки, който споделя този адрес, например хората в същата домашна мрежа, при същия мобилен оператор или във VPN, също може да възпроизвежда този файл. Включете я само ако използвате някое от тези приложения.",
   "web.admin.settings.compatibilityProxies.advanced.playbackTtl": "Прекратяване на сесиите за възпроизвеждане след",
   "web.admin.settings.compatibilityProxies.advanced.playbackTtlDescription": "Отчита се от началото на възпроизвеждането, независимо дали е на пауза. Например 24h.",
   "web.admin.settings.compatibilityProxies.advanced.reportVersion": "Версия на Jellyfin за отчитане",

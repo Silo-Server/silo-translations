@@ -11153,6 +11153,8 @@
   "web.admin.settings.autoscan.polling.interval.label": "預設檢查間隔",
   "web.admin.settings.autoscan.polling.unitSeconds": "秒",
   "web.admin.settings.autoscan.title": "Autoscan",
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrant": "允許同一網路位址免登入播放",
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrantDescription": "部分 Jellyfin App（例如 Findroid）會在未登入的情況下開啟直接播放和下載連結。開啟此選項後，若同一網路位址上已登入的 App 在過去兩小時內請求播放該檔案，Silo 就會處理這類請求。屆時，任何共用該位址的人（例如同一個家用網路、行動電信業者或 VPN 上的使用者）也都能播放該檔案。請僅在你使用這類 App 時開啟此選項。",
   "web.admin.settings.compatibilityProxies.advanced.playbackTtl": "播放工作階段結束時間",
   "web.admin.settings.compatibilityProxies.advanced.playbackTtlDescription": "從開始播放時起算，不論是否暫停。例如 24h。",
   "web.admin.settings.compatibilityProxies.advanced.reportVersion": "要回報的 Jellyfin 版本",

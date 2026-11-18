@@ -11153,6 +11153,8 @@
   "web.admin.settings.autoscan.polling.interval.label": "Selang semakan lalai",
   "web.admin.settings.autoscan.polling.unitSeconds": "saat",
   "web.admin.settings.autoscan.title": "Autoscan",
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrant": "Main tanpa log masuk dari alamat yang sama",
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrantDescription": "Sesetengah apl Jellyfin, seperti Findroid, membuka pautan main terus dan muat turun tanpa log masuk. Apabila pilihan ini dihidupkan, Silo melayan permintaan sedemikian jika apl yang telah log masuk di alamat rangkaian yang sama meminta untuk memainkan fail itu dalam tempoh dua jam yang lalu. Sesiapa yang berkongsi alamat itu, seperti orang dalam rangkaian rumah, pembawa mudah alih atau VPN yang sama, kemudian boleh memainkan fail itu juga. Hidupkan hanya jika anda menggunakan salah satu apl tersebut.",
   "web.admin.settings.compatibilityProxies.advanced.playbackTtl": "Tamatkan sesi main balik selepas",
   "web.admin.settings.compatibilityProxies.advanced.playbackTtlDescription": "Dikira dari saat main balik bermula, sama ada dijeda atau tidak. Contohnya 24h.",
   "web.admin.settings.compatibilityProxies.advanced.reportVersion": "Versi Jellyfin untuk dilaporkan",

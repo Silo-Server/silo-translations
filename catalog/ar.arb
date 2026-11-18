@@ -11153,6 +11153,8 @@
   "web.admin.settings.autoscan.polling.interval.label": "الفاصل الزمني الافتراضي للفحص",
   "web.admin.settings.autoscan.polling.unitSeconds": "ثوانٍ",
   "web.admin.settings.autoscan.title": "Autoscan",
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrant": "التشغيل دون تسجيل الدخول من العنوان نفسه",
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrantDescription": "تفتح بعض تطبيقات Jellyfin، مثل Findroid، روابط التشغيل المباشر والتنزيل دون تسجيل الدخول. عند تفعيل هذا الخيار، يلبّي Silo مثل هذا الطلب إذا طلب تطبيقٌ مسجَّل الدخول على عنوان الشبكة نفسه تشغيل ذلك الملف خلال الساعتين الماضيتين. ويمكن عندئذٍ لأي شخص يشارك ذلك العنوان، مثل الأشخاص على الشبكة المنزلية نفسها أو لدى مشغّل شبكة الهاتف المحمول نفسه أو على شبكة VPN نفسها، تشغيل ذلك الملف أيضًا. لا تفعّله إلا إذا كنت تستخدم أحد تلك التطبيقات.",
   "web.admin.settings.compatibilityProxies.advanced.playbackTtl": "إنهاء جلسات التشغيل بعد",
   "web.admin.settings.compatibilityProxies.advanced.playbackTtlDescription": "تُحتسب من بدء التشغيل، سواء كان متوقفًا مؤقتًا أم لا. مثال: 24h.",
   "web.admin.settings.compatibilityProxies.advanced.reportVersion": "إصدار Jellyfin المُعلَن للتطبيقات",

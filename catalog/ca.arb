@@ -11153,6 +11153,8 @@
   "web.admin.settings.autoscan.polling.interval.label": "Interval de comprovació per defecte",
   "web.admin.settings.autoscan.polling.unitSeconds": "segons",
   "web.admin.settings.autoscan.title": "Autoscan",
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrant": "Reproducció sense iniciar la sessió des de la mateixa adreça",
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrantDescription": "Algunes aplicacions de Jellyfin, com ara Findroid, obren enllaços de reproducció directa i de baixada sense iniciar la sessió. Quan aquesta opció està activada, Silo atén aquestes sol·licituds si una aplicació amb la sessió iniciada a la mateixa adreça de xarxa ha sol·licitat reproduir aquest fitxer durant les dues últimes hores. Llavors, qualsevol persona que comparteixi aquesta adreça, com ara qui és a la mateixa xarxa domèstica o utilitza el mateix operador mòbil o la mateixa VPN, també pot reproduir aquest fitxer. Activa-la només si utilitzes alguna d’aquestes aplicacions.",
   "web.admin.settings.compatibilityProxies.advanced.playbackTtl": "Finalitza les sessions de reproducció després de",
   "web.admin.settings.compatibilityProxies.advanced.playbackTtlDescription": "Es compta des que comença la reproducció, estigui en pausa o no. Per exemple, 24h.",
   "web.admin.settings.compatibilityProxies.advanced.reportVersion": "Versió de Jellyfin que s’informa",

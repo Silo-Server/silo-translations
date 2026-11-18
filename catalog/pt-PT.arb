@@ -11153,6 +11153,8 @@
   "web.admin.settings.autoscan.polling.interval.label": "Intervalo de verificação predefinido",
   "web.admin.settings.autoscan.polling.unitSeconds": "segundos",
   "web.admin.settings.autoscan.title": "Autoscan",
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrant": "Reprodução sem início de sessão a partir do mesmo endereço",
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrantDescription": "Algumas apps do Jellyfin, como a Findroid, abrem links de reprodução direta e de transferência sem iniciar sessão. Quando esta opção está ativada, o Silo atende esse pedido se uma app com sessão iniciada no mesmo endereço de rede tiver pedido para reproduzir esse ficheiro nas últimas duas horas. Qualquer pessoa que partilhe esse endereço, como quem está na mesma rede doméstica, operadora móvel ou VPN, passa então a poder reproduzir também esse ficheiro. Ative esta opção apenas se usar uma dessas apps.",
   "web.admin.settings.compatibilityProxies.advanced.playbackTtl": "Terminar sessões de reprodução após",
   "web.admin.settings.compatibilityProxies.advanced.playbackTtlDescription": "Contado a partir do início da reprodução, em pausa ou não. Por exemplo, 24h.",
   "web.admin.settings.compatibilityProxies.advanced.reportVersion": "Versão do Jellyfin a comunicar",

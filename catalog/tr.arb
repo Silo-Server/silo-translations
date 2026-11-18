@@ -11153,6 +11153,8 @@
   "web.admin.settings.autoscan.polling.interval.label": "Varsayılan denetim aralığı",
   "web.admin.settings.autoscan.polling.unitSeconds": "saniye",
   "web.admin.settings.autoscan.title": "Autoscan",
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrant": "Aynı adresten oturum açmadan oynat",
+  "web.admin.settings.compatibilityProxies.advanced.addressStreamGrantDescription": "Findroid gibi bazı Jellyfin uygulamaları, doğrudan oynatma ve indirme bağlantılarını oturum açmadan açar. Bu seçenek açıkken Silo, aynı ağ adresindeki oturum açmış bir uygulama son iki saat içinde o dosyayı oynatmak istediyse böyle bir isteği karşılar. Bu durumda o adresi paylaşan herkes, örneğin aynı ev ağındaki, aynı mobil operatördeki veya aynı VPN’deki kişiler de o dosyayı oynatabilir. Yalnızca bu uygulamalardan birini kullanıyorsanız açın.",
   "web.admin.settings.compatibilityProxies.advanced.playbackTtl": "Oynatma oturumlarının sona ereceği süre",
   "web.admin.settings.compatibilityProxies.advanced.playbackTtlDescription": "Duraklatılmış olsun ya da olmasın, oynatmanın başladığı andan itibaren sayılır. Örneğin 24h.",
   "web.admin.settings.compatibilityProxies.advanced.reportVersion": "Bildirilecek Jellyfin sürümü",
