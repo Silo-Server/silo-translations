@@ -14453,6 +14453,10 @@
   "@error.field.malformed_json": {
     "description": "Error shown next to or about one request field when the server reports the field-error code `malformed_json`. Clients show it instead of the server's English detail in a translated interface."
   },
+  "error.field.managed_by_environment": "Set by the node’s environment. Change it there and restart the node.",
+  "@error.field.managed_by_environment": {
+    "description": "Error shown next to or about one request field when the server reports the field-error code `managed_by_environment`: an administrator tried to change a stream node setting that the node itself declares from its environment variables on the server it runs on. Clients show it instead of the server's English detail in a translated interface."
+  },
   "error.field.out_of_range": "This value is out of range.",
   "@error.field.out_of_range": {
     "description": "Error shown next to or about one request field when the server reports the field-error code `out_of_range`. Clients show it instead of the server's English detail in a translated interface."
@@ -85731,6 +85735,13 @@
         "type": "String"
       }
     },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.nodes.form.envManaged": "Set by this node’s environment. Change it there and restart the node.",
+  "@web.admin.nodes.form.envManaged": {
+    "description": "Web admin, Stream Nodes page: node dialog: note under a field the node declares from its own environment variables, which is shown read-only. The administrator changes it in the node's environment (its environment file or container settings) and restarts the node.",
     "x-platforms": [
       "web"
     ]
