@@ -95636,13 +95636,6 @@
       "web"
     ]
   },
-  "web.admin.settings.general.network.trustedProxies.managed": "Managed by SILO_TRUSTED_PROXIES.",
-  "@web.admin.settings.general.network.trustedProxies.managed": {
-    "description": "Web admin, General settings page: shown under Trusted proxies when an environment variable sets them. SILO_TRUSTED_PROXIES is the variable name; keep it as it is.",
-    "x-platforms": [
-      "web"
-    ]
-  },
   "web.admin.settings.general.title": "General",
   "@web.admin.settings.general.title": {
     "description": "Web admin, General settings page: page heading.",
@@ -101629,13 +101622,6 @@
       "web"
     ]
   },
-  "web.admin.settings.redis.setByEnv": "Set by REDIS_URL",
-  "@web.admin.settings.redis.setByEnv": {
-    "description": "Web admin, General settings page, Redis group: shown under a Redis field when the REDIS_URL environment variable sets it. REDIS_URL is the variable name; keep it as it is.",
-    "x-platforms": [
-      "web"
-    ]
-  },
   "web.admin.settings.redis.unavailable.description": "Protected credential status could not be loaded. Reload this page to edit Redis.",
   "@web.admin.settings.redis.unavailable.description": {
     "description": "Web admin, General settings page: body of the alert shown instead of the Redis group when credential status failed to load.",
@@ -101653,13 +101639,6 @@
   "web.admin.settings.redis.url.label": "Connection URL",
   "@web.admin.settings.redis.url.label": {
     "description": "Web admin, General settings page, Redis group: label of the Redis connection URL field.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.redis.url.managed": "Value supplied by REDIS_URL",
-  "@web.admin.settings.redis.url.managed": {
-    "description": "Web admin, General settings page, Redis group: placeholder in the connection URL field when the REDIS_URL environment variable sets it. REDIS_URL is the variable name; keep it as it is.",
     "x-platforms": [
       "web"
     ]
@@ -106378,18 +106357,6 @@
   "web.admin.settings.search.logging.setting.serverLog": "Server log",
   "@web.admin.settings.search.logging.setting.serverLog": {
     "description": "Web admin, settings search: a group heading or setting on the Logging settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.search.managedByEnv": "Managed by {env}.",
-  "@web.admin.settings.search.managedByEnv": {
-    "description": "Web admin, Search settings page: shown on a search field set by an environment variable. {env}: the variable's name, such as SILO_SEARCH_PROVIDER.",
-    "placeholders": {
-      "env": {
-        "type": "String"
-      }
-    },
     "x-platforms": [
       "web"
     ]
@@ -167237,13 +167204,6 @@
       "web"
     ]
   },
-  "web.setup.server.trustedProxiesManaged": "Set by SILO_TRUSTED_PROXIES in the environment.",
-  "@web.setup.server.trustedProxiesManaged": {
-    "description": "Web first-run setup wizard, server step: help text under trusted proxies when an environment variable sets them. SILO_TRUSTED_PROXIES is a variable name; do not translate.",
-    "x-platforms": [
-      "web"
-    ]
-  },
   "web.setup.storage.accessKeyLabel": "Access key",
   "@web.setup.storage.accessKeyLabel": {
     "description": "Web first-run setup wizard, storage step: label of an S3 access key setting.",
@@ -167534,13 +167494,6 @@
   "web.setup.storage.redisDbLabel": "Database number",
   "@web.setup.storage.redisDbLabel": {
     "description": "Web first-run setup wizard, storage step: label of the Redis database number setting.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.setup.storage.redisDbManaged": "Set by REDIS_URL",
-  "@web.setup.storage.redisDbManaged": {
-    "description": "Web first-run setup wizard, storage step: help text under the Redis database number when an environment variable sets it. REDIS_URL is a variable name; do not translate.",
     "x-platforms": [
       "web"
     ]
