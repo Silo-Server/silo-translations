@@ -136811,6 +136811,13 @@
       "web"
     ]
   },
+  "web.home.addRow.collection.library": "Library",
+  "@web.home.addRow.collection.library": {
+    "description": "Web: Add row dialog, collection pickers, accessible name of the dropdown that filters collections by library. Shown only when the collections come from more than one library.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.home.addRow.collection.loading": "Loading collections…",
   "@web.home.addRow.collection.loading": {
     "description": "Web: Add row dialog, collection row, shown in the collection list while it loads.",
@@ -136855,6 +136862,13 @@
   "web.home.addRow.collection.none": "No collections yet. Make one in Collections first.",
   "@web.home.addRow.collection.none": {
     "description": "Web: Add row dialog, collection row, shown when the user has no collections. 'Collections' is the Collections page.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.home.addRow.collection.noneInLibrary": "No collections of this type in this library.",
+  "@web.home.addRow.collection.noneInLibrary": {
+    "description": "Web: Add row dialog, collection pickers, shown when the picked library and type filters (Manual, Smart, Synced list) together match no collection.",
     "x-platforms": [
       "web"
     ]
