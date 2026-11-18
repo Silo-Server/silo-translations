@@ -160339,6 +160339,13 @@
       "web"
     ]
   },
+  "web.settings.offlineChangeNotSaved": "You're offline, so this change wasn't saved",
+  "@web.settings.offlineChangeNotSaved": {
+    "description": "Web: error toast when the user changes a preference that saves in the background (card badges, date and time format, search scope, a tour setting) while the browser is offline. The change is shown at once but could not be saved.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.settings.overlays.accent.amber": "Amber",
   "@web.settings.overlays.accent.amber": {
     "description": "Web Settings → Navigation & Cards → Badges, and admin Settings → Appearance: name of an accent colour swatch in a badge's Adjust menu (tooltip and accessible name).",
