@@ -104453,6 +104453,12 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.notifications.inbox.destinationStopped": {
+    "source": "24de6256cddbfcd5",
+    "value": "f09f030bf8359c26",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.notifications.inbox.emptyAll": {
     "source": "1f8b92b7b2fca20a",
     "value": "c50d5eda78083071",
@@ -104522,6 +104528,12 @@
   "web.notifications.inbox.filterUnreadCount": {
     "source": "65c70c76309061ab",
     "value": "44de6daa5f393023",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.notifications.inbox.fixInSettings": {
+    "source": "9828f2127b6776ca",
+    "value": "9974be4fb9cab034",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -104720,6 +104732,12 @@
   "web.notifications.inbox.watchlistTitleAvailable": {
     "source": "f737a6dc1feda75e",
     "value": "d3ca9d29a2e3eb56",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.notifications.inbox.webhookStopped": {
+    "source": "ac63300cd46dd7df",
+    "value": "e7604c6addf142c7",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -114302,6 +114320,174 @@
   "web.settings.notInterestedList.title": {
     "source": "39a5f6e5fc5588f5",
     "value": "5f86c984357f7faf",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.settings.notifications.destinations.add": {
+    "source": "56b9c6a5db8f5664",
+    "value": "77c915760b4848cf",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.settings.notifications.destinations.addSubmit": {
+    "source": "1117941c993c363c",
+    "value": "864282b76c39e674",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.settings.notifications.destinations.addTitle": {
+    "source": "0ae591a4c5d20c6e",
+    "value": "c7cb1e0205ff5116",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.settings.notifications.destinations.added": {
+    "source": "8f6a7d5712dd40b9",
+    "value": "1f2bdce058061448",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.settings.notifications.destinations.createInProgress": {
+    "source": "5f6a9f21b480b742",
+    "value": "263df5e7ad59d9c2",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.settings.notifications.destinations.deleteDescription": {
+    "source": "caca98f267d51d58",
+    "value": "ab3e6421d4079221",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.settings.notifications.destinations.deleteFailed": {
+    "source": "540e1966923d306f",
+    "value": "283e0611df109df5",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.settings.notifications.destinations.deleted": {
+    "source": "e9ec86372ae55da3",
+    "value": "bbb9bd3190017aea",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.settings.notifications.destinations.description": {
+    "source": "ffa253a8b5b8b5f5",
+    "value": "55ff0838e4fc32c2",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.settings.notifications.destinations.dialogDescription": {
+    "source": "838ae36bf942ce97",
+    "value": "d42db8d495b35ac7",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.settings.notifications.destinations.empty": {
+    "source": "3077e93791908acf",
+    "value": "0621417155e8659a",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.settings.notifications.destinations.kind": {
+    "source": "e907a962281ac3db",
+    "value": "cbd63e02e4b74ab4",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.settings.notifications.destinations.lastFailure": {
+    "source": "5044edc999527c38",
+    "value": "f3c6dc5948a34809",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.settings.notifications.destinations.lastFailureAt": {
+    "source": "e83f7baf270e5e3d",
+    "value": "9ad334323013661d",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.settings.notifications.destinations.lastFailureAtUnknown": {
+    "source": "55f1329b6584e8c3",
+    "value": "e9d3318d6dd05a95",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.settings.notifications.destinations.lastFailureUnknown": {
+    "source": "cdc53c60965a1cfd",
+    "value": "3ee1a4dbd57adf26",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.settings.notifications.destinations.limit": {
+    "source": "d7ab00cafbb3fb05",
+    "value": "76844a3930ebe8aa",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.settings.notifications.destinations.reloadBeforeDelete": {
+    "source": "fa4cfec3dd6f9a45",
+    "value": "0b35006e01c5fa9b",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.settings.notifications.destinations.reloadBeforeEdit": {
+    "source": "18bf6c163fb10001",
+    "value": "58a711a679d611ff",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.settings.notifications.destinations.saveFailed": {
+    "source": "a6bca5d2b4d8f55e",
+    "value": "12cbc9181600566f",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.settings.notifications.destinations.secretsKept": {
+    "source": "ccab9f5706f1331c",
+    "value": "431a1ea0956ad867",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.settings.notifications.destinations.testInProgress": {
+    "source": "e6adbb872a124a57",
+    "value": "374eb62959044982",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.settings.notifications.destinations.testResult": {
+    "source": "c16f423aa34d8c88",
+    "value": "5cf780adefcd9496",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.settings.notifications.destinations.testResultDetail": {
+    "source": "fc1f84c04f28bd0e",
+    "value": "48c24ade4636d45e",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.settings.notifications.destinations.title": {
+    "source": "667fcc4d40eda941",
+    "value": "d894c39ade268fc0",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.settings.notifications.destinations.unavailable": {
+    "source": "366918cfd2281bc0",
+    "value": "5157d1b5707013a2",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.settings.notifications.destinations.unavailableNote": {
+    "source": "baf57249b3e9b102",
+    "value": "0e2d498026976104",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.settings.notifications.destinations.updateFailed": {
+    "source": "41fa0820d1e47418",
+    "value": "8cd0f6d3455b63db",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
