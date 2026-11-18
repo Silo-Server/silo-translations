@@ -95453,6 +95453,19 @@
       "web"
     ]
   },
+  "web.admin.settings.fields.managedByEnv": "Set by {env} in the server’s environment.",
+  "@web.admin.settings.fields.managedByEnv": {
+    "description": "Web admin settings pages and first-run setup wizard: shown under any setting an environment variable sets, whose control is then read-only. {env}: the variable's name, such as SILO_PUBLIC_URL; it stays as it is.",
+    "placeholders": {
+      "env": {
+        "type": "String",
+        "example": "SILO_PUBLIC_URL"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.settings.fields.passwordConfigured": "configured",
   "@web.admin.settings.fields.passwordConfigured": {
     "description": "Web admin, settings pages: placeholder in a password setting's empty field when a value is already saved on the server.",
