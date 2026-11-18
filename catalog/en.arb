@@ -146198,6 +146198,13 @@
       "web"
     ]
   },
+  "web.notifications.inbox.destinationStopped": "A notification destination stopped working",
+  "@web.notifications.inbox.destinationStopped": {
+    "description": "Web notification inbox: title of the notice that one of the profile's plugin notification destinations (such as ntfy) was turned off after repeated failed deliveries.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.notifications.inbox.emptyAll": "No notifications yet",
   "@web.notifications.inbox.emptyAll": {
     "description": "Web Notifications page: empty state when the profile has no notifications.",
@@ -146318,6 +146325,13 @@
         "type": "String"
       }
     },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.inbox.fixInSettings": "Open notification settings to fix it.",
+  "@web.notifications.inbox.fixInSettings": {
+    "description": "Web notification inbox: line under the notice that a webhook or notification destination stopped working; the row links to notification settings.",
     "x-platforms": [
       "web"
     ]
@@ -146580,6 +146594,13 @@
   "web.notifications.inbox.watchlistTitleAvailable": "A title on your watchlist is now available",
   "@web.notifications.inbox.watchlistTitleAvailable": {
     "description": "Web Notifications page: body of a notification that a title of unknown media type on the profile's watchlist has arrived; also the web toast title when the title's name is missing.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.notifications.inbox.webhookStopped": "A webhook stopped working",
+  "@web.notifications.inbox.webhookStopped": {
+    "description": "Web notification inbox: title of the notice that one of the profile's webhooks was turned off after repeated failed deliveries.",
     "x-platforms": [
       "web"
     ]
@@ -159368,6 +159389,246 @@
   "web.settings.notInterestedList.title": "Not interested",
   "@web.settings.notInterestedList.title": {
     "description": "Web Settings → Not interested list: heading of the list of titles the profile marked Not interested.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.notifications.destinations.add": "Add destination",
+  "@web.settings.notifications.destinations.add": {
+    "description": "Web Settings → Notifications: Other destinations (notification destinations that plugins provide, such as ntfy or Pushover): button that opens the dialog for adding a destination.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.notifications.destinations.addSubmit": "Add",
+  "@web.settings.notifications.destinations.addSubmit": {
+    "description": "Web Settings → Notifications: Other destinations (notification destinations that plugins provide, such as ntfy or Pushover): destination dialog: button that adds the destination.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.notifications.destinations.addTitle": "Add a notification destination",
+  "@web.settings.notifications.destinations.addTitle": {
+    "description": "Web Settings → Notifications: Other destinations (notification destinations that plugins provide, such as ntfy or Pushover): title of the dialog when adding a destination.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.notifications.destinations.added": "\"{name}\" added",
+  "@web.settings.notifications.destinations.added": {
+    "description": "Web Settings → Notifications: Other destinations (notification destinations that plugins provide, such as ntfy or Pushover): toast after adding a destination. {name}: the destination's name.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.notifications.destinations.createInProgress": "Destination creation is already in progress.",
+  "@web.settings.notifications.destinations.createInProgress": {
+    "description": "Web Settings → Notifications: Other destinations (notification destinations that plugins provide, such as ntfy or Pushover): error toast when the add button is pressed again while a destination is still being added.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.notifications.destinations.deleteDescription": "Notifications will stop going to this destination. This cannot be undone.",
+  "@web.settings.notifications.destinations.deleteDescription": {
+    "description": "Web Settings → Notifications: Other destinations (notification destinations that plugins provide, such as ntfy or Pushover): description of the dialog that confirms deleting a destination.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.notifications.destinations.deleteFailed": "Failed to delete destination",
+  "@web.settings.notifications.destinations.deleteFailed": {
+    "description": "Web Settings → Notifications: Other destinations (notification destinations that plugins provide, such as ntfy or Pushover): error toast when deleting a destination fails without a message from the server.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.notifications.destinations.deleted": "Destination deleted",
+  "@web.settings.notifications.destinations.deleted": {
+    "description": "Web Settings → Notifications: Other destinations (notification destinations that plugins provide, such as ntfy or Pushover): toast after deleting a destination.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.notifications.destinations.description": "Send this profile's notifications to services your server's plugins support.",
+  "@web.settings.notifications.destinations.description": {
+    "description": "Web Settings → Notifications: Other destinations (notification destinations that plugins provide, such as ntfy or Pushover): section description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.notifications.destinations.dialogDescription": "Choose where this profile's notifications go.",
+  "@web.settings.notifications.destinations.dialogDescription": {
+    "description": "Web Settings → Notifications: Other destinations (notification destinations that plugins provide, such as ntfy or Pushover): destination dialog: description shown when the plugin gives none of its own.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.notifications.destinations.empty": "No destinations yet.",
+  "@web.settings.notifications.destinations.empty": {
+    "description": "Web Settings → Notifications: Other destinations (notification destinations that plugins provide, such as ntfy or Pushover): shown when the profile has no destinations.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.notifications.destinations.kind": "Kind",
+  "@web.settings.notifications.destinations.kind": {
+    "description": "Web Settings → Notifications: Other destinations (notification destinations that plugins provide, such as ntfy or Pushover): destination dialog: label of the picker for the kind of destination (one per plugin channel, such as ntfy).",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.notifications.destinations.lastFailure": "Last failure: {message}",
+  "@web.settings.notifications.destinations.lastFailure": {
+    "description": "Web Settings → Notifications: Other destinations (notification destinations that plugins provide, such as ntfy or Pushover): destination card: the last delivery failed. {message}: the plugin's error message.",
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.notifications.destinations.lastFailureAt": "Last failure {when}: {message}",
+  "@web.settings.notifications.destinations.lastFailureAt": {
+    "description": "Web Settings → Notifications: Other destinations (notification destinations that plugins provide, such as ntfy or Pushover): destination card: the last delivery failed. {when}: relative time; {message}: the plugin's error message.",
+    "placeholders": {
+      "when": {
+        "type": "String"
+      },
+      "message": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.notifications.destinations.lastFailureAtUnknown": "Last failure {when}: the plugin couldn't send",
+  "@web.settings.notifications.destinations.lastFailureAtUnknown": {
+    "description": "Web Settings → Notifications: Other destinations (notification destinations that plugins provide, such as ntfy or Pushover): destination card: the last delivery failed and the plugin gave no reason. {when}: relative time.",
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.notifications.destinations.lastFailureUnknown": "Last failure: the plugin couldn't send",
+  "@web.settings.notifications.destinations.lastFailureUnknown": {
+    "description": "Web Settings → Notifications: Other destinations (notification destinations that plugins provide, such as ntfy or Pushover): destination card: the last delivery failed and the plugin gave no reason.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.notifications.destinations.limit": "{count, plural, one {Limit of {count_text} destination reached} other {Limit of {count_text} destinations reached}}",
+  "@web.settings.notifications.destinations.limit": {
+    "description": "Web Settings → Notifications: Other destinations (notification destinations that plugins provide, such as ntfy or Pushover): note beside Add destination at the limit. {count}: the most destinations a profile may have. {count_text}: the same number, as written.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.notifications.destinations.reloadBeforeDelete": "Reload the destination list before deleting this destination.",
+  "@web.settings.notifications.destinations.reloadBeforeDelete": {
+    "description": "Web Settings → Notifications: Other destinations (notification destinations that plugins provide, such as ntfy or Pushover): error toast when a destination can't be deleted because the page holds no current version of it.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.notifications.destinations.reloadBeforeEdit": "Reload the destination list before editing this destination.",
+  "@web.settings.notifications.destinations.reloadBeforeEdit": {
+    "description": "Web Settings → Notifications: Other destinations (notification destinations that plugins provide, such as ntfy or Pushover): error toast when a destination can't be edited because the page holds no current version of it.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.notifications.destinations.saveFailed": "The destination couldn't be saved",
+  "@web.settings.notifications.destinations.saveFailed": {
+    "description": "Web Settings → Notifications: Other destinations (notification destinations that plugins provide, such as ntfy or Pushover): destination dialog: error toast when saving fails without a message from the server.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.notifications.destinations.secretsKept": "Secret fields you leave blank keep their saved values.",
+  "@web.settings.notifications.destinations.secretsKept": {
+    "description": "Web Settings → Notifications: Other destinations (notification destinations that plugins provide, such as ntfy or Pushover): destination dialog when editing: note under the plugin's settings fields about secret fields (passwords, tokens).",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.notifications.destinations.testInProgress": "A test message is already being sent.",
+  "@web.settings.notifications.destinations.testInProgress": {
+    "description": "Web Settings → Notifications: Other destinations (notification destinations that plugins provide, such as ntfy or Pushover): error toast when Test is pressed again while a test message is still being sent.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.notifications.destinations.testResult": "{outcome, select, ok {Test sent} other {Test failed}}",
+  "@web.settings.notifications.destinations.testResult": {
+    "description": "Web Settings → Notifications: Other destinations (notification destinations that plugins provide, such as ntfy or Pushover): destination card: result of a test message. {outcome}: ok or failed.",
+    "placeholders": {
+      "outcome": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.notifications.destinations.testResultDetail": "{outcome, select, ok {Test sent: {message}} other {Test failed: {message}}}",
+  "@web.settings.notifications.destinations.testResultDetail": {
+    "description": "Web Settings → Notifications: Other destinations (notification destinations that plugins provide, such as ntfy or Pushover): destination card: result of a test message with the plugin's message. {outcome}: ok or failed; {message}: the plugin's message.",
+    "placeholders": {
+      "outcome": {
+        "type": "String"
+      },
+      "message": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.notifications.destinations.title": "Other destinations",
+  "@web.settings.notifications.destinations.title": {
+    "description": "Web Settings → Notifications: Other destinations (notification destinations that plugins provide, such as ntfy or Pushover): section title.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.notifications.destinations.unavailable": "Unavailable",
+  "@web.settings.notifications.destinations.unavailable": {
+    "description": "Web Settings → Notifications: Other destinations (notification destinations that plugins provide, such as ntfy or Pushover): destination card: badge shown in place of the kind when the plugin that provides it is off or removed.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.notifications.destinations.unavailableNote": "The plugin that provides this destination is turned off or removed, so nothing is sent.",
+  "@web.settings.notifications.destinations.unavailableNote": {
+    "description": "Web Settings → Notifications: Other destinations (notification destinations that plugins provide, such as ntfy or Pushover): destination card: note shown when the plugin that provides the destination is off or removed.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.notifications.destinations.updateFailed": "Failed to update",
+  "@web.settings.notifications.destinations.updateFailed": {
+    "description": "Web Settings → Notifications: Other destinations (notification destinations that plugins provide, such as ntfy or Pushover): destination card: error toast when turning a destination on or off fails without a message from the server.",
     "x-platforms": [
       "web"
     ]
