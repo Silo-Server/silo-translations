@@ -14484,9 +14484,9 @@
   "@error.field.malformed_json": {
     "description": "Error shown next to or about one request field when the server reports the field-error code `malformed_json`. Clients show it instead of the server's English detail in a translated interface."
   },
-  "error.field.managed_by_environment": "Set by the node’s environment. Change it there and restart the node.",
+  "error.field.managed_by_environment": "Set by the environment. Change it there and restart the affected service.",
   "@error.field.managed_by_environment": {
-    "description": "Error shown next to or about one request field when the server reports the field-error code `managed_by_environment`: an administrator tried to change a stream node setting that the node itself declares from its environment variables on the server it runs on. Clients show it instead of the server's English detail in a translated interface."
+    "description": "Field error when an administrator tries to edit a plugin or stream node setting that the deployment controls through environment configuration."
   },
   "error.field.out_of_range": "This value is out of range.",
   "@error.field.out_of_range": {
@@ -88797,6 +88797,74 @@
     "x-platforms": [
       "web"
     ]
+  },
+  "web.admin.plugins.provisioning.applied": "Applied",
+  "@web.admin.plugins.provisioning.applied": {
+    "description": "Status of a declared plugin whose provisioning took effect.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.plugins.provisioning.held": "Held",
+  "@web.admin.plugins.provisioning.held": {
+    "description": "Status of a declared plugin whose provisioning is held by recovery policy.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.plugins.provisioning.loadError": "Couldn’t load plugin provisioning status.",
+  "@web.admin.plugins.provisioning.loadError": {
+    "description": "Error shown on the admin Plugins page when the server cannot read declaration status.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.plugins.provisioning.managed": "Managed by the environment",
+  "@web.admin.plugins.provisioning.managed": {
+    "description": "Label next to a plugin or a plugin setting controlled by the deployment environment.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.plugins.provisioning.pending": "Pending",
+  "@web.admin.plugins.provisioning.pending": {
+    "description": "Status of a declared plugin whose provisioning is waiting to finish.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.plugins.provisioning.refused": "Refused",
+  "@web.admin.plugins.provisioning.refused": {
+    "description": "Status of a declared plugin whose provisioning was rejected.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.plugins.provisioning.sourceManaged": "The deployment controls the package source and removal.",
+  "@web.admin.plugins.provisioning.sourceManaged": {
+    "description": "Notice on an installed plugin page explaining why its source and uninstall controls are unavailable.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.plugins.provisioning.title": "Provisioning status",
+  "@web.admin.plugins.provisioning.title": {
+    "description": "Heading for status of plugins declared in the deployment environment.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.plugins.provisioning.versionPinned": "The deployment pins this plugin to {version}.",
+  "@web.admin.plugins.provisioning.versionPinned": {
+    "description": "Notice on an installed plugin page. The version placeholder is the exact package version requested by the deployment.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
   },
   "web.admin.plugins.rail.about": "About",
   "@web.admin.plugins.rail.about": {
