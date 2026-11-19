@@ -19044,16 +19044,18 @@
   },
   "newProfile.requestsAllowed": "Allow requests",
   "@newProfile.requestsAllowed": {
-    "description": "Apple (iPhone, iPad, Mac, Apple TV): switch on the New Profile form that lets the profile request titles that are not in the library.",
+    "description": "Apple (iPhone, iPad, Mac, Apple TV): switch on the New Profile form that lets the profile request titles that are not in the library. Android phone and TV: same switch on the profile form (create and edit).",
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "newProfile.requestsAllowedHelp": "Lets this profile browse titles that are not in the library and request them. The content rating limits those titles by their US rating only, and the advisory-age limit does not apply to them.",
   "@newProfile.requestsAllowedHelp": {
-    "description": "Apple (iPhone, iPad, Mac, Apple TV): help text under the Allow requests switch on the New Profile form.",
+    "description": "Apple (iPhone, iPad, Mac, Apple TV): help text under the Allow requests switch on the New Profile form. Android phone and TV: same help text under that switch on the profile form (create and edit).",
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "newProfile.restrict": "Restrict libraries",
