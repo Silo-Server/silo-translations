@@ -16536,6 +16536,14 @@
   "@home.section.discoverPopularSeries": {
     "description": "Title of the built-in `popular_series` row on the Requests Discover page (shared title key `home.section.discoverPopularSeries` from title_key on the Discover layout rows). Shown as the row heading on every client, and in the admin Discover layout editor, while the row still has its default title. A row of titles. The same page has a separate \"Trending Series\" row, so the two headings must read differently."
   },
+  "home.section.discoverRecommendedMovies": "Recommended movies for you",
+  "@home.section.discoverRecommendedMovies": {
+    "description": "Title of the default `recommended_movies` row on the Requests Discover page (shared title key `home.section.discoverRecommendedMovies` from title_key on the Discover layout rows). Shown as the row heading on every client, and in the admin Discover layout editor, while the row still has its default title. A row of movies the server does not have, recommended to the viewer from what they watched. Sentence case, unlike the built-in Discover rows."
+  },
+  "home.section.discoverRecommendedSeries": "Recommended series for you",
+  "@home.section.discoverRecommendedSeries": {
+    "description": "Title of the default `recommended_series` row on the Requests Discover page (shared title key `home.section.discoverRecommendedSeries` from title_key on the Discover layout rows). Shown as the row heading on every client, and in the admin Discover layout editor, while the row still has its default title. A row of TV series the server does not have, recommended to the viewer from what they watched. Sentence case, unlike the built-in Discover rows."
+  },
   "home.section.discoverStudios": "Studios",
   "@home.section.discoverStudios": {
     "description": "Title of the built-in `studios` row on the Requests Discover page (shared title key `home.section.discoverStudios` from title_key on the Discover layout rows). Shown as the row heading on every client, and in the admin Discover layout editor, while the row still has its default title. A carousel of studio cards."
@@ -89504,6 +89512,80 @@
       "web"
     ]
   },
+  "web.admin.recommendations.external.budgetExhausted": "Reached the limit for one run; the next run continues.",
+  "@web.admin.recommendations.external.budgetExhausted": {
+    "description": "Web admin, Recommendations page, Discover Recommendations job card: shown when the last run stopped because it reached its limit of TMDB requests or embeddings for one run.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.recommendations.external.lastRunCounts": "Titles looked up: {details} · Embedded: {vectors} · TMDB requests: {requests}",
+  "@web.admin.recommendations.external.lastRunCounts": {
+    "description": "Web admin, Recommendations page, Discover Recommendations job card: what the last run did, under its time. {details}: title details fetched from TMDB; {vectors}: embedding vectors stored; {requests}: requests sent to TMDB. Each is a formatted number.",
+    "placeholders": {
+      "details": {
+        "type": "String"
+      },
+      "vectors": {
+        "type": "String"
+      },
+      "requests": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.recommendations.external.off": "Off. Runs only clear out old titles.",
+  "@web.admin.recommendations.external.off": {
+    "description": "Web admin, Recommendations page, Discover Recommendations job card: note while Discover recommendations are turned off.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.recommendations.external.rowsBuilt": "{count, plural, one {{count_text} row built} other {{count_text} rows built}}",
+  "@web.admin.recommendations.external.rowsBuilt": {
+    "description": "Web admin, Recommendations page, Discover Recommendations job card: how many recommendation rows are stored, one per profile and media type. {count}: the number (selects the plural). {count_text}: the same number, formatted.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.recommendations.external.titlesStored": "{count, plural, one {{count_text} title to recommend from} other {{count_text} titles to recommend from}}",
+  "@web.admin.recommendations.external.titlesStored": {
+    "description": "Web admin, Recommendations page, Discover Recommendations job card: how many titles the server doesn't have it keeps for recommendations. {count}: the number (selects the plural). {count_text}: the same number, formatted.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.recommendations.external.vectorsSkipped": "Nothing embedded: {reason}",
+  "@web.admin.recommendations.external.vectorsSkipped": {
+    "description": "Web admin, Recommendations page, Discover Recommendations job card: why the last run stored no embedding vectors. {reason}: the server's explanation, in English (not translated).",
+    "placeholders": {
+      "reason": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.recommendations.jobs.cacheRefreshed": "Newest cached row written {when}",
   "@web.admin.recommendations.jobs.cacheRefreshed": {
     "description": "Web admin, Recommendations page: note on the recommendations card. {when}: how long ago, such as 5 minutes ago.",
@@ -89541,6 +89623,13 @@
         "type": "String"
       }
     },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.recommendations.jobs.external": "Discover Recommendations",
+  "@web.admin.recommendations.jobs.external": {
+    "description": "Web admin, Recommendations page: title of the job card for recommending titles that aren't in the library yet on the Requests Discover page. Title case like the other job cards.",
     "x-platforms": [
       "web"
     ]
@@ -89676,6 +89765,13 @@
       "web"
     ]
   },
+  "web.admin.recommendations.jobs.triggerExternalFailed": "Failed to trigger Discover recommendations",
+  "@web.admin.recommendations.jobs.triggerExternalFailed": {
+    "description": "Web admin, Recommendations page: error toast when starting the Discover recommendations job failed.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.recommendations.jobs.triggerRecommendationsFailed": "Failed to trigger recommendations",
   "@web.admin.recommendations.jobs.triggerRecommendationsFailed": {
     "description": "Web admin, Recommendations page: error toast when starting the recommendations job fails without error text.",
@@ -89803,9 +89899,60 @@
       "web"
     ]
   },
+  "web.admin.recommendations.reset.doneWithExternal": "Embeddings reset: deleted {embeddings}, {external_embeddings} and {external_rows}, and cleared {profiles}.",
+  "@web.admin.recommendations.reset.doneWithExternal": {
+    "description": "Web admin, Recommendations page: toast after resetting embeddings. {embeddings}: how many item embeddings were deleted, such as 1,200 embeddings. {external_embeddings}: how many Discover embeddings were deleted, such as 300 Discover embeddors. {external_rows}: how many Discover rows were deleted, such as 4 Discover rows. {profiles}: how many taste profiles were cleared, such as 3 taste profiles.",
+    "placeholders": {
+      "embeddings": {
+        "type": "String"
+      },
+      "external_embeddings": {
+        "type": "String"
+      },
+      "external_rows": {
+        "type": "String"
+      },
+      "profiles": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.recommendations.reset.embeddingCount": "{count, plural, one {{count_text} embedding} other {{count_text} embeddings}}",
   "@web.admin.recommendations.reset.embeddingCount": {
     "description": "Web admin, Recommendations page: a number of embeddings, used inside the reset toast. {count}: the number (selects the plural). {count_text}: the same number, formatted.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.recommendations.reset.externalEmbeddingCount": "{count, plural, one {{count_text} Discover embedding} other {{count_text} Discover embeddings}}",
+  "@web.admin.recommendations.reset.externalEmbeddingCount": {
+    "description": "Web admin, Recommendations page: a number of embedding vectors of titles the server doesn't have, used inside the reset toast. {count}: the number (selects the plural). {count_text}: the same number, formatted.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.recommendations.reset.externalRowCount": "{count, plural, one {{count_text} Discover row} other {{count_text} Discover rows}}",
+  "@web.admin.recommendations.reset.externalRowCount": {
+    "description": "Web admin, Recommendations page: a number of profiles' stored rows of Discover recommendations, used inside the reset toast. {count}: the number (selects the plural). {count_text}: the same number, formatted.",
     "placeholders": {
       "count": {
         "type": "int"
@@ -90320,6 +90467,18 @@
       "web"
     ]
   },
+  "web.admin.requests.discover.describe.recommended": "{media, select, series {Recommended series for each viewer} other {Recommended movies for each viewer}}",
+  "@web.admin.requests.discover.describe.recommended": {
+    "description": "Web admin, Requests > Discover Page: what a recommendations row shows, in the row list and on its card in the Add row / Edit row dialog. {media}: series for a series row; other values mean a movie row.",
+    "placeholders": {
+      "media": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.requests.discover.fieldError": "{field}: {detail}",
   "@web.admin.requests.discover.fieldError": {
     "description": "Web admin, Requests > Discover Page: row dialog, one error the server gave for a field of the row. {field}: the field's API name with spaces for underscores (\"list.url\"), not translated. {detail}: the server's error text, not translated.",
@@ -90373,6 +90532,20 @@
   "web.admin.requests.discover.kind.networks.sentence": "Network cards, each opening the network's series.",
   "@web.admin.requests.discover.kind.networks.sentence": {
     "description": "Web admin, Requests > Discover Page: one-line explanation of the Networks row type.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.requests.discover.kind.recommended.label": "Recommendations",
+  "@web.admin.requests.discover.kind.recommended.label": {
+    "description": "Web admin, Requests > Discover Page: name of the row type that shows each viewer's own recommendations of titles the server doesn't have.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.requests.discover.kind.recommended.sentence": "Titles that aren't in the library yet, picked for each viewer from what they watch.",
+  "@web.admin.requests.discover.kind.recommended.sentence": {
+    "description": "Web admin, Requests > Discover Page: one-line explanation of the recommendations row type. Every viewer sees their own titles in it.",
     "x-platforms": [
       "web"
     ]
@@ -90579,6 +90752,13 @@
   "web.admin.requests.discover.problem.noRegion": "Choose the region the streaming services are in.",
   "@web.admin.requests.discover.problem.noRegion": {
     "description": "Web admin, Requests > Discover Page: row dialog, why a filter row can't be saved or previewed yet: streaming services are picked but no region is set.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.requests.discover.recommendedOff": "Stays empty until Discover recommendations are turned on in Admin → Recommendations.",
+  "@web.admin.requests.discover.recommendedOff": {
+    "description": "Web admin, Requests > Discover Page: warning on a recommendations row, in the row list and in its dialog, while the server serves no such rows. Admin → Recommendations is the page's place in the admin menu.",
     "x-platforms": [
       "web"
     ]
@@ -91975,6 +92155,13 @@
   "web.admin.requests.rowDialog.livePreviewList": "Live preview of the list",
   "@web.admin.requests.rowDialog.livePreviewList": {
     "description": "Web admin, Requests > Discover Page, Add row / Edit row dialog: label over the preview strip of a list row.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.requests.rowDialog.livePreviewRecommended": "Preview of your own recommendations",
+  "@web.admin.requests.rowDialog.livePreviewRecommended": {
+    "description": "Web admin, Requests > Discover Page, Add row / Edit row dialog: label over the preview strip of a recommendations row, which shows the administrator's own recommended titles.",
     "x-platforms": [
       "web"
     ]
@@ -101538,6 +101725,41 @@
       "web"
     ]
   },
+  "web.admin.settings.recommendations.external.enabled": "Enable Discover Recommendations",
+  "@web.admin.settings.recommendations.external.enabled": {
+    "description": "Web admin, Recommendations page, Discover Recommendations section: label of the switch that turns Discover recommendations on, worded like Enable Recommendations. Title case like the other setting labels.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.recommendations.external.enabledHint": "Adds personal rows to Requests Discover with titles that aren't in the library yet. Uses the embedding provider and TMDB.",
+  "@web.admin.settings.recommendations.external.enabledHint": {
+    "description": "Web admin, Recommendations page, Discover Recommendations section: help under the switch, saying what turning it on does. Discover is the Requests page's tab; TMDB is The Movie Database, a product name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.recommendations.external.maxTitles": "Maximum Titles to Recommend From",
+  "@web.admin.settings.recommendations.external.maxTitles": {
+    "description": "Web admin, Recommendations page, Discover Recommendations section: label of the number field for how many titles that aren't in the library the server keeps to recommend from. Title case like the other setting labels.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.recommendations.external.maxTitlesHint": "How many titles that aren't in the library the server keeps to recommend from. Each one is looked up on TMDB and embedded. Embedding is usually cheap, but a higher number can cost more or take longer depending on your embedding provider, and uses more storage.",
+  "@web.admin.settings.recommendations.external.maxTitlesHint": {
+    "description": "Web admin, Recommendations page, Discover Recommendations section: help under the maximum titles field. Tells the administrator that every title kept is fetched from TMDB and embedded with their embedding provider, so raising the number raises embedding cost or run time as well as storage. TMDB is The Movie Database, a product name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.recommendations.external.title": "Discover Recommendations",
+  "@web.admin.settings.recommendations.external.title": {
+    "description": "Web admin, Recommendations page: title of the settings section for recommending titles that aren't in the library yet on the Requests Discover page. Title case like the other section titles.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.settings.recommendations.general.enabled": "Enable Recommendations",
   "@web.admin.settings.recommendations.general.enabled": {
     "description": "Web admin, Recommendations page: label of the switch that turns recommendations on.",
@@ -101569,6 +101791,13 @@
   "web.admin.settings.recommendations.schedule.embeddingsCron": "Embeddings Cron",
   "@web.admin.settings.recommendations.schedule.embeddingsCron": {
     "description": "Web admin, Recommendations page: label of the schedule for building embeddings.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.recommendations.schedule.externalCron": "Discover Recommendations Cron",
+  "@web.admin.settings.recommendations.schedule.externalCron": {
+    "description": "Web admin, Recommendations page: label of the schedule for the Discover recommendations job.",
     "x-platforms": [
       "web"
     ]
@@ -153160,6 +153389,33 @@
     "description": "Web request poster card: screen-reader label of the watchlist button. {title}: the title.",
     "placeholders": {
       "title": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.requests.card.becauseYouWatched": "Because you watched {title}",
+  "@web.requests.card.becauseYouWatched": {
+    "description": "Web request poster card on a recommended Requests Discover row and its See all page: one line under the title saying which library title led to recommending this one. {title}: the library title's name (not translated).",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.requests.card.becauseYouWatchedTwo": "Because you watched {first} and {second}",
+  "@web.requests.card.becauseYouWatchedTwo": {
+    "description": "Web request poster card on a recommended Requests Discover row and its See all page: one line under the title naming the two library titles that led to recommending this one. {first}, {second}: the library titles' names, best match first (not translated).",
+    "placeholders": {
+      "first": {
+        "type": "String"
+      },
+      "second": {
         "type": "String"
       }
     },
