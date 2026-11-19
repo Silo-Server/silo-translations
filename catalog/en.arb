@@ -2941,6 +2941,25 @@
       "android"
     ]
   },
+  "cast.remote.endedByTv": "Disconnected from {tv}.",
+  "@cast.remote.endedByTv": {
+    "description": "Android phone: Remote Control notice (a short toast) after the TV ended the phone's control, for example when the viewer left the player with the TV's own remote or pressed Disconnect Remote on the TV. {tv}: the TV's name.",
+    "placeholders": {
+      "tv": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "cast.remote.endedByTvUnnamed": "Disconnected from the TV.",
+  "@cast.remote.endedByTvUnnamed": {
+    "description": "Android phone: Remote Control notice (a short toast) after the TV ended the phone's control, when the phone doesn't know the TV's name.",
+    "x-platforms": [
+      "android"
+    ]
+  },
   "cast.remote.error.accountUnavailable": "The active Silo account is unavailable.",
   "@cast.remote.error.accountUnavailable": {
     "description": "Android phone: Remote Control error shown on the remote and the TV picker; the phone has no signed-in account to lend the TV.",
