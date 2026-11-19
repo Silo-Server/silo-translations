@@ -19354,6 +19354,13 @@
       "android"
     ]
   },
+  "notifications.push.watchlistBody": "From your watchlist.",
+  "@notifications.push.watchlistBody": {
+    "description": "Phone: body of a push notification saying a title on the user's watchlist has arrived in the library; the title above it names the movie or series.",
+    "x-platforms": [
+      "android"
+    ]
+  },
   "notifications.type.generic": "Notification",
   "@notifications.type.generic": {
     "description": "Phone and TV: title of an inbox card for a notification of a type the app does not know.",
@@ -19371,6 +19378,25 @@
   "notifications.type.requestFulfilled": "Request fulfilled",
   "@notifications.type.requestFulfilled": {
     "description": "Phone and TV: title of an inbox card, and phone: title of a push notification, saying a title the user requested is now in the library.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "notifications.type.watchlistAvailable": "{title} is now available",
+  "@notifications.type.watchlistAvailable": {
+    "description": "Phone and TV: title of an inbox card, and phone: title of a push notification, saying a title the user had on their watchlist has arrived in the library. 1: the movie or series name, such as Dune.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "notifications.type.watchlistAvailableUntitled": "A title on your watchlist is now available",
+  "@notifications.type.watchlistAvailableUntitled": {
+    "description": "Phone and TV: title of an inbox card, and phone: title of a push notification, saying a title the user had on their watchlist has arrived in the library, when the server sends no title name.",
     "x-platforms": [
       "android"
     ]
@@ -34280,6 +34306,13 @@
   "settings.notifications.inAppFooter": "Show alerts inside Silo as new releases arrive.",
   "@settings.notifications.inAppFooter": {
     "description": "Android phone: footer under the In-App Notifications switch on Settings → Notifications.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "settings.notifications.nextUpFooter": "Next Up tells you when a new episode becomes the next one to watch in a series you're following. Titles you requested or added to your watchlist notify you when they arrive.",
+  "@settings.notifications.nextUpFooter": {
+    "description": "Android phone: footer under the Next Up switch on Settings → Notifications. It explains the switch, and that requested and watchlisted titles notify on their own when they arrive.",
     "x-platforms": [
       "android"
     ]
