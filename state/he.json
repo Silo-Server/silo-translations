@@ -11771,6 +11771,18 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "home.section.discoverRecommendedMovies": {
+    "source": "d045cf1ad6c1be00",
+    "value": "9564ab111cbf8b6d",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "home.section.discoverRecommendedSeries": {
+    "source": "ee87aa962e497313",
+    "value": "b73aa5eea9e37110",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "home.section.discoverStudios": {
     "source": "11f98922d5275ea4",
     "value": "aa4adfc29bb85685",
@@ -63143,6 +63155,42 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.admin.recommendations.external.budgetExhausted": {
+    "source": "269413a6ca765f3d",
+    "value": "42dace33775faf77",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.recommendations.external.lastRunCounts": {
+    "source": "79f179cbdcff6464",
+    "value": "1bbac3edd18b8489",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.recommendations.external.off": {
+    "source": "8d1304500ed673f4",
+    "value": "fd3f9e7145069b30",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.recommendations.external.rowsBuilt": {
+    "source": "7319accf3f14a9a5",
+    "value": "a310f1e2ea673852",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.recommendations.external.titlesStored": {
+    "source": "49b9a2606d682174",
+    "value": "591af7b0bc6e9255",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.recommendations.external.vectorsSkipped": {
+    "source": "e7f262f300afab2c",
+    "value": "37fd312bc0f41298",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.admin.recommendations.jobs.cacheRefreshed": {
     "source": "653e5e1609aacb18",
     "value": "8c538be82f03ea27",
@@ -63164,6 +63212,12 @@
   "web.admin.recommendations.jobs.entries": {
     "source": "a618e5f13f40ae85",
     "value": "b2c0f8a26c2d295d",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.recommendations.jobs.external": {
+    "source": "6be56f7e4997b114",
+    "value": "03f0931f4bdec9b5",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -63242,6 +63296,12 @@
   "web.admin.recommendations.jobs.triggerEmbeddingsFailed": {
     "source": "5b24d5e0f905be70",
     "value": "44b239f1293365d4",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.recommendations.jobs.triggerExternalFailed": {
+    "source": "b5ccec295eaa75f8",
+    "value": "e12fdaaf126c7c78",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -63347,9 +63407,27 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.admin.recommendations.reset.doneWithExternal": {
+    "source": "2be4a7a9cf40cc98",
+    "value": "56c3af1b18bf7816",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.admin.recommendations.reset.embeddingCount": {
     "source": "3fa1b9bc8f673de4",
     "value": "979f88dedf9cece0",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.recommendations.reset.externalEmbeddingCount": {
+    "source": "14c9a5ffb429bec2",
+    "value": "86a4987e18991180",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.recommendations.reset.externalRowCount": {
+    "source": "c060781aaed1b1b6",
+    "value": "fa0eb315c66ce1f8",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -63665,6 +63743,12 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.admin.requests.discover.describe.recommended": {
+    "source": "c9219c31c9653df7",
+    "value": "802eda327dad2014",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.admin.requests.discover.fieldError": {
     "source": "c8894a304d9cd81b",
     "value": "0f49bcddfd835e44",
@@ -63704,6 +63788,18 @@
   "web.admin.requests.discover.kind.networks.sentence": {
     "source": "46750dcd9757bc43",
     "value": "34f486350178d171",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.requests.discover.kind.recommended.label": {
+    "source": "313ec08dccf5c1d5",
+    "value": "ef619fa43e45f6d3",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.requests.discover.kind.recommended.sentence": {
+    "source": "ba610c38dc4b6671",
+    "value": "3694f03f5e62f352",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -63854,6 +63950,12 @@
   "web.admin.requests.discover.problem.noRegion": {
     "source": "20de0009c9f302d7",
     "value": "adb388fa565d10cc",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.requests.discover.recommendedOff": {
+    "source": "a70c89a5c6724b9c",
+    "value": "7a88125bc51b53b8",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -64964,6 +65066,12 @@
   "web.admin.requests.rowDialog.livePreviewList": {
     "source": "f27e557d779b4dc1",
     "value": "2f06d74b1db14124",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.requests.rowDialog.livePreviewRecommended": {
+    "source": "d285e6c28d061ecc",
+    "value": "86eb7d3ab4690053",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -72443,6 +72551,36 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.admin.settings.recommendations.external.enabled": {
+    "source": "3d13e5d0342a4c30",
+    "value": "e5b4130332d9e9a4",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.recommendations.external.enabledHint": {
+    "source": "8472a8012dc961b1",
+    "value": "4475b7e50dc8de40",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.recommendations.external.maxTitles": {
+    "source": "383c7bf5551a43a3",
+    "value": "e3d243617778798c",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.recommendations.external.maxTitlesHint": {
+    "source": "a519c8b979babf76",
+    "value": "09db365f09a63fdc",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.recommendations.external.title": {
+    "source": "d5a77e5ebcfec317",
+    "value": "03f0931f4bdec9b5",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.admin.settings.recommendations.general.enabled": {
     "source": "6ade4559444189e0",
     "value": "eb9fca11e0868a03",
@@ -72470,6 +72608,12 @@
   "web.admin.settings.recommendations.schedule.embeddingsCron": {
     "source": "dc364f76b05d0040",
     "value": "f3f2a59c2b8f21f9",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.recommendations.schedule.externalCron": {
+    "source": "077d276293e61df8",
+    "value": "4587779548485d27",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -109676,6 +109820,18 @@
   "web.requests.card.addToWatchlistFor": {
     "source": "26c5792aaeee1aef",
     "value": "5cd80a063d5d43db",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.requests.card.becauseYouWatched": {
+    "source": "ed694c2ecddf2c7f",
+    "value": "1b606b40c76b91e3",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.requests.card.becauseYouWatchedTwo": {
+    "source": "1ae4379fd6a2bdd9",
+    "value": "3f34006377e0d510",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
