@@ -127137,6 +127137,13 @@
       "web"
     ]
   },
+  "web.collections.count.unavailable": "Count unavailable",
+  "@web.collections.count.unavailable": {
+    "description": "Web Collections lists, cards, pickers and the collection editor: shown in place of a title count when the server couldn't count the collection's titles. The collection and its titles are still there.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.collections.deleteDialog.also": "Also",
   "@web.collections.deleteDialog.also": {
     "description": "Web Collections, confirm dialog before deleting several collections: heading over the list of side effects (collections also in other libraries, ones kept because rows use them).",
@@ -128678,6 +128685,27 @@
       "web"
     ]
   },
+  "web.collections.manual.addCheckFailed": "Couldn't check whether titles can be added.",
+  "@web.collections.manual.addCheckFailed": {
+    "description": "Web manual collection editor: error when the check for whether titles can be added failed. Shown with the web.collections.manual.addCheckRetry button.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.collections.manual.addCheckRetry": "Try loading again",
+  "@web.collections.manual.addCheckRetry": {
+    "description": "Web manual collection editor: button that repeats the failed check for whether titles can be added.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.collections.manual.addChecking": "Checking whether titles can be added…",
+  "@web.collections.manual.addChecking": {
+    "description": "Web manual collection editor: status while it asks the server whether titles can be added to a collection whose titles are only partly loaded.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.collections.manual.addFailed": "Couldn't add {title}. {detail}",
   "@web.collections.manual.addFailed": {
     "description": "Web manual collection editor: error when adding a title fails. {title}: the title; {detail}: the server's reason, or \"Try again.\".",
@@ -128689,6 +128717,20 @@
         "type": "String"
       }
     },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.collections.manual.addNeedsFullList": "This server can't safely add titles while only part of the collection is loaded. You can still remove titles and edit the collection.",
+  "@web.collections.manual.addNeedsFullList": {
+    "description": "Web manual collection editor: explains why adding is turned off when an older server can't add to a partly loaded collection without losing titles.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.collections.manual.addNeedsReload": "Load the titles again before adding more.",
+  "@web.collections.manual.addNeedsReload": {
+    "description": "Web manual collection editor: shown when the collection's titles failed to load, so adding is turned off until they load again.",
     "x-platforms": [
       "web"
     ]
@@ -128708,6 +128750,13 @@
         "type": "String"
       }
     },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.collections.manual.addWaitsForTitles": "Loading titles before adding more…",
+  "@web.collections.manual.addWaitsForTitles": {
+    "description": "Web manual collection editor: status while the rest of the collection's titles load; adding is turned off until they have.",
     "x-platforms": [
       "web"
     ]
