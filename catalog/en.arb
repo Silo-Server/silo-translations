@@ -89548,6 +89548,13 @@
       "web"
     ]
   },
+  "web.admin.recommendations.external.pendingRestart": "Generation has stopped. Stored recommendations stay visible in Discover until the server restarts.",
+  "@web.admin.recommendations.external.pendingRestart": {
+    "description": "Status on the web admin Discover recommendations job when the main recommendations setting was turned off and a restart is pending.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.recommendations.external.rowsBuilt": "{count, plural, one {{count_text} row built} other {{count_text} rows built}}",
   "@web.admin.recommendations.external.rowsBuilt": {
     "description": "Web admin, Recommendations page, Discover Recommendations job card: how many recommendation rows are stored, one per profile and media type. {count}: the number (selects the plural). {count_text}: the same number, formatted.",
