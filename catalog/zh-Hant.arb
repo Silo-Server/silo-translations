@@ -10530,6 +10530,7 @@
   "web.admin.recommendations.external.budgetExhausted": "已達單次執行的上限，下次執行時會繼續。",
   "web.admin.recommendations.external.lastRunCounts": "已查詢的作品：{details} · 已嵌入：{vectors} · TMDB 請求：{requests}",
   "web.admin.recommendations.external.off": "已關閉。執行時只會清除舊作品。",
+  "web.admin.recommendations.external.pendingRestart": "已停止產生推薦。在伺服器重新啟動之前，已儲存的推薦仍會顯示在探索中。",
   "web.admin.recommendations.external.rowsBuilt": "{count, plural, other {已建立 {count_text} 列}}",
   "web.admin.recommendations.external.titlesStored": "{count, plural, other {{count_text} 部可供推薦的作品}}",
   "web.admin.recommendations.external.vectorsSkipped": "未嵌入任何內容：{reason}",

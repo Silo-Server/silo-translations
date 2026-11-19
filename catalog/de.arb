@@ -10530,6 +10530,7 @@
   "web.admin.recommendations.external.budgetExhausted": "Limit für einen Durchlauf erreicht; der nächste Durchlauf macht weiter.",
   "web.admin.recommendations.external.lastRunCounts": "Nachgeschlagene Titel: {details} · Embeddings erstellt: {vectors} · TMDB-Anfragen: {requests}",
   "web.admin.recommendations.external.off": "Aus. Durchläufe entfernen nur alte Titel.",
+  "web.admin.recommendations.external.pendingRestart": "Die Erstellung wurde beendet. Gespeicherte Empfehlungen bleiben unter „Entdecken“ sichtbar, bis der Server neu startet.",
   "web.admin.recommendations.external.rowsBuilt": "{count, plural, one {{count_text} Reihe erstellt} other {{count_text} Reihen erstellt}}",
   "web.admin.recommendations.external.titlesStored": "{count, plural, one {{count_text} Titel als Grundlage für Empfehlungen} other {{count_text} Titel als Grundlage für Empfehlungen}}",
   "web.admin.recommendations.external.vectorsSkipped": "Kein Embedding erstellt: {reason}",

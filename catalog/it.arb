@@ -10530,6 +10530,7 @@
   "web.admin.recommendations.external.budgetExhausted": "Raggiunto il limite per una singola esecuzione; la prossima esecuzione riprenderà da qui.",
   "web.admin.recommendations.external.lastRunCounts": "Titoli cercati: {details} · Embedding creati: {vectors} · Richieste TMDB: {requests}",
   "web.admin.recommendations.external.off": "Disattivato. Le esecuzioni rimuovono solo i titoli vecchi.",
+  "web.admin.recommendations.external.pendingRestart": "La generazione si è interrotta. I consigli memorizzati restano visibili in Scopri fino al riavvio del server.",
   "web.admin.recommendations.external.rowsBuilt": "{count, plural, one {{count_text} riga creata} many {{count_text} di righe create} other {{count_text} righe create}}",
   "web.admin.recommendations.external.titlesStored": "{count, plural, one {{count_text} titolo da cui scegliere i consigli} many {{count_text} di titoli da cui scegliere i consigli} other {{count_text} titoli da cui scegliere i consigli}}",
   "web.admin.recommendations.external.vectorsSkipped": "Nessun embedding creato: {reason}",

@@ -10530,6 +10530,7 @@
   "web.admin.recommendations.external.budgetExhausted": "S’ha arribat al límit d’una execució; la següent execució continuarà.",
   "web.admin.recommendations.external.lastRunCounts": "Títols consultats: {details} · Embeddings desats: {vectors} · Sol·licituds a TMDB: {requests}",
   "web.admin.recommendations.external.off": "Desactivat. Les execucions només esborren títols antics.",
+  "web.admin.recommendations.external.pendingRestart": "La generació s’ha aturat. Les recomanacions desades continuen visibles a Descobreix fins que es reinicia el servidor.",
   "web.admin.recommendations.external.rowsBuilt": "{count, plural, one {{count_text} fila creada} many {{count_text} de files creades} other {{count_text} files creades}}",
   "web.admin.recommendations.external.titlesStored": "{count, plural, one {{count_text} títol per recomanar} many {{count_text} de títols per recomanar} other {{count_text} títols per recomanar}}",
   "web.admin.recommendations.external.vectorsSkipped": "No s’ha desat cap embedding: {reason}",

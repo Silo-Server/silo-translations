@@ -10530,6 +10530,7 @@
   "web.admin.recommendations.external.budgetExhausted": "1回の実行の上限に達しました。次回の実行で続行します。",
   "web.admin.recommendations.external.lastRunCounts": "検索したタイトル：{details} · エンベディング：{vectors} · TMDBリクエスト：{requests}",
   "web.admin.recommendations.external.off": "オフ。実行時は古いタイトルの削除のみ行います。",
+  "web.admin.recommendations.external.pendingRestart": "生成は停止しました。保存済みのおすすめは、サーバーが再起動するまでディスカバーに表示されます。",
   "web.admin.recommendations.external.rowsBuilt": "{count, plural, other {{count_text}行を作成済み}}",
   "web.admin.recommendations.external.titlesStored": "{count, plural, other {おすすめ候補のタイトル{count_text}件}}",
   "web.admin.recommendations.external.vectorsSkipped": "エンベディングなし：{reason}",

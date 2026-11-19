@@ -10530,6 +10530,7 @@
   "web.admin.recommendations.external.budgetExhausted": "O limite de uma execução foi atingido; a próxima execução continua.",
   "web.admin.recommendations.external.lastRunCounts": "Títulos consultados: {details} · Com embedding: {vectors} · Solicitações ao TMDB: {requests}",
   "web.admin.recommendations.external.off": "Desativado. As execuções só removem títulos antigos.",
+  "web.admin.recommendations.external.pendingRestart": "A geração foi interrompida. As recomendações armazenadas continuam visíveis em Descobrir até que o servidor seja reiniciado.",
   "web.admin.recommendations.external.rowsBuilt": "{count, plural, one {{count_text} fileira criada} many {{count_text} de fileiras criadas} other {{count_text} fileiras criadas}}",
   "web.admin.recommendations.external.titlesStored": "{count, plural, one {{count_text} título para recomendar} many {{count_text} de títulos para recomendar} other {{count_text} títulos para recomendar}}",
   "web.admin.recommendations.external.vectorsSkipped": "Nenhum embedding gerado: {reason}",
