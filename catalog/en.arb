@@ -153400,33 +153400,6 @@
       "web"
     ]
   },
-  "web.requests.card.becauseYouWatched": "Because you watched {title}",
-  "@web.requests.card.becauseYouWatched": {
-    "description": "Web request poster card on a recommended Requests Discover row and its See all page: one line under the title saying which library title led to recommending this one. {title}: the library title's name (not translated).",
-    "placeholders": {
-      "title": {
-        "type": "String"
-      }
-    },
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.requests.card.becauseYouWatchedTwo": "Because you watched {first} and {second}",
-  "@web.requests.card.becauseYouWatchedTwo": {
-    "description": "Web request poster card on a recommended Requests Discover row and its See all page: one line under the title naming the two library titles that led to recommending this one. {first}, {second}: the library titles' names, best match first (not translated).",
-    "placeholders": {
-      "first": {
-        "type": "String"
-      },
-      "second": {
-        "type": "String"
-      }
-    },
-    "x-platforms": [
-      "web"
-    ]
-  },
   "web.requests.card.label": "{title} ({meta})",
   "@web.requests.card.label": {
     "description": "Web request poster card: screen-reader label of the poster link. {title}: the title; {meta}: its media type and year, such as “Movie · 2024”.",
@@ -153485,6 +153458,33 @@
     "description": "Web watchlist poster: screen-reader label of the Request button while the request is sent. {title}: the title.",
     "placeholders": {
       "title": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.requests.card.similarTo": "Similar to {title}",
+  "@web.requests.card.similarTo": {
+    "description": "Web request poster card on a recommended Requests Discover row and its See all page: a short line under the title naming the library title this recommendation is related to. Keep it short; the card is narrow. {title}: the library title's name (not translated).",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.requests.card.similarToTwo": "Similar to {first} and {second}",
+  "@web.requests.card.similarToTwo": {
+    "description": "Web request poster card on a recommended Requests Discover row and its See all page: a short line under the title naming the two library titles this recommendation is related to. Keep it short; the card is narrow. {first}, {second}: the library titles' names, best match first (not translated).",
+    "placeholders": {
+      "first": {
+        "type": "String"
+      },
+      "second": {
         "type": "String"
       }
     },
