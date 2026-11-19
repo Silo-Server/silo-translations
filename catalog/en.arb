@@ -99371,156 +99371,9 @@
       "web"
     ]
   },
-  "web.admin.settings.notifications.pausedRecording": "New content is not being recorded, so nothing can be sent. Turn it back on under Processing.",
-  "@web.admin.settings.notifications.pausedRecording": {
-    "description": "Web admin, Notifications page: banner when new-content recording is switched off.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.pausedSending": "Sending is paused; new content waits in the queue. Turn it back on under Processing.",
-  "@web.admin.settings.notifications.pausedSending": {
-    "description": "Web admin, Notifications page: banner when notification sending is switched off.",
-    "x-platforms": [
-      "web"
-    ]
-  },
   "web.admin.settings.notifications.perEpisodeOffDescription": "Off sends them the daily summary instead.",
   "@web.admin.settings.notifications.perEpisodeOffDescription": {
     "description": "Web admin, Notifications page: description of the per-episode switches on the email and Discord channels.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.description": "How Silo notices new content, groups it into messages, and how long it keeps them.",
-  "@web.admin.settings.notifications.processing.description": {
-    "description": "Web admin, Notifications page: description of the processing group.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.fanout": "Work out who wants it",
-  "@web.admin.settings.notifications.processing.fanout": {
-    "description": "Web admin, Notifications page, processing: label of the switch that matches new content to people's preferences.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.fanoutDescription": "Match each item against everyone's preferences.",
-  "@web.admin.settings.notifications.processing.fanoutDescription": {
-    "description": "Web admin, Notifications page, processing: description of the matching switch.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.grouping": "Grouping and flood control",
-  "@web.admin.settings.notifications.processing.grouping": {
-    "description": "Web admin, Notifications page, processing: subheading of the batching fields.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.label": "Processing",
-  "@web.admin.settings.notifications.processing.label": {
-    "description": "Web admin, Notifications page: heading of the processing group.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.maxAge": "Max content age",
-  "@web.admin.settings.notifications.processing.maxAge": {
-    "description": "Web admin, Notifications page, processing: label of the maximum event age field.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.maxAgeDescription": "Older items are dropped instead of arriving as stale news.",
-  "@web.admin.settings.notifications.processing.maxAgeDescription": {
-    "description": "Web admin, Notifications page, processing: description of the maximum event age field.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.maxPerShow": "Max messages per show",
-  "@web.admin.settings.notifications.processing.maxPerShow": {
-    "description": "Web admin, Notifications page, processing: label of the per-series burst limit.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.maxPerShowDescription": "Anything past this is skipped for that batch.",
-  "@web.admin.settings.notifications.processing.maxPerShowDescription": {
-    "description": "Web admin, Notifications page, processing: description of the per-series burst limit.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.noticeNew": "Notice new content",
-  "@web.admin.settings.notifications.processing.noticeNew": {
-    "description": "Web admin, Notifications page, processing: label of the switch that records new content.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.noticeNewDescription": "Record new items during library scans.",
-  "@web.admin.settings.notifications.processing.noticeNewDescription": {
-    "description": "Web admin, Notifications page, processing: description of the record-new-content switch.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.pipeline": "Pipeline",
-  "@web.admin.settings.notifications.processing.pipeline": {
-    "description": "Web admin, Notifications page, processing: subheading of the pipeline switches.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.readNotifications": "Read notifications",
-  "@web.admin.settings.notifications.processing.readNotifications": {
-    "description": "Web admin, Notifications page, processing: label of how long read notifications are kept.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.retention": "Retention",
-  "@web.admin.settings.notifications.processing.retention": {
-    "description": "Web admin, Notifications page, processing: subheading of the retention fields.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.sentHistory": "Sent history",
-  "@web.admin.settings.notifications.processing.sentHistory": {
-    "description": "Web admin, Notifications page, processing: label of how long the record of sent notifications is kept.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.sentHistoryDescription": "Record of what Silo already notified about.",
-  "@web.admin.settings.notifications.processing.sentHistoryDescription": {
-    "description": "Web admin, Notifications page, processing: description of the sent history field.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.settle": "Settle window",
-  "@web.admin.settings.notifications.processing.settle": {
-    "description": "Web admin, Notifications page, processing: label of the settle delay field.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.settleDescription": "Items that finish scanning together arrive as one notification.",
-  "@web.admin.settings.notifications.processing.settleDescription": {
-    "description": "Web admin, Notifications page, processing: description of the settle delay field.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.unreadNotifications": "Unread notifications",
-  "@web.admin.settings.notifications.processing.unreadNotifications": {
-    "description": "Web admin, Notifications page, processing: label of how long unread notifications are kept.",
     "x-platforms": [
       "web"
     ]
@@ -100254,20 +100107,6 @@
   "web.admin.settings.notifications.title": "Notifications",
   "@web.admin.settings.notifications.title": {
     "description": "Web admin, Notifications page: page title.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.unit.days": "days",
-  "@web.admin.settings.notifications.unit.days": {
-    "description": "Web admin, Notifications page: unit after a field measured in days.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.unit.hours": "hours",
-  "@web.admin.settings.notifications.unit.hours": {
-    "description": "Web admin, Notifications page: unit after a field measured in hours.",
     "x-platforms": [
       "web"
     ]
@@ -106801,7 +106640,7 @@
       "web"
     ]
   },
-  "web.admin.settings.search.notifications.description": "Delivery channels, server channels, and how new content becomes notifications.",
+  "web.admin.settings.search.notifications.description": "Delivery channels and server channels.",
   "@web.admin.settings.search.notifications.description": {
     "description": "Web admin, settings search: one-line summary of the Notifications settings page, under its name in admin search results and at the top of the page.",
     "x-platforms": [
@@ -106920,13 +106759,6 @@
       "web"
     ]
   },
-  "web.admin.settings.search.notifications.setting.groupingAndFloodControl": "Grouping and flood control",
-  "@web.admin.settings.search.notifications.setting.groupingAndFloodControl": {
-    "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
-    "x-platforms": [
-      "web"
-    ]
-  },
   "web.admin.settings.search.notifications.setting.inApp": "In-App",
   "@web.admin.settings.search.notifications.setting.inApp": {
     "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
@@ -106948,29 +106780,8 @@
       "web"
     ]
   },
-  "web.admin.settings.search.notifications.setting.maxContentAge": "Max content age",
-  "@web.admin.settings.search.notifications.setting.maxContentAge": {
-    "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.search.notifications.setting.maxMessagesPerShow": "Max messages per show",
-  "@web.admin.settings.search.notifications.setting.maxMessagesPerShow": {
-    "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
-    "x-platforms": [
-      "web"
-    ]
-  },
   "web.admin.settings.search.notifications.setting.mentionTheRequesterOnDiscord": "Mention the requester on Discord",
   "@web.admin.settings.search.notifications.setting.mentionTheRequesterOnDiscord": {
-    "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.search.notifications.setting.noticeNewContent": "Notice new content",
-  "@web.admin.settings.search.notifications.setting.noticeNewContent": {
     "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
     "x-platforms": [
       "web"
@@ -106983,20 +106794,6 @@
       "web"
     ]
   },
-  "web.admin.settings.search.notifications.setting.processing": "Processing",
-  "@web.admin.settings.search.notifications.setting.processing": {
-    "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.search.notifications.setting.readNotifications": "Read notifications",
-  "@web.admin.settings.search.notifications.setting.readNotifications": {
-    "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
-    "x-platforms": [
-      "web"
-    ]
-  },
   "web.admin.settings.search.notifications.setting.relayUrl": "Relay URL",
   "@web.admin.settings.search.notifications.setting.relayUrl": {
     "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
@@ -107004,29 +106801,8 @@
       "web"
     ]
   },
-  "web.admin.settings.search.notifications.setting.retention": "Retention",
-  "@web.admin.settings.search.notifications.setting.retention": {
-    "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.search.notifications.setting.sentHistory": "Sent history",
-  "@web.admin.settings.search.notifications.setting.sentHistory": {
-    "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
-    "x-platforms": [
-      "web"
-    ]
-  },
   "web.admin.settings.search.notifications.setting.serverChannels": "Server Channels",
   "@web.admin.settings.search.notifications.setting.serverChannels": {
-    "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.search.notifications.setting.settleWindow": "Settle window",
-  "@web.admin.settings.search.notifications.setting.settleWindow": {
     "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
     "x-platforms": [
       "web"
@@ -107046,13 +106822,6 @@
       "web"
     ]
   },
-  "web.admin.settings.search.notifications.setting.unreadNotifications": "Unread notifications",
-  "@web.admin.settings.search.notifications.setting.unreadNotifications": {
-    "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
-    "x-platforms": [
-      "web"
-    ]
-  },
   "web.admin.settings.search.notifications.setting.webPush": "Web Push",
   "@web.admin.settings.search.notifications.setting.webPush": {
     "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
@@ -107062,13 +106831,6 @@
   },
   "web.admin.settings.search.notifications.setting.webhooksPerPerson": "Webhooks per person",
   "@web.admin.settings.search.notifications.setting.webhooksPerPerson": {
-    "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.search.notifications.setting.workOutWhoWantsIt": "Work out who wants it",
-  "@web.admin.settings.search.notifications.setting.workOutWhoWantsIt": {
     "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
     "x-platforms": [
       "web"
