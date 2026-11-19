@@ -2941,6 +2941,25 @@
       "android"
     ]
   },
+  "cast.remote.endedByTv": "Disconnected from {tv}.",
+  "@cast.remote.endedByTv": {
+    "description": "Android phone: Remote Control notice (a short toast) after the TV ended the phone's control, for example when the viewer left the player with the TV's own remote or pressed Disconnect Remote on the TV. {tv}: the TV's name.",
+    "placeholders": {
+      "tv": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "cast.remote.endedByTvUnnamed": "Disconnected from the TV.",
+  "@cast.remote.endedByTvUnnamed": {
+    "description": "Android phone: Remote Control notice (a short toast) after the TV ended the phone's control, when the phone doesn't know the TV's name.",
+    "x-platforms": [
+      "android"
+    ]
+  },
   "cast.remote.error.accountUnavailable": "The active Silo account is unavailable.",
   "@cast.remote.error.accountUnavailable": {
     "description": "Android phone: Remote Control error shown on the remote and the TV picker; the phone has no signed-in account to lend the TV.",
@@ -6406,6 +6425,14 @@
       "apple",
       "android",
       "roku"
+    ]
+  },
+  "detail.alsoIn": "Also in",
+  "@detail.alsoIn": {
+    "description": "Heading of the row on a movie or series page that lists the collections holding that title when more than one does; each card opens a collection (Android phone and TV, Apple iOS, iPadOS, macOS and tvOS).",
+    "x-platforms": [
+      "apple",
+      "android"
     ]
   },
   "detail.audio": "Audio",
@@ -19044,16 +19071,18 @@
   },
   "newProfile.requestsAllowed": "Allow requests",
   "@newProfile.requestsAllowed": {
-    "description": "Apple (iPhone, iPad, Mac, Apple TV): switch on the New Profile form that lets the profile request titles that are not in the library.",
+    "description": "Apple (iPhone, iPad, Mac, Apple TV): switch on the New Profile form that lets the profile request titles that are not in the library. Android phone and TV: same switch on the profile form (create and edit).",
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "newProfile.requestsAllowedHelp": "Lets this profile browse titles that are not in the library and request them. The content rating limits those titles by their US rating only, and the advisory-age limit does not apply to them.",
   "@newProfile.requestsAllowedHelp": {
-    "description": "Apple (iPhone, iPad, Mac, Apple TV): help text under the Allow requests switch on the New Profile form.",
+    "description": "Apple (iPhone, iPad, Mac, Apple TV): help text under the Allow requests switch on the New Profile form. Android phone and TV: same help text under that switch on the profile form (create and edit).",
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "newProfile.restrict": "Restrict libraries",
@@ -34240,15 +34269,16 @@
   },
   "settings.nextUp.atEnd": "At end",
   "@settings.nextUp.atEnd": {
-    "description": "Android phone and TV. Phone: Show Next Up choice on Settings → Playback: show the next-episode prompt when the episode ends. TV: Settings > Playback > Show Next Up: choice that shows the next-episode prompt when the episode ends.",
+    "description": "Android phone and TV. Phone: Show Next Up choice on Settings → Playback: show the next-episode prompt when the episode ends. TV: Settings > Playback > Show Next Up: choice that shows the next-episode prompt when the episode ends. Web: Settings > Playback > Show Next Up: choice that opens Next Up when the episode ends.",
     "x-platforms": [
       "apple",
-      "android"
+      "android",
+      "web"
     ]
   },
   "settings.nextUp.minutesBeforeEnd": "{count, plural, one {# minute before end} other {# minutes before end}}",
   "@settings.nextUp.minutesBeforeEnd": {
-    "description": "Android phone and TV. Phone: Show Next Up choice on Settings → Playback: show the next-episode prompt this many minutes before the episode ends. {count}: the number of minutes. TV: Settings > Playback > Show Next Up: choice that shows the next-episode prompt this many minutes before the episode ends. {count}: minutes.",
+    "description": "Android phone and TV. Phone: Show Next Up choice on Settings → Playback: show the next-episode prompt this many minutes before the episode ends. {count}: the number of minutes. TV: Settings > Playback > Show Next Up: choice that shows the next-episode prompt this many minutes before the episode ends. {count}: minutes. Web: Settings > Playback > Show Next Up: choice that opens Next Up this many minutes before the episode ends. {count}: minutes.",
     "placeholders": {
       "count": {
         "type": "int"
@@ -34256,12 +34286,13 @@
     },
     "x-platforms": [
       "apple",
-      "android"
+      "android",
+      "web"
     ]
   },
   "settings.nextUp.secondsBeforeEnd": "{count, plural, one {# second before end} other {# seconds before end}}",
   "@settings.nextUp.secondsBeforeEnd": {
-    "description": "Android phone and TV. Phone: Show Next Up choice on Settings → Playback: show the next-episode prompt this many seconds before the episode ends. {count}: the number of seconds. TV: Settings > Playback > Show Next Up: choice that shows the next-episode prompt this many seconds before the episode ends. {count}: seconds.",
+    "description": "Android phone and TV. Phone: Show Next Up choice on Settings → Playback: show the next-episode prompt this many seconds before the episode ends. {count}: the number of seconds. TV: Settings > Playback > Show Next Up: choice that shows the next-episode prompt this many seconds before the episode ends. {count}: seconds. Web: Settings > Playback > Show Next Up: choice that opens Next Up this many seconds before the episode ends. {count}: seconds.",
     "placeholders": {
       "count": {
         "type": "int"
@@ -34269,15 +34300,17 @@
     },
     "x-platforms": [
       "apple",
-      "android"
+      "android",
+      "web"
     ]
   },
   "settings.nextUp.title": "Show Next Up",
   "@settings.nextUp.title": {
-    "description": "Android phone and TV. Phone: row on Settings → Playback that picks when the next-episode prompt appears. TV: Settings > Playback > Episodes: row label and picker title for when the next-episode prompt appears. Apple Settings > Playback (iPhone, iPad, Mac) and Apple TV Settings > Playback: row and picker title.",
+    "description": "Android phone and TV. Phone: row on Settings → Playback that picks when the next-episode prompt appears. TV: Settings > Playback > Episodes: row label and picker title for when the next-episode prompt appears. Apple Settings > Playback (iPhone, iPad, Mac) and Apple TV Settings > Playback: row and picker title. Web: Settings > Playback > Episodes: row label for when the Next Up screen opens.",
     "x-platforms": [
       "apple",
-      "android"
+      "android",
+      "web"
     ]
   },
   "settings.noLimit": "No limit",
@@ -34340,11 +34373,12 @@
   },
   "settings.off": "Off",
   "@settings.off": {
-    "description": "Value shown on a settings row or option when the option is disabled or set to none. Shown on Roku toggle rows, Android values and options such as Rewind on Resume Off, and Apple TV settings toggle rows.",
+    "description": "Value shown on a settings row or option when the option is disabled or set to none. Shown on Roku toggle rows, Android values and options such as Rewind on Resume Off, and Apple TV settings toggle rows. Web: Settings > Playback > Show Next Up: choice that turns Next Up off.",
     "x-platforms": [
       "apple",
       "android",
-      "roku"
+      "roku",
+      "web"
     ]
   },
   "settings.on": "On",
@@ -89106,7 +89140,7 @@
       "web"
     ]
   },
-  "web.admin.plugins.settings.tasksDescription": "Tasks are registered when the server starts, so turning one on or off takes effect after a restart. Once a task exists, change its schedule on its task page.",
+  "web.admin.plugins.settings.tasksDescription": "Turning a task on or off applies without a restart, though other servers can take a moment to pick it up. Once a task is on, change its schedule on its task page.",
   "@web.admin.plugins.settings.tasksDescription": {
     "description": "Web admin, plugin page, settings: explanation under the Scheduled tasks heading.",
     "x-platforms": [
@@ -127170,6 +127204,13 @@
       "web"
     ]
   },
+  "web.collections.count.unavailable": "Count unavailable",
+  "@web.collections.count.unavailable": {
+    "description": "Web Collections lists, cards, pickers and the collection editor: shown in place of a title count when the server couldn't count the collection's titles. The collection and its titles are still there.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.collections.deleteDialog.also": "Also",
   "@web.collections.deleteDialog.also": {
     "description": "Web Collections, confirm dialog before deleting several collections: heading over the list of side effects (collections also in other libraries, ones kept because rows use them).",
@@ -128711,6 +128752,27 @@
       "web"
     ]
   },
+  "web.collections.manual.addCheckFailed": "Couldn't check whether titles can be added.",
+  "@web.collections.manual.addCheckFailed": {
+    "description": "Web manual collection editor: error when the check for whether titles can be added failed. Shown with the web.collections.manual.addCheckRetry button.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.collections.manual.addCheckRetry": "Try loading again",
+  "@web.collections.manual.addCheckRetry": {
+    "description": "Web manual collection editor: button that repeats the failed check for whether titles can be added.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.collections.manual.addChecking": "Checking whether titles can be added…",
+  "@web.collections.manual.addChecking": {
+    "description": "Web manual collection editor: status while it asks the server whether titles can be added to a collection whose titles are only partly loaded.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.collections.manual.addFailed": "Couldn't add {title}. {detail}",
   "@web.collections.manual.addFailed": {
     "description": "Web manual collection editor: error when adding a title fails. {title}: the title; {detail}: the server's reason, or \"Try again.\".",
@@ -128722,6 +128784,20 @@
         "type": "String"
       }
     },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.collections.manual.addNeedsFullList": "This server can't safely add titles while only part of the collection is loaded. You can still remove titles and edit the collection.",
+  "@web.collections.manual.addNeedsFullList": {
+    "description": "Web manual collection editor: explains why adding is turned off when an older server can't add to a partly loaded collection without losing titles.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.collections.manual.addNeedsReload": "Load the titles again before adding more.",
+  "@web.collections.manual.addNeedsReload": {
+    "description": "Web manual collection editor: shown when the collection's titles failed to load, so adding is turned off until they load again.",
     "x-platforms": [
       "web"
     ]
@@ -128741,6 +128817,13 @@
         "type": "String"
       }
     },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.collections.manual.addWaitsForTitles": "Loading titles before adding more…",
+  "@web.collections.manual.addWaitsForTitles": {
+    "description": "Web manual collection editor: status while the rest of the collection's titles load; adding is turned off until they have.",
     "x-platforms": [
       "web"
     ]
@@ -136497,6 +136580,13 @@
         "type": "String"
       }
     }
+  },
+  "web.detail.sections.alsoIn": "Also in",
+  "@web.detail.sections.alsoIn": {
+    "description": "Web: heading of the row on a movie or series detail page that lists the collections holding that title when more than one does; each card opens a collection.",
+    "x-platforms": [
+      "web"
+    ]
   },
   "web.detail.sections.cast": "Cast",
   "@web.detail.sections.cast": {
