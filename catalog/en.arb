@@ -89088,7 +89088,7 @@
       "web"
     ]
   },
-  "web.admin.plugins.settings.tasksDescription": "Tasks are registered when the server starts, so turning one on or off takes effect after a restart. Once a task exists, change its schedule on its task page.",
+  "web.admin.plugins.settings.tasksDescription": "Turning a task on or off applies without a restart, though other servers can take a moment to pick it up. Once a task is on, change its schedule on its task page.",
   "@web.admin.plugins.settings.tasksDescription": {
     "description": "Web admin, plugin page, settings: explanation under the Scheduled tasks heading.",
     "x-platforms": [
