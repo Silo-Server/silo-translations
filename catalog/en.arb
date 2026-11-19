@@ -140368,7 +140368,7 @@
   },
   "web.home.rows.describe.rulesAll": "All {scope, select, movie {movies} series {shows} episode {episodes} audiobook {audiobooks} ebook {books} manga {manga} video {movies and shows} other {titles}}",
   "@web.home.rows.describe.rulesAll": {
-    "description": "Web: Home rows editor, row list: description of a Titles matching rules row with no rules, newest added first. {scope}: the kind of titles: movie, series, episode, audiobook, ebook, manga, video (movies and shows), or other (any titles).",
+    "description": "Web: Home rows editor, row list: description of a smart row with no rules, newest added first. {scope}: the kind of titles: movie, series, episode, audiobook, ebook, manga, video (movies and shows), or other (any titles).",
     "x-platforms": [
       "web"
     ],
@@ -140380,7 +140380,7 @@
   },
   "web.home.rows.describe.rulesAllSorted": "All {scope, select, movie {movies} series {shows} episode {episodes} audiobook {audiobooks} ebook {books} manga {manga} video {movies and shows} other {titles}}, {order, select, rating {highest rated first} released {newest released first} plays {most played first} other {A to Z}}",
   "@web.home.rows.describe.rulesAllSorted": {
-    "description": "Web: Home rows editor, row list: description of a Titles matching rules row with no rules, in a set order. {scope}: the kind of titles: movie, series, episode, audiobook, ebook, manga, video (movies and shows), or other (any titles). {order}: rating (highest rated first), released (newest released first), plays (most played first), or other (A to Z).",
+    "description": "Web: Home rows editor, row list: description of a smart row with no rules, in a set order. {scope}: the kind of titles: movie, series, episode, audiobook, ebook, manga, video (movies and shows), or other (any titles). {order}: rating (highest rated first), released (newest released first), plays (most played first), or other (A to Z).",
     "x-platforms": [
       "web"
     ],
@@ -140395,7 +140395,7 @@
   },
   "web.home.rows.describe.rulesChosenOrder": "{scope, select, movie {Movies} series {Shows} episode {Episodes} audiobook {Audiobooks} ebook {Books} manga {Manga} video {Movies and shows} other {Titles}} in a chosen order",
   "@web.home.rows.describe.rulesChosenOrder": {
-    "description": "Web: Home rows editor, row list: description of a Titles matching rules row with no rules and a custom order. {scope}: the kind of titles: movie, series, episode, audiobook, ebook, manga, video (movies and shows), or other (any titles).",
+    "description": "Web: Home rows editor, row list: description of a smart row with no rules and a custom order. {scope}: the kind of titles: movie, series, episode, audiobook, ebook, manga, video (movies and shows), or other (any titles).",
     "x-platforms": [
       "web"
     ],
@@ -140407,7 +140407,7 @@
   },
   "web.home.rows.describe.rulesMatching": "{scope, select, movie {Movies} series {Shows} episode {Episodes} audiobook {Audiobooks} ebook {Books} manga {Manga} video {Movies and shows} other {Titles}} matching {count, plural, one {# rule} other {# rules}}",
   "@web.home.rows.describe.rulesMatching": {
-    "description": "Web: Home rows editor, row list: description of a Titles matching rules row that has rules. {scope}: the kind of titles: movie, series, episode, audiobook, ebook, manga, video (movies and shows), or other (any titles). {count}: how many rules.",
+    "description": "Web: Home rows editor, row list: description of a smart row that has rules. {scope}: the kind of titles: movie, series, episode, audiobook, ebook, manga, video (movies and shows), or other (any titles). {count}: how many rules.",
     "x-platforms": [
       "web"
     ],
@@ -140464,21 +140464,21 @@
   },
   "web.home.rows.describe.sortCustom": "Custom order",
   "@web.home.rows.describe.sortCustom": {
-    "description": "Web: Add/Edit row dialog, More options summary of a Titles matching rules row: the row has an order without a plain name.",
+    "description": "Web: Add/Edit row dialog, More options summary of a smart row: the row has an order without a plain name.",
     "x-platforms": [
       "web"
     ]
   },
   "web.home.rows.describe.sortHighestRated": "Highest rated first",
   "@web.home.rows.describe.sortHighestRated": {
-    "description": "Web: Add/Edit row dialog, More options summary of a Titles matching rules row: the row's order.",
+    "description": "Web: Add/Edit row dialog, More options summary of a smart row: the row's order.",
     "x-platforms": [
       "web"
     ]
   },
   "web.home.rows.describe.sortMostPlayed": "Most played first",
   "@web.home.rows.describe.sortMostPlayed": {
-    "description": "Web: Add/Edit row dialog, More options summary of a Titles matching rules row: the row's order.",
+    "description": "Web: Add/Edit row dialog, More options summary of a smart row: the row's order.",
     "x-platforms": [
       "web"
     ]
@@ -140809,16 +140809,16 @@
       }
     }
   },
-  "web.home.rows.groups.collections": "Collections & rules",
+  "web.home.rows.groups.collections": "Collections & smart rows",
   "@web.home.rows.groups.collections": {
     "description": "Web: Add row dialog, row-kind picker: name of the group of kinds of rows (collections), shown as a group heading and in the side rail.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.home.rows.groups.collectionsBlurb": "Your collections, or rows built from rules",
+  "web.home.rows.groups.collectionsBlurb": "Your collections, or smart rows built from rules",
   "@web.home.rows.groups.collectionsBlurb": {
-    "description": "Web: Add row dialog, row-kind picker: the line after the “Collections & rules” group's name, saying what its rows have in common.",
+    "description": "Web: Add row dialog, row-kind picker: the line after the “Collections & smart rows” group's name, saying what its rows have in common.",
     "x-platforms": [
       "web"
     ]
@@ -140949,9 +140949,9 @@
       "web"
     ]
   },
-  "web.home.rows.kindSentences.customFilter": "Build a row from rules, like genre and decade.",
+  "web.home.rows.kindSentences.customFilter": "Like a smart collection, but only a row. Pick titles with rules like genre and decade.",
   "@web.home.rows.kindSentences.customFilter": {
-    "description": "Web: Add row dialog: one sentence on the picker card for the “Titles matching rules” kind of row, saying what the row shows.",
+    "description": "Web: Add row dialog: one sentence on the picker card for the “Smart row” kind of row, saying what the row shows.",
     "x-platforms": [
       "web"
     ]
@@ -141194,9 +141194,9 @@
       "web"
     ]
   },
-  "web.home.rows.kinds.customFilter": "Titles matching rules",
+  "web.home.rows.kinds.customFilter": "Smart row",
   "@web.home.rows.kinds.customFilter": {
-    "description": "Web: Home rows editor: plain name of the “custom_filter” kind of Home row. Shown on its picker card, as the Add row dialog title, on a row's “Shows” line and as a row's description when nothing more specific applies.",
+    "description": "Web: Home rows editor: plain name of the “custom_filter” kind of Home row. Shown on its picker card, as the Add row dialog title, on a row's “Shows” line and as a row's description when nothing more specific applies. A smart row picks its titles by rules, like a smart collection, but is only a row and saves no collection.",
     "x-platforms": [
       "web"
     ]
