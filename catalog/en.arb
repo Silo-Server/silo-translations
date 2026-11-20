@@ -111062,6 +111062,18 @@
       "web"
     ]
   },
+  "web.admin.settings.storage.transitionsEnvManaged": "Storage can’t be moved here while the environment sets storage settings ({variables}). Unset those variables and restart every API server first.",
+  "@web.admin.settings.storage.transitionsEnvManaged": {
+    "description": "Web admin, Storage settings page: shown in an error toast, in the storage location change note, and in the transition dialog when a storage location change needs a managed transition but the server's environment variables set storage settings. The server refuses the transition until they are unset. {variables} is a comma-separated list of environment variable names, such as SILO_S3_PUBLIC_REGION, shown as written.",
+    "placeholders": {
+      "variables": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.settings.storage.transitionsUnavailable": "Managed storage transitions are not available on this server.",
   "@web.admin.settings.storage.transitionsUnavailable": {
     "description": "Web admin, Storage settings page: error toast when a storage location change needs a managed transition the server does not offer.",
