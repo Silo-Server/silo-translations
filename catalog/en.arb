@@ -58198,7 +58198,7 @@
       "web"
     ]
   },
-  "web.admin.backups.restore.blocked.managedByEnvironment": "{count, plural, one {{count_text} can't be restored — this server's environment sets what differs} other {{count_text} can't be restored — this server's environment sets what differs}}",
+  "web.admin.backups.restore.blocked.managedByEnvironment": "{count, plural, one {{count_text} can't be restored — this server's environment sets the settings that differ, or part of their connection} other {{count_text} can't be restored — this server's environment sets the settings that differ, or part of their connection}}",
   "@web.admin.backups.restore.blocked.managedByEnvironment": {
     "description": "Web admin, Restore page: heading over a group of items in a section that can't be restored, with the reason. {count}: number of items (selects the plural). {count_text}: the same number as printed.",
     "placeholders": {
@@ -58479,7 +58479,7 @@
       "web"
     ]
   },
-  "web.admin.backups.restore.caveat.environmentSettings": "{count, plural, one {{count_text} setting keeps its current value: this server's environment sets it, or the connection it belongs to.} other {{count_text} settings keep their current values: this server's environment sets them, or the connections they belong to.}}",
+  "web.admin.backups.restore.caveat.environmentSettings": "{count, plural, one {{count_text} setting keeps its current value because this server's environment sets it, or part of its connection.} other {{count_text} settings keep their current values because this server's environment sets them, or part of their connection.}}",
   "@web.admin.backups.restore.caveat.environmentSettings": {
     "description": "Web admin, Restore page: review step, Left out list: settings kept at this server's values because its environment sets them. {count}: number of settings (selects the plural). {count_text}: the same number as printed.",
     "placeholders": {
@@ -60107,7 +60107,7 @@
       "web"
     ]
   },
-  "web.admin.backups.restore.reason.managedByEnvironment": "This server's environment sets the settings that differ, or the connection they belong to, so this server keeps its current values.",
+  "web.admin.backups.restore.reason.managedByEnvironment": "This server's environment sets the settings that differ, or part of their connection, so this server keeps its current values.",
   "@web.admin.backups.restore.reason.managedByEnvironment": {
     "description": "Web admin, Restore page: why an item is left out or not offered.",
     "x-platforms": [
@@ -60981,7 +60981,7 @@
   },
   "web.admin.backups.restore.setting.managedByEnvironment": "{value} (kept: environment)",
   "@web.admin.backups.restore.setting.managedByEnvironment": {
-    "description": "Web admin, Restore page, item rows: value shown in the settings comparison table (Now column) for a setting this server keeps because its environment sets it, or sets the address or credentials of the service connection it belongs to. {value}: this server's value, Empty, or Set for a hidden value.",
+    "description": "Web admin, Restore page, item rows: value shown in the settings comparison table (Now column) for a setting this server keeps because its environment sets it, or sets another part of the outside-service connection it belongs to (for example the mail server's password). {value}: this server's value, Empty, or Set for a hidden value.",
     "placeholders": {
       "value": {
         "type": "String"
