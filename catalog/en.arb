@@ -95984,6 +95984,13 @@
       "web"
     ]
   },
+  "web.admin.settings.fields.envStatusUnknown": "Couldn’t check whether the server’s environment sets this. Reload the page to edit it.",
+  "@web.admin.settings.fields.envStatusUnknown": {
+    "description": "Web admin settings pages and first-run setup wizard: shown under a setting the server's environment could set, while the server's answer about which settings its environment sets could not be loaded. The control stays read-only until the page is reloaded and that answer arrives.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.settings.fields.groupUnsavedChanges": "Unsaved changes in this group",
   "@web.admin.settings.fields.groupUnsavedChanges": {
     "description": "Web admin, settings pages: tooltip and screen-reader text for the dot on a settings group heading that has unsaved edits.",
