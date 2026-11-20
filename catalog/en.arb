@@ -58720,9 +58720,14 @@
       "web"
     ]
   },
-  "web.admin.backups.restore.choose.hideThem": "Hide them",
+  "web.admin.backups.restore.choose.hideThem": "{count, plural, one {Hide it} other {Hide them}}",
   "@web.admin.backups.restore.choose.hideThem": {
-    "description": "Web admin, Restore page, choose step: button that hides a group of items (or the never-restored settings).",
+    "description": "Web admin, Restore page, choose step: button that hides a group of items (or the never-restored settings). {count}: number of items or settings it hides (selects the plural).",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    },
     "x-platforms": [
       "web"
     ]
@@ -58821,9 +58826,14 @@
       "web"
     ]
   },
-  "web.admin.backups.restore.choose.showThem": "Show them",
+  "web.admin.backups.restore.choose.showThem": "{count, plural, one {Show it} other {Show them}}",
   "@web.admin.backups.restore.choose.showThem": {
-    "description": "Web admin, Restore page, choose step: button that shows a group of items (or the never-restored settings).",
+    "description": "Web admin, Restore page, choose step: button that shows a group of items (or the never-restored settings). {count}: number of items or settings it shows (selects the plural).",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    },
     "x-platforms": [
       "web"
     ]
