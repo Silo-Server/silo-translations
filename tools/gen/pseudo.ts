@@ -12,14 +12,19 @@ const RLO = "\u202E";
 const PDF = "\u202C";
 const RLM = "\u200F";
 
-function mapLiterals(elements: MessageFormatElement[], f: (s: string) => string): MessageFormatElement[] {
+/** Applies `f` to every literal, in plural and select branches too, and in tag contents unless `intoTags` is false. */
+export function mapLiterals(
+  elements: MessageFormatElement[],
+  f: (s: string) => string,
+  { intoTags = true }: { intoTags?: boolean } = {},
+): MessageFormatElement[] {
   return elements.map((el) => {
     if (el.type === TYPE.literal) return { ...el, value: f(el.value) };
     if (el.type === TYPE.plural || el.type === TYPE.select) {
-      const options = Object.fromEntries(Object.entries(el.options).map(([k, o]) => [k, { ...o, value: mapLiterals(o.value, f) }]));
+      const options = Object.fromEntries(Object.entries(el.options).map(([k, o]) => [k, { ...o, value: mapLiterals(o.value, f, { intoTags }) }]));
       return { ...el, options } as MessageFormatElement;
     }
-    if (el.type === TYPE.tag) return { ...el, children: mapLiterals(el.children, f) };
+    if (el.type === TYPE.tag && intoTags) return { ...el, children: mapLiterals(el.children, f, { intoTags }) };
     return el;
   });
 }

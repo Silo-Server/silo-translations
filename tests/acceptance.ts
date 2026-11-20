@@ -124,18 +124,21 @@ export function acceptance(root: string, name: string) {
     const got = decodeResources(sdk, join(dir, "out/android/android-shared/src/androidMain/res"));
 
     const languages = [
-      { config: "", messages: checked.english },
-      ...checked.locales.targets.map((l) => ({ config: aaptConfig(l.android), messages: checked.valid.get(l.tag) })),
+      { config: "", messages: checked.english, rtl: false },
+      ...checked.locales.targets.map((l) => ({ config: aaptConfig(l.android), messages: checked.valid.get(l.tag), rtl: l.dir === "rtl" })),
     ];
+    // Right-to-left values also carry the left-to-right marks the generator adds (tools/gen/bidi.ts,
+    // covered in generate.test.ts); apart from those they must decode to the catalog text.
+    const lrm = /\u200E/g;
     let count = 0;
     for (const entry of checked.catalog.entries) {
       if (!entry.platforms.includes("android")) continue;
-      for (const { config, messages } of languages) {
+      for (const { config, messages, rtl } of languages) {
         const a = messages?.get(entry.key);
         if (!a) continue;
         for (const [form, text] of expectedAndroid(entry, a)) {
           const id = `${androidName(entry.key)}|${config}|${form}`;
-          assert.equal(got.get(id), text, id);
+          assert.equal(rtl ? got.get(id)?.replace(lrm, "") : got.get(id), rtl ? text.replace(lrm, "") : text, id);
           count++;
         }
       }

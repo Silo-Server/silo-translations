@@ -98,6 +98,50 @@ test("bidi: escaped JSON parses to the same strings", () => {
   assert.equal(escapeAndroid(BIDI, false), BIDI.split("").map((c) => `\\u${c.charCodeAt(0).toString(16).padStart(4, "0")}`).join(""));
 });
 
+test("bidi: right-to-left output keeps a Latin name's edge symbols on its side", () => {
+  const LRM = "\u200E";
+  // [key, English, Arabic or Hebrew, what the generator writes]
+  const cases: [string, string, Record<string, string>, Record<string, string>][] = [
+    ["a.hdr", "Detect HDR10+ Video", { ar: "اكتشاف فيديو HDR10+", he: "זיהוי סרטוני HDR10+" }, { ar: `اكتشاف فيديو HDR10+${LRM}`, he: `זיהוי סרטוני HDR10+${LRM}` }],
+    ["a.comma", "Silo detected HDR10+, once", { ar: "اكتشف Silo تنسيق HDR10+، مرة", he: "Silo זיהה HDR10+, פעם" }, { ar: `اكتشف Silo تنسيق HDR10+${LRM}، مرة`, he: `Silo זיהה HDR10+${LRM}, פעם` }],
+    ["a.pin", "needs #PIN", { ar: "يتطلب #PIN", he: "נדרש #PIN" }, { ar: `يتطلب ${LRM}#PIN`, he: `נדרש ${LRM}#PIN` }],
+    ["a.ip", "such as 192.168.x.x or localhost.", { ar: "مثل 192.168.x.x أو localhost.", he: "כמו 192.168.x.x או localhost." }, { ar: `مثل ${LRM}192.168.x.x أو localhost.`, he: `כמו ${LRM}192.168.x.x או localhost.` }],
+    ["a.prefix", "a name after a prefix", { ar: "ملف وHDR10+ الخاص", he: "קובץ ה-.nfo של הכותר" }, { ar: `ملف وHDR10+${LRM} الخاص`, he: `קובץ ה-${LRM}.nfo של הכותר` }],
+    ["a.keys", "Speed (shift+. / shift+,)", { ar: "السرعة (shift+. / shift+,)", he: "מהירות (shift+. / shift+,)" }, { ar: `السرعة (shift+${LRM}. / shift+${LRM},${LRM})`, he: `מהירות (shift+${LRM}. / shift+${LRM},${LRM})` }],
+    ["a.url", "such as https://mdblist.com/lists/…", { ar: "مثل https://mdblist.com/lists/…", he: "למשל https://mdblist.com/lists/…" }, { ar: `مثل https://mdblist.com/lists/…${LRM}`, he: `למשל https://mdblist.com/lists/…${LRM}` }],
+    // Unchanged: a word joined by #, quotes around a name, a name ending a sentence or an ellipsis.
+    ["a.word", "password#PIN.", { ar: "كلمة المرور#PIN.", he: "סיסמה#PIN." }, { ar: "كلمة المرور#PIN.", he: "סיסמה#PIN." }],
+    ["a.quote", "On the “Bot” page", { ar: "في صفحة «Bot»", he: "בדף ”Bot”" }, { ar: "في صفحة «Bot»", he: "בדף ”Bot”" }],
+    ["a.end", "Updated Silo.", { ar: "تم تحديث Silo.", he: "Silo עודכן." }, { ar: "تم تحديث Silo.", he: "Silo עודכן." }],
+    ["a.loading", "Loading API…", { ar: "جارٍ تحميل API…", he: "טוען API…" }, { ar: "جارٍ تحميل API…", he: "טוען API…" }],
+  ];
+  const root = makeRepo({
+    en: Object.assign({}, ...cases.map(([key, en]) => entry(key, en))),
+    ar: Object.fromEntries(cases.map(([key, , tr]) => [key, tr.ar])),
+    he: Object.fromEntries(cases.map(([key, , tr]) => [key, tr.he])),
+  });
+  const out = generateAll(root, "test");
+  for (const tag of ["ar", "he"]) {
+    const web = JSON.parse(out.get("web")!.get(`web/src/locales/${tag}.json`)!) as Record<string, { value: string }[]>;
+    for (const [key, , , want] of cases) assert.equal(web[key]!.map((el) => el.value).join(""), want[tag], `${tag} ${key}`);
+  }
+  const android = out.get("android")!.get("android-shared/src/androidMain/res/values-iw/strings_catalog.xml")!;
+  assert.match(android, /<string name="a_hdr">זיהוי סרטוני HDR10\+\\u200e<\/string>/);
+});
+
+test("bidi: right-to-left output leaves the text inside a rich-text tag as written", () => {
+  const root = makeRepo({
+    en: entry("a.code", "Map <code>/srv/media</code> to /media", { "x-platforms": ["web"] }),
+    ar: { "a.code": "اربط <code>/srv/media</code> بـ /media" },
+  });
+  const ast = JSON.parse(generateAll(root, "test").get("web")!.get("web/src/locales/ar.json")!)["a.code"];
+  assert.deepEqual(ast, [
+    { type: 0, value: "اربط " },
+    { type: 8, value: "code", children: [{ type: 0, value: "/srv/media" }] },
+    { type: 0, value: " بـ \u200E/media" },
+  ]);
+});
+
 test("bidi: make check's scan names a file with a literal bidi control", () => {
   assert.deepEqual(literalBidi(new Map([["ok.json", "\\u200F"], ["bad.json", "x\u2067y"]])), [{ path: "bad.json", codePoint: "U+2067" }]);
 });

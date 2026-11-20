@@ -12,6 +12,7 @@ import { generateApple } from "./gen/apple.ts";
 import { generateAndroid } from "./gen/android.ts";
 import { generateRoku } from "./gen/roku.ts";
 import { pseudoMessages, ROKU_BRACKETS } from "./gen/pseudo.ts";
+import { outputTranslations } from "./gen/bidi.ts";
 
 export const GENERATORS = { web: generateWeb, apple: generateApple, android: generateAndroid, roku: generateRoku };
 const MARKER = ".silo-translations-out";
@@ -29,7 +30,7 @@ export function generateAll(root: string, version: string): Map<string, Files> {
     locales: checked.locales,
     entries,
     english: checked.english,
-    translations: checked.valid,
+    translations: outputTranslations(checked),
     pseudo: new Map(checked.locales.pseudo.map((l) => [l.tag, pseudoMessages(l, entries, checked.english)])),
     rokuPseudo: new Map(checked.locales.pseudo.map((l) => [l.tag, pseudoMessages(l, entries, checked.english, ROKU_BRACKETS)])),
   };
