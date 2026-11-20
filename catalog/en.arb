@@ -96597,6 +96597,34 @@
       "web"
     ]
   },
+  "web.admin.settings.hooks.settings.conflict.description": "Reload to see the current values. Your edits to settings that changed, and to saved passwords and keys, are undone; your other edits are kept.",
+  "@web.admin.settings.hooks.settings.conflict.description": {
+    "description": "Web admin, settings pages and setup wizard steps: body of the toast shown when a save is refused because the server's settings changed after the admin started editing (another administrator or browser tab saved, or the server restarted with different environment settings). The toast's button reloads the settings; saved passwords and keys are never shown, so edits to them cannot be checked and are undone too.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.hooks.settings.conflict.reload": "Reload",
+  "@web.admin.settings.hooks.settings.conflict.reload": {
+    "description": "Web admin, settings pages and setup wizard steps: button on the toast shown when a save is refused because settings changed meanwhile. It reloads the current settings, undoes the admin's edits to settings that changed and to saved passwords and keys, and keeps their other edits.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.hooks.settings.conflict.reloadFailed": "Couldn’t reload settings. Try again.",
+  "@web.admin.settings.hooks.settings.conflict.reloadFailed": {
+    "description": "Web admin, settings pages and setup wizard steps: error toast when reloading the settings after a refused save fails. The edits on screen are unchanged.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.hooks.settings.conflict.title": "Settings changed elsewhere",
+  "@web.admin.settings.hooks.settings.conflict.title": {
+    "description": "Web admin, settings pages and setup wizard steps: title of the toast shown when a save is refused because the server's settings changed after the admin started editing (another administrator or browser tab saved, or the server restarted with different environment settings). The admin's edits are still on screen.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.settings.hooks.settings.jellyfinCompat.updateFailed": "Failed to update Jellyfin compatibility",
   "@web.admin.settings.hooks.settings.jellyfinCompat.updateFailed": {
     "description": "Web admin, Jellyfin compatibility settings: fallback error toast when saving the Jellyfin compatibility settings fails without a message.",
