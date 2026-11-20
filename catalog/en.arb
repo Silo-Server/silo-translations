@@ -92989,9 +92989,9 @@
       "web"
     ]
   },
-  "web.admin.sessions.playback.toast.messageUnconfirmed": "The player didn’t confirm the message. It may not have been shown.",
+  "web.admin.sessions.playback.toast.messageUnconfirmed": "The player didn’t confirm the message. It may show up late or not at all.",
   "@web.admin.sessions.playback.toast.messageUnconfirmed": {
-    "description": "Web: admin playback session actions menu (Activity page and dashboard Recent Activity widget): warning toast when the server wrote a message to the player's connection but the player did not confirm receiving it within a few seconds, for example because its network dropped.",
+    "description": "Web: admin playback session actions menu (Activity page and dashboard Recent Activity widget): warning toast when the server wrote a message to the player's connection but the player did not confirm receiving it within a few seconds, for example because its network dropped. The player may still show it once its connection recovers.",
     "x-platforms": [
       "web"
     ]
