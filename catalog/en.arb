@@ -43087,7 +43087,7 @@
   },
   "signInTv.serverAccount": "You'll sign it in to {server} as {account}.",
   "@signInTv.serverAccount": {
-    "description": "Phone text on the TV approval card explaining what will happen. {server}: the server name; {account}: the account name that will be used. Apple (iPhone, iPad): same text on the Sign in a TV approval card and the nearby-TV pairing card; {server} is the server name with its host.",
+    "description": "Phone text on the device approval card explaining what will happen. Keep \"it\" device-neutral (do not say TV: the requesting client can be a TV, app, or other device). {server}: the server name; {account}: the account name that will be used. Apple (iPhone, iPad): same text on the device approval card and the nearby-TV pairing card; {server} is the server name with its host.",
     "placeholders": {
       "server": {
         "type": "String"
@@ -43118,7 +43118,7 @@
   },
   "signInTv.serverOnly": "You'll sign it in to {server} with your account.",
   "@signInTv.serverOnly": {
-    "description": "Phone text on the TV approval card explaining what will happen. {server}: the server name. Apple (iPhone, iPad): same text on the Sign in a TV approval card and the nearby-TV pairing card; {server} is the server name with its host.",
+    "description": "Phone text on the device approval card explaining what will happen. Keep \"it\" device-neutral (do not say TV: the requesting client can be a TV, app, or other device). {server}: the server name. Apple (iPhone, iPad): same text on the device approval card and the nearby-TV pairing card; {server} is the server name with its host.",
     "placeholders": {
       "server": {
         "type": "String"
