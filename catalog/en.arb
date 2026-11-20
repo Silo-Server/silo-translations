@@ -87472,9 +87472,9 @@
       "web"
     ]
   },
-  "web.admin.nodes.unit.deleteDeploymentManaged": "Set by the server’s deployment configuration. Remove it there to delete it here.",
+  "web.admin.nodes.unit.deleteDeploymentManaged": "Set by the server’s deployment configuration. Remove it there and restart the API servers to delete it here.",
   "@web.admin.nodes.unit.deleteDeploymentManaged": {
-    "description": "Web admin, Stream Nodes page: explanation on a disabled delete button of a transcode node that the API servers' deployment configuration lists.",
+    "description": "Web admin, Stream Nodes page: why a transcode node that the API servers' deployment configuration lists cannot be deleted. Shown as the delete button's tooltip, read to screen readers, and shown as a notice when the button is pressed.",
     "x-platforms": [
       "web"
     ]
