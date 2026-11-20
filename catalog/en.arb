@@ -5118,18 +5118,6 @@
       "roku"
     ]
   },
-  "companion.code.match": "Older phones show {words} instead.",
-  "@companion.code.match": {
-    "description": "Roku note under the code for older phone apps that show words instead of digits. {words}: the matching words to compare.",
-    "placeholders": {
-      "words": {
-        "type": "String"
-      }
-    },
-    "x-platforms": [
-      "roku"
-    ]
-  },
   "companion.completed.body": "Signed in to {server}. Taking you to your profiles…",
   "@companion.completed.body": {
     "description": "Roku body text when sign-in is complete, before the profile picker opens. {server}: the server name.",
@@ -5227,19 +5215,6 @@
     "description": "Phone/tablet button saying the code on the TV does not match, which cancels the approval.",
     "x-platforms": [
       "android"
-    ]
-  },
-  "companion.confirmOlderTv": "Older TV apps show {code} instead.",
-  "@companion.confirmOlderTv": {
-    "description": "Phone/tablet note for older TV apps that show a different code format. {code}: the alternative code or words to compare. Apple (iPhone, iPad): same note on the nearby-TV pairing card; {code} is the match words in capitals.",
-    "placeholders": {
-      "code": {
-        "type": "String"
-      }
-    },
-    "x-platforms": [
-      "android",
-      "apple"
     ]
   },
   "companion.confirmYes": "Yes, this matches",
@@ -34508,9 +34483,9 @@
       "apple"
     ]
   },
-  "settings.overview.signInTvSubtitle": "Approve a TV's sign-in code with this account",
+  "settings.overview.signInTvSubtitle": "Approve a sign-in code from a TV, app, or other device",
   "@settings.overview.signInTvSubtitle": {
-    "description": "Apple Settings overview (iPhone, iPad): description of the Sign in a TV row, read by VoiceOver as the row's hint. The TV shows a code; this phone approves it.",
+    "description": "Apple Settings overview (iPhone, iPad): description of the Sign in a TV or device row, read by VoiceOver as the row's hint.",
     "x-platforms": [
       "apple"
     ]
@@ -35451,9 +35426,9 @@
       "apple"
     ]
   },
-  "settings.search.iosTerms.signInTv": "sign in a tv, tv, apple tv, android tv, code, device",
+  "settings.search.iosTerms.signInTv": "sign in a tv, sign in a device, approve, tv, apple tv, android tv, code, device, app",
   "@settings.search.iosTerms.signInTv": {
-    "description": "Apple Settings overview (iPhone, iPad): comma-separated search keywords that make Settings search show the Sign in a TV row. Keep the commas between terms; matching ignores case and finds any term containing the typed text. Translate each term as people would search for it in your language. These add to the English keywords, which always match too; never shown on screen.",
+    "description": "Apple Settings overview (iPhone, iPad): comma-separated search keywords that make Settings search show the Sign in a TV or device row. Keep the commas between terms; matching ignores case and finds any term containing the typed text. Translate each term as people would search for it in your language. These add to the English keywords, which always match too; never shown on screen.",
     "x-platforms": [
       "apple"
     ]
@@ -42856,17 +42831,17 @@
       "android"
     ]
   },
-  "signInTv.approve": "Sign in TV",
+  "signInTv.approve": "Approve sign-in",
   "@signInTv.approve": {
-    "description": "Phone button on the Sign in a TV screen that approves the TV's sign-in request. Apple (iPhone, iPad): same button on the Sign in a TV approval card.",
+    "description": "Phone button on the device approval screen that approves the sign-in request. Apple (iPhone, iPad): same button on the device approval card.",
     "x-platforms": [
       "android",
       "apple"
     ]
   },
-  "signInTv.cardTitle": "Sign in {device}?",
+  "signInTv.cardTitle": "Allow {device} to sign in?",
   "@signInTv.cardTitle": {
-    "description": "Phone card title asking whether to sign in a named TV. {device}: the name of the TV, for example Living Room TV. Apple (iPhone, iPad): same title on the Sign in a TV approval card.",
+    "description": "Phone card title asking whether to approve sign-in for a named device or app. {device}: the name of the device or app, for example Living Room TV. Apple (iPhone, iPad): same title on the device approval card.",
     "placeholders": {
       "device": {
         "type": "String"
@@ -42877,24 +42852,25 @@
       "apple"
     ]
   },
-  "signInTv.cardTitleGeneric": "Sign in this TV?",
+  "signInTv.cardTitleGeneric": "Allow this device to sign in?",
   "@signInTv.cardTitleGeneric": {
-    "description": "Phone card title asking whether to sign in a TV whose name is unknown.",
-    "x-platforms": [
-      "android"
-    ]
-  },
-  "signInTv.checkCode": "Check that your TV shows",
-  "@signInTv.checkCode": {
-    "description": "Phone label above the sign-in code, telling the user to check that the TV displays the same code. Apple (iPhone, iPad): same label on the Sign in a TV approval card.",
+    "description": "Phone card title asking whether to approve sign-in for a device whose name is unknown. Apple (iPhone, iPad): same title on the device approval card.",
     "x-platforms": [
       "android",
       "apple"
     ]
   },
-  "signInTv.chooseAccountBody": "Approve this TV with another account on {server}.",
+  "signInTv.checkCode": "Make sure this code matches",
+  "@signInTv.checkCode": {
+    "description": "Phone label above the sign-in code, telling the user to check that the requesting device shows the same code. Apple (iPhone, iPad): same label on the device approval card.",
+    "x-platforms": [
+      "android",
+      "apple"
+    ]
+  },
+  "signInTv.chooseAccountBody": "Approve this sign-in with another account on {server}.",
   "@signInTv.chooseAccountBody": {
-    "description": "Phone body text on the account choice screen, for approving a TV with a different account. {server}: the server name.",
+    "description": "Phone body text on the account choice screen, for approving a device sign-in with a different account. {server}: the server name.",
     "placeholders": {
       "server": {
         "type": "String"
@@ -42911,9 +42887,9 @@
       "android"
     ]
   },
-  "signInTv.codeLabel": "Code on your TV",
+  "signInTv.codeLabel": "Sign-in code",
   "@signInTv.codeLabel": {
-    "description": "Phone label for the text field where the user types the sign-in code shown on the TV.",
+    "description": "Phone label for the text field where the user types the sign-in code shown on the requesting device.",
     "x-platforms": [
       "android"
     ]
@@ -42926,24 +42902,24 @@
       "apple"
     ]
   },
-  "signInTv.declined": "Sign-in declined. The TV was not signed in.",
+  "signInTv.declined": "Sign-in declined. The device was not signed in.",
   "@signInTv.declined": {
-    "description": "Phone message shown after the user declined the TV sign-in request.",
+    "description": "Phone message shown after the user declined the device sign-in request.",
     "x-platforms": [
       "android"
     ]
   },
-  "signInTv.error.alreadySignedIn": "That TV is already signed in.",
+  "signInTv.error.alreadySignedIn": "This device is already signed in.",
   "@signInTv.error.alreadySignedIn": {
-    "description": "Phone error when the TV was already signed in by an earlier approval. Apple (iPhone, iPad): same title on the Sign in a TV approval card.",
+    "description": "Phone error when the requesting device was already signed in by an earlier approval. Apple (iPhone, iPad): same title on the device approval card.",
     "x-platforms": [
       "android",
       "apple"
     ]
   },
-  "signInTv.error.canceled": "The TV stopped this sign-in. Check the code on your TV.",
+  "signInTv.error.canceled": "This device stopped waiting. Start sign-in again on it.",
   "@signInTv.error.canceled": {
-    "description": "Phone error when the TV cancelled the sign-in attempt before it was approved.",
+    "description": "Phone error when the requesting device canceled the sign-in attempt before it was approved.",
     "x-platforms": [
       "android"
     ]
@@ -42956,23 +42932,23 @@
       "apple"
     ]
   },
-  "signInTv.error.enterCode": "Enter the code shown on your TV.",
+  "signInTv.error.enterCode": "Enter the code shown on your device.",
   "@signInTv.error.enterCode": {
-    "description": "Phone validation error when the user submits without a code from the TV.",
+    "description": "Phone validation error when the user submits without a code.",
     "x-platforms": [
       "android"
     ]
   },
-  "signInTv.error.expired": "This code expired. Your TV is showing a new one; scan it again.",
+  "signInTv.error.expired": "This code expired. Get a new code on the device and try again.",
   "@signInTv.error.expired": {
-    "description": "Phone error when the entered code had expired. The TV has generated a new code the user should scan or enter.",
+    "description": "Phone error when the entered code had expired.",
     "x-platforms": [
       "android"
     ]
   },
-  "signInTv.error.generic": "Couldn't sign in the TV. Try again.",
+  "signInTv.error.generic": "Couldn't approve sign-in. Try again.",
   "@signInTv.error.generic": {
-    "description": "Phone generic error when approving the TV's sign-in failed.",
+    "description": "Phone generic error when approving the device's sign-in failed.",
     "x-platforms": [
       "android"
     ]
@@ -42984,14 +42960,14 @@
       "android"
     ]
   },
-  "signInTv.error.notFound": "We couldn't find that code. Check the code on your TV.",
+  "signInTv.error.notFound": "We couldn't find that code. Check the code and try again.",
   "@signInTv.error.notFound": {
-    "description": "Phone error when the entered code does not match any TV sign-in request.",
+    "description": "Phone error when the entered code does not match any sign-in request.",
     "x-platforms": [
       "android"
     ]
   },
-  "signInTv.error.notFoundOn": "We couldn't find that code on {server}. Check the code on your TV, or try another server.",
+  "signInTv.error.notFoundOn": "We couldn't find that code on {server}. Check the code or try another server.",
   "@signInTv.error.notFoundOn": {
     "description": "Phone error when the entered code was not found on the selected server. {server}: the server name.",
     "placeholders": {
@@ -43010,16 +42986,16 @@
       "android"
     ]
   },
-  "signInTv.error.signInFirst": "Sign in before approving this TV.",
+  "signInTv.error.signInFirst": "Sign in before approving this device.",
   "@signInTv.error.signInFirst": {
-    "description": "Phone error shown when the user tries to approve a TV without being signed in on the phone.",
+    "description": "Phone error shown when the user tries to approve a device without being signed in on the phone.",
     "x-platforms": [
       "android"
     ]
   },
-  "signInTv.followCanceled": "The TV stopped this sign-in.",
+  "signInTv.followCanceled": "This device stopped waiting.",
   "@signInTv.followCanceled": {
-    "description": "Phone status after approval, saying the TV stopped the sign-in.",
+    "description": "Phone status after approval, saying the requesting device stopped waiting.",
     "x-platforms": [
       "android"
     ]
@@ -43031,16 +43007,16 @@
       "android"
     ]
   },
-  "signInTv.followExpired": "This code expired before the TV signed in.",
+  "signInTv.followExpired": "This code expired before the device signed in.",
   "@signInTv.followExpired": {
-    "description": "Phone status saying the code expired before the TV finished signing in.",
+    "description": "Phone status saying the code expired before the device finished signing in.",
     "x-platforms": [
       "android"
     ]
   },
-  "signInTv.followTimedOut": "Approved. Check your TV to see that it signed in.",
+  "signInTv.followTimedOut": "Approved. Check the device to make sure it signed in.",
   "@signInTv.followTimedOut": {
-    "description": "Phone status after approval when the app stopped waiting for confirmation. Tells the user to look at the TV to see whether it signed in.",
+    "description": "Phone status after approval when the app stopped waiting for confirmation.",
     "x-platforms": [
       "android"
     ]
@@ -43058,9 +43034,9 @@
       "apple"
     ]
   },
-  "signInTv.notNow": "Not now",
+  "signInTv.notNow": "Decline",
   "@signInTv.notNow": {
-    "description": "Phone button that dismisses the TV sign-in request without approving it. Apple (iPhone, iPad): same button on the Sign in a TV approval card.",
+    "description": "Phone button that declines the device sign-in request. Apple (iPhone, iPad): same button on the device approval card.",
     "x-platforms": [
       "android",
       "apple"
@@ -43081,9 +43057,9 @@
       "android"
     ]
   },
-  "signInTv.profilesNote": "Anyone using this TV can pick from your profiles. Profiles with a PIN stay locked.",
+  "signInTv.profilesNote": "This gives it access to your profiles. Profiles with a PIN stay locked.",
   "@signInTv.profilesNote": {
-    "description": "Phone note on the TV approval screen about privacy: profiles are visible to anyone using that TV, and PIN-protected profiles stay locked. Apple (iPhone, iPad): same note on the Sign in a TV approval card and the nearby-TV pairing card.",
+    "description": "Phone note on the approval screen about privacy: approving gives the device access to your profiles, and PIN-protected profiles stay locked. Apple (iPhone, iPad): same note on the approval card and nearby-TV pairing card.",
     "x-platforms": [
       "android",
       "apple"
@@ -43125,9 +43101,9 @@
       "apple"
     ]
   },
-  "signInTv.serverHint": "Your TV shows the server name it's signing in to.",
+  "signInTv.serverHint": "Choose the server the device is signing in to.",
   "@signInTv.serverHint": {
-    "description": "Phone hint under the server row, telling the user the TV shows the name of the server it is signing in to.",
+    "description": "Phone hint under the server row, telling the user to pick the server the requesting device is signing in to.",
     "x-platforms": [
       "android"
     ]
@@ -43169,9 +43145,9 @@
       "apple"
     ]
   },
-  "signInTv.settingsLabel": "Sign in a TV",
+  "signInTv.settingsLabel": "Sign in a TV or device",
   "@signInTv.settingsLabel": {
-    "description": "Phone Settings row label that opens the screen for approving a TV's sign-in request.",
+    "description": "Phone Settings row label that opens the screen for approving a TV, app, or other device's sign-in code.",
     "x-platforms": [
       "android",
       "apple"
@@ -43185,25 +43161,25 @@
       "apple"
     ]
   },
-  "signInTv.signedIn": "Your TV is signed in.",
+  "signInTv.signedIn": "Your device is signed in.",
   "@signInTv.signedIn": {
-    "description": "Phone success message after the TV has finished signing in. Apple (iPhone, iPad): same message on the Sign in a TV approval card.",
+    "description": "Phone success message after the requesting device has finished signing in. Apple (iPhone, iPad): same message on the device approval card.",
     "x-platforms": [
       "android",
       "apple"
     ]
   },
-  "signInTv.signingIn": "Done. Your TV is signing in.",
+  "signInTv.signingIn": "Done. Your device is signing in.",
   "@signInTv.signingIn": {
-    "description": "Phone success message after approval while the TV completes its sign-in. Apple (iPhone, iPad): same message on the Sign in a TV approval card.",
+    "description": "Phone success message after approval while the requesting device completes its sign-in. Apple (iPhone, iPad): same message on the device approval card.",
     "x-platforms": [
       "android",
       "apple"
     ]
   },
-  "signInTv.subtitle": "Enter the code on your TV's sign-in screen.",
+  "signInTv.subtitle": "Enter the code shown on your TV, app, or other device.",
   "@signInTv.subtitle": {
-    "description": "Phone subtitle under the Sign in a TV title, instructing the user to type the TV's code. Apple (iPhone, iPad): note under the code field on the Sign in a TV screen.",
+    "description": "Phone subtitle under the Approve sign-in title, instructing the user to type the code shown on the requesting device. Apple (iPhone, iPad): note under the code field on the device approval screen.",
     "x-platforms": [
       "android",
       "apple"
@@ -43223,9 +43199,9 @@
       "android"
     ]
   },
-  "signInTv.title": "Sign in a TV",
+  "signInTv.title": "Approve sign-in",
   "@signInTv.title": {
-    "description": "Phone screen title for approving a TV's device sign-in. Apple (iPhone, iPad): title of the Sign in a TV screen.",
+    "description": "Phone screen title for approving a device sign-in code. Apple (iPhone, iPad): title of the device approval screen.",
     "x-platforms": [
       "android",
       "apple"
@@ -43243,9 +43219,9 @@
       "android"
     ]
   },
-  "signInTv.warning": "Only approve a TV that's in front of you right now.",
+  "signInTv.warning": "Only approve this if you started the sign-in yourself.",
   "@signInTv.warning": {
-    "description": "Phone safety warning on the approval card: only approve a TV that the user can see and started themselves. Apple (iPhone, iPad): same warning on the Sign in a TV approval card and the nearby-TV pairing card.",
+    "description": "Phone safety warning on the approval card: only approve a sign-in request the user started themselves. Apple (iPhone, iPad): same warning on the approval card and nearby-TV pairing card.",
     "x-platforms": [
       "android",
       "apple"
@@ -43928,9 +43904,9 @@
       "apple"
     ]
   },
-  "tvPair.approval.anotherAccountMessage": "Choose which {server} account signs in the TV. Accounts on this device stay signed in, and the TV's code stays ready to approve.",
+  "tvPair.approval.anotherAccountMessage": "Choose which {server} account to approve with. Accounts on this device stay signed in, and the code stays ready to approve.",
   "@tvPair.approval.anotherAccountMessage": {
-    "description": "Apple (iPhone, iPad) Sign in a TV approval card: message of the \"Approve as another account?\" dialog. {server}: the server's name.",
+    "description": "Apple (iPhone, iPad) device approval card: message of the \"Approve as another account?\" dialog. {server}: the server's name.",
     "placeholders": {
       "server": {
         "type": "String"
@@ -43947,23 +43923,23 @@
       "apple"
     ]
   },
-  "tvPair.approval.canceled": "This TV stopped waiting.",
+  "tvPair.approval.canceled": "This device stopped waiting.",
   "@tvPair.approval.canceled": {
-    "description": "Apple (iPhone, iPad) Sign in a TV approval card: title when the TV withdrew its sign-in request (it left the screen or showed a new code).",
+    "description": "Apple (iPhone, iPad) device approval card: title when the requesting device withdrew its sign-in request.",
     "x-platforms": [
       "apple"
     ]
   },
-  "tvPair.approval.canceledDetail": "Start again on the TV.",
+  "tvPair.approval.canceledDetail": "Start sign-in again on the device.",
   "@tvPair.approval.canceledDetail": {
-    "description": "Apple (iPhone, iPad) Sign in a TV approval card: detail under \"This TV stopped waiting.\".",
+    "description": "Apple (iPhone, iPad) device approval card: detail under \"This device stopped waiting.\".",
     "x-platforms": [
       "apple"
     ]
   },
-  "tvPair.approval.chooseProfile": "{device} can choose a profile now.",
+  "tvPair.approval.chooseProfile": "{device} is ready to use.",
   "@tvPair.approval.chooseProfile": {
-    "description": "Apple (iPhone, iPad) Sign in a TV approval card: detail under \"Your TV is signed in.\" after the TV collected its session. {device}: the TV's name as the server reports it.",
+    "description": "Apple (iPhone, iPad) device approval card: detail under \"Your device is signed in.\" after the device collected its session. {device}: the device or app name as the server reports it.",
     "placeholders": {
       "device": {
         "type": "String"
@@ -43980,9 +43956,9 @@
       "apple"
     ]
   },
-  "tvPair.approval.declinedDetail": "The TV shows that you declined.",
+  "tvPair.approval.declinedDetail": "The device was not signed in.",
   "@tvPair.approval.declinedDetail": {
-    "description": "Apple (iPhone, iPad) Sign in a TV approval card: detail under \"Sign-in declined.\".",
+    "description": "Apple (iPhone, iPad) device approval card: detail under \"Sign-in declined.\".",
     "x-platforms": [
       "apple"
     ]
@@ -44001,9 +43977,9 @@
       "apple"
     ]
   },
-  "tvPair.approval.expiredDetail": "Your TV is showing a new one; scan it again.",
+  "tvPair.approval.expiredDetail": "Get a new code on the device and try again.",
   "@tvPair.approval.expiredDetail": {
-    "description": "Apple (iPhone, iPad) Sign in a TV approval card: detail under \"This code expired.\": the TV already shows a new code to scan.",
+    "description": "Apple (iPhone, iPad) device approval card: detail under \"This code expired.\".",
     "x-platforms": [
       "apple"
     ]
@@ -44027,9 +44003,9 @@
       "apple"
     ]
   },
-  "tvPair.approval.needsSignInDetail": "This device's sign-in for {server} has ended. Sign in to it again, then approve the TV.",
+  "tvPair.approval.needsSignInDetail": "Your sign-in for {server} has ended. Sign in again to approve this request.",
   "@tvPair.approval.needsSignInDetail": {
-    "description": "Apple (iPhone, iPad) Sign in a TV approval card: detail under \"Sign in to {server} again\". {server}: the server's name.",
+    "description": "Apple (iPhone, iPad) device approval card: detail under \"Sign in to {server} again\". {server}: the server's name.",
     "placeholders": {
       "server": {
         "type": "String"
@@ -44039,16 +44015,16 @@
       "apple"
     ]
   },
-  "tvPair.approval.notForTv": "This code isn't for signing in a TV.",
+  "tvPair.approval.notForTv": "This code can't be approved here.",
   "@tvPair.approval.notForTv": {
-    "description": "Apple (iPhone, iPad) Sign in a TV approval card: error when the entered code belongs to another kind of request, not a TV sign-in.",
+    "description": "Apple (iPhone, iPad) device approval card: error when the entered code belongs to a request type this screen cannot approve.",
     "x-platforms": [
       "apple"
     ]
   },
-  "tvPair.approval.notFoundDetail": "Check the code on your TV. The TV shows its server's name at the top of its screen.",
+  "tvPair.approval.notFoundDetail": "Check the code and make sure you picked the right server.",
   "@tvPair.approval.notFoundDetail": {
-    "description": "Apple (iPhone, iPad) Sign in a TV approval card: detail under \"We couldn't find that code on {server}.\".",
+    "description": "Apple (iPhone, iPad) device approval card: detail under \"We couldn't find that code on {server}.\".",
     "x-platforms": [
       "apple"
     ]
@@ -44120,9 +44096,9 @@
       "apple"
     ]
   },
-  "tvPair.approval.unconfirmedDetail": "Check the TV. This updates when {server} confirms it.",
+  "tvPair.approval.unconfirmedDetail": "Check the device. This updates when {server} confirms it.",
   "@tvPair.approval.unconfirmedDetail": {
-    "description": "Apple (iPhone, iPad) Sign in a TV approval card: detail under \"Couldn't confirm the approval yet.\"; the card keeps checking. {server}: the server's name.",
+    "description": "Apple (iPhone, iPad) device approval card: detail under \"Couldn't confirm the approval yet.\"; the card keeps checking. {server}: the server's name.",
     "placeholders": {
       "server": {
         "type": "String"
@@ -44255,9 +44231,9 @@
       "android"
     ]
   },
-  "tvPair.entry.codeLabel": "TV code",
+  "tvPair.entry.codeLabel": "Sign-in code",
   "@tvPair.entry.codeLabel": {
-    "description": "Apple (iPhone, iPad): Sign in a TV screen: screen-reader label of the field where the person types the code the TV shows.",
+    "description": "Apple (iPhone, iPad) device approval screen: screen-reader label of the field where the person types the sign-in code.",
     "x-platforms": [
       "apple"
     ]
@@ -44269,9 +44245,9 @@
       "apple"
     ]
   },
-  "tvPair.entry.serverFooter": "Choose the server named at the top of the TV's screen.",
+  "tvPair.entry.serverFooter": "Choose the server the device is signing in to.",
   "@tvPair.entry.serverFooter": {
-    "description": "Apple (iPhone, iPad): Sign in a TV screen: note under the server picker, shown when the phone has several servers.",
+    "description": "Apple (iPhone, iPad) device approval screen: note under the server picker, shown when the phone has several servers.",
     "x-platforms": [
       "apple"
     ]
@@ -44358,9 +44334,9 @@
       "android"
     ]
   },
-  "tvPair.link.addServerBody": "The TV's code belongs to {host}, which isn't on this device yet. Add it and sign in, then approve the TV.",
+  "tvPair.link.addServerBody": "This code belongs to {host}, which isn't on this device yet. Add it and sign in to approve.",
   "@tvPair.link.addServerBody": {
-    "description": "Apple (iPhone, iPad) Sign in a TV from a link: body under \"Add this server?\". {host}: the server's host name (for example media.example.com).",
+    "description": "Apple (iPhone, iPad) device approval from a link: body under \"Add this server?\". {host}: the server's host name (for example media.example.com).",
     "placeholders": {
       "host": {
         "type": "String"
@@ -44377,23 +44353,23 @@
       "apple"
     ]
   },
-  "tvPair.link.mismatch": "That link names a server this device can't confirm. Enter the TV's code in Settings > Sign in a TV instead.",
+  "tvPair.link.mismatch": "That link names a server this device can't confirm. Enter the code in Settings > Sign in a TV or device instead.",
   "@tvPair.link.mismatch": {
-    "description": "Apple (iPhone, iPad) Sign in a TV from a link: error when the server answering at the link's address isn't the server the link names. \"Settings > Sign in a TV\" names the menu path in the app.",
+    "description": "Apple (iPhone, iPad) device approval from a link: error when the server answering at the link's address isn't the server the link names. \"Settings > Sign in a TV or device\" names the menu path in the app.",
     "x-platforms": [
       "apple"
     ]
   },
-  "tvPair.link.resolving": "Finding the TV's server…",
+  "tvPair.link.resolving": "Finding the server…",
   "@tvPair.link.resolving": {
-    "description": "Apple (iPhone, iPad) Sign in a TV from a link: progress text while the app works out which saved server a silo://device link from the web approval page means.",
+    "description": "Apple (iPhone, iPad) device approval from a link: progress text while the app works out which saved server a silo://device link from the web approval page means.",
     "x-platforms": [
       "apple"
     ]
   },
-  "tvPair.link.signedOutBody": "The TV's code belongs to {server}, and this device isn't signed in to it. Sign in, then approve the TV.",
+  "tvPair.link.signedOutBody": "This code belongs to {server}, and you're not signed in to it here. Sign in to approve.",
   "@tvPair.link.signedOutBody": {
-    "description": "Apple (iPhone, iPad) Sign in a TV from a link: body when the link's server is saved but signed out on this phone. {server}: the server's name.",
+    "description": "Apple (iPhone, iPad) device approval from a link: body when the link's server is saved but signed out on this phone. {server}: the server's name.",
     "placeholders": {
       "server": {
         "type": "String"
@@ -44681,19 +44657,6 @@
   "tvPairing.confirmDetailAutomatic": "Your phone or tablet is checking this code for you.",
   "@tvPairing.confirmDetailAutomatic": {
     "description": "Android TV text saying the phone or tablet verifies the code automatically, so the user need not compare it. Apple TV: same text on the pairing screen.",
-    "x-platforms": [
-      "android",
-      "apple"
-    ]
-  },
-  "tvPairing.confirmOlderPhones": "Older phones show {words} instead.",
-  "@tvPairing.confirmOlderPhones": {
-    "description": "Android TV fallback note for older phone app versions that show match words instead of the code. {words}: the match words, such as a few random words. Apple TV: same note on the pairing screen.",
-    "placeholders": {
-      "words": {
-        "type": "String"
-      }
-    },
     "x-platforms": [
       "android",
       "apple"
@@ -120549,28 +120512,21 @@
       "web"
     ]
   },
-  "web.auth.activate.approveFailed": "Couldn't sign in the TV. Try again.",
+  "web.auth.activate.approveFailed": "Couldn't approve sign-in. Try again.",
   "@web.auth.activate.approveFailed": {
     "description": "Web device activation page: error when approving failed.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.auth.activate.checkApp": "Check that your app shows",
-  "@web.auth.activate.checkApp": {
-    "description": "Web device activation page: text above the Quick Connect code the app should show.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.auth.activate.checkTv": "Check that your TV shows",
+  "web.auth.activate.checkTv": "Make sure this code matches",
   "@web.auth.activate.checkTv": {
-    "description": "Web device activation page: text above the code the TV should show.",
+    "description": "Web device activation page: label above the code the user compares with the requesting device or app.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.auth.activate.codeLabel": "Enter the code on your TV or app",
+  "web.auth.activate.codeLabel": "Enter the code shown on your device",
   "@web.auth.activate.codeLabel": {
     "description": "Web device activation page: label of the code field.",
     "x-platforms": [
@@ -120584,14 +120540,14 @@
       "web"
     ]
   },
-  "web.auth.activate.description": "Sign in a TV or other device with your account.",
+  "web.auth.activate.description": "Sign in a TV, app, or other device.",
   "@web.auth.activate.description": {
-    "description": "Web device activation page: text under the server name.",
+    "description": "Web device activation page: subtitle under the server name.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.auth.activate.documentTitle": "Sign in a TV",
+  "web.auth.activate.documentTitle": "Approve sign-in",
   "@web.auth.activate.documentTitle": {
     "description": "Web device activation page: browser tab title.",
     "x-platforms": [
@@ -120605,7 +120561,7 @@
       "web"
     ]
   },
-  "web.auth.activate.impersonating": "Stop viewing as {username} to approve a TV. Only the account itself can sign in a TV.",
+  "web.auth.activate.impersonating": "Stop viewing as {username} to approve this sign-in. Only the account itself can approve devices.",
   "@web.auth.activate.impersonating": {
     "description": "Web device activation page: message while an admin is viewing as another account. {username}: that account's username.",
     "placeholders": {
@@ -120617,7 +120573,7 @@
       "web"
     ]
   },
-  "web.auth.activate.impersonatingUnknown": "Stop viewing as this user to approve a TV. Only the account itself can sign in a TV.",
+  "web.auth.activate.impersonatingUnknown": "Stop viewing as this user to approve this sign-in. Only the account itself can approve devices.",
   "@web.auth.activate.impersonatingUnknown": {
     "description": "Web device activation page: message while an admin is viewing as another account whose name is unknown.",
     "x-platforms": [
@@ -120638,42 +120594,23 @@
       "web"
     ]
   },
-  "web.auth.activate.notFound": "We couldn't find that code. Check the code on your TV.",
+  "web.auth.activate.notFound": "We couldn't find that code. Check the code and try again.",
   "@web.auth.activate.notFound": {
     "description": "Web device activation page: error when no request has that code.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.auth.activate.notNow": "Not now",
+  "web.auth.activate.notNow": "Decline",
   "@web.auth.activate.notNow": {
-    "description": "Web device activation page and Quick Connect approval: button that declines the request.",
+    "description": "Web device activation page and Quick Connect approval: button that declines the sign-in request.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.auth.activate.olderTvApps": "Older TV apps show {words} instead.",
-  "@web.auth.activate.olderTvApps": {
-    "description": "Web device activation page: note under the code. {words}: the matching words older TV apps show instead, in capitals, such as “WARM PONY”.",
-    "placeholders": {
-      "words": {
-        "type": "String"
-      }
-    },
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.auth.activate.onlyApproveDevice": "Only approve a device that's in front of you right now.",
-  "@web.auth.activate.onlyApproveDevice": {
-    "description": "Web device activation page: warning before approving a Quick Connect code.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.auth.activate.onlyApproveTv": "Only approve a TV that's in front of you right now.",
+  "web.auth.activate.onlyApproveTv": "Only approve this if you started the sign-in yourself.",
   "@web.auth.activate.onlyApproveTv": {
-    "description": "Web device activation page: warning before approving a TV sign-in.",
+    "description": "Web device activation page: security warning before approving a sign-in request.",
     "x-platforms": [
       "web"
     ]
@@ -120697,9 +120634,9 @@
       "web"
     ]
   },
-  "web.auth.activate.profilesShared": "Anyone using this TV can pick from your profiles. Profiles with a PIN stay locked.",
+  "web.auth.activate.profilesShared": "This gives it access to your profiles. Profiles with a PIN stay locked.",
   "@web.auth.activate.profilesShared": {
-    "description": "Web device activation page: note before approving a TV sign-in.",
+    "description": "Web device activation page: note before approving a device sign-in.",
     "x-platforms": [
       "web"
     ]
@@ -120745,6 +120682,19 @@
       "web"
     ]
   },
+  "web.auth.activate.requestedAgoStandalone": "Requested {time}",
+  "@web.auth.activate.requestedAgoStandalone": {
+    "description": "Web device activation page: standalone line under the heading when no separate platform label is shown. {time}: when the request was made, already formatted, such as \"just now\" or \"5m ago\" (that relative time is not translated yet).",
+    "placeholders": {
+      "time": {
+        "type": "String",
+        "example": "5m ago"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.auth.activate.requestedFrom": "Requested from {ip}",
   "@web.auth.activate.requestedFrom": {
     "description": "Web device activation page: where the request came from. {ip}: a partial IP address.",
@@ -120757,9 +120707,9 @@
       "web"
     ]
   },
-  "web.auth.activate.result.canceled": "This TV stopped waiting. Start again on the TV.",
+  "web.auth.activate.result.canceled": "This device stopped waiting. Start sign-in again on it.",
   "@web.auth.activate.result.canceled": {
-    "description": "Web device activation page: result when the TV withdrew its sign-in request.",
+    "description": "Web device activation page: result when the requesting device withdrew its sign-in request.",
     "x-platforms": [
       "web"
     ]
@@ -120771,9 +120721,35 @@
       "web"
     ]
   },
-  "web.auth.activate.result.expired": "This code expired. Your TV is showing a new one. Use that code instead.",
+  "web.auth.activate.result.deviceDone": "Done. {device} is signing in.",
+  "@web.auth.activate.result.deviceDone": {
+    "description": "Web device activation page: result after approving a named device's sign-in here. {device}: the requesting device or app name.",
+    "placeholders": {
+      "device": {
+        "type": "String",
+        "example": "Living room TV"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.activate.result.deviceSignedIn": "{device} is signed in.",
+  "@web.auth.activate.result.deviceSignedIn": {
+    "description": "Web device activation page: result when a named device approved here finished signing in. {device}: the requesting device or app name.",
+    "placeholders": {
+      "device": {
+        "type": "String",
+        "example": "Living room TV"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.activate.result.expired": "This code expired. Get a new code on the device and try again.",
   "@web.auth.activate.result.expired": {
-    "description": "Web device activation page: result when a TV sign-in code expired.",
+    "description": "Web device activation page: result when a device sign-in code expired.",
     "x-platforms": [
       "web"
     ]
@@ -120800,7 +120776,7 @@
       "web"
     ]
   },
-  "web.auth.activate.result.quickConnectDoneUnknown": "Done. this device is signing in as {profile}.",
+  "web.auth.activate.result.quickConnectDoneUnknown": "Done. This device is signing in as {profile}.",
   "@web.auth.activate.result.quickConnectDoneUnknown": {
     "description": "Web device activation page: result after approving a Quick Connect code from a device without a name. {profile}: the chosen profile's name.",
     "placeholders": {
@@ -120854,30 +120830,30 @@
       "web"
     ]
   },
-  "web.auth.activate.result.tvAlreadySignedIn": "That TV is already signed in.",
+  "web.auth.activate.result.tvAlreadySignedIn": "This device is already signed in.",
   "@web.auth.activate.result.tvAlreadySignedIn": {
-    "description": "Web device activation page: result when the TV had already finished signing in.",
+    "description": "Web device activation page: result when the requesting device had already finished signing in.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.auth.activate.result.tvApproved": "This TV was approved and is finishing sign-in.",
+  "web.auth.activate.result.tvApproved": "This device was approved and is finishing sign-in.",
   "@web.auth.activate.result.tvApproved": {
-    "description": "Web device activation page: result when the TV sign-in was approved elsewhere.",
+    "description": "Web device activation page: result when the device sign-in was approved elsewhere.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.auth.activate.result.tvDone": "Done. Your TV is signing in.",
+  "web.auth.activate.result.tvDone": "Done. Your device is signing in.",
   "@web.auth.activate.result.tvDone": {
-    "description": "Web device activation page: result after approving a TV sign-in here.",
+    "description": "Web device activation page: result after approving an unnamed device sign-in here.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.auth.activate.result.tvSignedIn": "Your TV is signed in.",
+  "web.auth.activate.result.tvSignedIn": "Your device is signed in.",
   "@web.auth.activate.result.tvSignedIn": {
-    "description": "Web device activation page: result when the TV approved here finished signing in.",
+    "description": "Web device activation page: result when an unnamed device approved here finished signing in.",
     "x-platforms": [
       "web"
     ]
@@ -120897,9 +120873,9 @@
       "web"
     ]
   },
-  "web.auth.activate.signInDevice": "Sign in {device}?",
+  "web.auth.activate.signInDevice": "Allow {device} to sign in?",
   "@web.auth.activate.signInDevice": {
-    "description": "Web device activation page: heading asking to approve a sign-in. {device}: the requesting device's name.",
+    "description": "Web device activation page: heading asking to approve a sign-in. {device}: the requesting device or app name.",
     "placeholders": {
       "device": {
         "type": "String"
@@ -120909,7 +120885,7 @@
       "web"
     ]
   },
-  "web.auth.activate.signInDeviceUnknown": "Sign in this device?",
+  "web.auth.activate.signInDeviceUnknown": "Allow this device to sign in?",
   "@web.auth.activate.signInDeviceUnknown": {
     "description": "Web device activation page: heading asking to approve a sign-in from a device without a name.",
     "x-platforms": [
@@ -120923,7 +120899,7 @@
       "web"
     ]
   },
-  "web.auth.activate.signInToApproveTv": "Sign in to {server} to approve this TV.",
+  "web.auth.activate.signInToApproveTv": "Sign in to {server} to approve this sign-in.",
   "@web.auth.activate.signInToApproveTv": {
     "description": "Web device activation page: prompt for a signed-out visitor. {server}: the server's name.",
     "placeholders": {
@@ -120935,9 +120911,9 @@
       "web"
     ]
   },
-  "web.auth.activate.signInTv": "Sign in TV",
+  "web.auth.activate.signInTv": "Approve sign-in",
   "@web.auth.activate.signInTv": {
-    "description": "Web device activation page: button that approves the TV sign-in.",
+    "description": "Web device activation page and Quick Connect approval: primary button that approves the sign-in request.",
     "x-platforms": [
       "web"
     ]
@@ -122033,7 +122009,7 @@
       "web"
     ]
   },
-  "web.auth.quickConnect.approveFailed": "Couldn't sign in the device. Try again.",
+  "web.auth.quickConnect.approveFailed": "Couldn't approve sign-in. Try again.",
   "@web.auth.quickConnect.approveFailed": {
     "description": "Web Quick Connect approval (device activation page): error when approving failed for an unknown reason.",
     "x-platforms": [
