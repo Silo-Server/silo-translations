@@ -2941,6 +2941,25 @@
       "android"
     ]
   },
+  "cast.remote.endedByTv": "Disconnected from {tv}.",
+  "@cast.remote.endedByTv": {
+    "description": "Android phone: Remote Control notice (a short toast) after the TV ended the phone's control, for example when the viewer left the player with the TV's own remote or pressed Disconnect Remote on the TV. {tv}: the TV's name.",
+    "placeholders": {
+      "tv": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "cast.remote.endedByTvUnnamed": "Disconnected from the TV.",
+  "@cast.remote.endedByTvUnnamed": {
+    "description": "Android phone: Remote Control notice (a short toast) after the TV ended the phone's control, when the phone doesn't know the TV's name.",
+    "x-platforms": [
+      "android"
+    ]
+  },
   "cast.remote.error.accountUnavailable": "The active Silo account is unavailable.",
   "@cast.remote.error.accountUnavailable": {
     "description": "Android phone: Remote Control error shown on the remote and the TV picker; the phone has no signed-in account to lend the TV.",
@@ -5099,18 +5118,6 @@
       "roku"
     ]
   },
-  "companion.code.match": "Older phones show {words} instead.",
-  "@companion.code.match": {
-    "description": "Roku note under the code for older phone apps that show words instead of digits. {words}: the matching words to compare.",
-    "placeholders": {
-      "words": {
-        "type": "String"
-      }
-    },
-    "x-platforms": [
-      "roku"
-    ]
-  },
   "companion.completed.body": "Signed in to {server}. Taking you to your profiles…",
   "@companion.completed.body": {
     "description": "Roku body text when sign-in is complete, before the profile picker opens. {server}: the server name.",
@@ -5208,19 +5215,6 @@
     "description": "Phone/tablet button saying the code on the TV does not match, which cancels the approval.",
     "x-platforms": [
       "android"
-    ]
-  },
-  "companion.confirmOlderTv": "Older TV apps show {code} instead.",
-  "@companion.confirmOlderTv": {
-    "description": "Phone/tablet note for older TV apps that show a different code format. {code}: the alternative code or words to compare. Apple (iPhone, iPad): same note on the nearby-TV pairing card; {code} is the match words in capitals.",
-    "placeholders": {
-      "code": {
-        "type": "String"
-      }
-    },
-    "x-platforms": [
-      "android",
-      "apple"
     ]
   },
   "companion.confirmYes": "Yes, this matches",
@@ -6406,6 +6400,14 @@
       "apple",
       "android",
       "roku"
+    ]
+  },
+  "detail.alsoIn": "Also in",
+  "@detail.alsoIn": {
+    "description": "Heading of the row on a movie or series page that lists the collections holding that title when more than one does; each card opens a collection (Android phone and TV, Apple iOS, iPadOS, macOS and tvOS).",
+    "x-platforms": [
+      "apple",
+      "android"
     ]
   },
   "detail.audio": "Audio",
@@ -14457,9 +14459,9 @@
   "@error.field.malformed_json": {
     "description": "Error shown next to or about one request field when the server reports the field-error code `malformed_json`. Clients show it instead of the server's English detail in a translated interface."
   },
-  "error.field.managed_by_environment": "Set by the node’s environment. Change it there and restart the node.",
+  "error.field.managed_by_environment": "Set by the environment. Change it there and restart the affected service.",
   "@error.field.managed_by_environment": {
-    "description": "Error shown next to or about one request field when the server reports the field-error code `managed_by_environment`: an administrator tried to change a stream node setting that the node itself declares from its environment variables on the server it runs on. Clients show it instead of the server's English detail in a translated interface."
+    "description": "Field error when an administrator tries to edit a plugin or stream node setting that the deployment controls through environment configuration."
   },
   "error.field.out_of_range": "This value is out of range.",
   "@error.field.out_of_range": {
@@ -14532,6 +14534,10 @@
   "error.network_identity_required": "Sign in through your network’s sign-in to continue.",
   "@error.network_identity_required": {
     "description": "Error message shown when the server answers with the v2 problem type `network_identity_required` (server title: \"Network identity required\"). Clients show it instead of the server's English detail in a translated interface, so it must make sense on its own, without the request's specifics."
+  },
+  "error.node_deployment_managed": "This node is set by the server’s deployment configuration. Remove it there and restart the API servers to manage it here.",
+  "@error.node_deployment_managed": {
+    "description": "Error message shown when the server answers with the v2 problem type `node_deployment_managed` (server title: \"Node managed by deployment configuration\"): an administrator tried to issue a key for, or delete, a transcode node that the API servers' deployment configuration lists. Clients show it instead of the server's English detail in a translated interface, so it must make sense on its own, without the request's specifics."
   },
   "error.not_acceptable": "The server can’t answer in a format this app understands.",
   "@error.not_acceptable": {
@@ -19072,16 +19078,18 @@
   },
   "newProfile.requestsAllowed": "Allow requests",
   "@newProfile.requestsAllowed": {
-    "description": "Apple (iPhone, iPad, Mac, Apple TV): switch on the New Profile form that lets the profile request titles that are not in the library.",
+    "description": "Apple (iPhone, iPad, Mac, Apple TV): switch on the New Profile form that lets the profile request titles that are not in the library. Android phone and TV: same switch on the profile form (create and edit).",
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "newProfile.requestsAllowedHelp": "Lets this profile browse titles that are not in the library and request them. The content rating limits those titles by their US rating only, and the advisory-age limit does not apply to them.",
   "@newProfile.requestsAllowedHelp": {
-    "description": "Apple (iPhone, iPad, Mac, Apple TV): help text under the Allow requests switch on the New Profile form.",
+    "description": "Apple (iPhone, iPad, Mac, Apple TV): help text under the Allow requests switch on the New Profile form. Android phone and TV: same help text under that switch on the profile form (create and edit).",
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "newProfile.restrict": "Restrict libraries",
@@ -19382,6 +19390,13 @@
       "android"
     ]
   },
+  "notifications.push.watchlistBody": "From your watchlist.",
+  "@notifications.push.watchlistBody": {
+    "description": "Phone: body of a push notification saying a title on the user's watchlist has arrived in the library; the title above it names the movie or series.",
+    "x-platforms": [
+      "android"
+    ]
+  },
   "notifications.type.generic": "Notification",
   "@notifications.type.generic": {
     "description": "Phone and TV: title of an inbox card for a notification of a type the app does not know.",
@@ -19399,6 +19414,25 @@
   "notifications.type.requestFulfilled": "Request fulfilled",
   "@notifications.type.requestFulfilled": {
     "description": "Phone and TV: title of an inbox card, and phone: title of a push notification, saying a title the user requested is now in the library.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "notifications.type.watchlistAvailable": "{title} is now available",
+  "@notifications.type.watchlistAvailable": {
+    "description": "Phone and TV: title of an inbox card, and phone: title of a push notification, saying a title the user had on their watchlist has arrived in the library. 1: the movie or series name, such as Dune.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "notifications.type.watchlistAvailableUntitled": "A title on your watchlist is now available",
+  "@notifications.type.watchlistAvailableUntitled": {
+    "description": "Phone and TV: title of an inbox card, and phone: title of a push notification, saying a title the user had on their watchlist has arrived in the library, when the server sends no title name.",
     "x-platforms": [
       "android"
     ]
@@ -34337,6 +34371,13 @@
       "android"
     ]
   },
+  "settings.notifications.nextUpFooter": "Next Up tells you when a new episode becomes the next one to watch in a series you're following. Titles you requested or added to your watchlist notify you when they arrive.",
+  "@settings.notifications.nextUpFooter": {
+    "description": "Android phone: footer under the Next Up switch on Settings → Notifications. It explains the switch, and that requested and watchlisted titles notify on their own when they arrive.",
+    "x-platforms": [
+      "android"
+    ]
+  },
   "settings.notifications.title": "Notifications",
   "@settings.notifications.title": {
     "description": "Android phone: Settings overview row and page title for in-app notification options.",
@@ -34491,9 +34532,9 @@
       "apple"
     ]
   },
-  "settings.overview.signInTvSubtitle": "Approve a TV's sign-in code with this account",
+  "settings.overview.signInTvSubtitle": "Approve a sign-in code from a TV, app, or other device",
   "@settings.overview.signInTvSubtitle": {
-    "description": "Apple Settings overview (iPhone, iPad): description of the Sign in a TV row, read by VoiceOver as the row's hint. The TV shows a code; this phone approves it.",
+    "description": "Apple Settings overview (iPhone, iPad): description of the Sign in a TV or device row, read by VoiceOver as the row's hint.",
     "x-platforms": [
       "apple"
     ]
@@ -35434,9 +35475,9 @@
       "apple"
     ]
   },
-  "settings.search.iosTerms.signInTv": "sign in a tv, tv, apple tv, android tv, code, device",
+  "settings.search.iosTerms.signInTv": "sign in a tv, sign in a device, approve, tv, apple tv, android tv, code, device, app",
   "@settings.search.iosTerms.signInTv": {
-    "description": "Apple Settings overview (iPhone, iPad): comma-separated search keywords that make Settings search show the Sign in a TV row. Keep the commas between terms; matching ignores case and finds any term containing the typed text. Translate each term as people would search for it in your language. These add to the English keywords, which always match too; never shown on screen.",
+    "description": "Apple Settings overview (iPhone, iPad): comma-separated search keywords that make Settings search show the Sign in a TV or device row. Keep the commas between terms; matching ignores case and finds any term containing the typed text. Translate each term as people would search for it in your language. These add to the English keywords, which always match too; never shown on screen.",
     "x-platforms": [
       "apple"
     ]
@@ -42839,17 +42880,17 @@
       "android"
     ]
   },
-  "signInTv.approve": "Sign in TV",
+  "signInTv.approve": "Approve sign-in",
   "@signInTv.approve": {
-    "description": "Phone button on the Sign in a TV screen that approves the TV's sign-in request. Apple (iPhone, iPad): same button on the Sign in a TV approval card.",
+    "description": "Phone button on the device approval screen that approves the sign-in request. Apple (iPhone, iPad): same button on the device approval card.",
     "x-platforms": [
       "android",
       "apple"
     ]
   },
-  "signInTv.cardTitle": "Sign in {device}?",
+  "signInTv.cardTitle": "Allow {device} to sign in?",
   "@signInTv.cardTitle": {
-    "description": "Phone card title asking whether to sign in a named TV. {device}: the name of the TV, for example Living Room TV. Apple (iPhone, iPad): same title on the Sign in a TV approval card.",
+    "description": "Phone card title asking whether to approve sign-in for a named device or app. {device}: the name of the device or app, for example Living Room TV. Apple (iPhone, iPad): same title on the device approval card.",
     "placeholders": {
       "device": {
         "type": "String"
@@ -42860,24 +42901,25 @@
       "apple"
     ]
   },
-  "signInTv.cardTitleGeneric": "Sign in this TV?",
+  "signInTv.cardTitleGeneric": "Allow this device to sign in?",
   "@signInTv.cardTitleGeneric": {
-    "description": "Phone card title asking whether to sign in a TV whose name is unknown.",
-    "x-platforms": [
-      "android"
-    ]
-  },
-  "signInTv.checkCode": "Check that your TV shows",
-  "@signInTv.checkCode": {
-    "description": "Phone label above the sign-in code, telling the user to check that the TV displays the same code. Apple (iPhone, iPad): same label on the Sign in a TV approval card.",
+    "description": "Phone card title asking whether to approve sign-in for a device whose name is unknown. Apple (iPhone, iPad): same title on the device approval card.",
     "x-platforms": [
       "android",
       "apple"
     ]
   },
-  "signInTv.chooseAccountBody": "Approve this TV with another account on {server}.",
+  "signInTv.checkCode": "Make sure this code matches",
+  "@signInTv.checkCode": {
+    "description": "Phone label above the sign-in code, telling the user to check that the requesting device shows the same code. Apple (iPhone, iPad): same label on the device approval card.",
+    "x-platforms": [
+      "android",
+      "apple"
+    ]
+  },
+  "signInTv.chooseAccountBody": "Approve this sign-in with another account on {server}.",
   "@signInTv.chooseAccountBody": {
-    "description": "Phone body text on the account choice screen, for approving a TV with a different account. {server}: the server name.",
+    "description": "Phone body text on the account choice screen, for approving a device sign-in with a different account. {server}: the server name.",
     "placeholders": {
       "server": {
         "type": "String"
@@ -42894,9 +42936,9 @@
       "android"
     ]
   },
-  "signInTv.codeLabel": "Code on your TV",
+  "signInTv.codeLabel": "Sign-in code",
   "@signInTv.codeLabel": {
-    "description": "Phone label for the text field where the user types the sign-in code shown on the TV.",
+    "description": "Phone label for the text field where the user types the sign-in code shown on the requesting device.",
     "x-platforms": [
       "android"
     ]
@@ -42909,24 +42951,24 @@
       "apple"
     ]
   },
-  "signInTv.declined": "Sign-in declined. The TV was not signed in.",
+  "signInTv.declined": "Sign-in declined. The device was not signed in.",
   "@signInTv.declined": {
-    "description": "Phone message shown after the user declined the TV sign-in request.",
+    "description": "Phone message shown after the user declined the device sign-in request.",
     "x-platforms": [
       "android"
     ]
   },
-  "signInTv.error.alreadySignedIn": "That TV is already signed in.",
+  "signInTv.error.alreadySignedIn": "This device is already signed in.",
   "@signInTv.error.alreadySignedIn": {
-    "description": "Phone error when the TV was already signed in by an earlier approval. Apple (iPhone, iPad): same title on the Sign in a TV approval card.",
+    "description": "Phone error when the requesting device was already signed in by an earlier approval. Apple (iPhone, iPad): same title on the device approval card.",
     "x-platforms": [
       "android",
       "apple"
     ]
   },
-  "signInTv.error.canceled": "The TV stopped this sign-in. Check the code on your TV.",
+  "signInTv.error.canceled": "This device stopped waiting. Start sign-in again on it.",
   "@signInTv.error.canceled": {
-    "description": "Phone error when the TV cancelled the sign-in attempt before it was approved.",
+    "description": "Phone error when the requesting device canceled the sign-in attempt before it was approved.",
     "x-platforms": [
       "android"
     ]
@@ -42939,23 +42981,23 @@
       "apple"
     ]
   },
-  "signInTv.error.enterCode": "Enter the code shown on your TV.",
+  "signInTv.error.enterCode": "Enter the code shown on your device.",
   "@signInTv.error.enterCode": {
-    "description": "Phone validation error when the user submits without a code from the TV.",
+    "description": "Phone validation error when the user submits without a code.",
     "x-platforms": [
       "android"
     ]
   },
-  "signInTv.error.expired": "This code expired. Your TV is showing a new one; scan it again.",
+  "signInTv.error.expired": "This code expired. Get a new code on the device and try again.",
   "@signInTv.error.expired": {
-    "description": "Phone error when the entered code had expired. The TV has generated a new code the user should scan or enter.",
+    "description": "Phone error when the entered code had expired.",
     "x-platforms": [
       "android"
     ]
   },
-  "signInTv.error.generic": "Couldn't sign in the TV. Try again.",
+  "signInTv.error.generic": "Couldn't approve sign-in. Try again.",
   "@signInTv.error.generic": {
-    "description": "Phone generic error when approving the TV's sign-in failed.",
+    "description": "Phone generic error when approving the device's sign-in failed.",
     "x-platforms": [
       "android"
     ]
@@ -42967,14 +43009,14 @@
       "android"
     ]
   },
-  "signInTv.error.notFound": "We couldn't find that code. Check the code on your TV.",
+  "signInTv.error.notFound": "We couldn't find that code. Check the code and try again.",
   "@signInTv.error.notFound": {
-    "description": "Phone error when the entered code does not match any TV sign-in request.",
+    "description": "Phone error when the entered code does not match any sign-in request.",
     "x-platforms": [
       "android"
     ]
   },
-  "signInTv.error.notFoundOn": "We couldn't find that code on {server}. Check the code on your TV, or try another server.",
+  "signInTv.error.notFoundOn": "We couldn't find that code on {server}. Check the code or try another server.",
   "@signInTv.error.notFoundOn": {
     "description": "Phone error when the entered code was not found on the selected server. {server}: the server name.",
     "placeholders": {
@@ -42993,16 +43035,16 @@
       "android"
     ]
   },
-  "signInTv.error.signInFirst": "Sign in before approving this TV.",
+  "signInTv.error.signInFirst": "Sign in before approving this device.",
   "@signInTv.error.signInFirst": {
-    "description": "Phone error shown when the user tries to approve a TV without being signed in on the phone.",
+    "description": "Phone error shown when the user tries to approve a device without being signed in on the phone.",
     "x-platforms": [
       "android"
     ]
   },
-  "signInTv.followCanceled": "The TV stopped this sign-in.",
+  "signInTv.followCanceled": "This device stopped waiting.",
   "@signInTv.followCanceled": {
-    "description": "Phone status after approval, saying the TV stopped the sign-in.",
+    "description": "Phone status after approval, saying the requesting device stopped waiting.",
     "x-platforms": [
       "android"
     ]
@@ -43014,16 +43056,16 @@
       "android"
     ]
   },
-  "signInTv.followExpired": "This code expired before the TV signed in.",
+  "signInTv.followExpired": "This code expired before the device signed in.",
   "@signInTv.followExpired": {
-    "description": "Phone status saying the code expired before the TV finished signing in.",
+    "description": "Phone status saying the code expired before the device finished signing in.",
     "x-platforms": [
       "android"
     ]
   },
-  "signInTv.followTimedOut": "Approved. Check your TV to see that it signed in.",
+  "signInTv.followTimedOut": "Approved. Check the device to make sure it signed in.",
   "@signInTv.followTimedOut": {
-    "description": "Phone status after approval when the app stopped waiting for confirmation. Tells the user to look at the TV to see whether it signed in.",
+    "description": "Phone status after approval when the app stopped waiting for confirmation.",
     "x-platforms": [
       "android"
     ]
@@ -43041,9 +43083,9 @@
       "apple"
     ]
   },
-  "signInTv.notNow": "Not now",
+  "signInTv.notNow": "Decline",
   "@signInTv.notNow": {
-    "description": "Phone button that dismisses the TV sign-in request without approving it. Apple (iPhone, iPad): same button on the Sign in a TV approval card.",
+    "description": "Phone button that declines the device sign-in request. Apple (iPhone, iPad): same button on the device approval card.",
     "x-platforms": [
       "android",
       "apple"
@@ -43064,9 +43106,9 @@
       "android"
     ]
   },
-  "signInTv.profilesNote": "Anyone using this TV can pick from your profiles. Profiles with a PIN stay locked.",
+  "signInTv.profilesNote": "This gives it access to your profiles. Profiles with a PIN stay locked.",
   "@signInTv.profilesNote": {
-    "description": "Phone note on the TV approval screen about privacy: profiles are visible to anyone using that TV, and PIN-protected profiles stay locked. Apple (iPhone, iPad): same note on the Sign in a TV approval card and the nearby-TV pairing card.",
+    "description": "Phone note on the approval screen about privacy: approving gives the device access to your profiles, and PIN-protected profiles stay locked. Apple (iPhone, iPad): same note on the approval card and nearby-TV pairing card.",
     "x-platforms": [
       "android",
       "apple"
@@ -43094,7 +43136,7 @@
   },
   "signInTv.serverAccount": "You'll sign it in to {server} as {account}.",
   "@signInTv.serverAccount": {
-    "description": "Phone text on the TV approval card explaining what will happen. {server}: the server name; {account}: the account name that will be used. Apple (iPhone, iPad): same text on the Sign in a TV approval card and the nearby-TV pairing card; {server} is the server name with its host.",
+    "description": "Phone text on the device approval card explaining what will happen. Keep \"it\" device-neutral (do not say TV: the requesting client can be a TV, app, or other device). {server}: the server name; {account}: the account name that will be used. Apple (iPhone, iPad): same text on the device approval card and the nearby-TV pairing card; {server} is the server name with its host.",
     "placeholders": {
       "server": {
         "type": "String"
@@ -43108,9 +43150,9 @@
       "apple"
     ]
   },
-  "signInTv.serverHint": "Your TV shows the server name it's signing in to.",
+  "signInTv.serverHint": "Choose the server the device is signing in to.",
   "@signInTv.serverHint": {
-    "description": "Phone hint under the server row, telling the user the TV shows the name of the server it is signing in to.",
+    "description": "Phone hint under the server row, telling the user to pick the server the requesting device is signing in to.",
     "x-platforms": [
       "android"
     ]
@@ -43125,7 +43167,7 @@
   },
   "signInTv.serverOnly": "You'll sign it in to {server} with your account.",
   "@signInTv.serverOnly": {
-    "description": "Phone text on the TV approval card explaining what will happen. {server}: the server name. Apple (iPhone, iPad): same text on the Sign in a TV approval card and the nearby-TV pairing card; {server} is the server name with its host.",
+    "description": "Phone text on the device approval card explaining what will happen. Keep \"it\" device-neutral (do not say TV: the requesting client can be a TV, app, or other device). {server}: the server name. Apple (iPhone, iPad): same text on the device approval card and the nearby-TV pairing card; {server} is the server name with its host.",
     "placeholders": {
       "server": {
         "type": "String"
@@ -43152,9 +43194,9 @@
       "apple"
     ]
   },
-  "signInTv.settingsLabel": "Sign in a TV",
+  "signInTv.settingsLabel": "Sign in a TV or device",
   "@signInTv.settingsLabel": {
-    "description": "Phone Settings row label that opens the screen for approving a TV's sign-in request.",
+    "description": "Phone Settings row label that opens the screen for approving a TV, app, or other device's sign-in code.",
     "x-platforms": [
       "android",
       "apple"
@@ -43168,25 +43210,25 @@
       "apple"
     ]
   },
-  "signInTv.signedIn": "Your TV is signed in.",
+  "signInTv.signedIn": "Your device is signed in.",
   "@signInTv.signedIn": {
-    "description": "Phone success message after the TV has finished signing in. Apple (iPhone, iPad): same message on the Sign in a TV approval card.",
+    "description": "Phone success message after the requesting device has finished signing in. Apple (iPhone, iPad): same message on the device approval card.",
     "x-platforms": [
       "android",
       "apple"
     ]
   },
-  "signInTv.signingIn": "Done. Your TV is signing in.",
+  "signInTv.signingIn": "Done. Your device is signing in.",
   "@signInTv.signingIn": {
-    "description": "Phone success message after approval while the TV completes its sign-in. Apple (iPhone, iPad): same message on the Sign in a TV approval card.",
+    "description": "Phone success message after approval while the requesting device completes its sign-in. Apple (iPhone, iPad): same message on the device approval card.",
     "x-platforms": [
       "android",
       "apple"
     ]
   },
-  "signInTv.subtitle": "Enter the code on your TV's sign-in screen.",
+  "signInTv.subtitle": "Enter the code shown on your TV, app, or other device.",
   "@signInTv.subtitle": {
-    "description": "Phone subtitle under the Sign in a TV title, instructing the user to type the TV's code. Apple (iPhone, iPad): note under the code field on the Sign in a TV screen.",
+    "description": "Phone subtitle under the Approve sign-in title, instructing the user to type the code shown on the requesting device. Apple (iPhone, iPad): note under the code field on the device approval screen.",
     "x-platforms": [
       "android",
       "apple"
@@ -43206,9 +43248,9 @@
       "android"
     ]
   },
-  "signInTv.title": "Sign in a TV",
+  "signInTv.title": "Approve sign-in",
   "@signInTv.title": {
-    "description": "Phone screen title for approving a TV's device sign-in. Apple (iPhone, iPad): title of the Sign in a TV screen.",
+    "description": "Phone screen title for approving a device sign-in code. Apple (iPhone, iPad): title of the device approval screen.",
     "x-platforms": [
       "android",
       "apple"
@@ -43226,9 +43268,9 @@
       "android"
     ]
   },
-  "signInTv.warning": "Only approve a TV that's in front of you right now.",
+  "signInTv.warning": "Only approve this if you started the sign-in yourself.",
   "@signInTv.warning": {
-    "description": "Phone safety warning on the approval card: only approve a TV that the user can see and started themselves. Apple (iPhone, iPad): same warning on the Sign in a TV approval card and the nearby-TV pairing card.",
+    "description": "Phone safety warning on the approval card: only approve a sign-in request the user started themselves. Apple (iPhone, iPad): same warning on the approval card and nearby-TV pairing card.",
     "x-platforms": [
       "android",
       "apple"
@@ -43911,9 +43953,9 @@
       "apple"
     ]
   },
-  "tvPair.approval.anotherAccountMessage": "Choose which {server} account signs in the TV. Accounts on this device stay signed in, and the TV's code stays ready to approve.",
+  "tvPair.approval.anotherAccountMessage": "Choose which {server} account to approve with. Accounts on this device stay signed in, and the code stays ready to approve.",
   "@tvPair.approval.anotherAccountMessage": {
-    "description": "Apple (iPhone, iPad) Sign in a TV approval card: message of the \"Approve as another account?\" dialog. {server}: the server's name.",
+    "description": "Apple (iPhone, iPad) device approval card: message of the \"Approve as another account?\" dialog. {server}: the server's name.",
     "placeholders": {
       "server": {
         "type": "String"
@@ -43930,23 +43972,23 @@
       "apple"
     ]
   },
-  "tvPair.approval.canceled": "This TV stopped waiting.",
+  "tvPair.approval.canceled": "This device stopped waiting.",
   "@tvPair.approval.canceled": {
-    "description": "Apple (iPhone, iPad) Sign in a TV approval card: title when the TV withdrew its sign-in request (it left the screen or showed a new code).",
+    "description": "Apple (iPhone, iPad) device approval card: title when the requesting device withdrew its sign-in request.",
     "x-platforms": [
       "apple"
     ]
   },
-  "tvPair.approval.canceledDetail": "Start again on the TV.",
+  "tvPair.approval.canceledDetail": "Start sign-in again on the device.",
   "@tvPair.approval.canceledDetail": {
-    "description": "Apple (iPhone, iPad) Sign in a TV approval card: detail under \"This TV stopped waiting.\".",
+    "description": "Apple (iPhone, iPad) device approval card: detail under \"This device stopped waiting.\".",
     "x-platforms": [
       "apple"
     ]
   },
-  "tvPair.approval.chooseProfile": "{device} can choose a profile now.",
+  "tvPair.approval.chooseProfile": "{device} is ready to use.",
   "@tvPair.approval.chooseProfile": {
-    "description": "Apple (iPhone, iPad) Sign in a TV approval card: detail under \"Your TV is signed in.\" after the TV collected its session. {device}: the TV's name as the server reports it.",
+    "description": "Apple (iPhone, iPad) device approval card: detail under \"Your device is signed in.\" after the device collected its session. {device}: the device or app name as the server reports it.",
     "placeholders": {
       "device": {
         "type": "String"
@@ -43963,9 +44005,9 @@
       "apple"
     ]
   },
-  "tvPair.approval.declinedDetail": "The TV shows that you declined.",
+  "tvPair.approval.declinedDetail": "The device was not signed in.",
   "@tvPair.approval.declinedDetail": {
-    "description": "Apple (iPhone, iPad) Sign in a TV approval card: detail under \"Sign-in declined.\".",
+    "description": "Apple (iPhone, iPad) device approval card: detail under \"Sign-in declined.\".",
     "x-platforms": [
       "apple"
     ]
@@ -43984,9 +44026,9 @@
       "apple"
     ]
   },
-  "tvPair.approval.expiredDetail": "Your TV is showing a new one; scan it again.",
+  "tvPair.approval.expiredDetail": "Get a new code on the device and try again.",
   "@tvPair.approval.expiredDetail": {
-    "description": "Apple (iPhone, iPad) Sign in a TV approval card: detail under \"This code expired.\": the TV already shows a new code to scan.",
+    "description": "Apple (iPhone, iPad) device approval card: detail under \"This code expired.\".",
     "x-platforms": [
       "apple"
     ]
@@ -44010,9 +44052,9 @@
       "apple"
     ]
   },
-  "tvPair.approval.needsSignInDetail": "This device's sign-in for {server} has ended. Sign in to it again, then approve the TV.",
+  "tvPair.approval.needsSignInDetail": "Your sign-in for {server} has ended. Sign in again to approve this request.",
   "@tvPair.approval.needsSignInDetail": {
-    "description": "Apple (iPhone, iPad) Sign in a TV approval card: detail under \"Sign in to {server} again\". {server}: the server's name.",
+    "description": "Apple (iPhone, iPad) device approval card: detail under \"Sign in to {server} again\". {server}: the server's name.",
     "placeholders": {
       "server": {
         "type": "String"
@@ -44022,16 +44064,16 @@
       "apple"
     ]
   },
-  "tvPair.approval.notForTv": "This code isn't for signing in a TV.",
+  "tvPair.approval.notForTv": "This code can't be approved here.",
   "@tvPair.approval.notForTv": {
-    "description": "Apple (iPhone, iPad) Sign in a TV approval card: error when the entered code belongs to another kind of request, not a TV sign-in.",
+    "description": "Apple (iPhone, iPad) device approval card: error when the entered code belongs to a request type this screen cannot approve.",
     "x-platforms": [
       "apple"
     ]
   },
-  "tvPair.approval.notFoundDetail": "Check the code on your TV. The TV shows its server's name at the top of its screen.",
+  "tvPair.approval.notFoundDetail": "Check the code and make sure you picked the right server.",
   "@tvPair.approval.notFoundDetail": {
-    "description": "Apple (iPhone, iPad) Sign in a TV approval card: detail under \"We couldn't find that code on {server}.\".",
+    "description": "Apple (iPhone, iPad) device approval card: detail under \"We couldn't find that code on {server}.\".",
     "x-platforms": [
       "apple"
     ]
@@ -44103,9 +44145,9 @@
       "apple"
     ]
   },
-  "tvPair.approval.unconfirmedDetail": "Check the TV. This updates when {server} confirms it.",
+  "tvPair.approval.unconfirmedDetail": "Check the device. This updates when {server} confirms it.",
   "@tvPair.approval.unconfirmedDetail": {
-    "description": "Apple (iPhone, iPad) Sign in a TV approval card: detail under \"Couldn't confirm the approval yet.\"; the card keeps checking. {server}: the server's name.",
+    "description": "Apple (iPhone, iPad) device approval card: detail under \"Couldn't confirm the approval yet.\"; the card keeps checking. {server}: the server's name.",
     "placeholders": {
       "server": {
         "type": "String"
@@ -44238,9 +44280,9 @@
       "android"
     ]
   },
-  "tvPair.entry.codeLabel": "TV code",
+  "tvPair.entry.codeLabel": "Sign-in code",
   "@tvPair.entry.codeLabel": {
-    "description": "Apple (iPhone, iPad): Sign in a TV screen: screen-reader label of the field where the person types the code the TV shows.",
+    "description": "Apple (iPhone, iPad) device approval screen: screen-reader label of the field where the person types the sign-in code.",
     "x-platforms": [
       "apple"
     ]
@@ -44252,9 +44294,9 @@
       "apple"
     ]
   },
-  "tvPair.entry.serverFooter": "Choose the server named at the top of the TV's screen.",
+  "tvPair.entry.serverFooter": "Choose the server the device is signing in to.",
   "@tvPair.entry.serverFooter": {
-    "description": "Apple (iPhone, iPad): Sign in a TV screen: note under the server picker, shown when the phone has several servers.",
+    "description": "Apple (iPhone, iPad) device approval screen: note under the server picker, shown when the phone has several servers.",
     "x-platforms": [
       "apple"
     ]
@@ -44341,9 +44383,9 @@
       "android"
     ]
   },
-  "tvPair.link.addServerBody": "The TV's code belongs to {host}, which isn't on this device yet. Add it and sign in, then approve the TV.",
+  "tvPair.link.addServerBody": "This code belongs to {host}, which isn't on this device yet. Add it and sign in to approve.",
   "@tvPair.link.addServerBody": {
-    "description": "Apple (iPhone, iPad) Sign in a TV from a link: body under \"Add this server?\". {host}: the server's host name (for example media.example.com).",
+    "description": "Apple (iPhone, iPad) device approval from a link: body under \"Add this server?\". {host}: the server's host name (for example media.example.com).",
     "placeholders": {
       "host": {
         "type": "String"
@@ -44360,23 +44402,23 @@
       "apple"
     ]
   },
-  "tvPair.link.mismatch": "That link names a server this device can't confirm. Enter the TV's code in Settings > Sign in a TV instead.",
+  "tvPair.link.mismatch": "That link names a server this device can't confirm. Enter the code in Settings > Sign in a TV or device instead.",
   "@tvPair.link.mismatch": {
-    "description": "Apple (iPhone, iPad) Sign in a TV from a link: error when the server answering at the link's address isn't the server the link names. \"Settings > Sign in a TV\" names the menu path in the app.",
+    "description": "Apple (iPhone, iPad) device approval from a link: error when the server answering at the link's address isn't the server the link names. \"Settings > Sign in a TV or device\" names the menu path in the app.",
     "x-platforms": [
       "apple"
     ]
   },
-  "tvPair.link.resolving": "Finding the TV's server…",
+  "tvPair.link.resolving": "Finding the server…",
   "@tvPair.link.resolving": {
-    "description": "Apple (iPhone, iPad) Sign in a TV from a link: progress text while the app works out which saved server a silo://device link from the web approval page means.",
+    "description": "Apple (iPhone, iPad) device approval from a link: progress text while the app works out which saved server a silo://device link from the web approval page means.",
     "x-platforms": [
       "apple"
     ]
   },
-  "tvPair.link.signedOutBody": "The TV's code belongs to {server}, and this device isn't signed in to it. Sign in, then approve the TV.",
+  "tvPair.link.signedOutBody": "This code belongs to {server}, and you're not signed in to it here. Sign in to approve.",
   "@tvPair.link.signedOutBody": {
-    "description": "Apple (iPhone, iPad) Sign in a TV from a link: body when the link's server is saved but signed out on this phone. {server}: the server's name.",
+    "description": "Apple (iPhone, iPad) device approval from a link: body when the link's server is saved but signed out on this phone. {server}: the server's name.",
     "placeholders": {
       "server": {
         "type": "String"
@@ -44664,19 +44706,6 @@
   "tvPairing.confirmDetailAutomatic": "Your phone or tablet is checking this code for you.",
   "@tvPairing.confirmDetailAutomatic": {
     "description": "Android TV text saying the phone or tablet verifies the code automatically, so the user need not compare it. Apple TV: same text on the pairing screen.",
-    "x-platforms": [
-      "android",
-      "apple"
-    ]
-  },
-  "tvPairing.confirmOlderPhones": "Older phones show {words} instead.",
-  "@tvPairing.confirmOlderPhones": {
-    "description": "Android TV fallback note for older phone app versions that show match words instead of the code. {words}: the match words, such as a few random words. Apple TV: same note on the pairing screen.",
-    "placeholders": {
-      "words": {
-        "type": "String"
-      }
-    },
     "x-platforms": [
       "android",
       "apple"
@@ -58038,7 +58067,7 @@
       "web"
     ]
   },
-  "web.admin.backups.restore.blocked.collectionNotMapped": "{count, plural, one {{count_text} can't be restored — the collection they show isn't here or in the backup} other {{count_text} can't be restored — the collection they show isn't here or in the backup}}",
+  "web.admin.backups.restore.blocked.collectionNotMapped": "{count, plural, one {{count_text} can't be restored — the collection it shows isn't here or in the backup} other {{count_text} can't be restored — the collection they show isn't here or in the backup}}",
   "@web.admin.backups.restore.blocked.collectionNotMapped": {
     "description": "Web admin, Restore page: heading over a group of items in a section that can't be restored, with the reason. {count}: number of items (selects the plural). {count_text}: the same number as printed.",
     "placeholders": {
@@ -58053,7 +58082,7 @@
       "web"
     ]
   },
-  "web.admin.backups.restore.blocked.configNeedsAnotherKey": "{count, plural, one {{count_text} can't be restored — their settings are encrypted with a different SECRET_KEY} other {{count_text} can't be restored — their settings are encrypted with a different SECRET_KEY}}",
+  "web.admin.backups.restore.blocked.configNeedsAnotherKey": "{count, plural, one {{count_text} can't be restored — its settings are encrypted with a different SECRET_KEY} other {{count_text} can't be restored — their settings are encrypted with a different SECRET_KEY}}",
   "@web.admin.backups.restore.blocked.configNeedsAnotherKey": {
     "description": "Web admin, Restore page: heading over a group of items in a section that can't be restored, with the reason. {count}: number of items (selects the plural). {count_text}: the same number as printed.",
     "placeholders": {
@@ -58068,7 +58097,7 @@
       "web"
     ]
   },
-  "web.admin.backups.restore.blocked.fallback": "{count, plural, one {{count_text} can't be restored — this server can't take them} other {{count_text} can't be restored — this server can't take them}}",
+  "web.admin.backups.restore.blocked.fallback": "{count, plural, one {{count_text} can't be restored — this server can't take it} other {{count_text} can't be restored — this server can't take them}}",
   "@web.admin.backups.restore.blocked.fallback": {
     "description": "Web admin, Restore page: heading over a group of items in a section that can't be restored, with the reason. {count}: number of items (selects the plural). {count_text}: the same number as printed.",
     "placeholders": {
@@ -58098,7 +58127,7 @@
       "web"
     ]
   },
-  "web.admin.backups.restore.blocked.filesMissingHere": "{count, plural, one {{count_text} can't be restored — their files are missing on this server} other {{count_text} can't be restored — their files are missing on this server}}",
+  "web.admin.backups.restore.blocked.filesMissingHere": "{count, plural, one {{count_text} can't be restored — its files are missing on this server} other {{count_text} can't be restored — their files are missing on this server}}",
   "@web.admin.backups.restore.blocked.filesMissingHere": {
     "description": "Web admin, Restore page: heading over a group of items in a section that can't be restored, with the reason. {count}: number of items (selects the plural). {count_text}: the same number as printed.",
     "placeholders": {
@@ -58113,7 +58142,7 @@
       "web"
     ]
   },
-  "web.admin.backups.restore.blocked.folderMissing": "{count, plural, one {{count_text} can't be restored — their folders aren't on this server} other {{count_text} can't be restored — their folders aren't on this server}}",
+  "web.admin.backups.restore.blocked.folderMissing": "{count, plural, one {{count_text} can't be restored — its folders aren't on this server} other {{count_text} can't be restored — their folders aren't on this server}}",
   "@web.admin.backups.restore.blocked.folderMissing": {
     "description": "Web admin, Restore page: heading over a group of items in a section that can't be restored, with the reason. {count}: number of items (selects the plural). {count_text}: the same number as printed.",
     "placeholders": {
@@ -58128,7 +58157,7 @@
       "web"
     ]
   },
-  "web.admin.backups.restore.blocked.groupNotOnThisServer": "{count, plural, one {{count_text} can't be restored — their access group isn't on this server} other {{count_text} can't be restored — their access group isn't on this server}}",
+  "web.admin.backups.restore.blocked.groupNotOnThisServer": "{count, plural, one {{count_text} can't be restored — its access group isn't on this server} other {{count_text} can't be restored — their access group isn't on this server}}",
   "@web.admin.backups.restore.blocked.groupNotOnThisServer": {
     "description": "Web admin, Restore page: heading over a group of items in a section that can't be restored, with the reason. {count}: number of items (selects the plural). {count_text}: the same number as printed.",
     "placeholders": {
@@ -58143,7 +58172,7 @@
       "web"
     ]
   },
-  "web.admin.backups.restore.blocked.itemNotOnThisServer": "{count, plural, one {{count_text} can't be restored — their title isn't in this server's catalog} other {{count_text} can't be restored — their title isn't in this server's catalog}}",
+  "web.admin.backups.restore.blocked.itemNotOnThisServer": "{count, plural, one {{count_text} can't be restored — its title isn't in this server's catalog} other {{count_text} can't be restored — their title isn't in this server's catalog}}",
   "@web.admin.backups.restore.blocked.itemNotOnThisServer": {
     "description": "Web admin, Restore page: heading over a group of items in a section that can't be restored, with the reason. {count}: number of items (selects the plural). {count_text}: the same number as printed.",
     "placeholders": {
@@ -58158,7 +58187,7 @@
       "web"
     ]
   },
-  "web.admin.backups.restore.blocked.keptStricter": "{count, plural, one {{count_text} can't be restored — they would widen access, so this server keeps its stricter values} other {{count_text} can't be restored — they would widen access, so this server keeps its stricter values}}",
+  "web.admin.backups.restore.blocked.keptStricter": "{count, plural, one {{count_text} can't be restored — it would widen access, so this server keeps its stricter values} other {{count_text} can't be restored — they would widen access, so this server keeps its stricter values}}",
   "@web.admin.backups.restore.blocked.keptStricter": {
     "description": "Web admin, Restore page: heading over a group of items in a section that can't be restored, with the reason. {count}: number of items (selects the plural). {count_text}: the same number as printed.",
     "placeholders": {
@@ -58173,7 +58202,7 @@
       "web"
     ]
   },
-  "web.admin.backups.restore.blocked.libraryNotMapped": "{count, plural, one {{count_text} can't be restored — their library isn't on this server} other {{count_text} can't be restored — their library isn't on this server}}",
+  "web.admin.backups.restore.blocked.libraryNotMapped": "{count, plural, one {{count_text} can't be restored — its library isn't on this server} other {{count_text} can't be restored — their library isn't on this server}}",
   "@web.admin.backups.restore.blocked.libraryNotMapped": {
     "description": "Web admin, Restore page: heading over a group of items in a section that can't be restored, with the reason. {count}: number of items (selects the plural). {count_text}: the same number as printed.",
     "placeholders": {
@@ -58188,7 +58217,7 @@
       "web"
     ]
   },
-  "web.admin.backups.restore.blocked.libraryNotRestorable": "{count, plural, one {{count_text} can't be restored — their library can't be restored here} other {{count_text} can't be restored — their library can't be restored here}}",
+  "web.admin.backups.restore.blocked.libraryNotRestorable": "{count, plural, one {{count_text} can't be restored — its library can't be restored here} other {{count_text} can't be restored — their library can't be restored here}}",
   "@web.admin.backups.restore.blocked.libraryNotRestorable": {
     "description": "Web admin, Restore page: heading over a group of items in a section that can't be restored, with the reason. {count}: number of items (selects the plural). {count_text}: the same number as printed.",
     "placeholders": {
@@ -58218,7 +58247,22 @@
       "web"
     ]
   },
-  "web.admin.backups.restore.blocked.needsAnotherKey": "{count, plural, one {{count_text} can't be restored — they're encrypted with a different SECRET_KEY} other {{count_text} can't be restored — they're encrypted with a different SECRET_KEY}}",
+  "web.admin.backups.restore.blocked.managedByEnvironment": "{count, plural, one {{count_text} can't be restored — this server's environment sets the settings that differ, or part of their connection} other {{count_text} can't be restored — this server's environment sets the settings that differ, or part of their connection}}",
+  "@web.admin.backups.restore.blocked.managedByEnvironment": {
+    "description": "Web admin, Restore page: heading over a group of items in a section that can't be restored, with the reason. {count}: number of items (selects the plural). {count_text}: the same number as printed.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.backups.restore.blocked.needsAnotherKey": "{count, plural, one {{count_text} can't be restored — it's encrypted with a different SECRET_KEY} other {{count_text} can't be restored — they're encrypted with a different SECRET_KEY}}",
   "@web.admin.backups.restore.blocked.needsAnotherKey": {
     "description": "Web admin, Restore page: heading over a group of items in a section that can't be restored, with the reason. {count}: number of items (selects the plural). {count_text}: the same number as printed.",
     "placeholders": {
@@ -58233,7 +58277,7 @@
       "web"
     ]
   },
-  "web.admin.backups.restore.blocked.needsInstall": "{count, plural, one {{count_text} can't be restored — they need to be installed from a plugin catalog first} other {{count_text} can't be restored — they need to be installed from a plugin catalog first}}",
+  "web.admin.backups.restore.blocked.needsInstall": "{count, plural, one {{count_text} can't be restored — it needs to be installed from a plugin catalog first} other {{count_text} can't be restored — they need to be installed from a plugin catalog first}}",
   "@web.admin.backups.restore.blocked.needsInstall": {
     "description": "Web admin, Restore page: heading over a group of items in a section that can't be restored, with the reason. {count}: number of items (selects the plural). {count_text}: the same number as printed.",
     "placeholders": {
@@ -58248,7 +58292,7 @@
       "web"
     ]
   },
-  "web.admin.backups.restore.blocked.needsPrimaryProfile": "{count, plural, one {{count_text} can't be restored — their primary profile has to be restored with them} other {{count_text} can't be restored — their primary profile has to be restored with them}}",
+  "web.admin.backups.restore.blocked.needsPrimaryProfile": "{count, plural, one {{count_text} can't be restored — its primary profile has to be restored with it} other {{count_text} can't be restored — their primary profile has to be restored with them}}",
   "@web.admin.backups.restore.blocked.needsPrimaryProfile": {
     "description": "Web admin, Restore page: heading over a group of items in a section that can't be restored, with the reason. {count}: number of items (selects the plural). {count_text}: the same number as printed.",
     "placeholders": {
@@ -58263,7 +58307,7 @@
       "web"
     ]
   },
-  "web.admin.backups.restore.blocked.notInBackup": "{count, plural, one {{count_text} can't be restored — the backup doesn't have them} other {{count_text} can't be restored — the backup doesn't have them}}",
+  "web.admin.backups.restore.blocked.notInBackup": "{count, plural, one {{count_text} can't be restored — the backup doesn't have it} other {{count_text} can't be restored — the backup doesn't have them}}",
   "@web.admin.backups.restore.blocked.notInBackup": {
     "description": "Web admin, Restore page: heading over a group of items in a section that can't be restored, with the reason. {count}: number of items (selects the plural). {count_text}: the same number as printed.",
     "placeholders": {
@@ -58323,7 +58367,7 @@
       "web"
     ]
   },
-  "web.admin.backups.restore.blocked.policyWider": "{count, plural, one {{count_text} can't be restored — this server would give them more access than the backup did} other {{count_text} can't be restored — this server would give them more access than the backup did}}",
+  "web.admin.backups.restore.blocked.policyWider": "{count, plural, one {{count_text} can't be restored — this server would give it more access than the backup did} other {{count_text} can't be restored — this server would give them more access than the backup did}}",
   "@web.admin.backups.restore.blocked.policyWider": {
     "description": "Web admin, Restore page: heading over a group of items in a section that can't be restored, with the reason. {count}: number of items (selects the plural). {count_text}: the same number as printed.",
     "placeholders": {
@@ -58353,7 +58397,7 @@
       "web"
     ]
   },
-  "web.admin.backups.restore.blocked.same": "{count, plural, one {{count_text} can't be restored — they're already the same here} other {{count_text} can't be restored — they're already the same here}}",
+  "web.admin.backups.restore.blocked.same": "{count, plural, one {{count_text} can't be restored — it's already the same here} other {{count_text} can't be restored — they're already the same here}}",
   "@web.admin.backups.restore.blocked.same": {
     "description": "Web admin, Restore page: heading over a group of items in a section that can't be restored, with the reason. {count}: number of items (selects the plural). {count_text}: the same number as printed.",
     "placeholders": {
@@ -58383,7 +58427,7 @@
       "web"
     ]
   },
-  "web.admin.backups.restore.blocked.unreadable": "{count, plural, one {{count_text} can't be restored — the backup's copy of them can't be read} other {{count_text} can't be restored — the backup's copy of them can't be read}}",
+  "web.admin.backups.restore.blocked.unreadable": "{count, plural, one {{count_text} can't be restored — the backup's copy of it can't be read} other {{count_text} can't be restored — the backup's copy of them can't be read}}",
   "@web.admin.backups.restore.blocked.unreadable": {
     "description": "Web admin, Restore page: heading over a group of items in a section that can't be restored, with the reason. {count}: number of items (selects the plural). {count_text}: the same number as printed.",
     "placeholders": {
@@ -58398,7 +58442,7 @@
       "web"
     ]
   },
-  "web.admin.backups.restore.blocked.unverifiedBackup": "{count, plural, one {{count_text} can't be restored — they connect to outside services and this server can't verify the backup} other {{count_text} can't be restored — they connect to outside services and this server can't verify the backup}}",
+  "web.admin.backups.restore.blocked.unverifiedBackup": "{count, plural, one {{count_text} can't be restored — it connects to outside services and this server can't verify the backup} other {{count_text} can't be restored — they connect to outside services and this server can't verify the backup}}",
   "@web.admin.backups.restore.blocked.unverifiedBackup": {
     "description": "Web admin, Restore page: heading over a group of items in a section that can't be restored, with the reason. {count}: number of items (selects the plural). {count_text}: the same number as printed.",
     "placeholders": {
@@ -58480,6 +58524,21 @@
   "web.admin.backups.restore.caveat.credentialsCleared": "A service's address changes without its credentials in the backup, so restoring clears them here and turns the service off until they're entered again.",
   "@web.admin.backups.restore.caveat.credentialsCleared": {
     "description": "Web admin, Restore page: review step, Left out list: a service whose address changes loses its stored credentials.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.backups.restore.caveat.environmentSettings": "{count, plural, one {{count_text} setting keeps its current value because this server's environment sets it, or part of its connection.} other {{count_text} settings keep their current values because this server's environment sets them, or part of their connection.}}",
+  "@web.admin.backups.restore.caveat.environmentSettings": {
+    "description": "Web admin, Restore page: review step, Left out list: settings kept at this server's values because its environment sets them. {count}: number of settings (selects the plural). {count_text}: the same number as printed.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
     "x-platforms": [
       "web"
     ]
@@ -60097,6 +60156,13 @@
       "web"
     ]
   },
+  "web.admin.backups.restore.reason.managedByEnvironment": "This server's environment sets the settings that differ, or part of their connection, so this server keeps its current values.",
+  "@web.admin.backups.restore.reason.managedByEnvironment": {
+    "description": "Web admin, Restore page: why an item is left out or not offered.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.backups.restore.reason.needsAnotherKey": "It was encrypted with a different SECRET_KEY, so this server can't read it.",
   "@web.admin.backups.restore.reason.needsAnotherKey": {
     "description": "Web admin, Restore page: why an item is left out or not offered.",
@@ -60953,6 +61019,18 @@
   "web.admin.backups.restore.setting.keptStricter": "{value} (kept: stricter)",
   "@web.admin.backups.restore.setting.keptStricter": {
     "description": "Web admin, Restore page, item rows: value shown in the settings comparison table (Now column) for a setting this server keeps because it is stricter. {value}: this server's value, or Empty.",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.backups.restore.setting.managedByEnvironment": "{value} (kept: environment)",
+  "@web.admin.backups.restore.setting.managedByEnvironment": {
+    "description": "Web admin, Restore page, item rows: value shown in the settings comparison table (Now column) for a setting this server keeps because its environment sets it, or sets another part of the outside-service connection it belongs to (for example the mail server's password). {value}: this server's value, Empty, or Set for a hidden value.",
     "placeholders": {
       "value": {
         "type": "String"
@@ -71014,7 +71092,7 @@
       "web"
     ]
   },
-  "web.admin.dashboard.widgetCatalog.recentActivity.description": "Feed of recently started playback sessions",
+  "web.admin.dashboard.widgetCatalog.recentActivity.description": "Most recent plays across all accounts",
   "@web.admin.dashboard.widgetCatalog.recentActivity.description": {
     "description": "Web admin, Dashboard page: one-line summary of the \"recent-activity\" widget (Recent activity) under its name in the Add-widget sheet.",
     "x-platforms": [
@@ -72499,6 +72577,39 @@
   "web.admin.dashboard.widgets.recentActivity.loadFailed": "Failed to load activity.",
   "@web.admin.dashboard.widgets.recentActivity.loadFailed": {
     "description": "Web admin, Dashboard page, Recent Activity widget: error when sessions fail to load.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgets.recentActivity.played": "<user>{username}</user> played <link>{title}</link>",
+  "@web.admin.dashboard.widgets.recentActivity.played": {
+    "description": "Web admin, Dashboard page, Recent Activity widget: one line for a play that has ended, newest first, however long ago. {username}: the account name. {title}: the title that was played. <user> marks the highlighted name and <link> the link to the account's playback history.",
+    "placeholders": {
+      "username": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgets.recentActivity.playedWithProfile": "<user>{username}</user> <pill>{profile}</pill> played <link>{title}</link>",
+  "@web.admin.dashboard.widgets.recentActivity.playedWithProfile": {
+    "description": "Web admin, Dashboard page, Recent Activity widget: one line for a play that has ended, with the profile that played it. {username}: the account name. {profile}: the household profile name, shown as a tag (<pill>). {title}: the title that was played; <link> links to the profile's playback history.",
+    "placeholders": {
+      "username": {
+        "type": "String"
+      },
+      "profile": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      }
+    },
     "x-platforms": [
       "web"
     ]
@@ -86543,6 +86654,13 @@
       "web"
     ]
   },
+  "web.admin.nodes.key.deploymentManaged": "Key set by the server’s deployment configuration",
+  "@web.admin.nodes.key.deploymentManaged": {
+    "description": "Web admin, Stream Nodes page: key status on a transcode node whose key comes from the API servers' deployment configuration (an environment variable or mounted file), so it cannot be issued or rotated on this page.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.nodes.key.dialogTitle": "Key for {name}",
   "@web.admin.nodes.key.dialogTitle": {
     "description": "Web admin, Stream Nodes page: title of the dialog that issues a transcode node's key and shows it once. {name}: node name.",
@@ -87399,6 +87517,13 @@
         "type": "String"
       }
     },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.nodes.unit.deleteDeploymentManaged": "Set by the server’s deployment configuration. Remove it there and restart the API servers to delete it here.",
+  "@web.admin.nodes.unit.deleteDeploymentManaged": {
+    "description": "Web admin, Stream Nodes page: why a transcode node that the API servers' deployment configuration lists cannot be deleted. Shown as the delete button's tooltip, read to screen readers, and shown as a notice when the button is pressed.",
     "x-platforms": [
       "web"
     ]
@@ -88785,6 +88910,74 @@
       "web"
     ]
   },
+  "web.admin.plugins.provisioning.applied": "Applied",
+  "@web.admin.plugins.provisioning.applied": {
+    "description": "Status of a declared plugin whose provisioning took effect.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.plugins.provisioning.held": "Held",
+  "@web.admin.plugins.provisioning.held": {
+    "description": "Status of a declared plugin whose provisioning is held by recovery policy.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.plugins.provisioning.loadError": "Couldn’t load plugin provisioning status.",
+  "@web.admin.plugins.provisioning.loadError": {
+    "description": "Error shown on the admin Plugins page when the server cannot read declaration status.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.plugins.provisioning.managed": "Managed by the environment",
+  "@web.admin.plugins.provisioning.managed": {
+    "description": "Label next to a plugin or a plugin setting controlled by the deployment environment.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.plugins.provisioning.pending": "Pending",
+  "@web.admin.plugins.provisioning.pending": {
+    "description": "Status of a declared plugin whose provisioning is waiting to finish.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.plugins.provisioning.refused": "Refused",
+  "@web.admin.plugins.provisioning.refused": {
+    "description": "Status of a declared plugin whose provisioning was rejected.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.plugins.provisioning.sourceManaged": "The deployment controls the package source and removal.",
+  "@web.admin.plugins.provisioning.sourceManaged": {
+    "description": "Notice on an installed plugin page explaining why its source and uninstall controls are unavailable.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.plugins.provisioning.title": "Provisioning status",
+  "@web.admin.plugins.provisioning.title": {
+    "description": "Heading for status of plugins declared in the deployment environment.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.plugins.provisioning.versionPinned": "The deployment pins this plugin to {version}.",
+  "@web.admin.plugins.provisioning.versionPinned": {
+    "description": "Notice on an installed plugin page. The version placeholder is the exact package version requested by the deployment.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
   "web.admin.plugins.rail.about": "About",
   "@web.admin.plugins.rail.about": {
     "description": "Web admin, plugin page, side column: heading of the plugin's description.",
@@ -89127,7 +89320,7 @@
       "web"
     ]
   },
-  "web.admin.plugins.settings.tasksDescription": "Tasks are registered when the server starts, so turning one on or off takes effect after a restart. Once a task exists, change its schedule on its task page.",
+  "web.admin.plugins.settings.tasksDescription": "Turning a task on or off applies without a restart, though other servers can take a moment to pick it up. Once a task is on, change its schedule on its task page.",
   "@web.admin.plugins.settings.tasksDescription": {
     "description": "Web admin, plugin page, settings: explanation under the Scheduled tasks heading.",
     "x-platforms": [
@@ -89609,6 +89802,74 @@
       "web"
     ]
   },
+  "web.admin.recommendations.external.phaseRows": "Ranking profiles ({done_text} / {total_text})",
+  "@web.admin.recommendations.external.phaseRows": {
+    "description": "Web admin, Recommendations page, Discover Recommendations job card: live progress while ranking per-profile rows.",
+    "placeholders": {
+      "done_text": {
+        "type": "String",
+        "example": "2"
+      },
+      "total_text": {
+        "type": "String",
+        "example": "4"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.recommendations.external.phaseSources": "Fetching TMDB lists ({done_text} / {total_text})",
+  "@web.admin.recommendations.external.phaseSources": {
+    "description": "Web admin, Recommendations page, Discover Recommendations job card: live progress while fetching seed recommendation lists from TMDB.",
+    "placeholders": {
+      "done_text": {
+        "type": "String",
+        "example": "12"
+      },
+      "total_text": {
+        "type": "String",
+        "example": "40"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.recommendations.external.phaseTitles": "Looking up and embedding titles ({done_text} / {total_text})",
+  "@web.admin.recommendations.external.phaseTitles": {
+    "description": "Web admin, Recommendations page, Discover Recommendations job card: live progress while fetching TMDB details and embedding titles.",
+    "placeholders": {
+      "done_text": {
+        "type": "String",
+        "example": "650"
+      },
+      "total_text": {
+        "type": "String",
+        "example": "2,387"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.recommendations.external.prunedCount": "{count, plural, one {Cleared {count_text} expired title} other {Cleared {count_text} expired titles}}",
+  "@web.admin.recommendations.external.prunedCount": {
+    "description": "Web admin, Recommendations page, Discover Recommendations job card: summary of a retention-only run while Discover recommendations are turned off.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "42"
+      },
+      "count_text": {
+        "type": "String",
+        "example": "42"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.recommendations.external.rowsBuilt": "{count, plural, one {{count_text} row built} other {{count_text} rows built}}",
   "@web.admin.recommendations.external.rowsBuilt": {
     "description": "Web admin, Recommendations page, Discover Recommendations job card: how many recommendation rows are stored, one per profile and media type. {count}: the number (selects the plural). {count_text}: the same number, formatted.",
@@ -89620,6 +89881,34 @@
         "type": "String"
       }
     },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.recommendations.external.skipLockConflict": "Resolve the embedding lock conflict below before building Discover recommendations.",
+  "@web.admin.recommendations.external.skipLockConflict": {
+    "description": "Web admin, Recommendations page, Discover Recommendations job card: shown when the last run skipped embedding because the configured model conflicts with the embedding lock.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.recommendations.external.skipNoLock": "Run the Embeddings job first so Silo has library vectors to compare against.",
+  "@web.admin.recommendations.external.skipNoLock": {
+    "description": "Web admin, Recommendations page, Discover Recommendations job card: shown when the last run skipped embedding because library embeddings have not run yet.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.recommendations.external.skipNoProvider": "Connect an embedding provider in AI Services before building Discover recommendations.",
+  "@web.admin.recommendations.external.skipNoProvider": {
+    "description": "Web admin, Recommendations page, Discover Recommendations job card: shown when the last run skipped embedding because no embedding provider is configured.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.recommendations.external.skipNoTasteProfiles": "No profiles have taste profiles yet. Run Taste Profiles once someone has watched or rated titles.",
+  "@web.admin.recommendations.external.skipNoTasteProfiles": {
+    "description": "Web admin, Recommendations page, Discover Recommendations job card: shown when the last run found no profiles with a taste vector.",
     "x-platforms": [
       "web"
     ]
@@ -90824,6 +91113,20 @@
   "web.admin.requests.discover.recommendedOff": "Stays empty until Discover recommendations are turned on in Admin → Recommendations.",
   "@web.admin.requests.discover.recommendedOff": {
     "description": "Web admin, Requests > Discover Page: warning on a recommendations row, in the row list and in its dialog, while the server serves no such rows. Admin → Recommendations is the page's place in the admin menu.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.requests.discover.recommendedOffBanner": "Recommended rows stay empty until Discover Recommendations are turned on in <link>Admin → Recommendations</link>.",
+  "@web.admin.requests.discover.recommendedOffBanner": {
+    "description": "Web admin, Requests > Discover Page: notice shown when recommended rows are in the layout while Discover Recommendations are turned off. <link>…</link>: a link to Admin → Recommendations.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.requests.discover.recommendedOffShort": "Off in Recommendations",
+  "@web.admin.requests.discover.recommendedOffShort": {
+    "description": "Web admin, Requests > Discover Page: short status label on a recommended row when Discover Recommendations are turned off.",
     "x-platforms": [
       "web"
     ]
@@ -92278,6 +92581,13 @@
       "web"
     ]
   },
+  "web.admin.requests.rowDialog.openRecommendations": "Open Recommendations settings",
+  "@web.admin.requests.rowDialog.openRecommendations": {
+    "description": "Web admin, Requests > Discover Page, row dialog: link to Admin → Recommendations shown when editing a recommended row while Discover Recommendations are turned off.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.requests.rowDialog.order": "Order",
   "@web.admin.requests.rowDialog.order": {
     "description": "Web admin, Requests > Discover Page, Add row / Edit row dialog: label of the MDBList row's order picker.",
@@ -92292,6 +92602,13 @@
       "web"
     ]
   },
+  "web.admin.requests.rowDialog.previewEmptyRecommended": "Your profile has no Discover recommendations yet. Run Discover Recommendations or watch and rate a few titles to preview this row.",
+  "@web.admin.requests.rowDialog.previewEmptyRecommended": {
+    "description": "Web admin, Requests > Discover Page, row dialog: empty preview message on a recommended row when the feature is enabled but the acting admin's profile has no recommendations yet.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.requests.rowDialog.previewOff.chart": "Pick a chart to see its titles.",
   "@web.admin.requests.rowDialog.previewOff.chart": {
     "description": "Web admin, Requests > Discover Page, Add row / Edit row dialog: shown in the live preview strip before a chart is picked.",
@@ -92302,6 +92619,13 @@
   "web.admin.requests.rowDialog.previewOff.list": "Pick a list or paste its link to see its titles.",
   "@web.admin.requests.rowDialog.previewOff.list": {
     "description": "Web admin, Requests > Discover Page, Add row / Edit row dialog: shown in the live preview strip before a list is picked.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.requests.rowDialog.previewOff.recommended": "Turn on Discover Recommendations in Admin → Recommendations to preview this row.",
+  "@web.admin.requests.rowDialog.previewOff.recommended": {
+    "description": "Web admin, Requests > Discover Page, row dialog: preview placeholder on a recommended row while Discover Recommendations are turned off.",
     "x-platforms": [
       "web"
     ]
@@ -92904,6 +93228,13 @@
   "web.admin.sessions.playback.toast.messageSent": "Message sent",
   "@web.admin.sessions.playback.toast.messageSent": {
     "description": "Web: admin playback session actions menu (Activity page and dashboard Recent Activity widget): toast after a text message was sent to the player.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.sessions.playback.toast.messageUnconfirmed": "The player didn’t confirm the message. It may show up late or not at all.",
+  "@web.admin.sessions.playback.toast.messageUnconfirmed": {
+    "description": "Web: admin playback session actions menu (Activity page and dashboard Recent Activity widget): warning toast when the server wrote a message to the player's connection but the player did not confirm receiving it within a few seconds, for example because its network dropped. The player may still show it once its connection recovers.",
     "x-platforms": [
       "web"
     ]
@@ -95702,6 +96033,13 @@
       "web"
     ]
   },
+  "web.admin.settings.fields.envStatusUnknown": "Couldn’t check whether the server’s environment sets this. Reload to edit.",
+  "@web.admin.settings.fields.envStatusUnknown": {
+    "description": "Web admin settings pages and first-run setup wizard: shown under a setting the server's environment could set, while the server's answer about which settings its environment sets could not be loaded. The control stays read-only until the page is reloaded and that answer arrives. \"Reload\" means reloading the web page.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.settings.fields.groupUnsavedChanges": "Unsaved changes in this group",
   "@web.admin.settings.fields.groupUnsavedChanges": {
     "description": "Web admin, settings pages: tooltip and screen-reader text for the dot on a settings group heading that has unsaved edits.",
@@ -96311,6 +96649,34 @@
   "web.admin.settings.hooks.serverNotificationChannels.updateFailed": "Failed to update channel",
   "@web.admin.settings.hooks.serverNotificationChannels.updateFailed": {
     "description": "Web admin, Notifications settings, server channels: fallback error toast when changing a channel fails without a message.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.hooks.settings.conflict.description": "Reload to see the current values. Your edits to settings that changed, and to saved passwords and keys, are undone; your other edits are kept.",
+  "@web.admin.settings.hooks.settings.conflict.description": {
+    "description": "Web admin, settings pages and setup wizard steps: body of the toast shown when a save is refused because the server's settings changed after the admin started editing (another administrator or browser tab saved, or the server restarted with different environment settings). The toast's button reloads the settings; saved passwords and keys are never shown, so edits to them cannot be checked and are undone too.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.hooks.settings.conflict.reload": "Reload",
+  "@web.admin.settings.hooks.settings.conflict.reload": {
+    "description": "Web admin, settings pages and setup wizard steps: button on the toast shown when a save is refused because settings changed meanwhile. It reloads the current settings, undoes the admin's edits to settings that changed and to saved passwords and keys, and keeps their other edits.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.hooks.settings.conflict.reloadFailed": "Couldn’t reload settings. Try again.",
+  "@web.admin.settings.hooks.settings.conflict.reloadFailed": {
+    "description": "Web admin, settings pages and setup wizard steps: error toast when reloading the settings after a refused save fails. The edits on screen are unchanged.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.hooks.settings.conflict.title": "Settings changed elsewhere",
+  "@web.admin.settings.hooks.settings.conflict.title": {
+    "description": "Web admin, settings pages and setup wizard steps: title of the toast shown when a save is refused because the server's settings changed after the admin started editing (another administrator or browser tab saved, or the server restarted with different environment settings). The admin's edits are still on screen.",
     "x-platforms": [
       "web"
     ]
@@ -99358,156 +99724,9 @@
       "web"
     ]
   },
-  "web.admin.settings.notifications.pausedRecording": "New content is not being recorded, so nothing can be sent. Turn it back on under Processing.",
-  "@web.admin.settings.notifications.pausedRecording": {
-    "description": "Web admin, Notifications page: banner when new-content recording is switched off.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.pausedSending": "Sending is paused; new content waits in the queue. Turn it back on under Processing.",
-  "@web.admin.settings.notifications.pausedSending": {
-    "description": "Web admin, Notifications page: banner when notification sending is switched off.",
-    "x-platforms": [
-      "web"
-    ]
-  },
   "web.admin.settings.notifications.perEpisodeOffDescription": "Off sends them the daily summary instead.",
   "@web.admin.settings.notifications.perEpisodeOffDescription": {
     "description": "Web admin, Notifications page: description of the per-episode switches on the email and Discord channels.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.description": "How Silo notices new content, groups it into messages, and how long it keeps them.",
-  "@web.admin.settings.notifications.processing.description": {
-    "description": "Web admin, Notifications page: description of the processing group.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.fanout": "Work out who wants it",
-  "@web.admin.settings.notifications.processing.fanout": {
-    "description": "Web admin, Notifications page, processing: label of the switch that matches new content to people's preferences.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.fanoutDescription": "Match each item against everyone's preferences.",
-  "@web.admin.settings.notifications.processing.fanoutDescription": {
-    "description": "Web admin, Notifications page, processing: description of the matching switch.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.grouping": "Grouping and flood control",
-  "@web.admin.settings.notifications.processing.grouping": {
-    "description": "Web admin, Notifications page, processing: subheading of the batching fields.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.label": "Processing",
-  "@web.admin.settings.notifications.processing.label": {
-    "description": "Web admin, Notifications page: heading of the processing group.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.maxAge": "Max content age",
-  "@web.admin.settings.notifications.processing.maxAge": {
-    "description": "Web admin, Notifications page, processing: label of the maximum event age field.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.maxAgeDescription": "Older items are dropped instead of arriving as stale news.",
-  "@web.admin.settings.notifications.processing.maxAgeDescription": {
-    "description": "Web admin, Notifications page, processing: description of the maximum event age field.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.maxPerShow": "Max messages per show",
-  "@web.admin.settings.notifications.processing.maxPerShow": {
-    "description": "Web admin, Notifications page, processing: label of the per-series burst limit.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.maxPerShowDescription": "Anything past this is skipped for that batch.",
-  "@web.admin.settings.notifications.processing.maxPerShowDescription": {
-    "description": "Web admin, Notifications page, processing: description of the per-series burst limit.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.noticeNew": "Notice new content",
-  "@web.admin.settings.notifications.processing.noticeNew": {
-    "description": "Web admin, Notifications page, processing: label of the switch that records new content.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.noticeNewDescription": "Record new items during library scans.",
-  "@web.admin.settings.notifications.processing.noticeNewDescription": {
-    "description": "Web admin, Notifications page, processing: description of the record-new-content switch.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.pipeline": "Pipeline",
-  "@web.admin.settings.notifications.processing.pipeline": {
-    "description": "Web admin, Notifications page, processing: subheading of the pipeline switches.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.readNotifications": "Read notifications",
-  "@web.admin.settings.notifications.processing.readNotifications": {
-    "description": "Web admin, Notifications page, processing: label of how long read notifications are kept.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.retention": "Retention",
-  "@web.admin.settings.notifications.processing.retention": {
-    "description": "Web admin, Notifications page, processing: subheading of the retention fields.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.sentHistory": "Sent history",
-  "@web.admin.settings.notifications.processing.sentHistory": {
-    "description": "Web admin, Notifications page, processing: label of how long the record of sent notifications is kept.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.sentHistoryDescription": "Record of what Silo already notified about.",
-  "@web.admin.settings.notifications.processing.sentHistoryDescription": {
-    "description": "Web admin, Notifications page, processing: description of the sent history field.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.settle": "Settle window",
-  "@web.admin.settings.notifications.processing.settle": {
-    "description": "Web admin, Notifications page, processing: label of the settle delay field.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.settleDescription": "Items that finish scanning together arrive as one notification.",
-  "@web.admin.settings.notifications.processing.settleDescription": {
-    "description": "Web admin, Notifications page, processing: description of the settle delay field.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.processing.unreadNotifications": "Unread notifications",
-  "@web.admin.settings.notifications.processing.unreadNotifications": {
-    "description": "Web admin, Notifications page, processing: label of how long unread notifications are kept.",
     "x-platforms": [
       "web"
     ]
@@ -100241,20 +100460,6 @@
   "web.admin.settings.notifications.title": "Notifications",
   "@web.admin.settings.notifications.title": {
     "description": "Web admin, Notifications page: page title.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.unit.days": "days",
-  "@web.admin.settings.notifications.unit.days": {
-    "description": "Web admin, Notifications page: unit after a field measured in days.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.notifications.unit.hours": "hours",
-  "@web.admin.settings.notifications.unit.hours": {
-    "description": "Web admin, Notifications page: unit after a field measured in hours.",
     "x-platforms": [
       "web"
     ]
@@ -101790,6 +101995,27 @@
       "web"
     ]
   },
+  "web.admin.settings.recommendations.external.addToDiscover": "Add to Discover",
+  "@web.admin.settings.recommendations.external.addToDiscover": {
+    "description": "Web admin, Recommendations page, Discover Recommendations section: button that adds the stock recommended rows to a customized Discover page layout.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.recommendations.external.addToDiscoverFailed": "Could not add recommended rows to the Discover page.",
+  "@web.admin.settings.recommendations.external.addToDiscoverFailed": {
+    "description": "Web admin, Recommendations page, Discover Recommendations section: error toast when adding recommended rows to the Discover layout fails.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.recommendations.external.addedToDiscover": "Added recommended rows to the Discover page.",
+  "@web.admin.settings.recommendations.external.addedToDiscover": {
+    "description": "Web admin, Recommendations page, Discover Recommendations section: success toast after adding recommended rows to the Discover layout.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.settings.recommendations.external.enabled": "Enable Discover Recommendations",
   "@web.admin.settings.recommendations.external.enabled": {
     "description": "Web admin, Recommendations page, Discover Recommendations section: label of the switch that turns Discover recommendations on, worded like Enable Recommendations. Title case like the other setting labels.",
@@ -101814,6 +102040,34 @@
   "web.admin.settings.recommendations.external.maxTitlesHint": "How many titles that aren't in the library the server keeps to recommend from. Each one is looked up on TMDB and embedded. Embedding is usually cheap, but a higher number can cost more or take longer depending on your embedding provider, and uses more storage.",
   "@web.admin.settings.recommendations.external.maxTitlesHint": {
     "description": "Web admin, Recommendations page, Discover Recommendations section: help under the maximum titles field. Tells the administrator that every title kept is fetched from TMDB and embedded with their embedding provider, so raising the number raises embedding cost or run time as well as storage. TMDB is The Movie Database, a product name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.recommendations.external.missingFromDiscover": "Your Discover page doesn't show any Recommendations rows yet.",
+  "@web.admin.settings.recommendations.external.missingFromDiscover": {
+    "description": "Web admin, Recommendations page, Discover Recommendations section: notice shown when Discover Recommendations are enabled but the customized Discover layout has no enabled recommended row.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.recommendations.external.needsRecommendations": "Turn on Enable Recommendations above and restart the server before Discover Recommendations can run.",
+  "@web.admin.settings.recommendations.external.needsRecommendations": {
+    "description": "Web admin, Recommendations page, Discover Recommendations section: notice shown when the main Enable Recommendations setting is off.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.recommendations.external.needsRequests": "Requests are currently off. Turn them on in <link>Requests settings</link> so viewers can see the Discover page.",
+  "@web.admin.settings.recommendations.external.needsRequests": {
+    "description": "Web admin, Recommendations page, Discover Recommendations section: notice shown when Requests are disabled. <link>…</link>: a link to Admin → Requests.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.recommendations.external.openDiscoverPage": "Open Discover Page",
+  "@web.admin.settings.recommendations.external.openDiscoverPage": {
+    "description": "Web admin, Recommendations page, Discover Recommendations section: link to Admin → Requests → Discover Page.",
     "x-platforms": [
       "web"
     ]
@@ -106788,7 +107042,7 @@
       "web"
     ]
   },
-  "web.admin.settings.search.notifications.description": "Delivery channels, server channels, and how new content becomes notifications.",
+  "web.admin.settings.search.notifications.description": "Delivery channels and server channels.",
   "@web.admin.settings.search.notifications.description": {
     "description": "Web admin, settings search: one-line summary of the Notifications settings page, under its name in admin search results and at the top of the page.",
     "x-platforms": [
@@ -106907,13 +107161,6 @@
       "web"
     ]
   },
-  "web.admin.settings.search.notifications.setting.groupingAndFloodControl": "Grouping and flood control",
-  "@web.admin.settings.search.notifications.setting.groupingAndFloodControl": {
-    "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
-    "x-platforms": [
-      "web"
-    ]
-  },
   "web.admin.settings.search.notifications.setting.inApp": "In-App",
   "@web.admin.settings.search.notifications.setting.inApp": {
     "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
@@ -106935,29 +107182,8 @@
       "web"
     ]
   },
-  "web.admin.settings.search.notifications.setting.maxContentAge": "Max content age",
-  "@web.admin.settings.search.notifications.setting.maxContentAge": {
-    "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.search.notifications.setting.maxMessagesPerShow": "Max messages per show",
-  "@web.admin.settings.search.notifications.setting.maxMessagesPerShow": {
-    "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
-    "x-platforms": [
-      "web"
-    ]
-  },
   "web.admin.settings.search.notifications.setting.mentionTheRequesterOnDiscord": "Mention the requester on Discord",
   "@web.admin.settings.search.notifications.setting.mentionTheRequesterOnDiscord": {
-    "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.search.notifications.setting.noticeNewContent": "Notice new content",
-  "@web.admin.settings.search.notifications.setting.noticeNewContent": {
     "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
     "x-platforms": [
       "web"
@@ -106970,20 +107196,6 @@
       "web"
     ]
   },
-  "web.admin.settings.search.notifications.setting.processing": "Processing",
-  "@web.admin.settings.search.notifications.setting.processing": {
-    "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.search.notifications.setting.readNotifications": "Read notifications",
-  "@web.admin.settings.search.notifications.setting.readNotifications": {
-    "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
-    "x-platforms": [
-      "web"
-    ]
-  },
   "web.admin.settings.search.notifications.setting.relayUrl": "Relay URL",
   "@web.admin.settings.search.notifications.setting.relayUrl": {
     "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
@@ -106991,29 +107203,8 @@
       "web"
     ]
   },
-  "web.admin.settings.search.notifications.setting.retention": "Retention",
-  "@web.admin.settings.search.notifications.setting.retention": {
-    "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.search.notifications.setting.sentHistory": "Sent history",
-  "@web.admin.settings.search.notifications.setting.sentHistory": {
-    "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
-    "x-platforms": [
-      "web"
-    ]
-  },
   "web.admin.settings.search.notifications.setting.serverChannels": "Server Channels",
   "@web.admin.settings.search.notifications.setting.serverChannels": {
-    "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.search.notifications.setting.settleWindow": "Settle window",
-  "@web.admin.settings.search.notifications.setting.settleWindow": {
     "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
     "x-platforms": [
       "web"
@@ -107033,13 +107224,6 @@
       "web"
     ]
   },
-  "web.admin.settings.search.notifications.setting.unreadNotifications": "Unread notifications",
-  "@web.admin.settings.search.notifications.setting.unreadNotifications": {
-    "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
-    "x-platforms": [
-      "web"
-    ]
-  },
   "web.admin.settings.search.notifications.setting.webPush": "Web Push",
   "@web.admin.settings.search.notifications.setting.webPush": {
     "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
@@ -107049,13 +107233,6 @@
   },
   "web.admin.settings.search.notifications.setting.webhooksPerPerson": "Webhooks per person",
   "@web.admin.settings.search.notifications.setting.webhooksPerPerson": {
-    "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.admin.settings.search.notifications.setting.workOutWhoWantsIt": "Work out who wants it",
-  "@web.admin.settings.search.notifications.setting.workOutWhoWantsIt": {
     "description": "Web admin, settings search: a group heading or setting on the Notifications settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
     "x-platforms": [
       "web"
@@ -108559,6 +108736,13 @@
   "web.admin.settings.security.endpoint.deviceStart": "TV sign-in: start",
   "@web.admin.settings.security.endpoint.deviceStart": {
     "description": "Web admin, Security settings page: rate limit row for starting a TV sign-in with a code.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.security.endpoint.itemPoster": "Poster requests",
+  "@web.admin.settings.security.endpoint.itemPoster": {
+    "description": "Web admin, Security settings page: rate limit row for requests that load a title's poster from a signed link.",
     "x-platforms": [
       "web"
     ]
@@ -112109,6 +112293,13 @@
         "type": "String"
       }
     },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.detail.backupSchedule": "This schedule comes from the backup settings. Change it in <link>Server › Backups</link>.",
+  "@web.admin.tasks.detail.backupSchedule": {
+    "description": "Web admin, task detail page for the Back Up Server task: shown under its daily schedule, where other tasks have an Edit Schedule button. The backup start time is set on the Backups settings page, so this task's schedule can't be edited here. <link> wraps a link to that page; \"Server › Backups\" is its location in the admin menu.",
     "x-platforms": [
       "web"
     ]
@@ -120641,28 +120832,21 @@
       "web"
     ]
   },
-  "web.auth.activate.approveFailed": "Couldn't sign in the TV. Try again.",
+  "web.auth.activate.approveFailed": "Couldn't approve sign-in. Try again.",
   "@web.auth.activate.approveFailed": {
     "description": "Web device activation page: error when approving failed.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.auth.activate.checkApp": "Check that your app shows",
-  "@web.auth.activate.checkApp": {
-    "description": "Web device activation page: text above the Quick Connect code the app should show.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.auth.activate.checkTv": "Check that your TV shows",
+  "web.auth.activate.checkTv": "Make sure this code matches",
   "@web.auth.activate.checkTv": {
-    "description": "Web device activation page: text above the code the TV should show.",
+    "description": "Web device activation page: label above the code the user compares with the requesting device or app.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.auth.activate.codeLabel": "Enter the code on your TV or app",
+  "web.auth.activate.codeLabel": "Enter the code shown on your device",
   "@web.auth.activate.codeLabel": {
     "description": "Web device activation page: label of the code field.",
     "x-platforms": [
@@ -120676,14 +120860,14 @@
       "web"
     ]
   },
-  "web.auth.activate.description": "Sign in a TV or other device with your account.",
+  "web.auth.activate.description": "Sign in a TV, app, or other device.",
   "@web.auth.activate.description": {
-    "description": "Web device activation page: text under the server name.",
+    "description": "Web device activation page: subtitle under the server name.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.auth.activate.documentTitle": "Sign in a TV",
+  "web.auth.activate.documentTitle": "Approve sign-in",
   "@web.auth.activate.documentTitle": {
     "description": "Web device activation page: browser tab title.",
     "x-platforms": [
@@ -120697,7 +120881,7 @@
       "web"
     ]
   },
-  "web.auth.activate.impersonating": "Stop viewing as {username} to approve a TV. Only the account itself can sign in a TV.",
+  "web.auth.activate.impersonating": "Stop viewing as {username} to approve this sign-in. Only the account itself can approve devices.",
   "@web.auth.activate.impersonating": {
     "description": "Web device activation page: message while an admin is viewing as another account. {username}: that account's username.",
     "placeholders": {
@@ -120709,7 +120893,7 @@
       "web"
     ]
   },
-  "web.auth.activate.impersonatingUnknown": "Stop viewing as this user to approve a TV. Only the account itself can sign in a TV.",
+  "web.auth.activate.impersonatingUnknown": "Stop viewing as this user to approve this sign-in. Only the account itself can approve devices.",
   "@web.auth.activate.impersonatingUnknown": {
     "description": "Web device activation page: message while an admin is viewing as another account whose name is unknown.",
     "x-platforms": [
@@ -120730,42 +120914,23 @@
       "web"
     ]
   },
-  "web.auth.activate.notFound": "We couldn't find that code. Check the code on your TV.",
+  "web.auth.activate.notFound": "We couldn't find that code. Check the code and try again.",
   "@web.auth.activate.notFound": {
     "description": "Web device activation page: error when no request has that code.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.auth.activate.notNow": "Not now",
+  "web.auth.activate.notNow": "Decline",
   "@web.auth.activate.notNow": {
-    "description": "Web device activation page and Quick Connect approval: button that declines the request.",
+    "description": "Web device activation page and Quick Connect approval: button that declines the sign-in request.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.auth.activate.olderTvApps": "Older TV apps show {words} instead.",
-  "@web.auth.activate.olderTvApps": {
-    "description": "Web device activation page: note under the code. {words}: the matching words older TV apps show instead, in capitals, such as “WARM PONY”.",
-    "placeholders": {
-      "words": {
-        "type": "String"
-      }
-    },
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.auth.activate.onlyApproveDevice": "Only approve a device that's in front of you right now.",
-  "@web.auth.activate.onlyApproveDevice": {
-    "description": "Web device activation page: warning before approving a Quick Connect code.",
-    "x-platforms": [
-      "web"
-    ]
-  },
-  "web.auth.activate.onlyApproveTv": "Only approve a TV that's in front of you right now.",
+  "web.auth.activate.onlyApproveTv": "Only approve this if you started the sign-in yourself.",
   "@web.auth.activate.onlyApproveTv": {
-    "description": "Web device activation page: warning before approving a TV sign-in.",
+    "description": "Web device activation page: security warning before approving a sign-in request.",
     "x-platforms": [
       "web"
     ]
@@ -120789,9 +120954,9 @@
       "web"
     ]
   },
-  "web.auth.activate.profilesShared": "Anyone using this TV can pick from your profiles. Profiles with a PIN stay locked.",
+  "web.auth.activate.profilesShared": "This gives it access to your profiles. Profiles with a PIN stay locked.",
   "@web.auth.activate.profilesShared": {
-    "description": "Web device activation page: note before approving a TV sign-in.",
+    "description": "Web device activation page: note before approving a device sign-in.",
     "x-platforms": [
       "web"
     ]
@@ -120837,6 +121002,19 @@
       "web"
     ]
   },
+  "web.auth.activate.requestedAgoStandalone": "Requested {time}",
+  "@web.auth.activate.requestedAgoStandalone": {
+    "description": "Web device activation page: standalone line under the heading when no separate platform label is shown. {time}: when the request was made, already formatted, such as \"just now\" or \"5m ago\" (that relative time is not translated yet).",
+    "placeholders": {
+      "time": {
+        "type": "String",
+        "example": "5m ago"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.auth.activate.requestedFrom": "Requested from {ip}",
   "@web.auth.activate.requestedFrom": {
     "description": "Web device activation page: where the request came from. {ip}: a partial IP address.",
@@ -120849,9 +121027,9 @@
       "web"
     ]
   },
-  "web.auth.activate.result.canceled": "This TV stopped waiting. Start again on the TV.",
+  "web.auth.activate.result.canceled": "This device stopped waiting. Start sign-in again on it.",
   "@web.auth.activate.result.canceled": {
-    "description": "Web device activation page: result when the TV withdrew its sign-in request.",
+    "description": "Web device activation page: result when the requesting device withdrew its sign-in request.",
     "x-platforms": [
       "web"
     ]
@@ -120863,9 +121041,35 @@
       "web"
     ]
   },
-  "web.auth.activate.result.expired": "This code expired. Your TV is showing a new one. Use that code instead.",
+  "web.auth.activate.result.deviceDone": "Done. {device} is signing in.",
+  "@web.auth.activate.result.deviceDone": {
+    "description": "Web device activation page: result after approving a named device's sign-in here. {device}: the requesting device or app name.",
+    "placeholders": {
+      "device": {
+        "type": "String",
+        "example": "Living room TV"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.activate.result.deviceSignedIn": "{device} is signed in.",
+  "@web.auth.activate.result.deviceSignedIn": {
+    "description": "Web device activation page: result when a named device approved here finished signing in. {device}: the requesting device or app name.",
+    "placeholders": {
+      "device": {
+        "type": "String",
+        "example": "Living room TV"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.activate.result.expired": "This code expired. Get a new code on the device and try again.",
   "@web.auth.activate.result.expired": {
-    "description": "Web device activation page: result when a TV sign-in code expired.",
+    "description": "Web device activation page: result when a device sign-in code expired.",
     "x-platforms": [
       "web"
     ]
@@ -120892,7 +121096,7 @@
       "web"
     ]
   },
-  "web.auth.activate.result.quickConnectDoneUnknown": "Done. this device is signing in as {profile}.",
+  "web.auth.activate.result.quickConnectDoneUnknown": "Done. This device is signing in as {profile}.",
   "@web.auth.activate.result.quickConnectDoneUnknown": {
     "description": "Web device activation page: result after approving a Quick Connect code from a device without a name. {profile}: the chosen profile's name.",
     "placeholders": {
@@ -120946,30 +121150,30 @@
       "web"
     ]
   },
-  "web.auth.activate.result.tvAlreadySignedIn": "That TV is already signed in.",
+  "web.auth.activate.result.tvAlreadySignedIn": "This device is already signed in.",
   "@web.auth.activate.result.tvAlreadySignedIn": {
-    "description": "Web device activation page: result when the TV had already finished signing in.",
+    "description": "Web device activation page: result when the requesting device had already finished signing in.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.auth.activate.result.tvApproved": "This TV was approved and is finishing sign-in.",
+  "web.auth.activate.result.tvApproved": "This device was approved and is finishing sign-in.",
   "@web.auth.activate.result.tvApproved": {
-    "description": "Web device activation page: result when the TV sign-in was approved elsewhere.",
+    "description": "Web device activation page: result when the device sign-in was approved elsewhere.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.auth.activate.result.tvDone": "Done. Your TV is signing in.",
+  "web.auth.activate.result.tvDone": "Done. Your device is signing in.",
   "@web.auth.activate.result.tvDone": {
-    "description": "Web device activation page: result after approving a TV sign-in here.",
+    "description": "Web device activation page: result after approving an unnamed device sign-in here.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.auth.activate.result.tvSignedIn": "Your TV is signed in.",
+  "web.auth.activate.result.tvSignedIn": "Your device is signed in.",
   "@web.auth.activate.result.tvSignedIn": {
-    "description": "Web device activation page: result when the TV approved here finished signing in.",
+    "description": "Web device activation page: result when an unnamed device approved here finished signing in.",
     "x-platforms": [
       "web"
     ]
@@ -120989,9 +121193,9 @@
       "web"
     ]
   },
-  "web.auth.activate.signInDevice": "Sign in {device}?",
+  "web.auth.activate.signInDevice": "Allow {device} to sign in?",
   "@web.auth.activate.signInDevice": {
-    "description": "Web device activation page: heading asking to approve a sign-in. {device}: the requesting device's name.",
+    "description": "Web device activation page: heading asking to approve a sign-in. {device}: the requesting device or app name.",
     "placeholders": {
       "device": {
         "type": "String"
@@ -121001,7 +121205,7 @@
       "web"
     ]
   },
-  "web.auth.activate.signInDeviceUnknown": "Sign in this device?",
+  "web.auth.activate.signInDeviceUnknown": "Allow this device to sign in?",
   "@web.auth.activate.signInDeviceUnknown": {
     "description": "Web device activation page: heading asking to approve a sign-in from a device without a name.",
     "x-platforms": [
@@ -121015,7 +121219,7 @@
       "web"
     ]
   },
-  "web.auth.activate.signInToApproveTv": "Sign in to {server} to approve this TV.",
+  "web.auth.activate.signInToApproveTv": "Sign in to {server} to approve this sign-in.",
   "@web.auth.activate.signInToApproveTv": {
     "description": "Web device activation page: prompt for a signed-out visitor. {server}: the server's name.",
     "placeholders": {
@@ -121027,9 +121231,9 @@
       "web"
     ]
   },
-  "web.auth.activate.signInTv": "Sign in TV",
+  "web.auth.activate.signInTv": "Approve sign-in",
   "@web.auth.activate.signInTv": {
-    "description": "Web device activation page: button that approves the TV sign-in.",
+    "description": "Web device activation page and Quick Connect approval: primary button that approves the sign-in request.",
     "x-platforms": [
       "web"
     ]
@@ -122125,7 +122329,7 @@
       "web"
     ]
   },
-  "web.auth.quickConnect.approveFailed": "Couldn't sign in the device. Try again.",
+  "web.auth.quickConnect.approveFailed": "Couldn't approve sign-in. Try again.",
   "@web.auth.quickConnect.approveFailed": {
     "description": "Web Quick Connect approval (device activation page): error when approving failed for an unknown reason.",
     "x-platforms": [
@@ -136568,6 +136772,13 @@
       }
     }
   },
+  "web.detail.sections.alsoIn": "Also in",
+  "@web.detail.sections.alsoIn": {
+    "description": "Web: heading of the row on a movie or series detail page that lists the collections holding that title when more than one does; each card opens a collection.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.detail.sections.cast": "Cast",
   "@web.detail.sections.cast": {
     "description": "Web: heading of the cast row on a season, episode or title page.",
@@ -139278,6 +139489,13 @@
       "web"
     ]
   },
+  "web.home.layout.addedRowsHeading": "Hide server rows added since this export:",
+  "@web.home.layout.addedRowsHeading": {
+    "description": "Web: import home layout dialog: heading above checkboxes for server rows added after this file was exported, checked by default.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.home.layout.addsFromOtherServer": "This layout comes from another server. Its own sections are added to: <strong>{pages}</strong>, replacing sections you added here before. Your changes to this server's sections stay.",
   "@web.home.layout.addsFromOtherServer": {
     "description": "Web: import home layout dialog: summary for a file from another server. Text inside <strong> is bold. {pages}: the page names, as a list.",
@@ -139289,6 +139507,13 @@
         "type": "String"
       }
     }
+  },
+  "web.home.layout.baselineUnmatched": "This server's rows changed since this file was exported, so choose any rows to hide below.",
+  "@web.home.layout.baselineUnmatched": {
+    "description": "Web: import home layout dialog: note shown when an exported file's server row baseline no longer matches this server's current rows.",
+    "x-platforms": [
+      "web"
+    ]
   },
   "web.home.layout.checking": "Checking the layout against this server…",
   "@web.home.layout.checking": {
@@ -139343,6 +139568,18 @@
     "x-platforms": [
       "web"
     ]
+  },
+  "web.home.layout.hidesOnlyOn": "Hides selected rows on: <strong>{pages}</strong> without changing your other rows there.",
+  "@web.home.layout.hidesOnlyOn": {
+    "description": "Web: import home layout dialog: summary line for pages where every section in the file was skipped, so only the checked server rows are hidden and the profile's other customizations stay. Text inside <strong> is bold. {pages}: the page names, as a list.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "pages": {
+        "type": "String"
+      }
+    }
   },
   "web.home.layout.import": "Import",
   "@web.home.layout.import": {
@@ -139440,6 +139677,21 @@
     ],
     "placeholders": {
       "pages": {
+        "type": "String"
+      }
+    }
+  },
+  "web.home.layout.rowWithPage": "{section} ({page})",
+  "@web.home.layout.rowWithPage": {
+    "description": "Web: import home layout dialog: checkbox label for one server row that can be hidden during import. {section}: the row's title. {page}: the page it belongs to, such as Home or Movies.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "section": {
+        "type": "String"
+      },
+      "page": {
         "type": "String"
       }
     }
@@ -139646,6 +139898,13 @@
   "web.home.layout.transfer.untitledSection": "Untitled section",
   "@web.home.layout.transfer.untitledSection": {
     "description": "Web: Settings > Home Screen, import home layout dialog: name shown in the skipped list for a section in the file that has no name or type.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.home.layout.unlistedRowsHeading": "Hide server rows not in this file:",
+  "@web.home.layout.unlistedRowsHeading": {
+    "description": "Web: import home layout dialog: heading above checkboxes for server rows not mentioned in an older export file or one whose server baseline no longer matches, unchecked by default.",
     "x-platforms": [
       "web"
     ]
