@@ -96626,9 +96626,9 @@
       "web"
     ]
   },
-  "web.admin.settings.hooks.settings.conflict.description": "Reload to see the current values. Your edits to settings that changed, and to saved passwords and keys, are undone; your other edits are kept.",
+  "web.admin.settings.hooks.settings.conflict.description": "Reload to see the current values. Your edits to settings that changed, and to saved passwords and keys with their related settings, are undone; your other edits are kept.",
   "@web.admin.settings.hooks.settings.conflict.description": {
-    "description": "Web admin, settings pages and setup wizard steps: body of the toast shown when a save is refused because the server's settings changed after the admin started editing (another administrator or browser tab saved, or the server restarted with different environment settings). The toast's button reloads the settings; saved passwords and keys are never shown, so edits to them cannot be checked and are undone too.",
+    "description": "Web admin, settings pages and setup wizard steps: body of the toast shown when a save is refused because the server's settings changed after the admin started editing (another administrator or browser tab saved, or the server restarted with different environment settings). The toast's button reloads the settings; saved passwords and keys are never shown, so edits to them cannot be checked and are undone too, along with edits to the settings that go with them (such as a server address).",
     "x-platforms": [
       "web"
     ]
