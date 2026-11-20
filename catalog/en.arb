@@ -95984,9 +95984,9 @@
       "web"
     ]
   },
-  "web.admin.settings.fields.envStatusUnknown": "Couldn’t check whether the server’s environment sets this. Reload the page to edit it.",
+  "web.admin.settings.fields.envStatusUnknown": "Couldn’t check whether the server’s environment sets this. Reload to edit.",
   "@web.admin.settings.fields.envStatusUnknown": {
-    "description": "Web admin settings pages and first-run setup wizard: shown under a setting the server's environment could set, while the server's answer about which settings its environment sets could not be loaded. The control stays read-only until the page is reloaded and that answer arrives.",
+    "description": "Web admin settings pages and first-run setup wizard: shown under a setting the server's environment could set, while the server's answer about which settings its environment sets could not be loaded. The control stays read-only until the page is reloaded and that answer arrives. \"Reload\" means reloading the web page.",
     "x-platforms": [
       "web"
     ]
