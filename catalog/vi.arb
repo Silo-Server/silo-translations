@@ -10278,7 +10278,7 @@
   "web.admin.nodes.unit.checkHealth": "Kiểm tra tình trạng của {name}",
   "web.admin.nodes.unit.checked": "Đã kiểm tra",
   "web.admin.nodes.unit.delete": "Xóa {name}",
-  "web.admin.nodes.unit.deleteDeploymentManaged": "Được đặt bởi cấu hình triển khai của máy chủ. Gỡ node khỏi cấu hình đó để xóa node tại đây.",
+  "web.admin.nodes.unit.deleteDeploymentManaged": "Được đặt bởi cấu hình triển khai của máy chủ. Gỡ node khỏi cấu hình đó và khởi động lại các máy chủ API để xóa node tại đây.",
   "web.admin.nodes.unit.disabledNote": "Việc phân bổ mới và các lần kiểm tra tình trạng định kỳ sẽ dừng sau khi đối chiếu. Các luồng hiện có vẫn tiếp tục. Số liệu tình trạng và tải lấy từ lần kiểm tra tình trạng gần nhất.",
   "web.admin.nodes.unit.drain": "Ngừng nhận việc trên {name}",
   "web.admin.nodes.unit.drainTitle": "Ngừng nhận việc: ngừng gửi việc mới đến node này trong khi các phiên của node kết thúc, để có thể dừng hoặc nâng cấp node mà không cắt ngang luồng nào.",

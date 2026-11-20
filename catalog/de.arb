@@ -10278,7 +10278,7 @@
   "web.admin.nodes.unit.checkHealth": "Status von {name} prüfen",
   "web.admin.nodes.unit.checked": "Geprüft",
   "web.admin.nodes.unit.delete": "{name} löschen",
-  "web.admin.nodes.unit.deleteDeploymentManaged": "Über die Bereitstellungskonfiguration des Servers festgelegt. Entferne den Knoten dort, um ihn hier zu löschen.",
+  "web.admin.nodes.unit.deleteDeploymentManaged": "Wird über die Bereitstellungskonfiguration des Servers festgelegt. Entferne den Knoten dort und starte die API-Server neu, um ihn hier zu löschen.",
   "web.admin.nodes.unit.disabledNote": "Neue Zuweisungen und routinemäßige Statusprüfungen enden nach dem Abgleich. Bestehende Streams laufen weiter. Status- und Lastwerte stammen aus der letzten Statusprüfung.",
   "web.admin.nodes.unit.drain": "{name} auslaufen lassen",
   "web.admin.nodes.unit.drainTitle": "Auslaufen lassen: Diesem Knoten keine neue Arbeit mehr zuweisen, während seine Sitzungen enden, damit er gestoppt oder aktualisiert werden kann, ohne einen Stream abzubrechen.",

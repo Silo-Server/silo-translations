@@ -10278,7 +10278,7 @@
   "web.admin.nodes.unit.checkHealth": "检查{name}的健康状态",
   "web.admin.nodes.unit.checked": "检查时间",
   "web.admin.nodes.unit.delete": "删除{name}",
-  "web.admin.nodes.unit.deleteDeploymentManaged": "由服务器的部署配置设置。请在部署配置中移除它，即可在此处删除。",
+  "web.admin.nodes.unit.deleteDeploymentManaged": "由服务器的部署配置设置。请在部署配置中移除它并重启API服务器，即可在此处删除。",
   "web.admin.nodes.unit.disabledNote": "协调完成后，将停止新的分配和例行健康检查。现有串流会继续。健康状态和负载读数来自上次健康检查。",
   "web.admin.nodes.unit.drain": "排空{name}",
   "web.admin.nodes.unit.drainTitle": "排空：在此节点的会话结束期间停止向其发送新任务，以便在不中断串流的情况下停止或升级该节点。",

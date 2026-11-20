@@ -10278,7 +10278,7 @@
   "web.admin.nodes.unit.checkHealth": "Kontrollera hälsan för {name}",
   "web.admin.nodes.unit.checked": "Kontrollerad",
   "web.admin.nodes.unit.delete": "Radera {name}",
-  "web.admin.nodes.unit.deleteDeploymentManaged": "Anges av serverns driftsättningskonfiguration. Ta bort den där för att kunna radera den här.",
+  "web.admin.nodes.unit.deleteDeploymentManaged": "Anges av serverns driftsättningskonfiguration. Ta bort den där och starta om API-servrarna för att radera den här.",
   "web.admin.nodes.unit.disabledNote": "Nya placeringar och rutinmässiga hälsokontroller upphör efter avstämningen. Befintliga streams fortsätter. Hälso- och belastningsvärdena kommer från den senaste hälsokontrollen.",
   "web.admin.nodes.unit.drain": "Töm {name}",
   "web.admin.nodes.unit.drainTitle": "Töm: sluta skicka nytt arbete till noden medan dess sessioner avslutas, så att den kan stoppas eller uppgraderas utan att någon stream avbryts.",

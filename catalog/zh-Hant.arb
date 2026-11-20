@@ -10278,7 +10278,7 @@
   "web.admin.nodes.unit.checkHealth": "檢查 {name} 的健康狀態",
   "web.admin.nodes.unit.checked": "上次檢查",
   "web.admin.nodes.unit.delete": "刪除 {name}",
-  "web.admin.nodes.unit.deleteDeploymentManaged": "由伺服器的部署設定指定。請在該處移除，才能在此刪除。",
+  "web.admin.nodes.unit.deleteDeploymentManaged": "此項目由伺服器的部署設定指定。請在該處移除，然後重新啟動 API 伺服器，才能在此刪除。",
   "web.admin.nodes.unit.disabledNote": "協調完成後，將停止新的配置與例行健康檢查。現有串流會繼續進行。健康狀態與負載讀數來自上次健康檢查。",
   "web.admin.nodes.unit.drain": "排空 {name}",
   "web.admin.nodes.unit.drainTitle": "排空：在此節點的工作階段結束前，停止將新工作傳送給它，以便在不中斷串流的情況下停止或升級節點。",

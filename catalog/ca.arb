@@ -10278,7 +10278,7 @@
   "web.admin.nodes.unit.checkHealth": "Comprova l’estat del node {name}",
   "web.admin.nodes.unit.checked": "Comprovat",
   "web.admin.nodes.unit.delete": "Elimina el node {name}",
-  "web.admin.nodes.unit.deleteDeploymentManaged": "Node definit per la configuració de desplegament del servidor. Treu-lo d’allà per eliminar-lo aquí.",
+  "web.admin.nodes.unit.deleteDeploymentManaged": "Aquest node el defineix la configuració de desplegament del servidor. Treu-lo d’allà i reinicia els servidors d’API per poder eliminar-lo aquí.",
   "web.admin.nodes.unit.disabledNote": "Les assignacions noves i les comprovacions d’estat rutinàries s’aturen després de la reconciliació. Les transmissions existents continuen. Les lectures d’estat i de càrrega són de la darrera comprovació d’estat.",
   "web.admin.nodes.unit.drain": "Buida el node {name}",
   "web.admin.nodes.unit.drainTitle": "Buida: deixa d’enviar feina nova a aquest node mentre acaben les seves sessions, perquè es pugui aturar o actualitzar sense tallar cap transmissió.",
