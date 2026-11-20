@@ -62568,23 +62568,38 @@
       "web"
     ]
   },
-  "web.admin.backups.warnings.hideAccounts": "Hide the accounts",
+  "web.admin.backups.warnings.hideAccounts": "{count, plural, one {Hide the account} other {Hide the accounts}}",
   "@web.admin.backups.warnings.hideAccounts": {
-    "description": "Web admin, Backups page, backup warning details: button that hides the groups of accounts left out of the restore set.",
+    "description": "Web admin, Backups page, backup warning details: button that hides the groups of accounts left out of the restore set. {count}: number of accounts left out (selects the plural).",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    },
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.backups.warnings.hideFiles": "Hide the files",
+  "web.admin.backups.warnings.hideFiles": "{count, plural, one {Hide the file} other {Hide the files}}",
   "@web.admin.backups.warnings.hideFiles": {
-    "description": "Web admin, Backups page, backup warning details: button that hides the groups of missing files.",
+    "description": "Web admin, Backups page, backup warning details: button that hides the groups of missing files. {count}: number of missing files (selects the plural).",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    },
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.backups.warnings.hideGroupFiles": "Hide files",
+  "web.admin.backups.warnings.hideGroupFiles": "{count, plural, one {Hide file} other {Hide files}}",
   "@web.admin.backups.warnings.hideGroupFiles": {
-    "description": "Web admin, Backups page, backup warning details: button that hides the file keys of one group of missing files.",
+    "description": "Web admin, Backups page, backup warning details: button that hides the file keys of one group of missing files. {count}: number of files in the group (selects the plural).",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    },
     "x-platforms": [
       "web"
     ]
@@ -62759,9 +62774,14 @@
       "web"
     ]
   },
-  "web.admin.backups.warnings.showAccounts": "Show the accounts",
+  "web.admin.backups.warnings.showAccounts": "{count, plural, one {Show the account} other {Show the accounts}}",
   "@web.admin.backups.warnings.showAccounts": {
-    "description": "Web admin, Backups page, backup warning details: button that shows the groups of accounts left out of the restore set.",
+    "description": "Web admin, Backups page, backup warning details: button that shows the groups of accounts left out of the restore set. {count}: number of accounts left out (selects the plural).",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    },
     "x-platforms": [
       "web"
     ]
@@ -62781,16 +62801,26 @@
       "web"
     ]
   },
-  "web.admin.backups.warnings.showFiles": "Show the files",
+  "web.admin.backups.warnings.showFiles": "{count, plural, one {Show the file} other {Show the files}}",
   "@web.admin.backups.warnings.showFiles": {
-    "description": "Web admin, Backups page, backup warning details: button that shows the groups of missing files.",
+    "description": "Web admin, Backups page, backup warning details: button that shows the groups of missing files. {count}: number of missing files (selects the plural).",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    },
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.backups.warnings.showGroupFiles": "Show files",
+  "web.admin.backups.warnings.showGroupFiles": "{count, plural, one {Show file} other {Show files}}",
   "@web.admin.backups.warnings.showGroupFiles": {
-    "description": "Web admin, Backups page, backup warning details: button that shows the file keys of one group of missing files.",
+    "description": "Web admin, Backups page, backup warning details: button that shows the file keys of one group of missing files. {count}: number of files in the group (selects the plural).",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    },
     "x-platforms": [
       "web"
     ]
