@@ -89753,6 +89753,74 @@
       "web"
     ]
   },
+  "web.admin.recommendations.external.phaseRows": "Ranking profiles ({done_text} / {total_text})",
+  "@web.admin.recommendations.external.phaseRows": {
+    "description": "Web admin, Recommendations page, Discover Recommendations job card: live progress while ranking per-profile rows.",
+    "placeholders": {
+      "done_text": {
+        "type": "String",
+        "example": "2"
+      },
+      "total_text": {
+        "type": "String",
+        "example": "4"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.recommendations.external.phaseSources": "Fetching TMDB lists ({done_text} / {total_text})",
+  "@web.admin.recommendations.external.phaseSources": {
+    "description": "Web admin, Recommendations page, Discover Recommendations job card: live progress while fetching seed recommendation lists from TMDB.",
+    "placeholders": {
+      "done_text": {
+        "type": "String",
+        "example": "12"
+      },
+      "total_text": {
+        "type": "String",
+        "example": "40"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.recommendations.external.phaseTitles": "Looking up and embedding titles ({done_text} / {total_text})",
+  "@web.admin.recommendations.external.phaseTitles": {
+    "description": "Web admin, Recommendations page, Discover Recommendations job card: live progress while fetching TMDB details and embedding titles.",
+    "placeholders": {
+      "done_text": {
+        "type": "String",
+        "example": "650"
+      },
+      "total_text": {
+        "type": "String",
+        "example": "2,387"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.recommendations.external.prunedCount": "{count, plural, one {Cleared {count_text} expired title} other {Cleared {count_text} expired titles}}",
+  "@web.admin.recommendations.external.prunedCount": {
+    "description": "Web admin, Recommendations page, Discover Recommendations job card: summary of a retention-only run while Discover recommendations are turned off.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "42"
+      },
+      "count_text": {
+        "type": "String",
+        "example": "42"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.recommendations.external.rowsBuilt": "{count, plural, one {{count_text} row built} other {{count_text} rows built}}",
   "@web.admin.recommendations.external.rowsBuilt": {
     "description": "Web admin, Recommendations page, Discover Recommendations job card: how many recommendation rows are stored, one per profile and media type. {count}: the number (selects the plural). {count_text}: the same number, formatted.",
@@ -89764,6 +89832,34 @@
         "type": "String"
       }
     },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.recommendations.external.skipLockConflict": "Resolve the embedding lock conflict below before building Discover recommendations.",
+  "@web.admin.recommendations.external.skipLockConflict": {
+    "description": "Web admin, Recommendations page, Discover Recommendations job card: shown when the last run skipped embedding because the configured model conflicts with the embedding lock.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.recommendations.external.skipNoLock": "Run the Embeddings job first so Silo has library vectors to compare against.",
+  "@web.admin.recommendations.external.skipNoLock": {
+    "description": "Web admin, Recommendations page, Discover Recommendations job card: shown when the last run skipped embedding because library embeddings have not run yet.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.recommendations.external.skipNoProvider": "Connect an embedding provider in AI Services before building Discover recommendations.",
+  "@web.admin.recommendations.external.skipNoProvider": {
+    "description": "Web admin, Recommendations page, Discover Recommendations job card: shown when the last run skipped embedding because no embedding provider is configured.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.recommendations.external.skipNoTasteProfiles": "No profiles have taste profiles yet. Run Taste Profiles once someone has watched or rated titles.",
+  "@web.admin.recommendations.external.skipNoTasteProfiles": {
+    "description": "Web admin, Recommendations page, Discover Recommendations job card: shown when the last run found no profiles with a taste vector.",
     "x-platforms": [
       "web"
     ]
@@ -90968,6 +91064,20 @@
   "web.admin.requests.discover.recommendedOff": "Stays empty until Discover recommendations are turned on in Admin → Recommendations.",
   "@web.admin.requests.discover.recommendedOff": {
     "description": "Web admin, Requests > Discover Page: warning on a recommendations row, in the row list and in its dialog, while the server serves no such rows. Admin → Recommendations is the page's place in the admin menu.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.requests.discover.recommendedOffBanner": "Recommended rows stay empty until Discover Recommendations are turned on in <link>Admin → Recommendations</link>.",
+  "@web.admin.requests.discover.recommendedOffBanner": {
+    "description": "Web admin, Requests > Discover Page: notice shown when recommended rows are in the layout while Discover Recommendations are turned off. <link>…</link>: a link to Admin → Recommendations.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.requests.discover.recommendedOffShort": "Off in Recommendations",
+  "@web.admin.requests.discover.recommendedOffShort": {
+    "description": "Web admin, Requests > Discover Page: short status label on a recommended row when Discover Recommendations are turned off.",
     "x-platforms": [
       "web"
     ]
@@ -92422,6 +92532,13 @@
       "web"
     ]
   },
+  "web.admin.requests.rowDialog.openRecommendations": "Open Recommendations settings",
+  "@web.admin.requests.rowDialog.openRecommendations": {
+    "description": "Web admin, Requests > Discover Page, row dialog: link to Admin → Recommendations shown when editing a recommended row while Discover Recommendations are turned off.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.requests.rowDialog.order": "Order",
   "@web.admin.requests.rowDialog.order": {
     "description": "Web admin, Requests > Discover Page, Add row / Edit row dialog: label of the MDBList row's order picker.",
@@ -92436,6 +92553,13 @@
       "web"
     ]
   },
+  "web.admin.requests.rowDialog.previewEmptyRecommended": "Your profile has no Discover recommendations yet. Run Discover Recommendations or watch and rate a few titles to preview this row.",
+  "@web.admin.requests.rowDialog.previewEmptyRecommended": {
+    "description": "Web admin, Requests > Discover Page, row dialog: empty preview message on a recommended row when the feature is enabled but the acting admin's profile has no recommendations yet.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.requests.rowDialog.previewOff.chart": "Pick a chart to see its titles.",
   "@web.admin.requests.rowDialog.previewOff.chart": {
     "description": "Web admin, Requests > Discover Page, Add row / Edit row dialog: shown in the live preview strip before a chart is picked.",
@@ -92446,6 +92570,13 @@
   "web.admin.requests.rowDialog.previewOff.list": "Pick a list or paste its link to see its titles.",
   "@web.admin.requests.rowDialog.previewOff.list": {
     "description": "Web admin, Requests > Discover Page, Add row / Edit row dialog: shown in the live preview strip before a list is picked.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.requests.rowDialog.previewOff.recommended": "Turn on Discover Recommendations in Admin → Recommendations to preview this row.",
+  "@web.admin.requests.rowDialog.previewOff.recommended": {
+    "description": "Web admin, Requests > Discover Page, row dialog: preview placeholder on a recommended row while Discover Recommendations are turned off.",
     "x-platforms": [
       "web"
     ]
@@ -101780,6 +101911,27 @@
       "web"
     ]
   },
+  "web.admin.settings.recommendations.external.addToDiscover": "Add to Discover",
+  "@web.admin.settings.recommendations.external.addToDiscover": {
+    "description": "Web admin, Recommendations page, Discover Recommendations section: button that adds the stock recommended rows to a customized Discover page layout.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.recommendations.external.addToDiscoverFailed": "Could not add recommended rows to the Discover page.",
+  "@web.admin.settings.recommendations.external.addToDiscoverFailed": {
+    "description": "Web admin, Recommendations page, Discover Recommendations section: error toast when adding recommended rows to the Discover layout fails.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.recommendations.external.addedToDiscover": "Added recommended rows to the Discover page.",
+  "@web.admin.settings.recommendations.external.addedToDiscover": {
+    "description": "Web admin, Recommendations page, Discover Recommendations section: success toast after adding recommended rows to the Discover layout.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.settings.recommendations.external.enabled": "Enable Discover Recommendations",
   "@web.admin.settings.recommendations.external.enabled": {
     "description": "Web admin, Recommendations page, Discover Recommendations section: label of the switch that turns Discover recommendations on, worded like Enable Recommendations. Title case like the other setting labels.",
@@ -101804,6 +101956,34 @@
   "web.admin.settings.recommendations.external.maxTitlesHint": "How many titles that aren't in the library the server keeps to recommend from. Each one is looked up on TMDB and embedded. Embedding is usually cheap, but a higher number can cost more or take longer depending on your embedding provider, and uses more storage.",
   "@web.admin.settings.recommendations.external.maxTitlesHint": {
     "description": "Web admin, Recommendations page, Discover Recommendations section: help under the maximum titles field. Tells the administrator that every title kept is fetched from TMDB and embedded with their embedding provider, so raising the number raises embedding cost or run time as well as storage. TMDB is The Movie Database, a product name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.recommendations.external.missingFromDiscover": "Your Discover page doesn't show any Recommendations rows yet.",
+  "@web.admin.settings.recommendations.external.missingFromDiscover": {
+    "description": "Web admin, Recommendations page, Discover Recommendations section: notice shown when Discover Recommendations are enabled but the customized Discover layout has no enabled recommended row.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.recommendations.external.needsRecommendations": "Turn on Enable Recommendations above and restart the server before Discover Recommendations can run.",
+  "@web.admin.settings.recommendations.external.needsRecommendations": {
+    "description": "Web admin, Recommendations page, Discover Recommendations section: notice shown when the main Enable Recommendations setting is off.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.recommendations.external.needsRequests": "Requests are currently off. Turn them on in <link>Requests settings</link> so viewers can see the Discover page.",
+  "@web.admin.settings.recommendations.external.needsRequests": {
+    "description": "Web admin, Recommendations page, Discover Recommendations section: notice shown when Requests are disabled. <link>…</link>: a link to Admin → Requests.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.recommendations.external.openDiscoverPage": "Open Discover Page",
+  "@web.admin.settings.recommendations.external.openDiscoverPage": {
+    "description": "Web admin, Recommendations page, Discover Recommendations section: link to Admin → Requests → Discover Page.",
     "x-platforms": [
       "web"
     ]
