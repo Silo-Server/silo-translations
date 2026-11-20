@@ -139203,6 +139203,13 @@
       "web"
     ]
   },
+  "web.home.addRow.shows.serverNote": "Managed by this server. What it shows can’t be changed here; add a row of your own to choose what it shows.",
+  "@web.home.addRow.shows.serverNote": {
+    "description": "Web: Edit row dialog in Settings > Home Screen, note under the 'Shows' line on a server-managed row explaining why its contents cannot be edited here.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.home.continueWatching.episodeLabel": "Season {season} Episode {episode}",
   "@web.home.continueWatching.episodeLabel": {
     "description": "Web: line under the series title on a Continue Watching card for an episode. {season}: the season number. {episode}: the episode number.",
@@ -141821,6 +141828,13 @@
   "web.home.rows.line.heroBannerWebOnly": "Hero banner · Web only",
   "@web.home.rows.line.heroBannerWebOnly": {
     "description": "Web: tag on the Home row that is the page's hero banner when an admin kept it off the apps, so only the web shows it.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.home.rows.line.server": "Server",
+  "@web.home.rows.line.server": {
+    "description": "Web: tag on a server-managed Home row in Settings > Home Screen and its Edit row dialog, paired with Yours on rows the current profile added itself.",
     "x-platforms": [
       "web"
     ]
