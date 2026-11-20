@@ -61665,6 +61665,18 @@
       "web"
     ]
   },
+  "web.admin.backups.schedule.timeDescriptionLocal": "In the server's time zone. That's {time} where you are.",
+  "@web.admin.backups.schedule.timeDescriptionLocal": {
+    "description": "Web admin, Backups page: description of the Start time setting when the viewer's time zone differs from the server's. The setting's time is on the server's clock. {time} is the same moment on the viewer's clock: the next scheduled start as a time of day with no date, already formatted, such as 11:00 PM. It can fall on a different calendar day than on the server. It matches the time in the status line's \"Next one starts ...\" sentence. \"Where you are\" means the viewer's time zone (the browser's), not a physical place.",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.backups.schedule.unknown": "The next start time is unknown.",
   "@web.admin.backups.schedule.unknown": {
     "description": "Web admin, Backups page: status line under the header when the next scheduled start isn't known.",
