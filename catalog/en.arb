@@ -69254,6 +69254,13 @@
       "web"
     ]
   },
+  "web.admin.common.taskStatus.failedDetails": "Task failed. Inspect administrator diagnostics for details.",
+  "@web.admin.common.taskStatus.failedDetails": {
+    "description": "Web admin, a scheduled task run that failed: tooltip of its status badge (Tasks page, task detail, marker tasks) and the Error column of the task's execution history. The error itself stays in the server's diagnostics.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.common.taskStatus.queued": "queued",
   "@web.admin.common.taskStatus.queued": {
     "description": "Status badge for an admin job or task that is queued, in the admin job history and task lists. Lowercase like the other status badges.",
@@ -112577,9 +112584,46 @@
       "web"
     ]
   },
+  "web.admin.tasks.detail.refreshFailed": "Refresh failed. Inspect administrator diagnostics for details.",
+  "@web.admin.tasks.detail.refreshFailed": {
+    "description": "Web admin, metadata refresh task detail page, Recent errors list: shown under each item whose last metadata refresh failed. The error itself stays in the server's diagnostics.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.tasks.detail.reviewSchedule": "Review current schedule",
   "@web.admin.tasks.detail.reviewSchedule": {
     "description": "Web admin, task detail page: schedule editor button, shown after saving failed because the schedule changed elsewhere, that loads the saved schedule.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.detail.sampleEpisode": "{code} {title}",
+  "@web.admin.tasks.detail.sampleEpisode": {
+    "description": "Web admin, metadata refresh task detail page: an episode's name in the due and recent error lists, after its series title. {code}: the episode code, for example “S01E02”. {title}: the episode title.",
+    "placeholders": {
+      "code": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.detail.sampleTitle": "{series} - {name}",
+  "@web.admin.tasks.detail.sampleTitle": {
+    "description": "Web admin, metadata refresh task detail page: title of a season or episode in the due and recent error lists. {series}: the series title. {name}: the season's name (for example “Season 2”) or the episode's code and title (for example “S01E02 Pilot”).",
+    "placeholders": {
+      "series": {
+        "type": "String"
+      },
+      "name": {
+        "type": "String"
+      }
+    },
     "x-platforms": [
       "web"
     ]
