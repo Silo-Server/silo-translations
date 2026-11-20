@@ -13245,6 +13245,7 @@
   "web.admin.settings.storage.title": "Lager",
   "web.admin.settings.storage.transitionQueueFailed": "Lagerskiftet kunne ikke sættes i kø. Kontroller lagerindstillingerne, og prøv igen.",
   "web.admin.settings.storage.transitionQueued": "Lagerskift sat i kø ({id}).",
+  "web.admin.settings.storage.transitionsEnvManaged": "Lageret kan ikke flyttes hertil, så længe miljøet angiver lagerindstillinger ({variables}). Fjern først disse variabler, og genstart alle API-servere.",
   "web.admin.settings.storage.transitionsUnavailable": "Administrerede lagerskift er ikke tilgængelige på denne server.",
   "web.admin.settings.storage.unitSeconds": "sekunder",
   "web.admin.settings.storage.verifiedObjects": "{count, plural, one {{count_text} objekt verificeret} other {{count_text} objekter verificeret}}",

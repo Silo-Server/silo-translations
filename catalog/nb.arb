@@ -13245,6 +13245,7 @@
   "web.admin.settings.storage.title": "Lagring",
   "web.admin.settings.storage.transitionQueueFailed": "Kunne ikke legge lagringsovergangen i kø. Kontroller lagringsinnstillingene og prøv igjen.",
   "web.admin.settings.storage.transitionQueued": "Lagringsovergangen er lagt i kø ({id}).",
+  "web.admin.settings.storage.transitionsEnvManaged": "Lagringen kan ikke flyttes her mens miljøet angir lagringsinnstillinger ({variables}). Fjern først disse variablene, og start alle API-servere på nytt.",
   "web.admin.settings.storage.transitionsUnavailable": "Administrerte lagringsoverganger er ikke tilgjengelige på denne serveren.",
   "web.admin.settings.storage.unitSeconds": "sekunder",
   "web.admin.settings.storage.verifiedObjects": "{count, plural, one {{count_text} objekt verifisert} other {{count_text} objekter verifisert}}",

@@ -13245,6 +13245,7 @@
   "web.admin.settings.storage.title": "Emmagatzematge",
   "web.admin.settings.storage.transitionQueueFailed": "No s’ha pogut posar a la cua la transició d’emmagatzematge. Comprova la configuració d’emmagatzematge i torna-ho a provar.",
   "web.admin.settings.storage.transitionQueued": "S’ha posat a la cua la transició d’emmagatzematge ({id}).",
+  "web.admin.settings.storage.transitionsEnvManaged": "No es pot moure l’emmagatzematge aquí mentre l’entorn defineixi la configuració d’emmagatzematge ({variables}). Primer, elimina la definició d’aquestes variables i reinicia tots els servidors d’API.",
   "web.admin.settings.storage.transitionsUnavailable": "Les transicions d’emmagatzematge gestionades no estan disponibles en aquest servidor.",
   "web.admin.settings.storage.unitSeconds": "segons",
   "web.admin.settings.storage.verifiedObjects": "{count, plural, one {{count_text} objecte verificat} many {{count_text} d’objectes verificats} other {{count_text} objectes verificats}}",

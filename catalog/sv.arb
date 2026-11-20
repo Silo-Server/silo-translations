@@ -13245,6 +13245,7 @@
   "web.admin.settings.storage.title": "Lagring",
   "web.admin.settings.storage.transitionQueueFailed": "Det gick inte att lägga lagringsövergången i kö. Kontrollera lagringsinställningarna och försök igen.",
   "web.admin.settings.storage.transitionQueued": "Lagringsövergången har lagts i kö ({id}).",
+  "web.admin.settings.storage.transitionsEnvManaged": "Det går inte att flytta lagringen här medan miljön anger lagringsinställningar ({variables}). Ta först bort de variablerna och starta om alla API-servrar.",
   "web.admin.settings.storage.transitionsUnavailable": "Hanterade lagringsövergångar är inte tillgängliga på den här servern.",
   "web.admin.settings.storage.unitSeconds": "sekunder",
   "web.admin.settings.storage.verifiedObjects": "{count, plural, one {{count_text} objekt verifierat} other {{count_text} objekt verifierade}}",

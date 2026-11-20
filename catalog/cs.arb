@@ -13245,6 +13245,7 @@
   "web.admin.settings.storage.title": "Úložiště",
   "web.admin.settings.storage.transitionQueueFailed": "Přechod úložiště se nepodařilo zařadit do fronty. Zkontrolujte nastavení úložiště a zkuste to znovu.",
   "web.admin.settings.storage.transitionQueued": "Přechod úložiště byl zařazen do fronty ({id}).",
+  "web.admin.settings.storage.transitionsEnvManaged": "Úložiště sem nelze přesunout, dokud nastavení úložiště určuje prostředí ({variables}). Nejprve tyto proměnné odstraňte a restartujte všechny servery API.",
   "web.admin.settings.storage.transitionsUnavailable": "Řízené přechody úložiště nejsou na tomto serveru k dispozici.",
   "web.admin.settings.storage.unitSeconds": "sekund",
   "web.admin.settings.storage.verifiedObjects": "{count, plural, one {{count_text} objekt ověřen} few {{count_text} objekty ověřeny} many {{count_text} objektu ověřeno} other {{count_text} objektů ověřeno}}",

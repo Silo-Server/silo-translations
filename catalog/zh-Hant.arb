@@ -13245,6 +13245,7 @@
   "web.admin.settings.storage.title": "儲存空間",
   "web.admin.settings.storage.transitionQueueFailed": "無法將儲存空間轉移加入佇列。請檢查儲存空間設定，然後再試一次。",
   "web.admin.settings.storage.transitionQueued": "已將儲存空間轉移加入佇列（{id}）。",
+  "web.admin.settings.storage.transitionsEnvManaged": "環境變數已設定儲存設定（{variables}）時，無法在此移動儲存空間。請先取消設定這些變數，並重新啟動所有 API 伺服器。",
   "web.admin.settings.storage.transitionsUnavailable": "此伺服器不提供受管理的儲存空間轉移。",
   "web.admin.settings.storage.unitSeconds": "秒",
   "web.admin.settings.storage.verifiedObjects": "{count, plural, other {已驗證 {count_text} 個物件}}",

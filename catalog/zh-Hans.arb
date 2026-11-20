@@ -13245,6 +13245,7 @@
   "web.admin.settings.storage.title": "存储",
   "web.admin.settings.storage.transitionQueueFailed": "无法将存储迁移加入队列。请检查存储设置，然后重试。",
   "web.admin.settings.storage.transitionQueued": "存储迁移已加入队列（{id}）。",
+  "web.admin.settings.storage.transitionsEnvManaged": "环境变量设置了存储选项（{variables}）时，无法在此处迁移存储。请先取消设置这些变量，然后重启所有API服务器。",
   "web.admin.settings.storage.transitionsUnavailable": "此服务器不支持托管存储迁移。",
   "web.admin.settings.storage.unitSeconds": "秒",
   "web.admin.settings.storage.verifiedObjects": "{count, plural, other {已验证{count_text}个对象}}",

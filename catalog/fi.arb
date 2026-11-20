@@ -13245,6 +13245,7 @@
   "web.admin.settings.storage.title": "Tallennustila",
   "web.admin.settings.storage.transitionQueueFailed": "Tallennustilan siirron lisääminen jonoon epäonnistui. Tarkista tallennustilan asetukset ja yritä uudelleen.",
   "web.admin.settings.storage.transitionQueued": "Tallennustilan siirto lisätty jonoon ({id}).",
+  "web.admin.settings.storage.transitionsEnvManaged": "Tallennustilaa ei voi siirtää tänne niin kauan kuin ympäristömuuttujat määrittävät tallennusasetuksia ({variables}). Poista ensin näiden muuttujien määritykset ja käynnistä jokainen API-palvelin uudelleen.",
   "web.admin.settings.storage.transitionsUnavailable": "Hallitut tallennustilan siirrot eivät ole käytettävissä tällä palvelimella.",
   "web.admin.settings.storage.unitSeconds": "sekuntia",
   "web.admin.settings.storage.verifiedObjects": "{count, plural, one {{count_text} objekti varmistettu} other {{count_text} objektia varmistettu}}",

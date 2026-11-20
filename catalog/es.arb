@@ -13245,6 +13245,7 @@
   "web.admin.settings.storage.title": "Almacenamiento",
   "web.admin.settings.storage.transitionQueueFailed": "No se pudo poner en cola la transición de almacenamiento. Revisa la configuración de almacenamiento y vuelve a intentarlo.",
   "web.admin.settings.storage.transitionQueued": "Transición de almacenamiento en cola ({id}).",
+  "web.admin.settings.storage.transitionsEnvManaged": "No se puede mover el almacenamiento aquí mientras el entorno define opciones de almacenamiento ({variables}). Primero elimina esas variables y reinicia todos los servidores de API.",
   "web.admin.settings.storage.transitionsUnavailable": "Las transiciones de almacenamiento gestionadas no están disponibles en este servidor.",
   "web.admin.settings.storage.unitSeconds": "segundos",
   "web.admin.settings.storage.verifiedObjects": "{count, plural, one {{count_text} objeto verificado} many {{count_text} de objetos verificados} other {{count_text} objetos verificados}}",

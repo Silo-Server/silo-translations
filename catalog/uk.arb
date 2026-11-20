@@ -13245,6 +13245,7 @@
   "web.admin.settings.storage.title": "Сховище",
   "web.admin.settings.storage.transitionQueueFailed": "Не вдалося поставити перенесення сховища в чергу. Перевірте налаштування сховища й спробуйте ще раз.",
   "web.admin.settings.storage.transitionQueued": "Перенесення сховища поставлено в чергу ({id}).",
+  "web.admin.settings.storage.transitionsEnvManaged": "Не можна перемістити сховище сюди, доки параметри сховища задано в змінних середовища ({variables}). Спершу видаліть ці змінні й перезапустіть кожен API-сервер.",
   "web.admin.settings.storage.transitionsUnavailable": "Кероване перенесення сховища недоступне на цьому сервері.",
   "web.admin.settings.storage.unitSeconds": "секунд",
   "web.admin.settings.storage.verifiedObjects": "{count, plural, one {{count_text} об’єкт перевірено} few {{count_text} об’єкти перевірено} many {{count_text} об’єктів перевірено} other {{count_text} об’єкта перевірено}}",

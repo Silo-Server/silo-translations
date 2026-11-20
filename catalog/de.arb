@@ -13245,6 +13245,7 @@
   "web.admin.settings.storage.title": "Speicher",
   "web.admin.settings.storage.transitionQueueFailed": "Die Speicherumstellung konnte nicht eingereiht werden. Prüfe die Speichereinstellungen und versuche es erneut.",
   "web.admin.settings.storage.transitionQueued": "Speicherumstellung eingereiht ({id}).",
+  "web.admin.settings.storage.transitionsEnvManaged": "Der Speicher kann hier nicht verschoben werden, solange die Umgebung Speichereinstellungen festlegt ({variables}). Entferne diese Variablen und starte zuerst jeden API-Server neu.",
   "web.admin.settings.storage.transitionsUnavailable": "Verwaltete Speicherumstellungen sind auf diesem Server nicht verfügbar.",
   "web.admin.settings.storage.unitSeconds": "Sekunden",
   "web.admin.settings.storage.verifiedObjects": "{count, plural, one {{count_text} Objekt geprüft} other {{count_text} Objekte geprüft}}",

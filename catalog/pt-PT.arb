@@ -13245,6 +13245,7 @@
   "web.admin.settings.storage.title": "Armazenamento",
   "web.admin.settings.storage.transitionQueueFailed": "Não foi possível colocar a transição de armazenamento na fila. Verifique as definições de armazenamento e tente novamente.",
   "web.admin.settings.storage.transitionQueued": "Transição de armazenamento colocada na fila ({id}).",
+  "web.admin.settings.storage.transitionsEnvManaged": "Não é possível mover o armazenamento para aqui enquanto o ambiente definir as definições de armazenamento ({variables}). Primeiro, remova a definição dessas variáveis e reinicie todos os servidores de API.",
   "web.admin.settings.storage.transitionsUnavailable": "As transições de armazenamento geridas não estão disponíveis neste servidor.",
   "web.admin.settings.storage.unitSeconds": "segundos",
   "web.admin.settings.storage.verifiedObjects": "{count, plural, one {{count_text} objeto verificado} many {{count_text} de objetos verificados} other {{count_text} objetos verificados}}",

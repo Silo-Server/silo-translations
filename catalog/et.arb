@@ -13245,6 +13245,7 @@
   "web.admin.settings.storage.title": "Salvestusruum",
   "web.admin.settings.storage.transitionQueueFailed": "Salvestusruumi ülemineku järjekorda lisamine ebaõnnestus. Kontrollige salvestusruumi seadeid ja proovige uuesti.",
   "web.admin.settings.storage.transitionQueued": "Salvestusruumi üleminek lisati järjekorda ({id}).",
+  "web.admin.settings.storage.transitionsEnvManaged": "Salvestusruumi ei saa siia teisaldada, kuni salvestusruumi seadeid määravad keskkonnamuutujad ({variables}). Eemaldage esmalt need muutujad ja taaskäivitage kõik API-serverid.",
   "web.admin.settings.storage.transitionsUnavailable": "Hallatud salvestusruumi üleminekud pole selles serveris saadaval.",
   "web.admin.settings.storage.unitSeconds": "sekundit",
   "web.admin.settings.storage.verifiedObjects": "{count, plural, one {Kontrollitud {count_text} objekt} other {Kontrollitud {count_text} objekti}}",

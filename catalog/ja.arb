@@ -13245,6 +13245,7 @@
   "web.admin.settings.storage.title": "ストレージ",
   "web.admin.settings.storage.transitionQueueFailed": "ストレージの移行をキューに追加できませんでした。ストレージの設定を確認して、もう一度お試しください。",
   "web.admin.settings.storage.transitionQueued": "ストレージの移行をキューに追加しました（{id}）。",
+  "web.admin.settings.storage.transitionsEnvManaged": "環境変数でストレージの設定が指定されている間（{variables}）は、ここでストレージを移動できません。先にこれらの変数の設定を解除し、すべてのAPIサーバーを再起動してください。",
   "web.admin.settings.storage.transitionsUnavailable": "このサーバーでは管理されたストレージ移行を利用できません。",
   "web.admin.settings.storage.unitSeconds": "秒",
   "web.admin.settings.storage.verifiedObjects": "{count, plural, other {{count_text}件のオブジェクトを検証済み}}",

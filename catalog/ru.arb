@@ -13245,6 +13245,7 @@
   "web.admin.settings.storage.title": "Хранилище",
   "web.admin.settings.storage.transitionQueueFailed": "Не удалось поставить перенос хранилища в очередь. Проверьте настройки хранилища и повторите попытку.",
   "web.admin.settings.storage.transitionQueued": "Перенос хранилища поставлен в очередь ({id}).",
+  "web.admin.settings.storage.transitionsEnvManaged": "Нельзя перенести хранилище сюда, пока параметры хранилища заданы переменными окружения ({variables}). Сначала удалите эти переменные и перезапустите все API-серверы.",
   "web.admin.settings.storage.transitionsUnavailable": "Управляемый перенос хранилища недоступен на этом сервере.",
   "web.admin.settings.storage.unitSeconds": "с",
   "web.admin.settings.storage.verifiedObjects": "{count, plural, one {Проверен {count_text} объект} few {Проверено {count_text} объекта} many {Проверено {count_text} объектов} other {Проверено {count_text} объекта}}",

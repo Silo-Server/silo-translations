@@ -13245,6 +13245,7 @@
   "web.admin.settings.storage.title": "Magazyn",
   "web.admin.settings.storage.transitionQueueFailed": "Nie udało się dodać przeniesienia magazynu do kolejki. Sprawdź ustawienia magazynu i spróbuj ponownie.",
   "web.admin.settings.storage.transitionQueued": "Dodano przeniesienie magazynu do kolejki ({id}).",
+  "web.admin.settings.storage.transitionsEnvManaged": "Nie można tu przenieść magazynu, dopóki ustawienia magazynu są określone w środowisku ({variables}). Najpierw usuń te zmienne i uruchom ponownie każdy serwer API.",
   "web.admin.settings.storage.transitionsUnavailable": "Zarządzane przeniesienia magazynu nie są dostępne na tym serwerze.",
   "web.admin.settings.storage.unitSeconds": "s",
   "web.admin.settings.storage.verifiedObjects": "{count, plural, one {Zweryfikowano {count_text} obiekt} few {Zweryfikowano {count_text} obiekty} many {Zweryfikowano {count_text} obiektów} other {Zweryfikowano {count_text} obiektu}}",
