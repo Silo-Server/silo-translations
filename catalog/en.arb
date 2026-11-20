@@ -92989,6 +92989,13 @@
       "web"
     ]
   },
+  "web.admin.sessions.playback.toast.messageUnconfirmed": "The player didn’t confirm the message. It may not have been shown.",
+  "@web.admin.sessions.playback.toast.messageUnconfirmed": {
+    "description": "Web: admin playback session actions menu (Activity page and dashboard Recent Activity widget): warning toast when the server wrote a message to the player's connection but the player did not confirm receiving it within a few seconds, for example because its network dropped.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.sessions.playback.toast.pauseFallback": "Pause could not reach the player directly. Silo will end the session shortly instead.",
   "@web.admin.sessions.playback.toast.pauseFallback": {
     "description": "Web: admin playback session actions menu (Activity page and dashboard Recent Activity widget): toast when the pause command could not reach the player and the server scheduled the session to end instead.",
