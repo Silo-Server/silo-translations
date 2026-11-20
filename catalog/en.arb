@@ -58138,7 +58138,7 @@
       "web"
     ]
   },
-  "web.admin.backups.restore.blocked.keptStricter": "{count, plural, one {{count_text} can't be restored — it would widen access, so this server keeps its stricter values} other {{count_text} can't be restored — they would widen access, so this server keeps its stricter values}}",
+  "web.admin.backups.restore.blocked.keptStricter": "{count, plural, one {{count_text} can't be restored — it would widen access, so this server keeps its own stricter values} other {{count_text} can't be restored — they would widen access, so this server keeps its stricter values}}",
   "@web.admin.backups.restore.blocked.keptStricter": {
     "description": "Web admin, Restore page: heading over a group of items in a section that can't be restored, with the reason. {count}: number of items (selects the plural). {count_text}: the same number as printed.",
     "placeholders": {
