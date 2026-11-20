@@ -112033,6 +112033,13 @@
       "web"
     ]
   },
+  "web.admin.tasks.detail.backupSchedule": "This schedule comes from the backup settings. Change it in <link>Server › Backups</link>.",
+  "@web.admin.tasks.detail.backupSchedule": {
+    "description": "Web admin, task detail page for the Back Up Server task: shown under its daily schedule, where other tasks have an Edit Schedule button. The backup start time is set on the Backups settings page, so this task's schedule can't be edited here. <link> wraps a link to that page; \"Server › Backups\" is its location in the admin menu.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.tasks.detail.breadcrumb.admin": "Admin",
   "@web.admin.tasks.detail.breadcrumb.admin": {
     "description": "Web admin, task detail page: first breadcrumb link, to the admin home.",
