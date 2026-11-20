@@ -14571,6 +14571,10 @@
   "@error.playback_session_ended": {
     "description": "Error message shown when the server answers with the v2 problem type `playback_session_ended` (server title: \"Playback session ended\"). Clients show it instead of the server's English detail in a translated interface, so it must make sense on its own, without the request's specifics."
   },
+  "error.playback_transport_superseded": "This stream was replaced. Playback continues on the current one.",
+  "@error.playback_transport_superseded": {
+    "description": "Error message shown when the server answers with the v2 problem type `playback_transport_superseded` (server title: \"Playback transport superseded\"): a media request came from a playlist that a playback change (such as a new subtitle or quality) replaced, while the playback session goes on. Clients show it instead of the server's English detail in a translated interface, so it must make sense on its own, without the request's specifics."
+  },
   "error.precondition_failed": "This changed since you loaded it. Reload and try again.",
   "@error.precondition_failed": {
     "description": "Error message shown when the server answers with the v2 problem type `precondition_failed` (server title: \"Precondition failed\"). Clients show it instead of the server's English detail in a translated interface, so it must make sense on its own, without the request's specifics."
