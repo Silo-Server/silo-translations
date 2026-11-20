@@ -139193,6 +139193,13 @@
       "web"
     ]
   },
+  "web.home.layout.addedRowsHeading": "Hide server rows added since this export:",
+  "@web.home.layout.addedRowsHeading": {
+    "description": "Web: import home layout dialog: heading above checkboxes for server rows added after this file was exported, checked by default.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.home.layout.addsFromOtherServer": "This layout comes from another server. Its own sections are added to: <strong>{pages}</strong>, replacing sections you added here before. Your changes to this server's sections stay.",
   "@web.home.layout.addsFromOtherServer": {
     "description": "Web: import home layout dialog: summary for a file from another server. Text inside <strong> is bold. {pages}: the page names, as a list.",
@@ -139204,6 +139211,13 @@
         "type": "String"
       }
     }
+  },
+  "web.home.layout.baselineUnmatched": "This server's rows changed since this file was exported, so choose any rows to hide below.",
+  "@web.home.layout.baselineUnmatched": {
+    "description": "Web: import home layout dialog: note shown when an exported file's server row baseline no longer matches this server's current rows.",
+    "x-platforms": [
+      "web"
+    ]
   },
   "web.home.layout.checking": "Checking the layout against this server…",
   "@web.home.layout.checking": {
@@ -139258,6 +139272,18 @@
     "x-platforms": [
       "web"
     ]
+  },
+  "web.home.layout.hidesOnlyOn": "Hides selected rows on: <strong>{pages}</strong> without changing your other rows there.",
+  "@web.home.layout.hidesOnlyOn": {
+    "description": "Web: import home layout dialog: summary line for pages where every section in the file was skipped, so only the checked server rows are hidden and the profile's other customizations stay. Text inside <strong> is bold. {pages}: the page names, as a list.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "pages": {
+        "type": "String"
+      }
+    }
   },
   "web.home.layout.import": "Import",
   "@web.home.layout.import": {
@@ -139355,6 +139381,21 @@
     ],
     "placeholders": {
       "pages": {
+        "type": "String"
+      }
+    }
+  },
+  "web.home.layout.rowWithPage": "{section} ({page})",
+  "@web.home.layout.rowWithPage": {
+    "description": "Web: import home layout dialog: checkbox label for one server row that can be hidden during import. {section}: the row's title. {page}: the page it belongs to, such as Home or Movies.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "section": {
+        "type": "String"
+      },
+      "page": {
         "type": "String"
       }
     }
@@ -139561,6 +139602,13 @@
   "web.home.layout.transfer.untitledSection": "Untitled section",
   "@web.home.layout.transfer.untitledSection": {
     "description": "Web: Settings > Home Screen, import home layout dialog: name shown in the skipped list for a section in the file that has no name or type.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.home.layout.unlistedRowsHeading": "Hide server rows not in this file:",
+  "@web.home.layout.unlistedRowsHeading": {
+    "description": "Web: import home layout dialog: heading above checkboxes for server rows not mentioned in an older export file or one whose server baseline no longer matches, unchecked by default.",
     "x-platforms": [
       "web"
     ]
