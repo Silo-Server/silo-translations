@@ -71027,7 +71027,7 @@
       "web"
     ]
   },
-  "web.admin.dashboard.widgetCatalog.recentActivity.description": "Feed of recently started playback sessions",
+  "web.admin.dashboard.widgetCatalog.recentActivity.description": "Most recent plays across all accounts",
   "@web.admin.dashboard.widgetCatalog.recentActivity.description": {
     "description": "Web admin, Dashboard page: one-line summary of the \"recent-activity\" widget (Recent activity) under its name in the Add-widget sheet.",
     "x-platforms": [
@@ -72512,6 +72512,39 @@
   "web.admin.dashboard.widgets.recentActivity.loadFailed": "Failed to load activity.",
   "@web.admin.dashboard.widgets.recentActivity.loadFailed": {
     "description": "Web admin, Dashboard page, Recent Activity widget: error when sessions fail to load.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgets.recentActivity.played": "<user>{username}</user> played <link>{title}</link>",
+  "@web.admin.dashboard.widgets.recentActivity.played": {
+    "description": "Web admin, Dashboard page, Recent Activity widget: one line for a play that has ended, newest first, however long ago. {username}: the account name. {title}: the title that was played. <user> marks the highlighted name and <link> the link to the account's playback history.",
+    "placeholders": {
+      "username": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgets.recentActivity.playedWithProfile": "<user>{username}</user> <pill>{profile}</pill> played <link>{title}</link>",
+  "@web.admin.dashboard.widgets.recentActivity.playedWithProfile": {
+    "description": "Web admin, Dashboard page, Recent Activity widget: one line for a play that has ended, with the profile that played it. {username}: the account name. {profile}: the household profile name, shown as a tag (<pill>). {title}: the title that was played; <link> links to the profile's playback history.",
+    "placeholders": {
+      "username": {
+        "type": "String"
+      },
+      "profile": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      }
+    },
     "x-platforms": [
       "web"
     ]
