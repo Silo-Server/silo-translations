@@ -155083,6 +155083,18 @@
       "web"
     ]
   },
+  "web.requests.toAdd.goToPage": "Go to page {page}",
+  "@web.requests.toAdd.goToPage": {
+    "description": "Web search page, Request to add: button under the message that a page is past the end of the results. It opens the last page that has results (page 1 when there are none). {page}: that page number.",
+    "placeholders": {
+      "page": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.requests.toAdd.headerHits": "Request to Add",
   "@web.requests.toAdd.headerHits": {
     "description": "Web search dialog: heading over the request suggestions, under library results.",
@@ -155172,6 +155184,18 @@
   "web.requests.toAdd.pages": "Request to add pages",
   "@web.requests.toAdd.pages": {
     "description": "Web search page, Request to add: screen-reader label of the pager.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.requests.toAdd.pastEnd": "Page {page} is past the end of these results.",
+  "@web.requests.toAdd.pastEnd": {
+    "description": "Web search page, Request to add: shown instead of the results when a link asks for a page after the last one (an old or shared link, or a search that now has fewer results). Followed by a button to the last page. {page}: the page number the link asked for.",
+    "placeholders": {
+      "page": {
+        "type": "String"
+      }
+    },
     "x-platforms": [
       "web"
     ]
