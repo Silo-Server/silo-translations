@@ -62,7 +62,7 @@ fails if a generated file holds one literally.
 In right-to-left languages the generator adds a left-to-right mark (U+200E) at each edge of a
 Latin name that isn't a letter, so `HDR10+`, `#PIN`, `/activate` and `.json` keep their symbols
 on the correct side (`tools/gen/bidi.ts`). Translations don't need to add marks for this. Text
-inside a rich-text tag, such as a web `<code>` path, is left as written for the client to lay out.
+inside `<code>`, such as a command or a path, is left as written for the client to lay out.
 
 `<dir>/.silo-translations-out` holds the version the files were generated as: the release
 version, or `local-<commit>` (with `-dirty` when the catalog or tools have uncommitted changes).

@@ -7,6 +7,7 @@ import { join, relative } from "node:path";
 import { generateAll } from "../tools/generate.ts";
 import { escapeAndroid } from "../tools/gen/android.ts";
 import { json, literalBidi } from "../tools/gen/common.ts";
+import { markLatinNames } from "../tools/gen/bidi.ts";
 import { xcodeJson } from "../tools/gen/apple.ts";
 import { entry, FIXTURE, makeRepo, REPO } from "./helpers.ts";
 
@@ -110,6 +111,8 @@ test("bidi: right-to-left output keeps a Latin name's edge symbols on its side",
     ["a.keys", "Speed (shift+. / shift+,)", { ar: "السرعة (shift+. / shift+,)", he: "מהירות (shift+. / shift+,)" }, { ar: `السرعة (shift+${LRM}. / shift+${LRM},${LRM})`, he: `מהירות (shift+${LRM}. / shift+${LRM},${LRM})` }],
     ["a.url", "such as https://mdblist.com/lists/…", { ar: "مثل https://mdblist.com/lists/…", he: "למשל https://mdblist.com/lists/…" }, { ar: `مثل https://mdblist.com/lists/…${LRM}`, he: `למשל https://mdblist.com/lists/…${LRM}` }],
     ["a.paren", "a list (https://mdblist.com/lists/…).", { ar: "قائمة (https://mdblist.com/lists/…).", he: "רשימה (https://mdblist.com/lists/…)." }, { ar: `قائمة (https://mdblist.com/lists/…${LRM}).`, he: `רשימה (https://mdblist.com/lists/…${LRM}).` }],
+    ["a.and", "the .srt and .nfo files", { ar: "ملفات .srt و.nfo", he: "קובצי .srt ו-.nfo" }, { ar: `ملفات ${LRM}.srt و${LRM}.nfo`, he: `קובצי ${LRM}.srt ו-${LRM}.nfo` }],
+    ["a.lines", "Turn on (HDR10+\n) Back", { ar: "تشغيل (HDR10+\n) رجوع", he: "הפעל (HDR10+\n) חזור" }, { ar: `تشغيل (HDR10+${LRM}\n) رجوع`, he: `הפעל (HDR10+${LRM}\n) חזור` }],
     // Unchanged: a word joined by #, quotes around a name, a name ending a sentence or an ellipsis, digits a letter follows.
     ["a.word", "password#PIN.", { ar: "كلمة المرور#PIN.", he: "סיסמה#PIN." }, { ar: "كلمة المرور#PIN.", he: "סיסמה#PIN." }],
     ["a.quote", "On the “Bot” page", { ar: "في صفحة «Bot»", he: "בדף ”Bot”" }, { ar: "في صفحة «Bot»", he: "בדף ”Bot”" }],
@@ -131,17 +134,23 @@ test("bidi: right-to-left output keeps a Latin name's edge symbols on its side",
   assert.match(android, /<string name="a_hdr">זיהוי סרטוני HDR10\+\\u200e<\/string>/);
 });
 
-test("bidi: right-to-left output leaves the text inside a rich-text tag as written", () => {
+test("bidi: right-to-left output leaves <code> as written and marks names in other tags", () => {
   const root = makeRepo({
-    en: entry("a.code", "Map <code>/srv/media</code> to /media", { "x-platforms": ["web"] }),
-    ar: { "a.code": "اربط <code>/srv/media</code> بـ /media" },
+    en: entry("a.code", "Map <code>/srv/media</code> to <b>/media</b>", { "x-platforms": ["web"] }),
+    ar: { "a.code": "اربط <code>/srv/media</code> بـ <b>/media</b>" },
   });
   const ast = JSON.parse(generateAll(root, "test").get("web")!.get("web/src/locales/ar.json")!)["a.code"];
   assert.deepEqual(ast, [
     { type: 0, value: "اربط " },
     { type: 8, value: "code", children: [{ type: 0, value: "/srv/media" }] },
-    { type: 0, value: " بـ \u200E/media" },
+    { type: 0, value: " بـ " },
+    { type: 8, value: "b", children: [{ type: 0, value: "\u200E/media" }] },
   ]);
+});
+
+test("bidi: a long run of Latin symbols doesn't make the name match backtrack", () => {
+  const text = `${"Ⅻ".repeat(40)}א`;
+  assert.equal(markLatinNames(text), text);
 });
 
 test("bidi: make check's scan names a file with a literal bidi control", () => {

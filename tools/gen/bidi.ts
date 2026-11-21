@@ -4,8 +4,8 @@
 // Latin name and the surrounding text the paragraph's direction, so "HDR10+" draws as "+HDR10",
 // "/activate" as "activate/" and ".json" as "json.". The catalog stores the text in reading
 // order and the style guides keep bidi controls out of it, so the generator adds a left-to-right
-// mark (U+200E) at such an edge, in literal text only. Placeholders and rich-text tag contents
-// (web's <code> paths, for one, which people copy) are left to the clients, which render them.
+// mark (U+200E) at such an edge, in literal text only. Placeholders and <code> contents (commands
+// and paths people copy, where a mark would end up in the pasted text) are left to the clients.
 import { analyzeAst, type Analysis } from "../lib/icu.ts";
 import { isShared } from "../lib/catalog.ts";
 import type { CheckedCatalog } from "../lib/check.ts";
@@ -17,15 +17,19 @@ const LRM = "\u200E";
 const TOKEN = new RegExp(`(?:(?!${BIDI_CONTROL.source})\\S)+`, "gu");
 // What may come before a name: quotes and opening brackets (Hebrew opens with ” too), a Hebrew
 // or Arabic prefix joined by a hyphen, maqaf or tatweel (ב-, שב-, لـ), or one Arabic letter
-// written straight onto it (وEmby). A whole word (סיסמה#PIN) is not a prefix.
-const LEAD = /^(?:[([{«»“”„‘’"'`]|[\p{Script=Hebrew}\p{Script=Arabic}]{1,3}[-\u05BE\u0640]|\p{Script=Arabic}(?=[\p{Script=Latin}0-9]))+/u;
+// written straight onto it (وEmby, و.nfo). A whole word (סיסמה#PIN) is not a prefix.
+const LEAD = /^(?:[([{«»“”„‘’"'`]|[\p{Script=Hebrew}\p{Script=Arabic}]{1,3}[-\u05BE\u0640]|\p{Script=Arabic}(?=\p{Script=Latin}|[^\s\p{L}\p{M}]))+/u;
 // What may come after it: sentence punctuation, closing brackets and quotes. These belong to the
 // right-to-left sentence and stay where the algorithm puts them.
 const TRAIL = /[.,:;!?…،؛؟)\]}«»“”’‘"'`]+$/u;
 // A name: Latin letters and the digits and symbols between them, no letters of another script.
-const NAME = /^(?=.*\p{Script=Latin})(?:\p{Script=Latin}|[^\p{L}\p{Script=Hebrew}\p{Script=Arabic}])+$/u;
-// Parentheses around nothing but a name hold one name, spaces and all: "(shift+. / shift+,)".
-const GROUP = /\(([^()]*)\)/g;
+// The two branches don't overlap, so a long run can't make the match backtrack.
+const NAME = /^(?=.*\p{Script=Latin})(?:\p{Script=Latin}|[^\p{L}\p{Script=Latin}\p{Script=Hebrew}\p{Script=Arabic}])+$/u;
+// Parentheses on one line around nothing but a name hold one name, spaces and all:
+// "(shift+. / shift+,)". A bidi control inside means the text already sets its own direction.
+const GROUP = /\(([^()\r\n]*)\)/g;
+// Tags whose text is a literal value people copy; the client lays these out.
+const VERBATIM_TAGS: ReadonlySet<string> = new Set(["code"]);
 
 /**
  * The name with a left-to-right mark on each edge that isn't a letter. Digits a letter follows
@@ -39,7 +43,9 @@ function markEdges(name: string): string {
 
 /** Marks each Latin name in right-to-left text so its edge symbols stay on its side. */
 export function markLatinNames(text: string): string {
-  const grouped = text.replace(GROUP, (group, inner: string) => (NAME.test(inner) ? `(${markEdges(inner)})` : group));
+  const grouped = text.replace(GROUP, (group, inner: string) =>
+    NAME.test(inner) && !BIDI_CONTROL.test(inner) ? `(${markEdges(inner)})` : group,
+  );
   const marked = grouped.replace(TOKEN, (token) => {
     const lead = LEAD.exec(token)?.[0] ?? "";
     const rest = token.slice(lead.length);
@@ -62,7 +68,7 @@ export function outputTranslations({ locales, catalog, valid }: CheckedCatalog):
     if (locale.dir !== "rtl" || !messages) continue;
     const marked = new Map<string, Analysis>();
     for (const [key, a] of messages) {
-      const ast = mapLiterals(a.ast, markLatinNames, { intoTags: false });
+      const ast = mapLiterals(a.ast, markLatinNames, VERBATIM_TAGS);
       marked.set(key, analyzeAst(ast, isShared(catalog.byKey.get(key)!)));
     }
     out.set(locale.tag, marked);
