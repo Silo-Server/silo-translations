@@ -62784,6 +62784,156 @@
       "web"
     ]
   },
+  "web.admin.backups.warnings.missingFiles.brandingAsset": "{count, plural, one {{count_text} branding asset} other {{count_text} branding assets}}",
+  "@web.admin.backups.warnings.missingFiles.brandingAsset": {
+    "description": "Web admin, Backups page, backup warning details: heading of a group of files the backup could not find, here the server's custom branding images, such as its logo. {count}: number of files (selects the plural). {count_text}: the same number as printed.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.backups.warnings.missingFiles.collectionBackdrop": "{count, plural, one {{count_text} collection backdrop} other {{count_text} collection backdrops}}",
+  "@web.admin.backups.warnings.missingFiles.collectionBackdrop": {
+    "description": "Web admin, Backups page, backup warning details: heading of a group of files the backup could not find, here backdrop images of library collections. {count}: number of files (selects the plural). {count_text}: the same number as printed.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.backups.warnings.missingFiles.collectionPoster": "{count, plural, one {{count_text} collection poster} other {{count_text} collection posters}}",
+  "@web.admin.backups.warnings.missingFiles.collectionPoster": {
+    "description": "Web admin, Backups page, backup warning details: heading of a group of files the backup could not find, here poster images of library collections. {count}: number of files (selects the plural). {count_text}: the same number as printed.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.backups.warnings.missingFiles.downloadedSubtitle": "{count, plural, one {{count_text} downloaded subtitle} other {{count_text} downloaded subtitles}}",
+  "@web.admin.backups.warnings.missingFiles.downloadedSubtitle": {
+    "description": "Web admin, Backups page, backup warning details: heading of a group of files the backup could not find, here subtitle files a subtitle provider downloaded. {count}: number of files (selects the plural). {count_text}: the same number as printed.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.backups.warnings.missingFiles.libraryPoster": "{count, plural, one {{count_text} library poster} other {{count_text} library posters}}",
+  "@web.admin.backups.warnings.missingFiles.libraryPoster": {
+    "description": "Web admin, Backups page, backup warning details: heading of a group of files the backup could not find, here poster images an admin uploaded for libraries. {count}: number of files (selects the plural). {count_text}: the same number as printed.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.backups.warnings.missingFiles.overlayImage": "{count, plural, one {{count_text} overlay image} other {{count_text} overlay images}}",
+  "@web.admin.backups.warnings.missingFiles.overlayImage": {
+    "description": "Web admin, Backups page, backup warning details: heading of a group of files the backup could not find, here images uploaded for card overlays (badges drawn over posters). {count}: number of files (selects the plural). {count_text}: the same number as printed.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.backups.warnings.missingFiles.personalCollectionPoster": "{count, plural, one {{count_text} personal collection poster} other {{count_text} personal collection posters}}",
+  "@web.admin.backups.warnings.missingFiles.personalCollectionPoster": {
+    "description": "Web admin, Backups page, backup warning details: heading of a group of files the backup could not find, here poster images of collections a profile made for itself. {count}: number of files (selects the plural). {count_text}: the same number as printed.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.backups.warnings.missingFiles.profileAvatar": "{count, plural, one {{count_text} profile avatar} other {{count_text} profile avatars}}",
+  "@web.admin.backups.warnings.missingFiles.profileAvatar": {
+    "description": "Web admin, Backups page, backup warning details: heading of a group of files the backup could not find, here profile pictures someone uploaded. {count}: number of files (selects the plural). {count_text}: the same number as printed.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.backups.warnings.missingFiles.uploadedArtwork": "{count, plural, one {{count_text} uploaded artwork file} other {{count_text} uploaded artwork files}}",
+  "@web.admin.backups.warnings.missingFiles.uploadedArtwork": {
+    "description": "Web admin, Backups page, backup warning details: heading of a group of files the backup could not find, here posters, backdrops and other images someone uploaded for a movie, series, season, episode or person. {count}: number of files (selects the plural). {count_text}: the same number as printed.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.backups.warnings.missingFiles.uploadedSubtitle": "{count, plural, one {{count_text} uploaded subtitle} other {{count_text} uploaded subtitles}}",
+  "@web.admin.backups.warnings.missingFiles.uploadedSubtitle": {
+    "description": "Web admin, Backups page, backup warning details: heading of a group of files the backup could not find, here subtitle files someone uploaded. {count}: number of files (selects the plural). {count_text}: the same number as printed.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.backups.warnings.missingGroup": "{count, plural, one {{count_text} {source}} other {{count_text} {source}s}}",
   "@web.admin.backups.warnings.missingGroup": {
     "description": "Web admin, Backups page, backup warning details: heading of a group of missing files. {count}: number of files (selects the plural). {count_text}: the same number as printed. {source}: what referenced them, as the server names it in English, such as “downloaded subtitle”.",
