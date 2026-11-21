@@ -4223,6 +4223,13 @@
       "web"
     ]
   },
+  "collections.countUnavailable": "Count unavailable",
+  "@collections.countUnavailable": {
+    "description": "Android phone and TV: shown in place of a collection's item count when the server couldn't count it, on the count badge of a library collection card and the line under its name. The collection still opens and lists its items.",
+    "x-platforms": [
+      "android"
+    ]
+  },
   "collections.create.action": "Create Collection",
   "@collections.create.action": {
     "description": "Button in the New Collection sheet that creates the collection (Android phone, Apple iOS and tvOS).",
@@ -4737,6 +4744,18 @@
       "count_text": {
         "type": "String"
       },
+      "kind": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "collections.rowSubtitleCountUnavailable": "{kind} - Count unavailable",
+  "@collections.rowSubtitleCountUnavailable": {
+    "description": "Android phone and TV: secondary line under a collection's name in the Collections list when the server couldn't count its items; the counted form is collections.rowSubtitle. {kind}: the collection kind from the server, capitalized, such as Manual or Smart.",
+    "placeholders": {
       "kind": {
         "type": "String"
       }
