@@ -84483,6 +84483,27 @@
       "web"
     ]
   },
+  "web.admin.libraries.unmatched.status.ambiguous": "Ambiguous",
+  "@web.admin.libraries.unmatched.status.ambiguous": {
+    "description": "Web admin, Libraries page: Unmatched Items section: Status badge (column \"Status\") when several metadata entries fit the item and an admin needs to pick one. Describes the item's match status.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.unmatched.status.pending": "Pending",
+  "@web.admin.libraries.unmatched.status.pending": {
+    "description": "Web admin, Libraries page: Unmatched Items section: Status badge (column \"Status\") when the item is still waiting for a metadata match. Describes the item's match status.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.unmatched.status.unmatched": "Unmatched",
+  "@web.admin.libraries.unmatched.status.unmatched": {
+    "description": "Web admin, Libraries page: Unmatched Items section: Status badge (column \"Status\") when no metadata provider found a match for the item. Describes the item's match status.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.libraries.unmatched.title": "Unmatched Items",
   "@web.admin.libraries.unmatched.title": {
     "description": "Web admin, Libraries page: title of the diagnostics section listing items with no metadata match.",
