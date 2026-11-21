@@ -111,6 +111,7 @@ test("bidi: right-to-left output keeps a Latin name's edge symbols on its side",
     ["a.url", "such as https://mdblist.com/lists/…", { ar: "مثل https://mdblist.com/lists/…", he: "למשל https://mdblist.com/lists/…" }, { ar: `مثل https://mdblist.com/lists/…${LRM}`, he: `למשל https://mdblist.com/lists/…${LRM}` }],
     ["a.paren", "a list (https://mdblist.com/lists/…).", { ar: "قائمة (https://mdblist.com/lists/…).", he: "רשימה (https://mdblist.com/lists/…)." }, { ar: `قائمة (https://mdblist.com/lists/…${LRM}).`, he: `רשימה (https://mdblist.com/lists/…${LRM}).` }],
     ["a.and", "the .srt and .nfo files", { ar: "ملفات .srt و.nfo", he: "קובצי .srt ו-.nfo" }, { ar: `ملفات ${LRM}.srt و${LRM}.nfo`, he: `קובצי ${LRM}.srt ו-${LRM}.nfo` }],
+    ["a.quoted", "an example (“HDR10+”)", { ar: "مثال («HDR10+»)", he: "דוגמה (”HDR10+”)" }, { ar: `مثال («HDR10+${LRM}»)`, he: `דוגמה (”HDR10+${LRM}”)` }],
     ["a.para", "Turn on (HDR10+\u2029) Back", { ar: "تشغيل (HDR10+\u2029) رجوع", he: "הפעל (HDR10+\u2029) חזור" }, { ar: `تشغيل (HDR10+${LRM}\u2029) رجوع`, he: `הפעל (HDR10+${LRM}\u2029) חזור` }],
     ["a.lines", "Turn on (HDR10+\n) Back", { ar: "تشغيل (HDR10+\n) رجوع", he: "הפעל (HDR10+\n) חזור" }, { ar: `تشغيل (HDR10+${LRM}\n) رجوع`, he: `הפעל (HDR10+${LRM}\n) חזור` }],
     // Unchanged: a word joined by #, quotes around a name, a name ending a sentence or an ellipsis, digits a letter follows.
@@ -118,6 +119,7 @@ test("bidi: right-to-left output keeps a Latin name's edge symbols on its side",
     ["a.quote", "On the “Bot” page", { ar: "في صفحة «Bot»", he: "בדף ”Bot”" }, { ar: "في صفحة «Bot»", he: "בדף ”Bot”" }],
     ["a.end", "Updated Silo.", { ar: "تم تحديث Silo.", he: "Silo עודכן." }, { ar: "تم تحديث Silo.", he: "Silo עודכן." }],
     ["a.loading", "Loading API…", { ar: "جارٍ تحميل API…", he: "טוען API…" }, { ar: "جارٍ تحميل API…", he: "טוען API…" }],
+    ["a.quotedName", "the (“Bot”) page", { ar: "صفحة («Bot»)", he: "הדף (”Bot”)" }, { ar: "صفحة («Bot»)", he: "הדף (”Bot”)" }],
     ["a.res", "New in 4K and 1080p", { ar: "جديد بدقة 4K و1080p", he: "חדש ב-4K וב-1080p" }, { ar: "جديد بدقة 4K و1080p", he: "חדש ב-4K וב-1080p" }],
   ];
   const root = makeRepo({

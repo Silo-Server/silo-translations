@@ -28,6 +28,9 @@ const NAME = /^(?=.*\p{Script=Latin})(?:\p{Script=Latin}|[^\p{L}\p{Script=Latin}
 // Parentheses within one paragraph around nothing but a name hold one name, spaces and all:
 // "(shift+. / shift+,)". A bidi control inside means the text already sets its own direction.
 const GROUP = /\(([^()\n\r\u001C-\u001E\u0085\u2029]*)\)/g;
+// Inside the parentheses, quotes around the name and Arabic punctuation after it still belong to
+// the sentence: («HDR10+») keeps its guillemets mirrored.
+const GROUP_PARTS = /^([«»“”„‘’"'`\s]*)(.*?)([«»“”„‘’"'`،؛؟\s]*)$/su;
 // Tags whose text is a literal value people copy; the client lays these out.
 const VERBATIM_TAGS: ReadonlySet<string> = new Set(["code"]);
 // Elements whose printed value joins the text around it ({host} in "https://{host}/activate").
@@ -55,9 +58,10 @@ function markEdges(name: string, joined = UNJOINED): string {
 
 /** Marks each Latin name in right-to-left text so its edge symbols stay on its side. */
 export function markLatinNames(text: string, joined = UNJOINED): string {
-  const grouped = text.replace(GROUP, (group, inner: string) =>
-    NAME.test(inner) && !BIDI_CONTROL.test(inner) ? `(${markEdges(inner)})` : group,
-  );
+  const grouped = text.replace(GROUP, (group, inner: string) => {
+    const [, open, name, close] = GROUP_PARTS.exec(inner)!;
+    return NAME.test(name) && !BIDI_CONTROL.test(inner) ? `(${open}${markEdges(name)}${close})` : group;
+  });
   const marked = grouped.replace(TOKEN, (token, offset: number) => {
     const lead = LEAD.exec(token)?.[0] ?? "";
     const rest = token.slice(lead.length);
