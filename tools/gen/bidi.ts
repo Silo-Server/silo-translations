@@ -34,11 +34,19 @@ const VERBATIM_TAGS: ReadonlySet<string> = new Set(["code"]);
 // Elements whose printed text joins the text around it ({host} in "https://{host}/activate").
 const VALUES: ReadonlySet<TYPE> = new Set([TYPE.argument, TYPE.number, TYPE.date, TYPE.time, TYPE.pound, TYPE.select, TYPE.plural]);
 
+// Where a name stops: what may open text before it, and what may follow it in the sentence.
+const OPENS = /[\s([{«»“”„‘’"'`]/u;
+const ENDS = /[\s.,:;!?…،؛؟)\]}«»“”’‘"'`]/u;
+
 /** Whether the element on one side of a literal continues the token at that edge. */
 function continues(el: MessageFormatElement | undefined, side: "before" | "after"): boolean {
   if (el === undefined) return false;
-  // Literal text on the other side of a plural or select branch edge.
-  if (el.type === TYPE.literal) return /\S/u.test(side === "before" ? el.value.slice(-1) : el.value.slice(0, 1));
+  if (el.type === TYPE.tag) return continues(side === "before" ? el.children.at(-1) : el.children[0], side);
+  // Literal text beyond a branch or tag edge: a space, quote or sentence punctuation ends the name.
+  if (el.type === TYPE.literal) {
+    const edge = side === "before" ? el.value.slice(-1) : el.value.slice(0, 1);
+    return edge !== "" && !(side === "before" ? OPENS : ENDS).test(edge);
+  }
   return VALUES.has(el.type);
 }
 

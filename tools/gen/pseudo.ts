@@ -17,7 +17,7 @@ type Neighbours = { prev?: MessageFormatElement; next?: MessageFormatElement };
 /**
  * Applies `f` to every literal, in plural and select branches and in tag contents, except inside
  * `skipTags`. `f` also gets the elements on either side of the literal; at the edge of a plural or
- * select branch, those are the plural's or select's own neighbours.
+ * select branch or a tag, those are the plural's, select's or tag's own neighbours.
  */
 export function mapLiterals(
   elements: MessageFormatElement[],
@@ -32,7 +32,7 @@ export function mapLiterals(
       const options = Object.fromEntries(Object.entries(el.options).map(([k, o]) => [k, { ...o, value: mapLiterals(o.value, f, skipTags, around) }]));
       return { ...el, options } as MessageFormatElement;
     }
-    if (el.type === TYPE.tag && !skipTags.has(el.value)) return { ...el, children: mapLiterals(el.children, f, skipTags) };
+    if (el.type === TYPE.tag && !skipTags.has(el.value)) return { ...el, children: mapLiterals(el.children, f, skipTags, around) };
     return el;
   });
 }

@@ -123,6 +123,7 @@ test("bidi: right-to-left output keeps a Latin name's edge symbols on its side",
     ["a.end", "Updated Silo.", { ar: "تم تحديث Silo.", he: "Silo עודכן." }, { ar: "تم تحديث Silo.", he: "Silo עודכן." }],
     ["a.loading", "Loading API…", { ar: "جارٍ تحميل API…", he: "טוען API…" }, { ar: "جارٍ تحميل API…", he: "טוען API…" }],
     ["a.quotedEnd", "an example (“Silo”.)", { ar: "مثال («Silo».)", he: "דוגמה (”Silo”.)" }, { ar: "مثال («Silo».)", he: "דוגמה (”Silo”.)" }],
+    ["a.quotedStop", "an example (“HDR10+”,)", { ar: "مثال («HDR10+».)", he: "דוגמה (”HDR10+”,)" }, { ar: `مثال («HDR10+${LRM}».)`, he: `דוגמה (”HDR10+${LRM}”,)` }],
     ["a.quotedName", "the (“Bot”) page", { ar: "صفحة («Bot»)", he: "הדף (”Bot”)" }, { ar: "صفحة («Bot»)", he: "הדף (”Bot”)" }],
     ["a.res", "New in 4K and 1080p", { ar: "جديد بدقة 4K و1080p", he: "חדש ב-4K וב-1080p" }, { ar: "جديد بدقة 4K و1080p", he: "חדש ב-4K וב-1080p" }],
   ];
@@ -164,6 +165,22 @@ test("bidi: right-to-left output leaves an edge that runs into a placeholder unm
   });
   const ast = JSON.parse(generateAll(root, "test").get("web")!.get("web/src/locales/he.json")!)["a.url"];
   assert.doesNotMatch(JSON.stringify(ast), /\u200e/i);
+});
+
+test("bidi: a branch or tag edge followed by sentence punctuation still gets its mark", () => {
+  const root = makeRepo({
+    en: {
+      ...entry("a.tagged", "Open https://<b>{host}</b>/x, or <b>HDR10+</b>.", { description: "Test string. {host}: a host.", placeholders: { host: { type: "String" } }, "x-platforms": ["web"] }),
+      ...entry("a.branch", "{kind, select, hdr {HDR10+} other {DV}}.", { description: "Test string. {kind}: a format.", placeholders: { kind: { type: "String" } }, "x-platforms": ["web"] }),
+    },
+    he: { "a.tagged": "פתח את https://<b>{host}</b>/x, או <b>HDR10+</b>.", "a.branch": "{kind, select, hdr {HDR10+} other {DV}}." },
+  });
+  const web = JSON.parse(generateAll(root, "test").get("web")!.get("web/src/locales/he.json")!);
+  const text = (ast: unknown): string => JSON.stringify(ast);
+  // No mark where the URL runs into the tagged placeholder; one after HDR10+ before the full stop.
+  assert.doesNotMatch(text(web["a.tagged"]).split("HDR10+")[0]!, /\u200E/);
+  assert.match(text(web["a.tagged"]), /HDR10\+\u200E/);
+  assert.match(text(web["a.branch"]), /HDR10\+\u200E/);
 });
 
 test("bidi: a long run of Latin symbols or spaces doesn't make the patterns backtrack", () => {
