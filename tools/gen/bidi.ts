@@ -6,7 +6,7 @@
 // order and the style guides keep bidi controls out of it, so the generator adds a left-to-right
 // mark (U+200E) at such an edge, in literal text only. Placeholders and <code> contents (commands
 // and paths people copy, where a mark would end up in the pasted text) are left to the clients.
-import { analyzeAst, type Analysis } from "../lib/icu.ts";
+import { analyzeAst, TYPE, type Analysis, type MessageFormatElement } from "../lib/icu.ts";
 import { isShared } from "../lib/catalog.ts";
 import type { CheckedCatalog } from "../lib/check.ts";
 import { BIDI_CONTROL } from "./common.ts";
@@ -25,28 +25,40 @@ const TRAIL = /[.,:;!?…،؛؟)\]}«»“”’‘"'`]+$/u;
 // A name: Latin letters and the digits and symbols between them, no letters of another script.
 // The two branches don't overlap, so a long run can't make the match backtrack.
 const NAME = /^(?=.*\p{Script=Latin})(?:\p{Script=Latin}|[^\p{L}\p{Script=Latin}\p{Script=Hebrew}\p{Script=Arabic}])+$/u;
-// Parentheses on one line around nothing but a name hold one name, spaces and all:
+// Parentheses within one paragraph around nothing but a name hold one name, spaces and all:
 // "(shift+. / shift+,)". A bidi control inside means the text already sets its own direction.
-const GROUP = /\(([^()\r\n]*)\)/g;
+const GROUP = /\(([^()\n\r\u001C-\u001E\u0085\u2029]*)\)/g;
 // Tags whose text is a literal value people copy; the client lays these out.
 const VERBATIM_TAGS: ReadonlySet<string> = new Set(["code"]);
+// Elements whose printed value joins the text around it ({host} in "https://{host}/activate").
+const VALUES: ReadonlySet<TYPE> = new Set([TYPE.argument, TYPE.number, TYPE.date, TYPE.time, TYPE.pound]);
+const printsValue = (el?: MessageFormatElement) => el !== undefined && VALUES.has(el.type);
+
+/** Which edges of a literal run straight into a placeholder's value. */
+interface Joined {
+  before: boolean;
+  after: boolean;
+}
+const UNJOINED: Joined = { before: false, after: false };
 
 /**
  * The name with a left-to-right mark on each edge that isn't a letter. Digits a letter follows
- * (4K, 1080p) and a final digit already read with the name, so they get none.
+ * (4K, 1080p) and a final digit already read with the name, so they get none. An edge that runs
+ * into a placeholder gets none either: the name continues into a value only the client knows,
+ * and a mark there would end up inside it (a copied URL, for one).
  */
-function markEdges(name: string): string {
-  const before = /^[0-9]*\p{Script=Latin}/u.test(name) ? "" : LRM;
-  const after = /(?:\p{Script=Latin}|[0-9])$/u.test(name) ? "" : LRM;
+function markEdges(name: string, joined = UNJOINED): string {
+  const before = joined.before || /^[0-9]*\p{Script=Latin}/u.test(name) ? "" : LRM;
+  const after = joined.after || /(?:\p{Script=Latin}|[0-9])$/u.test(name) ? "" : LRM;
   return `${before}${name}${after}`;
 }
 
 /** Marks each Latin name in right-to-left text so its edge symbols stay on its side. */
-export function markLatinNames(text: string): string {
+export function markLatinNames(text: string, joined = UNJOINED): string {
   const grouped = text.replace(GROUP, (group, inner: string) =>
     NAME.test(inner) && !BIDI_CONTROL.test(inner) ? `(${markEdges(inner)})` : group,
   );
-  const marked = grouped.replace(TOKEN, (token) => {
+  const marked = grouped.replace(TOKEN, (token, offset: number) => {
     const lead = LEAD.exec(token)?.[0] ?? "";
     const rest = token.slice(lead.length);
     const trail = TRAIL.exec(rest)?.[0] ?? "";
@@ -54,7 +66,12 @@ export function markLatinNames(text: string): string {
     // An ellipsis right after a symbol continues the name ("lists/…"); after a letter it ends the sentence.
     const ellipsis = trail.startsWith("…") && /[^\p{L}\p{N}]$/u.test(head) ? "…" : "";
     const name = head + ellipsis;
-    return NAME.test(name) ? `${lead}${markEdges(name)}${trail.slice(ellipsis.length)}` : token;
+    if (!NAME.test(name)) return token;
+    const edges = {
+      before: joined.before && offset === 0 && lead === "",
+      after: joined.after && offset + token.length === grouped.length && trail.length === ellipsis.length,
+    };
+    return `${lead}${markEdges(name, edges)}${trail.slice(ellipsis.length)}`;
   });
   // Both passes can mark one edge, and the catalog may already carry a mark there: one is enough.
   return marked.replace(/\u200E{2,}/g, LRM);
@@ -68,7 +85,7 @@ export function outputTranslations({ locales, catalog, valid }: CheckedCatalog):
     if (locale.dir !== "rtl" || !messages) continue;
     const marked = new Map<string, Analysis>();
     for (const [key, a] of messages) {
-      const ast = mapLiterals(a.ast, markLatinNames, VERBATIM_TAGS);
+      const ast = mapLiterals(a.ast, (s, prev, next) => markLatinNames(s, { before: printsValue(prev), after: printsValue(next) }), VERBATIM_TAGS);
       marked.set(key, analyzeAst(ast, isShared(catalog.byKey.get(key)!)));
     }
     out.set(locale.tag, marked);

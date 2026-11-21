@@ -111,6 +111,7 @@ test("bidi: right-to-left output keeps a Latin name's edge symbols on its side",
     ["a.url", "such as https://mdblist.com/lists/…", { ar: "مثل https://mdblist.com/lists/…", he: "למשל https://mdblist.com/lists/…" }, { ar: `مثل https://mdblist.com/lists/…${LRM}`, he: `למשל https://mdblist.com/lists/…${LRM}` }],
     ["a.paren", "a list (https://mdblist.com/lists/…).", { ar: "قائمة (https://mdblist.com/lists/…).", he: "רשימה (https://mdblist.com/lists/…)." }, { ar: `قائمة (https://mdblist.com/lists/…${LRM}).`, he: `רשימה (https://mdblist.com/lists/…${LRM}).` }],
     ["a.and", "the .srt and .nfo files", { ar: "ملفات .srt و.nfo", he: "קובצי .srt ו-.nfo" }, { ar: `ملفات ${LRM}.srt و${LRM}.nfo`, he: `קובצי ${LRM}.srt ו-${LRM}.nfo` }],
+    ["a.para", "Turn on (HDR10+\u2029) Back", { ar: "تشغيل (HDR10+\u2029) رجوع", he: "הפעל (HDR10+\u2029) חזור" }, { ar: `تشغيل (HDR10+${LRM}\u2029) رجوع`, he: `הפעל (HDR10+${LRM}\u2029) חזור` }],
     ["a.lines", "Turn on (HDR10+\n) Back", { ar: "تشغيل (HDR10+\n) رجوع", he: "הפעל (HDR10+\n) חזור" }, { ar: `تشغيل (HDR10+${LRM}\n) رجوع`, he: `הפעל (HDR10+${LRM}\n) חזור` }],
     // Unchanged: a word joined by #, quotes around a name, a name ending a sentence or an ellipsis, digits a letter follows.
     ["a.word", "password#PIN.", { ar: "كلمة المرور#PIN.", he: "סיסמה#PIN." }, { ar: "كلمة المرور#PIN.", he: "סיסמה#PIN." }],
@@ -145,6 +146,15 @@ test("bidi: right-to-left output leaves <code> as written and marks names in oth
     { type: 0, value: " بـ " },
     { type: 8, value: "b", children: [{ type: 0, value: "\u200E/media" }] },
   ]);
+});
+
+test("bidi: right-to-left output leaves an edge that runs into a placeholder unmarked", () => {
+  const root = makeRepo({
+    en: entry("a.url", "Open https://{host}/activate or #{tag}", { description: "Test string. {host}: a server host. {tag}: a channel tag.", placeholders: { host: { type: "String" }, tag: { type: "String" } } }),
+    he: { "a.url": "פתח את https://{host}/activate או #{tag}" },
+  });
+  const ast = JSON.parse(generateAll(root, "test").get("web")!.get("web/src/locales/he.json")!)["a.url"] as { type: number; value: string }[];
+  assert.deepEqual(ast.filter((el) => el.type === 0).map((el) => el.value), ["פתח את https://", "/activate או #"]);
 });
 
 test("bidi: a long run of Latin symbols doesn't make the name match backtrack", () => {

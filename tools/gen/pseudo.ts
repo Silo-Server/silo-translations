@@ -12,14 +12,17 @@ const RLO = "\u202E";
 const PDF = "\u202C";
 const RLM = "\u200F";
 
-/** Applies `f` to every literal, in plural and select branches and in tag contents, except inside `skipTags`. */
+/**
+ * Applies `f` to every literal, in plural and select branches and in tag contents, except inside
+ * `skipTags`. `f` also gets the elements on either side of the literal.
+ */
 export function mapLiterals(
   elements: MessageFormatElement[],
-  f: (s: string) => string,
+  f: (s: string, prev?: MessageFormatElement, next?: MessageFormatElement) => string,
   skipTags: ReadonlySet<string> = new Set(),
 ): MessageFormatElement[] {
-  return elements.map((el) => {
-    if (el.type === TYPE.literal) return { ...el, value: f(el.value) };
+  return elements.map((el, i) => {
+    if (el.type === TYPE.literal) return { ...el, value: f(el.value, elements[i - 1], elements[i + 1]) };
     if (el.type === TYPE.plural || el.type === TYPE.select) {
       const options = Object.fromEntries(Object.entries(el.options).map(([k, o]) => [k, { ...o, value: mapLiterals(o.value, f, skipTags) }]));
       return { ...el, options } as MessageFormatElement;
