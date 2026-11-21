@@ -12,19 +12,24 @@ const RLO = "\u202E";
 const PDF = "\u202C";
 const RLM = "\u200F";
 
+type Neighbours = { prev?: MessageFormatElement; next?: MessageFormatElement };
+
 /**
  * Applies `f` to every literal, in plural and select branches and in tag contents, except inside
- * `skipTags`. `f` also gets the elements on either side of the literal.
+ * `skipTags`. `f` also gets the elements on either side of the literal; at the edge of a plural or
+ * select branch, those are the plural's or select's own neighbours.
  */
 export function mapLiterals(
   elements: MessageFormatElement[],
   f: (s: string, prev?: MessageFormatElement, next?: MessageFormatElement) => string,
   skipTags: ReadonlySet<string> = new Set(),
+  outer: Neighbours = {},
 ): MessageFormatElement[] {
   return elements.map((el, i) => {
-    if (el.type === TYPE.literal) return { ...el, value: f(el.value, elements[i - 1], elements[i + 1]) };
+    const around = { prev: elements[i - 1] ?? outer.prev, next: elements[i + 1] ?? outer.next };
+    if (el.type === TYPE.literal) return { ...el, value: f(el.value, around.prev, around.next) };
     if (el.type === TYPE.plural || el.type === TYPE.select) {
-      const options = Object.fromEntries(Object.entries(el.options).map(([k, o]) => [k, { ...o, value: mapLiterals(o.value, f, skipTags) }]));
+      const options = Object.fromEntries(Object.entries(el.options).map(([k, o]) => [k, { ...o, value: mapLiterals(o.value, f, skipTags, around) }]));
       return { ...el, options } as MessageFormatElement;
     }
     if (el.type === TYPE.tag && !skipTags.has(el.value)) return { ...el, children: mapLiterals(el.children, f, skipTags) };

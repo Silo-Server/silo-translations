@@ -2,8 +2,10 @@
 // byte for byte. Regenerate with `make golden` after an intended change, then review the diff.
 import { test } from "node:test";
 import assert from "node:assert/strict";
+import { spawnSync } from "node:child_process";
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join, relative } from "node:path";
+import { pathToFileURL } from "node:url";
 import { generateAll } from "../tools/generate.ts";
 import { escapeAndroid } from "../tools/gen/android.ts";
 import { json, literalBidi } from "../tools/gen/common.ts";
@@ -113,12 +115,14 @@ test("bidi: right-to-left output keeps a Latin name's edge symbols on its side",
     ["a.and", "the .srt and .nfo files", { ar: "ملفات .srt و.nfo", he: "קובצי .srt ו-.nfo" }, { ar: `ملفات ${LRM}.srt و${LRM}.nfo`, he: `קובצי ${LRM}.srt ו-${LRM}.nfo` }],
     ["a.quoted", "an example (“HDR10+”)", { ar: "مثال («HDR10+»)", he: "דוגמה (”HDR10+”)" }, { ar: `مثال («HDR10+${LRM}»)`, he: `דוגמה (”HDR10+${LRM}”)` }],
     ["a.para", "Turn on (HDR10+\u2029) Back", { ar: "تشغيل (HDR10+\u2029) رجوع", he: "הפעל (HDR10+\u2029) חזור" }, { ar: `تشغيل (HDR10+${LRM}\u2029) رجوع`, he: `הפעל (HDR10+${LRM}\u2029) חזור` }],
+    ["a.nel", "Turn on (HDR10+\u0085) Back", { ar: "تشغيل (HDR10+\u0085) رجوع", he: "הפעל (HDR10+\u0085) חזור" }, { ar: `تشغيل (HDR10+${LRM}\u0085) رجوع`, he: `הפעל (HDR10+${LRM}\u0085) חזור` }],
     ["a.lines", "Turn on (HDR10+\n) Back", { ar: "تشغيل (HDR10+\n) رجوع", he: "הפעל (HDR10+\n) חזור" }, { ar: `تشغيل (HDR10+${LRM}\n) رجوع`, he: `הפעל (HDR10+${LRM}\n) חזור` }],
     // Unchanged: a word joined by #, quotes around a name, a name ending a sentence or an ellipsis, digits a letter follows.
     ["a.word", "password#PIN.", { ar: "كلمة المرور#PIN.", he: "סיסמה#PIN." }, { ar: "كلمة المرور#PIN.", he: "סיסמה#PIN." }],
     ["a.quote", "On the “Bot” page", { ar: "في صفحة «Bot»", he: "בדף ”Bot”" }, { ar: "في صفحة «Bot»", he: "בדף ”Bot”" }],
     ["a.end", "Updated Silo.", { ar: "تم تحديث Silo.", he: "Silo עודכן." }, { ar: "تم تحديث Silo.", he: "Silo עודכן." }],
     ["a.loading", "Loading API…", { ar: "جارٍ تحميل API…", he: "טוען API…" }, { ar: "جارٍ تحميل API…", he: "טוען API…" }],
+    ["a.quotedEnd", "an example (“Silo”.)", { ar: "مثال («Silo».)", he: "דוגמה (”Silo”.)" }, { ar: "مثال («Silo».)", he: "דוגמה (”Silo”.)" }],
     ["a.quotedName", "the (“Bot”) page", { ar: "صفحة («Bot»)", he: "הדף (”Bot”)" }, { ar: "صفحة («Bot»)", he: "הדף (”Bot”)" }],
     ["a.res", "New in 4K and 1080p", { ar: "جديد بدقة 4K و1080p", he: "חדש ב-4K וב-1080p" }, { ar: "جديد بدقة 4K و1080p", he: "חדש ב-4K וב-1080p" }],
   ];
@@ -151,20 +155,34 @@ test("bidi: right-to-left output leaves <code> as written and marks names in oth
 });
 
 test("bidi: right-to-left output leaves an edge that runs into a placeholder unmarked", () => {
+  const PLACEHOLDERS = { host: { type: "String" }, tag: { type: "String" }, query: { type: "String" }, site: { type: "String" } };
+  const en = "Open https://{host}/activate or #{tag}, https://example.test/?{query} or https://{site, select, main {example.com} other {example.org}}/x";
+  const he = "פתח את https://{host}/activate או #{tag}, https://example.test/?{query} או https://{site, select, main {example.com} other {example.org}}/x";
   const root = makeRepo({
-    en: entry("a.url", "Open https://{host}/activate or #{tag}", { description: "Test string. {host}: a server host. {tag}: a channel tag.", placeholders: { host: { type: "String" }, tag: { type: "String" } } }),
-    he: { "a.url": "פתח את https://{host}/activate או #{tag}" },
+    en: entry("a.url", en, { description: "Test string. {host}: a host. {tag}: a tag. {query}: a query. {site}: a site.", placeholders: PLACEHOLDERS, "x-platforms": ["web"] }),
+    he: { "a.url": he },
   });
-  const ast = JSON.parse(generateAll(root, "test").get("web")!.get("web/src/locales/he.json")!)["a.url"] as { type: number; value: string }[];
-  assert.deepEqual(ast.filter((el) => el.type === 0).map((el) => el.value), ["פתח את https://", "/activate או #"]);
+  const ast = JSON.parse(generateAll(root, "test").get("web")!.get("web/src/locales/he.json")!)["a.url"];
+  assert.doesNotMatch(JSON.stringify(ast), /\u200e/i);
 });
 
-// A backtracking pattern would hang rather than fail, so the test has its own time limit.
-test("bidi: a long run of Latin symbols doesn't make the name match backtrack", { timeout: 5000 }, () => {
-  const text = `${"Ⅻ".repeat(40)}א`;
-  const root = makeRepo({ en: entry("a.roman", "XII", { "x-platforms": ["web"] }), he: { "a.roman": text } });
-  const web = JSON.parse(generateAll(root, "test").get("web")!.get("web/src/locales/he.json")!);
-  assert.deepEqual(web["a.roman"], [{ type: 0, value: text }]);
+test("bidi: a long run of Latin symbols or spaces doesn't make the patterns backtrack", () => {
+  const roman = `${"Ⅻ".repeat(40)}א`;
+  const spaced = `(A${" ".repeat(200_000)}B)`;
+  const root = makeRepo({
+    en: { ...entry("a.roman", "XII", { "x-platforms": ["web"] }), ...entry("a.spaced", "A B", { "x-platforms": ["web"] }) },
+    he: { "a.roman": roman, "a.spaced": spaced },
+  });
+  // A backtracking pattern hangs instead of failing, and a test's own timeout can't interrupt
+  // synchronous code, so the generator runs in a child process with a time limit.
+  const generate = pathToFileURL(join(REPO, "tools/generate.ts")).href;
+  const script = `import { generateAll } from ${JSON.stringify(generate)};
+process.stdout.write(generateAll(${JSON.stringify(root)}, "test").get("web").get("web/src/locales/he.json"));`;
+  const run = spawnSync(process.execPath, ["--input-type=module", "-e", script], { encoding: "utf8", timeout: 5_000, maxBuffer: 1 << 26 });
+  assert.equal(run.status, 0, run.error?.message ?? run.stderr);
+  const web = JSON.parse(run.stdout);
+  assert.deepEqual(web["a.roman"], [{ type: 0, value: roman }]);
+  assert.deepEqual(web["a.spaced"], [{ type: 0, value: spaced }]);
 });
 
 test("bidi: make check's scan names a file with a literal bidi control", () => {
