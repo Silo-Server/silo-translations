@@ -82999,6 +82999,27 @@
       "web"
     ]
   },
+  "web.admin.libraries.ambiguousRoots.confidence.high": "High",
+  "@web.admin.libraries.ambiguousRoots.confidence.high": {
+    "description": "Web admin, Libraries page: Ambiguous Roots section: Confidence badge (column \"Confidence\") when the scanner has strong evidence for the root's inferred type. Describes the confidence, so agree with that word.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.ambiguousRoots.confidence.low": "Low",
+  "@web.admin.libraries.ambiguousRoots.confidence.low": {
+    "description": "Web admin, Libraries page: Ambiguous Roots section: Confidence badge (column \"Confidence\") when the scanner has little evidence for the root's inferred type. Describes the confidence, so agree with that word.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.ambiguousRoots.confidence.medium": "Medium",
+  "@web.admin.libraries.ambiguousRoots.confidence.medium": {
+    "description": "Web admin, Libraries page: Ambiguous Roots section: Confidence badge (column \"Confidence\") when the scanner has some evidence for the root's inferred type. Describes the confidence, so agree with that word.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.libraries.ambiguousRoots.description": "Scanner roots that stay visible but do not enter unattended metadata matching.",
   "@web.admin.libraries.ambiguousRoots.description": {
     "description": "Web admin, Libraries page: description of the Ambiguous Roots section.",
