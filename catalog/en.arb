@@ -60542,6 +60542,154 @@
       "web"
     ]
   },
+  "web.admin.backups.restore.rows.change.backdrop": "Backdrop",
+  "@web.admin.backups.restore.rows.change.backdrop": {
+    "description": "Web admin, Restore page, item rows: one entry in the \"What changes:\" list of a template collection, naming what a restore replaces there: the collection's backdrop image.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.backups.restore.rows.change.collectionItems": "{count, plural, one {{count_text} collection item} other {{count_text} collection items}}",
+  "@web.admin.backups.restore.rows.change.collectionItems": {
+    "description": "Web admin, Restore page, item rows: one entry in the \"What changes:\" list of a home or library page section: items of the section's collection in the backup that the collection here lacks, which a restore adds. {count}: number of items (selects the plural). {count_text}: the same number as printed.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.backups.restore.rows.change.collectionReplaced": "Collection replaced",
+  "@web.admin.backups.restore.rows.change.collectionReplaced": {
+    "description": "Web admin, Restore page, item rows: one entry in the \"What changes:\" list of a home or library page section, naming what a restore replaces there: the collection the section shows is replaced by the one from the backup.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.backups.restore.rows.change.configuration": "Configuration",
+  "@web.admin.backups.restore.rows.change.configuration": {
+    "description": "Web admin, Restore page, item rows: one entry in the \"What changes:\" list of a home or library page section, naming what a restore replaces there: the section's other settings, such as its filters and sources.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.backups.restore.rows.change.description": "Description",
+  "@web.admin.backups.restore.rows.change.description": {
+    "description": "Web admin, Restore page, item rows: one entry in the \"What changes:\" list of a template collection, naming what a restore replaces there: the collection's description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.backups.restore.rows.change.enabled": "Enabled",
+  "@web.admin.backups.restore.rows.change.enabled": {
+    "description": "Web admin, Restore page, item rows: one entry in the \"What changes:\" list of a home or library page section, naming what a restore replaces there: whether the section is turned on.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.backups.restore.rows.change.featured": "Featured",
+  "@web.admin.backups.restore.rows.change.featured": {
+    "description": "Web admin, Restore page, item rows: one entry in the \"What changes:\" list of a home or library page section or a template collection, naming what a restore replaces there: whether it is featured.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.backups.restore.rows.change.itemLimit": "Item limit",
+  "@web.admin.backups.restore.rows.change.itemLimit": {
+    "description": "Web admin, Restore page, item rows: one entry in the \"What changes:\" list of a home or library page section, naming what a restore replaces there: how many items the section shows.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.backups.restore.rows.change.itemSort": "Item sort",
+  "@web.admin.backups.restore.rows.change.itemSort": {
+    "description": "Web admin, Restore page, item rows: one entry in the \"What changes:\" list of a template collection, naming what a restore replaces there: how the collection's items are sorted.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.backups.restore.rows.change.libraries": "Libraries",
+  "@web.admin.backups.restore.rows.change.libraries": {
+    "description": "Web admin, Restore page, item rows: one entry in the \"What changes:\" list of a template collection, naming what a restore replaces there: the libraries the collection belongs to (a restore adds it to more).",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.backups.restore.rows.change.position": "Position",
+  "@web.admin.backups.restore.rows.change.position": {
+    "description": "Web admin, Restore page, item rows: one entry in the \"What changes:\" list of a home or library page section, naming what a restore replaces there: the section's place on the page.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.backups.restore.rows.change.poster": "Poster",
+  "@web.admin.backups.restore.rows.change.poster": {
+    "description": "Web admin, Restore page, item rows: one entry in the \"What changes:\" list of a template collection, naming what a restore replaces there: the collection's poster image.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.backups.restore.rows.change.sortOrder": "Sort order",
+  "@web.admin.backups.restore.rows.change.sortOrder": {
+    "description": "Web admin, Restore page, item rows: one entry in the \"What changes:\" list of a template collection, naming what a restore replaces there: where the collection sorts among collections.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.backups.restore.rows.change.source": "Source",
+  "@web.admin.backups.restore.rows.change.source": {
+    "description": "Web admin, Restore page, item rows: one entry in the \"What changes:\" list of a template collection, naming what a restore replaces there: the outside list the collection fetches its items from.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.backups.restore.rows.change.syncSchedule": "Sync schedule",
+  "@web.admin.backups.restore.rows.change.syncSchedule": {
+    "description": "Web admin, Restore page, item rows: one entry in the \"What changes:\" list of a template collection, naming what a restore replaces there: how often the collection fetches its items.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.backups.restore.rows.change.title": "Title",
+  "@web.admin.backups.restore.rows.change.title": {
+    "description": "Web admin, Restore page, item rows: one entry in the \"What changes:\" list of a home or library page section or a template collection, naming what a restore replaces there: the title.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.backups.restore.rows.change.titleTranslation": "Title translation",
+  "@web.admin.backups.restore.rows.change.titleTranslation": {
+    "description": "Web admin, Restore page, item rows: one entry in the \"What changes:\" list of a home or library page section, naming what a restore replaces there: the translated title the section shows (its title key), with the same English title.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.backups.restore.rows.change.type": "Type",
+  "@web.admin.backups.restore.rows.change.type": {
+    "description": "Web admin, Restore page, item rows: one entry in the \"What changes:\" list of a home or library page section, naming what a restore replaces there: the section's type.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.backups.restore.rows.change.visibility": "Visibility",
+  "@web.admin.backups.restore.rows.change.visibility": {
+    "description": "Web admin, Restore page, item rows: one entry in the \"What changes:\" list of a template collection, naming what a restore replaces there: who can see the collection.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.backups.restore.rows.change.webOnly": "Web only",
+  "@web.admin.backups.restore.rows.change.webOnly": {
+    "description": "Web admin, Restore page, item rows: one entry in the \"What changes:\" list of a home or library page section, naming what a restore replaces there: whether the section shows only in the web app.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.backups.restore.rows.changes": "What changes:",
   "@web.admin.backups.restore.rows.changes": {
     "description": "Web admin, Restore page, item rows: heading over the list of changes in an item's details.",
