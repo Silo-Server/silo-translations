@@ -11417,7 +11417,7 @@
   "web.admin.settings.hooks.serverNotificationChannels.nameAndUrlRequired": "A név és a webhook URL megadása kötelező.",
   "web.admin.settings.hooks.serverNotificationChannels.rotateFailed": "Nem sikerült lecserélni az aláírási titkos kulcsot",
   "web.admin.settings.hooks.serverNotificationChannels.updateFailed": "Nem sikerült frissíteni a csatornát",
-  "web.admin.settings.hooks.settings.conflict.description": "Az aktuális értékek megtekintéséhez töltse be újra a beállításokat. A közben módosult beállításokon, valamint a mentett jelszavakon, kulcsokon és a hozzájuk tartozó beállításokon végzett változtatásai elvesznek; a többi változtatása megmarad.",
+  "web.admin.settings.hooks.settings.conflict.description": "Az aktuális értékek megtekintéséhez töltse be újra a beállításokat. Ha valamelyik módosítása egy közben megváltozott beállítást, illetve egy mentett jelszót vagy kulcsot érint, az összes módosítása elvész; ellenkező esetben megmaradnak.",
   "web.admin.settings.hooks.settings.conflict.reload": "Újratöltés",
   "web.admin.settings.hooks.settings.conflict.reloadFailed": "Nem sikerült újratölteni a beállításokat. Próbálja újra.",
   "web.admin.settings.hooks.settings.conflict.title": "A beállítások máshol módosultak",
