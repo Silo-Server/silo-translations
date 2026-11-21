@@ -7,7 +7,6 @@ import { join, relative } from "node:path";
 import { generateAll } from "../tools/generate.ts";
 import { escapeAndroid } from "../tools/gen/android.ts";
 import { json, literalBidi } from "../tools/gen/common.ts";
-import { markLatinNames } from "../tools/gen/bidi.ts";
 import { xcodeJson } from "../tools/gen/apple.ts";
 import { entry, FIXTURE, makeRepo, REPO } from "./helpers.ts";
 
@@ -150,7 +149,9 @@ test("bidi: right-to-left output leaves <code> as written and marks names in oth
 
 test("bidi: a long run of Latin symbols doesn't make the name match backtrack", () => {
   const text = `${"Ⅻ".repeat(40)}א`;
-  assert.equal(markLatinNames(text), text);
+  const root = makeRepo({ en: entry("a.roman", "XII", { "x-platforms": ["web"] }), he: { "a.roman": text } });
+  const web = JSON.parse(generateAll(root, "test").get("web")!.get("web/src/locales/he.json")!);
+  assert.deepEqual(web["a.roman"], [{ type: 0, value: text }]);
 });
 
 test("bidi: make check's scan names a file with a literal bidi control", () => {
