@@ -96663,16 +96663,16 @@
       "web"
     ]
   },
-  "web.admin.settings.hooks.settings.conflict.description": "Reload to see the current values. Your edits to settings that changed, and to saved passwords and keys with their related settings, are undone; your other edits are kept.",
+  "web.admin.settings.hooks.settings.conflict.description": "Reload to see the current values. If one of your edits is to a setting that changed, or to a saved password or key, all your edits are undone; otherwise they’re kept.",
   "@web.admin.settings.hooks.settings.conflict.description": {
-    "description": "Web admin, settings pages and setup wizard steps: body of the toast shown when a save is refused because the server's settings changed after the admin started editing (another administrator or browser tab saved, or the server restarted with different environment settings). The toast's button reloads the settings; saved passwords and keys are never shown, so edits to them cannot be checked and are undone too, along with edits to the settings that go with them (such as a server address).",
+    "description": "Web admin, settings pages and setup wizard steps: body of the toast shown when a save is refused because the server's settings changed after the admin started editing (another administrator or browser tab saved, or the server restarted with different environment settings). The toast's button reloads the settings. It keeps the admin's edits only if none is to a setting that changed or to a saved password or key (which are never shown, so edits to them cannot be checked); otherwise it undoes all of them, since edits on a page often belong together.",
     "x-platforms": [
       "web"
     ]
   },
   "web.admin.settings.hooks.settings.conflict.reload": "Reload",
   "@web.admin.settings.hooks.settings.conflict.reload": {
-    "description": "Web admin, settings pages and setup wizard steps: button on the toast shown when a save is refused because settings changed meanwhile. It reloads the current settings, undoes the admin's edits to settings that changed and to saved passwords and keys, and keeps their other edits.",
+    "description": "Web admin, settings pages and setup wizard steps: button on the toast shown when a save is refused because settings changed meanwhile. It reloads the current settings and keeps the admin's edits, or undoes all of them when one is to a setting that changed or to a saved password or key.",
     "x-platforms": [
       "web"
     ]
