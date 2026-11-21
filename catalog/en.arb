@@ -112665,6 +112665,24 @@
       "web"
     ]
   },
+  "web.admin.tasks.detail.sampleSeriesEpisode": "{series} - {code} {title}",
+  "@web.admin.tasks.detail.sampleSeriesEpisode": {
+    "description": "Web admin, metadata refresh task detail page: title of an episode in the due and recent error lists. {series}: the series title. {code}: the episode code, for example “S01E02”. {title}: the episode title. One message, so a right-to-left language keeps the code next to the series.",
+    "placeholders": {
+      "series": {
+        "type": "String"
+      },
+      "code": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.tasks.detail.sampleTitle": "{series} - {name}",
   "@web.admin.tasks.detail.sampleTitle": {
     "description": "Web admin, metadata refresh task detail page: title of a season or episode in the due and recent error lists. {series}: the series title. {name}: the season's name (for example “Season 2”) or the episode's code and title (for example “S01E02 Pilot”).",
