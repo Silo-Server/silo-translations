@@ -157,7 +157,8 @@ test("bidi: right-to-left output leaves an edge that runs into a placeholder unm
   assert.deepEqual(ast.filter((el) => el.type === 0).map((el) => el.value), ["פתח את https://", "/activate או #"]);
 });
 
-test("bidi: a long run of Latin symbols doesn't make the name match backtrack", () => {
+// A backtracking pattern would hang rather than fail, so the test has its own time limit.
+test("bidi: a long run of Latin symbols doesn't make the name match backtrack", { timeout: 5000 }, () => {
   const text = `${"Ⅻ".repeat(40)}א`;
   const root = makeRepo({ en: entry("a.roman", "XII", { "x-platforms": ["web"] }), he: { "a.roman": text } });
   const web = JSON.parse(generateAll(root, "test").get("web")!.get("web/src/locales/he.json")!);
