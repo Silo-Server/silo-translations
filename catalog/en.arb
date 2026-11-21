@@ -156722,6 +156722,13 @@
       "web"
     ]
   },
+  "web.settings.apiKeys.scope.nowPlayingRead": "See what is playing right now on the profile, or on every profile of the account when the key names none: title, position, paused state, device and play method. No playback control or network details.",
+  "@web.settings.apiKeys.scope.nowPlayingRead": {
+    "description": "Web Settings → API Keys, create dialog: what a key with the “now-playing:read” access may do, shown under that access's name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.settings.apiKeys.scope.requests": "Browse requestable titles and create, follow and cancel media requests.",
   "@web.settings.apiKeys.scope.requests": {
     "description": "Web Settings → API Keys, create dialog: what a key with the “requests” access may do, shown under that access's name.",
