@@ -27,9 +27,12 @@ const NAME = /^(?=.*\p{Script=Latin})(?:\p{Script=Latin}|[^\p{L}\p{Script=Hebrew
 // Parentheses around nothing but a name hold one name, spaces and all: "(shift+. / shift+,)".
 const GROUP = /\(([^()]*)\)/g;
 
-/** The name with a left-to-right mark on each edge that isn't a letter (or, at the end, a digit). */
+/**
+ * The name with a left-to-right mark on each edge that isn't a letter. Digits a letter follows
+ * (4K, 1080p) and a final digit already read with the name, so they get none.
+ */
 function markEdges(name: string): string {
-  const before = /^\p{Script=Latin}/u.test(name) ? "" : LRM;
+  const before = /^[0-9]*\p{Script=Latin}/u.test(name) ? "" : LRM;
   const after = /(?:\p{Script=Latin}|[0-9])$/u.test(name) ? "" : LRM;
   return `${before}${name}${after}`;
 }
@@ -37,7 +40,7 @@ function markEdges(name: string): string {
 /** Marks each Latin name in right-to-left text so its edge symbols stay on its side. */
 export function markLatinNames(text: string): string {
   const grouped = text.replace(GROUP, (group, inner: string) => (NAME.test(inner) ? `(${markEdges(inner)})` : group));
-  return grouped.replace(TOKEN, (token) => {
+  const marked = grouped.replace(TOKEN, (token) => {
     const lead = LEAD.exec(token)?.[0] ?? "";
     const rest = token.slice(lead.length);
     const trail = TRAIL.exec(rest)?.[0] ?? "";
@@ -47,6 +50,8 @@ export function markLatinNames(text: string): string {
     const name = head + ellipsis;
     return NAME.test(name) ? `${lead}${markEdges(name)}${trail.slice(ellipsis.length)}` : token;
   });
+  // Both passes can mark one edge, and the catalog may already carry a mark there: one is enough.
+  return marked.replace(/\u200E{2,}/g, LRM);
 }
 
 /** Valid translations as generators write them: right-to-left languages with their names marked. */

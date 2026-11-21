@@ -109,11 +109,13 @@ test("bidi: right-to-left output keeps a Latin name's edge symbols on its side",
     ["a.prefix", "a name after a prefix", { ar: "ملف وHDR10+ الخاص", he: "קובץ ה-.nfo של הכותר" }, { ar: `ملف وHDR10+${LRM} الخاص`, he: `קובץ ה-${LRM}.nfo של הכותר` }],
     ["a.keys", "Speed (shift+. / shift+,)", { ar: "السرعة (shift+. / shift+,)", he: "מהירות (shift+. / shift+,)" }, { ar: `السرعة (shift+${LRM}. / shift+${LRM},${LRM})`, he: `מהירות (shift+${LRM}. / shift+${LRM},${LRM})` }],
     ["a.url", "such as https://mdblist.com/lists/…", { ar: "مثل https://mdblist.com/lists/…", he: "למשל https://mdblist.com/lists/…" }, { ar: `مثل https://mdblist.com/lists/…${LRM}`, he: `למשל https://mdblist.com/lists/…${LRM}` }],
-    // Unchanged: a word joined by #, quotes around a name, a name ending a sentence or an ellipsis.
+    ["a.paren", "a list (https://mdblist.com/lists/…).", { ar: "قائمة (https://mdblist.com/lists/…).", he: "רשימה (https://mdblist.com/lists/…)." }, { ar: `قائمة (https://mdblist.com/lists/…${LRM}).`, he: `רשימה (https://mdblist.com/lists/…${LRM}).` }],
+    // Unchanged: a word joined by #, quotes around a name, a name ending a sentence or an ellipsis, digits a letter follows.
     ["a.word", "password#PIN.", { ar: "كلمة المرور#PIN.", he: "סיסמה#PIN." }, { ar: "كلمة المرور#PIN.", he: "סיסמה#PIN." }],
     ["a.quote", "On the “Bot” page", { ar: "في صفحة «Bot»", he: "בדף ”Bot”" }, { ar: "في صفحة «Bot»", he: "בדף ”Bot”" }],
     ["a.end", "Updated Silo.", { ar: "تم تحديث Silo.", he: "Silo עודכן." }, { ar: "تم تحديث Silo.", he: "Silo עודכן." }],
     ["a.loading", "Loading API…", { ar: "جارٍ تحميل API…", he: "טוען API…" }, { ar: "جارٍ تحميل API…", he: "טוען API…" }],
+    ["a.res", "New in 4K and 1080p", { ar: "جديد بدقة 4K و1080p", he: "חדש ב-4K וב-1080p" }, { ar: "جديد بدقة 4K و1080p", he: "חדש ב-4K וב-1080p" }],
   ];
   const root = makeRepo({
     en: Object.assign({}, ...cases.map(([key, en]) => entry(key, en))),
