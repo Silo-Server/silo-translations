@@ -62568,9 +62568,9 @@
       "web"
     ]
   },
-  "web.admin.backups.warnings.hideAccounts": "{amount, select, exactlyOne {Hide the account} other {Hide the accounts}}",
+  "web.admin.backups.warnings.hideAccounts": "{amount, select, exactlyOne {Hide the account} exactlyTwo {Hide the accounts} other {Hide the accounts}}",
   "@web.admin.backups.warnings.hideAccounts": {
-    "description": "Web admin, Backups page, backup warning details: button that hides the groups of accounts left out of the restore set. {amount}: \"exactlyOne\" when exactly one account was left out, otherwise \"other\".",
+    "description": "Web admin, Backups page, backup warning details: button that hides the groups of accounts left out of the restore set. {amount}: \"exactlyOne\" when exactly one account was left out, \"exactlyTwo\" when exactly two were (for languages with a dual), otherwise \"other\".",
     "placeholders": {
       "amount": {
         "type": "String"
@@ -62580,9 +62580,9 @@
       "web"
     ]
   },
-  "web.admin.backups.warnings.hideFiles": "{amount, select, exactlyOne {Hide the file} other {Hide the files}}",
+  "web.admin.backups.warnings.hideFiles": "{amount, select, exactlyOne {Hide the file} exactlyTwo {Hide the files} other {Hide the files}}",
   "@web.admin.backups.warnings.hideFiles": {
-    "description": "Web admin, Backups page, backup warning details: button that hides the groups of missing files. {amount}: \"exactlyOne\" when exactly one file is missing, otherwise \"other\".",
+    "description": "Web admin, Backups page, backup warning details: button that hides the groups of missing files. {amount}: \"exactlyOne\" when exactly one file is missing, \"exactlyTwo\" when exactly two are (for languages with a dual), otherwise \"other\".",
     "placeholders": {
       "amount": {
         "type": "String"
@@ -62592,9 +62592,9 @@
       "web"
     ]
   },
-  "web.admin.backups.warnings.hideGroupFiles": "{amount, select, exactlyOne {Hide file} other {Hide files}}",
+  "web.admin.backups.warnings.hideGroupFiles": "{amount, select, exactlyOne {Hide file} exactlyTwo {Hide files} other {Hide files}}",
   "@web.admin.backups.warnings.hideGroupFiles": {
-    "description": "Web admin, Backups page, backup warning details: button that hides the file keys of one group of missing files. {amount}: \"exactlyOne\" when the group holds exactly one file, otherwise \"other\".",
+    "description": "Web admin, Backups page, backup warning details: button that hides the file keys of one group of missing files. {amount}: \"exactlyOne\" when the group holds exactly one file, \"exactlyTwo\" when it holds exactly two (for languages with a dual), otherwise \"other\".",
     "placeholders": {
       "amount": {
         "type": "String"
@@ -62774,9 +62774,9 @@
       "web"
     ]
   },
-  "web.admin.backups.warnings.showAccounts": "{amount, select, exactlyOne {Show the account} other {Show the accounts}}",
+  "web.admin.backups.warnings.showAccounts": "{amount, select, exactlyOne {Show the account} exactlyTwo {Show the accounts} other {Show the accounts}}",
   "@web.admin.backups.warnings.showAccounts": {
-    "description": "Web admin, Backups page, backup warning details: button that shows the groups of accounts left out of the restore set. {amount}: \"exactlyOne\" when exactly one account was left out, otherwise \"other\".",
+    "description": "Web admin, Backups page, backup warning details: button that shows the groups of accounts left out of the restore set. {amount}: \"exactlyOne\" when exactly one account was left out, \"exactlyTwo\" when exactly two were (for languages with a dual), otherwise \"other\".",
     "placeholders": {
       "amount": {
         "type": "String"
@@ -62801,9 +62801,9 @@
       "web"
     ]
   },
-  "web.admin.backups.warnings.showFiles": "{amount, select, exactlyOne {Show the file} other {Show the files}}",
+  "web.admin.backups.warnings.showFiles": "{amount, select, exactlyOne {Show the file} exactlyTwo {Show the files} other {Show the files}}",
   "@web.admin.backups.warnings.showFiles": {
-    "description": "Web admin, Backups page, backup warning details: button that shows the groups of missing files. {amount}: \"exactlyOne\" when exactly one file is missing, otherwise \"other\".",
+    "description": "Web admin, Backups page, backup warning details: button that shows the groups of missing files. {amount}: \"exactlyOne\" when exactly one file is missing, \"exactlyTwo\" when exactly two are (for languages with a dual), otherwise \"other\".",
     "placeholders": {
       "amount": {
         "type": "String"
@@ -62813,9 +62813,9 @@
       "web"
     ]
   },
-  "web.admin.backups.warnings.showGroupFiles": "{amount, select, exactlyOne {Show file} other {Show files}}",
+  "web.admin.backups.warnings.showGroupFiles": "{amount, select, exactlyOne {Show file} exactlyTwo {Show files} other {Show files}}",
   "@web.admin.backups.warnings.showGroupFiles": {
-    "description": "Web admin, Backups page, backup warning details: button that shows the file keys of one group of missing files. {amount}: \"exactlyOne\" when the group holds exactly one file, otherwise \"other\".",
+    "description": "Web admin, Backups page, backup warning details: button that shows the file keys of one group of missing files. {amount}: \"exactlyOne\" when the group holds exactly one file, \"exactlyTwo\" when it holds exactly two (for languages with a dual), otherwise \"other\".",
     "placeholders": {
       "amount": {
         "type": "String"
