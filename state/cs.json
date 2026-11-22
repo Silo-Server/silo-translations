@@ -9755,6 +9755,18 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "error.direct_device_limit": {
+    "source": "873973bd4281e8a8",
+    "value": "f21c4346bb9a2f90",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "error.direct_node_key_conflict": {
+    "source": "c87152b3c29d87d6",
+    "value": "19a9b2fd9a4d7699",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "error.email_in_use": {
     "source": "c868f7740c094391",
     "value": "ce4cbc5dc77a0486",
@@ -9812,6 +9824,12 @@
   "error.field.managed_by_environment": {
     "source": "892d4232003e5206",
     "value": "29195f26bf2b4282",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "error.field.missing": {
+    "source": "9e74f041dcfc8ed9",
+    "value": "e4a4a3ffa40c8ea5",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -46361,6 +46379,12 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.admin.common.deviceConnections.direct": {
+    "source": "39e8ad54db4df6e1",
+    "value": "781f229a8c86a755",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.admin.common.deviceConnections.latestPlayback": {
     "source": "91dccd953b0cce34",
     "value": "84f02086a94e60af",
@@ -70310,6 +70334,528 @@
   "web.admin.settings.markers.tasks.syncName": {
     "source": "0509c40abc48a40a",
     "value": "1c540fe35ddb1788",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.algorithm": {
+    "source": "88c4ab819b7eb81f",
+    "value": "4ed9c6c5b00a0b0f",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.algorithmRequestedActive": {
+    "source": "3cb6440bde8999f6",
+    "value": "4e96cccaf5995de5",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.allowed": {
+    "source": "3e403b3310d9cb27",
+    "value": "34e7f615321c264f",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.congestionControl": {
+    "source": "d1fec900cecbe210",
+    "value": "a8ab9c5508b51cf6",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.connected.account": {
+    "source": "3b602cdaa050e420",
+    "value": "ccddac0297945610",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.connected.connectedSince": {
+    "source": "4b1c4c8669e5da46",
+    "value": "2332955a996c0fc8",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.connected.device": {
+    "source": "c4f59cb9a14433cc",
+    "value": "e1363fae54dc7a40",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.connected.empty": {
+    "source": "8f76a549367cc0b7",
+    "value": "d466f3b683c5b473",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.connected.peerEndpoint": {
+    "source": "afe74f78233c23f9",
+    "value": "048635e85f01313f",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.connected.title": {
+    "source": "564b0963e080fb15",
+    "value": "fd6fa150973fd545",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.connected.toPort": {
+    "source": "ca5ce058f3951b60",
+    "value": "8fadd089e597cb59",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.defaultValue": {
+    "source": "6525c13d66718769",
+    "value": "3c46012b5f77cc9c",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.description": {
+    "source": "5c7caae9508f66d0",
+    "value": "95f3e4350a383d02",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.effective": {
+    "source": "ac821b65c33380cd",
+    "value": "08b58459308f61f6",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.enable": {
+    "source": "e7d89181dcdae308",
+    "value": "04a074531934fa88",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.feature.cap_net_admin": {
+    "source": "c1730eadccb34df6",
+    "value": "25de589cc96eb372",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.feature.engine": {
+    "source": "34e9c654a232bced",
+    "value": "1534abac00190dc5",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.feature.nat_hairpin": {
+    "source": "66170932d8a198c4",
+    "value": "e18a1873fca08e9d",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.feature.nat_mapping": {
+    "source": "00ea79cec67eb7cb",
+    "value": "baf1398ca1e2cad0",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.feature.pmtu_fallback": {
+    "source": "1eadb8cfa9935d74",
+    "value": "090b6a93ad496e7b",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.feature.reachability": {
+    "source": "416912fdb90b4334",
+    "value": "418246839f8111b1",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.feature.socket_receive_buffer": {
+    "source": "43dcf06b256f4ee2",
+    "value": "87218771b4189e28",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.feature.socket_send_buffer": {
+    "source": "c7b9af18b6cfbc7f",
+    "value": "1f793b356091bfe3",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.hostTuning": {
+    "source": "88f4c87db9b21ed2",
+    "value": "11b48292f82f758c",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.knob.directAckDecimation": {
+    "source": "6c0e0fe59cfb033e",
+    "value": "8b54f753b4c102b6",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.knob.directBbrLoss": {
+    "source": "a05f448b4360c377",
+    "value": "70a42913b84e8c75",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.knob.directGso": {
+    "source": "19129e35e490fd28",
+    "value": "05de3d2927248b75",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.knob.directReceiveWindow": {
+    "source": "1fd5cde12346c468",
+    "value": "1b77a9600b1d21f1",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.knob.directUdpPort": {
+    "source": "5b9003344390b4af",
+    "value": "5d36d9df16528a76",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.knob.tcpCongestion": {
+    "source": "4fd127c4a007c90a",
+    "value": "2f1b2e404b3d6785",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.knob.tcpSendBuffer": {
+    "source": "f73564a6be6cf0f1",
+    "value": "cdd6b23a6bb8830c",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.lastChecked": {
+    "source": "e0703a753106eb5f",
+    "value": "7f3ee142709fee70",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.listener.proxy": {
+    "source": "a84abb39dbf34026",
+    "value": "a68ee4167406a050",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.listeners": {
+    "source": "ce9b19829e22624a",
+    "value": "a15816e49f575a35",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.observedAddress": {
+    "source": "30e449f506564149",
+    "value": "f42d1df6d4d79a5c",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.portMapping.description": {
+    "source": "73d808773bbfd7f6",
+    "value": "3ef4a4c607870ee1",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.portMapping.label": {
+    "source": "bc67b51b3ab2ccb9",
+    "value": "6a76c80ebccdd113",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.readinessNote": {
+    "source": "61b3eac7891a8bcc",
+    "value": "3abd8a9289d42bdb",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reason.admin_off": {
+    "source": "f137e8b9d53db2f2",
+    "value": "8d955c7f828e7731",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reason.disabled": {
+    "source": "50c3f2e77a02b1c4",
+    "value": "dafac89bbdc4870f",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reason.engine_start_failed": {
+    "source": "af4c5ad00a31ec19",
+    "value": "0c0a201c833f43c2",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reason.force_failed": {
+    "source": "e59d2fe7f1ae206f",
+    "value": "3588e4d06ca507cd",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reason.gateway_unsupported": {
+    "source": "948246ddf706a431",
+    "value": "1dc86a730ceeb3d7",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reason.granted_below_request": {
+    "source": "a47ece97c897b9e3",
+    "value": "4823b38bc95ad91d",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reason.helper_unavailable": {
+    "source": "3af2b3ceb9b472f5",
+    "value": "9fb97e82c86a862f",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reason.invalid": {
+    "source": "9a8d554b4450d172",
+    "value": "7abb289f03660edb",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reason.kernel_error": {
+    "source": "3c88e1e20ca25518",
+    "value": "ad9d67f55d71f8be",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reason.kernel_unsupported": {
+    "source": "cde9f37eb9300420",
+    "value": "2565cb418e247110",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reason.limit": {
+    "source": "339d4f5759b7e948",
+    "value": "30767b04a9b5380b",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reason.limits_unknown": {
+    "source": "ab072f898aa7c0ba",
+    "value": "0060f645fa6a8790",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reason.mapping_varies": {
+    "source": "9343c67d3183131b",
+    "value": "9ca0d3ca404ca0e3",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reason.module_missing": {
+    "source": "dce96ccb01c436c6",
+    "value": "265d604f11d9ccc6",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reason.module_not_loaded": {
+    "source": "748ad13d227506a3",
+    "value": "2d1acdeef6caa115",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reason.multiple_api_replicas": {
+    "source": "36d312f58528dca3",
+    "value": "4ff1ab1b8c15ec17",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reason.net_admin_dropped": {
+    "source": "59de76b1aadf90c6",
+    "value": "bf82e424cc920a4f",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reason.no_cap_net_admin": {
+    "source": "eb711bcbb90921a2",
+    "value": "b801a29897f4c6a0",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reason.no_gateway": {
+    "source": "fbe1ad4b30cbead8",
+    "value": "6ac4b0d1bb95539e",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reason.no_net_admin": {
+    "source": "f4696e56aa58a654",
+    "value": "b801a29897f4c6a0",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reason.not_allowed": {
+    "source": "8536da2bb5de3fb9",
+    "value": "1b5efa48311c69ee",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reason.not_available": {
+    "source": "dad810b78585eefe",
+    "value": "3afd365c3a228d39",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reason.not_measured": {
+    "source": "087502cf0a3ccd57",
+    "value": "86e0809d19b6a04e",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reason.not_needed": {
+    "source": "092ae0ebadf62f72",
+    "value": "00aba2fa5fe47342",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reason.overridden": {
+    "source": "6e9e097aa387cb02",
+    "value": "5291a9da0168da2d",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reason.probe_failed": {
+    "source": "6b977e802412c8e7",
+    "value": "0f2ae25e1bb69d76",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reason.replica_census_unavailable": {
+    "source": "39a6ac34ca389a99",
+    "value": "62efc580f5acf362",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reason.replica_lease_held": {
+    "source": "70c1f1708d1156c9",
+    "value": "dcd26a0d6f3f0066",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reason.replica_lease_pending": {
+    "source": "2b45c91414c1a6d1",
+    "value": "164eb23a97ee8c68",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reason.state_store_unavailable": {
+    "source": "d2e76a3db2b465aa",
+    "value": "5c5d9398c878a16e",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reason.udp_port_bind_failed": {
+    "source": "a07cdf5be985634e",
+    "value": "0d35c66058ce8de4",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reason.udp_port_invalid": {
+    "source": "410ec5b591a049f0",
+    "value": "a354d85dcd457a4e",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reason.unsupported_platform": {
+    "source": "ee3dddf7223f46e6",
+    "value": "cfad03703d3722dc",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.reasonWithErrno": {
+    "source": "67952498af3a9b3e",
+    "value": "8bb9481a7e8bae42",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.requested": {
+    "source": "f569a9aae21486f5",
+    "value": "24c1d33fc806437c",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.requestedGranted": {
+    "source": "0875eae7b81961f5",
+    "value": "23b126442d7c5892",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.runCheck": {
+    "source": "2aa7da0daa5d7d57",
+    "value": "0dc34c31b550afd9",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.sendBuffer": {
+    "source": "b1822f330ff97083",
+    "value": "d5652a983a0c16cd",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.state.capped": {
+    "source": "0e37e6074c4c24fe",
+    "value": "faa92fe3f8fa4224",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.state.degraded": {
+    "source": "af4e16cab75994a6",
+    "value": "065eeebb1b7c2b92",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.state.fallback": {
+    "source": "32e70f274645fd02",
+    "value": "01001fa727eef4be",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.state.notNeeded": {
+    "source": "c140ac69749aaaa8",
+    "value": "5836491cb0fd5385",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.state.off": {
+    "source": "17afaf21a2d18126",
+    "value": "dafac89bbdc4870f",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.state.on": {
+    "source": "5c0cf63052d5386a",
+    "value": "05372d4ce0de7f7a",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.state.unknown": {
+    "source": "c4bac5fa1b7e92c6",
+    "value": "d5fb93f5b5d851e1",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.stunServers.description": {
+    "source": "e0eac53651106559",
+    "value": "b07a0270b963bf8b",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.stunServers.label": {
+    "source": "307797492f5c71c3",
+    "value": "e95eb89555c07450",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.title": {
+    "source": "137183a40df172f3",
+    "value": "eb88e9499581b752",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.network.direct.udpDescription": {
+    "source": "e7b2d789edbbdda9",
+    "value": "e10179a8cb1e3668",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
