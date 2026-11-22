@@ -84844,6 +84844,179 @@
       "web"
     ]
   },
+  "web.admin.libraries.unsupportedFiles.column.files": "Files",
+  "@web.admin.libraries.unsupportedFiles.column.files": {
+    "description": "Web admin, Libraries page, Catalog Health tab, Files Not Cataloged section: table column header for the number of skipped files in the folder, and row detail label for their names.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.unsupportedFiles.column.firstFound": "First found",
+  "@web.admin.libraries.unsupportedFiles.column.firstFound": {
+    "description": "Web admin, Libraries page, Catalog Health tab, Files Not Cataloged section: table column header for when a scan first found the skipped files.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.unsupportedFiles.column.folder": "Folder",
+  "@web.admin.libraries.unsupportedFiles.column.folder": {
+    "description": "Web admin, Libraries page, Catalog Health tab, Files Not Cataloged section: table column header and row detail label for the folder that holds the skipped files.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.unsupportedFiles.column.library": "Library",
+  "@web.admin.libraries.unsupportedFiles.column.library": {
+    "description": "Web admin, Libraries page, Catalog Health tab, Files Not Cataloged section: table column header for the library the folder belongs to.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.unsupportedFiles.column.type": "Type",
+  "@web.admin.libraries.unsupportedFiles.column.type": {
+    "description": "Web admin, Libraries page, Catalog Health tab, Files Not Cataloged section: table column header for the kind of file skipped, such as DVD VOB or Disc image.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.unsupportedFiles.description": "Folders holding video files that scans find but skip because of their type.",
+  "@web.admin.libraries.unsupportedFiles.description": {
+    "description": "Web admin, Libraries page, Catalog Health tab, Files Not Cataloged section: description under the section title.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.unsupportedFiles.detail.lastFound": "Last found",
+  "@web.admin.libraries.unsupportedFiles.detail.lastFound": {
+    "description": "Web admin, Libraries page, Catalog Health tab, Files Not Cataloged section: label in an expanded row for when a scan last found the skipped files.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.unsupportedFiles.detail.why": "Why",
+  "@web.admin.libraries.unsupportedFiles.detail.why": {
+    "description": "Web admin, Libraries page, Catalog Health tab, Files Not Cataloged section: label in an expanded row for the reason the files are skipped.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.unsupportedFiles.empty": "No skipped files found.",
+  "@web.admin.libraries.unsupportedFiles.empty": {
+    "description": "Web admin, Libraries page, Catalog Health tab, Files Not Cataloged section: shown when no folder holds a skipped file, or none matches the filter.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.unsupportedFiles.filterLabel": "Filter files not cataloged",
+  "@web.admin.libraries.unsupportedFiles.filterLabel": {
+    "description": "Web admin, Libraries page, Catalog Health tab, Files Not Cataloged section: accessible name of the box that filters the list.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.unsupportedFiles.filterPlaceholder": "Filter by folder, file, library, or reason...",
+  "@web.admin.libraries.unsupportedFiles.filterPlaceholder": {
+    "description": "Web admin, Libraries page, Catalog Health tab, Files Not Cataloged section: placeholder of the box that filters the list.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.unsupportedFiles.loadFailed": "The list could not be loaded.",
+  "@web.admin.libraries.unsupportedFiles.loadFailed": {
+    "description": "Web admin, Libraries page, Catalog Health tab, Files Not Cataloged section: error shown when the list fails to load.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.unsupportedFiles.loading": "Loading...",
+  "@web.admin.libraries.unsupportedFiles.loading": {
+    "description": "Web admin, Libraries page, Catalog Health tab, Files Not Cataloged section: shown while the list, or its next page, loads.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.unsupportedFiles.moreFiles": "{count, plural, one {and # more} other {and # more}}",
+  "@web.admin.libraries.unsupportedFiles.moreFiles": {
+    "description": "Web admin, Libraries page, Catalog Health tab, Files Not Cataloged section: under the list of file names in an expanded row, when only some names are listed. {count}: the number of files not listed.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.unsupportedFiles.reason.disc_image": "Disc image",
+  "@web.admin.libraries.unsupportedFiles.reason.disc_image": {
+    "description": "Web admin, Libraries page, Catalog Health tab, Files Not Cataloged section: short name of a kind of skipped file, shown in the Type column.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.unsupportedFiles.reason.disc_stream": "Blu-ray or AVCHD folder",
+  "@web.admin.libraries.unsupportedFiles.reason.disc_stream": {
+    "description": "Web admin, Libraries page, Catalog Health tab, Files Not Cataloged section: short name of a kind of skipped file, shown in the Type column.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.unsupportedFiles.reason.dvd_vob": "DVD VOB",
+  "@web.admin.libraries.unsupportedFiles.reason.dvd_vob": {
+    "description": "Web admin, Libraries page, Catalog Health tab, Files Not Cataloged section: short name of a kind of skipped file, shown in the Type column.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.unsupportedFiles.reason.realmedia": "RealMedia",
+  "@web.admin.libraries.unsupportedFiles.reason.realmedia": {
+    "description": "Web admin, Libraries page, Catalog Health tab, Files Not Cataloged section: short name of a kind of skipped file, shown in the Type column.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.unsupportedFiles.reasonMessage.disc_image": "Disc images are not cataloged; remux the disc title to a single file",
+  "@web.admin.libraries.unsupportedFiles.reasonMessage.disc_image": {
+    "description": "Web admin, Libraries page, Catalog Health tab, Files Not Cataloged section: explanation in an expanded row of why files of this kind are skipped and what to do.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.unsupportedFiles.reasonMessage.disc_stream": "Blu-ray and AVCHD disc folders (BDMV/STREAM) are not cataloged; remux the disc title to a single file",
+  "@web.admin.libraries.unsupportedFiles.reasonMessage.disc_stream": {
+    "description": "Web admin, Libraries page, Catalog Health tab, Files Not Cataloged section: explanation in an expanded row of why files of this kind are skipped and what to do.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.unsupportedFiles.reasonMessage.dvd_vob": "DVD VOB files are not cataloged; remux the DVD title to a single file",
+  "@web.admin.libraries.unsupportedFiles.reasonMessage.dvd_vob": {
+    "description": "Web admin, Libraries page, Catalog Health tab, Files Not Cataloged section: explanation in an expanded row of why files of this kind are skipped and what to do.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.unsupportedFiles.reasonMessage.realmedia": "RealMedia files are not cataloged",
+  "@web.admin.libraries.unsupportedFiles.reasonMessage.realmedia": {
+    "description": "Web admin, Libraries page, Catalog Health tab, Files Not Cataloged section: explanation in an expanded row of why files of this kind are skipped and what to do.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.unsupportedFiles.refreshFailed": "The list could not be refreshed. It shows what loaded before.",
+  "@web.admin.libraries.unsupportedFiles.refreshFailed": {
+    "description": "Web admin, Libraries page, Catalog Health tab, Files Not Cataloged section: error shown when reloading the list fails while the rows loaded earlier stay on screen.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.unsupportedFiles.title": "Files Not Cataloged",
+  "@web.admin.libraries.unsupportedFiles.title": {
+    "description": "Web admin, Libraries page, Catalog Health tab, Files Not Cataloged section: section title. The section lists folders holding video files that scans find but skip because of their type.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.libraries.warning.checkMount": "Check Mount",
   "@web.admin.libraries.warning.checkMount": {
     "description": "Web admin, Libraries page: warning row button that checks the library's storage mounts.",
