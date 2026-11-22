@@ -82999,6 +82999,72 @@
       "web"
     ]
   },
+  "web.admin.libraries.activity.emptyDescription": "Scans and metadata refreshes appear here while they run.",
+  "@web.admin.libraries.activity.emptyDescription": {
+    "description": "Web admin, Libraries page: empty state description in the Scan Activity tab.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.activity.emptyTitle": "No active scans or refreshes",
+  "@web.admin.libraries.activity.emptyTitle": {
+    "description": "Web admin, Libraries page: empty state heading in the Scan Activity tab when nothing is running or queued.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.activity.filterAll": "All ({count})",
+  "@web.admin.libraries.activity.filterAll": {
+    "description": "Web admin, Libraries page: filter chip in Scan Activity showing work across every library. {count}: total active scans and refreshes.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.activity.hideQueue": "Hide queue",
+  "@web.admin.libraries.activity.hideQueue": {
+    "description": "Web admin, Libraries page: button in Scan Activity that collapses a library's expanded list of queued scans.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.activity.moreLibraries": "{count, plural, one {+ # other library} other {+ # other libraries}}",
+  "@web.admin.libraries.activity.moreLibraries": {
+    "description": "Web admin, Libraries page: suffix in the live activity banner when additional libraries also have active scans. {count}: number of additional libraries.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.activity.refreshSectionTitle": "Metadata Refreshes",
+  "@web.admin.libraries.activity.refreshSectionTitle": {
+    "description": "Web admin, Libraries page: section heading in Scan Activity for active library metadata refresh jobs.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.activity.refreshingMetadata": "Refreshing metadata",
+  "@web.admin.libraries.activity.refreshingMetadata": {
+    "description": "Web admin, Libraries page: status pill on a library row while a metadata refresh job is running for that library.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.activity.viewQueue": "View queue",
+  "@web.admin.libraries.activity.viewQueue": {
+    "description": "Web admin, Libraries page: button in the live activity summary banner that switches to the Scan Activity tab.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.libraries.ambiguousRoots.confidence.high": "High",
   "@web.admin.libraries.ambiguousRoots.confidence.high": {
     "description": "Web admin, Libraries page: Ambiguous Roots section: Confidence badge (column \"Confidence\") when the scanner has strong evidence for the root's inferred type. Describes the confidence, so agree with that word.",
@@ -83374,6 +83440,34 @@
       "web"
     ]
   },
+  "web.admin.libraries.health.inspect": "Inspect",
+  "@web.admin.libraries.health.inspect": {
+    "description": "Web admin, Libraries page: compact label on a lazy-loaded Catalog Health summary tile before the section has been opened and its count fetched.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.health.matcherEmpty": "No items are waiting in the metadata matcher queue.",
+  "@web.admin.libraries.health.matcherEmpty": {
+    "description": "Web admin, Libraries page: empty state shown in Catalog Health when the Metadata Matcher queue has no pending or parked items.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.health.skippedEmpty": "No skipped roots recorded.",
+  "@web.admin.libraries.health.skippedEmpty": {
+    "description": "Web admin, Libraries page: empty state shown in Catalog Health when no roots were skipped by the scanner.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.health.staleEmpty": "No stale external IDs recorded.",
+  "@web.admin.libraries.health.staleEmpty": {
+    "description": "Web admin, Libraries page: empty state shown in Catalog Health when no stale provider IDs were recorded.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.libraries.list.confirmCleanupTitle": "Confirm cleanup for missing or empty roots",
   "@web.admin.libraries.list.confirmCleanupTitle": {
     "description": "Web admin, Libraries page: tooltip of the buttons that confirm removing items from missing or empty roots.",
@@ -83419,6 +83513,20 @@
       "web"
     ]
   },
+  "web.admin.libraries.list.editAction": "Edit",
+  "@web.admin.libraries.list.editAction": {
+    "description": "Web admin, Libraries page: short button label in a library row to open the library editor.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.list.empty": "No libraries configured yet.",
+  "@web.admin.libraries.list.empty": {
+    "description": "Web admin, Libraries page: message shown in the Libraries tab when no libraries exist.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.libraries.list.emptyRootGuarded": "Empty root guarded",
   "@web.admin.libraries.list.emptyRootGuarded": {
     "description": "Web admin, Libraries page: status badge: the last scan found no files, so cleanup was paused.",
@@ -83448,6 +83556,13 @@
   "web.admin.libraries.list.hidePaths": "Hide paths",
   "@web.admin.libraries.list.hidePaths": {
     "description": "Web admin, Libraries list on narrow screens: the same button once the folder paths are shown; it collapses them.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.list.idle": "Idle",
+  "@web.admin.libraries.list.idle": {
+    "description": "Web admin, Libraries page: quiet status label when an enabled library has no active scans, warnings, or preview notices.",
     "x-platforms": [
       "web"
     ]
@@ -83492,6 +83607,13 @@
       "web"
     ]
   },
+  "web.admin.libraries.list.refreshMetadataDescription": "Fill missing or replace all metadata",
+  "@web.admin.libraries.list.refreshMetadataDescription": {
+    "description": "Web admin, Libraries page: helper text under Rescan Metadata in a library's overflow actions menu.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.libraries.list.rescanMetadata": "Rescan Metadata",
   "@web.admin.libraries.list.rescanMetadata": {
     "description": "Web admin, Libraries page: tooltip and accessible label of the row button that opens the metadata refresh dialog.",
@@ -83506,6 +83628,13 @@
       "web"
     ]
   },
+  "web.admin.libraries.list.scanAction": "Scan",
+  "@web.admin.libraries.list.scanAction": {
+    "description": "Web admin, Libraries page: short button label in a library row to start scanning that library.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.libraries.list.scanLibrary": "Scan Library",
   "@web.admin.libraries.list.scanLibrary": {
     "description": "Web admin, Libraries page: tooltip and accessible label of the row button that starts a scan of the library.",
@@ -83516,6 +83645,13 @@
   "web.admin.libraries.list.showPaths": "Show paths",
   "@web.admin.libraries.list.showPaths": {
     "description": "Web admin, Libraries list on narrow screens: button on a library card that expands the list of the library's folder paths.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.list.stopAction": "Stop",
+  "@web.admin.libraries.list.stopAction": {
+    "description": "Web admin, Libraries page: short button label in a library row or activity group to stop active scans.",
     "x-platforms": [
       "web"
     ]
@@ -83537,6 +83673,25 @@
   "web.admin.libraries.list.verifyMounts": "Verify Mounts",
   "@web.admin.libraries.list.verifyMounts": {
     "description": "Web admin, Libraries page: tooltip and accessible label of the row button that checks the library's storage mounts.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.list.verifyMountsDescription": "Check that all library folders are reachable",
+  "@web.admin.libraries.list.verifyMountsDescription": {
+    "description": "Web admin, Libraries page: helper text under Verify Mounts in a library's overflow actions menu.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.list.viewScansFor": "View active scans for {name}",
+  "@web.admin.libraries.list.viewScansFor": {
+    "description": "Web admin, Libraries page: accessible label and tooltip on a library row's live scan chip that opens Scan Activity filtered to that library. {name}: library name.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    },
     "x-platforms": [
       "web"
     ]
@@ -83642,7 +83797,7 @@
       "web"
     ]
   },
-  "web.admin.libraries.page.subtitle": "Manage library roots and scans. Catalog import/export now lives under Maintenance.",
+  "web.admin.libraries.page.subtitle": "Manage media folders, monitor scans, and resolve matching issues.",
   "@web.admin.libraries.page.subtitle": {
     "description": "Web admin, Libraries page: subtitle under the page heading.",
     "x-platforms": [
@@ -84015,6 +84170,39 @@
   "web.admin.libraries.staleIds.title": "Stale External IDs",
   "@web.admin.libraries.staleIds.title": {
     "description": "Web admin, Libraries page: title of the diagnostics section listing provider IDs that no longer resolve.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.tabs.activeCount": "{count, plural, one {# active} other {# active}}",
+  "@web.admin.libraries.tabs.activeCount": {
+    "description": "Web admin, Libraries page: badge on the Scan Activity tab showing the number of active scans and metadata refreshes. {count}: total active tasks.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.tabs.activity": "Scan Activity",
+  "@web.admin.libraries.tabs.activity": {
+    "description": "Web admin, Libraries page: tab label for live scan queues and metadata refresh jobs.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.tabs.health": "Catalog Health",
+  "@web.admin.libraries.tabs.health": {
+    "description": "Web admin, Libraries page: tab label for unmatched items, metadata matcher queues, and root diagnostics.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.tabs.libraries": "Libraries",
+  "@web.admin.libraries.tabs.libraries": {
+    "description": "Web admin, Libraries page: tab label for the list of configured libraries.",
     "x-platforms": [
       "web"
     ]
