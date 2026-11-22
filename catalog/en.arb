@@ -31620,6 +31620,13 @@
       "apple"
     ]
   },
+  "servers.manage.renameRemoveHint": "Select the pencil to rename a saved server, or the trash icon to remove it.",
+  "@servers.manage.renameRemoveHint": {
+    "description": "Apple TV Manage Servers: note at the bottom explaining that the pencil button beside a saved server renames it and the trash button removes it.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "servers.manage.savedHeader": "SAVED SERVERS",
   "@servers.manage.savedHeader": {
     "description": "Apple TV Manage Servers: uppercase section heading over the saved servers. Keep it uppercase where the script has case.",
@@ -31744,6 +31751,13 @@
       "apple"
     ]
   },
+  "servers.rename.action": "Rename",
+  "@servers.rename.action": {
+    "description": "Apple Servers list (iPhone, iPad, Mac): swipe action and context menu item on a saved server that opens the prompt to rename it.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "servers.rename.message": "Override the server-provided name with a label just for this device.",
   "@servers.rename.message": {
     "description": "Android phone: explanation in the rename-server dialog in Settings → Accounts.",
@@ -31758,6 +31772,20 @@
       "android"
     ]
   },
+  "servers.rename.placeholder": "Server name",
+  "@servers.rename.placeholder": {
+    "description": "Apple: placeholder in the empty name field of the rename-server prompt, shown when the server doesn't report a name of its own.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "servers.rename.promptTitle": "Rename Server",
+  "@servers.rename.promptTitle": {
+    "description": "Apple: title of the prompt that renames a saved server (an alert on iPhone, iPad and Mac; a dialog on Apple TV).",
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "servers.rename.reset": "Reset to server-provided name",
   "@servers.rename.reset": {
     "description": "Android phone: button in the rename-server dialog that drops the custom name and goes back to the name the server gives itself. Shown only when a custom name is set.",
@@ -31765,11 +31793,63 @@
       "android"
     ]
   },
+  "servers.rename.saveFailed": "Silo couldn't save the server name. Please try again.",
+  "@servers.rename.saveFailed": {
+    "description": "Apple: error shown when the name typed in the rename-server prompt could not be saved.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "servers.rename.syncNote": "Only you see this name. It syncs to your devices that use the same iCloud account.",
+  "@servers.rename.syncNote": {
+    "description": "Apple: message of the rename-server prompt when the server doesn't report a name of its own. \"This name\" is the name the user types; it is kept in their iCloud account and shown only on their own devices.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "servers.rename.syncNoteNamed": "The server's own name is {server}. Only you see this name. It syncs to your devices that use the same iCloud account.",
+  "@servers.rename.syncNoteNamed": {
+    "description": "Apple: message of the rename-server prompt when the server reports a name of its own. {server}: the name the server reports. \"This name\" is the name the user types; it is kept in their iCloud account and shown only on their own devices.",
+    "placeholders": {
+      "server": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "servers.rename.title": "Rename server",
   "@servers.rename.title": {
     "description": "Android phone: title of the dialog that renames a saved server in Settings → Accounts.",
     "x-platforms": [
       "android"
+    ]
+  },
+  "servers.rename.useServerName": "Use Server Name",
+  "@servers.rename.useServerName": {
+    "description": "Apple: button in the rename-server prompt that removes the user's name for the server and goes back to the name the server reports. Shown only when the user has named the server.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "servers.renameAudio": "Rename {server}",
+  "@servers.renameAudio": {
+    "description": "Apple TV Manage Servers: VoiceOver label for the pencil button beside a saved server, which renames it. {server}: the name shown for that server.",
+    "placeholders": {
+      "server": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "servers.row.currentHint": "Current server",
+  "@servers.row.currentHint": {
+    "description": "Apple TV Manage Servers: VoiceOver hint on the server in use. No final full stop in English.",
+    "x-platforms": [
+      "apple"
     ]
   },
   "servers.row.hintCurrent": "Current server. Server names are managed by the server administrator",
@@ -31782,6 +31862,13 @@
   "servers.row.hintSwitch": "Switch to this server. Server names are managed by the server administrator",
   "@servers.row.hintSwitch": {
     "description": "Apple TV Manage Servers: VoiceOver hint on another saved server; choosing it switches to it. Explains that its name comes from the server's administrator. No final full stop in English.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "servers.row.switchHint": "Switch to this server",
+  "@servers.row.switchHint": {
+    "description": "Apple TV Manage Servers: VoiceOver hint on another saved server; choosing it switches to it. No final full stop in English.",
     "x-platforms": [
       "apple"
     ]
@@ -32292,6 +32379,13 @@
       "apple"
     ]
   },
+  "settings.activeServer.name": "Name",
+  "@settings.activeServer.name": {
+    "description": "Apple TV Settings > Server > Active Server: label of the row showing the connected server's name as the user sees it (the name they gave it, else the server's own name). Selecting the row opens the prompt to rename the server.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "settings.activeServer.notConfigured": "Not configured",
   "@settings.activeServer.notConfigured": {
     "description": "Value of the Server row when no server is connected, in Settings > Server > Active Server on Android TV and Apple.",
@@ -32300,12 +32394,26 @@
       "android"
     ]
   },
+  "settings.activeServer.renameHint": "Rename this server",
+  "@settings.activeServer.renameHint": {
+    "description": "Apple TV Settings > Server > Active Server: VoiceOver hint on the Name row; selecting it opens the prompt to rename the server. No final full stop in English.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "settings.activeServer.server": "Server",
   "@settings.activeServer.server": {
     "description": "Label of the row showing the connected server's name, in Settings > Server > Active Server on Android TV and Apple TV.",
     "x-platforms": [
       "apple",
       "android"
+    ]
+  },
+  "settings.activeServer.serverName": "Server Name",
+  "@settings.activeServer.serverName": {
+    "description": "Apple TV Settings > Server > Active Server: label of the row showing the name the server reports for itself. Shown only when the user has given the server a different name.",
+    "x-platforms": [
+      "apple"
     ]
   },
   "settings.activeServer.title": "Active Server",
