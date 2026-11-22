@@ -102863,6 +102863,13 @@
       "web"
     ]
   },
+  "web.admin.settings.playback.watch.markWatchedDescription": "Titles with a credits marker also count as watched once playback reaches the credits.",
+  "@web.admin.settings.playback.watch.markWatchedDescription": {
+    "description": "Web admin, Playback settings page: help under \"Mark watched at\" (a progress percentage). Reaching the end credits counts as watched even before that percentage.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.settings.playback.watch.minResume": "Show in Continue Watching after",
   "@web.admin.settings.playback.watch.minResume": {
     "description": "Web admin, Playback settings page: label of the progress percentage an item needs before it appears in Continue Watching; a % sign follows the field.",
