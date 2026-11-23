@@ -8417,6 +8417,230 @@
       "apple"
     ]
   },
+  "detail.rating.a11y.change": "Double tap to change",
+  "@detail.rating.a11y.change": {
+    "description": "Apple iOS and macOS: spoken (VoiceOver) hint of the chip showing the viewer's own rating of a movie or series; double tapping opens the rating control.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.a11y.label": "Your rating",
+  "@detail.rating.a11y.label": {
+    "description": "Apple iOS and macOS: spoken (VoiceOver) label of the row of stars the viewer drags or swipes to set their own rating of a movie or series. Apple tvOS: the same label for the star button while the viewer edits their rating.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.a11y.none": "No rating",
+  "@detail.rating.a11y.none": {
+    "description": "Apple iOS and macOS and Apple tvOS: spoken (VoiceOver) value of the star rating control when no star is filled, so saving it leaves the title unrated.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.a11y.rateThis": "Rate this",
+  "@detail.rating.a11y.rateThis": {
+    "description": "Apple iOS and macOS: spoken (VoiceOver) label of the Rate chip on a movie or series page when the viewer has not rated the title.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.a11y.remove": "Remove rating",
+  "@detail.rating.a11y.remove": {
+    "description": "Apple iOS and macOS: spoken (VoiceOver) label of the Clear button in the open star rating row; pressing it removes the viewer's rating.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.a11y.value": "{value} of 5",
+  "@detail.rating.a11y.value": {
+    "description": "Apple iOS and macOS and Apple tvOS: spoken (VoiceOver) value of the star rating control while the viewer sets their own rating, such as 4.5 of 5. {value}: the viewer's own rating in stars, such as 4 or 4.5, already formatted with the locale's decimal separator. 5 is the number of stars.",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.a11y.yours": "Your rating, {value} of 5",
+  "@detail.rating.a11y.yours": {
+    "description": "Apple iOS and macOS: spoken (VoiceOver) label of the chip showing the viewer's own rating of a movie or series. Apple tvOS: spoken label of the star button on a movie page when the viewer has rated it. {value}: the viewer's own rating in stars, such as 4 or 4.5, already formatted with the locale's decimal separator. 5 is the number of stars.",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.a11y.yoursSeries": "Your series rating, {value} of 5",
+  "@detail.rating.a11y.yoursSeries": {
+    "description": "Apple tvOS: spoken (VoiceOver) label of the star button on a series page when the viewer has rated the series. {value}: the viewer's own rating in stars, such as 4 or 4.5, already formatted with the locale's decimal separator. 5 is the number of stars.",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.clear": "Clear",
+  "@detail.rating.clear": {
+    "description": "Apple iOS and macOS: button at the start of the open star rating row on a movie or series page; pressing it removes the viewer's rating.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.hint.editing": "Left and right change it by half a star · Select to save · Back to cancel",
+  "@detail.rating.hint.editing": {
+    "description": "Apple tvOS: hint under a movie page's action row while the viewer edits their star rating. Left and right are the remote's directions; Select and Back are its buttons.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.hint.editingNone": "No rating · Select to remove it · Back to cancel",
+  "@detail.rating.hint.editingNone": {
+    "description": "Apple tvOS: hint under a movie or series page's action row while the viewer edits their star rating and has moved it down to no stars. Select and Back are the remote's buttons.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.hint.editingSeries": "Rating the whole series, not this episode · Left and right to change · Select to save",
+  "@detail.rating.hint.editingSeries": {
+    "description": "Apple tvOS: hint under a series page's action row while the viewer edits their star rating of the series. Left and right are the remote's directions; Select is its button.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.hint.rateMovie": "Rate this movie",
+  "@detail.rating.hint.rateMovie": {
+    "description": "Apple tvOS: hint under a movie page's action row while the star button is focused and the viewer has not rated the movie.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.hint.rateSeries": "Rate the series",
+  "@detail.rating.hint.rateSeries": {
+    "description": "Apple tvOS: hint under a series page's action row while the star button is focused and the viewer has not rated the series. Also the spoken (VoiceOver) label of that button.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.hint.rated": "Your rating: {value} · Select to change · Hold Select to remove",
+  "@detail.rating.hint.rated": {
+    "description": "Apple tvOS: hint under a movie page's action row while the star button is focused and the viewer has rated the movie. Select and Hold Select name presses of the remote's Select button. {value}: the viewer's own rating in stars, such as 4 or 4.5, already formatted with the locale's decimal separator.",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.hint.ratedNoHold": "Your rating: {value} · Select to change",
+  "@detail.rating.hint.ratedNoHold": {
+    "description": "Apple tvOS: hint under a movie page's action row while the star button is focused and the viewer has rated the movie, on builds where holding Select does not remove the rating. Select names the remote's Select button. {value}: the viewer's own rating in stars, such as 4 or 4.5, already formatted with the locale's decimal separator.",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.hint.ratedSeries": "Your series rating: {value} · Select to change · Hold Select to remove",
+  "@detail.rating.hint.ratedSeries": {
+    "description": "Apple tvOS: hint under a series page's action row while the star button is focused and the viewer has rated the series. Select and Hold Select name presses of the remote's Select button. {value}: the viewer's own rating in stars, such as 4 or 4.5, already formatted with the locale's decimal separator.",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.hint.ratedSeriesNoHold": "Your series rating: {value} · Select to change",
+  "@detail.rating.hint.ratedSeriesNoHold": {
+    "description": "Apple tvOS: hint under a series page's action row while the star button is focused and the viewer has rated the series, on builds where holding Select does not remove the rating. Select names the remote's Select button. {value}: the viewer's own rating in stars, such as 4 or 4.5, already formatted with the locale's decimal separator.",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.rate": "Rate",
+  "@detail.rating.rate": {
+    "description": "Apple iOS and macOS: label of the chip on a movie or series page, after the external scores, that opens the viewer's own star rating control when they have not rated the title. Apple tvOS: title of the star button in a movie page's action row while it is focused. A verb: give this title your own rating.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.rateSeries": "Rate Series",
+  "@detail.rating.rateSeries": {
+    "description": "Apple tvOS: title of the star button in a series page's action row while it is focused. Pressing it rates the whole series, not an episode.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.removed": "Rating removed",
+  "@detail.rating.removed": {
+    "description": "Apple iOS and macOS: message of the toast at the bottom of a movie or series page after the viewer removed their own rating, shown with an Undo button. Apple tvOS: hint under the action row for a few seconds after the viewer removed their rating.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.saved": "Saved",
+  "@detail.rating.saved": {
+    "description": "Apple tvOS: hint under a movie page's action row for a few seconds after the viewer saved their own rating.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.savedSeries": "Saved for the whole series",
+  "@detail.rating.savedSeries": {
+    "description": "Apple tvOS: hint under a series page's action row for a few seconds after the viewer saved their own rating of the series.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.seriesCaption": "SERIES",
+  "@detail.rating.seriesCaption": {
+    "description": "Apple tvOS: small uppercase caption at the start of the star rating control on a series page while the viewer edits their rating, saying the rating is for the whole series.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.undo": "Undo",
+  "@detail.rating.undo": {
+    "description": "Apple iOS and macOS: button in the Rating removed toast on a movie or series page; pressing it puts back the rating the viewer just removed.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.you": "You",
+  "@detail.rating.you": {
+    "description": "Apple iOS and macOS: label before a star and the viewer's own score (You ★ 4.5) on the chip that shows their rating of a movie or series, beside the external scores such as IMDb. Apple tvOS: the same label for the viewer's score in a movie page's metadata line.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.yourSeriesRating": "Your series rating",
+  "@detail.rating.yourSeriesRating": {
+    "description": "Apple tvOS: label before a star and the viewer's own score (Your series rating ★ 4.5) in a series page's metadata line. The line otherwise describes the selected episode, so this says the score is for the whole series.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "detail.readout.audio": "AUDIO",
   "@detail.readout.audio": {
     "description": "Label for the chosen audio track in the playback readout on a title page, shown in capitals: above the track on Roku and Android TV, beside it on Apple tvOS.",
@@ -14423,6 +14647,14 @@
   "@error.device_login_expired": {
     "description": "Error message shown when the server answers with the v2 problem type `device_login_expired` (server title: \"Device login expired\"). Clients show it instead of the server's English detail in a translated interface, so it must make sense on its own, without the request's specifics."
   },
+  "error.direct_device_limit": "This account has reached its limit of devices for direct connections.",
+  "@error.direct_device_limit": {
+    "description": "Error message shown when the server answers with the v2 problem type `direct_device_limit` (server title: \"Direct device limit\"). Clients show it instead of the server's English detail in a translated interface, so it must make sense on its own, without the request's specifics."
+  },
+  "error.direct_node_key_conflict": "Another device already uses this connection key. Try again.",
+  "@error.direct_node_key_conflict": {
+    "description": "Error message shown when the server answers with the v2 problem type `direct_node_key_conflict` (server title: \"Direct node key conflict\"). Clients show it instead of the server's English detail in a translated interface, so it must make sense on its own, without the request's specifics."
+  },
   "error.email_in_use": "That email address is already in use.",
   "@error.email_in_use": {
     "description": "Error message shown when the server answers with the v2 problem type `email_in_use` (server title: \"Email in use\"). Clients show it instead of the server's English detail in a translated interface, so it must make sense on its own, without the request's specifics."
@@ -14462,6 +14694,10 @@
   "error.field.managed_by_environment": "Set by the environment. Change it there and restart the affected service.",
   "@error.field.managed_by_environment": {
     "description": "Field error when an administrator tries to edit a plugin or stream node setting that the deployment controls through environment configuration."
+  },
+  "error.field.missing": "This value is missing.",
+  "@error.field.missing": {
+    "description": "Error shown next to or about one request field when the server reports the field-error code `missing`. Clients show it instead of the server's English detail in a translated interface."
   },
   "error.field.out_of_range": "This value is out of range.",
   "@error.field.out_of_range": {
@@ -14570,6 +14806,14 @@
   "error.playback_session_ended": "This playback session ended. Start playing again.",
   "@error.playback_session_ended": {
     "description": "Error message shown when the server answers with the v2 problem type `playback_session_ended` (server title: \"Playback session ended\"). Clients show it instead of the server's English detail in a translated interface, so it must make sense on its own, without the request's specifics."
+  },
+  "error.playback_session_paused_timeout": "Playback stopped because it was paused for too long. Start playing again.",
+  "@error.playback_session_paused_timeout": {
+    "description": "Error message shown when the server answers with the v2 problem type `playback_session_paused_timeout` (server title: \"Playback session paused too long\"): the server ended a playback session that stayed paused longer than the administrator allows. Clients show it instead of the server's English detail in a translated interface, so it must make sense on its own, without the request's specifics."
+  },
+  "error.playback_transport_superseded": "This stream was replaced. Playback continues on the current one.",
+  "@error.playback_transport_superseded": {
+    "description": "Error message shown when the server answers with the v2 problem type `playback_transport_superseded` (server title: \"Playback transport superseded\"): a media request came from a playlist that a playback change (such as a new subtitle or quality) replaced, while the playback session goes on. Clients show it instead of the server's English detail in a translated interface, so it must make sense on its own, without the request's specifics."
   },
   "error.precondition_failed": "This changed since you loaded it. Reload and try again.",
   "@error.precondition_failed": {
@@ -15800,10 +16044,11 @@
   },
   "forYou.empty": "No recommendations yet",
   "@forYou.empty": {
-    "description": "Roku For You screen: empty-state title when no recommendations exist.",
+    "description": "Roku For You screen: empty-state title when no recommendations exist. iPhone and Android phone: also the title on the For You tab's Recommendations page when no recommendation is of the type picked in the tab's All / Movies / TV Shows menu.",
     "x-platforms": [
       "roku",
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "forYou.emptyBody": "Watch or rate a few titles to build your personalised recommendations.",
@@ -20994,9 +21239,10 @@
   },
   "personal.mediaType": "Media type",
   "@personal.mediaType": {
-    "description": "Apple iOS: label of the Movies / TV Shows picker on Favorites and Watchlist.",
+    "description": "Apple iOS: label of the Movies / TV Shows picker on Favorites and Watchlist. Android phone: screen reader name of the For You tab's dock button that opens the All / Movies / TV Shows menu.",
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "personal.mediaTypeAccessibility": "Saved media type",
@@ -23833,6 +24079,22 @@
   "player.notice.liveSubtitlesPreparingTitle": "Preparing subtitles",
   "@player.notice.liveSubtitlesPreparingTitle": {
     "description": "Apple iOS/tvOS/macOS: title of the video player notice while AI subtitles for the current scene are being generated and playback waits.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "player.notice.pausedTimeout": "Playback stopped because it was paused for too long.",
+  "@player.notice.pausedTimeout": {
+    "description": "Video player notice before the player closes because the server ended a playback session that stayed paused longer than the administrator allows. The viewer's position is kept, so playing again continues from there.",
+    "x-platforms": [
+      "apple",
+      "android",
+      "roku"
+    ]
+  },
+  "player.notice.pausedTimeoutTitle": "Paused too long",
+  "@player.notice.pausedTimeoutTitle": {
+    "description": "Apple iOS/tvOS/macOS: title of the brief video player notice before the player closes because the server ended a playback session that stayed paused longer than the administrator allows.",
     "x-platforms": [
       "apple"
     ]
@@ -35102,7 +35364,7 @@
       "android"
     ]
   },
-  "settings.quality.cellularFooter": "Used on mobile data and metered networks, such as a phone hotspot.",
+  "settings.quality.cellularFooter": "Used on mobile data and metered networks, such as a phone hotspot. Capped at 2 Mbps when Low Data Mode or Data Saver is on.",
   "@settings.quality.cellularFooter": {
     "description": "Apple Settings > Playback (iPhone, iPad): footer under the Cellular Quality picker. Android phone Settings > Playback: footer under the Cellular quality picker.",
     "x-platforms": [
@@ -65306,6 +65568,13 @@
       "web"
     ]
   },
+  "web.admin.common.connectionCheck.result.textAIBilling": "Text AI provider has no available credit, or a usage or spending limit was reached. Check the provider balance and limits, or ChatGPT usage settings.",
+  "@web.admin.common.connectionCheck.result.textAIBilling": {
+    "description": "Web admin, settings pages, connection check result sent by the server: the text AI provider check failed because the provider account is out of credit or reached a usage or spending limit.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.common.connectionCheck.result.textAIConnected": "Text AI connection successful.",
   "@web.admin.common.connectionCheck.result.textAIConnected": {
     "description": "Web admin, settings pages, connection check result sent by the server: the text AI provider check succeeded.",
@@ -65316,6 +65585,88 @@
   "web.admin.common.connectionCheck.result.textAIFailed": "Text AI connection failed. Check the model, reasoning level, service tier, account connection, and provider usage limits.",
   "@web.admin.common.connectionCheck.result.textAIFailed": {
     "description": "Web admin, settings pages, connection check result sent by the server: the text AI provider check failed.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.common.connectionCheck.result.textAIForbidden": "Text AI access was denied. Check that the API key or ChatGPT account may use this model.",
+  "@web.admin.common.connectionCheck.result.textAIForbidden": {
+    "description": "Web admin, settings pages, connection check result sent by the server: the text AI provider check failed because the provider denied access to the model for this API key or ChatGPT account.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.common.connectionCheck.result.textAINotFound": "Text AI endpoint or model is unavailable. Check the provider's base URL and the model.",
+  "@web.admin.common.connectionCheck.result.textAINotFound": {
+    "description": "Web admin, settings pages, connection check result sent by the server: the text AI provider check failed because the provider's address or the chosen model was not found.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.common.connectionCheck.result.textAIPlanIneligible": "The connected ChatGPT account can't share its plan usage. Check ChatGPT usage settings, or connect another account.",
+  "@web.admin.common.connectionCheck.result.textAIPlanIneligible": {
+    "description": "Web admin, settings pages, connection check result sent by the server: the text AI provider check failed because the signed-in ChatGPT account's plan can't be used for this.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.common.connectionCheck.result.textAIRateLimited": "Text AI provider is rate limiting requests. Try again later.",
+  "@web.admin.common.connectionCheck.result.textAIRateLimited": {
+    "description": "Web admin, settings pages, connection check result sent by the server: the text AI provider check failed because the provider is limiting how many requests Silo can send.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.common.connectionCheck.result.textAIRefused": "Text AI provider refused the check request. Check the model, the reasoning level, and the account's usage settings. The server log has the provider's error.",
+  "@web.admin.common.connectionCheck.result.textAIRefused": {
+    "description": "Web admin, settings pages, connection check result sent by the server: the text AI provider answered the check request but reported in its response that it refused it, so there is no status code to show.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.common.connectionCheck.result.textAIRejected": "Text AI provider rejected the check request (status {status}). Check the model, reasoning level, and service tier. The server log has the provider's error.",
+  "@web.admin.common.connectionCheck.result.textAIRejected": {
+    "description": "Web admin, settings pages, connection check result sent by the server: the text AI provider check failed because the provider refused the request for another reason. {status}: the HTTP status code the provider returned, a number such as 400.",
+    "placeholders": {
+      "status": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.common.connectionCheck.result.textAITimedOut": "Text AI connection check timed out. Check provider availability and try again.",
+  "@web.admin.common.connectionCheck.result.textAITimedOut": {
+    "description": "Web admin, settings pages, connection check result sent by the server: the text AI provider check failed because the provider did not answer in time.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.common.connectionCheck.result.textAIUnauthorized": "Text AI provider rejected the credentials. Replace the provider's API key, or sign in with ChatGPT again.",
+  "@web.admin.common.connectionCheck.result.textAIUnauthorized": {
+    "description": "Web admin, settings pages, connection check result sent by the server: the text AI provider check failed because the provider rejected the API key or sign-in.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.common.connectionCheck.result.textAIUnavailable": "Text AI provider is temporarily unavailable. Try again later.",
+  "@web.admin.common.connectionCheck.result.textAIUnavailable": {
+    "description": "Web admin, settings pages, connection check result sent by the server: the text AI provider check failed because the provider is temporarily down.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.common.connectionCheck.result.textAIUnreachable": "Silo could not reach the text AI provider. Check the provider's base URL and that this server can connect to it.",
+  "@web.admin.common.connectionCheck.result.textAIUnreachable": {
+    "description": "Web admin, settings pages, connection check result sent by the server: the text AI provider check failed because Silo could not connect to the provider at all.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.common.connectionCheck.result.textAIUnusableResponse": "Text model returned a response Silo cannot use. Choose another model.",
+  "@web.admin.common.connectionCheck.result.textAIUnusableResponse": {
+    "description": "Web admin, settings pages, connection check result sent by the server: the text AI provider check failed because the model answered in a form Silo can't use.",
     "x-platforms": [
       "web"
     ]
@@ -65394,6 +65745,13 @@
   "web.admin.common.deviceConnections.clearLimit": "Clear limit",
   "@web.admin.common.deviceConnections.clearLimit": {
     "description": "Web admin, device detail, Connections section: button that removes the learned bitrate limit for this connection.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.common.deviceConnections.direct": "Direct",
+  "@web.admin.common.deviceConnections.direct": {
+    "description": "Web admin, device detail, Connections section: name of a connection made over a direct path between the device and the server.",
     "x-platforms": [
       "web"
     ]
@@ -82999,6 +83357,93 @@
       "web"
     ]
   },
+  "web.admin.libraries.activity.emptyDescription": "Scans and metadata refreshes appear here while they run.",
+  "@web.admin.libraries.activity.emptyDescription": {
+    "description": "Web admin, Libraries page: empty state description in the Scan Activity tab.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.activity.emptyTitle": "No active scans or refreshes",
+  "@web.admin.libraries.activity.emptyTitle": {
+    "description": "Web admin, Libraries page: empty state heading in the Scan Activity tab when nothing is running or queued.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.activity.filterAll": "All ({count})",
+  "@web.admin.libraries.activity.filterAll": {
+    "description": "Web admin, Libraries page: filter chip in Scan Activity showing work across every library. {count}: total active scans and refreshes.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.activity.hideQueue": "Hide queue",
+  "@web.admin.libraries.activity.hideQueue": {
+    "description": "Web admin, Libraries page: button in Scan Activity that collapses a library's expanded list of queued scans.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.activity.moreLibraries": "{count, plural, one {+ # other library} other {+ # other libraries}}",
+  "@web.admin.libraries.activity.moreLibraries": {
+    "description": "Web admin, Libraries page: suffix in the live activity banner when additional libraries also have active scans. {count}: number of additional libraries.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.activity.refreshSectionTitle": "Metadata Refreshes",
+  "@web.admin.libraries.activity.refreshSectionTitle": {
+    "description": "Web admin, Libraries page: section heading in Scan Activity for active library metadata refresh jobs.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.activity.refreshingMetadata": "Refreshing metadata",
+  "@web.admin.libraries.activity.refreshingMetadata": {
+    "description": "Web admin, Libraries page: status pill on a library row while a metadata refresh job is running for that library.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.activity.viewQueue": "View queue",
+  "@web.admin.libraries.activity.viewQueue": {
+    "description": "Web admin, Libraries page: button in the live activity summary banner that switches to the Scan Activity tab.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.ambiguousRoots.confidence.high": "High",
+  "@web.admin.libraries.ambiguousRoots.confidence.high": {
+    "description": "Web admin, Libraries page: Ambiguous Roots section: Confidence badge (column \"Confidence\") when the scanner has strong evidence for the root's inferred type. Describes the confidence, so agree with that word.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.ambiguousRoots.confidence.low": "Low",
+  "@web.admin.libraries.ambiguousRoots.confidence.low": {
+    "description": "Web admin, Libraries page: Ambiguous Roots section: Confidence badge (column \"Confidence\") when the scanner has little evidence for the root's inferred type. Describes the confidence, so agree with that word.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.ambiguousRoots.confidence.medium": "Medium",
+  "@web.admin.libraries.ambiguousRoots.confidence.medium": {
+    "description": "Web admin, Libraries page: Ambiguous Roots section: Confidence badge (column \"Confidence\") when the scanner has some evidence for the root's inferred type. Describes the confidence, so agree with that word.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.libraries.ambiguousRoots.description": "Scanner roots that stay visible but do not enter unattended metadata matching.",
   "@web.admin.libraries.ambiguousRoots.description": {
     "description": "Web admin, Libraries page: description of the Ambiguous Roots section.",
@@ -83353,6 +83798,34 @@
       "web"
     ]
   },
+  "web.admin.libraries.health.inspect": "Inspect",
+  "@web.admin.libraries.health.inspect": {
+    "description": "Web admin, Libraries page: compact label on a lazy-loaded Catalog Health summary tile before the section has been opened and its count fetched.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.health.matcherEmpty": "No items are waiting in the metadata matcher queue.",
+  "@web.admin.libraries.health.matcherEmpty": {
+    "description": "Web admin, Libraries page: empty state shown in Catalog Health when the Metadata Matcher queue has no pending or parked items.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.health.skippedEmpty": "No skipped roots recorded.",
+  "@web.admin.libraries.health.skippedEmpty": {
+    "description": "Web admin, Libraries page: empty state shown in Catalog Health when no roots were skipped by the scanner.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.health.staleEmpty": "No stale external IDs recorded.",
+  "@web.admin.libraries.health.staleEmpty": {
+    "description": "Web admin, Libraries page: empty state shown in Catalog Health when no stale provider IDs were recorded.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.libraries.list.confirmCleanupTitle": "Confirm cleanup for missing or empty roots",
   "@web.admin.libraries.list.confirmCleanupTitle": {
     "description": "Web admin, Libraries page: tooltip of the buttons that confirm removing items from missing or empty roots.",
@@ -83398,6 +83871,20 @@
       "web"
     ]
   },
+  "web.admin.libraries.list.editAction": "Edit",
+  "@web.admin.libraries.list.editAction": {
+    "description": "Web admin, Libraries page: short button label in a library row to open the library editor.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.list.empty": "No libraries configured yet.",
+  "@web.admin.libraries.list.empty": {
+    "description": "Web admin, Libraries page: message shown in the Libraries tab when no libraries exist.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.libraries.list.emptyRootGuarded": "Empty root guarded",
   "@web.admin.libraries.list.emptyRootGuarded": {
     "description": "Web admin, Libraries page: status badge: the last scan found no files, so cleanup was paused.",
@@ -83427,6 +83914,13 @@
   "web.admin.libraries.list.hidePaths": "Hide paths",
   "@web.admin.libraries.list.hidePaths": {
     "description": "Web admin, Libraries list on narrow screens: the same button once the folder paths are shown; it collapses them.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.list.idle": "Idle",
+  "@web.admin.libraries.list.idle": {
+    "description": "Web admin, Libraries page: quiet status label when an enabled library has no active scans, warnings, or preview notices.",
     "x-platforms": [
       "web"
     ]
@@ -83471,6 +83965,13 @@
       "web"
     ]
   },
+  "web.admin.libraries.list.refreshMetadataDescription": "Fill missing or replace all metadata",
+  "@web.admin.libraries.list.refreshMetadataDescription": {
+    "description": "Web admin, Libraries page: helper text under Rescan Metadata in a library's overflow actions menu.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.libraries.list.rescanMetadata": "Rescan Metadata",
   "@web.admin.libraries.list.rescanMetadata": {
     "description": "Web admin, Libraries page: tooltip and accessible label of the row button that opens the metadata refresh dialog.",
@@ -83485,6 +83986,13 @@
       "web"
     ]
   },
+  "web.admin.libraries.list.scanAction": "Scan",
+  "@web.admin.libraries.list.scanAction": {
+    "description": "Web admin, Libraries page: short button label in a library row to start scanning that library.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.libraries.list.scanLibrary": "Scan Library",
   "@web.admin.libraries.list.scanLibrary": {
     "description": "Web admin, Libraries page: tooltip and accessible label of the row button that starts a scan of the library.",
@@ -83495,6 +84003,13 @@
   "web.admin.libraries.list.showPaths": "Show paths",
   "@web.admin.libraries.list.showPaths": {
     "description": "Web admin, Libraries list on narrow screens: button on a library card that expands the list of the library's folder paths.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.list.stopAction": "Stop",
+  "@web.admin.libraries.list.stopAction": {
+    "description": "Web admin, Libraries page: short button label in a library row or activity group to stop active scans.",
     "x-platforms": [
       "web"
     ]
@@ -83516,6 +84031,25 @@
   "web.admin.libraries.list.verifyMounts": "Verify Mounts",
   "@web.admin.libraries.list.verifyMounts": {
     "description": "Web admin, Libraries page: tooltip and accessible label of the row button that checks the library's storage mounts.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.list.verifyMountsDescription": "Check that all library folders are reachable",
+  "@web.admin.libraries.list.verifyMountsDescription": {
+    "description": "Web admin, Libraries page: helper text under Verify Mounts in a library's overflow actions menu.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.list.viewScansFor": "View active scans for {name}",
+  "@web.admin.libraries.list.viewScansFor": {
+    "description": "Web admin, Libraries page: accessible label and tooltip on a library row's live scan chip that opens Scan Activity filtered to that library. {name}: library name.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    },
     "x-platforms": [
       "web"
     ]
@@ -83621,7 +84155,7 @@
       "web"
     ]
   },
-  "web.admin.libraries.page.subtitle": "Manage library roots and scans. Catalog import/export now lives under Maintenance.",
+  "web.admin.libraries.page.subtitle": "Manage media folders, monitor scans, and resolve matching issues.",
   "@web.admin.libraries.page.subtitle": {
     "description": "Web admin, Libraries page: subtitle under the page heading.",
     "x-platforms": [
@@ -83994,6 +84528,39 @@
   "web.admin.libraries.staleIds.title": "Stale External IDs",
   "@web.admin.libraries.staleIds.title": {
     "description": "Web admin, Libraries page: title of the diagnostics section listing provider IDs that no longer resolve.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.tabs.activeCount": "{count, plural, one {# active} other {# active}}",
+  "@web.admin.libraries.tabs.activeCount": {
+    "description": "Web admin, Libraries page: badge on the Scan Activity tab showing the number of active scans and metadata refreshes. {count}: total active tasks.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.tabs.activity": "Scan Activity",
+  "@web.admin.libraries.tabs.activity": {
+    "description": "Web admin, Libraries page: tab label for live scan queues and metadata refresh jobs.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.tabs.health": "Catalog Health",
+  "@web.admin.libraries.tabs.health": {
+    "description": "Web admin, Libraries page: tab label for unmatched items, metadata matcher queues, and root diagnostics.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.tabs.libraries": "Libraries",
+  "@web.admin.libraries.tabs.libraries": {
+    "description": "Web admin, Libraries page: tab label for the list of configured libraries.",
     "x-platforms": [
       "web"
     ]
@@ -84458,6 +85025,27 @@
   "web.admin.libraries.unmatched.searchIgnored": "Search ignored items by title, library, or type...",
   "@web.admin.libraries.unmatched.searchIgnored": {
     "description": "Web admin, Libraries page: Unmatched Items section: placeholder of the search box in the Ignored view.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.unmatched.status.ambiguous": "Ambiguous",
+  "@web.admin.libraries.unmatched.status.ambiguous": {
+    "description": "Web admin, Libraries page: Unmatched Items section: Status badge (column \"Status\") when several metadata entries fit the item and an admin needs to pick one. Describes the item's match status.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.unmatched.status.pending": "Pending",
+  "@web.admin.libraries.unmatched.status.pending": {
+    "description": "Web admin, Libraries page: Unmatched Items section: Status badge (column \"Status\") when the item is still waiting for a metadata match. Describes the item's match status.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.libraries.unmatched.status.unmatched": "Unmatched",
+  "@web.admin.libraries.unmatched.status.unmatched": {
+    "description": "Web admin, Libraries page: Unmatched Items section: Status badge (column \"Status\") when no metadata provider found a match for the item. Describes the item's match status.",
     "x-platforms": [
       "web"
     ]
@@ -99191,6 +99779,694 @@
       "web"
     ]
   },
+  "web.admin.settings.network.direct.algorithm": "Algorithm: {algorithm}",
+  "@web.admin.settings.network.direct.algorithm": {
+    "description": "Web admin, Network Access settings page, Direct connections section: the congestion control algorithm of one listener. {algorithm}: the algorithm name, such as BBR, or the text of the requested-and-active key when the host runs another algorithm than the one requested.",
+    "placeholders": {
+      "algorithm": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.algorithmRequestedActive": "requested {requested}; active {active}",
+  "@web.admin.settings.network.direct.algorithmRequestedActive": {
+    "description": "Web admin, Network Access settings page, Direct connections section: shown as the algorithm of a listener when the host runs another algorithm than the one requested. {requested}: the requested algorithm. {active}: the algorithm in use.",
+    "placeholders": {
+      "requested": {
+        "type": "String"
+      },
+      "active": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.allowed": "Allowed: {values}",
+  "@web.admin.settings.network.direct.allowed": {
+    "description": "Web admin, Network Access settings page, Direct connections section, Host tuning: the values a host tuning setting accepts. {values}: the allowed values, separated by commas.",
+    "placeholders": {
+      "values": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.congestionControl": "Congestion control: {state}",
+  "@web.admin.settings.network.direct.congestionControl": {
+    "description": "Web admin, Network Access settings page, Direct connections section: state of congestion control on one listener. {state}: Off, or the state the host reports, such as On or Fallback.",
+    "placeholders": {
+      "state": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.connected.account": "Account",
+  "@web.admin.settings.network.direct.connected.account": {
+    "description": "Web admin, Network Access settings page, Direct connections section: column heading of the connected devices table, the account the device belongs to.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.connected.connectedSince": "On this path since",
+  "@web.admin.settings.network.direct.connected.connectedSince": {
+    "description": "Web admin, Network Access settings page, Direct connections section: column heading of the connected devices table, how long ago the device started using the direct path.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.connected.device": "Device",
+  "@web.admin.settings.network.direct.connected.device": {
+    "description": "Web admin, Network Access settings page, Direct connections section: column heading of the connected devices table, the name of the device.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.connected.empty": "No device is connected directly.",
+  "@web.admin.settings.network.direct.connected.empty": {
+    "description": "Web admin, Network Access settings page, Direct connections section: shown in place of the table when no device is connected over a direct path.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.connected.peerEndpoint": "Peer endpoint",
+  "@web.admin.settings.network.direct.connected.peerEndpoint": {
+    "description": "Web admin, Network Access settings page, Direct connections section: column heading of the connected devices table, the network address the device connects from.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.connected.title": "Connected devices",
+  "@web.admin.settings.network.direct.connected.title": {
+    "description": "Web admin, Network Access settings page, Direct connections section: heading of the table of devices that are connected to this server over a direct path.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.connected.toPort": "to port {port}",
+  "@web.admin.settings.network.direct.connected.toPort": {
+    "description": "Web admin, Network Access settings page, Direct connections section: follows a device's network address in the connected devices table and names the server UDP port it connected to. {port}: the port number.",
+    "placeholders": {
+      "port": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.defaultValue": "Default: {value}",
+  "@web.admin.settings.network.direct.defaultValue": {
+    "description": "Web admin, Network Access settings page, Direct connections section, Host tuning: the default value of a host tuning setting. {value}: the default value.",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.description": "Check this server’s readiness for direct connections.",
+  "@web.admin.settings.network.direct.description": {
+    "description": "Web admin, Network Access settings page: description under the Direct connections group heading.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.effective": "Effective: {value}",
+  "@web.admin.settings.network.direct.effective": {
+    "description": "Web admin, Network Access settings page, Direct connections section, Host tuning: the value a host tuning setting has in effect. {value}: the value in effect.",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.enable": "Enable direct connections",
+  "@web.admin.settings.network.direct.enable": {
+    "description": "Web admin, Network Access settings page, Direct connections section: label of the toggle that turns direct connections on or off.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.feature.cap_net_admin": "NET_ADMIN capability",
+  "@web.admin.settings.network.direct.feature.cap_net_admin": {
+    "description": "Web admin, Network Access settings page, Direct connections section: name of a readiness check row, whether the server process holds the Linux NET_ADMIN capability. NET_ADMIN is the capability's name and stays as written.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.feature.engine": "Direct connection engine",
+  "@web.admin.settings.network.direct.feature.engine": {
+    "description": "Web admin, Network Access settings page, Direct connections section: name of a readiness check row, whether the direct connection engine runs on this API server. Only one API server runs the engine.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.feature.nat_hairpin": "NAT hairpin",
+  "@web.admin.settings.network.direct.feature.nat_hairpin": {
+    "description": "Web admin, Network Access settings page, Direct connections section: name of a readiness check row, whether the router sends a device's traffic for the server's public address back to the local network (NAT hairpin, also called NAT loopback).",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.feature.nat_mapping": "NAT mapping",
+  "@web.admin.settings.network.direct.feature.nat_mapping": {
+    "description": "Web admin, Network Access settings page, Direct connections section: name of a readiness check row, how the router maps the server's outgoing connections to public addresses and ports (NAT mapping).",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.feature.pmtu_fallback": "PMTU fallback",
+  "@web.admin.settings.network.direct.feature.pmtu_fallback": {
+    "description": "Web admin, Network Access settings page, Direct connections section: name of a readiness check row, whether the host falls back to a smaller packet size when path MTU discovery fails. PMTU is the abbreviation of path MTU.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.feature.reachability": "Reachability",
+  "@web.admin.settings.network.direct.feature.reachability": {
+    "description": "Web admin, Network Access settings page, Direct connections section: name of a readiness check row, whether clients on the internet can reach the server directly.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.feature.socket_receive_buffer": "Socket receive buffer",
+  "@web.admin.settings.network.direct.feature.socket_receive_buffer": {
+    "description": "Web admin, Network Access settings page, Direct connections section: name of a readiness check row, the size of the host's network socket receive buffer.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.feature.socket_send_buffer": "Socket send buffer",
+  "@web.admin.settings.network.direct.feature.socket_send_buffer": {
+    "description": "Web admin, Network Access settings page, Direct connections section: name of a readiness check row, the size of the host's network socket send buffer.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.hostTuning": "Host tuning",
+  "@web.admin.settings.network.direct.hostTuning": {
+    "description": "Web admin, Network Access settings page, Direct connections section: heading above the host's tuning settings and their values.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.knob.directAckDecimation": "ACK decimation",
+  "@web.admin.settings.network.direct.knob.directAckDecimation": {
+    "description": "Web admin, Network Access settings page, Direct connections section, Host tuning: plain name shown above the SILO_NET_DIRECT_ACK_DECIMATION variable, which sets whether clients thin out acknowledgments on a direct connection. ACK is the acknowledgment packet; keep the term.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.knob.directBbrLoss": "BBR loss policy",
+  "@web.admin.settings.network.direct.knob.directBbrLoss": {
+    "description": "Web admin, Network Access settings page, Direct connections section, Host tuning: plain name shown above the SILO_NET_DIRECT_BBR_LOSS variable, which picks how the direct connection's BBR congestion control reacts to packet loss. BBR is an algorithm name and stays as written.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.knob.directGso": "UDP segmentation offload",
+  "@web.admin.settings.network.direct.knob.directGso": {
+    "description": "Web admin, Network Access settings page, Direct connections section, Host tuning: plain name shown above the SILO_NET_DIRECT_GSO variable, which turns UDP generic segmentation offload (GSO) on or off for direct connections. UDP stays as written.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.knob.directReceiveWindow": "Client receive window",
+  "@web.admin.settings.network.direct.knob.directReceiveWindow": {
+    "description": "Web admin, Network Access settings page, Direct connections section, Host tuning: plain name shown above the SILO_NET_DIRECT_RECEIVE_WINDOW variable, which sets the largest receive window, in MiB, that a client may use for one stream.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.knob.directUdpPort": "Direct connection UDP port",
+  "@web.admin.settings.network.direct.knob.directUdpPort": {
+    "description": "Web admin, Network Access settings page, Direct connections section, Host tuning: plain name shown above the SILO_NET_DIRECT_UDP_PORT variable, which sets the fixed UDP port the direct connection engine listens on. UDP stays as written.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.knob.tcpCongestion": "TCP congestion control",
+  "@web.admin.settings.network.direct.knob.tcpCongestion": {
+    "description": "Web admin, Network Access settings page, Direct connections section, Host tuning: plain name shown above the SILO_NET_TCP_CONGESTION variable, which picks the congestion control algorithm for client-facing listeners. TCP stays as written.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.knob.tcpSendBuffer": "TCP send buffer",
+  "@web.admin.settings.network.direct.knob.tcpSendBuffer": {
+    "description": "Web admin, Network Access settings page, Direct connections section, Host tuning: plain name shown above the SILO_NET_TCP_SEND_BUFFER variable, which sets the size of the send buffer Silo asks the kernel for on client-facing listeners. TCP stays as written.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.lastChecked": "Last checked {time}",
+  "@web.admin.settings.network.direct.lastChecked": {
+    "description": "Web admin, Network Access settings page, Direct connections section: when the server last checked a host's readiness for direct connections. {time}: date and time.",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.listener.proxy": "Proxy",
+  "@web.admin.settings.network.direct.listener.proxy": {
+    "description": "Web admin, Network Access settings page, Direct connections section: name of a listener, the endpoint of the media proxy.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.listeners": "Listeners",
+  "@web.admin.settings.network.direct.listeners": {
+    "description": "Web admin, Network Access settings page, Direct connections section: heading above the list of a host's listeners, the API, Jellyfin, Audiobookshelf and proxy endpoints that accept connections.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.observedAddress": "Observed public address: {address}",
+  "@web.admin.settings.network.direct.observedAddress": {
+    "description": "Web admin, Network Access settings page, Direct connections section: the public address a host sees for itself during a readiness check. {address}: the address, as the host reports it.",
+    "placeholders": {
+      "address": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.portMapping.description": "Check the router for UPnP, NAT-PMP, or PCP support.",
+  "@web.admin.settings.network.direct.portMapping.description": {
+    "description": "Web admin, Network Access settings page, Direct connections section, Advanced: description of the Port mapping toggle. UPnP, NAT-PMP and PCP are protocol names.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.portMapping.label": "Port mapping",
+  "@web.admin.settings.network.direct.portMapping.label": {
+    "description": "Web admin, Network Access settings page, Direct connections section, Advanced: label of the toggle that lets the server check the router for port mapping.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.readinessNote": "Readiness checks do not start direct playback.",
+  "@web.admin.settings.network.direct.readinessNote": {
+    "description": "Web admin, Network Access settings page, Direct connections section: note beside the Run check button saying a check only reads the host's state.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.admin_off": "Disabled by administrator",
+  "@web.admin.settings.network.direct.reason.admin_off": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason a feature is off, an administrator turned it off.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.disabled": "Disabled",
+  "@web.admin.settings.network.direct.reason.disabled": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason a feature is off, it is disabled.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.engine_start_failed": "The direct connection engine could not start",
+  "@web.admin.settings.network.direct.reason.engine_start_failed": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason a feature is off, the direct connection engine could not start.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.force_failed": "Could not increase buffer",
+  "@web.admin.settings.network.direct.reason.force_failed": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason shown when the host refused to grow a network buffer past its limit.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.gateway_unsupported": "Router does not support port mapping",
+  "@web.admin.settings.network.direct.reason.gateway_unsupported": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason shown when the router answered but offers no port mapping (UPnP, NAT-PMP or PCP).",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.granted_below_request": "Buffer is smaller than requested",
+  "@web.admin.settings.network.direct.reason.granted_below_request": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason shown when the host granted a smaller network buffer than the server asked for.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.helper_unavailable": "Network tuning helper unavailable",
+  "@web.admin.settings.network.direct.reason.helper_unavailable": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason shown when the helper program that tunes the host's network settings is not available.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.invalid": "Invalid value; using off",
+  "@web.admin.settings.network.direct.reason.invalid": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason shown when a host tuning value is not valid and the host turned the setting off instead.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.kernel_error": "System could not apply or read this setting",
+  "@web.admin.settings.network.direct.reason.kernel_error": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason shown when the operating system returned an error while applying or reading a network setting.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.kernel_unsupported": "Not supported by this kernel",
+  "@web.admin.settings.network.direct.reason.kernel_unsupported": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason shown when the host's operating system kernel lacks the feature.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.limit": "Host buffer limit reached",
+  "@web.admin.settings.network.direct.reason.limit": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason shown when a network buffer stopped at the limit the host allows.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.limits_unknown": "Could not read host buffer limits",
+  "@web.admin.settings.network.direct.reason.limits_unknown": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason shown when the server could not read the host's network buffer limits.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.mapping_varies": "Public address varies by destination",
+  "@web.admin.settings.network.direct.reason.mapping_varies": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason shown when the router gives the server a different public address for each destination, so direct connections cannot use it.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.module_missing": "BBR is not available",
+  "@web.admin.settings.network.direct.reason.module_missing": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason shown when the host has no BBR congestion control module. BBR is the algorithm's name and stays as written.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.module_not_loaded": "BBR is not loaded or allowed",
+  "@web.admin.settings.network.direct.reason.module_not_loaded": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason shown when the BBR congestion control module is not loaded or the host does not allow it. BBR is the algorithm's name and stays as written.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.multiple_api_replicas": "More than one API server is running",
+  "@web.admin.settings.network.direct.reason.multiple_api_replicas": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason a feature is off, more than one API server is running, and direct connections run on only one.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.net_admin_dropped": "NET_ADMIN capability dropped",
+  "@web.admin.settings.network.direct.reason.net_admin_dropped": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason shown when the server process had the NET_ADMIN capability at start and gave it up. NET_ADMIN is the capability's name and stays as written.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.no_cap_net_admin": "NET_ADMIN capability missing",
+  "@web.admin.settings.network.direct.reason.no_cap_net_admin": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason shown when the server process does not hold the NET_ADMIN capability. NET_ADMIN is the capability's name and stays as written.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.no_gateway": "No router found",
+  "@web.admin.settings.network.direct.reason.no_gateway": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason shown when the server found no router that answers port mapping requests.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.no_net_admin": "NET_ADMIN capability missing",
+  "@web.admin.settings.network.direct.reason.no_net_admin": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason shown when the host cannot raise a network buffer because the process lacks the NET_ADMIN capability. NET_ADMIN is the capability's name and stays as written.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.not_allowed": "Permission denied",
+  "@web.admin.settings.network.direct.reason.not_allowed": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason shown when the operating system denied a network setting change.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.not_available": "Not available",
+  "@web.admin.settings.network.direct.reason.not_available": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason shown when a feature is not available on this host.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.not_measured": "Not measured",
+  "@web.admin.settings.network.direct.reason.not_measured": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason shown when a readiness check has no measurement yet.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.not_needed": "No increase needed",
+  "@web.admin.settings.network.direct.reason.not_needed": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason shown when a network buffer is already large enough and the server did not raise it.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.overridden": "Host policy selected another algorithm",
+  "@web.admin.settings.network.direct.reason.overridden": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason shown when the host's policy replaced the congestion control algorithm the server requested.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.probe_failed": "Check failed",
+  "@web.admin.settings.network.direct.reason.probe_failed": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason shown when a readiness check could not finish.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.replica_census_unavailable": "Could not check for other API servers",
+  "@web.admin.settings.network.direct.reason.replica_census_unavailable": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason a feature is off, the server could not count the other API servers that are running.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.replica_lease_held": "Another API server hosts direct connections",
+  "@web.admin.settings.network.direct.reason.replica_lease_held": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason a feature is off, another API server holds the right to host direct connections.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.replica_lease_pending": "Waiting to become the direct connection host",
+  "@web.admin.settings.network.direct.reason.replica_lease_pending": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason a feature is off, this API server is waiting to become the one that hosts direct connections.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.state_store_unavailable": "Direct connection state is unavailable",
+  "@web.admin.settings.network.direct.reason.state_store_unavailable": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason a feature is off, the server could not read or write the state that direct connections keep.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.udp_port_bind_failed": "Could not open the UDP port",
+  "@web.admin.settings.network.direct.reason.udp_port_bind_failed": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason a feature is off, the server could not open the UDP port that direct connections use.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.udp_port_invalid": "UDP port is invalid",
+  "@web.admin.settings.network.direct.reason.udp_port_invalid": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason a feature is off, the configured UDP port for direct connections is not a valid port number.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.unsupported_platform": "Not supported on this platform",
+  "@web.admin.settings.network.direct.reason.unsupported_platform": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason shown when the host's operating system does not support the feature.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reasonWithErrno": "{reason} ({errno})",
+  "@web.admin.settings.network.direct.reasonWithErrno": {
+    "description": "Web admin, Network Access settings page, Direct connections section: the reason a listener or its send buffer is limited, followed by the system error code. {reason}: the reason text, such as Permission denied. {errno}: the error code the host reports.",
+    "placeholders": {
+      "reason": {
+        "type": "String"
+      },
+      "errno": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.requested": "Requested: {value}",
+  "@web.admin.settings.network.direct.requested": {
+    "description": "Web admin, Network Access settings page, Direct connections section, Host tuning: the value an administrator asked a host tuning setting to take. {value}: the requested value.",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.requestedGranted": "Requested: {requested}; granted: {granted}",
+  "@web.admin.settings.network.direct.requestedGranted": {
+    "description": "Web admin, Network Access settings page, Direct connections section: the buffer size the server asked the host for and the size the host granted. {requested}: the requested size, such as 4 MB. {granted}: the granted size, or Unknown.",
+    "placeholders": {
+      "requested": {
+        "type": "String"
+      },
+      "granted": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.runCheck": "Run check",
+  "@web.admin.settings.network.direct.runCheck": {
+    "description": "Web admin, Network Access settings page, Direct connections section: button that runs the readiness check again.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.sendBuffer": "Send buffer: {state}",
+  "@web.admin.settings.network.direct.sendBuffer": {
+    "description": "Web admin, Network Access settings page, Direct connections section: state of one listener's send buffer. {state}: the state the host reports, such as On or Capped.",
+    "placeholders": {
+      "state": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.state.capped": "Capped",
+  "@web.admin.settings.network.direct.state.capped": {
+    "description": "Web admin, Network Access settings page, Direct connections section: state of a feature or buffer, it works but the host limits it below what was requested.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.state.degraded": "Degraded",
+  "@web.admin.settings.network.direct.state.degraded": {
+    "description": "Web admin, Network Access settings page, Direct connections section: state of a feature, it works with reduced quality.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.state.fallback": "Fallback",
+  "@web.admin.settings.network.direct.state.fallback": {
+    "description": "Web admin, Network Access settings page, Direct connections section: state of a feature, the host uses a backup method instead of the preferred one.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.state.notNeeded": "Not needed",
+  "@web.admin.settings.network.direct.state.notNeeded": {
+    "description": "Web admin, Network Access settings page, Direct connections section: state of a setting or capability that the host does not need in its current setup, shown as the state value instead of Off.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.state.off": "Off",
+  "@web.admin.settings.network.direct.state.off": {
+    "description": "Web admin, Network Access settings page, Direct connections section: state of a feature, listener or congestion control that is turned off. Also the congestion control algorithm label when none is requested.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.state.on": "On",
+  "@web.admin.settings.network.direct.state.on": {
+    "description": "Web admin, Network Access settings page, Direct connections section: state of a feature that is turned on and working.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.state.unknown": "Unknown",
+  "@web.admin.settings.network.direct.state.unknown": {
+    "description": "Web admin, Network Access settings page, Direct connections section: shown when the host reports no state, no algorithm or no buffer size for an item.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.stunServers.description": "A comma-separated list of up to eight host:port entries. Leave it empty to use the defaults.",
+  "@web.admin.settings.network.direct.stunServers.description": {
+    "description": "Web admin, Network Access settings page, Direct connections section, Advanced: description of the STUN servers field. host:port is the entry format and stays as written.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.stunServers.label": "STUN servers",
+  "@web.admin.settings.network.direct.stunServers.label": {
+    "description": "Web admin, Network Access settings page, Direct connections section, Advanced: label of the field that lists the STUN servers the server asks for its public address.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.title": "Direct connections",
+  "@web.admin.settings.network.direct.title": {
+    "description": "Web admin, Network Access settings page: heading of the Direct connections group.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.udpDescription": "Let devices reach this server over a direct UDP path. The UDP port comes from {variable} and is read-only here.",
+  "@web.admin.settings.network.direct.udpDescription": {
+    "description": "Web admin, Network Access settings page, Direct connections section: description under the section title once direct connections can be enabled. {variable}: the name of the environment variable that sets the UDP port; it is a literal name and is not translated.",
+    "placeholders": {
+      "variable": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.settings.network.host.apiServer": "API server",
   "@web.admin.settings.network.host.apiServer": {
     "description": "Web admin, Network Access settings page: kind of host: the API server.",
@@ -101457,6 +102733,27 @@
       "web"
     ]
   },
+  "web.admin.settings.playback.pausedPlayback.group": "Paused playback",
+  "@web.admin.settings.playback.pausedPlayback.group": {
+    "description": "Web admin, Playback settings page: heading of the group about how long a paused video may keep its playback session.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.playback.pausedPlayback.timeout": "End paused playback after",
+  "@web.admin.settings.playback.pausedPlayback.timeout": {
+    "description": "Web admin, Playback settings page: how many minutes a video may stay paused before the server ends its playback session; \"minutes\" follows the field.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.playback.pausedPlayback.timeoutDescription": "0 to 1440. Ends a video paused this long in a Silo app, freeing its stream and any transcode; playing it again continues from the same spot. Watch Together, casting and audiobooks are not affected. 0 never ends paused playback.",
+  "@web.admin.settings.playback.pausedPlayback.timeoutDescription": {
+    "description": "Web admin, Playback settings page: help under \"End paused playback after\"; the allowed range in minutes, what ending a paused video does, and what 0 means.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.settings.playback.previews.chapterExecution": "Generate chapter thumbnails on",
   "@web.admin.settings.playback.previews.chapterExecution": {
     "description": "Web admin, Playback settings page, Preview images group: label of the select that chooses where chapter thumbnails are made.",
@@ -101931,6 +103228,13 @@
       "web"
     ]
   },
+  "web.admin.settings.playback.unitMinutes": "minutes",
+  "@web.admin.settings.playback.unitMinutes": {
+    "description": "Web admin, Playback settings page: unit shown after a number field measured in minutes.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.settings.playback.unitSeconds": "seconds",
   "@web.admin.settings.playback.unitSeconds": {
     "description": "Web admin, Playback settings page: unit shown after a number field measured in seconds.",
@@ -101948,6 +103252,13 @@
   "web.admin.settings.playback.watch.markWatched": "Mark watched at",
   "@web.admin.settings.playback.watch.markWatched": {
     "description": "Web admin, Playback settings page: label of the progress percentage at which an item counts as watched; a % sign follows the field.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.playback.watch.markWatchedDescription": "Titles with a credits marker also count as watched once playback reaches the credits.",
+  "@web.admin.settings.playback.watch.markWatchedDescription": {
+    "description": "Web admin, Playback settings page: help under \"Mark watched at\" (a progress percentage). Reaching the end credits counts as watched even before that percentage.",
     "x-platforms": [
       "web"
     ]
@@ -107749,6 +109060,13 @@
       "web"
     ]
   },
+  "web.admin.settings.search.playback.setting.endPausedPlaybackAfter": "End paused playback after (minutes)",
+  "@web.admin.settings.search.playback.setting.endPausedPlaybackAfter": {
+    "description": "Web admin, settings search: a group heading or setting on the Playback settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.settings.search.playback.setting.ffmpegPath": "FFmpeg path",
   "@web.admin.settings.search.playback.setting.ffmpegPath": {
     "description": "Web admin, settings search: a group heading or setting on the Playback settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
@@ -107814,6 +109132,13 @@
   },
   "web.admin.settings.search.playback.setting.markerSource": "Marker source",
   "@web.admin.settings.search.playback.setting.markerSource": {
+    "description": "Web admin, settings search: a group heading or setting on the Playback settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.search.playback.setting.pausedPlayback": "Paused playback",
+  "@web.admin.settings.search.playback.setting.pausedPlayback": {
     "description": "Web admin, settings search: a group heading or setting on the Playback settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
     "x-platforms": [
       "web"
@@ -109762,6 +111087,41 @@
   "web.admin.settings.signIn.page.noProviderError": "Turn on a sign-in provider first. With password sign-in off and no provider on, only break-glass admins could sign in.",
   "@web.admin.settings.signIn.page.noProviderError": {
     "description": "Web admin, Sign-in settings page: error when the admin tries to turn off password sign-in while no external sign-in provider is on.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.signIn.page.passwordMinLengthDescription": "From 8 to 72 characters. Rules apply when someone chooses or changes a password; passwords already set keep working.",
+  "@web.admin.settings.signIn.page.passwordMinLengthDescription": {
+    "description": "Web admin, Sign-in settings page: description under the Minimum password length field. Also covers the capital-letter and special-character switches below it: existing passwords are not affected.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.signIn.page.passwordMinLengthLabel": "Minimum password length",
+  "@web.admin.settings.signIn.page.passwordMinLengthLabel": {
+    "description": "Web admin, Sign-in settings page: label of the number field that sets the fewest characters a new Silo password may have.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.signIn.page.passwordRequireSpecialDescription": "Any punctuation mark or symbol, such as ! or #. Letters, digits and spaces don’t count.",
+  "@web.admin.settings.signIn.page.passwordRequireSpecialDescription": {
+    "description": "Web admin, Sign-in settings page: description under the Require a special character switch. Keep the examples ! and # as they are.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.signIn.page.passwordRequireSpecialLabel": "Require a special character",
+  "@web.admin.settings.signIn.page.passwordRequireSpecialLabel": {
+    "description": "Web admin, Sign-in settings page: label of the switch that makes new Silo passwords need at least one punctuation mark or symbol.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.signIn.page.passwordRequireUppercaseLabel": "Require a capital letter",
+  "@web.admin.settings.signIn.page.passwordRequireUppercaseLabel": {
+    "description": "Web admin, Sign-in settings page: label of the switch that makes new Silo passwords need at least one capital (uppercase) letter.",
     "x-platforms": [
       "web"
     ]
@@ -120492,6 +121852,18 @@
       "web"
     ]
   },
+  "web.admin.users.setPasswordDialog.shareHint": "Share it with {username} yourself.",
+  "@web.admin.users.setPasswordDialog.shareHint": {
+    "description": "Web: admin set password dialog (for an account without password sign-in): sentence after the password rules under the password field, reminding the admin to give the new password to the account's owner. {username}: the account's username.",
+    "placeholders": {
+      "username": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.users.setPasswordDialog.submit": "Set password",
   "@web.admin.users.setPasswordDialog.submit": {
     "description": "Web: admin set password dialog (for an account without password sign-in): submit button.",
@@ -122497,9 +123869,38 @@
       "web"
     ]
   },
+  "web.auth.newPassword.minLengthHint": "{minimum, plural, one {At least {minimum_text} character.} other {At least {minimum_text} characters.}}",
+  "@web.auth.newPassword.minLengthHint": {
+    "description": "Web sign-up, invitation, password reset and choose-password pages: hint under a new password field giving the server's minimum length; the policy's other rules (web.auth.newPassword.needsUppercase, needsSpecial) may follow it. {minimum}: the shortest allowed password, in characters. {minimum_text}: the same number, as written.",
+    "placeholders": {
+      "minimum": {
+        "type": "int"
+      },
+      "minimum_text": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.auth.newPassword.mismatch": "Passwords do not match.",
   "@web.auth.newPassword.mismatch": {
     "description": "Web choose-password, password-reset and admin set-password forms: error when the two new-password fields differ.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.newPassword.needsSpecial": "Include at least one special character, such as ! or #.",
+  "@web.auth.newPassword.needsSpecial": {
+    "description": "Web new-password forms (choose password, password reset, signup, invitation, admin create user, admin set and reset password, Settings → Account): error, and a hint under the new password field, when the server's password policy requires a special character: any punctuation mark or symbol. Keep the examples ! and # as they are.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.newPassword.needsUppercase": "Include at least one capital letter.",
+  "@web.auth.newPassword.needsUppercase": {
+    "description": "Web new-password forms (choose password, password reset, signup, invitation, admin create user, admin set and reset password, Settings → Account): error, and a hint under the new password field, when the server's password policy requires a capital (uppercase) letter.",
     "x-platforms": [
       "web"
     ]
@@ -122514,6 +123915,21 @@
   "web.auth.newPassword.tooShort": "Use at least 8 characters.",
   "@web.auth.newPassword.tooShort": {
     "description": "Web choose-password, password-reset and admin set-password forms: error when the new password is shorter than 8 characters.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.newPassword.tooShortMinimum": "{minimum, plural, one {Use at least {minimum_text} character.} other {Use at least {minimum_text} characters.}}",
+  "@web.auth.newPassword.tooShortMinimum": {
+    "description": "Web new-password forms (choose password, password reset, signup, invitation, first-run setup, admin create user, admin set and reset password, Settings → Account): error when the new password is shorter than the server's minimum length. {minimum}: the shortest allowed password, in characters. {minimum_text}: the same number, as written.",
+    "placeholders": {
+      "minimum": {
+        "type": "int"
+      },
+      "minimum_text": {
+        "type": "String"
+      }
+    },
     "x-platforms": [
       "web"
     ]
@@ -132017,6 +133433,21 @@
         "type": "String"
       },
       "series": {
+        "type": "String"
+      }
+    }
+  },
+  "web.common.activity.subtitle.episodeTitle": "{code} · {title}",
+  "@web.common.activity.subtitle.episodeTitle": {
+    "description": "Web: admin Activity page, admin dashboard Now Playing card, and the household streams panel: line under an episode stream's title, which is the series name. {code}: season and episode code such as S3E13. {title}: the episode's own title.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "code": {
+        "type": "String"
+      },
+      "title": {
         "type": "String"
       }
     }
@@ -150885,6 +152316,13 @@
       "web"
     ]
   },
+  "web.player.session.endedPausedTimeout": "Playback stopped because it was paused for too long.",
+  "@web.player.session.endedPausedTimeout": {
+    "description": "Web player: notification shown when the server ends this playback because it stayed paused longer than the administrator allows, and the player closes.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.player.shuffle.scopeWithParent": "{parent} · {title}",
   "@web.player.shuffle.scopeWithParent": {
     "description": "Web player: names what a shuffle draws from when it has a parent, e.g. a series and season, in the Up Next screen's Shuffling badge. {parent}: parent title, such as the series; {title}: scope title, such as the season.",
@@ -155202,6 +156640,18 @@
       "web"
     ]
   },
+  "web.requests.toAdd.goToPage": "Go to page {page}",
+  "@web.requests.toAdd.goToPage": {
+    "description": "Web search page, Request to add: button under the message that a page is past the end of the results. It opens the last page that has results (page 1 when there are none). {page}: that page number.",
+    "placeholders": {
+      "page": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.requests.toAdd.headerHits": "Request to Add",
   "@web.requests.toAdd.headerHits": {
     "description": "Web search dialog: heading over the request suggestions, under library results.",
@@ -155291,6 +156741,18 @@
   "web.requests.toAdd.pages": "Request to add pages",
   "@web.requests.toAdd.pages": {
     "description": "Web search page, Request to add: screen-reader label of the pager.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.requests.toAdd.pastEnd": "Page {page} is past the end of these results.",
+  "@web.requests.toAdd.pastEnd": {
+    "description": "Web search page, Request to add: shown instead of the results when a link asks for a page after the last one (an old or shared link, or a search that now has fewer results). Followed by a button to the last page. {page}: the page number the link asked for.",
+    "placeholders": {
+      "page": {
+        "type": "String"
+      }
+    },
     "x-platforms": [
       "web"
     ]
@@ -156771,6 +158233,13 @@
   "web.settings.apiKeys.scope.notifications": "Read the profile's notifications as they arrive and mark them read.",
   "@web.settings.apiKeys.scope.notifications": {
     "description": "Web Settings → API Keys, create dialog: what a key with the “notifications” access may do, shown under that access's name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.apiKeys.scope.nowPlayingRead": "See what is playing right now on the profile, or on every profile of the account when the key names none: title, position, paused state, device and play method. No playback control or network details.",
+  "@web.settings.apiKeys.scope.nowPlayingRead": {
+    "description": "Web Settings → API Keys, create dialog: what a key with the “now-playing:read” access may do, shown under that access's name.",
     "x-platforms": [
       "web"
     ]
