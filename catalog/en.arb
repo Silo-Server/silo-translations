@@ -31765,9 +31765,9 @@
       "apple"
     ]
   },
-  "servers.rename.localNoteNamed": "The server's own name is {server}. Only you see this name. It stays on this Mac.",
+  "servers.rename.localNoteNamed": "The server's own name is {server}. The name you give it is visible only to you and stays on this Mac.",
   "@servers.rename.localNoteNamed": {
-    "description": "Apple (Mac): message of the rename-server prompt when the server reports a name of its own. {server}: the name the server reports. \"This name\" is the name the user types; the Mac keeps it locally and does not sync it.",
+    "description": "Apple (Mac): message of the rename-server prompt when the server reports a name of its own. {server}: the name the server reports. \"The name you give it\" is the name the user types; the Mac keeps it locally and does not sync it.",
     "placeholders": {
       "server": {
         "type": "String"
@@ -31819,16 +31819,16 @@
       "apple"
     ]
   },
-  "servers.rename.syncNote": "Only you see this name. It syncs to your devices that use the same iCloud account.",
+  "servers.rename.syncNote": "Only you see this name. It syncs to your iPhone, iPad and Apple TV that use the same iCloud account.",
   "@servers.rename.syncNote": {
-    "description": "Apple (iPhone, iPad and Apple TV): message of the rename-server prompt when the server doesn't report a name of its own. \"This name\" is the name the user types; it is kept in their iCloud account and shown only on their own devices.",
+    "description": "Apple (iPhone, iPad and Apple TV): message of the rename-server prompt when the server doesn't report a name of its own. \"This name\" is the name the user types; it is kept in their iCloud account and shown only on their own iPhone, iPad and Apple TV. The Mac app keeps its names on the Mac and does not sync them.",
     "x-platforms": [
       "apple"
     ]
   },
-  "servers.rename.syncNoteNamed": "The server's own name is {server}. Only you see this name. It syncs to your devices that use the same iCloud account.",
+  "servers.rename.syncNoteNamed": "The server's own name is {server}. The name you give it is visible only to you and syncs to your iPhone, iPad and Apple TV that use the same iCloud account.",
   "@servers.rename.syncNoteNamed": {
-    "description": "Apple (iPhone, iPad and Apple TV): message of the rename-server prompt when the server reports a name of its own. {server}: the name the server reports. \"This name\" is the name the user types; it is kept in their iCloud account and shown only on their own devices.",
+    "description": "Apple (iPhone, iPad and Apple TV): message of the rename-server prompt when the server reports a name of its own. {server}: the name the server reports. \"The name you give it\" is the name the user types; it is kept in their iCloud account and shown only on their own iPhone, iPad and Apple TV. The Mac app keeps its names on the Mac and does not sync them.",
     "placeholders": {
       "server": {
         "type": "String"
