@@ -14807,6 +14807,10 @@
   "@error.playback_session_ended": {
     "description": "Error message shown when the server answers with the v2 problem type `playback_session_ended` (server title: \"Playback session ended\"). Clients show it instead of the server's English detail in a translated interface, so it must make sense on its own, without the request's specifics."
   },
+  "error.playback_session_paused_timeout": "Playback stopped because it was paused for too long. Start playing again.",
+  "@error.playback_session_paused_timeout": {
+    "description": "Error message shown when the server answers with the v2 problem type `playback_session_paused_timeout` (server title: \"Playback session paused too long\"): the server ended a playback session that stayed paused longer than the administrator allows. Clients show it instead of the server's English detail in a translated interface, so it must make sense on its own, without the request's specifics."
+  },
   "error.playback_transport_superseded": "This stream was replaced. Playback continues on the current one.",
   "@error.playback_transport_superseded": {
     "description": "Error message shown when the server answers with the v2 problem type `playback_transport_superseded` (server title: \"Playback transport superseded\"): a media request came from a playlist that a playback change (such as a new subtitle or quality) replaced, while the playback session goes on. Clients show it instead of the server's English detail in a translated interface, so it must make sense on its own, without the request's specifics."
@@ -24103,6 +24107,22 @@
   "player.notice.liveSubtitlesPreparingTitle": "Preparing subtitles",
   "@player.notice.liveSubtitlesPreparingTitle": {
     "description": "Apple iOS/tvOS/macOS: title of the video player notice while AI subtitles for the current scene are being generated and playback waits.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "player.notice.pausedTimeout": "Playback stopped because it was paused for too long.",
+  "@player.notice.pausedTimeout": {
+    "description": "Video player notice before the player closes because the server ended a playback session that stayed paused longer than the administrator allows. The viewer's position is kept, so playing again continues from there.",
+    "x-platforms": [
+      "apple",
+      "android",
+      "roku"
+    ]
+  },
+  "player.notice.pausedTimeoutTitle": "Paused too long",
+  "@player.notice.pausedTimeoutTitle": {
+    "description": "Apple iOS/tvOS/macOS: title of the brief video player notice before the player closes because the server ended a playback session that stayed paused longer than the administrator allows.",
     "x-platforms": [
       "apple"
     ]
@@ -102643,6 +102663,27 @@
       "web"
     ]
   },
+  "web.admin.settings.playback.pausedPlayback.group": "Paused playback",
+  "@web.admin.settings.playback.pausedPlayback.group": {
+    "description": "Web admin, Playback settings page: heading of the group about how long a paused video may keep its playback session.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.playback.pausedPlayback.timeout": "End paused playback after",
+  "@web.admin.settings.playback.pausedPlayback.timeout": {
+    "description": "Web admin, Playback settings page: how many minutes a video may stay paused before the server ends its playback session; \"minutes\" follows the field.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.playback.pausedPlayback.timeoutDescription": "0 to 1440. Ends a video paused this long in a Silo app, freeing its stream and any transcode; playing it again continues from the same spot. Watch Together, casting and audiobooks are not affected. 0 never ends paused playback.",
+  "@web.admin.settings.playback.pausedPlayback.timeoutDescription": {
+    "description": "Web admin, Playback settings page: help under \"End paused playback after\"; the allowed range in minutes, what ending a paused video does, and what 0 means.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.settings.playback.previews.chapterExecution": "Generate chapter thumbnails on",
   "@web.admin.settings.playback.previews.chapterExecution": {
     "description": "Web admin, Playback settings page, Preview images group: label of the select that chooses where chapter thumbnails are made.",
@@ -103113,6 +103154,13 @@
   "web.admin.settings.playback.unitDays": "days",
   "@web.admin.settings.playback.unitDays": {
     "description": "Web admin, Playback settings page: unit shown after a number field measured in days.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.playback.unitMinutes": "minutes",
+  "@web.admin.settings.playback.unitMinutes": {
+    "description": "Web admin, Playback settings page: unit shown after a number field measured in minutes.",
     "x-platforms": [
       "web"
     ]
@@ -108942,6 +108990,13 @@
       "web"
     ]
   },
+  "web.admin.settings.search.playback.setting.endPausedPlaybackAfter": "End paused playback after (minutes)",
+  "@web.admin.settings.search.playback.setting.endPausedPlaybackAfter": {
+    "description": "Web admin, settings search: a group heading or setting on the Playback settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.settings.search.playback.setting.ffmpegPath": "FFmpeg path",
   "@web.admin.settings.search.playback.setting.ffmpegPath": {
     "description": "Web admin, settings search: a group heading or setting on the Playback settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
@@ -109007,6 +109062,13 @@
   },
   "web.admin.settings.search.playback.setting.markerSource": "Marker source",
   "@web.admin.settings.search.playback.setting.markerSource": {
+    "description": "Web admin, settings search: a group heading or setting on the Playback settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.search.playback.setting.pausedPlayback": "Paused playback",
+  "@web.admin.settings.search.playback.setting.pausedPlayback": {
     "description": "Web admin, settings search: a group heading or setting on the Playback settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
     "x-platforms": [
       "web"
@@ -110955,6 +111017,41 @@
   "web.admin.settings.signIn.page.noProviderError": "Turn on a sign-in provider first. With password sign-in off and no provider on, only break-glass admins could sign in.",
   "@web.admin.settings.signIn.page.noProviderError": {
     "description": "Web admin, Sign-in settings page: error when the admin tries to turn off password sign-in while no external sign-in provider is on.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.signIn.page.passwordMinLengthDescription": "From 8 to 72 characters. Rules apply when someone chooses or changes a password; passwords already set keep working.",
+  "@web.admin.settings.signIn.page.passwordMinLengthDescription": {
+    "description": "Web admin, Sign-in settings page: description under the Minimum password length field. Also covers the capital-letter and special-character switches below it: existing passwords are not affected.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.signIn.page.passwordMinLengthLabel": "Minimum password length",
+  "@web.admin.settings.signIn.page.passwordMinLengthLabel": {
+    "description": "Web admin, Sign-in settings page: label of the number field that sets the fewest characters a new Silo password may have.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.signIn.page.passwordRequireSpecialDescription": "Any punctuation mark or symbol, such as ! or #. Letters, digits and spaces don’t count.",
+  "@web.admin.settings.signIn.page.passwordRequireSpecialDescription": {
+    "description": "Web admin, Sign-in settings page: description under the Require a special character switch. Keep the examples ! and # as they are.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.signIn.page.passwordRequireSpecialLabel": "Require a special character",
+  "@web.admin.settings.signIn.page.passwordRequireSpecialLabel": {
+    "description": "Web admin, Sign-in settings page: label of the switch that makes new Silo passwords need at least one punctuation mark or symbol.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.signIn.page.passwordRequireUppercaseLabel": "Require a capital letter",
+  "@web.admin.settings.signIn.page.passwordRequireUppercaseLabel": {
+    "description": "Web admin, Sign-in settings page: label of the switch that makes new Silo passwords need at least one capital (uppercase) letter.",
     "x-platforms": [
       "web"
     ]
@@ -121685,6 +121782,18 @@
       "web"
     ]
   },
+  "web.admin.users.setPasswordDialog.shareHint": "Share it with {username} yourself.",
+  "@web.admin.users.setPasswordDialog.shareHint": {
+    "description": "Web: admin set password dialog (for an account without password sign-in): sentence after the password rules under the password field, reminding the admin to give the new password to the account's owner. {username}: the account's username.",
+    "placeholders": {
+      "username": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.users.setPasswordDialog.submit": "Set password",
   "@web.admin.users.setPasswordDialog.submit": {
     "description": "Web: admin set password dialog (for an account without password sign-in): submit button.",
@@ -123690,9 +123799,38 @@
       "web"
     ]
   },
+  "web.auth.newPassword.minLengthHint": "{minimum, plural, one {At least {minimum_text} character.} other {At least {minimum_text} characters.}}",
+  "@web.auth.newPassword.minLengthHint": {
+    "description": "Web sign-up, invitation, password reset and choose-password pages: hint under a new password field giving the server's minimum length; the policy's other rules (web.auth.newPassword.needsUppercase, needsSpecial) may follow it. {minimum}: the shortest allowed password, in characters. {minimum_text}: the same number, as written.",
+    "placeholders": {
+      "minimum": {
+        "type": "int"
+      },
+      "minimum_text": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.auth.newPassword.mismatch": "Passwords do not match.",
   "@web.auth.newPassword.mismatch": {
     "description": "Web choose-password, password-reset and admin set-password forms: error when the two new-password fields differ.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.newPassword.needsSpecial": "Include at least one special character, such as ! or #.",
+  "@web.auth.newPassword.needsSpecial": {
+    "description": "Web new-password forms (choose password, password reset, signup, invitation, admin create user, admin set and reset password, Settings → Account): error, and a hint under the new password field, when the server's password policy requires a special character: any punctuation mark or symbol. Keep the examples ! and # as they are.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.newPassword.needsUppercase": "Include at least one capital letter.",
+  "@web.auth.newPassword.needsUppercase": {
+    "description": "Web new-password forms (choose password, password reset, signup, invitation, admin create user, admin set and reset password, Settings → Account): error, and a hint under the new password field, when the server's password policy requires a capital (uppercase) letter.",
     "x-platforms": [
       "web"
     ]
@@ -123707,6 +123845,21 @@
   "web.auth.newPassword.tooShort": "Use at least 8 characters.",
   "@web.auth.newPassword.tooShort": {
     "description": "Web choose-password, password-reset and admin set-password forms: error when the new password is shorter than 8 characters.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.newPassword.tooShortMinimum": "{minimum, plural, one {Use at least {minimum_text} character.} other {Use at least {minimum_text} characters.}}",
+  "@web.auth.newPassword.tooShortMinimum": {
+    "description": "Web new-password forms (choose password, password reset, signup, invitation, first-run setup, admin create user, admin set and reset password, Settings → Account): error when the new password is shorter than the server's minimum length. {minimum}: the shortest allowed password, in characters. {minimum_text}: the same number, as written.",
+    "placeholders": {
+      "minimum": {
+        "type": "int"
+      },
+      "minimum_text": {
+        "type": "String"
+      }
+    },
     "x-platforms": [
       "web"
     ]
@@ -152089,6 +152242,13 @@
   "web.player.session.endedByAdmin": "An administrator ended this playback session.",
   "@web.player.session.endedByAdmin": {
     "description": "Web player: notification shown when an administrator stops this playback and the player closes.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.player.session.endedPausedTimeout": "Playback stopped because it was paused for too long.",
+  "@web.player.session.endedPausedTimeout": {
+    "description": "Web player: notification shown when the server ends this playback because it stayed paused longer than the administrator allows, and the player closes.",
     "x-platforms": [
       "web"
     ]
