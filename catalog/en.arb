@@ -8417,6 +8417,230 @@
       "apple"
     ]
   },
+  "detail.rating.a11y.change": "Double tap to change",
+  "@detail.rating.a11y.change": {
+    "description": "Apple iOS and macOS: spoken (VoiceOver) hint of the chip showing the viewer's own rating of a movie or series; double tapping opens the rating control.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.a11y.label": "Your rating",
+  "@detail.rating.a11y.label": {
+    "description": "Apple iOS and macOS: spoken (VoiceOver) label of the row of stars the viewer drags or swipes to set their own rating of a movie or series. Apple tvOS: the same label for the star button while the viewer edits their rating.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.a11y.none": "No rating",
+  "@detail.rating.a11y.none": {
+    "description": "Apple iOS and macOS and Apple tvOS: spoken (VoiceOver) value of the star rating control when no star is filled, so saving it leaves the title unrated.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.a11y.rateThis": "Rate this",
+  "@detail.rating.a11y.rateThis": {
+    "description": "Apple iOS and macOS: spoken (VoiceOver) label of the Rate chip on a movie or series page when the viewer has not rated the title.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.a11y.remove": "Remove rating",
+  "@detail.rating.a11y.remove": {
+    "description": "Apple iOS and macOS: spoken (VoiceOver) label of the Clear button in the open star rating row; pressing it removes the viewer's rating.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.a11y.value": "{value} of 5",
+  "@detail.rating.a11y.value": {
+    "description": "Apple iOS and macOS and Apple tvOS: spoken (VoiceOver) value of the star rating control while the viewer sets their own rating, such as 4.5 of 5. {value}: the viewer's own rating in stars, such as 4 or 4.5, already formatted with the locale's decimal separator. 5 is the number of stars.",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.a11y.yours": "Your rating, {value} of 5",
+  "@detail.rating.a11y.yours": {
+    "description": "Apple iOS and macOS: spoken (VoiceOver) label of the chip showing the viewer's own rating of a movie or series. Apple tvOS: spoken label of the star button on a movie page when the viewer has rated it. {value}: the viewer's own rating in stars, such as 4 or 4.5, already formatted with the locale's decimal separator. 5 is the number of stars.",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.a11y.yoursSeries": "Your series rating, {value} of 5",
+  "@detail.rating.a11y.yoursSeries": {
+    "description": "Apple tvOS: spoken (VoiceOver) label of the star button on a series page when the viewer has rated the series. {value}: the viewer's own rating in stars, such as 4 or 4.5, already formatted with the locale's decimal separator. 5 is the number of stars.",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.clear": "Clear",
+  "@detail.rating.clear": {
+    "description": "Apple iOS and macOS: button at the start of the open star rating row on a movie or series page; pressing it removes the viewer's rating.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.hint.editing": "Left and right change it by half a star · Select to save · Back to cancel",
+  "@detail.rating.hint.editing": {
+    "description": "Apple tvOS: hint under a movie page's action row while the viewer edits their star rating. Left and right are the remote's directions; Select and Back are its buttons.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.hint.editingNone": "No rating · Select to remove it · Back to cancel",
+  "@detail.rating.hint.editingNone": {
+    "description": "Apple tvOS: hint under a movie or series page's action row while the viewer edits their star rating and has moved it down to no stars. Select and Back are the remote's buttons.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.hint.editingSeries": "Rating the whole series, not this episode · Left and right to change · Select to save",
+  "@detail.rating.hint.editingSeries": {
+    "description": "Apple tvOS: hint under a series page's action row while the viewer edits their star rating of the series. Left and right are the remote's directions; Select is its button.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.hint.rateMovie": "Rate this movie",
+  "@detail.rating.hint.rateMovie": {
+    "description": "Apple tvOS: hint under a movie page's action row while the star button is focused and the viewer has not rated the movie.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.hint.rateSeries": "Rate the series",
+  "@detail.rating.hint.rateSeries": {
+    "description": "Apple tvOS: hint under a series page's action row while the star button is focused and the viewer has not rated the series. Also the spoken (VoiceOver) label of that button.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.hint.rated": "Your rating: {value} · Select to change · Hold Select to remove",
+  "@detail.rating.hint.rated": {
+    "description": "Apple tvOS: hint under a movie page's action row while the star button is focused and the viewer has rated the movie. Select and Hold Select name presses of the remote's Select button. {value}: the viewer's own rating in stars, such as 4 or 4.5, already formatted with the locale's decimal separator.",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.hint.ratedNoHold": "Your rating: {value} · Select to change",
+  "@detail.rating.hint.ratedNoHold": {
+    "description": "Apple tvOS: hint under a movie page's action row while the star button is focused and the viewer has rated the movie, on builds where holding Select does not remove the rating. Select names the remote's Select button. {value}: the viewer's own rating in stars, such as 4 or 4.5, already formatted with the locale's decimal separator.",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.hint.ratedSeries": "Your series rating: {value} · Select to change · Hold Select to remove",
+  "@detail.rating.hint.ratedSeries": {
+    "description": "Apple tvOS: hint under a series page's action row while the star button is focused and the viewer has rated the series. Select and Hold Select name presses of the remote's Select button. {value}: the viewer's own rating in stars, such as 4 or 4.5, already formatted with the locale's decimal separator.",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.hint.ratedSeriesNoHold": "Your series rating: {value} · Select to change",
+  "@detail.rating.hint.ratedSeriesNoHold": {
+    "description": "Apple tvOS: hint under a series page's action row while the star button is focused and the viewer has rated the series, on builds where holding Select does not remove the rating. Select names the remote's Select button. {value}: the viewer's own rating in stars, such as 4 or 4.5, already formatted with the locale's decimal separator.",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.rate": "Rate",
+  "@detail.rating.rate": {
+    "description": "Apple iOS and macOS: label of the chip on a movie or series page, after the external scores, that opens the viewer's own star rating control when they have not rated the title. Apple tvOS: title of the star button in a movie page's action row while it is focused. A verb: give this title your own rating.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.rateSeries": "Rate Series",
+  "@detail.rating.rateSeries": {
+    "description": "Apple tvOS: title of the star button in a series page's action row while it is focused. Pressing it rates the whole series, not an episode.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.removed": "Rating removed",
+  "@detail.rating.removed": {
+    "description": "Apple iOS and macOS: message of the toast at the bottom of a movie or series page after the viewer removed their own rating, shown with an Undo button. Apple tvOS: hint under the action row for a few seconds after the viewer removed their rating.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.saved": "Saved",
+  "@detail.rating.saved": {
+    "description": "Apple tvOS: hint under a movie page's action row for a few seconds after the viewer saved their own rating.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.savedSeries": "Saved for the whole series",
+  "@detail.rating.savedSeries": {
+    "description": "Apple tvOS: hint under a series page's action row for a few seconds after the viewer saved their own rating of the series.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.seriesCaption": "SERIES",
+  "@detail.rating.seriesCaption": {
+    "description": "Apple tvOS: small uppercase caption at the start of the star rating control on a series page while the viewer edits their rating, saying the rating is for the whole series.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.undo": "Undo",
+  "@detail.rating.undo": {
+    "description": "Apple iOS and macOS: button in the Rating removed toast on a movie or series page; pressing it puts back the rating the viewer just removed.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.you": "You",
+  "@detail.rating.you": {
+    "description": "Apple iOS and macOS: label before a star and the viewer's own score (You ★ 4.5) on the chip that shows their rating of a movie or series, beside the external scores such as IMDb. Apple tvOS: the same label for the viewer's score in a movie page's metadata line.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "detail.rating.yourSeriesRating": "Your series rating",
+  "@detail.rating.yourSeriesRating": {
+    "description": "Apple tvOS: label before a star and the viewer's own score (Your series rating ★ 4.5) in a series page's metadata line. The line otherwise describes the selected episode, so this says the score is for the whole series.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "detail.readout.audio": "AUDIO",
   "@detail.readout.audio": {
     "description": "Label for the chosen audio track in the playback readout on a title page, shown in capitals: above the track on Roku and Android TV, beside it on Apple tvOS.",
