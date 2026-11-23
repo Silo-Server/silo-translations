@@ -10145,6 +10145,12 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "error.playback_session_paused_timeout": {
+    "source": "55d62933ead9bdd1",
+    "value": "aee8a8191a872280",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "error.playback_transport_superseded": {
     "source": "52aa0553201736d8",
     "value": "ca18480e85f47e62",
@@ -17336,6 +17342,18 @@
   "player.notice.liveSubtitlesPreparingTitle": {
     "source": "4e66cad07f990d7f",
     "value": "06cc0edc247260a8",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "player.notice.pausedTimeout": {
+    "source": "58810bdac7aefa6a",
+    "value": "d721761dac70d3e7",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "player.notice.pausedTimeoutTitle": {
+    "source": "ac6a09d6c3c523a7",
+    "value": "42f6e9732c4bec13",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -73022,6 +73040,24 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.admin.settings.playback.pausedPlayback.group": {
+    "source": "388b64d56e238e2a",
+    "value": "622beeee5d5f2dcb",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.playback.pausedPlayback.timeout": {
+    "source": "ae6fb8fe2ae5e233",
+    "value": "e525c60b686dcf8d",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.playback.pausedPlayback.timeoutDescription": {
+    "source": "43f48ec009a73ffb",
+    "value": "fadfa80fc21ffc05",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.admin.settings.playback.previews.chapterExecution": {
     "source": "68ab3a9819bc91e6",
     "value": "6b2ba6bec2ef682e",
@@ -73403,6 +73439,12 @@
   "web.admin.settings.playback.unitDays": {
     "source": "498a987ba1bfc42d",
     "value": "d470eac94870d2f3",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.playback.unitMinutes": {
+    "source": "346cb230220c5f8c",
+    "value": "aeb6183e322c8d69",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -77618,6 +77660,12 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.admin.settings.search.playback.setting.endPausedPlaybackAfter": {
+    "source": "282d0f5f0458f8ee",
+    "value": "4ce2e1fa5949ca09",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.admin.settings.search.playback.setting.ffmpegPath": {
     "source": "b46a759525e744a1",
     "value": "56fa4be2437a7d72",
@@ -77675,6 +77723,12 @@
   "web.admin.settings.search.playback.setting.markerSource": {
     "source": "ae89cb01084c8fff",
     "value": "b0468f0d722cada6",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.settings.search.playback.setting.pausedPlayback": {
+    "source": "c08348b2c6fab868",
+    "value": "622beeee5d5f2dcb",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -108617,6 +108671,12 @@
   "web.player.session.endedByAdmin": {
     "source": "ab5beb981eaa211f",
     "value": "0eb0494688008581",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.player.session.endedPausedTimeout": {
+    "source": "37228b1335f58ea0",
+    "value": "d721761dac70d3e7",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
