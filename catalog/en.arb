@@ -16040,10 +16040,11 @@
   },
   "forYou.empty": "No recommendations yet",
   "@forYou.empty": {
-    "description": "Roku For You screen: empty-state title when no recommendations exist.",
+    "description": "Roku For You screen: empty-state title when no recommendations exist. iPhone and Android phone: also the title on the For You tab's Recommendations page when no recommendation is of the type picked in the tab's All / Movies / TV Shows menu.",
     "x-platforms": [
       "roku",
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "forYou.emptyBody": "Watch or rate a few titles to build your personalised recommendations.",
@@ -21234,9 +21235,10 @@
   },
   "personal.mediaType": "Media type",
   "@personal.mediaType": {
-    "description": "Apple iOS: label of the Movies / TV Shows picker on Favorites and Watchlist.",
+    "description": "Apple iOS: label of the Movies / TV Shows picker on Favorites and Watchlist. Android phone: screen reader name of the For You tab's dock button that opens the All / Movies / TV Shows menu.",
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "personal.mediaTypeAccessibility": "Saved media type",
