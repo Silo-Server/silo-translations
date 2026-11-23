@@ -138464,6 +138464,112 @@
       }
     }
   },
+  "web.detail.rating.clear": "Clear",
+  "@web.detail.rating.clear": {
+    "description": "Web: button in the open row of the rating control on a movie or series page, which sits after the external scores (IMDb, TMDB) and opens into five stars, Clear and Done when chosen; removes the viewer's own rating and closes the row.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.detail.rating.label": "Your rating",
+  "@web.detail.rating.label": {
+    "description": "Web: screen-reader label of the five-star slider in the open row of the rating control on a movie or series page, which sits after the external scores (IMDb, TMDB) and opens into five stars, Clear and Done when chosen on a movie page.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.detail.rating.labelSeries": "Your series rating",
+  "@web.detail.rating.labelSeries": {
+    "description": "Web: screen-reader label of the five-star slider in the open row of the rating control on a movie or series page, which sits after the external scores (IMDb, TMDB) and opens into five stars, Clear and Done when chosen on a series page. The rating is for the whole series, not an episode.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.detail.rating.none": "No rating",
+  "@web.detail.rating.none": {
+    "description": "Web: spoken value of the five-star slider in the open row of the rating control on a movie or series page, which sits after the external scores (IMDb, TMDB) and opens into five stars, Clear and Done when chosen when no stars are chosen.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.detail.rating.rate": "Rate",
+  "@web.detail.rating.rate": {
+    "description": "Web: label of the chip in the rating control on a movie or series page, which sits after the external scores (IMDb, TMDB) and opens into five stars, Clear and Done when chosen, shown when the viewer has not rated the title. A verb: give this title your own rating.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.detail.rating.rateThis": "Rate this",
+  "@web.detail.rating.rateThis": {
+    "description": "Web: screen-reader label of the chip in the rating control on a movie or series page, which sits after the external scores (IMDb, TMDB) and opens into five stars, Clear and Done when chosen on a movie page when the viewer has not rated it.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.detail.rating.rateThisSeries": "Rate the series",
+  "@web.detail.rating.rateThisSeries": {
+    "description": "Web: screen-reader label of the chip in the rating control on a movie or series page, which sits after the external scores (IMDb, TMDB) and opens into five stars, Clear and Done when chosen on a series page when the viewer has not rated the series. The rating is for the whole series, not an episode.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.detail.rating.removed": "Rating removed",
+  "@web.detail.rating.removed": {
+    "description": "Web: message of the toast shown after the viewer removed their own rating of a movie or series on its page, shown with an Undo button.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.detail.rating.undo": "Undo",
+  "@web.detail.rating.undo": {
+    "description": "Web: button on the toast shown after the viewer removed their own rating of a movie or series; puts the rating back.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.detail.rating.value": "{value} of 5",
+  "@web.detail.rating.value": {
+    "description": "Web: spoken value of the five-star slider in the open row of the rating control on a movie or series page, which sits after the external scores (IMDb, TMDB) and opens into five stars, Clear and Done when chosen. {value}: the rating in stars, such as 4 or 4.5, already formatted with the locale's decimal separator. 5 is the number of stars.",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.detail.rating.you": "You",
+  "@web.detail.rating.you": {
+    "description": "Web: label before a star and the viewer's own score (You ★ 4.5) on the chip in the rating control on a movie or series page, which sits after the external scores (IMDb, TMDB) and opens into five stars, Clear and Done when chosen, shown once they have rated the title.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.detail.rating.yours": "Your rating, {value} of 5",
+  "@web.detail.rating.yours": {
+    "description": "Web: screen-reader label of the chip in the rating control on a movie or series page, which sits after the external scores (IMDb, TMDB) and opens into five stars, Clear and Done when chosen on a movie page once the viewer has rated it. {value}: the viewer's rating in stars, such as 4 or 4.5, already formatted with the locale's decimal separator. 5 is the number of stars.",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.detail.rating.yoursSeries": "Your series rating, {value} of 5",
+  "@web.detail.rating.yoursSeries": {
+    "description": "Web: screen-reader label of the chip in the rating control on a movie or series page, which sits after the external scores (IMDb, TMDB) and opens into five stars, Clear and Done when chosen on a series page once the viewer has rated the series. {value}: the viewer's rating in stars, such as 4 or 4.5, already formatted with the locale's decimal separator. 5 is the number of stars.",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.detail.request.cancelRequest": "Cancel request",
   "@web.detail.request.cancelRequest": {
     "description": "Web: pill on a title's page that cancels the viewer's own pending request after a confirmation.",
