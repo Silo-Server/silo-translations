@@ -22358,6 +22358,14 @@
       "android"
     ]
   },
+  "player.controls.nextUp": "Next Up",
+  "@player.controls.nextUp": {
+    "description": "Apple tvOS: label beside the icon of the player's button that opens the Up Next screen, in the row of buttons under the timeline, and that button's screen reader label. It shares the row with the Playback Menu and close buttons, so keep it short.",
+    "x-platforms": [
+      "apple"
+    ],
+    "x-maxLength": 20
+  },
   "player.controls.pause": "Pause",
   "@player.controls.pause": {
     "description": "Android phone: screen reader label of the pause button, shown while playing: the large button in the video player controls, and the button that pauses playback on the TV in Remote Control and Google Cast. Apple iOS: screen reader label of the large pause button in the iPhone and iPad video player controls.",
@@ -22387,6 +22395,22 @@
     "x-platforms": [
       "apple"
     ]
+  },
+  "player.controls.playbackMenu": "Playback Menu",
+  "@player.controls.playbackMenu": {
+    "description": "Apple tvOS: label beside the icon of the player's button that opens the player menu, the panel with the Info, Stats, Video, Audio, Subtitles and Chapters tabs. The button sits in the row of buttons under the timeline. The hint player.controls.playbackMenuHint names this label.",
+    "x-platforms": [
+      "apple"
+    ],
+    "x-maxLength": 24
+  },
+  "player.controls.playbackMenuHint": "Press down to open Playback Menu",
+  "@player.controls.playbackMenuHint": {
+    "description": "Apple tvOS: hint shown for a few seconds at the top of the screen when playback starts, while the player controls are hidden, so the viewer knows the player menu exists. Down is the remote's down direction; pressing it opens the menu. Playback Menu is the label of the menu's button, player.controls.playbackMenu; write it the same way.",
+    "x-platforms": [
+      "apple"
+    ],
+    "x-maxLength": 48
   },
   "player.controls.playbackQuality": "Playback Quality",
   "@player.controls.playbackQuality": {
@@ -22496,7 +22520,7 @@
   },
   "player.error.cantPlayTitle": "Can’t play this title",
   "@player.error.cantPlayTitle": {
-    "description": "Apple iOS: heading of the player’s error screen.",
+    "description": "Apple iOS: heading of the player’s error screen. Apple tvOS: title of the player’s error card, above the error message and the Retry and Go Back buttons.",
     "x-platforms": [
       "apple"
     ]
@@ -24591,6 +24615,14 @@
       "apple"
     ]
   },
+  "player.scrubber.hint": "Select to jump here · Back to cancel",
+  "@player.scrubber.hint": {
+    "description": "Apple tvOS: one-line hint under the player's timeline in scrub mode, while the viewer moves a preview along the timeline. Select and Back are the remote's buttons. Select jumps to the previewed point; playback resumes there only if it was playing when scrub mode began, so don't say it plays. Back leaves scrub mode without moving.",
+    "x-platforms": [
+      "apple"
+    ],
+    "x-maxLength": 60
+  },
   "player.scrubber.quarterSpeed": "Quarter-Speed Scrubbing",
   "@player.scrubber.quarterSpeed": {
     "description": "Apple iOS: line in the scrub preview bubble of the iPhone and iPad video player when the finger has slid further up off the seek bar and the playhead moves at a quarter of the speed.",
@@ -25081,7 +25113,7 @@
   },
   "player.sleepTimer.hours": "{count, plural, one {# hour} other {# hours}}",
   "@player.sleepTimer.hours": {
-    "description": "Android phone: player sleep timer panel; the hours part of a timer length, such as 1 hour in 1 hour 30 minutes. {count}: the number of hours. Apple iOS: 1 hour and 2 hours options of the Sleep Timer picker in the iPhone and iPad player settings sheet.",
+    "description": "Android phone: player sleep timer panel; the hours part of a timer length, such as 1 hour in 1 hour 30 minutes. {count}: the number of hours. Apple iOS: 1 hour and 2 hours options of the Sleep Timer picker in the iPhone and iPad player settings sheet. Apple tvOS: the same options in the Sleep Timer list of the player menu's Video tab.",
     "placeholders": {
       "count": {
         "type": "int"
@@ -25106,7 +25138,7 @@
   },
   "player.sleepTimer.minutesOption": "{minutes, plural, one {# min} other {# min}}",
   "@player.sleepTimer.minutesOption": {
-    "description": "Apple iOS: option in the Sleep Timer picker of the iPhone and iPad player settings sheet (5, 15, 30 or 45 minutes). min is short for minutes. 1: number of minutes.",
+    "description": "Apple iOS: option in the Sleep Timer picker of the iPhone and iPad player settings sheet (5, 15, 30 or 45 minutes). Apple tvOS: the same options in the Sleep Timer list of the player menu's Video tab. min is short for minutes. 1: number of minutes.",
     "placeholders": {
       "minutes": {
         "type": "int"
@@ -25118,7 +25150,7 @@
   },
   "player.sleepTimer.off": "Off",
   "@player.sleepTimer.off": {
-    "description": "Android phone: player settings menu; value of the Sleep timer row when no timer is running. Apple iOS: first option of the Sleep Timer picker in the iPhone and iPad player settings sheet.",
+    "description": "Android phone: player settings menu; value of the Sleep timer row when no timer is running. Apple iOS: first option of the Sleep Timer picker in the iPhone and iPad player settings sheet. Apple tvOS: first option of the Sleep Timer list in the player menu's Video tab, and the row's value when no timer is running.",
     "x-platforms": [
       "apple",
       "android"
@@ -25138,7 +25170,7 @@
   },
   "player.sleepTimer.pickerTitle": "Sleep Timer",
   "@player.sleepTimer.pickerTitle": {
-    "description": "Apple iOS: picker row in the iPhone and iPad player settings sheet that pauses playback after a chosen time.",
+    "description": "Apple iOS: picker row in the iPhone and iPad player settings sheet that pauses playback after a chosen time. Apple tvOS: the Sleep Timer row in the Video tab of the player menu, and the title of the list of durations it opens.",
     "x-platforms": [
       "apple"
     ]
@@ -46407,12 +46439,13 @@
       "roku"
     ]
   },
-  "upNext.close": "Close",
+  "upNext.close": "Exit Playback",
   "@upNext.close": {
-    "description": "Apple iOS and tvOS: button on the player's Up Next screen that closes the player and returns to the screen playback started from. The Keep Watching button beside it returns to the video.",
+    "description": "Apple iOS and tvOS: button on the player's Up Next screen that leaves the player and returns to the screen playback started from. The Keep Watching button beside it returns to the video.",
     "x-platforms": [
       "apple"
-    ]
+    ],
+    "x-maxLength": 24
   },
   "upNext.creditsEndAutoPlayOff": "Credits end in {time} · auto-play is off",
   "@upNext.creditsEndAutoPlayOff": {
@@ -46604,9 +46637,10 @@
       "roku"
     ]
   },
-  "upNext.playNow": "Play Now",
+  "upNext.playNow": "Play Next Up",
   "@upNext.playNow": {
-    "description": "Primary pill button that starts the next episode immediately: on the Up Next panel (Roku, Android phone and TV), in the web player's Playing Next screen and next-episode overlay, and as the primary button on the Apple iOS and tvOS player's Up Next screen."
+    "description": "Primary pill button that starts the next episode immediately: on the Up Next panel (Roku, Android phone and TV), on the web player's Playing Next screen, and as the primary button on the Apple iOS and tvOS player's Up Next screen.",
+    "x-maxLength": 24
   },
   "upNext.playingNextIn": "{seconds, plural, one {Playing next in # second} other {Playing next in # seconds}}",
   "@upNext.playingNextIn": {
@@ -151656,7 +151690,7 @@
       "web"
     ]
   },
-  "web.player.nextEpisode.playNow": "Play now",
+  "web.player.nextEpisode.playNow": "Play Next Up",
   "@web.player.nextEpisode.playNow": {
     "description": "Web player: main button on the next-episode card shown during the credits; starts the next episode at once.",
     "x-platforms": [
