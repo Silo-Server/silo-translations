@@ -140253,15 +140253,15 @@
       }
     }
   },
-  "web.home.addRow.rules.sentenceNamed": "<w>Show</w> <scope></scope> <w>from the</w> <libraries></libraries> <w>{count, plural, one {library} other {libraries}}</w>{rules, select, yes {<break></break><w>that match</w> <match></match> <w>of these:</w>} other {}}",
+  "web.home.addRow.rules.sentenceNamed": "<w>Show</w> <scope></scope> <w>from the</w> <libraries></libraries> <w>{amount, select, exactlyOne {library} exactlyTwo {libraries} other {libraries}}</w>{rules, select, yes {<break></break><w>that match</w> <match></match> <w>of these:</w>} other {}}",
   "@web.home.addRow.rules.sentenceNamed": {
-    "description": "Web: rule builder, sentence of controls when the library picker shows picked library names, e.g. 'Show movies from the Movies, 4K libraries'. Every word sits in a <w> tag; <scope> is the kind-of-titles menu, <libraries> the library picker, <break> a line break, <match> the all/any menu; keep <scope>, <libraries>, <break> and <match> once each and empty. {rules}: yes when the row has rules (adds 'that match … of these:'), otherwise no. {count}: how many libraries are picked.",
+    "description": "Web: rule builder, sentence of controls when the library picker shows picked library names, e.g. 'Show movies from the Movies, 4K libraries'. Every word sits in a <w> tag; <scope> is the kind-of-titles menu, <libraries> the library picker, <break> a line break, <match> the all/any menu; keep <scope>, <libraries>, <break> and <match> once each and empty. {rules}: yes when the row has rules (adds 'that match … of these:'), otherwise no. {amount}: \"exactlyOne\" when exactly one library is picked, \"exactlyTwo\" when exactly two, otherwise \"other\".",
     "x-platforms": [
       "web"
     ],
     "placeholders": {
-      "count": {
-        "type": "int"
+      "amount": {
+        "type": "String"
       },
       "rules": {
         "type": "String"
@@ -141644,15 +141644,15 @@
       }
     }
   },
-  "web.home.rows.deleteMany.description": "{count, plural, one {The row goes away from {page} for everyone. If Silo made a collection just for one of them, it removes that collection too when nothing else uses it.} other {The rows go away from {page} for everyone. If Silo made a collection just for one of them, it removes that collection too when nothing else uses it.}}",
+  "web.home.rows.deleteMany.description": "{amount, select, exactlyOne {The row goes away from {page} for everyone. If Silo made a collection just for one of them, it removes that collection too when nothing else uses it.} exactlyTwo {The rows go away from {page} for everyone. If Silo made a collection just for one of them, it removes that collection too when nothing else uses it.} other {The rows go away from {page} for everyone. If Silo made a collection just for one of them, it removes that collection too when nothing else uses it.}}",
   "@web.home.rows.deleteMany.description": {
-    "description": "Web: text under the title of the dialog that deletes the rows picked in select mode. {count}: how many rows. {page}: the page's name, such as Home or a library name.",
+    "description": "Web: text under the title of the dialog that deletes the rows picked in select mode. {amount}: \"exactlyOne\" when exactly one row is picked, \"exactlyTwo\" when exactly two, otherwise \"other\". {page}: the page's name, such as Home or a library name.",
     "x-platforms": [
       "web"
     ],
     "placeholders": {
-      "count": {
-        "type": "int"
+      "amount": {
+        "type": "String"
       },
       "page": {
         "type": "String"
