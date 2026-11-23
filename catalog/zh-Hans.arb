@@ -12194,7 +12194,7 @@
   "web.admin.settings.playback.markers.storageStored": "保存到媒体库",
   "web.admin.settings.playback.pausedPlayback.group": "暂停的播放",
   "web.admin.settings.playback.pausedPlayback.timeout": "暂停多久后结束播放",
-  "web.admin.settings.playback.pausedPlayback.timeoutDescription": "0到1440。在Silo应用中暂停达到此时长的视频将被结束，并释放其串流和所有转码；再次播放时会从同一位置继续。一起看、投屏和有声书不受影响。设为0则从不结束暂停的播放。",
+  "web.admin.settings.playback.pausedPlayback.timeoutDescription": "0到1440。在Silo应用中暂停达到此时长的视频将被结束，并释放其串流和所有转码；再次播放时会从同一位置继续。一起看、投屏和有声书不受影响。设为0则关闭此功能。",
   "web.admin.settings.playback.previews.chapterExecution": "章节缩略图生成位置",
   "web.admin.settings.playback.previews.chapterWorkers": "章节缩略图工作线程",
   "web.admin.settings.playback.previews.chapterWorkersDescription": "Silo同时从多少个文件提取章节缩略图。另有一个工作线程只处理正在播放的影片，这样它们不会在队列中等待。",

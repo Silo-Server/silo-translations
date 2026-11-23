@@ -12194,7 +12194,7 @@
   "web.admin.settings.playback.markers.storageStored": "Запазване в библиотеката",
   "web.admin.settings.playback.pausedPlayback.group": "Възпроизвеждане на пауза",
   "web.admin.settings.playback.pausedPlayback.timeout": "Прекратяване на възпроизвеждане на пауза след",
-  "web.admin.settings.playback.pausedPlayback.timeoutDescription": "От 0 до 1440. Прекратява видео, което е било на пауза толкова дълго в приложение на Silo, и освобождава потока му и евентуалното транскодиране; при повторно възпроизвеждане то продължава от същото място. Съвместното гледане, предаването към други устройства и аудиокнигите не се засягат. При 0 възпроизвеждането на пауза никога не се прекратява.",
+  "web.admin.settings.playback.pausedPlayback.timeoutDescription": "От 0 до 1440. Прекратява видео, което е било на пауза толкова дълго в приложение на Silo, и освобождава потока му и евентуалното транскодиране; при повторно възпроизвеждане то продължава от същото място. Не се засягат съвместното гледане, предаването към други устройства и аудиокнигите. При 0 тази функция е изключена.",
   "web.admin.settings.playback.previews.chapterExecution": "Създаване на миниатюри на главите на",
   "web.admin.settings.playback.previews.chapterWorkers": "Worker процеси за миниатюри на главите",
   "web.admin.settings.playback.previews.chapterWorkersDescription": "От колко файла Silo извлича едновременно миниатюри на главите. Още един worker процес обработва само заглавията, които се възпроизвеждат, за да не чакат зад опашката.",
