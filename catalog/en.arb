@@ -14807,6 +14807,10 @@
   "@error.playback_session_ended": {
     "description": "Error message shown when the server answers with the v2 problem type `playback_session_ended` (server title: \"Playback session ended\"). Clients show it instead of the server's English detail in a translated interface, so it must make sense on its own, without the request's specifics."
   },
+  "error.playback_session_paused_timeout": "Playback stopped because it was paused for too long. Start playing again.",
+  "@error.playback_session_paused_timeout": {
+    "description": "Error message shown when the server answers with the v2 problem type `playback_session_paused_timeout` (server title: \"Playback session paused too long\"): the server ended a playback session that stayed paused longer than the administrator allows. Clients show it instead of the server's English detail in a translated interface, so it must make sense on its own, without the request's specifics."
+  },
   "error.playback_transport_superseded": "This stream was replaced. Playback continues on the current one.",
   "@error.playback_transport_superseded": {
     "description": "Error message shown when the server answers with the v2 problem type `playback_transport_superseded` (server title: \"Playback transport superseded\"): a media request came from a playlist that a playback change (such as a new subtitle or quality) replaced, while the playback session goes on. Clients show it instead of the server's English detail in a translated interface, so it must make sense on its own, without the request's specifics."
@@ -24073,6 +24077,22 @@
   "player.notice.liveSubtitlesPreparingTitle": "Preparing subtitles",
   "@player.notice.liveSubtitlesPreparingTitle": {
     "description": "Apple iOS/tvOS/macOS: title of the video player notice while AI subtitles for the current scene are being generated and playback waits.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "player.notice.pausedTimeout": "Playback stopped because it was paused for too long.",
+  "@player.notice.pausedTimeout": {
+    "description": "Video player notice before the player closes because the server ended a playback session that stayed paused longer than the administrator allows. The viewer's position is kept, so playing again continues from there.",
+    "x-platforms": [
+      "apple",
+      "android",
+      "roku"
+    ]
+  },
+  "player.notice.pausedTimeoutTitle": "Paused too long",
+  "@player.notice.pausedTimeoutTitle": {
+    "description": "Apple iOS/tvOS/macOS: title of the brief video player notice before the player closes because the server ended a playback session that stayed paused longer than the administrator allows.",
     "x-platforms": [
       "apple"
     ]
@@ -102592,6 +102612,27 @@
       "web"
     ]
   },
+  "web.admin.settings.playback.pausedPlayback.group": "Paused playback",
+  "@web.admin.settings.playback.pausedPlayback.group": {
+    "description": "Web admin, Playback settings page: heading of the group about how long a paused video may keep its playback session.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.playback.pausedPlayback.timeout": "End paused playback after",
+  "@web.admin.settings.playback.pausedPlayback.timeout": {
+    "description": "Web admin, Playback settings page: how many minutes a video may stay paused before the server ends its playback session; \"minutes\" follows the field.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.playback.pausedPlayback.timeoutDescription": "0 to 1440. Ends a video paused this long in a Silo app, freeing its stream and any transcode; playing it again continues from the same spot. Watch Together, casting and audiobooks are not affected. 0 never ends paused playback.",
+  "@web.admin.settings.playback.pausedPlayback.timeoutDescription": {
+    "description": "Web admin, Playback settings page: help under \"End paused playback after\"; the allowed range in minutes, what ending a paused video does, and what 0 means.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.settings.playback.previews.chapterExecution": "Generate chapter thumbnails on",
   "@web.admin.settings.playback.previews.chapterExecution": {
     "description": "Web admin, Playback settings page, Preview images group: label of the select that chooses where chapter thumbnails are made.",
@@ -103062,6 +103103,13 @@
   "web.admin.settings.playback.unitDays": "days",
   "@web.admin.settings.playback.unitDays": {
     "description": "Web admin, Playback settings page: unit shown after a number field measured in days.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.playback.unitMinutes": "minutes",
+  "@web.admin.settings.playback.unitMinutes": {
+    "description": "Web admin, Playback settings page: unit shown after a number field measured in minutes.",
     "x-platforms": [
       "web"
     ]
@@ -108891,6 +108939,13 @@
       "web"
     ]
   },
+  "web.admin.settings.search.playback.setting.endPausedPlaybackAfter": "End paused playback after (minutes)",
+  "@web.admin.settings.search.playback.setting.endPausedPlaybackAfter": {
+    "description": "Web admin, settings search: a group heading or setting on the Playback settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.settings.search.playback.setting.ffmpegPath": "FFmpeg path",
   "@web.admin.settings.search.playback.setting.ffmpegPath": {
     "description": "Web admin, settings search: a group heading or setting on the Playback settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
@@ -108956,6 +109011,13 @@
   },
   "web.admin.settings.search.playback.setting.markerSource": "Marker source",
   "@web.admin.settings.search.playback.setting.markerSource": {
+    "description": "Web admin, settings search: a group heading or setting on the Playback settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.search.playback.setting.pausedPlayback": "Paused playback",
+  "@web.admin.settings.search.playback.setting.pausedPlayback": {
     "description": "Web admin, settings search: a group heading or setting on the Playback settings page, as the admin search indexes it and lists it under a matching result. Use the wording the page itself shows.",
     "x-platforms": [
       "web"
@@ -152038,6 +152100,13 @@
   "web.player.session.endedByAdmin": "An administrator ended this playback session.",
   "@web.player.session.endedByAdmin": {
     "description": "Web player: notification shown when an administrator stops this playback and the player closes.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.player.session.endedPausedTimeout": "Playback stopped because it was paused for too long.",
+  "@web.player.session.endedPausedTimeout": {
+    "description": "Web player: notification shown when the server ends this playback because it stayed paused longer than the administrator allows, and the player closes.",
     "x-platforms": [
       "web"
     ]
