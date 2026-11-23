@@ -9,7 +9,7 @@ export interface GenInput {
   /** Valid English entries in en.arb order. */
   entries: SourceEntry[];
   english: Map<string, Analysis>;
-  /** Valid translations: tag -> key -> analysis. */
+  /** Valid translations, right-to-left ones with their Latin names marked (bidi.ts): tag -> key -> analysis. */
   translations: Map<string, Map<string, Analysis>>;
   /** Pseudo-locale messages: tag -> key -> analysis (web). */
   pseudo: Map<string, Map<string, Analysis>>;

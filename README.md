@@ -59,6 +59,11 @@ outputs write them as `\uXXXX`, and Android as the `\uXXXX` escapes AAPT decodes
 app reads are unchanged. Roku's charsets leave them out, since they draw nothing. `make check`
 fails if a generated file holds one literally.
 
+In right-to-left languages the generator adds a left-to-right mark (U+200E) at each edge of a
+Latin name that isn't a letter, so `HDR10+`, `#PIN`, `/activate` and `.json` keep their symbols
+on the correct side (`tools/gen/bidi.ts`). Translations don't need to add marks for this. Text
+inside `<code>`, such as a command or a path, is left as written for the client to lay out.
+
 `<dir>/.silo-translations-out` holds the version the files were generated as: the release
 version, or `local-<commit>` (with `-dirty` when the catalog or tools have uncommitted changes).
 A language file holds only the keys translated in that language; clients fall back to
