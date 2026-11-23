@@ -115318,7 +115318,7 @@
       "web"
     ]
   },
-  "web.admin.tasks.task.database_maintenance.description": "Prunes expired activity and policy logs, task history, autoscan events, login sessions, device sign-in requests, OAuth sign-in flows, search index events, and notifications, and prepares upcoming log partitions",
+  "web.admin.tasks.task.database_maintenance.description": "Prunes expired activity and policy logs, task history, autoscan events, login sessions, device sign-in requests, OAuth sign-in flows, search index events, and notifications, prepares upcoming log partitions, and refreshes catalog table statistics",
   "@web.admin.tasks.task.database_maintenance.description": {
     "description": "Web admin, task detail page: description of the scheduled task with id `database_maintenance`. Shown only when the interface language has it; otherwise the server's English description.",
     "x-platforms": [
@@ -115538,6 +115538,13 @@
   "web.admin.tasks.task.refresh_metadata.name": "Refresh Metadata",
   "@web.admin.tasks.task.refresh_metadata.name": {
     "description": "Web admin, Tasks page and Server activity: name of the scheduled task with id `refresh_metadata`. Shown only when the interface language has it; otherwise the server's English name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.tasks.task.refresh_planner_statistics.name": "Refresh Planner Statistics",
+  "@web.admin.tasks.task.refresh_planner_statistics.name": {
+    "description": "Web admin, task detail page history: name of the `refresh_planner_statistics` step of the scheduled task with id `database_maintenance`, listed when that step fails. It refreshes the database's query planner statistics. Shown only when the interface language has it; otherwise the server's English name.",
     "x-platforms": [
       "web"
     ]
