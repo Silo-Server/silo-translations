@@ -23195,6 +23195,12 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "servers.manage.renameRemoveHint": {
+    "source": "17bd7c21a4ff779b",
+    "value": "2040a63e9de40148",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "servers.manage.savedHeader": {
     "source": "e64c75b4c1fd9ea1",
     "value": "04bee2ef977afbf5",
@@ -23273,6 +23279,24 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "servers.rename.action": {
+    "source": "7e1dac0d071c4376",
+    "value": "ab7b35fc9eaed735",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "servers.rename.localNote": {
+    "source": "a6f4a85bc8ea6595",
+    "value": "c9eb35bed4c35e43",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "servers.rename.localNoteNamed": {
+    "source": "1ae31060158c1ad7",
+    "value": "640af47b3b1a5d30",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "servers.rename.message": {
     "source": "af7b50f33edb3f09",
     "value": "a89cee7aaf1ad41f",
@@ -23285,15 +23309,63 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "servers.rename.placeholder": {
+    "source": "f36206c4d4ba7e42",
+    "value": "b86eeaba877c7f98",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "servers.rename.promptTitle": {
+    "source": "ac79f58dae70a6dc",
+    "value": "49f2c084e1b572ed",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "servers.rename.reset": {
     "source": "863a25c05fcf21fe",
     "value": "93beb1adadf4b68a",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "servers.rename.saveFailed": {
+    "source": "160cab5a5af4eb64",
+    "value": "c7405717aa6909f4",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "servers.rename.syncNote": {
+    "source": "c9b6d619b8bdf723",
+    "value": "4f52a6bb0198495e",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "servers.rename.syncNoteNamed": {
+    "source": "f9a131e95bbd5c1c",
+    "value": "16810b94868cef65",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "servers.rename.title": {
     "source": "773a60442ea5c805",
     "value": "49f2c084e1b572ed",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "servers.rename.useServerName": {
+    "source": "9bdf8dfeece12390",
+    "value": "c20939aea794e363",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "servers.renameAudio": {
+    "source": "176cf9f3722e0ad2",
+    "value": "9af684aeaf7e6af4",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "servers.row.currentHint": {
+    "source": "0d2e1010e547746a",
+    "value": "05874e0fb92b8709",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -23306,6 +23378,12 @@
   "servers.row.hintSwitch": {
     "source": "6d060ebc4f937fec",
     "value": "e29db501196270a5",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "servers.row.switchHint": {
+    "source": "04d2d954cd5c44b6",
+    "value": "de91bef0ccf31ae3",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -23669,15 +23747,33 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "settings.activeServer.name": {
+    "source": "4e8d2a287962f65a",
+    "value": "8f3d3f1d0295148a",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "settings.activeServer.notConfigured": {
     "source": "5f4ed018abc0c327",
     "value": "23e212ce3da5a4e0",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "settings.activeServer.renameHint": {
+    "source": "e96226c1841b41d2",
+    "value": "cc823e7ca626acb2",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "settings.activeServer.server": {
     "source": "8b66017628fb6610",
     "value": "4cbd38aa1192e462",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "settings.activeServer.serverName": {
+    "source": "d0e105f319a6a95d",
+    "value": "b86eeaba877c7f98",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -73110,8 +73206,8 @@
     "model": "claude-opus-5-5"
   },
   "web.admin.settings.playback.pausedPlayback.timeoutDescription": {
-    "source": "43f48ec009a73ffb",
-    "value": "a760ddc26268f3e4",
+    "source": "868b0dfc8f9e8bb9",
+    "value": "46742e5ac4b7b343",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -98894,6 +98990,84 @@
   "web.detail.page.unsupportedType": {
     "source": "ec5f1331b5b008c0",
     "value": "d2ae6154b65d11c3",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.detail.rating.clear": {
+    "source": "d110a4e15f6e376e",
+    "value": "8caa29237569684b",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.detail.rating.label": {
+    "source": "4e195b7abb0b0a87",
+    "value": "3122c003d860137e",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.detail.rating.labelSeries": {
+    "source": "aa1586d07c10039a",
+    "value": "fbf25568c3d682e8",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.detail.rating.none": {
+    "source": "d0c7a8195461e0a8",
+    "value": "42316a887f7ac9ec",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.detail.rating.rate": {
+    "source": "3798bfa40a989b8e",
+    "value": "952d011506571947",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.detail.rating.rateThis": {
+    "source": "3732f29c4dd92ab2",
+    "value": "bba34a1523c07cf2",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.detail.rating.rateThisSeries": {
+    "source": "14d4454b966fcd3b",
+    "value": "fa2f0c9b36f2bdb8",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.detail.rating.removed": {
+    "source": "0aefb8bc1f0879f7",
+    "value": "ed84c0b78a7256be",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.detail.rating.undo": {
+    "source": "805774c075cb19f5",
+    "value": "07a1fc2ce70d24d8",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.detail.rating.value": {
+    "source": "10e14263eab32c3f",
+    "value": "c4a5525c8a6bb5b0",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.detail.rating.you": {
+    "source": "e16d21764b43f74e",
+    "value": "67a95da04eab9ad0",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.detail.rating.yours": {
+    "source": "efa8406378726e91",
+    "value": "0b9a0bb8c3f555f6",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.detail.rating.yoursSeries": {
+    "source": "2afe3c901c4bbf3d",
+    "value": "971939b22a4c1bcc",
     "by": "opus",
     "model": "claude-opus-5-5"
   },

@@ -31898,6 +31898,13 @@
       "apple"
     ]
   },
+  "servers.manage.renameRemoveHint": "Select the pencil to rename a saved server, or the trash icon to remove it.",
+  "@servers.manage.renameRemoveHint": {
+    "description": "Apple TV Manage Servers: note at the bottom explaining that the pencil button beside a saved server renames it and the trash button removes it.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "servers.manage.savedHeader": "SAVED SERVERS",
   "@servers.manage.savedHeader": {
     "description": "Apple TV Manage Servers: uppercase section heading over the saved servers. Keep it uppercase where the script has case.",
@@ -32022,6 +32029,32 @@
       "apple"
     ]
   },
+  "servers.rename.action": "Rename",
+  "@servers.rename.action": {
+    "description": "Apple Servers list (iPhone, iPad, Mac): swipe action and context menu item on a saved server that opens the prompt to rename it.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "servers.rename.localNote": "Only you see this name. It stays on this Mac.",
+  "@servers.rename.localNote": {
+    "description": "Apple (Mac): message of the rename-server prompt when the server doesn't report a name of its own. \"This name\" is the name the user types; the Mac keeps it locally and does not sync it.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "servers.rename.localNoteNamed": "The server's own name is {server}. The name you give it is visible only to you and stays on this Mac.",
+  "@servers.rename.localNoteNamed": {
+    "description": "Apple (Mac): message of the rename-server prompt when the server reports a name of its own. {server}: the name the server reports. \"The name you give it\" is the name the user types; the Mac keeps it locally and does not sync it.",
+    "placeholders": {
+      "server": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "servers.rename.message": "Override the server-provided name with a label just for this device.",
   "@servers.rename.message": {
     "description": "Android phone: explanation in the rename-server dialog in Settings → Accounts.",
@@ -32036,6 +32069,20 @@
       "android"
     ]
   },
+  "servers.rename.placeholder": "Server name",
+  "@servers.rename.placeholder": {
+    "description": "Apple: placeholder in the empty name field of the rename-server prompt, shown when the server doesn't report a name of its own.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "servers.rename.promptTitle": "Rename Server",
+  "@servers.rename.promptTitle": {
+    "description": "Apple: title of the prompt that renames a saved server (an alert on iPhone, iPad and Mac; a dialog on Apple TV).",
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "servers.rename.reset": "Reset to server-provided name",
   "@servers.rename.reset": {
     "description": "Android phone: button in the rename-server dialog that drops the custom name and goes back to the name the server gives itself. Shown only when a custom name is set.",
@@ -32043,11 +32090,63 @@
       "android"
     ]
   },
+  "servers.rename.saveFailed": "Silo couldn't save the server name. Please try again.",
+  "@servers.rename.saveFailed": {
+    "description": "Apple: error shown when the name typed in the rename-server prompt could not be saved.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "servers.rename.syncNote": "Only you see this name. It syncs to your iPhone, iPad and Apple TV that use the same iCloud account.",
+  "@servers.rename.syncNote": {
+    "description": "Apple (iPhone, iPad and Apple TV): message of the rename-server prompt when the server doesn't report a name of its own. \"This name\" is the name the user types; it is kept in their iCloud account and shown only on their own iPhone, iPad and Apple TV. The Mac app keeps its names on the Mac and does not sync them.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "servers.rename.syncNoteNamed": "The server's own name is {server}. The name you give it is visible only to you and syncs to your iPhone, iPad and Apple TV that use the same iCloud account.",
+  "@servers.rename.syncNoteNamed": {
+    "description": "Apple (iPhone, iPad and Apple TV): message of the rename-server prompt when the server reports a name of its own. {server}: the name the server reports. \"The name you give it\" is the name the user types; it is kept in their iCloud account and shown only on their own iPhone, iPad and Apple TV. The Mac app keeps its names on the Mac and does not sync them.",
+    "placeholders": {
+      "server": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "servers.rename.title": "Rename server",
   "@servers.rename.title": {
     "description": "Android phone: title of the dialog that renames a saved server in Settings → Accounts.",
     "x-platforms": [
       "android"
+    ]
+  },
+  "servers.rename.useServerName": "Use Server Name",
+  "@servers.rename.useServerName": {
+    "description": "Apple: button in the rename-server prompt that removes the user's name for the server and goes back to the name the server reports. Shown only when the user has named the server.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "servers.renameAudio": "Rename {server}",
+  "@servers.renameAudio": {
+    "description": "Apple TV Manage Servers: VoiceOver label for the pencil button beside a saved server, which renames it. {server}: the name shown for that server.",
+    "placeholders": {
+      "server": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "servers.row.currentHint": "Current server",
+  "@servers.row.currentHint": {
+    "description": "Apple TV Manage Servers: VoiceOver hint on the server in use. No final full stop in English.",
+    "x-platforms": [
+      "apple"
     ]
   },
   "servers.row.hintCurrent": "Current server. Server names are managed by the server administrator",
@@ -32060,6 +32159,13 @@
   "servers.row.hintSwitch": "Switch to this server. Server names are managed by the server administrator",
   "@servers.row.hintSwitch": {
     "description": "Apple TV Manage Servers: VoiceOver hint on another saved server; choosing it switches to it. Explains that its name comes from the server's administrator. No final full stop in English.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "servers.row.switchHint": "Switch to this server",
+  "@servers.row.switchHint": {
+    "description": "Apple TV Manage Servers: VoiceOver hint on another saved server; choosing it switches to it. No final full stop in English.",
     "x-platforms": [
       "apple"
     ]
@@ -32570,6 +32676,13 @@
       "apple"
     ]
   },
+  "settings.activeServer.name": "Name",
+  "@settings.activeServer.name": {
+    "description": "Apple TV Settings > Server > Active Server: label of the row showing the connected server's name as the user sees it (the name they gave it, else the server's own name). Selecting the row opens the prompt to rename the server.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "settings.activeServer.notConfigured": "Not configured",
   "@settings.activeServer.notConfigured": {
     "description": "Value of the Server row when no server is connected, in Settings > Server > Active Server on Android TV and Apple.",
@@ -32578,12 +32691,26 @@
       "android"
     ]
   },
+  "settings.activeServer.renameHint": "Rename this server",
+  "@settings.activeServer.renameHint": {
+    "description": "Apple TV Settings > Server > Active Server: VoiceOver hint on the Name row; selecting it opens the prompt to rename the server. No final full stop in English.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "settings.activeServer.server": "Server",
   "@settings.activeServer.server": {
     "description": "Label of the row showing the connected server's name, in Settings > Server > Active Server on Android TV and Apple TV.",
     "x-platforms": [
       "apple",
       "android"
+    ]
+  },
+  "settings.activeServer.serverName": "Server Name",
+  "@settings.activeServer.serverName": {
+    "description": "Apple TV Settings > Server > Active Server: label of the row showing the name the server reports for itself. Shown only when the user has given the server a different name.",
+    "x-platforms": [
+      "apple"
     ]
   },
   "settings.activeServer.title": "Active Server",
@@ -102677,7 +102804,7 @@
       "web"
     ]
   },
-  "web.admin.settings.playback.pausedPlayback.timeoutDescription": "0 to 1440. Ends a video paused this long in a Silo app, freeing its stream and any transcode; playing it again continues from the same spot. Watch Together, casting and audiobooks are not affected. 0 never ends paused playback.",
+  "web.admin.settings.playback.pausedPlayback.timeoutDescription": "0 to 1440. Ends a video paused this long in a Silo app, freeing its stream and any transcode; playing it again continues from the same spot. Watch Together, casting and audiobooks are not affected. 0 turns this off.",
   "@web.admin.settings.playback.pausedPlayback.timeoutDescription": {
     "description": "Web admin, Playback settings page: help under \"End paused playback after\"; the allowed range in minutes, what ending a paused video does, and what 0 means.",
     "x-platforms": [
@@ -138385,6 +138512,112 @@
         "type": "String"
       }
     }
+  },
+  "web.detail.rating.clear": "Clear",
+  "@web.detail.rating.clear": {
+    "description": "Web: button in the open row of the rating control on a movie or series page, which sits after the external scores (IMDb, TMDB) and opens into five stars, Clear and Done when chosen; removes the viewer's own rating and closes the row.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.detail.rating.label": "Your rating",
+  "@web.detail.rating.label": {
+    "description": "Web: screen-reader label of the five-star slider in the open row of the rating control on a movie or series page, which sits after the external scores (IMDb, TMDB) and opens into five stars, Clear and Done when chosen on a movie page.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.detail.rating.labelSeries": "Your series rating",
+  "@web.detail.rating.labelSeries": {
+    "description": "Web: screen-reader label of the five-star slider in the open row of the rating control on a movie or series page, which sits after the external scores (IMDb, TMDB) and opens into five stars, Clear and Done when chosen on a series page. The rating is for the whole series, not an episode.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.detail.rating.none": "No rating",
+  "@web.detail.rating.none": {
+    "description": "Web: spoken value of the five-star slider in the open row of the rating control on a movie or series page, which sits after the external scores (IMDb, TMDB) and opens into five stars, Clear and Done when chosen when no stars are chosen.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.detail.rating.rate": "Rate",
+  "@web.detail.rating.rate": {
+    "description": "Web: label of the chip in the rating control on a movie or series page, which sits after the external scores (IMDb, TMDB) and opens into five stars, Clear and Done when chosen, shown when the viewer has not rated the title. A verb: give this title your own rating.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.detail.rating.rateThis": "Rate this",
+  "@web.detail.rating.rateThis": {
+    "description": "Web: screen-reader label of the chip in the rating control on a movie or series page, which sits after the external scores (IMDb, TMDB) and opens into five stars, Clear and Done when chosen on a movie page when the viewer has not rated it.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.detail.rating.rateThisSeries": "Rate the series",
+  "@web.detail.rating.rateThisSeries": {
+    "description": "Web: screen-reader label of the chip in the rating control on a movie or series page, which sits after the external scores (IMDb, TMDB) and opens into five stars, Clear and Done when chosen on a series page when the viewer has not rated the series. The rating is for the whole series, not an episode.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.detail.rating.removed": "Rating removed",
+  "@web.detail.rating.removed": {
+    "description": "Web: message of the toast shown after the viewer removed their own rating of a movie or series on its page, shown with an Undo button.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.detail.rating.undo": "Undo",
+  "@web.detail.rating.undo": {
+    "description": "Web: button on the toast shown after the viewer removed their own rating of a movie or series; puts the rating back.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.detail.rating.value": "{value} of 5",
+  "@web.detail.rating.value": {
+    "description": "Web: spoken value of the five-star slider in the open row of the rating control on a movie or series page, which sits after the external scores (IMDb, TMDB) and opens into five stars, Clear and Done when chosen. {value}: the rating in stars, such as 4 or 4.5, already formatted with the locale's decimal separator. 5 is the number of stars.",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.detail.rating.you": "You",
+  "@web.detail.rating.you": {
+    "description": "Web: label before a star and the viewer's own score (You ★ 4.5) on the chip in the rating control on a movie or series page, which sits after the external scores (IMDb, TMDB) and opens into five stars, Clear and Done when chosen, shown once they have rated the title.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.detail.rating.yours": "Your rating, {value} of 5",
+  "@web.detail.rating.yours": {
+    "description": "Web: screen-reader label of the chip in the rating control on a movie or series page, which sits after the external scores (IMDb, TMDB) and opens into five stars, Clear and Done when chosen on a movie page once the viewer has rated it. {value}: the viewer's rating in stars, such as 4 or 4.5, already formatted with the locale's decimal separator. 5 is the number of stars.",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.detail.rating.yoursSeries": "Your series rating, {value} of 5",
+  "@web.detail.rating.yoursSeries": {
+    "description": "Web: screen-reader label of the chip in the rating control on a movie or series page, which sits after the external scores (IMDb, TMDB) and opens into five stars, Clear and Done when chosen on a series page once the viewer has rated the series. {value}: the viewer's rating in stars, such as 4 or 4.5, already formatted with the locale's decimal separator. 5 is the number of stars.",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
   },
   "web.detail.request.cancelRequest": "Cancel request",
   "@web.detail.request.cancelRequest": {
