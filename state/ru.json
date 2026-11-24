@@ -49865,6 +49865,12 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.admin.common.title.header.insights": {
+    "source": "5131d522c5de84b2",
+    "value": "4602c9bfeac5094a",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.admin.common.title.header.libraries": {
     "source": "44e1e1d89693666b",
     "value": "686c5d63653c9e9b",
@@ -50054,6 +50060,12 @@
   "web.admin.common.title.tab.historyImport": {
     "source": "6397fb024f747b00",
     "value": "ef78198e96b4fbb8",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.common.title.tab.insights": {
+    "source": "ae41315482ddd8b8",
+    "value": "8d364f58c944c06d",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -51944,6 +51956,12 @@
   "web.admin.dashboard.widgets.nowPlaying.viewAll": {
     "source": "c712e97dc1d5ffa6",
     "value": "b168b4825915f022",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.dashboard.widgets.openInsights": {
+    "source": "20e85379e8c9ba11",
+    "value": "3b4f63bf4fd35e3a",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -57203,6 +57221,12 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.admin.history.column.client": {
+    "source": "457a9763bd3fcd29",
+    "value": "3e622aecbf306ce2",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.admin.history.column.ended": {
     "source": "1c205030aa980b69",
     "value": "b459ff8f254e7194",
@@ -57251,6 +57275,264 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.admin.history.detail.action.ffmpegLogs": {
+    "source": "95c20c622c7428b4",
+    "value": "8721efcb33cd9961",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.action.openMedia": {
+    "source": "8fb4e722efc20a8a",
+    "value": "6ee247bf86698877",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.action.sessionLogs": {
+    "source": "3d0ea7e9835e43fa",
+    "value": "7b2332bf4781a5ab",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.column.delivered": {
+    "source": "14e2d5dd25f8657e",
+    "value": "a1623eb37765fb41",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.column.source": {
+    "source": "37d0a93aabdf624b",
+    "value": "56e46960c10438ad",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.column.stream": {
+    "source": "c1cf97fe2bdc60ad",
+    "value": "3ecf2ec6a40c9add",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.field.account": {
+    "source": "5cbf65a205ee178a",
+    "value": "aecc997d3bc725dd",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.field.client": {
+    "source": "2a31c497b53f8a8c",
+    "value": "3e622aecbf306ce2",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.field.clientIp": {
+    "source": "41be52a6fe36ff7b",
+    "value": "9b32ba2f7740e3d6",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.field.endPosition": {
+    "source": "2334647721c5937c",
+    "value": "c1787f19a0b85c87",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.field.endReason": {
+    "source": "294241d0f39aec46",
+    "value": "4c93949dc519aa80",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.field.ended": {
+    "source": "4211637b0d659b02",
+    "value": "a5787a1e6871fa90",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.field.library": {
+    "source": "2f5ad0b4affe6d61",
+    "value": "0a20ddc9928f61aa",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.field.network": {
+    "source": "4f33808faf21c11c",
+    "value": "8006cb7a49689c48",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.field.paused": {
+    "source": "579dbed3d0b1f00e",
+    "value": "159d39471b1d452c",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.field.platform": {
+    "source": "477010cf51c3ca7b",
+    "value": "18f13216456872dc",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.field.profile": {
+    "source": "f44822d18e375454",
+    "value": "359497aff53e7d5d",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.field.route": {
+    "source": "b9d95efc1103f0c4",
+    "value": "9c2c7eeb439ec648",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.field.sessionId": {
+    "source": "bc124ee41c38bbcd",
+    "value": "09a7a2d9728a73bd",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.field.started": {
+    "source": "726f3ff0dd5ede71",
+    "value": "4af5d2efadd768d1",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.field.watched": {
+    "source": "6547a8af6cbcd7be",
+    "value": "2df0b292bbd2d3f7",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.keyboardHint": {
+    "source": "66e8cfa009ba6f66",
+    "value": "ace4e707ad8d9ced",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.loadFailed": {
+    "source": "04f2ad3ea6426a7a",
+    "value": "ccabd383f6e1c480",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.loading": {
+    "source": "abc3cf9f9379c012",
+    "value": "6e2130673f570da0",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.nextSession": {
+    "source": "d5a9920ddac76d6a",
+    "value": "3f8c1d2a63fb2d20",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.notFound": {
+    "source": "22fba25ff7d3665b",
+    "value": "a87f20a02863bcc2",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.preUpgradeNotice": {
+    "source": "0e2d11f2f0e4a423",
+    "value": "8f44830dad137569",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.previousSession": {
+    "source": "cf91d3c41997991a",
+    "value": "30e59f02737e3cf6",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.row.audio": {
+    "source": "49be7d6f5cd87861",
+    "value": "1718e90d59c50436",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.row.bitrate": {
+    "source": "56bc95893e17e16e",
+    "value": "2d4b7f462d5d1977",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.row.container": {
+    "source": "82664d047a330c6f",
+    "value": "b0cedecc718e9505",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.row.subtitles": {
+    "source": "ce63a5144c44f5b8",
+    "value": "bf52abca49a2bab9",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.row.video": {
+    "source": "4fb8b7a2f3601eae",
+    "value": "f92fafb4c00a9f5c",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.section.clientRoute": {
+    "source": "4537293719d825ab",
+    "value": "f72be61ddf536b9a",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.section.reasons": {
+    "source": "9c0ce397943385c5",
+    "value": "4ed31874dad83a73",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.section.streams": {
+    "source": "2daafba31cbc07f5",
+    "value": "9067a38773163678",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.section.timing": {
+    "source": "cf96aa4ea6b54fa2",
+    "value": "723f204fc3a0ccdf",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.subtitlesBurnIn": {
+    "source": "7f34099317244a1c",
+    "value": "296cb5a6d0f52f8f",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.subtitlesEmbedded": {
+    "source": "49742a6fbe161bdd",
+    "value": "78f261fd61b71c1d",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.subtitlesHls": {
+    "source": "e2f881a4e1cf2989",
+    "value": "8357b6870007e7be",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.subtitlesNone": {
+    "source": "b7eb4436012835b6",
+    "value": "43e5ab70f691a6a6",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.subtitlesSidecar": {
+    "source": "68f89f0666fea620",
+    "value": "ea0bde3750351d15",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.detail.title": {
+    "source": "af2d4b44235b430b",
+    "value": "802528727af4b22b",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.admin.history.duration.hoursMinutes": {
     "source": "442ca566a0ff6279",
     "value": "d3ec5cae55cdbf00",
@@ -57287,9 +57569,99 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.admin.history.endReason.aborted": {
+    "source": "8b14caea22cb6e48",
+    "value": "b3ce53956234dc66",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.endReason.expired": {
+    "source": "2bcf4db6a8121e15",
+    "value": "d5cd524fe2d22c7a",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.endReason.replaced": {
+    "source": "e32e4a8964e71d68",
+    "value": "c7ad699b74581c6e",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.endReason.stopped": {
+    "source": "20ac0d495c9e8532",
+    "value": "3028fa0907c0ffb8",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.endReason.terminated": {
+    "source": "63ac3b62ab723f45",
+    "value": "4b1bc00d4ece70ef",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.filter.activeChip.client": {
+    "source": "93994387f2810050",
+    "value": "4ad5fb23de2e9457",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.filter.activeChip.codec": {
+    "source": "2dc22f3d6239129a",
+    "value": "3d1a6442dd1a87d1",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.filter.activeChip.dateRange": {
+    "source": "63fdaa94e9e811d3",
+    "value": "6c713c63468c1cc7",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.filter.activeChip.fromDate": {
+    "source": "f29603904639cf51",
+    "value": "417d889d23b23dee",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.filter.activeChip.platform": {
+    "source": "dabdfbf5d3096e2a",
+    "value": "6d77c655f599bba0",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.filter.activeChip.reason": {
+    "source": "c324c84cfd980abb",
+    "value": "30d053196cea66b2",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.filter.activeChip.toDate": {
+    "source": "cb7f0e1a656b42b1",
+    "value": "5f23ec9e5551ac1b",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.admin.history.filter.allAttempts": {
     "source": "81d119706498c931",
     "value": "0bb60613c4de3faf",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.filter.allLibraries": {
+    "source": "7b5b6ffcbb377ea1",
+    "value": "0d51a7632ea3665f",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.filter.allLocations": {
+    "source": "65ee618ce28b46b3",
+    "value": "73df2d6e70f23d95",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.filter.allMethods": {
+    "source": "02df1692871a4758",
+    "value": "66f00ac9e27759ae",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -57305,6 +57677,12 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.admin.history.filter.burnInOnly": {
+    "source": "0a5374bad018cc83",
+    "value": "3dd1f5af0a75e135",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.admin.history.filter.chooseUserFirst": {
     "source": "5b0d348ede848fe3",
     "value": "0b65ec935ac7a32c",
@@ -57317,15 +57695,39 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.admin.history.filter.locationLocal": {
+    "source": "3964507b5f7e0303",
+    "value": "bbf7909a971c4ef3",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.filter.locationRemote": {
+    "source": "ac313cb9c50336c5",
+    "value": "086d512db2aebb39",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.admin.history.filter.partial": {
     "source": "af92628a716b776f",
     "value": "b7211aba59a69c3e",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.admin.history.filter.removeChip": {
+    "source": "d5dcbaad6912b65d",
+    "value": "609aedc2e3ff78cc",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.admin.history.filter.reset": {
     "source": "7baf5fe6e1f24f68",
     "value": "407f871778d31070",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.filter.searchPlaceholder": {
+    "source": "487eb304c46baeea",
+    "value": "12d3979f5786404f",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -57365,6 +57767,12 @@
     "by": "opus",
     "model": "claude-opus-5-5"
   },
+  "web.admin.history.pagination.firstPage": {
+    "source": "d4fd034d6587f8d9",
+    "value": "2ed7cdfcca48742e",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
   "web.admin.history.pagination.next": {
     "source": "7ee4830f5dfa54ff",
     "value": "dc9450d2c273120f",
@@ -57386,6 +57794,12 @@
   "web.admin.history.pagination.range": {
     "source": "cc051ef96d819fd6",
     "value": "de35edf20ce09b5b",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.history.pagination.summary": {
+    "source": "b8b842d3d58a5553",
+    "value": "33abe681170838c2",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -58784,6 +59198,1152 @@
   "web.admin.homeRows.select.turnedOnPartial": {
     "source": "dbdef9bc375ffaf8",
     "value": "a720f3f595faeffc",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.action.liveActivity": {
+    "source": "978e141bc9c1733e",
+    "value": "e21ac64591eb1978",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.activity.heatmap.cellTooltip": {
+    "source": "675609b3b7b0efb6",
+    "value": "d4f29756ffef43ed",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.activity.heatmap.empty": {
+    "source": "90a3dcba35300705",
+    "value": "9805e0cc6b4cff02",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.activity.heatmap.less": {
+    "source": "7d21eae1b6bbbf8c",
+    "value": "039d1d9bd44e25bb",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.activity.heatmap.more": {
+    "source": "625dc10215877f17",
+    "value": "458db18cf6df783b",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.activity.heatmap.subtitle": {
+    "source": "ca79f59b82e5a623",
+    "value": "4d5378352d3cd414",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.activity.heatmap.title": {
+    "source": "ab1109073f9ebdbb",
+    "value": "ae0b49d6cee8f477",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.activity.kpi.completionDetail": {
+    "source": "ebed5f999dfbafde",
+    "value": "13d0fa78162a4f07",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.activity.kpi.completionRate": {
+    "source": "60f0438cf85be311",
+    "value": "84cc5fc0d21a9d50",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.activity.kpi.peakStreams": {
+    "source": "e9372f51fe5c6a90",
+    "value": "25477d1a63d69bcc",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.activity.kpi.peakStreamsAt": {
+    "source": "22e3b93ff2068511",
+    "value": "63f0c86f2f85b2a4",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.activity.kpi.peakStreamsNone": {
+    "source": "b7a0c754c839bbf6",
+    "value": "45026523810b9f86",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.activity.kpi.plays": {
+    "source": "8a33f457ccd6e1d9",
+    "value": "8d14e86b4cff6197",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.activity.kpi.playsBreakdown": {
+    "source": "471cff07dd447b14",
+    "value": "f174ccbb0c602f4f",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.activity.kpi.watchTime": {
+    "source": "dd79b65b2b646996",
+    "value": "2df0b292bbd2d3f7",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.activity.kpi.watchTimeMeasured": {
+    "source": "750e143f51dc2f09",
+    "value": "ca37873bf5e8e470",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.activity.peak.chartLabel": {
+    "source": "f103f51f3a1f9472",
+    "value": "3de518a8f3a1dffa",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.activity.peak.empty": {
+    "source": "8f7eede0730f4b0e",
+    "value": "274e88ac1aade36f",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.activity.peak.scopeNotice": {
+    "source": "4f7d4ef06c88e7f8",
+    "value": "2c4a5db4335ef6c0",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.activity.peak.subtitle": {
+    "source": "55738875a04f143f",
+    "value": "5a302985a410f5a9",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.activity.peak.title": {
+    "source": "edc7da6b683faa8f",
+    "value": "25477d1a63d69bcc",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.activity.volume.chartLabel": {
+    "source": "68d7b0161f95654b",
+    "value": "48c986a80d65f840",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.activity.volume.empty": {
+    "source": "8a8b1178ffdc3a5e",
+    "value": "8bf97cf27bc935ec",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.activity.volume.metricPlays": {
+    "source": "67f5d0f22c9f3090",
+    "value": "8d14e86b4cff6197",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.activity.volume.metricWatchTime": {
+    "source": "af6a98661915a566",
+    "value": "2df0b292bbd2d3f7",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.activity.volume.seriesEpisodes": {
+    "source": "856093f5503985f6",
+    "value": "ba4445be4c7ed887",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.activity.volume.seriesMovies": {
+    "source": "f199c68c06dde996",
+    "value": "b241ca97e88e0dbc",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.activity.volume.seriesOther": {
+    "source": "f22e600cfe2f946c",
+    "value": "001f75c6b3f4631a",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.activity.volume.splitMediaType": {
+    "source": "13acb18e607ad727",
+    "value": "ec4f3061c8075042",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.activity.volume.splitMethod": {
+    "source": "b824ac9e5431adde",
+    "value": "b0de4a23e618fd5d",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.activity.volume.subtitle": {
+    "source": "42d37ef1937b6db3",
+    "value": "48147ab175ebb3a2",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.activity.volume.title": {
+    "source": "d28d4b579ef751f4",
+    "value": "e7b3fe4b17e1f368",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.bandwidth.chart.apiServer": {
+    "source": "9b1c09a0c2c3137f",
+    "value": "8a4900f73835caf8",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.bandwidth.chart.empty": {
+    "source": "c021b70e10603032",
+    "value": "d84e643165a76d92",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.bandwidth.chart.metricPeak": {
+    "source": "3348cb653cc78e02",
+    "value": "d4bdc59cc0adf6de",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.bandwidth.chart.metricVolume": {
+    "source": "381a3600c91c0469",
+    "value": "808c04fe8a465914",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.bandwidth.chart.peakLabel": {
+    "source": "75ab987be6e70a44",
+    "value": "c453869b0f81548b",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.bandwidth.chart.subtitle": {
+    "source": "c3b270722a5d83b5",
+    "value": "61ff14c3caf2c89a",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.bandwidth.chart.title": {
+    "source": "e1ff377d2c8220a8",
+    "value": "312d9efcdcd97ebc",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.bandwidth.chart.viewNodes": {
+    "source": "63079a13958559c5",
+    "value": "77bdaf53c045f929",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.bandwidth.chart.viewTotal": {
+    "source": "aeef088707fe366d",
+    "value": "6913fa675844e766",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.bandwidth.chart.volumeLabel": {
+    "source": "8ea6a91a854ba4d2",
+    "value": "daa3b69cb14b243a",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.bandwidth.kpi.dailyAverage": {
+    "source": "61704ab995489534",
+    "value": "20ef88bc55e0cb9e",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.bandwidth.kpi.dailyAverageSub": {
+    "source": "282e1ef7e976921f",
+    "value": "a29effaf0249ea92",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.bandwidth.kpi.egressSplit": {
+    "source": "ad2faf4754d22456",
+    "value": "0f6598486b4c6e29",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.bandwidth.kpi.nodeSplit": {
+    "source": "cad7299b1edc139e",
+    "value": "e2094a0612f8ae9c",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.bandwidth.kpi.peakEgress": {
+    "source": "39dd5ced690b4cd2",
+    "value": "781153d693517c32",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.bandwidth.kpi.peakEgressAt": {
+    "source": "f454fdbcc2aab93f",
+    "value": "63f0c86f2f85b2a4",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.bandwidth.kpi.remoteShare": {
+    "source": "0958a979ac9e475e",
+    "value": "15193c392402eefb",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.bandwidth.kpi.remoteShareDetail": {
+    "source": "926d30e2aeb2a569",
+    "value": "35754a8ca4dc8ecb",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.bandwidth.kpi.remoteShareUnknown": {
+    "source": "6365a9a196e24785",
+    "value": "2eb5c4f0e3c1324e",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.bandwidth.kpi.totalEgress": {
+    "source": "b8bb01efce952786",
+    "value": "164dae9a9f6b9ecb",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.bandwidth.nodes.column.node": {
+    "source": "04c32425d02d036d",
+    "value": "e77a383ee52d0ecd",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.bandwidth.nodes.column.peak": {
+    "source": "831defbfd9285257",
+    "value": "d4bdc59cc0adf6de",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.bandwidth.nodes.column.share": {
+    "source": "8a7b7958c6c11809",
+    "value": "2ea560e239f5d394",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.bandwidth.nodes.column.total": {
+    "source": "e298a74009685e6f",
+    "value": "164dae9a9f6b9ecb",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.bandwidth.nodes.empty": {
+    "source": "5a5b81eb6e99a936",
+    "value": "0322eababaaac97d",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.bandwidth.nodes.title": {
+    "source": "1a63e31d0fc9323e",
+    "value": "1cd2a96941fae199",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.coverage.metricsStart": {
+    "source": "ba1fabd26fbd814f",
+    "value": "5864b27a3567ef8c",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.coverage.routeFactsNone": {
+    "source": "a1e0a457827912bd",
+    "value": "62d5434808bdbff6",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.coverage.routeFactsPartial": {
+    "source": "235bf689771c3b5d",
+    "value": "973ea698811db4ed",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.coverage.watchTimePartial": {
+    "source": "c01e2da604897d4b",
+    "value": "c27bbc94d844d03d",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.detail.action.history": {
+    "source": "0aca9716f82b4a71",
+    "value": "ef217b2b38ef7ffc",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.detail.noPlays": {
+    "source": "3b30971770afb270",
+    "value": "8bf97cf27bc935ec",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.detail.playsOverTime": {
+    "source": "3155e13d438743dd",
+    "value": "14c0745ecd3cb7e7",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.detail.viewers": {
+    "source": "5ff2c33242860f05",
+    "value": "8b1eee33a88deafc",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.detail.window": {
+    "source": "81e54dffeff0127a",
+    "value": "603aaefffcd2060b",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.burnInCodecs.empty": {
+    "source": "3a094b9cba78ef84",
+    "value": "0e9ba9be3aca67ca",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.burnInCodecs.title": {
+    "source": "109e142c6c401e81",
+    "value": "5f92f3407465bc68",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.hwAccel.empty": {
+    "source": "a6671059e9ea8316",
+    "value": "dd0d897309424d68",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.hwAccel.software": {
+    "source": "5b3c157ae5d1da76",
+    "value": "1c9be98b7ff6084e",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.hwAccel.title": {
+    "source": "542ed0d90f2f08c1",
+    "value": "571800d48ecadf50",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.hwAccel.unknown": {
+    "source": "890a8748fa7b3aa4",
+    "value": "6d8e839d9f67d4e2",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.kpi.directPlayDetail": {
+    "source": "1a55f6fdc26baa39",
+    "value": "b6298bdc9a281f6b",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.kpi.directPlayRate": {
+    "source": "663b50cf418fb774",
+    "value": "dd67ec88716b15cb",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.kpi.hdrToneMap": {
+    "source": "3ba3b59ae6c260da",
+    "value": "3bacdafb4719a060",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.kpi.hdrToneMapDetail": {
+    "source": "3158b70e53691ad6",
+    "value": "446aa7f949cec896",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.kpi.hwSplit": {
+    "source": "3522717b15958525",
+    "value": "66e2b848689d1e10",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.kpi.hwSplitDetail": {
+    "source": "17ee33e4f308e498",
+    "value": "446aa7f949cec896",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.kpi.hwSplitNone": {
+    "source": "422336383025eb32",
+    "value": "2b0fa9f43c8499ce",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.kpi.subtitleBurnIn": {
+    "source": "5c53ef1c098e54cb",
+    "value": "cb6249586b811306",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.kpi.subtitleBurnInDetail": {
+    "source": "35cf794a48feca16",
+    "value": "fcc42d72e4d7ede6",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.matrix.allSamples": {
+    "source": "b9b50292605864ac",
+    "value": "715ce644d10c94ac",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.matrix.cellTooltip": {
+    "source": "fabeaaadea4805b3",
+    "value": "83abdd28e6d08f2f",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.matrix.clientColumn": {
+    "source": "b0c87d2d5e06c319",
+    "value": "87508d6d9211ef70",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.matrix.empty": {
+    "source": "0886ef814c4b83f9",
+    "value": "85f1a50fb28428e4",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.matrix.minSessions": {
+    "source": "defce8503ab98f88",
+    "value": "432cabe7385240dc",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.matrix.subtitle": {
+    "source": "6390ca09dd90fe23",
+    "value": "9be872900369f87f",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.matrix.title": {
+    "source": "689f02197b32e6cc",
+    "value": "f151815b60fb8eb8",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.matrix.totalColumn": {
+    "source": "919748eb9c174fbf",
+    "value": "6913fa675844e766",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.reasons.empty": {
+    "source": "c3eb67a30085afe5",
+    "value": "563d6fcad8945cdc",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.reasons.subtitle": {
+    "source": "8e9c5589f86a4f41",
+    "value": "9b4fa7ee627baea5",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.reasons.title": {
+    "source": "0f76a76f0485c16c",
+    "value": "c386c5e82e8a6540",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.resolution.change": {
+    "source": "d4c0d2a07fc9bfd6",
+    "value": "0bcc686f9c37249f",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.resolution.delivered": {
+    "source": "d32cd757ad05dfda",
+    "value": "a1623eb37765fb41",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.resolution.downscaled": {
+    "source": "42c261118f986a60",
+    "value": "b8b6cd39296cd917",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.resolution.downscaledEmpty": {
+    "source": "a50cef1dbcf4f71f",
+    "value": "efc36fe97fa0817a",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.resolution.empty": {
+    "source": "42289d0fd652de12",
+    "value": "df9c401383a30c99",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.resolution.fuhd": {
+    "source": "078638012301f48b",
+    "value": "fa3a71cb430184f9",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.resolution.sd": {
+    "source": "c1aba77838a26f60",
+    "value": "495496f0156b1a6c",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.resolution.source": {
+    "source": "b7f8dc2e3b0d65eb",
+    "value": "56e46960c10438ad",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.resolution.subtitle": {
+    "source": "5b266ad15206163c",
+    "value": "2b182315d8d76177",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.resolution.title": {
+    "source": "c115fd31f75c0a5d",
+    "value": "adc3b01f3c15512f",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.resolution.uhd": {
+    "source": "e1f0bdc3571d141d",
+    "value": "cc1e5d5a9c88e51f",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.resolution.unknown": {
+    "source": "5e93832d382b5478",
+    "value": "6d8e839d9f67d4e2",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.topTranscoders.empty": {
+    "source": "1aab3fb074be67ec",
+    "value": "823ae25b91242171",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.topTranscoders.title": {
+    "source": "3ddb2b3cfb3d8f94",
+    "value": "b45f877f008c2674",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.topTranscoders.transcodeShare": {
+    "source": "542971bf5026afb6",
+    "value": "8583cc50e0dbe63f",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.devices.unknownClient": {
+    "source": "ed75022f89eda4c8",
+    "value": "cdef3fda6fa9075c",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.episodeCount": {
+    "source": "4af9aa2acf552e88",
+    "value": "49cf6b88e034f009",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.filter.allAccounts": {
+    "source": "cba800181e87c879",
+    "value": "45f40a86737bd542",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.filter.allLibraries": {
+    "source": "521d901a924367c2",
+    "value": "0d51a7632ea3665f",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.filter.fromDate": {
+    "source": "8dbfb8034ff7cf4a",
+    "value": "39b87b2a9fbab975",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.filter.rangeLabel": {
+    "source": "e631e8d3a57a789a",
+    "value": "e97ca72e2ca5bbe1",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.filter.refresh": {
+    "source": "6a1afb6340e5681b",
+    "value": "603e460bf59cac0f",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.filter.refreshing": {
+    "source": "b8eb9abb925bcaf2",
+    "value": "2cdfe930d9b899e8",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.filter.reset": {
+    "source": "6eb33b050bf9a9c0",
+    "value": "407f871778d31070",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.filter.timezone": {
+    "source": "330a135f017eb521",
+    "value": "ce2e24e73ac44e1c",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.filter.timezoneBrowser": {
+    "source": "090f1385a5ffd02c",
+    "value": "758d5127c33de704",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.filter.timezoneUtc": {
+    "source": "c1f78254ecf7951c",
+    "value": "7e5f76c94a635c21",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.filter.toDate": {
+    "source": "4bae6e7c380b1ecc",
+    "value": "1076e225ebaf4ba6",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.loadError": {
+    "source": "758d19923a9c2afa",
+    "value": "94a444dec03500f9",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.openHistory": {
+    "source": "add71283fd08f89e",
+    "value": "18f00fe6779007fe",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.people.action.details": {
+    "source": "5cf0e09fcb50e09d",
+    "value": "59589fe2a5491f0c",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.people.action.detailsFor": {
+    "source": "3d9a0fa03eb7571b",
+    "value": "5113bbfa54103a63",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.people.collapseProfiles": {
+    "source": "759dc7d8831077f4",
+    "value": "c4593a82ce302403",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.people.column.account": {
+    "source": "8178d7f5eb1d5dff",
+    "value": "aecc997d3bc725dd",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.people.column.actions": {
+    "source": "98ba5f781e081ea1",
+    "value": "cad123465b9eec0c",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.people.column.completionRate": {
+    "source": "2406d4e45a6ea15d",
+    "value": "98b801ed273ad784",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.people.column.directRate": {
+    "source": "bdd3c1a10c29c04a",
+    "value": "be29cbf43e5f156b",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.people.column.lastSeen": {
+    "source": "a1bf77770a99b159",
+    "value": "9f8baa37ee953497",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.people.column.plays": {
+    "source": "717489dc295f98b0",
+    "value": "840692008c198048",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.people.column.watchTime": {
+    "source": "fdae4cf6be3befdc",
+    "value": "2df0b292bbd2d3f7",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.people.empty": {
+    "source": "20ed1336b8faf2dd",
+    "value": "6968ef1ccb6b0c53",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.people.expandProfiles": {
+    "source": "dab86a1e3edf92e2",
+    "value": "3798e16f63be7558",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.people.kpi.activeAccounts": {
+    "source": "1d988cee832d7dc6",
+    "value": "10aa4c526882f387",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.people.kpi.activeProfiles": {
+    "source": "5bf78442a9392bca",
+    "value": "fce4d27764bfd351",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.people.kpi.totalWatchTime": {
+    "source": "e85d9ef7fc3b36e3",
+    "value": "08c7d5dcdc5c41a2",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.people.liveBadge": {
+    "source": "20b856d6fb7cf4ed",
+    "value": "7040fd603e59a657",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.people.loadMore": {
+    "source": "5a57d66412493bdb",
+    "value": "0440bd88c75e2fac",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.people.profilesCount": {
+    "source": "26b07b52d6b68881",
+    "value": "48f29111cfecaac4",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.people.searchPlaceholder": {
+    "source": "29dccd1271b6b770",
+    "value": "ecb1df934f3ea810",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.people.unnamedProfile": {
+    "source": "e26eaae6620e7b80",
+    "value": "b5589bc087450d53",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.percent": {
+    "source": "3876eed97bec933a",
+    "value": "522346dd585b6705",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.personDetail.action.openAccount": {
+    "source": "aa6ba8a2cdf6be07",
+    "value": "612f724ec00fd7ce",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.personDetail.allProfiles": {
+    "source": "926e85d090c0a6a3",
+    "value": "8a26bb6fa3fcf1f4",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.personDetail.clients": {
+    "source": "b18eb3310ce076fa",
+    "value": "ff296ddaedc5af31",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.personDetail.clientsEmpty": {
+    "source": "22948dc0684a5486",
+    "value": "df9c401383a30c99",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.personDetail.profileLabel": {
+    "source": "6f2fe7c59dbec63c",
+    "value": "359497aff53e7d5d",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.personDetail.topTitles": {
+    "source": "0fadbcf02f3e4f95",
+    "value": "d5e4aa04d059942f",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.playCount": {
+    "source": "01e3e87a7bac3051",
+    "value": "34b07c9fa71c0606",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.range.1y": {
+    "source": "37025922b6fc813c",
+    "value": "366af831b2b1a3a9",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.range.30d": {
+    "source": "0b3f56dc5fb4c36a",
+    "value": "bbb886e0a03425a2",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.range.7d": {
+    "source": "088835a3c428c9c6",
+    "value": "3f7eebfb93ea5cd0",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.range.90d": {
+    "source": "ae8b94818be1082b",
+    "value": "374c53dee1157f98",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.range.all": {
+    "source": "4f96ef6aa95f7753",
+    "value": "126e978f067516b6",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.range.custom": {
+    "source": "169ef67308acafc9",
+    "value": "b26ae6516c28b32b",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.retry": {
+    "source": "f21d0ea721d04b8a",
+    "value": "5189135a6110bd31",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.sessionCount": {
+    "source": "54522819c243755b",
+    "value": "c0f179b9515f1bd7",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.subtitle": {
+    "source": "8951e7ac72bece6e",
+    "value": "68bf7626e9c5ec09",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.tabs.activity": {
+    "source": "bf52de649aab5aff",
+    "value": "5c7cfc9e8bc238fa",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.tabs.bandwidth": {
+    "source": "373a879bb624fb2f",
+    "value": "8277622e9a79c8e8",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.tabs.devices": {
+    "source": "57033f28b3139fe2",
+    "value": "39a39a22198cc9b7",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.tabs.people": {
+    "source": "1d5b473359ebaf37",
+    "value": "44520c6a7782ce45",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.tabs.titles": {
+    "source": "0a914964510bb802",
+    "value": "0bb52004950628f0",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.title": {
+    "source": "d89b23cd8ac091a2",
+    "value": "4602c9bfeac5094a",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.titleDetail.episodes.title": {
+    "source": "e89514b4b90ad715",
+    "value": "ba4445be4c7ed887",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.titleDetail.episodes.truncated": {
+    "source": "27adacdd4aec1203",
+    "value": "38d5e32cfd4b0f7c",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.titleDetail.kind.movie": {
+    "source": "c0943e77af02c0a3",
+    "value": "27a146bbe4bf4c01",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.titleDetail.kind.series": {
+    "source": "2f2bb786bd5a961b",
+    "value": "afe83334927e0fab",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.titleDetail.notFound": {
+    "source": "3f65dc63b246aa19",
+    "value": "25dbb68766247dab",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.titleDetail.scopedToPerson": {
+    "source": "4ffa1e25136959ba",
+    "value": "dabbd1af4cb086a0",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.titleDetail.showEveryone": {
+    "source": "d14712105748aa54",
+    "value": "752358dfef6f28a1",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.titleDetail.viewers.furthest": {
+    "source": "a90b1d2814970aa3",
+    "value": "994a4437ef0137f5",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.titleDetail.viewers.furthestNoDuration": {
+    "source": "534d5609314d5002",
+    "value": "52e17dd03e7ba0af",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.titleDetail.viewers.lastEpisode": {
+    "source": "ef642c1447d04622",
+    "value": "ff2830e4b5d9cccf",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.titleDetail.viewers.title": {
+    "source": "c221f924564f4c9d",
+    "value": "c1abf30b73111dda",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.titleDetail.viewers.truncated": {
+    "source": "0b7d2a74c48aef26",
+    "value": "f7585408ab46ce3e",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.titles.libraries.empty": {
+    "source": "e8e0f934dd606975",
+    "value": "f700942d53b3a4c4",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.titles.libraries.title": {
+    "source": "1d95ea0e55dd07e3",
+    "value": "8d80b887a23d5fb9",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.titles.movies.empty": {
+    "source": "c5d8bc72f9638bc2",
+    "value": "652b15339ab37517",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.titles.movies.title": {
+    "source": "9ea0d3d51abed5fe",
+    "value": "d847174670a13169",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.titles.shows.empty": {
+    "source": "5f529ce373ac0c2a",
+    "value": "da1ed5fe9dd6ad4f",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.titles.shows.title": {
+    "source": "8a2bf4c51e0b44b7",
+    "value": "d80964fe7d438a2d",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.titles.sort.plays": {
+    "source": "5d93c4e2307cff12",
+    "value": "840692008c198048",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.titles.sort.viewers": {
+    "source": "d3290dcce25332bc",
+    "value": "8b1eee33a88deafc",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.titles.sort.watchTime": {
+    "source": "29d6e39f31603cb2",
+    "value": "2df0b292bbd2d3f7",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.titles.sortLabel": {
+    "source": "8ffd76c535d2e9f0",
+    "value": "18cab3beabda4005",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.titles.titleWithYear": {
+    "source": "a92e133ee0f8b750",
+    "value": "0b2793d5f0a36e1c",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.titles.unknownTitle": {
+    "source": "d4bdadc780686b93",
+    "value": "3ce24dd7c74abd32",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.insights.viewerCount": {
+    "source": "ea62a95858e1d71e",
+    "value": "196b3659ad3b9947",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
@@ -81176,6 +82736,18 @@
   "web.admin.shell.nav.page.historyImport.label": {
     "source": "411980210fbdb505",
     "value": "15e490b8ee3a51db",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.shell.nav.page.insights.description": {
+    "source": "ab7e8b063bb1baba",
+    "value": "1c6df2c50502a86e",
+    "by": "opus",
+    "model": "claude-opus-5-5"
+  },
+  "web.admin.shell.nav.page.insights.label": {
+    "source": "47406bc3403aae37",
+    "value": "4602c9bfeac5094a",
     "by": "opus",
     "model": "claude-opus-5-5"
   },
