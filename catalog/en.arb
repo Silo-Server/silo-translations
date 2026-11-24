@@ -15228,6 +15228,13 @@
       "apple"
     ]
   },
+  "errors.apple.v2.incompleteHomeLayout": "The server returned an incomplete Home layout. Reload to try again.",
+  "@errors.apple.v2.incompleteHomeLayout": {
+    "description": "Apple (iPhone, iPad, Mac, Apple TV): error in the Home Sections editor when the server's list of the profile's Home rows had rows without an id or two rows with the same id, so the editor can't save it safely.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "errors.apple.v2.incompletePersonalList": "The list could not be loaded completely. Reload to try again.",
   "@errors.apple.v2.incompletePersonalList": {
     "description": "Apple (iPhone, iPad, Mac, Apple TV): error on the Favorites or Watchlist screen when the list could not be read in full.",
@@ -16319,6 +16326,268 @@
         "type": "int"
       }
     },
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.profileEditor.addedByProfile": "Added by this profile",
+  "@home.profileEditor.addedByProfile": {
+    "description": "iPhone, iPad and Mac Home Sections editor: line under the name of a row the profile built itself rather than one the administrator set up.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.profileEditor.done": "Done",
+  "@home.profileEditor.done": {
+    "description": "Apple TV Home Sections editor: button that closes the editor. Changes are already saved.",
+    "x-platforms": [
+      "apple"
+    ],
+    "x-maxLength": 16
+  },
+  "home.profileEditor.doneEditing": "Done Editing",
+  "@home.profileEditor.doneEditing": {
+    "description": "Apple TV Home Sections editor: the Edit button while it is on; pressing it hides the arrow buttons again.",
+    "x-platforms": [
+      "apple"
+    ],
+    "x-maxLength": 20
+  },
+  "home.profileEditor.edit": "Edit",
+  "@home.profileEditor.edit": {
+    "description": "Apple TV Home Sections editor: button that shows up and down arrow buttons on each row so rows can be moved.",
+    "x-platforms": [
+      "apple"
+    ],
+    "x-maxLength": 16
+  },
+  "home.profileEditor.editingFooterTv": "Use the arrow buttons to move rows. The new order saves to this profile and applies on all of its devices.",
+  "@home.profileEditor.editingFooterTv": {
+    "description": "Apple TV Home Sections editor: footer under the list of rows while Edit is on and each row shows up and down arrow buttons. The editor saves the order and visibility to the profile on the server, so they apply on all of the profile’s devices.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.profileEditor.editingSubtitleTv": "Move rows into your preferred order.",
+  "@home.profileEditor.editingSubtitleTv": {
+    "description": "Apple TV Home Sections editor: line under the editor’s title while Edit is on and each row shows up and down arrow buttons.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.profileEditor.emptyBody": "This profile’s Home has no rows to arrange yet.",
+  "@home.profileEditor.emptyBody": {
+    "description": "Apple Home Sections editor (iPhone, iPad and Mac: Settings > Interface > Home Sections; Apple TV: Settings > General > Home Sections). Shown when the profile’s Home has no rows at all.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.profileEditor.emptyTitle": "No Home Sections",
+  "@home.profileEditor.emptyTitle": {
+    "description": "iPhone, iPad and Mac Home Sections editor: title shown when the profile’s Home has no rows at all. Title case.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.profileEditor.footerMac": "Open eye: shown on Home. Closed eye: hidden and dimmed here. Drag rows into a new order. Changes save to this profile and apply on all of its devices.",
+  "@home.profileEditor.footerMac": {
+    "description": "Mac Home Sections editor: footer under the list of rows, explaining the eye button on each row and dragging rows to reorder. The editor saves the order and visibility to the profile on the server, so they apply on all of the profile’s devices.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.profileEditor.footerTouch": "Open eye: shown on Home. Closed eye: hidden and dimmed here. Tap Edit to drag rows into a new order. Changes save to this profile and apply on all of its devices.",
+  "@home.profileEditor.footerTouch": {
+    "description": "iPhone and iPad Home Sections editor: footer under the list of rows, explaining the eye button on each row and the Edit button that lets rows be dragged. The editor saves the order and visibility to the profile on the server, so they apply on all of the profile’s devices.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.profileEditor.footerTv": "Open eye: shown on Home. Closed eye: hidden. Changes save to this profile and apply on all of its devices.",
+  "@home.profileEditor.footerTv": {
+    "description": "Apple TV Home Sections editor: footer under the list of rows, explaining the eye button on each row. The editor saves the order and visibility to the profile on the server, so they apply on all of the profile’s devices.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.profileEditor.headerTv": "HOME SECTIONS",
+  "@home.profileEditor.headerTv": {
+    "description": "Apple TV Settings > General, and the top of the Apple TV Home Sections editor: uppercase heading of the Home Sections group. Keep it uppercase where the script has case.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.profileEditor.hide": "Hide",
+  "@home.profileEditor.hide": {
+    "description": "iPhone, iPad and Mac Home Sections editor: context menu item on a row that hides it from Home.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.profileEditor.hideRow": "Hide {title}",
+  "@home.profileEditor.hideRow": {
+    "description": "Apple Home Sections editor (iPhone, iPad and Mac: Settings > Interface > Home Sections; Apple TV: Settings > General > Home Sections). Spoken (VoiceOver) label of the open-eye button on a row; pressing it hides the row from Home. {title}: the row’s name, such as Continue Watching.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.profileEditor.loadFailedTitle": "Couldn’t Load Home Sections",
+  "@home.profileEditor.loadFailedTitle": {
+    "description": "iPhone, iPad and Mac Home Sections editor: title of the error shown when the profile’s Home rows couldn’t be read from the server. Title case.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.profileEditor.loadFailedTv": "Silo couldn’t load this profile’s Home rows. {reason}",
+  "@home.profileEditor.loadFailedTv": {
+    "description": "Apple TV Home Sections editor: shown when the profile’s Home rows couldn’t be read from the server. {reason}: the error message, already translated.",
+    "placeholders": {
+      "reason": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.profileEditor.loading": "Loading Home sections",
+  "@home.profileEditor.loading": {
+    "description": "Apple Home Sections editor (iPhone, iPad and Mac: Settings > Interface > Home Sections; Apple TV: Settings > General > Home Sections). Spoken (VoiceOver) label of the spinner while the editor reads the profile’s Home rows from the server.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.profileEditor.moveDown": "Move Down",
+  "@home.profileEditor.moveDown": {
+    "description": "iPhone, iPad and Mac Home Sections editor: context menu item and VoiceOver action that moves a row one place down. Title case.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.profileEditor.moveRowDown": "Move {title} down",
+  "@home.profileEditor.moveRowDown": {
+    "description": "Apple TV Home Sections editor: spoken (VoiceOver) label of the down arrow button on a row. {title}: the row’s name, such as Continue Watching.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.profileEditor.moveRowUp": "Move {title} up",
+  "@home.profileEditor.moveRowUp": {
+    "description": "Apple TV Home Sections editor: spoken (VoiceOver) label of the up arrow button on a row. {title}: the row’s name, such as Continue Watching.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.profileEditor.moveUp": "Move Up",
+  "@home.profileEditor.moveUp": {
+    "description": "iPhone, iPad and Mac Home Sections editor: context menu item and VoiceOver action that moves a row one place up. Title case.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.profileEditor.renamedFrom": "Renamed from {name}",
+  "@home.profileEditor.renamedFrom": {
+    "description": "iPhone, iPad and Mac Home Sections editor: line under the name of a row the profile renamed. {name}: the administrator’s name for the row.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.profileEditor.rowHidden": "Hidden from Home",
+  "@home.profileEditor.rowHidden": {
+    "description": "Apple Home Sections editor (iPhone, iPad and Mac: Settings > Interface > Home Sections; Apple TV: Settings > General > Home Sections). Status of a row the profile has hidden from Home: shown under the row’s name on Apple TV, and spoken by VoiceOver on iPhone, iPad and Mac.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.profileEditor.rowShown": "Shown on Home",
+  "@home.profileEditor.rowShown": {
+    "description": "Apple Home Sections editor (iPhone, iPad and Mac: Settings > Interface > Home Sections; Apple TV: Settings > General > Home Sections). Status of a row the profile has not hidden: shown under the row’s name on Apple TV, and spoken by VoiceOver on iPhone, iPad and Mac.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.profileEditor.saveFailed": "Couldn’t save the Home layout. {reason}",
+  "@home.profileEditor.saveFailed": {
+    "description": "Apple Home Sections editor (iPhone, iPad and Mac: Settings > Interface > Home Sections; Apple TV: Settings > General > Home Sections). Shown above the rows when a change couldn’t be saved to the profile on the server. {reason}: the error message, already translated.",
+    "placeholders": {
+      "reason": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.profileEditor.settingsFooter": "Choose which Home rows are visible and the order they appear in. Changes apply to this profile on every device.",
+  "@home.profileEditor.settingsFooter": {
+    "description": "Settings > Interface on iPhone, iPad and Mac, and Settings > General on Apple TV: help text under the Home Sections row. The editor saves the order and visibility to the profile on the server, so they apply on all of the profile’s devices.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.profileEditor.settingsHeader": "Home",
+  "@home.profileEditor.settingsHeader": {
+    "description": "iPhone, iPad and Mac Settings > Interface: heading of the group with the Home Sections row. Home is the app’s Home screen.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.profileEditor.show": "Show",
+  "@home.profileEditor.show": {
+    "description": "iPhone, iPad and Mac Home Sections editor: context menu item on a hidden row that shows it on Home again.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.profileEditor.showRow": "Show {title}",
+  "@home.profileEditor.showRow": {
+    "description": "Apple Home Sections editor (iPhone, iPad and Mac: Settings > Interface > Home Sections; Apple TV: Settings > General > Home Sections). Spoken (VoiceOver) label of the closed-eye button on a hidden row; pressing it shows the row on Home again. {title}: the row’s name, such as Continue Watching.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.profileEditor.subtitleTv": "Choose which rows appear on Home for this profile.",
+  "@home.profileEditor.subtitleTv": {
+    "description": "Apple TV Home Sections editor: line under the editor’s title, next to the Edit and Done buttons, while Edit is off.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.profileEditor.title": "Home Sections",
+  "@home.profileEditor.title": {
+    "description": "Apple Home Sections editor (iPhone, iPad and Mac: Settings > Interface > Home Sections; Apple TV: Settings > General > Home Sections). Title of the editor, and the label of the row that opens it in Settings. The editor saves the order and visibility to the profile on the server, so they apply on all of the profile’s devices.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.profileEditor.tryAgain": "Try Again",
+  "@home.profileEditor.tryAgain": {
+    "description": "Apple Home Sections editor (iPhone, iPad and Mac: Settings > Interface > Home Sections; Apple TV: Settings > General > Home Sections). Button that reads the profile’s Home rows again after loading failed.",
     "x-platforms": [
       "apple"
     ]
