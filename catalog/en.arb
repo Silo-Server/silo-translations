@@ -84137,9 +84137,9 @@
       "web"
     ]
   },
-  "web.admin.insights.activity.kpi.playsBreakdown": "{movies} movies · {episodes} episodes",
+  "web.admin.insights.activity.kpi.playsBreakdown": "{movie_count, plural, one {{movies} movie} other {{movies} movies}} · {episode_count, plural, one {{episodes} episode} other {{episodes} episodes}}",
   "@web.admin.insights.activity.kpi.playsBreakdown": {
-    "description": "Web admin, Insights Activity tab: subtitle under total plays breaking down movies and episodes. {movies}: formatted movie play count; {episodes}: formatted episode play count.",
+    "description": "Web admin, Insights: subtitle under a play count breaking it down into movies and episodes. {movies}: formatted movie play count; {movie_count}: that count as a number, for plural selection; {episodes}: formatted episode play count; {episode_count}: that count as a number.",
     "x-platforms": [
       "web"
     ],
@@ -84147,8 +84147,14 @@
       "movies": {
         "type": "String"
       },
+      "movie_count": {
+        "type": "int"
+      },
       "episodes": {
         "type": "String"
+      },
+      "episode_count": {
+        "type": "int"
       }
     }
   },
@@ -84159,9 +84165,9 @@
       "web"
     ]
   },
-  "web.admin.insights.activity.kpi.watchTimeMeasured": "{measured} of {total} sessions measured",
+  "web.admin.insights.activity.kpi.watchTimeMeasured": "{total_count, plural, one {{measured} of {total} session measured} other {{measured} of {total} sessions measured}}",
   "@web.admin.insights.activity.kpi.watchTimeMeasured": {
-    "description": "Web admin, Insights Playback tab: watch time card detail. {measured}: formatted count of playback sessions with measured watch time; {total}: formatted count of all sessions in the window.",
+    "description": "Web admin, Insights Playback tab: watch time card detail. {measured}: formatted count of playback sessions with measured watch time; {total}: formatted count of all sessions in the window; {total_count}: that count as a number, for plural selection.",
     "x-platforms": [
       "web"
     ],
@@ -84171,6 +84177,9 @@
       },
       "total": {
         "type": "String"
+      },
+      "total_count": {
+        "type": "int"
       }
     }
   },
@@ -84521,9 +84530,9 @@
       "web"
     ]
   },
-  "web.admin.insights.coverage.routeFactsPartial": "Detailed codec, transcode, and routing facts are recorded for {recorded} of {total} sessions in this window (recorded since {since}).",
+  "web.admin.insights.coverage.routeFactsPartial": "{total_count, plural, one {Detailed codec, transcode, and routing facts are recorded for {recorded} of {total} session in this window (recorded since {since}).} other {Detailed codec, transcode, and routing facts are recorded for {recorded} of {total} sessions in this window (recorded since {since}).}}",
   "@web.admin.insights.coverage.routeFactsPartial": {
-    "description": "Web admin, Insights page: notice explaining that only plays after the upgrade carry detailed route telemetry. {recorded}: formatted count of plays with route facts; {total}: formatted total plays; {since}: formatted start date.",
+    "description": "Web admin, Insights page: notice that only sessions recorded after the upgrade carry detailed route facts. {recorded}: formatted count of sessions with route facts; {total}: formatted count of sessions in the window; {total_count}: that count as a number, for plural selection; {since}: formatted date route facts start.",
     "x-platforms": [
       "web"
     ],
@@ -84534,14 +84543,17 @@
       "total": {
         "type": "String"
       },
+      "total_count": {
+        "type": "int"
+      },
       "since": {
         "type": "String"
       }
     }
   },
-  "web.admin.insights.coverage.watchTimePartial": "Measured watch time covers {measured} of {total} sessions in this window; older sessions use end-position estimates.",
+  "web.admin.insights.coverage.watchTimePartial": "{total_count, plural, one {Measured watch time covers {measured} of {total} session in this window; older sessions use end-position estimates.} other {Measured watch time covers {measured} of {total} sessions in this window; older sessions use end-position estimates.}}",
   "@web.admin.insights.coverage.watchTimePartial": {
-    "description": "Web admin, Insights page: notice explaining that some older plays predate measured watch-time tracking. {measured}: formatted count of measured plays; {total}: formatted count of total plays.",
+    "description": "Web admin, Insights page: notice that some older sessions predate measured watch time. {measured}: formatted count of sessions with measured watch time; {total}: formatted count of sessions in the window; {total_count}: that count as a number, for plural selection.",
     "x-platforms": [
       "web"
     ],
@@ -84551,6 +84563,9 @@
       },
       "total": {
         "type": "String"
+      },
+      "total_count": {
+        "type": "int"
       }
     }
   },
@@ -84741,9 +84756,9 @@
       "web"
     ]
   },
-  "web.admin.insights.devices.matrix.cellTooltip": "{client} · {codec}: {direct_rate}% direct ({sessions}; {transcodes} transcodes)",
+  "web.admin.insights.devices.matrix.cellTooltip": "{transcode_count, plural, one {{client} · {codec}: {direct_rate}% direct ({sessions}; {transcodes} transcode)} other {{client} · {codec}: {direct_rate}% direct ({sessions}; {transcodes} transcodes)}}",
   "@web.admin.insights.devices.matrix.cellTooltip": {
-    "description": "Web admin, Insights Devices tab: tooltip and accessible label for a matrix cell. {client}: client name; {codec}: video codec; {direct_rate}: percentage; {sessions}: formatted session count; {transcodes}: formatted transcode count.",
+    "description": "Web admin, Insights Devices tab: tooltip and accessible label for a matrix cell. {client}: client name; {codec}: video codec; {direct_rate}: percentage; {sessions}: formatted session count with its noun, such as \"12 sessions\"; {transcodes}: formatted transcode count; {transcode_count}: that count as a number, for plural selection.",
     "placeholders": {
       "client": {
         "type": "String"
@@ -84759,6 +84774,9 @@
       },
       "transcodes": {
         "type": "String"
+      },
+      "transcode_count": {
+        "type": "int"
       }
     },
     "x-platforms": [
@@ -84934,9 +84952,9 @@
       "web"
     ]
   },
-  "web.admin.insights.devices.topTranscoders.transcodeShare": "{transcodes} of {total} sessions",
+  "web.admin.insights.devices.topTranscoders.transcodeShare": "{total_count, plural, one {{transcodes} of {total} session} other {{transcodes} of {total} sessions}}",
   "@web.admin.insights.devices.topTranscoders.transcodeShare": {
-    "description": "Web admin, Insights Devices tab: secondary line of a client in the top transcoders list. {transcodes}: formatted count of transcoded sessions; {total}: formatted count of the client's sessions.",
+    "description": "Web admin, Insights Devices tab: secondary line of a client in the top transcoders list. {transcodes}: formatted count of transcoded sessions; {total}: formatted count of the client's sessions; {total_count}: that count as a number, for plural selection.",
     "x-platforms": [
       "web"
     ],
@@ -84946,6 +84964,9 @@
       },
       "total": {
         "type": "String"
+      },
+      "total_count": {
+        "type": "int"
       }
     }
   },
