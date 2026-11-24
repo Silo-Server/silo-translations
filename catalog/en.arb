@@ -4180,6 +4180,41 @@
       "android"
     ]
   },
+  "collections.addTo.emptyBody": "No personal collections yet. Create one above.",
+  "@collections.addTo.emptyBody": {
+    "description": "Empty state message in the iOS Add to Collection sheet.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "collections.addTo.emptyTv": "No Personal Collections",
+  "@collections.addTo.emptyTv": {
+    "description": "Empty state row label in the tvOS Add to Collection submenu.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "collections.addTo.loading": "Loading collections…",
+  "@collections.addTo.loading": {
+    "description": "Loading row label in the tvOS Add to Collection submenu.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "collections.addTo.menuAction": "Add to Collection…",
+  "@collections.addTo.menuAction": {
+    "description": "Menu action on title pages and cards to open the Add to Collection sheet.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "collections.addTo.title": "Add to Collection",
+  "@collections.addTo.title": {
+    "description": "Sheet title and tvOS submenu title for adding a title to personal collections.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "collections.audio": "{name}, collection, {count}",
   "@collections.audio": {
     "description": "Roku screen reader announcement for a collection card. {name}: the collection's name; {count}: the item count text, such as 12 items.",
@@ -4686,6 +4721,83 @@
   "collections.noneBody": "Create a collection to organize your media",
   "@collections.noneBody": {
     "description": "Apple iOS and tvOS: supporting line under the empty-state heading on the Collections screen when you have no collections.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "collections.pin.household": "Household",
+  "@collections.pin.household": {
+    "description": "Menu section header for household sharing toggle.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "collections.pin.notOnHome": "Not on Home",
+  "@collections.pin.notOnHome": {
+    "description": "tvOS popover detail text when a collection is not pinned on Home.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "collections.pin.onHome": "On Home",
+  "@collections.pin.onHome": {
+    "description": "Active pin pill label when a collection is pinned to Home.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "collections.pin.onlyThisProfile": "Only this profile",
+  "@collections.pin.onlyThisProfile": {
+    "description": "tvOS popover detail text when a personal collection is private to the acting profile.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "collections.pin.pinToHome": "Pin to Home",
+  "@collections.pin.pinToHome": {
+    "description": "Inactive pin pill label to pin a collection to Home.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "collections.pin.pinnedOnHome": "Pinned on Home",
+  "@collections.pin.pinnedOnHome": {
+    "description": "tvOS popover detail text when a collection is pinned on Home.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "collections.pin.pinnedOnLibrary": "Pinned on Library page",
+  "@collections.pin.pinnedOnLibrary": {
+    "description": "tvOS popover detail text when a collection is pinned on a library page.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "collections.pin.shareWithHousehold": "Share with Household Profiles",
+  "@collections.pin.shareWithHousehold": {
+    "description": "Menu button to toggle sharing a personal collection with household profiles.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "collections.pin.shareWithProfilesTv": "Share with Profiles",
+  "@collections.pin.shareWithProfilesTv": {
+    "description": "tvOS popover action to toggle sharing a personal collection with household profiles.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "collections.pin.visibleToHousehold": "Visible to household profiles",
+  "@collections.pin.visibleToHousehold": {
+    "description": "tvOS popover detail text when a personal collection is shared.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "collections.pin.whereItShows": "Where It Shows",
+  "@collections.pin.whereItShows": {
+    "description": "Menu section header and accessibility label for collection placement controls.",
     "x-platforms": [
       "apple"
     ]
@@ -16068,6 +16180,860 @@
       "roku"
     ]
   },
+  "home.addRow.a11yClearRowName": "Clear row name",
+  "@home.addRow.a11yClearRowName": {
+    "description": "Accessibility label for the clear button inside the Row Name text field.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.aCollectionSubtitle": "Show titles from one personal or server collection",
+  "@home.addRow.aCollectionSubtitle": {
+    "description": "Subtitle explaining the single collection row option.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.aCollectionTitle": "A Collection",
+  "@home.addRow.aCollectionTitle": {
+    "description": "Row title in Add Row to pin a single personal or server collection.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.actorNamePlaceholder": "Actor name",
+  "@home.addRow.actorNamePlaceholder": {
+    "description": "Text field placeholder for Spotlight actor filter.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.allLibraries": "All Libraries",
+  "@home.addRow.allLibraries": {
+    "description": "Option label meaning include titles from all libraries.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.alreadyOnPageNote": "Already on {page}. Adding creates another row.",
+  "@home.addRow.alreadyOnPageNote": {
+    "description": "Info banner when configuring a recipe already visible on the page. {page}: page label.",
+    "x-platforms": [
+      "apple"
+    ],
+    "placeholders": {
+      "page": {
+        "type": "String"
+      }
+    }
+  },
+  "home.addRow.alreadyPinnedNote": "Already pinned on {page}.",
+  "@home.addRow.alreadyPinnedNote": {
+    "description": "Info banner when configuring a collection already pinned on the page. {page}: page label.",
+    "x-platforms": [
+      "apple"
+    ],
+    "placeholders": {
+      "page": {
+        "type": "String"
+      }
+    }
+  },
+  "home.addRow.anyGenrePlaceholder": "Any genre",
+  "@home.addRow.anyGenrePlaceholder": {
+    "description": "Text field placeholder for optional genre filter.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.cadenceDaily": "Every Day",
+  "@home.addRow.cadenceDaily": {
+    "description": "Rotation cadence option: daily.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.cadenceMonthly": "Every Month",
+  "@home.addRow.cadenceMonthly": {
+    "description": "Rotation cadence option: monthly.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.cadenceWeekly": "Every Week",
+  "@home.addRow.cadenceWeekly": {
+    "description": "Rotation cadence option: weekly.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.collectionRowTitle": "Collection Row",
+  "@home.addRow.collectionRowTitle": {
+    "description": "Navigation title when configuring a single collection row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.controlKind": "Kind",
+  "@home.addRow.controlKind": {
+    "description": "Variant section header for Continue Watching recipe.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.controlMood": "Mood",
+  "@home.addRow.controlMood": {
+    "description": "Variant section header for Mood Picks recipe.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.controlPeriod": "Period",
+  "@home.addRow.controlPeriod": {
+    "description": "Variant section header for Most Watched / Trending Worldwide recipes.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.controlSpotlightOn": "Spotlight On",
+  "@home.addRow.controlSpotlightOn": {
+    "description": "Variant section header for Spotlight recipe.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.controlTimeWindow": "Time Window",
+  "@home.addRow.controlTimeWindow": {
+    "description": "Variant section header for Trending on Server recipe.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.directorNamePlaceholder": "Director name",
+  "@home.addRow.directorNamePlaceholder": {
+    "description": "Text field placeholder for Spotlight director filter.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.fromLibraries": "From Libraries",
+  "@home.addRow.fromLibraries": {
+    "description": "Navigation row label to choose source libraries for a row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.genreFilterFooter": "Optional. Leave blank to match across all genres.",
+  "@home.addRow.genreFilterFooter": {
+    "description": "Footer explaining the optional genre filter.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.heroBanner": "Hero Banner",
+  "@home.addRow.heroBanner": {
+    "description": "Toggle label to display a row as a featured hero banner.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.heroBannerCollectionFooter": "Hero Banner highlights this collection as a large featured banner on {page}.",
+  "@home.addRow.heroBannerCollectionFooter": {
+    "description": "Footer explaining Hero Banner for a collection row. {page}: page label.",
+    "x-platforms": [
+      "apple"
+    ],
+    "placeholders": {
+      "page": {
+        "type": "String"
+      }
+    }
+  },
+  "home.addRow.heroBannerRecipeFooter": "Hero Banner highlights this row as a large featured banner on {page}.",
+  "@home.addRow.heroBannerRecipeFooter": {
+    "description": "Footer explaining Hero Banner for a recipe row. {page}: page label.",
+    "x-platforms": [
+      "apple"
+    ],
+    "placeholders": {
+      "page": {
+        "type": "String"
+      }
+    }
+  },
+  "home.addRow.hiddenOnPageNote": "Hidden on {page}. Tap Add to show it again.",
+  "@home.addRow.hiddenOnPageNote": {
+    "description": "Info banner when configuring a recipe currently hidden on the page. {page}: page label.",
+    "x-platforms": [
+      "apple"
+    ],
+    "placeholders": {
+      "page": {
+        "type": "String"
+      }
+    }
+  },
+  "home.addRow.holidayChristmas": "Christmas",
+  "@home.addRow.holidayChristmas": {
+    "description": "Holiday option in Seasonal Picks.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.holidayEaster": "Easter",
+  "@home.addRow.holidayEaster": {
+    "description": "Holiday option in Seasonal Picks.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.holidayHalloween": "Halloween",
+  "@home.addRow.holidayHalloween": {
+    "description": "Holiday option in Seasonal Picks.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.holidayNewYear": "New Year",
+  "@home.addRow.holidayNewYear": {
+    "description": "Holiday option in Seasonal Picks.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.holidaySaturdayMorning": "Saturday Morning",
+  "@home.addRow.holidaySaturdayMorning": {
+    "description": "Holiday option in Seasonal Picks.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.holidayStPatricks": "St. Patrick’s Day",
+  "@home.addRow.holidayStPatricks": {
+    "description": "Holiday option in Seasonal Picks.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.holidayThanksgiving": "Thanksgiving",
+  "@home.addRow.holidayThanksgiving": {
+    "description": "Holiday option in Seasonal Picks.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.holidayValentines": "Valentine’s Day",
+  "@home.addRow.holidayValentines": {
+    "description": "Holiday option in Seasonal Picks.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.holidays": "Holidays",
+  "@home.addRow.holidays": {
+    "description": "Row label and navigation title for selecting seasonal holidays.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.holidaysAllCount": "All ({count})",
+  "@home.addRow.holidaysAllCount": {
+    "description": "Summary text when all holidays are selected. {count}: number of holidays.",
+    "x-platforms": [
+      "apple"
+    ],
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "home.addRow.holidaysFooter": "Automatically swaps in titles as each holiday arrives.",
+  "@home.addRow.holidaysFooter": {
+    "description": "Footer explaining automatic seasonal holiday rotation.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.holidaysPickerFooter": "Select at least one holiday for this row to rotate through.",
+  "@home.addRow.holidaysPickerFooter": {
+    "description": "Footer in the holiday multi-select picker.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.howOften": "How Often",
+  "@home.addRow.howOften": {
+    "description": "Picker label for automatic rotation cadence.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.itemsToShow": "Items to Show",
+  "@home.addRow.itemsToShow": {
+    "description": "Stepper label for a row’s maximum item count.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.loadCollectionsFailed": "Couldn’t Load Collections",
+  "@home.addRow.loadCollectionsFailed": {
+    "description": "Error state title when personal or server collections fail to load.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.lookBack": "Look Back",
+  "@home.addRow.lookBack": {
+    "description": "Stepper label for the lookback window in days.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.lookBackDays": "{count, plural, one {# day} other {# days}}",
+  "@home.addRow.lookBackDays": {
+    "description": "Lookback duration value in days.",
+    "x-platforms": [
+      "apple"
+    ],
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "home.addRow.lookBackFooter": "Shows with a new season added within this window.",
+  "@home.addRow.lookBackFooter": {
+    "description": "Footer explaining the Returning Shows lookback window.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.maxRuntime": "Max Runtime",
+  "@home.addRow.maxRuntime": {
+    "description": "Stepper label for maximum movie runtime in minutes.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.maxRuntimeMinutes": "{count} min",
+  "@home.addRow.maxRuntimeMinutes": {
+    "description": "Maximum runtime value in minutes. {count}: formatted minutes.",
+    "x-platforms": [
+      "apple"
+    ],
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "home.addRow.mediaShows": "Shows",
+  "@home.addRow.mediaShows": {
+    "description": "Picker option for TV shows in recipe filter.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.milestone": "Milestone",
+  "@home.addRow.milestone": {
+    "description": "Stepper label for anniversary milestone interval.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.milestoneInterval": "{count, plural, one {Every year} other {Every # years}}",
+  "@home.addRow.milestoneInterval": {
+    "description": "Anniversary milestone interval value.",
+    "x-platforms": [
+      "apple"
+    ],
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "home.addRow.noCollectionsBody": "Create a personal collection from Collections or any title’s detail page.",
+  "@home.addRow.noCollectionsBody": {
+    "description": "Empty state description in the single collection picker.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.noCollectionsPostersBody": "Create a personal collection or add library collections first.",
+  "@home.addRow.noCollectionsPostersBody": {
+    "description": "Empty state description in the Row of Collections builder.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.noCollectionsTitle": "No Collections",
+  "@home.addRow.noCollectionsTitle": {
+    "description": "Empty state title when no collections exist.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.onPageBadge": "On {page}",
+  "@home.addRow.onPageBadge": {
+    "description": "Badge indicating a row or collection is already visible on the page. {page}: page label.",
+    "x-platforms": [
+      "apple"
+    ],
+    "placeholders": {
+      "page": {
+        "type": "String"
+      }
+    }
+  },
+  "home.addRow.personalCollection": "Personal Collection",
+  "@home.addRow.personalCollection": {
+    "description": "Subtitle for a personal collection without an item count.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.personalWithCount": "Personal · {count}",
+  "@home.addRow.personalWithCount": {
+    "description": "Subtitle for a personal collection with its item count. {count}: formatted item count.",
+    "x-platforms": [
+      "apple"
+    ],
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "home.addRow.recipeFormatShowcase": "4K & HDR Showcase",
+  "@home.addRow.recipeFormatShowcase": {
+    "description": "Recipe family title in Add Row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.recipeMoodPicks": "Mood Picks",
+  "@home.addRow.recipeMoodPicks": {
+    "description": "Recipe family title in Add Row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.recipeMostWatched": "Most Watched",
+  "@home.addRow.recipeMostWatched": {
+    "description": "Recipe family title in Add Row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.recipeNewThisMonth": "New This Month",
+  "@home.addRow.recipeNewThisMonth": {
+    "description": "Recipe family title in Add Row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.recipeSpotlight": "Spotlight",
+  "@home.addRow.recipeSpotlight": {
+    "description": "Recipe family title in Add Row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.recipeTrendingWorldwide": "Trending Worldwide",
+  "@home.addRow.recipeTrendingWorldwide": {
+    "description": "Recipe family title in Add Row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.rotateAutomatically": "Rotate Automatically",
+  "@home.addRow.rotateAutomatically": {
+    "description": "Toggle label to rotate editorial spotlight automatically.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.rowName": "Row Name",
+  "@home.addRow.rowName": {
+    "description": "Section header for customizing a row’s display title.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.rowNameFooter": "Updates automatically when you switch options until you type your own name.",
+  "@home.addRow.rowNameFooter": {
+    "description": "Footer explaining auto-updating row names.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.rowOfCollectionsSubtitle": "Show several collections as poster cards",
+  "@home.addRow.rowOfCollectionsSubtitle": {
+    "description": "Subtitle explaining the Row of Collections option.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.rowOfCollectionsTitle": "Row of Collections",
+  "@home.addRow.rowOfCollectionsTitle": {
+    "description": "Row title in Add Row to create a row displaying multiple collections as poster cards.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.searchCollectionsPrompt": "Search collections",
+  "@home.addRow.searchCollectionsPrompt": {
+    "description": "Search field placeholder in the collection picker sheets.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.searchPrompt": "Search rows and collections",
+  "@home.addRow.searchPrompt": {
+    "description": "Search field placeholder in the Add Row catalog sheet.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.sectionDisplay": "Display",
+  "@home.addRow.sectionDisplay": {
+    "description": "Form section header for item limit and hero banner controls.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.sectionFilterSort": "Filter & Sort",
+  "@home.addRow.sectionFilterSort": {
+    "description": "Form section header for media type and sort order pickers.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.sectionGenreFilter": "Genre Filter",
+  "@home.addRow.sectionGenreFilter": {
+    "description": "Form section header for optional genre filter.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.sectionInclude": "Include",
+  "@home.addRow.sectionInclude": {
+    "description": "Form section header for media type inclusion picker.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.sectionRows": "Rows",
+  "@home.addRow.sectionRows": {
+    "description": "Search results section header for matching section recipes.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.sectionSchedule": "Schedule",
+  "@home.addRow.sectionSchedule": {
+    "description": "Form section header for anniversary milestone schedule.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.sectionServerCollections": "Server Collections",
+  "@home.addRow.sectionServerCollections": {
+    "description": "Section header for server/library collections.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.sectionSpotlight": "Spotlight",
+  "@home.addRow.sectionSpotlight": {
+    "description": "Form section header for editorial spotlight controls.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.sectionYourCollections": "Your Collections",
+  "@home.addRow.sectionYourCollections": {
+    "description": "Section header for personal collections.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.selectedCountOfMax": "{selected} of {max}",
+  "@home.addRow.selectedCountOfMax": {
+    "description": "Header count of selected collections in Row of Collections. {selected}: selected count; {max}: maximum allowed.",
+    "x-platforms": [
+      "apple"
+    ],
+    "placeholders": {
+      "selected": {
+        "type": "String"
+      },
+      "max": {
+        "type": "String"
+      }
+    }
+  },
+  "home.addRow.selectedReorderFooter": "Swipe left to remove, or tap arrows to adjust order.",
+  "@home.addRow.selectedReorderFooter": {
+    "description": "Footer below selected collections in Row of Collections.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.sortHighestImdb": "Highest IMDb Rating",
+  "@home.addRow.sortHighestImdb": {
+    "description": "Sort order option: highest IMDb rating first.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.sortNewestRelease": "Newest Release",
+  "@home.addRow.sortNewestRelease": {
+    "description": "Sort order option: newest release date first.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.sortOldestAdded": "Oldest Added",
+  "@home.addRow.sortOldestAdded": {
+    "description": "Sort order option: oldest added first.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.sortOldestRelease": "Oldest Release",
+  "@home.addRow.sortOldestRelease": {
+    "description": "Sort order option: oldest release date first.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.sortOrder": "Sort Order",
+  "@home.addRow.sortOrder": {
+    "description": "Picker label for sorting items in a row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.sortTitleAsc": "Title A–Z",
+  "@home.addRow.sortTitleAsc": {
+    "description": "Sort order option: alphabetical A to Z.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.sortTitleDesc": "Title Z–A",
+  "@home.addRow.sortTitleDesc": {
+    "description": "Sort order option: reverse alphabetical Z to A.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.specificLibraries": "Specific Libraries",
+  "@home.addRow.specificLibraries": {
+    "description": "Section header for selecting individual libraries.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.studioNamePlaceholder": "Studio name (e.g. A24)",
+  "@home.addRow.studioNamePlaceholder": {
+    "description": "Text field placeholder for Spotlight studio filter.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.subAnniversaries": "Titles celebrating a milestone release anniversary",
+  "@home.addRow.subAnniversaries": {
+    "description": "Recipe subtitle in Add Row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.subBecauseYouWatched": "Similar titles based on your most recent watch",
+  "@home.addRow.subBecauseYouWatched": {
+    "description": "Recipe subtitle in Add Row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.subContinueWatching": "Pick up movies, shows, or audiobooks",
+  "@home.addRow.subContinueWatching": {
+    "description": "Recipe subtitle in Add Row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.subCriticallyAcclaimed": "Rated 8.0+ on TMDB with 500+ votes",
+  "@home.addRow.subCriticallyAcclaimed": {
+    "description": "Recipe subtitle in Add Row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.subFavorites": "Movies and shows you’ve favorited",
+  "@home.addRow.subFavorites": {
+    "description": "Recipe subtitle in Add Row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.subForgottenFavorites": "Great titles not watched in the past year",
+  "@home.addRow.subForgottenFavorites": {
+    "description": "Recipe subtitle in Add Row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.subFormatShowcase": "4K, New in 4K, Dolby Vision, or HDR",
+  "@home.addRow.subFormatShowcase": {
+    "description": "Recipe subtitle in Add Row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.subGenreRoulette": "A different top-rated genre every week",
+  "@home.addRow.subGenreRoulette": {
+    "description": "Recipe subtitle in Add Row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.subHiddenGems": "Highly rated titles watched twice or less",
+  "@home.addRow.subHiddenGems": {
+    "description": "Recipe subtitle in Add Row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.subMoodPicks": "Feel-good, sci-fi, comfort, thrillers & more",
+  "@home.addRow.subMoodPicks": {
+    "description": "Recipe subtitle in Add Row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.subMostWatched": "This week or this month",
+  "@home.addRow.subMostWatched": {
+    "description": "Recipe subtitle in Add Row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.subNewReleases": "Recently released titles in your library",
+  "@home.addRow.subNewReleases": {
+    "description": "Recipe subtitle in Add Row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.subNewThisMonth": "Added to your library in the last 30 days",
+  "@home.addRow.subNewThisMonth": {
+    "description": "Recipe subtitle in Add Row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.subNextInSeries": "The next audiobook in series you’ve finished",
+  "@home.addRow.subNextInSeries": {
+    "description": "Recipe subtitle in Add Row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.subProfilesLikeYou": "What similar profiles are loving",
+  "@home.addRow.subProfilesLikeYou": {
+    "description": "Recipe subtitle in Add Row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.subRecentlyAdded": "Latest additions across your libraries",
+  "@home.addRow.subRecentlyAdded": {
+    "description": "Recipe subtitle in Add Row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.subRecommendedForYou": "Personal picks from the recommendation engine",
+  "@home.addRow.subRecommendedForYou": {
+    "description": "Recipe subtitle in Add Row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.subReturningShows": "Shows you’ve watched with a new season",
+  "@home.addRow.subReturningShows": {
+    "description": "Recipe subtitle in Add Row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.subSeasonalPicks": "Automatic holidays or Family Movie Night",
+  "@home.addRow.subSeasonalPicks": {
+    "description": "Recipe subtitle in Add Row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.subShortAndSweet": "Movies 95 minutes or under",
+  "@home.addRow.subShortAndSweet": {
+    "description": "Recipe subtitle in Add Row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.subSpotlight": "Director, actor, studio, or the 80s",
+  "@home.addRow.subSpotlight": {
+    "description": "Recipe subtitle in Add Row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.subSurpriseMe": "A random selection from your library",
+  "@home.addRow.subSurpriseMe": {
+    "description": "Recipe subtitle in Add Row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.subTopPicksToday": "Best matches for your strongest taste",
+  "@home.addRow.subTopPicksToday": {
+    "description": "Recipe subtitle in Add Row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.subTrendingOnServer": "24 hours, 7 days, or 30 days",
+  "@home.addRow.subTrendingOnServer": {
+    "description": "Recipe subtitle in Add Row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.subTrendingWorldwide": "Today or this week from TMDB, matched to your library",
+  "@home.addRow.subTrendingWorldwide": {
+    "description": "Recipe subtitle in Add Row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.subWatchlist": "Titles you saved to watch later",
+  "@home.addRow.subWatchlist": {
+    "description": "Recipe subtitle in Add Row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.addRow.subWhatOthersWatched": "Recent watches across other profiles",
+  "@home.addRow.subWhatOthersWatched": {
+    "description": "Recipe subtitle in Add Row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "home.airedOn": "Aired {date}",
   "@home.airedOn": {
     "description": "Apple tvOS: start of the detail line in the Home and library marquee for an episode. {date}: the air date, already formatted.",
@@ -16079,6 +17045,297 @@
     "x-platforms": [
       "apple"
     ]
+  },
+  "home.customize.a11yHideRow": "Hide {row}",
+  "@home.customize.a11yHideRow": {
+    "description": "VoiceOver label for hiding a row. {row}: row title.",
+    "x-platforms": [
+      "apple"
+    ],
+    "placeholders": {
+      "row": {
+        "type": "String"
+      }
+    }
+  },
+  "home.customize.a11yReorderRow": "Reorder {row}",
+  "@home.customize.a11yReorderRow": {
+    "description": "VoiceOver label for the drag handle on a row card. {row}: row title.",
+    "x-platforms": [
+      "apple"
+    ],
+    "placeholders": {
+      "row": {
+        "type": "String"
+      }
+    }
+  },
+  "home.customize.a11yShowRow": "Show {row}",
+  "@home.customize.a11yShowRow": {
+    "description": "VoiceOver label for unhiding a row. {row}: row title.",
+    "x-platforms": [
+      "apple"
+    ],
+    "placeholders": {
+      "row": {
+        "type": "String"
+      }
+    }
+  },
+  "home.customize.addRow": "Add Row",
+  "@home.customize.addRow": {
+    "description": "Floating pill button and navigation title to add a new row to Home or a library page.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.badgeYours": "Yours",
+  "@home.customize.badgeYours": {
+    "description": "Pill badge on a user-added row card in Customize Mode.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.contextMenuAction": "Customize Home…",
+  "@home.customize.contextMenuAction": {
+    "description": "Context menu item on a Home section header to open Home customization.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.deleteRow": "Delete Row",
+  "@home.customize.deleteRow": {
+    "description": "Destructive context menu action to delete a custom row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.emptyAllHiddenBody": "Tap + Add Row or unhide a row below.",
+  "@home.customize.emptyAllHiddenBody": {
+    "description": "Empty state subtitle in Customize Mode when all rows are hidden.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.emptyAllHiddenTitle": "All rows are hidden",
+  "@home.customize.emptyAllHiddenTitle": {
+    "description": "Empty state title in Customize Mode when all rows are hidden.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.emptyNoRowsBody": "Tap + Add Row to add your first row.",
+  "@home.customize.emptyNoRowsBody": {
+    "description": "Empty state subtitle in Customize Mode when a page has no rows.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.emptyNoRowsTitle": "No rows on this page yet",
+  "@home.customize.emptyNoRowsTitle": {
+    "description": "Empty state title in Customize Mode when a page has no rows.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.hiddenRows": "Hidden Rows ({count})",
+  "@home.customize.hiddenRows": {
+    "description": "Disclosure header for hidden rows in Customize Mode. {count}: number of hidden rows.",
+    "x-platforms": [
+      "apple"
+    ],
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "home.customize.hideRow": "Hide Row",
+  "@home.customize.hideRow": {
+    "description": "Context menu action to hide a row from the page.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.hideWatchedItems": "Hide Watched Items",
+  "@home.customize.hideWatchedItems": {
+    "description": "Toggle title to hide watched titles from ordinary Home rows.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.hideWatchedItemsBody": "Remove watched titles from ordinary Home rows.",
+  "@home.customize.hideWatchedItemsBody": {
+    "description": "Subtitle for the Hide Watched Items toggle.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.homeScreen": "Home Screen",
+  "@home.customize.homeScreen": {
+    "description": "Settings row and navigation title for customizing Home and library screens.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.moveToBottom": "Move to Bottom",
+  "@home.customize.moveToBottom": {
+    "description": "Context menu action to move a row to the bottom of visible rows.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.moveToTop": "Move to Top",
+  "@home.customize.moveToTop": {
+    "description": "Context menu action to move a row to the top of the page.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.newReleasesFirst": "New Releases First",
+  "@home.customize.newReleasesFirst": {
+    "description": "Toggle title to prioritize newly aired episodes in Next Up.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.newReleasesFirstBody": "Put newly aired episodes at the front of Next Up.",
+  "@home.customize.newReleasesFirstBody": {
+    "description": "Subtitle for the New Releases First toggle.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.nextUpCombinedSubtitle": "Upcoming episodes appear inside Continue Watching.",
+  "@home.customize.nextUpCombinedSubtitle": {
+    "description": "Subtitle explaining the combined Next Up mode.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.nextUpMode": "Next Up Mode",
+  "@home.customize.nextUpMode": {
+    "description": "Picker label for how Next Up episodes are displayed on Home.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.nextUpSeparate": "Separate Row",
+  "@home.customize.nextUpSeparate": {
+    "description": "Option label for showing Next Up as its own row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.nextUpSeparateSubtitle": "Upcoming episodes get their own Next Up row.",
+  "@home.customize.nextUpSeparateSubtitle": {
+    "description": "Subtitle explaining the separate Next Up row mode.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.options": "Home Options",
+  "@home.customize.options": {
+    "description": "Accessibility label for the Home Options button in Customize Mode.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.optionsTitle": "Options",
+  "@home.customize.optionsTitle": {
+    "description": "Navigation title of the Home Options sheet.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.resetConfirmAction": "Reset Layout",
+  "@home.customize.resetConfirmAction": {
+    "description": "Confirmation button to proceed with resetting a page layout.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.resetConfirmBody": "This restores the server’s default rows and order for your profile.",
+  "@home.customize.resetConfirmBody": {
+    "description": "Confirmation dialog body before resetting a page layout.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.resetConfirmTitle": "Reset to Server Default?",
+  "@home.customize.resetConfirmTitle": {
+    "description": "Confirmation dialog title before resetting a page layout.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.resetFooter": "Removes your custom order, hidden rows, and pinned rows for this page.",
+  "@home.customize.resetFooter": {
+    "description": "Footer explaining what Reset to Server Default does.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.resetToDefault": "Reset to Server Default",
+  "@home.customize.resetToDefault": {
+    "description": "Destructive button to reset the page layout to the server default.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.rowsButton": "Customize Rows",
+  "@home.customize.rowsButton": {
+    "description": "Footer button at the bottom of a library Recommended tab to customize its rows.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.sectionDisplay": "Home Display",
+  "@home.customize.sectionDisplay": {
+    "description": "Section header in the Home Options sheet.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.showRow": "Show Row",
+  "@home.customize.showRow": {
+    "description": "Context menu action to unhide a hidden row.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.subtitle": "Drag handles to reorder · Tap eye to hide · Hold for more",
+  "@home.customize.subtitle": {
+    "description": "Instructional subtitle below the header in iOS Customize Mode.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.titleHome": "Customize Home",
+  "@home.customize.titleHome": {
+    "description": "Header and menu action to enter Home row customization.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.titleLibrary": "Customize Library",
+  "@home.customize.titleLibrary": {
+    "description": "Fallback header when customizing a library page without a name.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.titleNamed": "Customize {page}",
+  "@home.customize.titleNamed": {
+    "description": "Header and menu action to customize a named library page. {page}: library name.",
+    "x-platforms": [
+      "apple"
+    ],
+    "placeholders": {
+      "page": {
+        "type": "String"
+      }
+    }
   },
   "home.editor.collectionCount": "{count, plural, one {{count_text} collection} other {{count_text} collections}}",
   "@home.editor.collectionCount": {
