@@ -71703,7 +71703,7 @@
   },
   "web.admin.dashboard.range.edgeStart.year": "1y ago",
   "@web.admin.dashboard.range.edgeStart.year": {
-    "description": "Web admin, Dashboard widgets: label at the start of a time axis covering the last year.",
+    "description": "Web admin, Dashboard widgets: label at the start of a time axis covering the 365 days up to now.",
     "x-platforms": [
       "web"
     ]
@@ -71799,9 +71799,9 @@
       "web"
     ]
   },
-  "web.admin.dashboard.range.phrase.year": "the last year",
+  "web.admin.dashboard.range.phrase.year": "the last 365 days",
   "@web.admin.dashboard.range.phrase.year": {
-    "description": "Web admin, Dashboard widgets: spoken form of a widget's time window, inserted into sentences such as \"No plays in the last year\".",
+    "description": "Web admin, Dashboard widgets: spoken form of a widget's time window: the 365 days up to now, not the previous calendar year. Inserted into sentences such as \"No plays in the last 365 days\".",
     "x-platforms": [
       "web"
     ]
@@ -71878,9 +71878,9 @@
       "web"
     ]
   },
-  "web.admin.dashboard.range.title.year": "{title} · last year",
+  "web.admin.dashboard.range.title.year": "{title} · last 365 d",
   "@web.admin.dashboard.range.title.year": {
-    "description": "Web admin, Dashboard widgets: card title with its time window (the last year). {title}: the widget's name.",
+    "description": "Web admin, Dashboard widgets: card title with its time window: the 365 days up to now, not the previous calendar year. {title}: the widget's name.",
     "placeholders": {
       "title": {
         "type": "String"
@@ -71932,9 +71932,9 @@
       "web"
     ]
   },
-  "web.admin.dashboard.rangePicker.show.year": "Show the last year",
+  "web.admin.dashboard.rangePicker.show.year": "Show the last 365 days",
   "@web.admin.dashboard.rangePicker.show.year": {
-    "description": "Web admin, Dashboard widgets: accessible name of the time-window picker option that shows the last year.",
+    "description": "Web admin, Dashboard widgets: accessible name of the time-window picker option that shows the 365 days up to now (not the previous calendar year).",
     "x-platforms": [
       "web"
     ]
@@ -72023,9 +72023,9 @@
       "web"
     ]
   },
-  "web.admin.dashboard.widgetCatalog.insightsHourOfDay.description": "Which hours of the day people watch most",
+  "web.admin.dashboard.widgetCatalog.insightsHourOfDay.description": "The hours of the day with the most plays",
   "@web.admin.dashboard.widgetCatalog.insightsHourOfDay.description": {
-    "description": "Web admin, Dashboard page: one-line summary of the \"insights-hour-of-day\" widget (Plays by hour of day) under its name in the Add-widget sheet.",
+    "description": "Web admin, Dashboard page: one-line summary of the \"insights-hour-of-day\" widget (Plays by hour of day) under its name in the Add-widget sheet. It counts plays, not people.",
     "x-platforms": [
       "web"
     ]
@@ -72079,9 +72079,9 @@
       "web"
     ]
   },
-  "web.admin.dashboard.widgetCatalog.insightsWeekday.description": "Which days of the week people watch most",
+  "web.admin.dashboard.widgetCatalog.insightsWeekday.description": "The days of the week with the most plays",
   "@web.admin.dashboard.widgetCatalog.insightsWeekday.description": {
-    "description": "Web admin, Dashboard page: one-line summary of the \"insights-weekday\" widget (Plays by day of week) under its name in the Add-widget sheet.",
+    "description": "Web admin, Dashboard page: one-line summary of the \"insights-weekday\" widget (Plays by day of week) under its name in the Add-widget sheet. It counts plays, not people.",
     "x-platforms": [
       "web"
     ]
