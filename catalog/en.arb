@@ -100154,6 +100154,13 @@
       "web"
     ]
   },
+  "web.admin.settings.network.direct.reason.clamped": "Clamped to the allowed range",
+  "@web.admin.settings.network.direct.reason.clamped": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason shown when a direct connection tuning value, such as the receive window, was outside its allowed range and the host used the nearest allowed value instead.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.settings.network.direct.reason.disabled": "Disabled",
   "@web.admin.settings.network.direct.reason.disabled": {
     "description": "Web admin, Network Access settings page, Direct connections section: reason a feature is off, it is disabled.",
@@ -100161,9 +100168,9 @@
       "web"
     ]
   },
-  "web.admin.settings.network.direct.reason.engine_start_failed": "The direct connection engine could not start",
+  "web.admin.settings.network.direct.reason.engine_start_failed": "The direct connection engine stopped or could not start",
   "@web.admin.settings.network.direct.reason.engine_start_failed": {
-    "description": "Web admin, Network Access settings page, Direct connections section: reason a feature is off, the direct connection engine could not start.",
+    "description": "Web admin, Network Access settings page, Direct connections section: reason a feature is off, the direct connection engine stopped unexpectedly or could not start.",
     "x-platforms": [
       "web"
     ]
