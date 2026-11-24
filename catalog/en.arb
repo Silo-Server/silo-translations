@@ -71659,6 +71659,13 @@
       "web"
     ]
   },
+  "web.admin.dashboard.range.edgeStart.all": "First record",
+  "@web.admin.dashboard.range.edgeStart.all": {
+    "description": "Web admin, Dashboard widgets: label at the start of a time axis covering all recorded history: the oldest recorded day.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.dashboard.range.edgeStart.day": "24h ago",
   "@web.admin.dashboard.range.edgeStart.day": {
     "description": "Web admin, Dashboard widgets: label at the left end of a chart's time axis when the chart covers the last 24 hours. Keep it short.",
@@ -71680,9 +71687,30 @@
       "web"
     ]
   },
+  "web.admin.dashboard.range.edgeStart.quarter": "90d ago",
+  "@web.admin.dashboard.range.edgeStart.quarter": {
+    "description": "Web admin, Dashboard widgets: label at the start of a time axis covering the last 90 days.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.dashboard.range.edgeStart.week": "7d ago",
   "@web.admin.dashboard.range.edgeStart.week": {
     "description": "Web admin, Dashboard widgets: label at the left end of a chart's time axis when the chart covers the last 7 days. Keep it short.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.range.edgeStart.year": "1y ago",
+  "@web.admin.dashboard.range.edgeStart.year": {
+    "description": "Web admin, Dashboard widgets: label at the start of a time axis covering the last year.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.range.label.all": "All",
+  "@web.admin.dashboard.range.label.all": {
+    "description": "Web admin, Dashboard widgets: compact option in a widget's time-window picker for all recorded history. Keep it very short.",
     "x-platforms": [
       "web"
     ]
@@ -71708,9 +71736,30 @@
       "web"
     ]
   },
+  "web.admin.dashboard.range.label.quarter": "90d",
+  "@web.admin.dashboard.range.label.quarter": {
+    "description": "Web admin, Dashboard widgets: compact option in a widget's time-window picker for the last 90 days. Keep it very short.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.dashboard.range.label.week": "7d",
   "@web.admin.dashboard.range.label.week": {
     "description": "Web admin, Dashboard widgets: compact option in a widget's time-window picker for the last 7 days. Keep it very short.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.range.label.year": "1y",
+  "@web.admin.dashboard.range.label.year": {
+    "description": "Web admin, Dashboard widgets: compact option in a widget's time-window picker for the last year. Keep it very short.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.range.phrase.all": "all recorded history",
+  "@web.admin.dashboard.range.phrase.all": {
+    "description": "Web admin, Dashboard widgets: spoken form of a widget's time window covering everything the server has recorded, inserted into sentences such as \"No plays in all recorded history\".",
     "x-platforms": [
       "web"
     ]
@@ -71736,9 +71785,35 @@
       "web"
     ]
   },
+  "web.admin.dashboard.range.phrase.quarter": "the last 90 days",
+  "@web.admin.dashboard.range.phrase.quarter": {
+    "description": "Web admin, Dashboard widgets: spoken form of a widget's time window, inserted into sentences such as \"No plays in the last 90 days\".",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.dashboard.range.phrase.week": "the last 7 days",
   "@web.admin.dashboard.range.phrase.week": {
     "description": "Web admin, Dashboard widgets: spoken form of a widget's time window, inserted into sentences such as \"No plays in the last 7 days\".",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.range.phrase.year": "the last year",
+  "@web.admin.dashboard.range.phrase.year": {
+    "description": "Web admin, Dashboard widgets: spoken form of a widget's time window, inserted into sentences such as \"No plays in the last year\".",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.range.title.all": "{title} · all time",
+  "@web.admin.dashboard.range.title.all": {
+    "description": "Web admin, Dashboard widgets: card title with its time window (all recorded history). {title}: the widget's name.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    },
     "x-platforms": [
       "web"
     ]
@@ -71779,6 +71854,18 @@
       "web"
     ]
   },
+  "web.admin.dashboard.range.title.quarter": "{title} · last 90 d",
+  "@web.admin.dashboard.range.title.quarter": {
+    "description": "Web admin, Dashboard widgets: card title with its time window (the last 90 days). {title}: the widget's name.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.dashboard.range.title.week": "{title} · last 7 d",
   "@web.admin.dashboard.range.title.week": {
     "description": "Web admin, Dashboard widgets: card title with its time window (the last 7 days). {title}: the widget's name.",
@@ -71787,6 +71874,25 @@
         "type": "String"
       }
     },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.range.title.year": "{title} · last year",
+  "@web.admin.dashboard.range.title.year": {
+    "description": "Web admin, Dashboard widgets: card title with its time window (the last year). {title}: the widget's name.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.rangePicker.show.all": "Show all recorded history",
+  "@web.admin.dashboard.rangePicker.show.all": {
+    "description": "Web admin, Dashboard widgets: accessible name of the time-window picker option that shows all recorded history.",
     "x-platforms": [
       "web"
     ]
@@ -71812,9 +71918,23 @@
       "web"
     ]
   },
+  "web.admin.dashboard.rangePicker.show.quarter": "Show the last 90 days",
+  "@web.admin.dashboard.rangePicker.show.quarter": {
+    "description": "Web admin, Dashboard widgets: accessible name of the time-window picker option that shows the last 90 days.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.dashboard.rangePicker.show.week": "Show the last 7 days",
   "@web.admin.dashboard.rangePicker.show.week": {
     "description": "Web admin, Dashboard widgets: accessible name of the time-window picker option that shows the last 7 days.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.rangePicker.show.year": "Show the last year",
+  "@web.admin.dashboard.rangePicker.show.year": {
+    "description": "Web admin, Dashboard widgets: accessible name of the time-window picker option that shows the last year.",
     "x-platforms": [
       "web"
     ]
@@ -71885,6 +72005,90 @@
   "web.admin.dashboard.widgetCatalog.healthStrip.title": "Server health",
   "@web.admin.dashboard.widgetCatalog.healthStrip.title": {
     "description": "Web admin, Dashboard page: name of the \"health-strip\" widget, shown in the Add-widget sheet and in the move, resize and remove controls' accessible names.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgetCatalog.insightsActivePeople.description": "Profiles and accounts that watched each day, week or month",
+  "@web.admin.dashboard.widgetCatalog.insightsActivePeople.description": {
+    "description": "Web admin, Dashboard page: one-line summary of the \"insights-active-people\" widget (Active people) under its name in the Add-widget sheet.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgetCatalog.insightsActivePeople.title": "Active people",
+  "@web.admin.dashboard.widgetCatalog.insightsActivePeople.title": {
+    "description": "Web admin, Dashboard page: name of the \"insights-active-people\" widget in the Add-widget sheet: how many profiles and accounts watched per day, week or month.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgetCatalog.insightsHourOfDay.description": "Which hours of the day people watch most",
+  "@web.admin.dashboard.widgetCatalog.insightsHourOfDay.description": {
+    "description": "Web admin, Dashboard page: one-line summary of the \"insights-hour-of-day\" widget (Plays by hour of day) under its name in the Add-widget sheet.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgetCatalog.insightsHourOfDay.title": "Plays by hour of day",
+  "@web.admin.dashboard.widgetCatalog.insightsHourOfDay.title": {
+    "description": "Web admin, Dashboard page: name of the \"insights-hour-of-day\" widget in the Add-widget sheet.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgetCatalog.insightsLibraryCoverage.description": "How much of each movie and TV library was played over the chosen window",
+  "@web.admin.dashboard.widgetCatalog.insightsLibraryCoverage.description": {
+    "description": "Web admin, Dashboard page: one-line summary of the \"insights-library-coverage\" widget (Library coverage) under its name in the Add-widget sheet.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgetCatalog.insightsLibraryCoverage.title": "Library coverage",
+  "@web.admin.dashboard.widgetCatalog.insightsLibraryCoverage.title": {
+    "description": "Web admin, Dashboard page: name of the \"insights-library-coverage\" widget in the Add-widget sheet: the share of each library's titles played.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgetCatalog.insightsPlays.description": "Plays per day, week or month by play method or media type, as far back as history goes",
+  "@web.admin.dashboard.widgetCatalog.insightsPlays.description": {
+    "description": "Web admin, Dashboard page: one-line summary of the \"insights-plays\" widget (Playback over time) under its name in the Add-widget sheet.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgetCatalog.insightsPlays.title": "Playback over time",
+  "@web.admin.dashboard.widgetCatalog.insightsPlays.title": {
+    "description": "Web admin, Dashboard page: name of the \"insights-plays\" widget in the Add-widget sheet: plays per day, week or month from Insights.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgetCatalog.insightsViewingHours.description": "When people start watching, by day of the week and hour",
+  "@web.admin.dashboard.widgetCatalog.insightsViewingHours.description": {
+    "description": "Web admin, Dashboard page: one-line summary of the \"insights-viewing-hours\" widget (Viewing hours) under its name in the Add-widget sheet.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgetCatalog.insightsViewingHours.title": "Viewing hours",
+  "@web.admin.dashboard.widgetCatalog.insightsViewingHours.title": {
+    "description": "Web admin, Dashboard page: name of the \"insights-viewing-hours\" widget in the Add-widget sheet: a day-of-week by hour heatmap of when plays start.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgetCatalog.insightsWeekday.description": "Which days of the week people watch most",
+  "@web.admin.dashboard.widgetCatalog.insightsWeekday.description": {
+    "description": "Web admin, Dashboard page: one-line summary of the \"insights-weekday\" widget (Plays by day of week) under its name in the Add-widget sheet.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgetCatalog.insightsWeekday.title": "Plays by day of week",
+  "@web.admin.dashboard.widgetCatalog.insightsWeekday.title": {
+    "description": "Web admin, Dashboard page: name of the \"insights-weekday\" widget in the Add-widget sheet.",
     "x-platforms": [
       "web"
     ]
@@ -72926,6 +73130,13 @@
         "type": "String"
       }
     },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.dashboard.widgets.insights.loadFailed": "Failed to load Insights.",
+  "@web.admin.dashboard.widgets.insights.loadFailed": {
+    "description": "Web admin, Dashboard widgets: error shown inside a widget whose Insights data could not be loaded.",
     "x-platforms": [
       "web"
     ]
@@ -84028,6 +84239,41 @@
       "web"
     ]
   },
+  "web.admin.insights.activity.activePeople.subtitle": "Profiles and accounts that started watching in each period",
+  "@web.admin.insights.activity.activePeople.subtitle": {
+    "description": "Web admin, Insights page: Playback tab: explanation under the Active people chart title.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.activity.activePeople.title": "Active people",
+  "@web.admin.insights.activity.activePeople.title": {
+    "description": "Web admin, Insights page: Playback tab: title of the chart of how many profiles and accounts started watching in each day, week or month; also the chart's accessible name and the dashboard widget's title.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.activity.endReasons.subtitle": "Sessions in this period by why they ended. Many timeouts can mean apps are crashing or losing their connection.",
+  "@web.admin.insights.activity.endReasons.subtitle": {
+    "description": "Web admin, Insights page: Playback tab: explanation under the How sessions end title.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.activity.endReasons.title": "How sessions end",
+  "@web.admin.insights.activity.endReasons.title": {
+    "description": "Web admin, Insights page: Playback tab: title of the list of playback sessions grouped by why they ended (stopped by the viewer, timed out, stopped by an admin, and so on).",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.activity.endReasons.unknown": "Not recorded",
+  "@web.admin.insights.activity.endReasons.unknown": {
+    "description": "Web admin, Insights page: Playback tab: label for sessions recorded before the server kept why a session ended.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.insights.activity.heatmap.cellTooltip": "{day} at {hour}: {plays} ({watch_time})",
   "@web.admin.insights.activity.heatmap.cellTooltip": {
     "description": "Web admin, Insights Activity tab: accessible label and tooltip for one heatmap cell. {day}: weekday name; {hour}: hour label; {plays}: formatted play count; {watch_time}: formatted watch duration.",
@@ -84085,6 +84331,13 @@
   "web.admin.insights.activity.heatmap.title": "Viewing hours",
   "@web.admin.insights.activity.heatmap.title": {
     "description": "Web admin, Insights Activity tab: heading of the day-of-week by hour-of-day viewing heatmap.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.activity.hour.title": "Plays by hour of day",
+  "@web.admin.insights.activity.hour.title": {
+    "description": "Web admin, Insights page: Playback tab: title of the chart of plays (or watch time) for each hour of the day; also the chart's accessible name and the dashboard widget's title.",
     "x-platforms": [
       "web"
     ]
@@ -84298,6 +84551,70 @@
   "web.admin.insights.activity.volume.title": "Playback over time",
   "@web.admin.insights.activity.volume.title": {
     "description": "Web admin, Insights Activity tab: heading of the stacked column playback chart.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.activity.weekday.title": "Plays by day of week",
+  "@web.admin.insights.activity.weekday.title": {
+    "description": "Web admin, Insights page: Playback tab: title of the chart of plays (or watch time) for each day of the week; also the chart's accessible name and the dashboard widget's title.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.addToDashboard.add": "Add to dashboard",
+  "@web.admin.insights.addToDashboard.add": {
+    "description": "Web admin, Insights page: small button on a chart card that puts the same chart on the admin's dashboard.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.addToDashboard.addLabel": "Add {chart} to your dashboard",
+  "@web.admin.insights.addToDashboard.addLabel": {
+    "description": "Web admin, Insights page: accessible name of the Add to dashboard button. {chart}: the chart's title, such as \"Viewing hours\".",
+    "placeholders": {
+      "chart": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.addToDashboard.added": "Added {chart} to your dashboard",
+  "@web.admin.insights.addToDashboard.added": {
+    "description": "Web admin, Insights page: confirmation toast after a chart was added to the dashboard. {chart}: the chart's title.",
+    "placeholders": {
+      "chart": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.addToDashboard.hint": "Adds this chart for the whole server. Library and account filters don’t carry over.",
+  "@web.admin.insights.addToDashboard.hint": {
+    "description": "Web admin, Insights page: tooltip on the Add to dashboard button.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.addToDashboard.onDashboard": "On dashboard",
+  "@web.admin.insights.addToDashboard.onDashboard": {
+    "description": "Web admin, Insights page: replaces the Add to dashboard button once the chart is on the dashboard; links to the dashboard.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.addToDashboard.onDashboardLabel": "{chart} is on your dashboard. Open the dashboard.",
+  "@web.admin.insights.addToDashboard.onDashboardLabel": {
+    "description": "Web admin, Insights page: accessible name of the On dashboard link. {chart}: the chart's title.",
+    "placeholders": {
+      "chart": {
+        "type": "String"
+      }
+    },
     "x-platforms": [
       "web"
     ]
@@ -84619,6 +84936,76 @@
       }
     }
   },
+  "web.admin.insights.devices.audio.channels.mono": "Mono",
+  "@web.admin.insights.devices.audio.channels.mono": {
+    "description": "Web admin, Insights page: Devices & Quality tab: audio channel layout: one channel.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.devices.audio.channels.stereo": "Stereo",
+  "@web.admin.insights.devices.audio.channels.stereo": {
+    "description": "Web admin, Insights page: Devices & Quality tab: audio channel layout: two channels.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.devices.audio.channels.surround": "Surround",
+  "@web.admin.insights.devices.audio.channels.surround": {
+    "description": "Web admin, Insights page: Devices & Quality tab: audio channel layout: more than two channels, such as 5.1 or 7.1.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.devices.audio.channelsTitle": "Channels",
+  "@web.admin.insights.devices.audio.channelsTitle": {
+    "description": "Web admin, Insights page: Devices & Quality tab: heading over the list of delivered audio channel layouts.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.devices.audio.decision.direct": "Original file",
+  "@web.admin.insights.devices.audio.decision.direct": {
+    "description": "Web admin, Insights page: Devices & Quality tab: audio handling: the app played the file's audio directly.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.devices.audio.decision.remux": "Copied",
+  "@web.admin.insights.devices.audio.decision.remux": {
+    "description": "Web admin, Insights page: Devices & Quality tab: audio handling: the audio was copied unchanged into a new container.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.devices.audio.decision.transcode": "Converted",
+  "@web.admin.insights.devices.audio.decision.transcode": {
+    "description": "Web admin, Insights page: Devices & Quality tab: audio handling: the audio was converted to another format.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.devices.audio.decisionTitle": "Handling",
+  "@web.admin.insights.devices.audio.decisionTitle": {
+    "description": "Web admin, Insights page: Devices & Quality tab: heading over the list of how audio was delivered: unchanged, copied into a new container, or converted.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.devices.audio.subtitle": "The audio track each session played, how it reached the app, and its channels",
+  "@web.admin.insights.devices.audio.subtitle": {
+    "description": "Web admin, Insights page: Devices & Quality tab: explanation under the Audio title.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.devices.audio.title": "Audio",
+  "@web.admin.insights.devices.audio.title": {
+    "description": "Web admin, Insights page: Devices & Quality tab: title of the card about the audio tracks sessions played.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.insights.devices.burnInCodecs.empty": "No burned-in subtitles in this period",
   "@web.admin.insights.devices.burnInCodecs.empty": {
     "description": "Web admin, Insights Devices tab: empty state when no subtitle burn-ins exist.",
@@ -84756,6 +85143,13 @@
       }
     }
   },
+  "web.admin.insights.devices.languages": "Languages",
+  "@web.admin.insights.devices.languages": {
+    "description": "Web admin, Insights page: Devices & Quality tab: heading over a list of subtitle or audio languages.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.insights.devices.matrix.allSamples": "All",
   "@web.admin.insights.devices.matrix.allSamples": {
     "description": "Web admin, Insights Devices tab: matrix sample-size toggle showing every client/codec pair.",
@@ -84828,6 +85222,41 @@
   "web.admin.insights.devices.matrix.totalColumn": "Total",
   "@web.admin.insights.devices.matrix.totalColumn": {
     "description": "Web admin, Insights Devices tab: summary column header of the compatibility matrix.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.devices.protocol.jellyfin": "Jellyfin apps",
+  "@web.admin.insights.devices.protocol.jellyfin": {
+    "description": "Web admin, Insights page: Devices & Quality tab: chart series: sessions from apps that connect through Jellyfin compatibility.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.devices.protocol.silo": "Silo apps",
+  "@web.admin.insights.devices.protocol.silo": {
+    "description": "Web admin, Insights page: Devices & Quality tab: chart series: sessions from Silo's own apps.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.devices.protocol.subtitle": "Sessions from Silo’s own apps and from apps that connect through Jellyfin compatibility",
+  "@web.admin.insights.devices.protocol.subtitle": {
+    "description": "Web admin, Insights page: Devices & Quality tab: explanation under the Silo apps vs Jellyfin apps title.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.devices.protocol.title": "Silo apps vs Jellyfin apps",
+  "@web.admin.insights.devices.protocol.title": {
+    "description": "Web admin, Insights page: Devices & Quality tab: title of the chart that splits sessions between Silo's own apps and apps that connect through Jellyfin compatibility; also its accessible name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.devices.protocol.total": "Sessions",
+  "@web.admin.insights.devices.protocol.total": {
+    "description": "Web admin, Insights page: Devices & Quality tab: label of the total row in the Silo apps vs Jellyfin apps chart tooltip.",
     "x-platforms": [
       "web"
     ]
@@ -84945,6 +85374,98 @@
       "web"
     ]
   },
+  "web.admin.insights.devices.subtitles.delivery.burnIn": "Burned in",
+  "@web.admin.insights.devices.subtitles.delivery.burnIn": {
+    "description": "Web admin, Insights page: Devices & Quality tab: subtitle delivery: drawn into the video picture during a transcode.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.devices.subtitles.delivery.embedded": "In the stream",
+  "@web.admin.insights.devices.subtitles.delivery.embedded": {
+    "description": "Web admin, Insights page: Devices & Quality tab: subtitle delivery: carried as a track inside the video stream.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.devices.subtitles.delivery.hlsRendition": "Streaming track",
+  "@web.admin.insights.devices.subtitles.delivery.hlsRendition": {
+    "description": "Web admin, Insights page: Devices & Quality tab: subtitle delivery: an HLS subtitle rendition, a separate track of the streaming playlist.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.devices.subtitles.delivery.sidecar": "Separate file",
+  "@web.admin.insights.devices.subtitles.delivery.sidecar": {
+    "description": "Web admin, Insights page: Devices & Quality tab: subtitle delivery: sent as a separate subtitle file next to the video.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.devices.subtitles.deliveryTitle": "How they were shown",
+  "@web.admin.insights.devices.subtitles.deliveryTitle": {
+    "description": "Web admin, Insights page: Devices & Quality tab: heading over the list of how subtitles reached the app.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.devices.subtitles.empty": "No subtitles shown in this period",
+  "@web.admin.insights.devices.subtitles.empty": {
+    "description": "Web admin, Insights page: Devices & Quality tab: shown when no session in the period showed subtitles.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.devices.subtitles.flags": "{forced} forced · {hearing_impaired} for the deaf and hard of hearing",
+  "@web.admin.insights.devices.subtitles.flags": {
+    "description": "Web admin, Insights page: Devices & Quality tab: counts of subtitled sessions that used forced subtitles and subtitles for the deaf and hard of hearing (SDH). {forced} and {hearing_impaired}: formatted session counts.",
+    "placeholders": {
+      "forced": {
+        "type": "String"
+      },
+      "hearing_impaired": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.devices.subtitles.noFacts": "No sessions with detailed playback info in this period yet.",
+  "@web.admin.insights.devices.subtitles.noFacts": {
+    "description": "Web admin, Insights page: Devices & Quality tab: shown under the Subtitles or Audio title when no session in the period recorded its tracks.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.devices.subtitles.summary": "{total_count, plural, one {{percent}% of sessions showed subtitles ({subtitled} of {total} session with detailed playback info)} other {{percent}% of sessions showed subtitles ({subtitled} of {total} sessions with detailed playback info)}}",
+  "@web.admin.insights.devices.subtitles.summary": {
+    "description": "Web admin, Insights page: Devices & Quality tab: line under the Subtitles title. {percent}: formatted percentage; {subtitled} and {total}: formatted session counts; {total_count}: the total as a number, for the plural.",
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      },
+      "subtitled": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      },
+      "total_count": {
+        "type": "int"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.devices.subtitles.title": "Subtitles",
+  "@web.admin.insights.devices.subtitles.title": {
+    "description": "Web admin, Insights page: Devices & Quality tab: title of the card about the subtitles sessions showed.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.insights.devices.topTranscoders.empty": "No transcodes in this period",
   "@web.admin.insights.devices.topTranscoders.empty": {
     "description": "Web admin, Insights Devices tab: empty state when no clients transcoded.",
@@ -84980,6 +85501,48 @@
   "web.admin.insights.devices.unknownClient": "Unknown client",
   "@web.admin.insights.devices.unknownClient": {
     "description": "Web admin, Insights Devices tab: fallback client label when a play has no client name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.devices.versions.empty": "No app reported a version in this period",
+  "@web.admin.insights.devices.versions.empty": {
+    "description": "Web admin, Insights page: Devices & Quality tab: shown when the App versions table is empty.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.devices.versions.lastSeenColumn": "Last seen",
+  "@web.admin.insights.devices.versions.lastSeenColumn": {
+    "description": "Web admin, Insights page: Devices & Quality tab: App versions table column header: when that version last played something.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.devices.versions.sessionsColumn": "Sessions",
+  "@web.admin.insights.devices.versions.sessionsColumn": {
+    "description": "Web admin, Insights page: Devices & Quality tab: App versions table column header: playback sessions.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.devices.versions.subtitle": "Versions apps reported in this period, most sessions first",
+  "@web.admin.insights.devices.versions.subtitle": {
+    "description": "Web admin, Insights page: Devices & Quality tab: explanation under the App versions title.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.devices.versions.title": "App versions",
+  "@web.admin.insights.devices.versions.title": {
+    "description": "Web admin, Insights page: Devices & Quality tab: title of the table of app versions that played in the period.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.devices.versions.versionColumn": "Version",
+  "@web.admin.insights.devices.versions.versionColumn": {
+    "description": "Web admin, Insights page: Devices & Quality tab: App versions table column header: the app version.",
     "x-platforms": [
       "web"
     ]
@@ -85077,6 +85640,303 @@
   "web.admin.insights.filter.toDate": "To date",
   "@web.admin.insights.filter.toDate": {
     "description": "Web admin, Insights page: accessible label for the custom range end date input.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.library.coverage.detail": "{titles_count, plural, one {{played} of {titles} title · {never} never started} other {{played} of {titles} titles · {never} never started}}",
+  "@web.admin.insights.library.coverage.detail": {
+    "description": "Web admin, Insights page, Library tab: line under a library in Library coverage. {played}, {titles} and {never}: formatted counts; {titles_count}: the total as a number, for the plural.",
+    "placeholders": {
+      "played": {
+        "type": "String"
+      },
+      "titles": {
+        "type": "String"
+      },
+      "titles_count": {
+        "type": "int"
+      },
+      "never": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.library.coverage.empty": "No movie or TV libraries yet",
+  "@web.admin.insights.library.coverage.empty": {
+    "description": "Web admin, Insights page, Library tab: shown when the server has no movie or TV library.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.library.coverage.playedShare": "{value}% played",
+  "@web.admin.insights.library.coverage.playedShare": {
+    "description": "Web admin, Insights page, Library tab: value next to a library: the share of its titles played. {value}: a formatted number.",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.library.coverage.subtitle": "Share of each library’s movies and shows played in this period. A show counts when any episode was played.",
+  "@web.admin.insights.library.coverage.subtitle": {
+    "description": "Web admin, Insights page, Library tab: explanation under the Library coverage title.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.library.coverage.title": "Library coverage",
+  "@web.admin.insights.library.coverage.title": {
+    "description": "Web admin, Insights page, Library tab: title of the list of libraries with the share of their titles played in the period; also the dashboard widget's title.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.library.decades.label": "{year}s",
+  "@web.admin.insights.library.decades.label": {
+    "description": "Web admin, Insights page, Library tab: a release decade on the chart axis, such as \"1990s\". {year}: the decade's first year.",
+    "placeholders": {
+      "year": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.library.decades.title": "Plays by release decade",
+  "@web.admin.insights.library.decades.title": {
+    "description": "Web admin, Insights page, Library tab: title of the chart of plays by the decade titles were released in; also its accessible name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.library.firstPlay.day": "Within a day",
+  "@web.admin.insights.library.firstPlay.day": {
+    "description": "Web admin, Insights page, Library tab: Time to first play group: played less than a day after being added.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.library.firstPlay.empty": "No titles added in this period",
+  "@web.admin.insights.library.firstPlay.empty": {
+    "description": "Web admin, Insights page, Library tab: shown when nothing was added in the period.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.library.firstPlay.later": "Later",
+  "@web.admin.insights.library.firstPlay.later": {
+    "description": "Web admin, Insights page, Library tab: Time to first play group: played more than 30 days after being added.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.library.firstPlay.month": "Within a month",
+  "@web.admin.insights.library.firstPlay.month": {
+    "description": "Web admin, Insights page, Library tab: Time to first play group: played between one week and 30 days after being added.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.library.firstPlay.notYet": "Not played yet",
+  "@web.admin.insights.library.firstPlay.notYet": {
+    "description": "Web admin, Insights page, Library tab: Time to first play group: added in the period and not played since.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.library.firstPlay.subtitle": "Titles added this period, by how long they waited for someone to play them",
+  "@web.admin.insights.library.firstPlay.subtitle": {
+    "description": "Web admin, Insights page, Library tab: explanation under the Time to first play title.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.library.firstPlay.title": "Time to first play",
+  "@web.admin.insights.library.firstPlay.title": {
+    "description": "Web admin, Insights page, Library tab: title of the list of new titles grouped by how long they waited before someone played them.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.library.firstPlay.week": "Within a week",
+  "@web.admin.insights.library.firstPlay.week": {
+    "description": "Web admin, Insights page, Library tab: Time to first play group: played between one and seven days after being added.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.library.genres.subtitle": "A title with several genres counts in each, so these add up to more than the total.",
+  "@web.admin.insights.library.genres.subtitle": {
+    "description": "Web admin, Insights page, Library tab: explanation under the Plays by genre title.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.library.genres.title": "Plays by genre",
+  "@web.admin.insights.library.genres.title": {
+    "description": "Web admin, Insights page, Library tab: title of the list of genres ranked by plays.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.library.kpi.added": "Added this period",
+  "@web.admin.insights.library.kpi.added": {
+    "description": "Web admin, Insights page, Library tab: summary card: movies and shows added to the libraries in the period.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.library.kpi.addedDetail": "{played} played so far",
+  "@web.admin.insights.library.kpi.addedDetail": {
+    "description": "Web admin, Insights page, Library tab: line under Added this period: how many of those have a play. {played}: a formatted count.",
+    "placeholders": {
+      "played": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.library.kpi.firstPlay": "Wait for a first play",
+  "@web.admin.insights.library.kpi.firstPlay": {
+    "description": "Web admin, Insights page, Library tab: summary card: the median time between a title being added and its first play.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.library.kpi.firstPlayDays": "{days} d",
+  "@web.admin.insights.library.kpi.firstPlayDays": {
+    "description": "Web admin, Insights page, Library tab: the median wait for a first play, in days, possibly with a decimal, such as \"1.5 d\". Keep the unit short. {days}: the formatted number.",
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.library.kpi.firstPlayDetail": "Median, for titles added this period",
+  "@web.admin.insights.library.kpi.firstPlayDetail": {
+    "description": "Web admin, Insights page, Library tab: line under Wait for a first play.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.library.kpi.neverStarted": "Never started",
+  "@web.admin.insights.library.kpi.neverStarted": {
+    "description": "Web admin, Insights page, Library tab: summary card: movies and shows nobody has ever started playing.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.library.kpi.neverStartedSince": "Since history began on {date}",
+  "@web.admin.insights.library.kpi.neverStartedSince": {
+    "description": "Web admin, Insights page, Library tab: line under Never started: the server's playback history starts on this date. {date}: a short date.",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.library.kpi.played": "Titles played",
+  "@web.admin.insights.library.kpi.played": {
+    "description": "Web admin, Insights page, Library tab: summary card: the share of movies and shows with a play in the period.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.library.kpi.playedDetail": "{titles_count, plural, one {{played} of {titles} title} other {{played} of {titles} titles}}",
+  "@web.admin.insights.library.kpi.playedDetail": {
+    "description": "Web admin, Insights page, Library tab: line under the Titles played share. {played} and {titles}: formatted counts; {titles_count}: the total as a number, for the plural.",
+    "placeholders": {
+      "played": {
+        "type": "String"
+      },
+      "titles": {
+        "type": "String"
+      },
+      "titles_count": {
+        "type": "int"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.library.ratings.title": "Plays by content rating",
+  "@web.admin.insights.library.ratings.title": {
+    "description": "Web admin, Insights page, Library tab: title of the list of content ratings (such as PG-13 or TV-MA) ranked by plays.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.library.titleCount": "{count, plural, one {{count_text} title} other {{count_text} titles}}",
+  "@web.admin.insights.library.titleCount": {
+    "description": "Web admin, Insights page, Library tab: a number of movies and shows. {count}: the number, for the plural; {count_text}: the formatted number.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.library.unknown": "Unknown",
+  "@web.admin.insights.library.unknown": {
+    "description": "Web admin, Insights page, Library tab: label for a genre, decade, rating or wait the catalog has no value for.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.library.unplayed.added": "{library} · added {date}",
+  "@web.admin.insights.library.unplayed.added": {
+    "description": "Web admin, Insights page, Library tab: line next to an unplayed title. {library}: the library's name; {date}: a short date.",
+    "placeholders": {
+      "library": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.library.unplayed.empty": "Everything added this period has been played",
+  "@web.admin.insights.library.unplayed.empty": {
+    "description": "Web admin, Insights page, Library tab: shown when every title added in the period has a play.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.library.unplayed.subtitle": "The newest titles added this period that no one has played",
+  "@web.admin.insights.library.unplayed.subtitle": {
+    "description": "Web admin, Insights page, Library tab: explanation under the Added and not played yet title.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.library.unplayed.title": "Added and not played yet",
+  "@web.admin.insights.library.unplayed.title": {
+    "description": "Web admin, Insights page, Library tab: title of the list of the newest titles added in the period that nobody has played.",
     "x-platforms": [
       "web"
     ]
@@ -85433,6 +86293,13 @@
       "web"
     ]
   },
+  "web.admin.insights.tabs.library": "Library",
+  "@web.admin.insights.tabs.library": {
+    "description": "Web admin, Insights page: tab about how much of the movie and TV libraries people watch.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.insights.tabs.people": "People",
   "@web.admin.insights.tabs.people": {
     "description": "Web admin, Insights page: tab label for account and household profile viewing rollups.",
@@ -85557,6 +86424,39 @@
   "web.admin.insights.titleDetail.viewers.truncated": "Showing the 100 most recent viewers.",
   "@web.admin.insights.titleDetail.viewers.truncated": {
     "description": "Web admin, Insights detail panel: note under a viewer list that was cut at 100.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.titles.leastFinished.empty": "Nothing with 3 or more plays was left unfinished in this period",
+  "@web.admin.insights.titles.leastFinished.empty": {
+    "description": "Web admin, Insights page: Titles tab: shown when no title with at least 3 plays has an unfinished play, so the Least finished list is empty.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.titles.leastFinished.subtitle": "Titles with at least 3 plays, by the share of plays left unfinished",
+  "@web.admin.insights.titles.leastFinished.subtitle": {
+    "description": "Web admin, Insights page: Titles tab: explanation under the Least finished title.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.titles.leastFinished.title": "Least finished",
+  "@web.admin.insights.titles.leastFinished.title": {
+    "description": "Web admin, Insights page: Titles tab: title of the list of movies and shows people most often started but didn't finish.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.insights.titles.leastFinished.unfinishedShare": "{value}% unfinished",
+  "@web.admin.insights.titles.leastFinished.unfinishedShare": {
+    "description": "Web admin, Insights page: Titles tab: value next to a title in the Least finished list: the share of its plays nobody finished. {value}: a formatted number.",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    },
     "x-platforms": [
       "web"
     ]
