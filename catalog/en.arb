@@ -113648,6 +113648,13 @@
       "web"
     ]
   },
+  "web.admin.settings.security.endpoint.oauthStart": "Single sign-on: start",
+  "@web.admin.settings.security.endpoint.oauthStart": {
+    "description": "Web admin, Security settings page: rate limit row for starting a sign-in with a single sign-on (OAuth or OpenID Connect) provider.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.settings.security.endpoint.passwordChange": "Change password",
   "@web.admin.settings.security.endpoint.passwordChange": {
     "description": "Web admin, Security settings page: rate limit row for the password change endpoint.",
