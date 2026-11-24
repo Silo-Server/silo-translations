@@ -81299,9 +81299,9 @@
       "web"
     ]
   },
-  "web.admin.history.column.logs": "Logs",
+  "web.admin.history.column.logs": "Actions",
   "@web.admin.history.column.logs": {
-    "description": "Web: admin Playback History page: table column header for log links.",
+    "description": "Web: admin Playback History page: table column header for row actions (session details and log links).",
     "x-platforms": [
       "web"
     ]
@@ -81334,14 +81334,14 @@
       "web"
     ]
   },
-  "web.admin.history.column.user": "User",
+  "web.admin.history.column.user": "Account",
   "@web.admin.history.column.user": {
     "description": "Web: admin Playback History page: table column header for the account.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.history.column.watchTime": "Watch Time",
+  "web.admin.history.column.watchTime": "Watch time",
   "@web.admin.history.column.watchTime": {
     "description": "Web: admin Playback History page: table column header for how long the play lasted.",
     "x-platforms": [
@@ -81383,9 +81383,9 @@
       "web"
     ]
   },
-  "web.admin.history.detail.column.stream": "Track",
+  "web.admin.history.detail.column.stream": "Detail",
   "@web.admin.history.detail.column.stream": {
-    "description": "Web admin, Playback History detail drawer: column header for media stream track kind.",
+    "description": "Web admin, Playback History detail drawer: first column header in the Source vs. delivered comparison table (video, audio, container, bitrate, subtitles).",
     "x-platforms": [
       "web"
     ]
@@ -81411,14 +81411,14 @@
       "web"
     ]
   },
-  "web.admin.history.detail.field.endPosition": "End position",
+  "web.admin.history.detail.field.endPosition": "Stopped at",
   "@web.admin.history.detail.field.endPosition": {
     "description": "Web admin, Playback History detail drawer: field label for playback position when ended.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.history.detail.field.endReason": "End reason",
+  "web.admin.history.detail.field.endReason": "How it ended",
   "@web.admin.history.detail.field.endReason": {
     "description": "Web admin, Playback History detail drawer: field label for how the session ended.",
     "x-platforms": [
@@ -81495,7 +81495,7 @@
       "web"
     ]
   },
-  "web.admin.history.detail.keyboardHint": "Use ↑ and ↓ to step through rows",
+  "web.admin.history.detail.keyboardHint": "Use ↑ and ↓ to move between sessions",
   "@web.admin.history.detail.keyboardHint": {
     "description": "Web admin, Playback History detail drawer: helper hint explaining arrow-key navigation.",
     "x-platforms": [
@@ -81530,7 +81530,7 @@
       "web"
     ]
   },
-  "web.admin.history.detail.preUpgradeNotice": "Recorded before detailed route telemetry was captured. Source specs and delivery route fields are unavailable for this session.",
+  "web.admin.history.detail.preUpgradeNotice": "Recorded before detailed playback info was tracked. File details and server route aren’t available for this session.",
   "@web.admin.history.detail.preUpgradeNotice": {
     "description": "Web admin, Playback History detail drawer: notice shown on legacy rows where route_facts_recorded is false.",
     "x-platforms": [
@@ -81579,14 +81579,14 @@
       "web"
     ]
   },
-  "web.admin.history.detail.section.clientRoute": "Client, device & route",
+  "web.admin.history.detail.section.clientRoute": "Account, device & route",
   "@web.admin.history.detail.section.clientRoute": {
     "description": "Web admin, Playback History detail drawer: heading for client and routing metadata.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.history.detail.section.reasons": "Why this session adapted",
+  "web.admin.history.detail.section.reasons": "Why it didn’t direct play",
   "@web.admin.history.detail.section.reasons": {
     "description": "Web admin, Playback History detail drawer: heading for the session’s adaptation reasons.",
     "x-platforms": [
@@ -81621,7 +81621,7 @@
       "web"
     ]
   },
-  "web.admin.history.detail.subtitlesHls": "HLS rendition",
+  "web.admin.history.detail.subtitlesHls": "Streamed (HLS)",
   "@web.admin.history.detail.subtitlesHls": {
     "description": "Web admin, Playback History detail drawer: subtitle delivery label when subtitles were delivered as an HLS WebVTT rendition.",
     "x-platforms": [
@@ -81635,7 +81635,7 @@
       "web"
     ]
   },
-  "web.admin.history.detail.subtitlesSidecar": "Sidecar",
+  "web.admin.history.detail.subtitlesSidecar": "External file",
   "@web.admin.history.detail.subtitlesSidecar": {
     "description": "Web admin, Playback History detail drawer: subtitle delivery label when subtitles were fetched as a separate sidecar track.",
     "x-platforms": [
@@ -81698,7 +81698,7 @@
       "web"
     ]
   },
-  "web.admin.history.empty.body": "No playback history matches the current filters. Try adjusting the user, profile, or completion filters.",
+  "web.admin.history.empty.body": "No sessions match these filters. Try clearing or adjusting a filter.",
   "@web.admin.history.empty.body": {
     "description": "Web: admin Playback History page: empty state text when no plays match.",
     "x-platforms": [
@@ -81712,21 +81712,21 @@
       "web"
     ]
   },
-  "web.admin.history.endReason.aborted": "Aborted",
+  "web.admin.history.endReason.aborted": "Ended by server",
   "@web.admin.history.endReason.aborted": {
     "description": "Web admin, Playback History detail drawer: end reason when playback ended abnormally or was aborted by the server.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.history.endReason.expired": "Expired",
+  "web.admin.history.endReason.expired": "Timed out",
   "@web.admin.history.endReason.expired": {
     "description": "Web admin, Playback History detail drawer: end reason when the session timed out after the client stopped reporting.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.history.endReason.replaced": "Replaced",
+  "web.admin.history.endReason.replaced": "Switched stream",
   "@web.admin.history.endReason.replaced": {
     "description": "Web admin, Playback History detail drawer: end reason when a newer session superseded this playback attempt.",
     "x-platforms": [
@@ -81740,7 +81740,7 @@
       "web"
     ]
   },
-  "web.admin.history.endReason.terminated": "Terminated by admin",
+  "web.admin.history.endReason.terminated": "Stopped by admin",
   "@web.admin.history.endReason.terminated": {
     "description": "Web admin, Playback History detail drawer: end reason when an administrator terminated the session.",
     "x-platforms": [
@@ -81834,7 +81834,7 @@
       }
     }
   },
-  "web.admin.history.filter.allAttempts": "All attempts",
+  "web.admin.history.filter.allAttempts": "All statuses",
   "@web.admin.history.filter.allAttempts": {
     "description": "Web: admin Playback History page: completion filter option showing completed and partial plays.",
     "x-platforms": [
@@ -81869,7 +81869,7 @@
       "web"
     ]
   },
-  "web.admin.history.filter.allUsers": "All users",
+  "web.admin.history.filter.allUsers": "All accounts",
   "@web.admin.history.filter.allUsers": {
     "description": "Web: admin Playback History page: user filter option showing every account.",
     "x-platforms": [
@@ -81883,7 +81883,7 @@
       "web"
     ]
   },
-  "web.admin.history.filter.chooseUserFirst": "Choose a user first",
+  "web.admin.history.filter.chooseUserFirst": "Choose an account first",
   "@web.admin.history.filter.chooseUserFirst": {
     "description": "Web: admin Playback History page: profile filter placeholder while no user is chosen.",
     "x-platforms": [
@@ -81937,16 +81937,16 @@
       "web"
     ]
   },
-  "web.admin.history.filter.searchPlaceholder": "Search titles, users, clients, or session IDs…",
+  "web.admin.history.filter.searchPlaceholder": "Search titles, accounts, clients, or session IDs…",
   "@web.admin.history.filter.searchPlaceholder": {
     "description": "Web admin, Playback History page: search input placeholder.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.history.itemFilterActive": "Item filter active",
+  "web.admin.history.itemFilterActive": "Title:",
   "@web.admin.history.itemFilterActive": {
-    "description": "Web: admin Playback History page: note in the header when the list is limited to one title; followed by a link to that title.",
+    "description": "Web: admin Playback History page: prefix label on the active title filter chip.",
     "x-platforms": [
       "web"
     ]
@@ -82085,7 +82085,7 @@
       "web"
     ]
   },
-  "web.admin.history.row.estimatedTitle": "Estimated: recorded before watch time was measured",
+  "web.admin.history.row.estimatedTitle": "Estimated (recorded before exact watch time was tracked)",
   "@web.admin.history.row.estimatedTitle": {
     "description": "Web: admin Playback History page: tooltip on a watch time the server estimated.",
     "x-platforms": [
@@ -82152,14 +82152,14 @@
       "web"
     ]
   },
-  "web.admin.history.stats.visibleRows": "Visible Rows",
+  "web.admin.history.stats.visibleRows": "Shown",
   "@web.admin.history.stats.visibleRows": {
     "description": "Web: admin Playback History page: label of the card counting plays in the list.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.history.subtitle": "Finalized playback attempts across all users and profiles.",
+  "web.admin.history.subtitle": "Past playback sessions across all accounts and profiles.",
   "@web.admin.history.subtitle": {
     "description": "Web: admin Playback History page: page subtitle.",
     "x-platforms": [
@@ -84014,6 +84014,13 @@
       "web"
     ]
   },
+  "web.admin.insights.action.history": "History",
+  "@web.admin.insights.action.history": {
+    "description": "Web admin, Insights page: header button linking to the Playback History page.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.insights.action.liveActivity": "Live activity",
   "@web.admin.insights.action.liveActivity": {
     "description": "Web admin, Insights page: header action button linking to the Monitor Activity view of active sessions.",
@@ -84042,7 +84049,7 @@
       "web"
     ]
   },
-  "web.admin.insights.activity.heatmap.empty": "No viewing hours recorded in this window",
+  "web.admin.insights.activity.heatmap.empty": "No viewing activity in this period",
   "@web.admin.insights.activity.heatmap.empty": {
     "description": "Web admin, Insights Activity tab: empty state for the viewing hours heatmap.",
     "x-platforms": [
@@ -84063,7 +84070,7 @@
       "web"
     ]
   },
-  "web.admin.insights.activity.heatmap.subtitle": "When plays start in {tz}",
+  "web.admin.insights.activity.heatmap.subtitle": "When people start watching ({tz})",
   "@web.admin.insights.activity.heatmap.subtitle": {
     "description": "Web admin, Insights Activity tab: subtitle under the viewing hours heatmap. {tz}: IANA time zone name.",
     "x-platforms": [
@@ -84123,7 +84130,7 @@
       }
     }
   },
-  "web.admin.insights.activity.kpi.peakStreamsNone": "No stream samples in window",
+  "web.admin.insights.activity.kpi.peakStreamsNone": "No stream data yet",
   "@web.admin.insights.activity.kpi.peakStreamsNone": {
     "description": "Web admin, Insights Activity tab: subtitle when no concurrency samples exist in the range.",
     "x-platforms": [
@@ -84165,9 +84172,9 @@
       "web"
     ]
   },
-  "web.admin.insights.activity.kpi.watchTimeMeasured": "{total_count, plural, one {{measured} of {total} session measured} other {{measured} of {total} sessions measured}}",
+  "web.admin.insights.activity.kpi.watchTimeMeasured": "{total_count, plural, one {Exact for {measured} of {total} session} other {Exact for {measured} of {total} sessions}}",
   "@web.admin.insights.activity.kpi.watchTimeMeasured": {
-    "description": "Web admin, Insights Playback tab: watch time card detail. {measured}: formatted count of playback sessions with measured watch time; {total}: formatted count of all sessions in the window; {total_count}: that count as a number, for plural selection.",
+    "description": "Web admin, Insights Playback tab: subtext under the Watch time KPI when only some sessions in the selected period have exact tracked watch time. {measured}: formatted count of tracked sessions; {total}: formatted total session count; {total_count}: numeric total for plural selection.",
     "x-platforms": [
       "web"
     ],
@@ -84190,21 +84197,21 @@
       "web"
     ]
   },
-  "web.admin.insights.activity.peak.empty": "No concurrency samples in this window",
+  "web.admin.insights.activity.peak.empty": "No stream data in this period",
   "@web.admin.insights.activity.peak.empty": {
     "description": "Web admin, Insights Activity tab: empty state when no peak stream samples exist.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.insights.activity.peak.scopeNotice": "Peak concurrent streams are server-wide and do not change with account or library filters.",
+  "web.admin.insights.activity.peak.scopeNotice": "Always shows the whole server — account and library filters don’t apply here.",
   "@web.admin.insights.activity.peak.scopeNotice": {
     "description": "Web admin, Insights Activity tab: note displayed when account or library filters are active because concurrency peaks are server-wide.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.insights.activity.peak.subtitle": "Daily highest simultaneous streams (server-wide, UTC days)",
+  "web.admin.insights.activity.peak.subtitle": "Most streams playing at once each day (whole server, UTC)",
   "@web.admin.insights.activity.peak.subtitle": {
     "description": "Web admin, Insights Playback tab: subtitle under the peak concurrent streams chart.",
     "x-platforms": [
@@ -84218,14 +84225,14 @@
       "web"
     ]
   },
-  "web.admin.insights.activity.volume.chartLabel": "Playback volume over time",
+  "web.admin.insights.activity.volume.chartLabel": "Playback over time",
   "@web.admin.insights.activity.volume.chartLabel": {
     "description": "Web admin, Insights Activity tab: accessible name of the playback volume chart.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.insights.activity.volume.empty": "No playback in this window",
+  "web.admin.insights.activity.volume.empty": "No playback in this period",
   "@web.admin.insights.activity.volume.empty": {
     "description": "Web admin, Insights Activity tab: empty state when no plays exist in the selected window.",
     "x-platforms": [
@@ -84281,14 +84288,14 @@
       "web"
     ]
   },
-  "web.admin.insights.activity.volume.subtitle": "A play counts resumed sittings once and skips unfinished attempts under 30 seconds.",
+  "web.admin.insights.activity.volume.subtitle": "Pausing and resuming counts as one play. Unfinished stops under 30 seconds aren’t counted.",
   "@web.admin.insights.activity.volume.subtitle": {
     "description": "Web admin, Insights Playback tab: caption under the playback volume chart title explaining how plays are counted.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.insights.activity.volume.title": "Playback volume",
+  "web.admin.insights.activity.volume.title": "Playback over time",
   "@web.admin.insights.activity.volume.title": {
     "description": "Web admin, Insights Activity tab: heading of the stacked column playback chart.",
     "x-platforms": [
@@ -84302,42 +84309,42 @@
       "web"
     ]
   },
-  "web.admin.insights.bandwidth.chart.empty": "No bandwidth samples in this window",
+  "web.admin.insights.bandwidth.chart.empty": "No bandwidth data in this period",
   "@web.admin.insights.bandwidth.chart.empty": {
     "description": "Web admin, Insights Bandwidth tab: empty state when no egress samples exist.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.insights.bandwidth.chart.metricPeak": "Peak rate",
+  "web.admin.insights.bandwidth.chart.metricPeak": "Peak speed",
   "@web.admin.insights.bandwidth.chart.metricPeak": {
     "description": "Web admin, Insights Bandwidth tab: toggle showing daily peak egress rate in Mbps.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.insights.bandwidth.chart.metricVolume": "Volume",
+  "web.admin.insights.bandwidth.chart.metricVolume": "Data sent",
   "@web.admin.insights.bandwidth.chart.metricVolume": {
     "description": "Web admin, Insights Bandwidth tab: toggle showing daily egress data volume.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.insights.bandwidth.chart.peakLabel": "Daily peak egress rate",
+  "web.admin.insights.bandwidth.chart.peakLabel": "Daily peak bandwidth",
   "@web.admin.insights.bandwidth.chart.peakLabel": {
     "description": "Web admin, Insights Bandwidth tab: accessible name of the daily peak egress rate chart.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.insights.bandwidth.chart.subtitle": "Daily egress totals and peak rates (server-wide, UTC days)",
+  "web.admin.insights.bandwidth.chart.subtitle": "Daily data sent and peak speed across the whole server (UTC).",
   "@web.admin.insights.bandwidth.chart.subtitle": {
     "description": "Web admin, Insights Bandwidth tab: subtitle under the bandwidth chart explaining server-wide UTC-day bucketing.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.insights.bandwidth.chart.title": "Egress over time",
+  "web.admin.insights.bandwidth.chart.title": "Bandwidth over time",
   "@web.admin.insights.bandwidth.chart.title": {
     "description": "Web admin, Insights Bandwidth tab: heading of the bandwidth timeseries chart.",
     "x-platforms": [
@@ -84358,7 +84365,7 @@
       "web"
     ]
   },
-  "web.admin.insights.bandwidth.chart.volumeLabel": "Daily egress volume",
+  "web.admin.insights.bandwidth.chart.volumeLabel": "Daily data sent",
   "@web.admin.insights.bandwidth.chart.volumeLabel": {
     "description": "Web admin, Insights Bandwidth tab: accessible name of the daily egress volume chart.",
     "x-platforms": [
@@ -84414,7 +84421,7 @@
       }
     }
   },
-  "web.admin.insights.bandwidth.kpi.peakEgress": "Peak egress",
+  "web.admin.insights.bandwidth.kpi.peakEgress": "Peak speed",
   "@web.admin.insights.bandwidth.kpi.peakEgress": {
     "description": "Web admin, Insights Bandwidth tab: KPI tile label for maximum egress rate.",
     "x-platforms": [
@@ -84433,7 +84440,7 @@
       }
     }
   },
-  "web.admin.insights.bandwidth.kpi.remoteShare": "Remote session share",
+  "web.admin.insights.bandwidth.kpi.remoteShare": "Remote viewing",
   "@web.admin.insights.bandwidth.kpi.remoteShare": {
     "description": "Web admin, Insights Bandwidth tab: KPI tile label for share of remote vs local plays.",
     "x-platforms": [
@@ -84455,14 +84462,14 @@
       }
     }
   },
-  "web.admin.insights.bandwidth.kpi.remoteShareUnknown": "No location facts in window",
+  "web.admin.insights.bandwidth.kpi.remoteShareUnknown": "No network info yet",
   "@web.admin.insights.bandwidth.kpi.remoteShareUnknown": {
     "description": "Web admin, Insights Bandwidth tab: subtitle when no plays have stream location telemetry.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.insights.bandwidth.kpi.totalEgress": "Total egress",
+  "web.admin.insights.bandwidth.kpi.totalEgress": "Total data sent",
   "@web.admin.insights.bandwidth.kpi.totalEgress": {
     "description": "Web admin, Insights Bandwidth tab: KPI tile label for total bytes served.",
     "x-platforms": [
@@ -84476,7 +84483,7 @@
       "web"
     ]
   },
-  "web.admin.insights.bandwidth.nodes.column.peak": "Peak rate",
+  "web.admin.insights.bandwidth.nodes.column.peak": "Peak speed",
   "@web.admin.insights.bandwidth.nodes.column.peak": {
     "description": "Web admin, Insights Bandwidth tab: node breakdown column for peak rate.",
     "x-platforms": [
@@ -84490,30 +84497,30 @@
       "web"
     ]
   },
-  "web.admin.insights.bandwidth.nodes.column.total": "Total egress",
+  "web.admin.insights.bandwidth.nodes.column.total": "Data sent",
   "@web.admin.insights.bandwidth.nodes.column.total": {
     "description": "Web admin, Insights Bandwidth tab: node breakdown column for total bytes served.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.insights.bandwidth.nodes.empty": "No remote node egress in this window",
+  "web.admin.insights.bandwidth.nodes.empty": "No remote node traffic in this period",
   "@web.admin.insights.bandwidth.nodes.empty": {
     "description": "Web admin, Insights Bandwidth tab: empty state when no remote nodes served traffic.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.insights.bandwidth.nodes.title": "Egress by node",
+  "web.admin.insights.bandwidth.nodes.title": "Bandwidth by node",
   "@web.admin.insights.bandwidth.nodes.title": {
     "description": "Web admin, Insights Bandwidth tab: heading of the per-node egress breakdown table.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.insights.coverage.metricsStart": "Daily bandwidth and concurrency metrics start on {since}.",
+  "web.admin.insights.coverage.metricsStart": "Bandwidth history starts on {since}.",
   "@web.admin.insights.coverage.metricsStart": {
-    "description": "Web admin, Insights page: note showing the earliest date with daily metric samples. {since}: formatted date.",
+    "description": "Web admin, Insights Bandwidth tab: notice shown when the selected date range starts before daily bandwidth history began. {since}: formatted start date.",
     "x-platforms": [
       "web"
     ],
@@ -84523,14 +84530,14 @@
       }
     }
   },
-  "web.admin.insights.coverage.routeFactsNone": "No sessions in this window carry detailed route facts yet. New sessions record full codec, encoder, and routing telemetry automatically.",
+  "web.admin.insights.coverage.routeFactsNone": "Detailed playback info isn’t available for these older sessions. New sessions record it automatically.",
   "@web.admin.insights.coverage.routeFactsNone": {
     "description": "Web admin, Insights page: notice when no plays in the selected range have detailed route telemetry.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.insights.coverage.routeFactsPartial": "{total_count, plural, one {Detailed codec, transcode, and routing facts are recorded for {recorded} of {total} session in this window (recorded since {since}).} other {Detailed codec, transcode, and routing facts are recorded for {recorded} of {total} sessions in this window (recorded since {since}).}}",
+  "web.admin.insights.coverage.routeFactsPartial": "{total_count, plural, one {Detailed playback info is available for {recorded} of {total} session (tracked since {since}).} other {Detailed playback info is available for {recorded} of {total} sessions (tracked since {since}).}}",
   "@web.admin.insights.coverage.routeFactsPartial": {
     "description": "Web admin, Insights page: notice that only sessions recorded after the upgrade carry detailed route facts. {recorded}: formatted count of sessions with route facts; {total}: formatted count of sessions in the window; {total_count}: that count as a number, for plural selection; {since}: formatted date route facts start.",
     "x-platforms": [
@@ -84551,7 +84558,7 @@
       }
     }
   },
-  "web.admin.insights.coverage.watchTimePartial": "{total_count, plural, one {Measured watch time covers {measured} of {total} session in this window; older sessions use end-position estimates.} other {Measured watch time covers {measured} of {total} sessions in this window; older sessions use end-position estimates.}}",
+  "web.admin.insights.coverage.watchTimePartial": "{total_count, plural, one {Exact watch time is available for {measured} of {total} session; older sessions are estimated.} other {Exact watch time is available for {measured} of {total} sessions; older sessions are estimated.}}",
   "@web.admin.insights.coverage.watchTimePartial": {
     "description": "Web admin, Insights page: notice that some older sessions predate measured watch time. {measured}: formatted count of sessions with measured watch time; {total}: formatted count of sessions in the window; {total_count}: that count as a number, for plural selection.",
     "x-platforms": [
@@ -84569,14 +84576,14 @@
       }
     }
   },
-  "web.admin.insights.detail.action.history": "View sessions",
+  "web.admin.insights.detail.action.history": "View history",
   "@web.admin.insights.detail.action.history": {
     "description": "Web admin, Insights detail panel: link to the playback history filtered to this title or person.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.insights.detail.noPlays": "No plays in this window",
+  "web.admin.insights.detail.noPlays": "No plays in this period",
   "@web.admin.insights.detail.noPlays": {
     "description": "Web admin, Insights detail panel: empty state of a list of plays (viewers, episodes, top titles).",
     "x-platforms": [
@@ -84612,21 +84619,21 @@
       }
     }
   },
-  "web.admin.insights.devices.burnInCodecs.empty": "No subtitle burn-ins in this window",
+  "web.admin.insights.devices.burnInCodecs.empty": "No burned-in subtitles in this period",
   "@web.admin.insights.devices.burnInCodecs.empty": {
     "description": "Web admin, Insights Devices tab: empty state when no subtitle burn-ins exist.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.insights.devices.burnInCodecs.title": "Burn-in subtitle codecs",
+  "web.admin.insights.devices.burnInCodecs.title": "Burned-in subtitle formats",
   "@web.admin.insights.devices.burnInCodecs.title": {
     "description": "Web admin, Insights Devices tab: heading for subtitle codecs causing burn-ins.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.insights.devices.hwAccel.empty": "No video transcodes in this window",
+  "web.admin.insights.devices.hwAccel.empty": "No video transcodes in this period",
   "@web.admin.insights.devices.hwAccel.empty": {
     "description": "Web admin, Insights Devices tab: empty state when no video transcodes exist.",
     "x-platforms": [
@@ -84640,7 +84647,7 @@
       "web"
     ]
   },
-  "web.admin.insights.devices.hwAccel.title": "Encoder acceleration",
+  "web.admin.insights.devices.hwAccel.title": "Hardware acceleration",
   "@web.admin.insights.devices.hwAccel.title": {
     "description": "Web admin, Insights Devices tab: heading for hardware/software encoder breakdown.",
     "x-platforms": [
@@ -84672,7 +84679,7 @@
       }
     }
   },
-  "web.admin.insights.devices.kpi.directPlayRate": "Direct play share",
+  "web.admin.insights.devices.kpi.directPlayRate": "Direct play rate",
   "@web.admin.insights.devices.kpi.directPlayRate": {
     "description": "Web admin, Insights Devices tab: KPI tile label for percentage of direct plays.",
     "x-platforms": [
@@ -84686,7 +84693,7 @@
       "web"
     ]
   },
-  "web.admin.insights.devices.kpi.hdrToneMapDetail": "{hw} HW · {sw} SW",
+  "web.admin.insights.devices.kpi.hdrToneMapDetail": "{hw} hardware · {sw} CPU",
   "@web.admin.insights.devices.kpi.hdrToneMapDetail": {
     "description": "Web admin, Insights Devices tab: hardware vs software HDR tone-map counts. {hw}: hardware count; {sw}: software count.",
     "x-platforms": [
@@ -84701,14 +84708,14 @@
       }
     }
   },
-  "web.admin.insights.devices.kpi.hwSplit": "Transcode encoder",
+  "web.admin.insights.devices.kpi.hwSplit": "Hardware transcoding",
   "@web.admin.insights.devices.kpi.hwSplit": {
-    "description": "Web admin, Insights Devices tab: KPI tile label for hardware vs software transcode split.",
+    "description": "Web admin, Insights Devices & Quality tab: KPI card title showing the percentage of video transcodes handled by hardware acceleration.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.insights.devices.kpi.hwSplitDetail": "{hw} HW · {sw} SW",
+  "web.admin.insights.devices.kpi.hwSplitDetail": "{hw} hardware · {sw} CPU",
   "@web.admin.insights.devices.kpi.hwSplitDetail": {
     "description": "Web admin, Insights Devices tab: hardware vs software transcode play counts. {hw}: hardware count; {sw}: software count.",
     "x-platforms": [
@@ -84749,7 +84756,7 @@
       }
     }
   },
-  "web.admin.insights.devices.matrix.allSamples": "All samples",
+  "web.admin.insights.devices.matrix.allSamples": "All",
   "@web.admin.insights.devices.matrix.allSamples": {
     "description": "Web admin, Insights Devices tab: matrix sample-size toggle showing every client/codec pair.",
     "x-platforms": [
@@ -84790,28 +84797,28 @@
       "web"
     ]
   },
-  "web.admin.insights.devices.matrix.empty": "No client-codec pairs meet the sample threshold in this window",
+  "web.admin.insights.devices.matrix.empty": "Not enough sessions yet. Switch to “All” or widen the date range.",
   "@web.admin.insights.devices.matrix.empty": {
     "description": "Web admin, Insights Devices tab: empty state when the compatibility matrix has no rows.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.insights.devices.matrix.minSessions": "Min 5 sessions",
+  "web.admin.insights.devices.matrix.minSessions": "5+ sessions",
   "@web.admin.insights.devices.matrix.minSessions": {
     "description": "Web admin, Insights Devices tab: matrix sample-size toggle hiding client/codec pairs with fewer than five playback sessions.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.insights.devices.matrix.subtitle": "Direct-play rate by client and source codec. Select any cell to inspect matching sessions.",
+  "web.admin.insights.devices.matrix.subtitle": "How often each app plays a video format without converting. Click a cell to see those sessions.",
   "@web.admin.insights.devices.matrix.subtitle": {
     "description": "Web admin, Insights Devices tab: subtitle under the client-by-codec compatibility matrix.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.insights.devices.matrix.title": "Client × Source video codec",
+  "web.admin.insights.devices.matrix.title": "Direct play by app & video format",
   "@web.admin.insights.devices.matrix.title": {
     "description": "Web admin, Insights Devices tab: heading for the client-by-codec direct play compatibility matrix.",
     "x-platforms": [
@@ -84825,21 +84832,21 @@
       "web"
     ]
   },
-  "web.admin.insights.devices.reasons.empty": "No adaptation reasons recorded in this window",
+  "web.admin.insights.devices.reasons.empty": "No conversion reasons recorded in this period",
   "@web.admin.insights.devices.reasons.empty": {
     "description": "Web admin, Insights Devices tab: empty state when no adaptation reasons exist.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.insights.devices.reasons.subtitle": "Server adaptation reasons recorded on non-direct sessions",
+  "web.admin.insights.devices.reasons.subtitle": "Click a reason to see matching sessions.",
   "@web.admin.insights.devices.reasons.subtitle": {
     "description": "Web admin, Insights Devices tab: subtitle under adaptation reasons list.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.insights.devices.reasons.title": "Why sessions adapted",
+  "web.admin.insights.devices.reasons.title": "Why streams didn’t direct play",
   "@web.admin.insights.devices.reasons.title": {
     "description": "Web admin, Insights Devices tab: heading for ranked adaptation reasons.",
     "x-platforms": [
@@ -84875,14 +84882,14 @@
       "web"
     ]
   },
-  "web.admin.insights.devices.resolution.downscaledEmpty": "No sessions were delivered below their source resolution",
+  "web.admin.insights.devices.resolution.downscaledEmpty": "Nothing was downscaled in this period",
   "@web.admin.insights.devices.resolution.downscaledEmpty": {
     "description": "Web admin, Insights Devices tab: empty state of the downscaled list.",
     "x-platforms": [
       "web"
     ]
   },
-  "web.admin.insights.devices.resolution.empty": "No sessions in this window",
+  "web.admin.insights.devices.resolution.empty": "No sessions in this period",
   "@web.admin.insights.devices.resolution.empty": {
     "description": "Web admin, Insights Devices tab: empty state of the source and delivered lists.",
     "x-platforms": [
@@ -84910,7 +84917,7 @@
       "web"
     ]
   },
-  "web.admin.insights.devices.resolution.subtitle": "Source files and what clients received, by session",
+  "web.admin.insights.devices.resolution.subtitle": "Original video resolution vs. what was streamed.",
   "@web.admin.insights.devices.resolution.subtitle": {
     "description": "Web admin, Insights Devices tab: caption of the resolution card.",
     "x-platforms": [
@@ -84938,7 +84945,7 @@
       "web"
     ]
   },
-  "web.admin.insights.devices.topTranscoders.empty": "No transcodes recorded in this window",
+  "web.admin.insights.devices.topTranscoders.empty": "No transcodes in this period",
   "@web.admin.insights.devices.topTranscoders.empty": {
     "description": "Web admin, Insights Devices tab: empty state when no clients transcoded.",
     "x-platforms": [
@@ -85140,7 +85147,7 @@
       "web"
     ]
   },
-  "web.admin.insights.people.column.directRate": "Direct %",
+  "web.admin.insights.people.column.directRate": "Direct play",
   "@web.admin.insights.people.column.directRate": {
     "description": "Web admin, Insights People tab: sortable column header for direct-play percentage.",
     "x-platforms": [
@@ -85279,6 +85286,18 @@
       "web"
     ]
   },
+  "web.admin.insights.personDetail.clientDirectRate": "{percent}% direct play",
+  "@web.admin.insights.personDetail.clientDirectRate": {
+    "description": "Web admin, Insights person detail panel: secondary label on a client app row showing the share of sessions that played directly. {percent}: formatted percentage without the % sign.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
   "web.admin.insights.personDetail.clients": "Clients",
   "@web.admin.insights.personDetail.clients": {
     "description": "Web admin, Insights detail panel: heading of the apps the person played on.",
@@ -85286,7 +85305,7 @@
       "web"
     ]
   },
-  "web.admin.insights.personDetail.clientsEmpty": "No sessions in this window",
+  "web.admin.insights.personDetail.clientsEmpty": "No activity in this period",
   "@web.admin.insights.personDetail.clientsEmpty": {
     "description": "Web admin, Insights detail panel: empty state of the person's clients.",
     "x-platforms": [
@@ -85386,7 +85405,7 @@
       }
     }
   },
-  "web.admin.insights.subtitle": "Playback trends, popular titles, household usage, device compatibility, and egress over time.",
+  "web.admin.insights.subtitle": "Watch trends, top titles, household activity, device playback, and bandwidth.",
   "@web.admin.insights.subtitle": {
     "description": "Web admin, Insights page: page subtitle under the heading.",
     "x-platforms": [
@@ -85463,7 +85482,7 @@
       "web"
     ]
   },
-  "web.admin.insights.titleDetail.notFound": "This title is no longer in the catalog.",
+  "web.admin.insights.titleDetail.notFound": "This title is no longer in your library.",
   "@web.admin.insights.titleDetail.notFound": {
     "description": "Web admin, Insights detail panel: shown when the title was removed from the catalog.",
     "x-platforms": [
@@ -85542,7 +85561,7 @@
       "web"
     ]
   },
-  "web.admin.insights.titles.libraries.empty": "No library plays in this window",
+  "web.admin.insights.titles.libraries.empty": "No library activity in this period",
   "@web.admin.insights.titles.libraries.empty": {
     "description": "Web admin, Insights Titles tab: empty state of the top libraries card.",
     "x-platforms": [
@@ -85556,7 +85575,7 @@
       "web"
     ]
   },
-  "web.admin.insights.titles.movies.empty": "No movies played in this window",
+  "web.admin.insights.titles.movies.empty": "No movies watched in this period",
   "@web.admin.insights.titles.movies.empty": {
     "description": "Web admin, Insights Titles tab: empty state of the top movies card.",
     "x-platforms": [
@@ -85570,7 +85589,7 @@
       "web"
     ]
   },
-  "web.admin.insights.titles.shows.empty": "No shows played in this window",
+  "web.admin.insights.titles.shows.empty": "No shows watched in this period",
   "@web.admin.insights.titles.shows.empty": {
     "description": "Web admin, Insights Titles tab: empty state of the top shows card.",
     "x-platforms": [
@@ -115526,7 +115545,7 @@
       "web"
     ]
   },
-  "web.admin.shell.nav.page.insights.description": "Playback trends, accounts, device quality, and bandwidth.",
+  "web.admin.shell.nav.page.insights.description": "Watch trends, top titles, accounts, devices, and bandwidth.",
   "@web.admin.shell.nav.page.insights.description": {
     "description": "Web admin, admin search (⌘K): one-line summary of the Insights admin page, under its name in the search results.",
     "x-platforms": [
