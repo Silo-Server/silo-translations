@@ -100126,7 +100126,7 @@
       "web"
     ]
   },
-  "web.admin.settings.network.direct.portMapping.description": "Check the router for UPnP, NAT-PMP, or PCP support.",
+  "web.admin.settings.network.direct.portMapping.description": "Ask the router for a UPnP, NAT-PMP, or PCP port mapping.",
   "@web.admin.settings.network.direct.portMapping.description": {
     "description": "Web admin, Network Access settings page, Direct connections section, Advanced: description of the Port mapping toggle. UPnP, NAT-PMP and PCP are protocol names.",
     "x-platforms": [
@@ -100140,9 +100140,24 @@
       "web"
     ]
   },
-  "web.admin.settings.network.direct.readinessNote": "Readiness checks do not start direct playback.",
+  "web.admin.settings.network.direct.range": "Range: {min} to {max}",
+  "@web.admin.settings.network.direct.range": {
+    "description": "Web admin, Network Access settings page, Direct connections section, Host tuning: the lowest and highest value a numeric host tuning setting accepts. {min}: the lowest accepted value. {max}: the highest accepted value.",
+    "placeholders": {
+      "min": {
+        "type": "String"
+      },
+      "max": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.readinessNote": "Turning this on starts the direct connection engine. It opens a UDP port and, when Port mapping is on, asks the router for a port mapping. Run check only reads the host's state.",
   "@web.admin.settings.network.direct.readinessNote": {
-    "description": "Web admin, Network Access settings page, Direct connections section: note beside the Run check button saying a check only reads the host's state.",
+    "description": "Web admin, Network Access settings page, Direct connections section: note beside the Run check button saying that turning the setting on starts the direct connection engine, which opens a UDP port and may ask the router for a port mapping, and that a check only reads the host's state.",
     "x-platforms": [
       "web"
     ]
@@ -100206,6 +100221,13 @@
   "web.admin.settings.network.direct.reason.invalid": "Invalid value; using off",
   "@web.admin.settings.network.direct.reason.invalid": {
     "description": "Web admin, Network Access settings page, Direct connections section: reason shown when a host tuning value is not valid and the host turned the setting off instead.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.reason.invalid_default": "Invalid value; using the default",
+  "@web.admin.settings.network.direct.reason.invalid_default": {
+    "description": "Web admin, Network Access settings page, Direct connections section: reason shown when a host tuning value, such as the client receive window, is not valid and the host kept the setting's default value instead.",
     "x-platforms": [
       "web"
     ]
