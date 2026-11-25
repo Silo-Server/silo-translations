@@ -100790,6 +100790,27 @@
       "web"
     ]
   },
+  "web.admin.settings.compatibilityProxies.apiState.disabled": "Disabled",
+  "@web.admin.settings.compatibilityProxies.apiState.disabled": {
+    "description": "Web admin, Compatibility settings page: Download details, API state row: the Jellyfin API is turned off.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.compatibilityProxies.apiState.enabled": "Enabled",
+  "@web.admin.settings.compatibilityProxies.apiState.enabled": {
+    "description": "Web admin, Compatibility settings page: Download details, API state row: the Jellyfin API is turned on and serving.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.compatibilityProxies.apiState.error": "Error",
+  "@web.admin.settings.compatibilityProxies.apiState.error": {
+    "description": "Web admin, Compatibility settings page: Download details, API state row: the Jellyfin API is turned on but can't run, for example because its listen address is empty.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.settings.compatibilityProxies.audiobookshelf.enable": "Allow Audiobookshelf apps to connect",
   "@web.admin.settings.compatibilityProxies.audiobookshelf.enable": {
     "description": "Web admin, Compatibility settings page: label of the switch that turns on Audiobookshelf app compatibility.",
@@ -100944,6 +100965,48 @@
       "web"
     ]
   },
+  "web.admin.settings.compatibilityProxies.job.installFailed": "Install failed",
+  "@web.admin.settings.compatibilityProxies.job.installFailed": {
+    "description": "Web admin, Compatibility settings page: Download details, Current job row: the last install of the Jellyfin web player failed.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.compatibilityProxies.job.installRunning": "Installing",
+  "@web.admin.settings.compatibilityProxies.job.installRunning": {
+    "description": "Web admin, Compatibility settings page: Download details, Current job row: the Jellyfin web player is being installed.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.compatibilityProxies.job.installSucceeded": "Install succeeded",
+  "@web.admin.settings.compatibilityProxies.job.installSucceeded": {
+    "description": "Web admin, Compatibility settings page: Download details, Current job row: the last install of the Jellyfin web player finished without errors.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.compatibilityProxies.job.removeFailed": "Removal failed",
+  "@web.admin.settings.compatibilityProxies.job.removeFailed": {
+    "description": "Web admin, Compatibility settings page: Download details, Current job row: the last removal of the Jellyfin web player files failed.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.compatibilityProxies.job.removeRunning": "Removing",
+  "@web.admin.settings.compatibilityProxies.job.removeRunning": {
+    "description": "Web admin, Compatibility settings page: Download details, Current job row: the Jellyfin web player files are being removed.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.compatibilityProxies.job.removeSucceeded": "Removal succeeded",
+  "@web.admin.settings.compatibilityProxies.job.removeSucceeded": {
+    "description": "Web admin, Compatibility settings page: Download details, Current job row: the last removal of the Jellyfin web player files finished without errors.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.settings.compatibilityProxies.loading": "Loading settings",
   "@web.admin.settings.compatibilityProxies.loading": {
     "description": "Web admin, Compatibility settings page: screen-reader label while the page's settings load.",
@@ -101013,6 +101076,62 @@
   "web.admin.settings.compatibilityProxies.operation.working": "Working",
   "@web.admin.settings.compatibilityProxies.operation.working": {
     "description": "Web admin, Compatibility settings page: phase of a running job when the server gives none.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.compatibilityProxies.phase.activating": "Activating",
+  "@web.admin.settings.compatibilityProxies.phase.activating": {
+    "description": "Web admin, Compatibility settings page: Step of a running Jellyfin web player install, shown under its progress message: switching to the new files.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.compatibilityProxies.phase.building": "Building",
+  "@web.admin.settings.compatibilityProxies.phase.building": {
+    "description": "Web admin, Compatibility settings page: Step of a running Jellyfin web player install, shown under its progress message: building the web player.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.compatibilityProxies.phase.downloading": "Downloading",
+  "@web.admin.settings.compatibilityProxies.phase.downloading": {
+    "description": "Web admin, Compatibility settings page: Step of a running Jellyfin web player install, shown under its progress message: downloading the source.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.compatibilityProxies.phase.installingDependencies": "Installing dependencies",
+  "@web.admin.settings.compatibilityProxies.phase.installingDependencies": {
+    "description": "Web admin, Compatibility settings page: Step of a running Jellyfin web player install, shown under its progress message: installing the packages the build needs.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.compatibilityProxies.phase.persistingSettings": "Saving settings",
+  "@web.admin.settings.compatibilityProxies.phase.persistingSettings": {
+    "description": "Web admin, Compatibility settings page: Step of a running Jellyfin web player install, shown under its progress message: saving the installed version to the server settings.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.compatibilityProxies.phase.preparing": "Preparing",
+  "@web.admin.settings.compatibilityProxies.phase.preparing": {
+    "description": "Web admin, Compatibility settings page: Step of a running Jellyfin web player install, shown under its progress message: setting up the install folders.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.compatibilityProxies.phase.removing": "Removing files",
+  "@web.admin.settings.compatibilityProxies.phase.removing": {
+    "description": "Web admin, Compatibility settings page: Step of a running Jellyfin web player removal, shown under its progress message: deleting the downloaded files.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.compatibilityProxies.phase.staging": "Staging files",
+  "@web.admin.settings.compatibilityProxies.phase.staging": {
+    "description": "Web admin, Compatibility settings page: Step of a running Jellyfin web player install, shown under its progress message: copying and checking the built files before they go live.",
     "x-platforms": [
       "web"
     ]
