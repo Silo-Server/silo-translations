@@ -133930,6 +133930,20 @@
       "web"
     ]
   },
+  "web.collections.details.hideWatched": "Hide watched titles",
+  "@web.collections.details.hideWatched": {
+    "description": "Web collection editor, server collections: label of the switch that hides, from each profile, the titles that profile has watched. Also names the setting in the 'changed since you opened it' banner.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.collections.details.hideWatchedHelp": "Each profile sees this collection without the titles it has watched, on its page, in its rows and in its count. Nothing is removed. A smart collection with a title limit picks its titles first, so it can show fewer.",
+  "@web.collections.details.hideWatchedHelp": {
+    "description": "Web collection editor, server collections: help under the Hide watched titles switch.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.collections.details.label": "Name and description",
   "@web.collections.details.label": {
     "description": "Web collection editor: accessible name of the name and description card.",
