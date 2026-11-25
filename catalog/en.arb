@@ -17386,6 +17386,20 @@
       }
     }
   },
+  "home.customize.tvMovingSubtitle": "Up or Down to move · Select to place · Menu to cancel",
+  "@home.customize.tvMovingSubtitle": {
+    "description": "Apple TV: instruction line in the Customize Home banner while a row is picked up for moving. Up, Down, Select and Menu are Siri Remote buttons; Menu puts the row back where it was.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "home.customize.tvSubtitle": "Select a row to move it · Play/Pause for row options · Menu when done",
+  "@home.customize.tvSubtitle": {
+    "description": "Apple TV: instruction line in the Customize Home banner. Select, Play/Pause and Menu are Siri Remote buttons; Play/Pause opens options for the highlighted row, Menu closes the editor.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "home.editor.collectionCount": "{count, plural, one {{count_text} collection} other {{count_text} collections}}",
   "@home.editor.collectionCount": {
     "description": "Android phone, Home Sections editor: line under the name of a row of collections, counting the collections it shows. {count}: the number of collections, which selects the plural; {count_text}: the same number as digits.",
