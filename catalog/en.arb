@@ -55167,6 +55167,27 @@
       "web"
     ]
   },
+  "web.admin.activity.view.cards": "Cards",
+  "@web.admin.activity.view.cards": {
+    "description": "Web admin, Insights page, Activity tab: toggle button that shows each live stream as a card with its poster.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.activity.view.label": "Layout",
+  "@web.admin.activity.view.label": {
+    "description": "Web admin, Insights page, Activity tab: accessible name of the Table / Cards toggle that changes how live streams are laid out.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.activity.view.table": "Table",
+  "@web.admin.activity.view.table": {
+    "description": "Web admin, Insights page, Activity tab: toggle button that lists live streams as table rows.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.apiKeys.access.full": "Full access",
   "@web.admin.apiKeys.access.full": {
     "description": "Web admin → API keys: a key with no scope limits; shown in the key list's Access column and as the create dialog's first access choice.",
@@ -87592,7 +87613,7 @@
       }
     }
   },
-  "web.admin.insights.subtitle": "Watch trends, top titles, household activity, device playback, and bandwidth.",
+  "web.admin.insights.subtitle": "Live streams, watch trends, top titles, household activity, device playback, and bandwidth.",
   "@web.admin.insights.subtitle": {
     "description": "Web admin, Insights page: page subtitle under the heading.",
     "x-platforms": [
@@ -117808,7 +117829,7 @@
       "web"
     ]
   },
-  "web.admin.shell.nav.page.insights.description": "Watch trends, top titles, accounts, devices, and bandwidth.",
+  "web.admin.shell.nav.page.insights.description": "Live streams, watch trends, top titles, accounts, devices, and bandwidth.",
   "@web.admin.shell.nav.page.insights.description": {
     "description": "Web admin, admin search (⌘K): one-line summary of the Insights admin page, under its name in the search results.",
     "x-platforms": [
