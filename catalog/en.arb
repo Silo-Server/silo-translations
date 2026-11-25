@@ -14815,6 +14815,22 @@
   "@error.field.out_of_range": {
     "description": "Error shown next to or about one request field when the server reports the field-error code `out_of_range`. Clients show it instead of the server's English detail in a translated interface."
   },
+  "error.field.password_needs_special": "Include at least one special character, such as ! or #.",
+  "@error.field.password_needs_special": {
+    "description": "Error shown next to or about a new-password field when the server reports the field-error code `password_needs_special`, for a new password with no punctuation mark or symbol while the server's password policy requires one. \"!\" and \"#\" are literal characters; keep them. Clients show it instead of the server's English detail in a translated interface."
+  },
+  "error.field.password_needs_uppercase": "Include at least one capital letter.",
+  "@error.field.password_needs_uppercase": {
+    "description": "Error shown next to or about a new-password field when the server reports the field-error code `password_needs_uppercase`, for a new password with no capital letter while the server's password policy requires one. Clients show it instead of the server's English detail in a translated interface."
+  },
+  "error.field.password_too_long": "This password is too long.",
+  "@error.field.password_too_long": {
+    "description": "Error shown next to or about a new-password field when the server reports the field-error code `password_too_long`, for a new password over the server's limit of 72 bytes. Clients show it instead of the server's English detail in a translated interface."
+  },
+  "error.field.password_too_short": "This password is too short.",
+  "@error.field.password_too_short": {
+    "description": "Error shown next to or about a new-password field when the server reports the field-error code `password_too_short`, for a new password shorter than the minimum length in the server's password policy. Clients show it instead of the server's English detail in a translated interface."
+  },
   "error.field.required": "This is required.",
   "@error.field.required": {
     "description": "Error shown next to or about one request field when the server reports the field-error code `required`. Clients show it instead of the server's English detail in a translated interface."
