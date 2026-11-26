@@ -115552,6 +115552,40 @@
       "web"
     ]
   },
+  "web.admin.settings.signIn.page.demoAccountDescription": "The account every visitor of a public demo signs in to. While demo mode is on, failed sign-ins with this account's names and its Silo password don't count toward the per-name limit, which every visitor would otherwise share. Request limits by address are unchanged. Leave empty to name none.",
+  "@web.admin.settings.signIn.page.demoAccountDescription": {
+    "description": "Web admin, Sign-in settings page: description of the Demo account ID field. 'Per-name limit' is the limit on failed password sign-ins kept for each sign-in name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.signIn.page.demoAccountLabel": "Demo account ID",
+  "@web.admin.settings.signIn.page.demoAccountLabel": {
+    "description": "Web admin, Sign-in settings page: label of the number field that names, by its account ID, the shared account every visitor of a public demo signs in to.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.signIn.page.demoAccountNames": "Names the account {name}.",
+  "@web.admin.settings.signIn.page.demoAccountNames": {
+    "description": "Web admin, Sign-in settings page: status under the Demo account ID field showing which account the entered ID names. {name} is that account's username.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "demo"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.signIn.page.demoGroup": "Demo mode",
+  "@web.admin.settings.signIn.page.demoGroup": {
+    "description": "Web admin, Sign-in settings page: heading of the group of settings for running the server as a public demo, where every visitor signs in to one shared account.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.settings.signIn.page.emailMatchDescription": "A first sign-in connects to the regular Silo account with the same email, when the provider says the email is verified. Admin, owner and break-glass accounts are never matched.",
   "@web.admin.settings.signIn.page.emailMatchDescription": {
     "description": "Web admin, Sign-in settings page: description under the Match existing accounts by email switch.",
