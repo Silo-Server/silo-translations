@@ -168331,7 +168331,8 @@
   "@web.settings.overlays.badge.availability.value.complete": {
     "description": "Web poster cards: text of the Availability badge when every episode of a season, or every released season of a series, is in the library. Shown next to a check mark in a small badge, so keep it short.",
     "x-platforms": [
-      "web"
+      "web",
+      "android"
     ],
     "x-maxLength": 12
   },
@@ -168347,7 +168348,8 @@
       }
     },
     "x-platforms": [
-      "web"
+      "web",
+      "android"
     ]
   },
   "web.settings.overlays.badge.container.description": "File container (MKV, MP4, etc.)",
