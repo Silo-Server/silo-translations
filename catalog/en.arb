@@ -82906,6 +82906,13 @@
       "web"
     ]
   },
+  "web.admin.history.column.progress": "Progress",
+  "@web.admin.history.column.progress": {
+    "description": "Web admin, Playback History table: column header for playback completion progress.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.history.column.status": "Status",
   "@web.admin.history.column.status": {
     "description": "Web: admin Playback History page: table column header for completed or partial.",
@@ -82944,6 +82951,13 @@
   "web.admin.history.detail.action.sessionLogs": "Session logs",
   "@web.admin.history.detail.action.sessionLogs": {
     "description": "Web admin, Playback History detail drawer: link opening server logs filtered to this session.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.history.detail.backToPlay": "Back to combined play",
+  "@web.admin.history.detail.backToPlay": {
+    "description": "Web admin, Playback History detail sheet: button returning from an individual sitting to the combined grouped play view.",
     "x-platforms": [
       "web"
     ]
@@ -83074,6 +83088,13 @@
       "web"
     ]
   },
+  "web.admin.history.detail.inspectSitting": "Inspect",
+  "@web.admin.history.detail.inspectSitting": {
+    "description": "Web admin, Playback History detail sheet: button in the sessions-in-this-play table to view full details for one individual sitting.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.history.detail.keyboardHint": "Use ↑ and ↓ to move between sessions",
   "@web.admin.history.detail.keyboardHint": {
     "description": "Web admin, Playback History detail drawer: helper hint explaining arrow-key navigation.",
@@ -83172,6 +83193,13 @@
       "web"
     ]
   },
+  "web.admin.history.detail.section.sessions": "Sessions in this play",
+  "@web.admin.history.detail.section.sessions": {
+    "description": "Web admin, Playback History detail sheet: section heading listing each individual playback session grouped into a play.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.history.detail.section.streams": "Source vs. delivered",
   "@web.admin.history.detail.section.streams": {
     "description": "Web admin, Playback History detail drawer: heading of the stream comparison table.",
@@ -83182,6 +83210,64 @@
   "web.admin.history.detail.section.timing": "Timing & watch progress",
   "@web.admin.history.detail.section.timing": {
     "description": "Web admin, Playback History detail drawer: heading for session timing fields.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.history.detail.sessionsCapped": "Showing the first {shown} of {total} sessions in this play.",
+  "@web.admin.history.detail.sessionsCapped": {
+    "description": "Web admin, Playback History detail sheet: note shown when a grouped play has more sittings than the inline preview cap. {shown}: formatted number of sessions displayed; {total}: formatted total session count in the play.",
+    "placeholders": {
+      "shown": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.history.detail.sessionsNotice": "{count, plural, one {This play has {count_text} session. Stream, device, and route details below reflect it.} other {This play spans {count_text} sessions. Stream, device, and route details below reflect its primary session; pick any session below to inspect it individually.}}",
+  "@web.admin.history.detail.sessionsNotice": {
+    "description": "Web admin, Playback History detail sheet: banner explaining that a grouped play merges multiple sittings and that the technical facts shown come from its primary sitting. {count}: numeric count for plural selection; {count_text}: formatted count string.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.history.detail.sittingColumn.ended": "Ended",
+  "@web.admin.history.detail.sittingColumn.ended": {
+    "description": "Web admin, Playback History detail sheet: column header for how or when a grouped sitting ended.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.history.detail.sittingColumn.method": "Method",
+  "@web.admin.history.detail.sittingColumn.method": {
+    "description": "Web admin, Playback History detail sheet: column header for a grouped sitting’s playback method.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.history.detail.sittingColumn.started": "Started",
+  "@web.admin.history.detail.sittingColumn.started": {
+    "description": "Web admin, Playback History detail sheet: column header for when a grouped sitting started.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.history.detail.sittingColumn.watched": "Watched",
+  "@web.admin.history.detail.sittingColumn.watched": {
+    "description": "Web admin, Playback History detail sheet: column header for how long a grouped sitting was watched.",
     "x-platforms": [
       "web"
     ]
@@ -83434,6 +83520,13 @@
       "web"
     ]
   },
+  "web.admin.history.filter.allMediaTypes": "All media",
+  "@web.admin.history.filter.allMediaTypes": {
+    "description": "Web admin, Playback History page: filter option showing both movies and episodes.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.history.filter.allMethods": "All methods",
   "@web.admin.history.filter.allMethods": {
     "description": "Web admin, Playback History page: play method filter option showing every method.",
@@ -83476,6 +83569,27 @@
       "web"
     ]
   },
+  "web.admin.history.filter.episodes": "Episodes",
+  "@web.admin.history.filter.episodes": {
+    "description": "Web admin, Playback History page: media type filter option showing only TV episodes.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.history.filter.hideShort": "Hide <30s",
+  "@web.admin.history.filter.hideShort": {
+    "description": "Web admin, Playback History page: toggle button hiding unfinished plays or sessions shorter than 30 seconds.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.history.filter.hideShortTitle": "Hide unfinished sessions under 30 seconds",
+  "@web.admin.history.filter.hideShortTitle": {
+    "description": "Web admin, Playback History page: tooltip explaining the Hide <30s toggle.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.history.filter.locationLocal": "Local",
   "@web.admin.history.filter.locationLocal": {
     "description": "Web admin, Playback History page: stream location option for LAN/local plays.",
@@ -83486,6 +83600,13 @@
   "web.admin.history.filter.locationRemote": "Remote",
   "@web.admin.history.filter.locationRemote": {
     "description": "Web admin, Playback History page: stream location option for external/remote plays.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.history.filter.movies": "Movies",
+  "@web.admin.history.filter.movies": {
+    "description": "Web admin, Playback History page: media type filter option showing only movies.",
     "x-platforms": [
       "web"
     ]
@@ -83645,6 +83766,13 @@
       "web"
     ]
   },
+  "web.admin.history.row.burnInBadgeTitle": "Subtitles burned into video",
+  "@web.admin.history.row.burnInBadgeTitle": {
+    "description": "Web admin, Playback History table: tooltip on the burn-in icon next to the playback method badge.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.history.row.completed": "Completed",
   "@web.admin.history.row.completed": {
     "description": "Web: admin Playback History page: status badge for a play watched to the end.",
@@ -83667,6 +83795,21 @@
   "web.admin.history.row.estimatedTitle": "Estimated (recorded before exact watch time was tracked)",
   "@web.admin.history.row.estimatedTitle": {
     "description": "Web: admin Playback History page: tooltip on a watch time the server estimated.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.history.row.groupedSessionsTitle": "{count, plural, one {Combined from {count_text} session} other {Combined from {count_text} sessions}}",
+  "@web.admin.history.row.groupedSessionsTitle": {
+    "description": "Web admin, Playback History table: tooltip on the grouped-play session count badge. {count}: numeric count for plural selection; {count_text}: formatted count string.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
     "x-platforms": [
       "web"
     ]
@@ -83705,11 +83848,33 @@
       "web"
     ]
   },
+  "web.admin.history.row.progressLabel": "Playback progress",
+  "@web.admin.history.row.progressLabel": {
+    "description": "Web admin, Playback History table and detail sheet: accessible label for the visual playback progress bar.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.history.row.started": "started {time}",
   "@web.admin.history.row.started": {
     "description": "Web: admin Playback History page: under the end time, when the play started. {time}: a relative time, such as 5 minutes ago.",
     "placeholders": {
       "time": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.history.stats.accountsCount": "{count, plural, one {{count_text} account} other {{count_text} accounts}}",
+  "@web.admin.history.stats.accountsCount": {
+    "description": "Web admin, Playback History page: subtext on the Unique profiles KPI card showing how many distinct accounts those profiles belong to. {count}: numeric count for plural selection; {count_text}: formatted count string.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
         "type": "String"
       }
     },
@@ -83724,9 +83889,52 @@
       "web"
     ]
   },
+  "web.admin.history.stats.completionBreakdown": "{completed} completed · {partial} partial",
+  "@web.admin.history.stats.completionBreakdown": {
+    "description": "Web admin, Playback History page: subtext on the Total plays or Total sessions KPI card showing completed and partial counts. {completed}: formatted completed count; {partial}: formatted partial count.",
+    "placeholders": {
+      "completed": {
+        "type": "String"
+      },
+      "partial": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.history.stats.partial": "Partial",
   "@web.admin.history.stats.partial": {
     "description": "Web: admin Playback History page: label of the card counting plays stopped before the end.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.history.stats.totalPlays": "Total plays",
+  "@web.admin.history.stats.totalPlays": {
+    "description": "Web admin, Playback History page: KPI card label for total filtered plays when grouped view is active.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.history.stats.totalSessions": "Total sessions",
+  "@web.admin.history.stats.totalSessions": {
+    "description": "Web admin, Playback History page: KPI card label for total filtered sessions when raw sessions view is active.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.history.stats.uniqueProfiles": "Unique profiles",
+  "@web.admin.history.stats.uniqueProfiles": {
+    "description": "Web admin, Playback History page: KPI card label for the number of distinct profiles in the filtered history.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.history.stats.uniqueTitles": "Unique titles",
+  "@web.admin.history.stats.uniqueTitles": {
+    "description": "Web admin, Playback History page: KPI card label for the number of distinct movies and series in the filtered history.",
     "x-platforms": [
       "web"
     ]
@@ -83748,6 +83956,27 @@
   "web.admin.history.title": "Playback History",
   "@web.admin.history.title": {
     "description": "Web: admin Playback History page: page heading.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.history.view.label": "History view",
+  "@web.admin.history.view.label": {
+    "description": "Web admin, Playback History page: accessible label for the Plays / All sessions segmented toggle.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.history.view.plays": "Plays",
+  "@web.admin.history.view.plays": {
+    "description": "Web admin, Playback History page: segmented toggle option grouping resumed sessions into plays.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.history.view.sessions": "All sessions",
+  "@web.admin.history.view.sessions": {
+    "description": "Web admin, Playback History page: segmented toggle option showing every individual finalized session.",
     "x-platforms": [
       "web"
     ]
