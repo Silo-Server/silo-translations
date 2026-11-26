@@ -115552,7 +115552,7 @@
       "web"
     ]
   },
-  "web.admin.settings.signIn.page.demoAccountDescription": "The account every visitor of a public demo signs in to. While demo mode is on, failed sign-ins with this account's names and its Silo password don't count toward the per-name limit, which every visitor would otherwise share. Limits per address still apply. Leave empty to name none.",
+  "web.admin.settings.signIn.page.demoAccountDescription": "The account every visitor of a public demo signs in to. While demo mode is on, failed sign-ins with this account's names and its Silo password don't count toward the per-name limit, which every visitor would otherwise share. Request limits by address are unchanged. Leave empty to name none.",
   "@web.admin.settings.signIn.page.demoAccountDescription": {
     "description": "Web admin, Sign-in settings page: description of the Demo account ID field. 'Per-name limit' is the limit on failed password sign-ins kept for each sign-in name.",
     "x-platforms": [
