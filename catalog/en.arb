@@ -14999,6 +14999,10 @@
   "@error.session_expired": {
     "description": "Error message shown when the server answers with the v2 problem type `session_expired` (server title: \"Session expired\"). Clients show it instead of the server's English detail in a translated interface, so it must make sense on its own, without the request's specifics."
   },
+  "error.sign_in_provider_required": "While password sign-in is off, a sign-in provider people can use has to stay on. OpenID Connect also needs the server's public URL.",
+  "@error.sign_in_provider_required": {
+    "description": "Error message shown when the server answers with the v2 problem type `sign_in_provider_required` (server title: \"Sign-in provider required\"): an admin tried to turn password sign-in off with no sign-in provider people can use, or to turn off, disable or remove the last such provider (or clear the public URL an OpenID Connect provider needs) while password sign-in is off. Clients show it instead of the server's English detail in a translated interface, so it must make sense on its own, without the request's specifics."
+  },
   "error.snapshot_request_conflict": "Another sync is already running. Try again shortly.",
   "@error.snapshot_request_conflict": {
     "description": "Error message shown when the server answers with the v2 problem type `snapshot_request_conflict` (server title: \"Snapshot request conflict\"). Clients show it instead of the server's English detail in a translated interface, so it must make sense on its own, without the request's specifics."
@@ -115633,6 +115637,18 @@
       "web"
     ]
   },
+  "web.admin.settings.signIn.page.noPublicUrlError": "Set the server's public URL first. {name} can't sign anyone in without it, so with password sign-in off only break-glass admins could sign in.",
+  "@web.admin.settings.signIn.page.noPublicUrlError": {
+    "description": "Web admin, Sign-in settings page: error when the admin tries to turn off password sign-in while the sign-in provider that is on is an OpenID Connect provider and the server's public URL is not set. {name}: the provider's name as shown on the login page.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.settings.signIn.page.passwordMinLengthDescription": "From 8 to 72 characters. Rules apply when someone chooses or changes a password; passwords already set keep working.",
   "@web.admin.settings.signIn.page.passwordMinLengthDescription": {
     "description": "Web admin, Sign-in settings page: description under the Minimum password length field. Also covers the capital-letter and special-character switches below it: existing passwords are not affected.",
@@ -115738,6 +115754,167 @@
       "web"
     ]
   },
+  "web.admin.settings.signIn.passwordsOff.confirm": "Turn off password sign-in",
+  "@web.admin.settings.signIn.passwordsOff.confirm": {
+    "description": "Web admin, Sign-in settings page: confirm button of the confirmation before turning password sign-in off.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.signIn.passwordsOff.description": "Only break-glass admins will sign in with a password. Everyone else signs in with {provider}.",
+  "@web.admin.settings.signIn.passwordsOff.description": {
+    "description": "Web admin, Sign-in settings page: first line of the confirmation before password sign-in is turned off. {provider}: the name of the sign-in provider that is on, such as \"Company SSO\".",
+    "placeholders": {
+      "provider": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.signIn.passwordsOff.linkAutoCreate": "{provider} creates accounts at first sign-in, so if one of these people signs in with it before you link them, they get a new, separate account.",
+  "@web.admin.settings.signIn.passwordsOff.linkAutoCreate": {
+    "description": "Web admin, Sign-in settings page: warning under the group of accounts an admin must link, shown when the provider creates accounts automatically. {provider}: the name of the sign-in provider that is on.",
+    "placeholders": {
+      "provider": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.signIn.passwordsOff.linkExplain": "Link each one to a {provider} account from its page in Users.",
+  "@web.admin.settings.signIn.passwordsOff.linkExplain": {
+    "description": "Web admin, Sign-in settings page: note under the group of accounts an admin must link, in the confirmation before turning password sign-in off. {provider}: the name of the sign-in provider that is on. \"Users\" is the admin Users page.",
+    "placeholders": {
+      "provider": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.signIn.passwordsOff.linkHeading": "{count, plural, one {# account can't sign in until an admin links it} other {# accounts can't sign in until an admin links them}}",
+  "@web.admin.settings.signIn.passwordsOff.linkHeading": {
+    "description": "Web admin, Sign-in settings page: heading of the group of accounts that nothing connects to the sign-in provider once password sign-in is off; an admin must link each one. {count}: how many accounts (selects the plural).",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.signIn.passwordsOff.loadFailed": "Couldn't check which accounts this affects. You can still turn it off.",
+  "@web.admin.settings.signIn.passwordsOff.loadFailed": {
+    "description": "Web admin, Sign-in settings page: shown in the confirmation before turning password sign-in off when the list of affected accounts could not be loaded.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.signIn.passwordsOff.loading": "Checking who signs in with a password",
+  "@web.admin.settings.signIn.passwordsOff.loading": {
+    "description": "Web admin, Sign-in settings page: screen reader text while the confirmation before turning password sign-in off loads the accounts it affects.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.signIn.passwordsOff.matchExplain": "When {provider} confirms one of these emails at sign-in, Silo connects that person to their account.",
+  "@web.admin.settings.signIn.passwordsOff.matchExplain": {
+    "description": "Web admin, Sign-in settings page: note under the group of accounts that email matching connects, in the confirmation before turning password sign-in off. {provider}: the name of the sign-in provider that is on.",
+    "placeholders": {
+      "provider": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.signIn.passwordsOff.matchHeading": "{count, plural, one {# account connects by email} other {# accounts connect by email}}",
+  "@web.admin.settings.signIn.passwordsOff.matchHeading": {
+    "description": "Web admin, Sign-in settings page: heading of the group of accounts that email matching will connect to the sign-in provider once password sign-in is off. {count}: how many accounts (selects the plural).",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.signIn.passwordsOff.more": "{count, plural, one {Show # more} other {Show # more}}",
+  "@web.admin.settings.signIn.passwordsOff.more": {
+    "description": "Web admin, Sign-in settings page: button under a list of accounts in the confirmation before turning password sign-in off; it loads the next accounts of that list. {count}: how many accounts of that list are not shown yet (selects the plural).",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.signIn.passwordsOff.moreFailed": "Couldn't load more accounts. Try again.",
+  "@web.admin.settings.signIn.passwordsOff.moreFailed": {
+    "description": "Web admin, Sign-in settings page: shown under a list of accounts in the confirmation before turning password sign-in off when loading the next accounts of that list failed; the Show more button below it tries again.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.signIn.passwordsOff.nobodyAffected": "Every account can still sign in after this.",
+  "@web.admin.settings.signIn.passwordsOff.nobodyAffected": {
+    "description": "Web admin, Sign-in settings page: shown in the confirmation before turning password sign-in off when no account loses its way to sign in.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.signIn.passwordsOff.reason.administrator": "Admin",
+  "@web.admin.settings.signIn.passwordsOff.reason.administrator": {
+    "description": "Web admin, Sign-in settings page: label beside an account in the confirmation before turning password sign-in off, saying it is an admin (email matching never connects admins).",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.signIn.passwordsOff.reason.emailMatchOff": "Email matching is off",
+  "@web.admin.settings.signIn.passwordsOff.reason.emailMatchOff": {
+    "description": "Web admin, Sign-in settings page: label beside an account in the confirmation before turning password sign-in off, saying it would connect by email if email matching were on.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.signIn.passwordsOff.reason.noEmail": "No email",
+  "@web.admin.settings.signIn.passwordsOff.reason.noEmail": {
+    "description": "Web admin, Sign-in settings page: label beside an account in the confirmation before turning password sign-in off, saying it has no email address to match.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.signIn.passwordsOff.sessions": "This doesn't sign anyone out. People who are already signed in stay signed in, their API keys keep working, and they can still approve new devices. To sign someone out, end their sessions from their page in <link>Users</link>.",
+  "@web.admin.settings.signIn.passwordsOff.sessions": {
+    "description": "Web admin, Sign-in settings page: note in the confirmation before turning password sign-in off. Turning it off ends no session: people already signed in stay signed in until they sign out or an admin ends their sessions, their personal API keys keep working, and they can still approve sign-ins on new devices. <link> wraps a link to the admin Users page.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.signIn.passwordsOff.title": "Turn off password sign-in?",
+  "@web.admin.settings.signIn.passwordsOff.title": {
+    "description": "Web admin, Sign-in settings page: title of the confirmation that opens when the admin switches off \"Allow password sign-in\".",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.signIn.passwordsOff.usersLink": "See every account in Users",
+  "@web.admin.settings.signIn.passwordsOff.usersLink": {
+    "description": "Web admin, Sign-in settings page: link to the admin Users page from the confirmation before turning password sign-in off.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.settings.signIn.provider.accounts.title": "Choose who can sign in",
   "@web.admin.settings.signIn.provider.accounts.title": {
     "description": "Web admin, Sign-in settings page, sign-in provider setup: title of the step holding the account creation switch, when the plugin has no steps of its own.",
@@ -115776,6 +115953,18 @@
   "web.admin.settings.signIn.provider.binding.changeFailed": "Couldn't change {name}.",
   "@web.admin.settings.signIn.provider.binding.changeFailed": {
     "description": "Web admin, Sign-in settings page, sign-in provider setup: error when turning a provider on or off failed. {name}: the provider's name as shown on the login page.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.signIn.provider.binding.turnOffBlocked": "Password sign-in is off, so {name} is how everyone except break-glass admins signs in. Turn password sign-in back on first, then turn {name} off.",
+  "@web.admin.settings.signIn.provider.binding.turnOffBlocked": {
+    "description": "Web admin, Sign-in settings page, sign-in provider setup: shown instead of the turn-off confirmation when password sign-in is off, since the server refuses turning off the last sign-in provider then. {name}: the provider's name as shown on the login page.",
     "placeholders": {
       "name": {
         "type": "String"
