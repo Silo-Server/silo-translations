@@ -164835,6 +164835,13 @@
       "web"
     ]
   },
+  "web.settings.historyImport.embyDirectHelp": "Enter the base URL for the Emby server you want to import from.",
+  "@web.settings.historyImport.embyDirectHelp": {
+    "description": "Web Settings → History Import: hint under the direct Emby server URL fields.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.settings.historyImport.embyPassword": "Emby Password",
   "@web.settings.historyImport.embyPassword": {
     "description": "Web Settings → History Import: label of the password field for a saved Emby server.",
@@ -164845,6 +164852,13 @@
   "web.settings.historyImport.embyPasswordPlaceholder": "Leave blank if the account has none",
   "@web.settings.historyImport.embyPasswordPlaceholder": {
     "description": "Web Settings → History Import: placeholder of the saved Emby server's password field.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.historyImport.embyServerUrl": "Emby Server URL",
+  "@web.settings.historyImport.embyServerUrl": {
+    "description": "Web Settings → History Import: label of the Emby server address field.",
     "x-platforms": [
       "web"
     ]
@@ -165020,6 +165034,13 @@
   "web.settings.historyImport.mode.plexAccount": "Plex Account",
   "@web.settings.historyImport.mode.plexAccount": {
     "description": "Web Settings → History Import: Plex option for signing in with a Plex account.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.historyImport.mode.serverUrl": "Server URL",
+  "@web.settings.historyImport.mode.serverUrl": {
+    "description": "Web Settings → History Import: Emby option for signing in with a server URL, username, and optional password.",
     "x-platforms": [
       "web"
     ]
@@ -165339,7 +165360,7 @@
       "web"
     ]
   },
-  "web.settings.historyImport.source.emby": "Emby Connect or saved server",
+  "web.settings.historyImport.source.emby": "Emby Connect, server URL, or saved server",
   "@web.settings.historyImport.source.emby": {
     "description": "Web Settings → History Import: description on the Emby source card.",
     "x-platforms": [
