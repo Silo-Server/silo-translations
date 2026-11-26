@@ -13789,7 +13789,7 @@
   "web.admin.settings.signIn.page.allowPasswordLabel": "允许密码登录",
   "web.admin.settings.signIn.page.apiKeysGroup": "API密钥",
   "web.admin.settings.signIn.page.breakGlassAdmins": "{count, plural, other {应急管理员：{names}}}",
-  "web.admin.settings.signIn.page.demoAccountDescription": "公开演示的所有访问者都登录到此账户。演示模式开启时，使用此账户的名称及其Silo密码的失败登录不计入每个名称的限制，否则所有访问者都会共用这一限制。每个地址的限制仍然适用。留空表示不指定账户。",
+  "web.admin.settings.signIn.page.demoAccountDescription": "公开演示的所有访问者都登录到此账户。演示模式开启时，使用此账户的名称及其Silo密码进行的失败登录不计入每个名称的限制，否则所有访问者都会共用这一限制。按地址的请求限制保持不变。留空表示不指定账户。",
   "web.admin.settings.signIn.page.demoAccountLabel": "演示账户ID",
   "web.admin.settings.signIn.page.demoAccountNames": "对应账户{name}。",
   "web.admin.settings.signIn.page.demoGroup": "演示模式",
