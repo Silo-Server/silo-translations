@@ -17491,6 +17491,13 @@
       "android"
     ]
   },
+  "home.editor.profileInstructions": "Open eye: shown on Home. Closed eye: hidden. Drag the handle to reorder. Changes save to this profile and apply on every device.",
+  "@home.editor.profileInstructions": {
+    "description": "Android phone: instructions at the top of the Home Sections editor, explaining the eye toggle and the drag handle on each row. The order and visibility are saved to the profile on the server, so they apply on all of the profile's devices.",
+    "x-platforms": [
+      "android"
+    ]
+  },
   "home.editor.reorder": "Reorder {section}",
   "@home.editor.reorder": {
     "description": "Android phone: accessibility label of the drag handle on a row in the Home Sections editor. {section}: the row's title.",
@@ -17502,6 +17509,27 @@
         "type": "String"
       }
     }
+  },
+  "home.editor.rowHidden": "Hidden from Home",
+  "@home.editor.rowHidden": {
+    "description": "Android phone and TV Home Sections editors: line under a row's name while the profile has hidden the row from Home.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "home.editor.rowShown": "Shown on Home",
+  "@home.editor.rowShown": {
+    "description": "Android phone and TV Home Sections editors: line under a row's name while the row is visible on Home.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "home.editor.saveFailed": "Could not save Home sections",
+  "@home.editor.saveFailed": {
+    "description": "Android phone: message when a change in the Home Sections editor could not be saved to the profile on the server.",
+    "x-platforms": [
+      "android"
+    ]
   },
   "home.editor.show": "Show {section}",
   "@home.editor.show": {
@@ -35548,6 +35576,20 @@
       "android"
     ]
   },
+  "settings.homeSections.profileDescription": "Choose which Home rows are visible and the order they appear in. This applies to this profile on every device.",
+  "@settings.homeSections.profileDescription": {
+    "description": "Android TV Settings > General: help text under the Home Sections row. The Home row order and visibility are saved to the profile, so they apply on all of its devices.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "settings.homeSections.saveFailed": "Silo couldn’t save the Home rows. The previous layout is back.",
+  "@settings.homeSections.saveFailed": {
+    "description": "Android TV Home Sections editor: footer shown when a change could not be saved to the profile on the server and the editor went back to the saved layout.",
+    "x-platforms": [
+      "android"
+    ]
+  },
   "settings.homeSections.show": "Show {title}",
   "@settings.homeSections.show": {
     "description": "Android TV Home Sections editor: spoken label of the button that shows a hidden row on Home again. {title}: the row's title, such as Continue Watching.",
@@ -35640,6 +35682,13 @@
   "settings.interface.homeFooter": "Choose which Home rows are visible and the order they appear in.",
   "@settings.interface.homeFooter": {
     "description": "Android phone: footer under the Home group on Settings → Interface.",
+    "x-platforms": [
+      "android"
+    ]
+  },
+  "settings.interface.homeProfileFooter": "Choose which Home rows are visible and the order they appear in. This applies to this profile on every device.",
+  "@settings.interface.homeProfileFooter": {
+    "description": "Android phone: footer under the Home group on Settings → Interface. The Home row order and visibility are saved to the profile, so they apply on all of its devices.",
     "x-platforms": [
       "android"
     ]
