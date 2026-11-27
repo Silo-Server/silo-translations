@@ -16183,6 +16183,20 @@
       "android"
     ]
   },
+  "firstRun.tvKeyboard.body": "Select a field to open the on-screen keyboard.",
+  "@firstRun.tvKeyboard.body": {
+    "description": "Body of the TV setup hint. Selecting a text field with the remote opens the television’s keyboard.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "firstRun.tvKeyboard.title": "Use the TV keyboard",
+  "@firstRun.tvKeyboard.title": {
+    "description": "Title of the TV setup hint explaining how to enter text with the remote.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "forYou.empty": "No recommendations yet",
   "@forYou.empty": {
     "description": "Roku For You screen: empty-state title when no recommendations exist. iPhone and Android phone: also the title on the For You tab's Recommendations page when no recommendation is of the type picked in the tab's All / Movies / TV Shows menu.",
@@ -36314,7 +36328,8 @@
   "@settings.picker.backToClose": {
     "description": "Android TV Settings: hint in the corner of every settings picker sheet that the remote's Back button closes it.",
     "x-platforms": [
-      "android"
+      "android",
+      "apple"
     ]
   },
   "settings.picker.chooseOption": "Choose an option",
@@ -42465,6 +42480,13 @@
       "roku"
     ]
   },
+  "setup.tv.headline": "Connect to\nSilo",
+  "@setup.tv.headline": {
+    "description": "Heading shown when adding a server during TV setup. Keep the two lines, with the app name Silo on its own line.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "shell.card.boxSet": "Box set",
   "@shell.card.boxSet": {
     "description": "Android phone: pill in the corner of a box set's poster card (a group of related movies), setting it apart from a single movie.",
@@ -45461,7 +45483,8 @@
   "@subtitleSearch.stored": {
     "description": "Message in the Roku player after a subtitle was downloaded but could not be switched on during this playback.",
     "x-platforms": [
-      "roku"
+      "roku",
+      "apple"
     ]
   },
   "subtitleSearch.suggestedHeader": "Suggested",
@@ -45498,7 +45521,8 @@
   "@subtitleSearch.unconfirmed": {
     "description": "Message in the Roku player when the server did not confirm the subtitle download. Silo is the app name.",
     "x-platforms": [
-      "roku"
+      "roku",
+      "apple"
     ]
   },
   "subtitleSearch.unnamedRelease": "Unnamed release",
