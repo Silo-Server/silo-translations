@@ -40063,6 +40063,44 @@
       "roku"
     ]
   },
+  "settingsManifest.playback.connection_path.description": "Direct only still uses the local network connection when one is available.",
+  "@settingsManifest.playback.connection_path.description": {
+    "description": "Help text under the playback.connection_path setting. From the server's settings manifest.",
+    "x-platforms": [
+      "web",
+      "apple",
+      "android"
+    ]
+  },
+  "settingsManifest.playback.connection_path.label": "Connection path",
+  "@settingsManifest.playback.connection_path.label": {
+    "description": "Label of the playback.connection_path setting in settings screens. From the server's settings manifest.",
+    "x-platforms": [
+      "web",
+      "apple",
+      "android"
+    ]
+  },
+  "settingsManifest.playback.connection_path.option.automatic": "Automatic",
+  "@settingsManifest.playback.connection_path.option.automatic": {
+    "description": "Choice \"automatic\" for the playback.connection_path setting. From the server's settings manifest.",
+    "x-platforms": [
+      "web",
+      "apple",
+      "android",
+      "roku"
+    ]
+  },
+  "settingsManifest.playback.connection_path.option.direct_only": "Direct only",
+  "@settingsManifest.playback.connection_path.option.direct_only": {
+    "description": "Choice \"direct_only\" for the playback.connection_path setting. From the server's settings manifest.",
+    "x-platforms": [
+      "web",
+      "apple",
+      "android",
+      "roku"
+    ]
+  },
   "settingsManifest.playback.intro_skip_mode.description": "What Silo does when an intro starts: leave it alone, offer a Skip Intro button, or skip it and offer an undo.",
   "@settingsManifest.playback.intro_skip_mode.description": {
     "description": "Help text under the playback.intro_skip_mode setting. From the server's settings manifest.",
