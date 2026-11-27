@@ -68424,6 +68424,20 @@
       "web"
     ]
   },
+  "web.admin.common.libraryEditor.advanced.trickplayGenerate": "Generate missing previews with FFmpeg",
+  "@web.admin.common.libraryEditor.advanced.trickplayGenerate": {
+    "description": "Web admin, library editor dialog: label of the switch under the seek previews switch. When on, Silo makes seek previews itself for videos that have no preview file next to them.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.common.libraryEditor.advanced.trickplayGenerateDescription": "Existing .trickplay and .bif sidecars next to media files are used first. Turn this off to ingest sidecars only and skip FFmpeg generation.",
+  "@web.admin.common.libraryEditor.advanced.trickplayGenerateDescription": {
+    "description": "Web admin, library editor dialog: explanation under the Generate missing previews with FFmpeg switch. .trickplay and .bif are preview file types; keep them as written.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.common.libraryEditor.advanced.trickplayUnavailable": "Public asset storage is required before this can be enabled.",
   "@web.admin.common.libraryEditor.advanced.trickplayUnavailable": {
     "description": "Web admin, library editor dialog: warning under the seek previews switch when public asset storage is not set up.",
@@ -71999,6 +72013,21 @@
       "web"
     ]
   },
+  "web.admin.common.trickplay.badge.awaitingSidecarCount": "{count, plural, one {{count_text} awaiting sidecar} other {{count_text} awaiting sidecar}}",
+  "@web.admin.common.trickplay.badge.awaitingSidecarCount": {
+    "description": "Web admin, Libraries page, seek previews badge: tooltip part: files in a library that only imports seek previews, still waiting for a preview file (.trickplay folder or .bif file) to appear next to the video. {count}: the number (selects the plural). {count_text}: the same number, already formatted.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.common.trickplay.badge.detail": "Seek previews: {details}",
   "@web.admin.common.trickplay.badge.detail": {
     "description": "Web admin, Libraries page, seek previews badge: tooltip and screen-reader text. {details}: counts and storage size, separated by middle dots, such as 12 ready · 3 waiting · 4.2 MB.",
@@ -72071,6 +72100,13 @@
         "type": "String"
       }
     },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.common.trickplay.badge.sidecarsOnly": "sidecars only",
+  "@web.admin.common.trickplay.badge.sidecarsOnly": {
+    "description": "Web admin, Libraries page, seek previews badge: tooltip part shown when the library only imports seek previews from preview files next to its videos and never makes them itself. Lowercase because it follows other parts after a middle dot.",
     "x-platforms": [
       "web"
     ]
@@ -72208,6 +72244,48 @@
   "web.admin.common.trickplay.file.stillServing": "Players keep the current previews until the new ones are ready.",
   "@web.admin.common.trickplay.file.stillServing": {
     "description": "Web admin, seek previews dialog: note while a file's seek previews are being made again.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.common.trickplay.sidecarStatus.awaiting_sidecar": "Awaiting sidecar",
+  "@web.admin.common.trickplay.sidecarStatus.awaiting_sidecar": {
+    "description": "Web admin, seek previews dialog: state of a file in a library that only imports seek previews, when no preview file (.trickplay folder or .bif file) is next to the video yet.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.common.trickplay.sidecarStatus.sidecar_invalid": "Invalid sidecar",
+  "@web.admin.common.trickplay.sidecarStatus.sidecar_invalid": {
+    "description": "Web admin, seek previews dialog: state of a file whose preview file next to the video could not be read or is malformed.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.common.trickplay.sidecarStatus.sidecar_stale": "Sidecar stale",
+  "@web.admin.common.trickplay.sidecarStatus.sidecar_stale": {
+    "description": "Web admin, seek previews dialog: state of a file whose preview file next to the video was made for an earlier version of the video, so it is not used until the tool that wrote it makes it again.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.common.trickplay.source.generated": "Generated",
+  "@web.admin.common.trickplay.source.generated": {
+    "description": "Web admin, seek previews dialog: last part of a file's summary line, after a middle dot, saying Silo made the file's seek previews itself.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.common.trickplay.source.sidecar_bif": "Sidecar (.bif)",
+  "@web.admin.common.trickplay.source.sidecar_bif": {
+    "description": "Web admin, seek previews dialog: last part of a file's summary line, after a middle dot, saying the file's seek previews were imported from a .bif preview file (written by Emby or another tool) next to the video. Keep .bif as written.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.common.trickplay.source.sidecar_trickplay": "Sidecar (.trickplay)",
+  "@web.admin.common.trickplay.source.sidecar_trickplay": {
+    "description": "Web admin, seek previews dialog: last part of a file's summary line, after a middle dot, saying the file's seek previews were imported from a .trickplay preview folder (written by Jellyfin or another tool) next to the video. Keep .trickplay as written.",
     "x-platforms": [
       "web"
     ]
