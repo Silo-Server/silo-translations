@@ -6392,7 +6392,7 @@
   },
   "connect.discovery.serverRow": "{server}, {detail}",
   "@connect.discovery.serverRow": {
-    "description": "Android TV: accessibility (TalkBack) label of a server found on the local network. {server}: the server name, {detail}: its address. Apple (iPhone, iPad, Mac, Apple TV): same VoiceOver label of a found or recent server's row.",
+    "description": "Android TV: accessibility (TalkBack) label of a server found on the local network. {server}: the server name, {detail}: its address. Apple (iPhone, iPad, Mac, Apple TV): same VoiceOver label of a found or recent server's row. Roku: same screen-reader label for a discovered LAN server row.",
     "placeholders": {
       "server": {
         "type": "String"
@@ -6403,7 +6403,8 @@
     },
     "x-platforms": [
       "apple",
-      "android"
+      "android",
+      "roku"
     ]
   },
   "connect.fallback": "Phone can't find this TV? Scan this code in the Silo app, or enter {address}.",
@@ -41897,10 +41898,11 @@
   },
   "setup.connectingState": "Connecting",
   "@setup.connectingState": {
-    "description": "Android phone server setup screen (first screen with no server): accessibility (TalkBack) state of a found server's row while connecting to it. Apple (iPhone, iPad, Mac, Apple TV): same VoiceOver value of a found server's row while connecting.",
+    "description": "Android phone server setup screen (first screen with no server): accessibility (TalkBack) state of a found server's row while connecting to it. Apple (iPhone, iPad, Mac, Apple TV): same VoiceOver value of a found server's row while connecting. Roku: same screen-reader state for a discovered server row while connecting.",
     "x-platforms": [
       "apple",
-      "android"
+      "android",
+      "roku"
     ]
   },
   "setup.continue": "Continue",
@@ -41911,16 +41913,24 @@
       "android"
     ]
   },
+  "setup.demo.error.unavailable": "The demo server isn't available right now. Try again later or enter your own server.",
+  "@setup.demo.error.unavailable": {
+    "description": "Roku server setup screen: inline error shown when Try the demo cannot reach the public demo server or demo sign-in is disabled.",
+    "x-platforms": [
+      "roku"
+    ]
+  },
   "setup.discovered.localNetwork": "On this network · {host}",
   "@setup.discovered.localNetwork": {
-    "description": "Apple server setup (iPhone, iPad, Mac, Apple TV): second line of a server found nearby under Found nearby, when it answers on the local network. {host}: the server's host name or address, with its port.",
+    "description": "Apple server setup (iPhone, iPad, Mac, Apple TV): second line of a server found nearby under Found nearby, when it answers on the local network. {host}: the server's host name or address, with its port. Roku: second line of a server found nearby on the local network.",
     "placeholders": {
       "host": {
         "type": "String"
       }
     },
     "x-platforms": [
-      "apple"
+      "apple",
+      "roku"
     ]
   },
   "setup.discovered.privateNetwork": "Private network · {host}",
@@ -42046,10 +42056,11 @@
   },
   "setup.foundNearby": "Found nearby",
   "@setup.foundNearby": {
-    "description": "Android phone server setup screen (first screen with no server): heading over the list of Silo servers found on the local network. Also on Android TV: Android TV: label above the Silo servers found on the local network, on the server address screen. Apple (iPhone, iPad, Mac): same heading over found servers.",
+    "description": "Android phone server setup screen (first screen with no server): heading over the list of Silo servers found on the local network. Also on Android TV: Android TV: label above the Silo servers found on the local network, on the server address screen. Apple (iPhone, iPad, Mac): same heading over found servers. Roku: heading over servers found on the local network on the server setup screen.",
     "x-platforms": [
       "apple",
-      "android"
+      "android",
+      "roku"
     ]
   },
   "setup.headline": "Enter your\nserver address",
@@ -42094,8 +42105,7 @@
     "description": "Roku and Android TV: small lead-in text above the option to type the server address manually instead of using a phone. Apple TV: same text.",
     "x-platforms": [
       "apple",
-      "android",
-      "roku"
+      "android"
     ]
   },
   "setup.phone.body": "It's the easiest way. There's nothing to type with the remote.",
@@ -42103,16 +42113,14 @@
     "description": "Roku and Android TV: text under the heading on the phone-setup screen, explaining that using the phone avoids typing with the remote. Apple TV: same text.",
     "x-platforms": [
       "apple",
-      "android",
-      "roku"
+      "android"
     ]
   },
   "setup.phone.chip": "Looking for a phone or tablet…",
   "@setup.phone.chip": {
     "description": "Small status chip with a spinner on the Roku server screen while it searches the local network for a phone or tablet running Silo. Apple TV: same chip on the server setup screen.",
     "x-platforms": [
-      "apple",
-      "roku"
+      "apple"
     ]
   },
   "setup.phone.enterAddress": "Enter server address",
@@ -42120,8 +42128,7 @@
     "description": "Roku and Android TV: button on the phone-setup screen that switches to typing the server address with the remote. Apple TV: same button.",
     "x-platforms": [
       "apple",
-      "android",
-      "roku"
+      "android"
     ]
   },
   "setup.phone.headline": "Set up with\nyour phone",
@@ -42129,8 +42136,7 @@
     "description": "Roku and Android TV: large heading on the screen offering to set up the server from a nearby phone. The line break splits it over two lines; keep it. Apple TV: same headline.",
     "x-platforms": [
       "apple",
-      "android",
-      "roku"
+      "android"
     ]
   },
   "setup.placeholder": "media.example.com",
@@ -42381,8 +42387,7 @@
     },
     "x-platforms": [
       "apple",
-      "android",
-      "roku"
+      "android"
     ]
   },
   "setup.step.finish": "Finish on your phone",
@@ -42390,8 +42395,7 @@
     "description": "Third of three numbered steps on Roku and Android TV for phone setup: complete the remaining setup on the phone. Apple TV: same third step on the set-up-with-a-phone screen.",
     "x-platforms": [
       "apple",
-      "android",
-      "roku"
+      "android"
     ]
   },
   "setup.step.open": "Open Silo on your phone",
@@ -42399,23 +42403,27 @@
     "description": "First of three short numbered steps on Roku and Android TV for setting up with a phone: open the Silo app on the phone. Apple TV: same first step on the set-up-with-a-phone screen.",
     "x-platforms": [
       "apple",
-      "android",
-      "roku"
+      "android"
     ]
   },
   "setup.step.setUp": "Set Up",
   "@setup.step.setUp": {
     "description": "Name of the Set Up button in the Silo phone app, quoted in the Roku setup steps. Must match the phone app's button text. Apple (iPhone, iPad): this is that button, on the nearby-TV pairing card's setup offer. Apple TV: the button label drawn inside the picture of the phone in the second setup step.",
     "x-platforms": [
-      "apple",
-      "roku"
+      "apple"
     ]
   },
   "setup.step.tap": "Tap Set Up",
   "@setup.step.tap": {
     "description": "Second of three numbered steps on Roku for phone setup: tap the Set Up button in the phone app. Matches the button label in setup.step.setUp. Apple TV: same second step on the set-up-with-a-phone screen.",
     "x-platforms": [
-      "apple",
+      "apple"
+    ]
+  },
+  "setup.tryDemo": "Try the demo",
+  "@setup.tryDemo": {
+    "description": "Roku server setup screen (first screen with no server): button beside Connect that automatically connects to Silo's public demo server with a demo account.",
+    "x-platforms": [
       "roku"
     ]
   },
