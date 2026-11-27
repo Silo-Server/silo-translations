@@ -3,12 +3,20 @@ name: release
 on:
   push:
     branches: [main]
+  # GitHub sometimes creates no run for a push, and that merge then has no release. Run this
+  # by hand to publish it: leave `sha` empty for the tip of main, or give the full commit.
+  workflow_dispatch:
+    inputs:
+      sha:
+        description: "Full SHA of a commit on main to publish (default: the tip of main)"
+        required: false
+        type: string
 
 # One run per commit: a rerun of the same merge waits for the first. Different merges run side
 # by side; each tags its own commit (--target), so none replaces another. (A single shared
 # group would keep only one pending run and silently drop intermediate merges.)
 concurrency:
-  group: release-${{ github.sha }}
+  group: release-${{ inputs.sha || github.sha }}
   cancel-in-progress: false
 
 permissions:
@@ -19,8 +27,28 @@ jobs:
     runs-on: ubuntu-24.04
     env:
       GH_TOKEN: ${{ github.token }}
+      # The commit this run publishes: the pushed one, or the one a manual run names.
+      RELEASE_SHA: ${{ inputs.sha || github.sha }}
     steps:
       - uses: actions/checkout@v5
+        with:
+          ref: ${{ env.RELEASE_SHA }}
+          # The check below needs main's history to tell whether the commit is on it.
+          fetch-depth: 0
+      - name: Check the commit is on main
+        run: |
+          # A push to main always passes. A manual run may name any commit, or be started from
+          # another branch, and a release is only ever made from main.
+          if ! printf '%s' "$RELEASE_SHA" | grep -Eq '^[0-9a-f]{40}$'; then
+            # The value is not echoed: it is whatever the person starting the run typed.
+            echo "::error::sha must be a full 40-character lowercase commit SHA"
+            exit 1
+          fi
+          git fetch --no-tags origin main
+          if ! git merge-base --is-ancestor "$RELEASE_SHA" origin/main; then
+            echo "::error::$RELEASE_SHA is not on main"
+            exit 1
+          fi
       - uses: actions/setup-node@v5
         with:
           node-version: "22"
@@ -32,8 +60,8 @@ jobs:
         run: |
           # The date comes from the commit, not the run, so a rerun after midnight UTC finds the
           # release the first run made.
-          day="$(date -u -d "@$(git show -s --format=%ct "$GITHUB_SHA")" +%Y.%m.%d)"
-          version="$day-${GITHUB_SHA::7}"
+          day="$(date -u -d "@$(git show -s --format=%ct "$RELEASE_SHA")" +%Y.%m.%d)"
+          version="$day-${RELEASE_SHA::7}"
           echo "version=$version" >> "$GITHUB_OUTPUT"
           # A published release with its four tarballs and SHA256SUMS is done. A draft or a
           # release missing assets is what an interrupted run leaves: delete it and publish again.
@@ -61,7 +89,13 @@ jobs:
         env:
           VERSION: ${{ steps.version.outputs.version }}
         run: |
+          # A release for a commit main has moved past (a manual run for a missed merge, or a
+          # push whose run started late) must not become the repository's "Latest" release.
+          git fetch --no-tags origin main
+          latest=true
+          [ "$RELEASE_SHA" = "$(git rev-parse origin/main)" ] || latest=false
           gh release create "v$VERSION" dist/* \
-            --target "$GITHUB_SHA" \
+            --latest="$latest" \
+            --target "$RELEASE_SHA" \
             --title "$VERSION" \
-            --notes "Generated from $GITHUB_SHA. Install with scripts/sync-translations --version $VERSION."
+            --notes "Generated from $RELEASE_SHA. Install with scripts/sync-translations --version $VERSION."
