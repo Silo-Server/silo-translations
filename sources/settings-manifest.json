@@ -1,6 +1,6 @@
 {
   "api_version": 1,
-  "revision": 28,
+  "revision": 31,
   "option_sets": {
     "playback_audio_languages": {
       "type": "language_tag",
@@ -576,7 +576,7 @@
           { "value": "2160p", "label": "2160p / 4K" }
         ]
       },
-      "default_value": "720p",
+      "default_value": "auto",
       "constrained_by": {
         "policy_input": "max_playback_quality",
         "constraint": "ceiling"
@@ -586,7 +586,7 @@
       "label": "Cellular quality",
       "description": "The resolution to play at on mobile data or another metered connection.",
       "recommended_control": "select",
-      "notes": "The resolution axis that replaces playback.preferred_quality while the device is on mobile data or a connection the OS marks metered or expensive (a phone hotspot, Android metered Wi-Fi, iOS Low Data Mode). Clients detect the connection and send this pair as quality_preference and bandwidth_cap_kbps; the web app does so when the browser reports Data Saver or a cellular connection; the server never sees which network the device is on, which is why metered on the playback request is ignored. When the connection changes mid-playback the client replans with the other pair. Clients show the pair as one preset list, since bitrate is what matters on a data plan. The members match playback.preferred_quality without the deprecated original."
+      "notes": "The resolution axis that replaces playback.preferred_quality while the device is on mobile data or a connection the OS marks metered or expensive (a phone hotspot, Android metered Wi-Fi, iOS Low Data Mode). Clients detect the connection and send this pair as quality_preference and bandwidth_cap_kbps; the web app does so when the browser reports Data Saver or a cellular connection; the server never sees which network the device is on, which is why metered on the playback request is ignored. When the OS reports Low Data Mode or Data Saver, clients additionally apply a 2000 kbps bitrate ceiling on top of this pair. When the connection changes mid-playback the client replans with the other pair. Clients show the pair as one preset list, since bitrate is what matters on a data plan. The members match playback.preferred_quality without the deprecated original. Revision 30 raised the default pair from (720p, 2000) to (auto, 10000)."
     },
     {
       "key": "playback.cellular_max_bitrate_kbps",
@@ -600,14 +600,14 @@
         "minimum": 100,
         "maximum": 200000
       },
-      "default_value": 2000,
+      "default_value": 10000,
       "unit": "kbps",
       "platforms": ["ios", "android", "web"],
       "category": "playback",
       "label": "Cellular maximum bitrate",
       "description": "Cap how much data playback may use on mobile data or another metered connection.",
       "recommended_control": "select",
-      "notes": "The bitrate axis paired with playback.cellular_preferred_quality, with the same bounds and null-is-uncapped meaning as playback.max_bitrate_kbps. The 2000 kbps default matches the 720p preset the clients already offer."
+      "notes": "The bitrate axis paired with playback.cellular_preferred_quality, with the same bounds and null-is-uncapped meaning as playback.max_bitrate_kbps. Revision 30 raised the default from 2000 kbps to 10000 kbps so modern 1080p files direct play on mobile data while still capping high-bitrate 4K streams; clients tighten the cap to 2000 kbps when OS Low Data Mode or Data Saver is on."
     },
     {
       "key": "playback.auto_skip_intro",
@@ -1254,7 +1254,7 @@
       "category": "appearance",
       "label": "Poster badges",
       "description": "Which badges appear on poster cards, and where.",
-      "notes": "Registered from the legacy unprefixed key card_overlays, which reached the server only through the unknown-key extension bag — stored as an arbitrary string with no validation. null means the user has expressed no preference, which is what lets the server-wide admin default in the overlay-config endpoint apply; writing a resolved-but-unchosen value would silently pin them. The server-wide default configuration stays in server_settings and is not a user setting. This key describes which badges to show, not whether to show them — that is ui.card_overlays_enabled. Revision 13 adds the advisory_age overlay id; a server below revision 13 rejects a value that contains it, so a client offers that badge only when manifest_revision is at least 13. Revision 15 adds the request_status overlay id (a watchlist title's request status on its poster) under the same rule: a client offers it only when manifest_revision is at least 15. Revision 25 reserves the top-right corner for the watch-status indicator, which every client always draws and no setting controls, and adds the left-edge and right-edge positions, the plate and band presets, style, and the per-badge image and valueImages references to uploaded images; a server below revision 25 rejects a value that uses any of them, so a client writes them only when manifest_revision is at least 25. top-right stays valid so stored values keep validating, but from revision 25 a client draws a badge stored there on the right edge and writes right-edge instead. Revision 26 adds the resolution_hdr_audio overlay id (one badge combining resolution, dynamic range and audio codec); a server below revision 26 rejects a value that contains it, so a client offers that badge only when manifest_revision is at least 26."
+      "notes": "Registered from the legacy unprefixed key card_overlays, which reached the server only through the unknown-key extension bag — stored as an arbitrary string with no validation. null means the user has expressed no preference, which is what lets the server-wide admin default in the overlay-config endpoint apply; writing a resolved-but-unchosen value would silently pin them. The server-wide default configuration stays in server_settings and is not a user setting. This key describes which badges to show, not whether to show them — that is ui.card_overlays_enabled. Revision 13 adds the advisory_age overlay id; a server below revision 13 rejects a value that contains it, so a client offers that badge only when manifest_revision is at least 13. Revision 15 adds the request_status overlay id (a watchlist title's request status on its poster) under the same rule: a client offers it only when manifest_revision is at least 15. Revision 25 reserves the top-right corner for the watch-status indicator, which every client always draws and no setting controls, and adds the left-edge and right-edge positions, the plate and band presets, style, and the per-badge image and valueImages references to uploaded images; a server below revision 25 rejects a value that uses any of them, so a client writes them only when manifest_revision is at least 25. top-right stays valid so stored values keep validating, but from revision 25 a client draws a badge stored there on the right edge and writes right-edge instead. Revision 26 adds the resolution_hdr_audio overlay id (one badge combining resolution, dynamic range and audio codec); a server below revision 26 rejects a value that contains it, so a client offers that badge only when manifest_revision is at least 26. Revision 29 adds the availability overlay id (complete seasons on a series poster, episodes in the library on a season poster) under the same rule: a client offers it only when manifest_revision is at least 29."
     },
     {
       "key": "ui.card_overlays_enabled",
@@ -1682,6 +1682,28 @@
       "description": "Who can play and pause in Watch Parties you host. Changing it in a party saves it for your next one.",
       "recommended_control": "select",
       "notes": "The server reads it when the profile creates a Watch Party room and starts the room with this guest_control_policy instead of always host_only. The server also writes it at profile scope whenever the host changes a room's policy (updateWatchTogetherRoomPolicy), so the choice made in any client's party options carries to the next party on every client without each client storing or sending it. Profile scope because each household member hosts with their own choice. The enum members are the room's guest_control_policy values."
+    },
+    {
+      "key": "playback.connection_path",
+      "introduced_in": 31,
+      "persistence": "client_local",
+      "allowed_scopes": ["client_local"],
+      "resolution_order": ["client_local", "default"],
+      "value_schema": {
+        "type": "enum",
+        "ordered": false,
+        "values": [
+          { "value": "automatic", "label": "Automatic" },
+          { "value": "direct_only", "label": "Direct only" }
+        ]
+      },
+      "default_value": "automatic",
+      "platforms": ["ios", "macos", "android", "android_tv"],
+      "category": "playback",
+      "label": "Connection path",
+      "description": "Direct only still uses the local network connection when one is available.",
+      "recommended_control": "select",
+      "notes": "Contract-known local: the device chooses how its media reaches it, so the value does not roam. A client sends it as connection_path when it enrolls the device for direct connections (POST /api/v2/direct-connections/enrollment). Automatic lets the server fall back to the regular connection when no direct path is live; direct_only never plays over the regular connection except on a local-network route the client already holds."
     }
   ]
 }
