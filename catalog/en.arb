@@ -40128,6 +40128,24 @@
       "android"
     ]
   },
+  "settingsManifest.playback.next_up_enabled.description": "Show the Next Up card near the end of an episode.",
+  "@settingsManifest.playback.next_up_enabled.description": {
+    "description": "Help text under the playback.next_up_enabled setting. From the server's settings manifest.",
+    "x-platforms": [
+      "web",
+      "apple",
+      "android"
+    ]
+  },
+  "settingsManifest.playback.next_up_enabled.label": "Show Next Up",
+  "@settingsManifest.playback.next_up_enabled.label": {
+    "description": "Label of the playback.next_up_enabled setting in settings screens. From the server's settings manifest.",
+    "x-platforms": [
+      "web",
+      "apple",
+      "android"
+    ]
+  },
   "settingsManifest.playback.next_up_prompt_seconds.description": "How long before the end of an episode the next-up prompt appears.",
   "@settingsManifest.playback.next_up_prompt_seconds.description": {
     "description": "Help text under the playback.next_up_prompt_seconds setting. From the server's settings manifest.",
