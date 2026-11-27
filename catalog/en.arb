@@ -35379,6 +35379,13 @@
       "apple"
     ]
   },
+  "settings.general.themeMusicFooterTvDevice": "Play a title’s theme song from your library while its page is open. Only affects this TV.",
+  "@settings.general.themeMusicFooterTvDevice": {
+    "description": "Vega TV Settings > General > Theme Music: explanation under the switches. The Vega app reads this string from the Apple catalog export.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "settings.general.themeMusicHeaderTv": "THEME MUSIC",
   "@settings.general.themeMusicHeaderTv": {
     "description": "Apple TV Settings > General: uppercase heading of the theme music switches. Keep it uppercase where the script has case.",
@@ -35393,6 +35400,13 @@
       "apple"
     ]
   },
+  "settings.general.titleArtAllOffTvDevice": "Title art is off on every device signed into this profile. Changing it here changes it everywhere. Turn off Apply to All Devices to choose for this TV only.",
+  "@settings.general.titleArtAllOffTvDevice": {
+    "description": "Vega TV Settings > General > Title Pages: note while Apply to All Devices is on and Show Title Art is off. Title art is logo artwork used as a title’s name. The Vega app reads this string from the Apple catalog export.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "settings.general.titleArtAllOnTv": "Title art is on on every device signed into this profile. Changing it here changes it everywhere. Turn off Apply to All Devices to choose for this Apple TV only.",
   "@settings.general.titleArtAllOnTv": {
     "description": "Apple TV Settings > General > Title Pages: note while Apply to All Devices and Show Title Art are both on. Title art is logo artwork used as a title's name.",
@@ -35400,9 +35414,23 @@
       "apple"
     ]
   },
+  "settings.general.titleArtAllOnTvDevice": "Title art is on on every device signed into this profile. Changing it here changes it everywhere. Turn off Apply to All Devices to choose for this TV only.",
+  "@settings.general.titleArtAllOnTvDevice": {
+    "description": "Vega TV Settings > General > Title Pages: note while Apply to All Devices and Show Title Art are both on. Title art is logo artwork used as a title’s name. The Vega app reads this string from the Apple catalog export.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "settings.general.titleArtThisAppleTv": "Use logo artwork as the title when available. Only affects this Apple TV. Your other devices keep their own setting.",
   "@settings.general.titleArtThisAppleTv": {
     "description": "Apple TV Settings > General > Title Pages: note while Apply to All Devices is off.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "settings.general.titleArtThisTvDevice": "Use logo artwork as the title when available. Only affects this TV. Your other devices keep their own setting.",
+  "@settings.general.titleArtThisTvDevice": {
+    "description": "Vega TV Settings > General > Title Pages: note while Apply to All Devices is off. The Vega app reads this string from the Apple catalog export.",
     "x-platforms": [
       "apple"
     ]
