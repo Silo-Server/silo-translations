@@ -14715,6 +14715,10 @@
   "@error.already_linked": {
     "description": "Error message shown when the server answers with the v2 problem type `already_linked` (server title: \"Already linked\"). Clients show it instead of the server's English detail in a translated interface, so it must make sense on its own, without the request's specifics."
   },
+  "error.app_code_invalid": "This code is unknown, used or expired. Get a new one from the server’s page.",
+  "@error.app_code_invalid": {
+    "description": "Error message shown when the server answers with the v2 problem type `app_code_invalid` (server title: \"App code invalid\"): the Silo app redeemed a one-time app code from a server's web page that is unknown, already used or expired, or what it was for can no longer be done. Clients show it instead of the server's English detail in a translated interface, so it must make sense on its own."
+  },
   "error.authentication_required": "Sign in to continue.",
   "@error.authentication_required": {
     "description": "Error message shown when the server answers with the v2 problem type `authentication_required` (server title: \"Authentication required\"). Clients show it instead of the server's English detail in a translated interface, so it must make sense on its own, without the request's specifics."
@@ -14794,6 +14798,10 @@
   "error.field.invalid_type": "This value has the wrong type.",
   "@error.field.invalid_type": {
     "description": "Error shown next to or about one request field when the server reports the field-error code `invalid_type`. Clients show it instead of the server's English detail in a translated interface."
+  },
+  "error.field.key_enrolled": "This key is already in use on this server.",
+  "@error.field.key_enrolled": {
+    "description": "Field error shown for the v2 field-error code `key_enrolled`: a public key the Silo app tried to enroll is already enrolled on this server, so the app makes a new key. Clients show it instead of the server's English detail."
   },
   "error.field.malformed_form": "The upload couldn’t be read.",
   "@error.field.malformed_form": {
@@ -66533,6 +66541,24 @@
       "web"
     ]
   },
+  "web.admin.common.adminUserSignIn.unlinkConfirm.text": "{last_way, select, yes {{username} can no longer sign in with this provider account. {username} won’t be able to sign in until you set a password or connect a provider again.} other {{username} can no longer sign in with this provider account.}}{keys, select, yes { {username}’s Silo app keys tied to this provider account are removed, and those devices are signed out.} unknown { Any of {username}’s Silo app keys tied to this provider account are removed, and those devices are signed out.} other {}}",
+  "@web.admin.common.adminUserSignIn.unlinkConfirm.text": {
+    "description": "Web admin, user detail, Sign-in tab: text of the dialog confirming that a sign-in provider account is unlinked. {last_way}: yes when this provider account is the account's only way to sign in. {keys}: yes when Silo app keys were added through this provider account (unlinking removes them); unknown when the list of keys couldn't be loaded, so the sentence must hold whether or not there are any; anything else for none. {username}: the account's user name.",
+    "placeholders": {
+      "last_way": {
+        "type": "String"
+      },
+      "keys": {
+        "type": "String"
+      },
+      "username": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.common.adminUserSignIn.unlinkConfirm.title": "Unlink {provider}?",
   "@web.admin.common.adminUserSignIn.unlinkConfirm.title": {
     "description": "Web admin, user detail, Sign-in tab: title of the dialog confirming an identity unlink. {provider}: the provider's name.",
@@ -73837,9 +73863,9 @@
       "web"
     ]
   },
-  "web.admin.dashboard.widgets.apiClients.confirmDescription": "This ends one sign-in session of {user}. Their other devices stay signed in. The client can sign in again with the account's password.",
+  "web.admin.dashboard.widgets.apiClients.confirmDescription": "This ends one sign-in session of {user}. Their other devices stay signed in. The client can sign in again.",
   "@web.admin.dashboard.widgets.apiClients.confirmDescription": {
-    "description": "Web admin, Dashboard page, Busiest API clients widget: body of the sign-out dialog. {user}: the account's user name, or \"user #<id>\".",
+    "description": "Web admin, Dashboard page, Busiest API clients widget: body of the sign-out dialog. {user}: the account's user name, or \"user #<id>\". The client signs in again with a password, the sign-in provider or, for the Silo app, its key; a separate sentence after this one covers the Silo app.",
     "placeholders": {
       "user": {
         "type": "String"
@@ -122583,6 +122609,194 @@
       "web"
     ]
   },
+  "web.admin.users.detail.appKeys.confirm.denyDescription": "{device} won’t be able to sign in to {username}’s account. If it was theirs, they add it again in the Silo app.",
+  "@web.admin.users.detail.appKeys.confirm.denyDescription": {
+    "description": "Web admin, user detail, Sign-in tab, Silo app devices section: text of the dialog confirming that a waiting device is refused. {device}: the device's name. {username}: the account's user name. Shown before the person confirms, so it says what confirming will do.",
+    "placeholders": {
+      "device": {
+        "type": "String"
+      },
+      "username": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.appKeys.confirm.personKey": "Remove key",
+  "@web.admin.users.detail.appKeys.confirm.personKey": {
+    "description": "Web admin, user detail, Sign-in tab, Silo app devices section: confirm button of the account key removal dialog.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.appKeys.confirm.personKeyDescription": "Devices already signed in keep working until you remove them. No new device can be added with this key, and devices it added that are still waiting are denied. {username}’s Silo app sets up a new key the next time they add a device while signed in.",
+  "@web.admin.users.detail.appKeys.confirm.personKeyDescription": {
+    "description": "Web admin, user detail, Sign-in tab, Silo app devices section: text of the dialog confirming the account key's removal: says what it ends and what it doesn't. {username}: the account's user name.",
+    "placeholders": {
+      "username": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.appKeys.confirm.personKeyTitle": "Remove {username}’s account key?",
+  "@web.admin.users.detail.appKeys.confirm.personKeyTitle": {
+    "description": "Web admin, user detail, Sign-in tab, Silo app devices section: title of the dialog confirming the account key's removal. {username}: the account's user name.",
+    "placeholders": {
+      "username": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.appKeys.confirm.removeDescription": "Removing {device} signs it out of {username}’s account now and stops its key: it can’t sign in with it again. To use it again, {username} adds it again in the Silo app.",
+  "@web.admin.users.detail.appKeys.confirm.removeDescription": {
+    "description": "Web admin, user detail, Sign-in tab, Silo app devices section: text of the dialog confirming a device's removal: says what it ends. {device}: the device's name. {username}: the account's user name. Shown before the person confirms, so it says what confirming will do.",
+    "placeholders": {
+      "device": {
+        "type": "String"
+      },
+      "username": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.appKeys.confirm.withdrawDescription": "{device} won’t be able to use this approval to sign in to {username}’s account.",
+  "@web.admin.users.detail.appKeys.confirm.withdrawDescription": {
+    "description": "Web admin, user detail, Sign-in tab, Silo app devices section: text of the withdraw dialog. {device}: the device name. {username}: the account's user name. Shown before the person confirms, so it says what confirming will do.",
+    "placeholders": {
+      "device": {
+        "type": "String"
+      },
+      "username": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.appKeys.description": "Devices and apps that sign in to {username}’s account with the Silo app, without a password.",
+  "@web.admin.users.detail.appKeys.description": {
+    "description": "Web admin, user detail, Sign-in tab, Silo app devices section: text under the heading. {username}: the account's user name.",
+    "placeholders": {
+      "username": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.appKeys.empty": "No devices use the Silo app on this account.",
+  "@web.admin.users.detail.appKeys.empty": {
+    "description": "Web admin, user detail, Sign-in tab, Silo app devices section: shown when the account has no account key, no devices and no approvals in advance.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.appKeys.loadFailed": "Couldn’t load devices.",
+  "@web.admin.users.detail.appKeys.loadFailed": {
+    "description": "Web admin, user detail, Sign-in tab, Silo app devices section: shown when the list fails to load, above a Retry button.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.appKeys.off": "Silo app sign-in is off on this server, so these devices can’t sign in. You can still remove them.",
+  "@web.admin.users.detail.appKeys.off": {
+    "description": "Web admin, user detail, Sign-in tab, Silo app devices section: note shown while the server setting for signing in with the Silo app is off.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.appKeys.ownerOnly": "Only the server owner can change another admin’s or the owner’s devices.",
+  "@web.admin.users.detail.appKeys.ownerOnly": {
+    "description": "Web admin, user detail, Sign-in tab, Silo app devices section: shown instead of the buttons when the viewer may not change this account.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.appKeys.personKey.description": "The Silo app uses this key to add {username}’s new devices. Set up {date}.",
+  "@web.admin.users.detail.appKeys.personKey.description": {
+    "description": "Web admin, user detail, Sign-in tab, Silo app devices section: text under the Account key heading. {username}: the account's user name. {date}: a formatted date and time.",
+    "placeholders": {
+      "username": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.appKeys.personKey.none": "No account key. {username}’s Silo app sets one up the next time they add a device while signed in.",
+  "@web.admin.users.detail.appKeys.personKey.none": {
+    "description": "Web admin, user detail, Sign-in tab, Silo app devices section: shown when the account has no account key. {username}: the account's user name.",
+    "placeholders": {
+      "username": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.appKeys.personKey.remove": "Remove account key",
+  "@web.admin.users.detail.appKeys.personKey.remove": {
+    "description": "Web admin, user detail, Sign-in tab, Silo app devices section: button that removes the account key.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.appKeys.personKeyRemoved": "Account key removed",
+  "@web.admin.users.detail.appKeys.personKeyRemoved": {
+    "description": "Web admin, user detail, Sign-in tab, Silo app devices section: toast after the account key is removed.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.appKeys.preapprovals.description": "Sign-ins {username} approved for a device that hasn’t connected yet.",
+  "@web.admin.users.detail.appKeys.preapprovals.description": {
+    "description": "Web admin, user detail, Sign-in tab, Silo app devices section: text under the Approved in advance heading. {username}: the account's user name.",
+    "placeholders": {
+      "username": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.appKeys.waiting.description": "A new device on an admin account waits until {username} approves it from a device they’re signed in on. You can deny it here.",
+  "@web.admin.users.detail.appKeys.waiting.description": {
+    "description": "Web admin, user detail, Sign-in tab, Silo app devices section: text under the Waiting for approval heading. {username}: the account's user name.",
+    "placeholders": {
+      "username": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.appKeys.waiting.title": "Waiting for approval",
+  "@web.admin.users.detail.appKeys.waiting.title": {
+    "description": "Web admin, user detail, Sign-in tab, Silo app devices section: sub-heading for an admin account's new devices that wait for approval.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.users.detail.common.allProfiles": "All profiles",
   "@web.admin.users.detail.common.allProfiles": {
     "description": "Web: admin account page, option in a profile filter that shows every profile.",
@@ -125414,6 +125628,13 @@
       "web"
     ]
   },
+  "web.admin.users.detail.profiles.badge.changedHere": "Changed here",
+  "@web.admin.users.detail.profiles.badge.changedHere": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: badge on a profile the administrator changed on this server, which the person's app leaves as it is.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.users.detail.profiles.badge.kids": "Kids",
   "@web.admin.users.detail.profiles.badge.kids": {
     "description": "Web: admin account page, Profiles tab: badge on a kids profile.",
@@ -125619,6 +125840,566 @@
   "web.admin.users.detail.profiles.savePin": "Save PIN",
   "@web.admin.users.detail.profiles.savePin": {
     "description": "Web: admin account page, Profiles tab, PIN dialog: submit button.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.allowAgain": "Allow again",
+  "@web.admin.users.detail.profiles.setEdits.allowAgain": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: button that lets a profile the administrator removed come back from the person's app.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.allowAgainAria": "Let {profile} come back on this server",
+  "@web.admin.users.detail.profiles.setEdits.allowAgainAria": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: accessible label of the Allow again button. {profile}: the profile name.",
+    "placeholders": {
+      "profile": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.allowDescription": "Their app can add {profile} back the next time it syncs, as a new profile without its history on this server, if its profiles still include {profile} and this account has room for another profile.",
+  "@web.admin.users.detail.profiles.setEdits.allowDescription": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: Allow again dialog text. {profile}: the profile name.",
+    "placeholders": {
+      "profile": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.allowTitle": "Allow {profile} again?",
+  "@web.admin.users.detail.profiles.setEdits.allowTitle": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: title of the dialog confirming Allow again. {profile}: the profile name.",
+    "placeholders": {
+      "profile": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.alreadyCleared": "That change was already cleared, or {name} changed it again. The list is up to date.",
+  "@web.admin.users.detail.profiles.setEdits.alreadyCleared": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: status line when Clear or Dismiss finds the change already gone: someone else cleared it, or the person changed the field again. Not an error. {name}: the person's username.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.changedBy": "Changed by {name} on {date}",
+  "@web.admin.users.detail.profiles.setEdits.changedBy": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: under a change the person made on this server that their app has not picked up yet. {name}: the person's username; {date}: the date.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.changedSinceOpened": "This change was updated after you opened it, so nothing was cleared. Read it again in the list, then clear it if you still want to.",
+  "@web.admin.users.detail.profiles.setEdits.changedSinceOpened": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: status line when Clear is refused because what clearing would do changed after the confirmation opened (for example the person's app sent a newer set). Nothing was cleared; the list has been refreshed.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.changedWhileRunning": "The profiles changed while this ran, so nothing was changed. The list is up to date; try again if you still want to.",
+  "@web.admin.users.detail.profiles.setEdits.changedWhileRunning": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: status line when Clear, Allow again or Dismiss is refused because the account's profiles kept changing while it ran (the server gave up). Nothing was written; the list has been refreshed.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.clear": "Clear",
+  "@web.admin.users.detail.profiles.setEdits.clear": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: button that ends the administrator's change to a field.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.clearAndRemovePin": "Clear and remove PIN",
+  "@web.admin.users.detail.profiles.setEdits.clearAndRemovePin": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: Confirm button of the Clear dialog when clearing takes the PIN off the profile.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.clearAria": "Clear the change to {field} on {profile}",
+  "@web.admin.users.detail.profiles.setEdits.clearAria": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: accessible label of the Clear button. {field}: the field's label; {profile}: the profile name.",
+    "placeholders": {
+      "field": {
+        "type": "String"
+      },
+      "profile": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.clearFailed": "Couldn’t clear the change.",
+  "@web.admin.users.detail.profiles.setEdits.clearFailed": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: toast when Clear or Allow again fails.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.clearInherit": "{field} on {profile} goes back to what {profile} inherits now, as their app asks. Changes from their app apply to it again.",
+  "@web.admin.users.detail.profiles.setEdits.clearInherit": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: Clear dialog text for a setting the person's app resets, so the profile inherits it again: the account's value where the setting has one, else the server's default. {field}: the setting's label; {profile}: the profile name.",
+    "placeholders": {
+      "field": {
+        "type": "String"
+      },
+      "profile": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.clearLater": "{field} stays as it is until their app next sends it. After that, changes from their app apply to it again.",
+  "@web.admin.users.detail.profiles.setEdits.clearLater": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: Clear dialog text when the server has no value from the person's app to put back now. {field}: the field's label.",
+    "placeholders": {
+      "field": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.clearNow": "{profile} goes back to the value from their app now, and changes from their app apply to it again.",
+  "@web.admin.users.detail.profiles.setEdits.clearNow": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: Clear dialog text when the value from the person's app is put back at once. {profile}: the profile name.",
+    "placeholders": {
+      "profile": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.clearNowValue": "{field} on {profile} goes back to {value}, the value from their app, now. Changes from their app apply to it again.",
+  "@web.admin.users.detail.profiles.setEdits.clearNowValue": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: Clear dialog text when the value from the person's app is put back at once. {field}: the field's label; {profile}: the profile name; {value}: the value that comes back, such as PG.",
+    "placeholders": {
+      "field": {
+        "type": "String"
+      },
+      "profile": {
+        "type": "String"
+      },
+      "value": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.clearPin": "{profile} keeps the PIN you set until their app next sends one. After that, changes from their app apply to it again.",
+  "@web.admin.users.detail.profiles.setEdits.clearPin": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: Clear dialog text for a PIN, which the server can't put back itself. {profile}: the profile name.",
+    "placeholders": {
+      "profile": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.clearPinRemoves": "Their app sends {profile} without a PIN, so clearing removes the PIN you set, now. Anyone using this account can then open {profile} without a PIN.",
+  "@web.admin.users.detail.profiles.setEdits.clearPinRemoves": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: Clear dialog text for a PIN when the person's app has no PIN for the profile: clearing takes the PIN off. {profile}: the profile name.",
+    "placeholders": {
+      "profile": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.clearTitle": "Clear the change to {field} on {profile}?",
+  "@web.admin.users.detail.profiles.setEdits.clearTitle": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: title of the dialog confirming Clear. {field}: the field's label; {profile}: the profile name.",
+    "placeholders": {
+      "field": {
+        "type": "String"
+      },
+      "profile": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.deletedAccount": "a deleted account",
+  "@web.admin.users.detail.profiles.setEdits.deletedAccount": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: stands in for {name} in the other card messages when the account that made the change no longer exists.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.description": "These profiles come from {name}’s app. A change you make here stays on this server until you clear it. It isn’t a lock: {name} can change the same thing here too.",
+  "@web.admin.users.detail.profiles.setEdits.description": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: card description. {name}: the account's username.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.dismiss": "Dismiss",
+  "@web.admin.users.detail.profiles.setEdits.dismiss": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: button that removes a note about the person's change.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.dismissAria": "Dismiss the note about {field} on {profile}",
+  "@web.admin.users.detail.profiles.setEdits.dismissAria": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: accessible label of the Dismiss button. {field}: the field's label; {profile}: the profile name.",
+    "placeholders": {
+      "field": {
+        "type": "String"
+      },
+      "profile": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.dismissFailed": "Couldn’t dismiss the note.",
+  "@web.admin.users.detail.profiles.setEdits.dismissFailed": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: toast when Dismiss fails.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.field.isChild": "Kids profile",
+  "@web.admin.users.detail.profiles.setEdits.field.isChild": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: field label: whether the profile is a kids profile.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.field.maxAdvisoryAge": "Age limit",
+  "@web.admin.users.detail.profiles.setEdits.field.maxAdvisoryAge": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: field label: the highest advisory age the profile may watch.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.field.maxContentRating": "Content rating limit",
+  "@web.admin.users.detail.profiles.setEdits.field.maxContentRating": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: field label: the highest content rating the profile may watch.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.field.name": "Name",
+  "@web.admin.users.detail.profiles.setEdits.field.name": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: field label: the profile name.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.field.picture": "Picture",
+  "@web.admin.users.detail.profiles.setEdits.field.picture": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: field label: the profile picture.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.field.pin": "PIN",
+  "@web.admin.users.detail.profiles.setEdits.field.pin": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: field label: the profile PIN.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.field.requests": "Requests",
+  "@web.admin.users.detail.profiles.setEdits.field.requests": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: field label: whether the profile can make requests.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.field.requireAdvisoryAge": "Require an age rating",
+  "@web.admin.users.detail.profiles.setEdits.field.requireAdvisoryAge": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: field label: whether titles with no advisory age are hidden.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.fieldValue": "{field}: {value}",
+  "@web.admin.users.detail.profiles.setEdits.fieldValue": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: a row's first line. {field}: the field's label, such as Content rating limit; {value}: its value now.",
+    "placeholders": {
+      "field": {
+        "type": "String"
+      },
+      "value": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.hidden": "Removed on this server by {name} on {date}. Their app won’t add it back until you allow it.",
+  "@web.admin.users.detail.profiles.setEdits.hidden": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: under a profile the administrator removed. {name}: the administrator's username; {date}: the date.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.loadFailed": "Couldn’t load the changes made on this server.",
+  "@web.admin.users.detail.profiles.setEdits.loadFailed": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: inline error when the list fails to load.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.nameTaken": "{profile} can’t go back to the name {name} from their app, because another profile here has that name. Rename that profile first, then clear this again.",
+  "@web.admin.users.detail.profiles.setEdits.nameTaken": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: status line when Clear is refused because another profile on the account already has the name the person's app uses. {profile}: the profile name now; {name}: the name from the person's app.",
+    "placeholders": {
+      "profile": {
+        "type": "String"
+      },
+      "name": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.noticeHiddenNextSync": "{profile} can come back the next time {name}’s app syncs, if its profiles still include it.",
+  "@web.admin.users.detail.profiles.setEdits.noticeHiddenNextSync": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: status line after Allow again when no push could be sent. {profile}: the profile name; {name}: the person's username.",
+    "placeholders": {
+      "profile": {
+        "type": "String"
+      },
+      "name": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.noticeHiddenWoken": "{profile} can come back when their app next syncs, if its profiles still include it. {name}’s phone has been asked to sync.",
+  "@web.admin.users.detail.profiles.setEdits.noticeHiddenWoken": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: status line after Allow again when a push asking the person's phone to sync was queued (it can still fail to arrive). {profile}: the profile name; {name}: the person's username.",
+    "placeholders": {
+      "profile": {
+        "type": "String"
+      },
+      "name": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.noticeNextSync": "Cleared. It reaches {name}’s app the next time it syncs.",
+  "@web.admin.users.detail.profiles.setEdits.noticeNextSync": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: status line after Clear when no push could be sent. {name}: the person's username.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.noticeWoken": "Cleared. {name}’s phone has been asked to sync.",
+  "@web.admin.users.detail.profiles.setEdits.noticeWoken": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: status line after Clear when a push asking the person's phone to sync was queued (it can still fail to arrive). {name}: the person's username.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.removedBy": "Removed by {name} on {date}",
+  "@web.admin.users.detail.profiles.setEdits.removedBy": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: under a profile the person removed on this server that their app has not picked up yet. {name}: the person's username; {date}: the date.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.replacedOwner": "This replaced the value you set.",
+  "@web.admin.users.detail.profiles.setEdits.replacedOwner": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: after changedBy, when the person's change replaced one the administrator made.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.setBy": "Set by {name} on {date}",
+  "@web.admin.users.detail.profiles.setEdits.setBy": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: under a change the administrator made. {name}: the administrator's username; {date}: the date.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.settled": "{name} changed this on {date}; the value you set no longer applies.",
+  "@web.admin.users.detail.profiles.setEdits.settled": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: under a field the person changed after the administrator set it, once their app picked it up. {name}: the person's username; {date}: the date.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.title": "Changed on this server",
+  "@web.admin.users.detail.profiles.setEdits.title": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: card title.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.value.inherited": "{value} (inherited)",
+  "@web.admin.users.detail.profiles.setEdits.value.inherited": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: value of a setting the profile has no value of its own for. {value}: the value it inherits.",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.value.noPicture": "No picture",
+  "@web.admin.users.detail.profiles.setEdits.value.noPicture": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: value of the picture field when there is none.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.value.none": "None",
+  "@web.admin.users.detail.profiles.setEdits.value.none": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: value of a limit with nothing set.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.value.off": "Off",
+  "@web.admin.users.detail.profiles.setEdits.value.off": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: value of an on/off field.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.value.on": "On",
+  "@web.admin.users.detail.profiles.setEdits.value.on": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: value of an on/off field.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.value.picture": "Custom picture",
+  "@web.admin.users.detail.profiles.setEdits.value.picture": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: value of the picture field for an uploaded or chosen picture.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.value.pinNone": "No PIN",
+  "@web.admin.users.detail.profiles.setEdits.value.pinNone": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: value of the PIN field when the profile has none.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.value.pinSet": "PIN set",
+  "@web.admin.users.detail.profiles.setEdits.value.pinSet": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: value of the PIN field when the profile has one.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.value.requestsAllowed": "Allowed",
+  "@web.admin.users.detail.profiles.setEdits.value.requestsAllowed": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: value of the Requests field.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.detail.profiles.setEdits.value.requestsBlocked": "Blocked",
+  "@web.admin.users.detail.profiles.setEdits.value.requestsBlocked": {
+    "description": "Web: admin account page, Profiles tab, card listing changes made on this server to profiles that come from the person's app: value of the Requests field.",
     "x-platforms": [
       "web"
     ]
@@ -126886,6 +127667,133 @@
       "web"
     ]
   },
+  "web.admin.users.signInLinkDialog.action": "Create sign-in link",
+  "@web.admin.users.signInLinkDialog.action": {
+    "description": "Web admin Users page, a person's page: item in the header's More actions menu that opens the sign-in link dialog.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.signInLinkDialog.actionHint": "Lost every device",
+  "@web.admin.users.signInLinkDialog.actionHint": {
+    "description": "Web admin Users page, a person's page: short hint beside the Create sign-in link menu item, saying who the link is for.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.signInLinkDialog.description": "A single-use link for {username} if they lost every device. It opens a page that gives them a code for the Silo app, or lets them choose a password. It works for 24 hours, and a new link replaces the last one.",
+  "@web.admin.users.signInLinkDialog.description": {
+    "description": "Web admin Users page, a person's page, sign-in link dialog: text under the title. {username}: the account's username.",
+    "placeholders": {
+      "username": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.signInLinkDialog.emailAction": "Email it",
+  "@web.admin.users.signInLinkDialog.emailAction": {
+    "description": "Web admin Users page, a person's page, sign-in link dialog: button that makes the link and also emails it to the account's address.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.signInLinkDialog.emailHint": "Create the link to copy and send it yourself, or email it to {email}.",
+  "@web.admin.users.signInLinkDialog.emailHint": {
+    "description": "Web admin Users page, a person's page, sign-in link dialog: text before the link is made, when it can be emailed. {email}: the account's email address.",
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.signInLinkDialog.emailHintNoAddress": "Create the link, then copy it and send it yourself. This account has no email address to send it to.",
+  "@web.admin.users.signInLinkDialog.emailHintNoAddress": {
+    "description": "Web admin Users page, a person's page, sign-in link dialog: text before the link is made, when the account has no email address.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.signInLinkDialog.emailHintNoMail": "Create the link, then copy it and send it yourself. Set up email in Settings to send it from here.",
+  "@web.admin.users.signInLinkDialog.emailHintNoMail": {
+    "description": "Web admin Users page, a person's page, sign-in link dialog: text before the link is made, when the server has no mail set up.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.signInLinkDialog.emailSent": "Sent the link to {email}. It expires {expires}.",
+  "@web.admin.users.signInLinkDialog.emailSent": {
+    "description": "Web admin Users page, a person's page, sign-in link dialog: status after the link was emailed. {email}: the account's email address. {expires}: the date and time the link expires, already formatted.",
+    "placeholders": {
+      "email": {
+        "type": "String"
+      },
+      "expires": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.signInLinkDialog.emailUnconfirmed": "The mail server did not confirm delivery. The link below still works: copy it and send it another way.",
+  "@web.admin.users.signInLinkDialog.emailUnconfirmed": {
+    "description": "Web admin Users page, a person's page, sign-in link dialog: warning when the email may not have been sent; the link is shown below it.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.signInLinkDialog.failed": "Could not create a sign-in link.",
+  "@web.admin.users.signInLinkDialog.failed": {
+    "description": "Web admin Users page, a person's page, sign-in link dialog: error when the link could not be made and the server gave no reason.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.signInLinkDialog.linkShare": "Send this link only to {username}. Anyone who has it can sign in to this account until it is used or expires {expires}.",
+  "@web.admin.users.signInLinkDialog.linkShare": {
+    "description": "Web admin Users page, a person's page, sign-in link dialog: text under the link. {username}: the account's username. {expires}: the date and time the link expires, already formatted.",
+    "placeholders": {
+      "username": {
+        "type": "String"
+      },
+      "expires": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.signInLinkDialog.providerRequired": "Local password sign-in is off on this server, so a sign-in link would skip its sign-in provider. Ask {username} to sign in with the provider on this server's site, then use Open in Silo in their account settings.",
+  "@web.admin.users.signInLinkDialog.providerRequired": {
+    "description": "Web admin Users page, a person's page, sign-in link dialog: error when the server refuses a link because local password sign-in is off. {username}: the account's username. \"Open in Silo\" names the account settings action that gets a code for the Silo app.",
+    "placeholders": {
+      "username": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.users.signInLinkDialog.title": "Sign-in link for {username}",
+  "@web.admin.users.signInLinkDialog.title": {
+    "description": "Web admin Users page, a person's page, sign-in link dialog: dialog title. {username}: the account's username.",
+    "placeholders": {
+      "username": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.audiobooks.chapter.fallbackTitle": "Chapter {number}",
   "@web.audiobooks.chapter.fallbackTitle": {
     "description": "Web: name shown for an audiobook chapter that has no title of its own. {number}: the chapter's number, starting at 1.",
@@ -128126,6 +129034,139 @@
       "web"
     ]
   },
+  "web.auth.appCode.code": "Code",
+  "@web.auth.appCode.code": {
+    "description": "Web: label above a one-time code to type in the Silo app (account settings, and the invite page when the code may not go in a link).",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.appCode.codeCopied": "Code copied",
+  "@web.auth.appCode.codeCopied": {
+    "description": "Web: short confirmation after the person copies a one-time code for the Silo app to the clipboard.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.appCode.copyCode": "Copy code",
+  "@web.auth.appCode.copyCode": {
+    "description": "Web: button that copies a one-time code for the Silo app to the clipboard, so the person can paste it into the app.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.appCode.copyFailed": "Couldn’t copy the code. Select it and copy it by hand.",
+  "@web.auth.appCode.copyFailed": {
+    "description": "Web: error when copying a one-time code for the Silo app to the clipboard fails.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.appCode.expired": "This code has expired.",
+  "@web.auth.appCode.expired": {
+    "description": "Web 'Open Silo' step (invite page and account settings): shown in place of the Open Silo button once the one-time code handed to the Silo app has expired.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.appCode.failed": "Silo couldn’t make a code. Try again.",
+  "@web.auth.appCode.failed": {
+    "description": "Web 'Open Silo' step: error when the server could not issue a one-time code for the Silo app.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.appCode.instructions": "Press Open Silo to continue in the Silo app on this device. If the app isn’t installed, install it, come back to this tab and press Open Silo again.",
+  "@web.auth.appCode.instructions": {
+    "description": "Web 'Open Silo' step (invite page and account settings): explains the button that opens the Silo app with a one-time code, and what to do when the app isn't installed yet.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.appCode.noScanCode": "This server’s address is too long for a scan code. Type the server address and code in the Silo app, or copy the code and paste it there.",
+  "@web.auth.appCode.noScanCode": {
+    "description": "Web: shown instead of a scan code when the server's address is too long to fit in one, so the person types or pastes the details in the Silo app.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.appCode.open": "Open Silo",
+  "@web.auth.appCode.open": {
+    "description": "Web 'Open Silo' step: the button that opens the Silo app with a one-time code for this server.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.appCode.renew": "Get a new code",
+  "@web.auth.appCode.renew": {
+    "description": "Web 'Open Silo' step: button shown after the one-time code expired; it asks the server for a new code.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.appCode.scanCodeLabel": "Scan code for the Silo app",
+  "@web.auth.appCode.scanCodeLabel": {
+    "description": "Web: accessible name of a square code (a QR code) written for the Silo app's scanner. Any QR reader can read it. It holds the server address and the one-time code the person would otherwise type; it is not a link.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.appCode.scanCodeUnavailable": "A scan code can’t be shown for this server. Type the server address and code in the Silo app, or copy the code and paste it there.",
+  "@web.auth.appCode.scanCodeUnavailable": {
+    "description": "Web: shown instead of a scan code (a QR code written for the Silo app's scanner, which any QR reader can read) when the server's address or the code isn't in a form the app's scanner accepts, so the person types or pastes the details in the Silo app.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.appCode.scanHint": "Scan this with the scanner in the Silo app, or type or copy the server address and code below.",
+  "@web.auth.appCode.scanHint": {
+    "description": "Web: hint under a square code (a QR code) written for the Silo app's scanner, which any QR reader can read. It holds the server address and the one-time code the person would otherwise type; both are also shown below it.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.appCode.serverAddress": "Server address",
+  "@web.auth.appCode.serverAddress": {
+    "description": "Web: label above this server's address, shown with a one-time code to type in the Silo app (account settings, and the invite page when the code may not go in a link).",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.appCode.singleUse": "This code works once and expires after a few minutes.",
+  "@web.auth.appCode.singleUse": {
+    "description": "Web 'Open Silo' step: small note under the Open Silo button about the one-time code it carries.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.appCode.title": "Open Silo",
+  "@web.auth.appCode.title": {
+    "description": "Web 'Open Silo' step: heading of the step that hands the Silo app a one-time code.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.appCode.typeInstructions": "In the Silo app on your phone or tablet, add this server by its address and type this code to create your account. Anyone with the code can join in your place, so don’t share it.",
+  "@web.auth.appCode.typeInstructions": {
+    "description": "Web invitation page, Silo app path: instructions above the server address and the one-time code the invitee types into the Silo app to create the account.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.appCode.typeTitle": "Join with this code",
+  "@web.auth.appCode.typeTitle": {
+    "description": "Web invitation page, Silo app path: heading of the step that shows the server address and a one-time code to type in the Silo app, used when the code may not travel in a link (an administrator's invitation).",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.appCode.webLink": "Open with the siloserver.org link instead",
+  "@web.auth.appCode.webLink": {
+    "description": "Web 'Open Silo' step: secondary link that opens the Silo app through an https link on siloserver.org, for a device where the Open Silo button does nothing.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.auth.card.rememberedIt": "Remembered it? <link>Sign in</link>",
   "@web.auth.card.rememberedIt": {
     "description": "Web password reset pages: line under the card; <link> marks the link to the sign-in page.",
@@ -128318,9 +129359,47 @@
       "web"
     ]
   },
+  "web.auth.invite.appAccountEmail": "Your account will use {email}.",
+  "@web.auth.invite.appAccountEmail": {
+    "description": "Web invitation page, Silo app path: shown for an emailed invitation before asking for a code. {email}: the address the invitation was sent to, which becomes the account's name and email.",
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.invite.appContinue": "Continue",
+  "@web.auth.invite.appContinue": {
+    "description": "Web invitation page, Silo app path: button that reserves the account name and gets a one-time code for the Silo app.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.invite.appEmailHint": "With an email address, this server can send you a sign-in link if you lose your devices.",
+  "@web.auth.invite.appEmailHint": {
+    "description": "Web invitation page, Silo app path: help text under the optional email field.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.auth.invite.appMissing": "Nothing happens? The app isn't installed — just continue below.",
   "@web.auth.invite.appMissing": {
     "description": "Web invitation page, on Android: hint under the button that opens the invitation in the Silo app.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.invite.appProviderOnly": "{server} adds people through its sign-in provider. Sign in with it on this site, then open Silo from your account settings.",
+  "@web.auth.invite.appProviderOnly": {
+    "description": "Web invitation page, Silo app path: shown when the server has password sign-in off, so an invitation can't create an account that signs in only with the Silo app. {server}: the server's name.",
+    "placeholders": {
+      "server": {
+        "type": "String"
+      }
+    },
     "x-platforms": [
       "web"
     ]
@@ -128351,6 +129430,20 @@
       "web"
     ]
   },
+  "web.auth.invite.descriptionWithApp": "Join with the Silo app on your phone or tablet, or choose a password to sign in.",
+  "@web.auth.invite.descriptionWithApp": {
+    "description": "Web invitation page: card description when the invitee can join through the Silo app; replaces the password-only description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.invite.emailOptional": "Email (optional)",
+  "@web.auth.invite.emailOptional": {
+    "description": "Web invitation page, Silo app path: label of the optional email field for an invitation that has no address.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.auth.invite.emailPlaceholder": "you@example.com",
   "@web.auth.invite.emailPlaceholder": {
     "description": "Web invitation page: example address shown as the placeholder of the email field.",
@@ -128373,6 +129466,20 @@
         "type": "String"
       }
     },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.invite.joinWithApp": "Join with the Silo app",
+  "@web.auth.invite.joinWithApp": {
+    "description": "Web invitation page: button choosing to join through the Silo app, with no password.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.invite.joinWithAppInstead": "Join with the Silo app instead",
+  "@web.auth.invite.joinWithAppInstead": {
+    "description": "Web invitation page: link under the password form that switches to joining through the Silo app.",
     "x-platforms": [
       "web"
     ]
@@ -128486,6 +129593,34 @@
   "web.auth.invite.unavailableTitle": "Invitation unavailable",
   "@web.auth.invite.unavailableTitle": {
     "description": "Web invitation page: card title when the invitation link can no longer be used.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.invite.usePassword": "Use a password instead",
+  "@web.auth.invite.usePassword": {
+    "description": "Web invitation page: button or link choosing to create the account with a password instead of the Silo app.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.invite.usernameIsAddress": "A username with @ must be the email address you enter below.",
+  "@web.auth.invite.usernameIsAddress": {
+    "description": "Web invitation page, Silo app path: error under the username field when the username looks like an email address other than the one entered in the email field.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.invite.usernameRequired": "Choose a username.",
+  "@web.auth.invite.usernameRequired": {
+    "description": "Web invitation page, Silo app path: error under the username field when it is empty.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.invite.usernameTaken": "That username is already in use. Choose another.",
+  "@web.auth.invite.usernameTaken": {
+    "description": "Web invitation page, Silo app path: error under the username field when another account already has that name or another invitee reserved it.",
     "x-platforms": [
       "web"
     ]
@@ -129375,6 +130510,146 @@
   "web.auth.signIn": "Sign in",
   "@web.auth.signIn": {
     "description": "Web sign-in screens: button or link that signs in, or goes to the sign-in page (login form, invite, password reset, Quick Connect approval).",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.signInLink.backToCode": "Back to the code",
+  "@web.auth.signInLink.backToCode": {
+    "description": "Web sign-in link page (opened from a link an admin sent to someone who lost every device): button on the password form that goes back to the code for the Silo app.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.signInLink.codeExpired": "Ask an administrator of this server for a new link to get another code.",
+  "@web.auth.signInLink.codeExpired": {
+    "description": "Web sign-in link page (opened from a link an admin sent to someone who lost every device): text under \"This code has expired.\" when the code for the Silo app runs out; a password can still be set below.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.signInLink.documentTitle": "Sign-in link",
+  "@web.auth.signInLink.documentTitle": {
+    "description": "Web sign-in link page (opened from a link an admin sent to someone who lost every device): browser tab title.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.signInLink.failed": "Silo couldn’t open this link. Try again.",
+  "@web.auth.signInLink.failed": {
+    "description": "Web sign-in link page (opened from a link an admin sent to someone who lost every device): error when using the link failed for a reason other than the link being used or expired; the link still works.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.signInLink.installFirst": "The link works once, and the code lasts a few minutes. Install the Silo app on your phone or tablet first, then press Continue.",
+  "@web.auth.signInLink.installFirst": {
+    "description": "Web sign-in link page (opened from a link an admin sent to someone who lost every device): note above the Continue button, before the link is used.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.signInLink.intro": "An admin sent you this link so you can sign in again. Continue to get a code for the Silo app, or to choose a password.",
+  "@web.auth.signInLink.intro": {
+    "description": "Web sign-in link page (opened from a link an admin sent to someone who lost every device): text under the title, before the person presses Continue.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.signInLink.keepOpen": "Keep this page open until you’re done. The link is used up, so reloading or leaving loses what it gave you.",
+  "@web.auth.signInLink.keepOpen": {
+    "description": "Web sign-in link page (opened from a link an admin sent to someone who lost every device): notice above the code for the Silo app and above the password form, while either is on screen.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.signInLink.leaveAction": "Leave",
+  "@web.auth.signInLink.leaveAction": {
+    "description": "Web sign-in link page (opened from a link an admin sent to someone who lost every device): button in the leave dialog that leaves the page anyway; the other button stays.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.signInLink.leaveDescription": "The link is used up. If you leave, the code for the Silo app and the chance to set a password are gone, and you’ll need a new link.",
+  "@web.auth.signInLink.leaveDescription": {
+    "description": "Web sign-in link page (opened from a link an admin sent to someone who lost every device): text of the dialog asking before the person leaves the page.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.signInLink.leaveTitle": "Leave this page?",
+  "@web.auth.signInLink.leaveTitle": {
+    "description": "Web sign-in link page (opened from a link an admin sent to someone who lost every device): title of the dialog asking before the person leaves the page while it still shows the code for the Silo app or the password form.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.signInLink.noCodeAdministrator": "This is an administrator’s account, so this link only sets a password. Set one, sign in on this server’s site, then open the Silo app from your account settings there.",
+  "@web.auth.signInLink.noCodeAdministrator": {
+    "description": "Web sign-in link page (opened from a link an admin sent to someone who lost every device): text above the password form when the link is for an administrator's account, which gets no code for the Silo app.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.signInLink.noCodeAppKeysOff": "The Silo app can’t sign in on this server right now, so this link only sets a password.",
+  "@web.auth.signInLink.noCodeAppKeysOff": {
+    "description": "Web sign-in link page (opened from a link an admin sent to someone who lost every device): text above the password form when the server has Silo app sign-in turned off.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.signInLink.passwordDescription": "Saving signs this account out on every device. Devices signed in with the Silo app sign back in by themselves.",
+  "@web.auth.signInLink.passwordDescription": {
+    "description": "Web sign-in link page (opened from a link an admin sent to someone who lost every device): text under the title of the password form.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.signInLink.passwordSet": "Your password is saved. Sign in with it.",
+  "@web.auth.signInLink.passwordSet": {
+    "description": "Web sign-in link page (opened from a link an admin sent to someone who lost every device): status after the password was saved; a Sign in button follows.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.signInLink.passwordSetLostDevices": "Lost devices that used the Silo app can still sign in until you remove them. After you sign in, remove them from your devices in your account settings.",
+  "@web.auth.signInLink.passwordSetLostDevices": {
+    "description": "Web sign-in link page (opened from a link an admin sent to someone who lost every device): note under \"Your password is saved\", after a password was set with the link.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.signInLink.passwordTitle": "Choose a password",
+  "@web.auth.signInLink.passwordTitle": {
+    "description": "Web sign-in link page (opened from a link an admin sent to someone who lost every device): title of the password form.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.signInLink.providerRequired": "This server signs people in through its sign-in provider, so this link doesn’t work. Sign in with the provider instead.",
+  "@web.auth.signInLink.providerRequired": {
+    "description": "Web sign-in link page (opened from a link an admin sent to someone who lost every device): text when the server has local password sign-in off.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.signInLink.setPasswordInstead": "Set a password instead",
+  "@web.auth.signInLink.setPasswordInstead": {
+    "description": "Web sign-in link page (opened from a link an admin sent to someone who lost every device): button under the code for the Silo app that shows a form to choose a password.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.signInLink.title": "Get back into your account",
+  "@web.auth.signInLink.title": {
+    "description": "Web sign-in link page (opened from a link an admin sent to someone who lost every device): page title.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.auth.signInLink.unavailable": "This link was already used, replaced by a newer one, or expired. Ask an administrator of this server for a new one.",
+  "@web.auth.signInLink.unavailable": {
+    "description": "Web sign-in link page (opened from a link an admin sent to someone who lost every device): text when the link can't be used any more. Shown under the title \"Link unavailable\".",
     "x-platforms": [
       "web"
     ]
@@ -162612,9 +163887,9 @@
       "web"
     ]
   },
-  "web.settings.account.password.signOutOthersDescription": "Other browsers and apps must sign in again with the new password. This browser stays signed in, and API keys keep working.",
+  "web.settings.account.password.signOutOthersDescription": "Other browsers and apps are signed out. This browser stays signed in, and API keys keep working.",
   "@web.settings.account.password.signOutOthersDescription": {
-    "description": "Web Settings → Account: explanation under the 'Sign out of other devices' checkbox.",
+    "description": "Web Settings → Account: explanation under the 'Sign out of other devices' checkbox. Devices that use the Silo app sign back in by themselves while the server allows it; a separate sentence after this one says so, so this one says only what changing the password ends.",
     "x-platforms": [
       "web"
     ]
@@ -163463,6 +164738,531 @@
   "web.settings.apiKeys.usage.title": "How to use this key",
   "@web.settings.apiKeys.usage.title": {
     "description": "Web Settings → API Keys, the dialog that shows a new key once: heading of the short instructions under the key.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.actionFailed": "Couldn’t make that change. Try again.",
+  "@web.settings.appKeys.actionFailed": {
+    "description": "Web Silo app devices list, in a person's Settings → Signed-in sessions and on an admin's user page (Sign-in tab): error shown in the dialog when a change fails for a reason the server didn't explain.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.approveMainOnly": "Only the household’s main profile can approve a device. Switch to it to approve.",
+  "@web.settings.appKeys.approveMainOnly": {
+    "description": "Web Settings → Signed-in sessions, Silo app devices section: shown under waiting devices when the active profile isn't the household's main profile, so no Approve button is offered.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.approved": "{device} approved",
+  "@web.settings.appKeys.approved": {
+    "description": "Web Settings → Signed-in sessions, Silo app devices section: toast after a waiting device is approved. {device}: the device's name.",
+    "placeholders": {
+      "device": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.confirm.approve": "Approve device",
+  "@web.settings.appKeys.confirm.approve": {
+    "description": "Web Settings → Signed-in sessions, Silo app devices section: confirm button that approves a waiting device.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.confirm.approveDescription": "{device} will be able to sign in to your account with the Silo app until you remove it. Approve it only if you just set it up.",
+  "@web.settings.appKeys.confirm.approveDescription": {
+    "description": "Web Settings → Signed-in sessions, Silo app devices section: text of the dialog that approves a waiting device. {device}: the device's name. Shown before the person confirms, so it says what confirming will do.",
+    "placeholders": {
+      "device": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.confirm.approveTitle": "Approve {device}?",
+  "@web.settings.appKeys.confirm.approveTitle": {
+    "description": "Web Settings → Signed-in sessions, Silo app devices section: title of the dialog that approves a waiting device. {device}: the device's name.",
+    "placeholders": {
+      "device": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.confirm.deny": "Deny device",
+  "@web.settings.appKeys.confirm.deny": {
+    "description": "Web Silo app devices list, in a person's Settings → Signed-in sessions and on an admin's user page (Sign-in tab): confirm button that refuses a waiting device.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.confirm.denyDescription": "{device} won’t be able to sign in to your account. If it was yours, add it again in the Silo app.",
+  "@web.settings.appKeys.confirm.denyDescription": {
+    "description": "Web Settings → Signed-in sessions, Silo app devices section: text of the dialog that refuses a waiting device; says what denying ends. {device}: the device's name. Shown before the person confirms, so it says what confirming will do.",
+    "placeholders": {
+      "device": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.confirm.denyTitle": "Deny {device}?",
+  "@web.settings.appKeys.confirm.denyTitle": {
+    "description": "Web Silo app devices list, in a person's Settings → Signed-in sessions and on an admin's user page (Sign-in tab): title of the dialog that refuses a waiting device. {device}: the device's name.",
+    "placeholders": {
+      "device": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.confirm.remove": "Remove device",
+  "@web.settings.appKeys.confirm.remove": {
+    "description": "Web Silo app devices list, in a person's Settings → Signed-in sessions and on an admin's user page (Sign-in tab): confirm button that removes a device.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.confirm.removeDescription": "Removing {device} signs it out now and stops its key: it can’t sign in with it again. To use it again, add it again in the Silo app.",
+  "@web.settings.appKeys.confirm.removeDescription": {
+    "description": "Web Settings → Signed-in sessions, Silo app devices section: text of the dialog that removes a device; says what removing ends. {device}: the device's name. Shown before the person confirms, so it says what confirming will do.",
+    "placeholders": {
+      "device": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.confirm.removeTitle": "Remove {device}?",
+  "@web.settings.appKeys.confirm.removeTitle": {
+    "description": "Web Silo app devices list, in a person's Settings → Signed-in sessions and on an admin's user page (Sign-in tab): title of the dialog that removes a device. {device}: the device's name.",
+    "placeholders": {
+      "device": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.confirm.withdraw": "Withdraw approval",
+  "@web.settings.appKeys.confirm.withdraw": {
+    "description": "Web Silo app devices list, in a person's Settings → Signed-in sessions and on an admin's user page (Sign-in tab): confirm button that withdraws a sign-in approved in advance.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.confirm.withdrawDescription": "{device} won’t be able to use this approval to sign in to your account.",
+  "@web.settings.appKeys.confirm.withdrawDescription": {
+    "description": "Web Settings → Signed-in sessions, Silo app devices section: text of the dialog that withdraws a sign-in approved in advance; says what withdrawing ends. {device}: the device's name. Shown before the person confirms, so it says what confirming will do.",
+    "placeholders": {
+      "device": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.confirm.withdrawTitle": "Withdraw the approval for {device}?",
+  "@web.settings.appKeys.confirm.withdrawTitle": {
+    "description": "Web Silo app devices list, in a person's Settings → Signed-in sessions and on an admin's user page (Sign-in tab): title of the dialog that withdraws a sign-in approved in advance. {device}: the device's name.",
+    "placeholders": {
+      "device": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.confirm.working": "Saving…",
+  "@web.settings.appKeys.confirm.working": {
+    "description": "Web Silo app devices list, in a person's Settings → Signed-in sessions and on an admin's user page (Sign-in tab): confirm button label while the change is being saved.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.denied": "{device} denied",
+  "@web.settings.appKeys.denied": {
+    "description": "Web Silo app devices list, in a person's Settings → Signed-in sessions and on an admin's user page (Sign-in tab): toast after a waiting device is refused. {device}: the device's name.",
+    "placeholders": {
+      "device": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.description": "Devices and apps that sign in to your account with the Silo app, without a password.",
+  "@web.settings.appKeys.description": {
+    "description": "Web Settings → Signed-in sessions, Silo app devices section: text under the heading.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.devices.title": "Devices",
+  "@web.settings.appKeys.devices.title": {
+    "description": "Web Silo app devices list, in a person's Settings → Signed-in sessions and on an admin's user page (Sign-in tab): sub-heading for the devices that sign in with the Silo app.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.empty": "No devices use the Silo app on your account.",
+  "@web.settings.appKeys.empty": {
+    "description": "Web Settings → Signed-in sessions, Silo app devices section: shown when the account has no account key, devices or sign-ins approved in advance.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.footnote": "Removing a device signs it out and stops its key working. Signing out a session doesn’t remove the device: it signs back in with its key.",
+  "@web.settings.appKeys.footnote": {
+    "description": "Web Silo app devices list, in a person's Settings → Signed-in sessions and on an admin's user page (Sign-in tab): note at the bottom of the section.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.loadFailed": "Couldn’t load your devices.",
+  "@web.settings.appKeys.loadFailed": {
+    "description": "Web Settings → Signed-in sessions, Silo app devices section: shown when the list fails to load; a Retry button follows.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.loading": "Loading devices…",
+  "@web.settings.appKeys.loading": {
+    "description": "Web Silo app devices list, in a person's Settings → Signed-in sessions and on an admin's user page (Sign-in tab): shown while the list loads.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.off": "Silo app sign-in is off on this server, so these devices can’t sign in and waiting devices can’t be approved. You can still remove them.",
+  "@web.settings.appKeys.off": {
+    "description": "Web Settings → Signed-in sessions, Silo app devices section: note shown while the server has signing in with the Silo app turned off.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.personKey.description": "Your Silo app uses this key to add your new devices. Set up {date}.",
+  "@web.settings.appKeys.personKey.description": {
+    "description": "Web Settings → Signed-in sessions, Silo app devices section: text about the account key. {date}: when it was set up, as a formatted date and time.",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.personKey.none": "No account key. Your Silo app sets one up the next time you add a device while signed in.",
+  "@web.settings.appKeys.personKey.none": {
+    "description": "Web Settings → Signed-in sessions, Silo app devices section: shown when the account has no account key.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.personKey.title": "Account key",
+  "@web.settings.appKeys.personKey.title": {
+    "description": "Web Silo app devices list, in a person's Settings → Signed-in sessions and on an admin's user page (Sign-in tab): sub-heading for the account key the Silo app uses to add the person's new devices.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.pinDescription": "Enter the main profile’s PIN to approve this device.",
+  "@web.settings.appKeys.pinDescription": {
+    "description": "Web Settings → Signed-in sessions, Silo app devices section: PIN prompt before approving a waiting device.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.preapprovals.description": "Sign-ins you approved for a device that hasn’t connected yet.",
+  "@web.settings.appKeys.preapprovals.description": {
+    "description": "Web Settings → Signed-in sessions, Silo app devices section: text under the approved in advance heading.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.preapprovals.loadFailed": "Couldn’t load the sign-ins approved in advance.",
+  "@web.settings.appKeys.preapprovals.loadFailed": {
+    "description": "Web Silo app devices list, in a person's Settings → Signed-in sessions and on an admin's user page (Sign-in tab): shown when that list fails to load; a Retry button follows.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.preapprovals.title": "Approved in advance",
+  "@web.settings.appKeys.preapprovals.title": {
+    "description": "Web Silo app devices list, in a person's Settings → Signed-in sessions and on an admin's user page (Sign-in tab): sub-heading for device sign-ins the person approved before the device connected.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.refreshLabel": "Refresh Silo app devices",
+  "@web.settings.appKeys.refreshLabel": {
+    "description": "Web Silo app devices list, in a person's Settings → Signed-in sessions and on an admin's user page (Sign-in tab): accessible name of the Refresh button.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.removed": "{device} removed",
+  "@web.settings.appKeys.removed": {
+    "description": "Web Silo app devices list, in a person's Settings → Signed-in sessions and on an admin's user page (Sign-in tab): toast after a device is removed. {device}: the device's name.",
+    "placeholders": {
+      "device": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.row.allowedBy": "Allowed by {name}",
+  "@web.settings.appKeys.row.allowedBy": {
+    "description": "Web, the Silo app devices list (an account's devices on an admin's user page, and later a person's own Settings → Signed-in sessions), one device's row: another app (not the Silo app) that the person allowed to use the account. {name}: the user name of the account that allowed it.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.row.approve": "Approve",
+  "@web.settings.appKeys.row.approve": {
+    "description": "Web Silo app devices list (a person's own settings): button on a waiting device's row that approves it.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.row.approveLabel": "Approve {device}",
+  "@web.settings.appKeys.row.approveLabel": {
+    "description": "Web Silo app devices list (a person's own settings): accessible name of the Approve button on a waiting device's row. {device}: the device's name.",
+    "placeholders": {
+      "device": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.row.deny": "Deny",
+  "@web.settings.appKeys.row.deny": {
+    "description": "Web, the Silo app devices list (an account's devices on an admin's user page, and later a person's own Settings → Signed-in sessions), one device's row: button that refuses a device waiting for approval.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.row.denyLabel": "Deny {device}",
+  "@web.settings.appKeys.row.denyLabel": {
+    "description": "Web, the Silo app devices list (an account's devices on an admin's user page, and later a person's own Settings → Signed-in sessions), one device's row: accessible name of the Deny button. {device}: the device's name.",
+    "placeholders": {
+      "device": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.row.enrolledFrom": "From {address}",
+  "@web.settings.appKeys.row.enrolledFrom": {
+    "description": "Web, the Silo app devices list (an account's devices on an admin's user page, and later a person's own Settings → Signed-in sessions), a device's row after the date it was added, and the account key's line on an admin's user page: the network address the key was added from. Left out when the server doesn't know it. {address}: an IP address, such as 203.0.113.7.",
+    "placeholders": {
+      "address": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.row.identityGone": "Can’t sign in: its sign-in provider account is no longer linked",
+  "@web.settings.appKeys.row.identityGone": {
+    "description": "Web, the Silo app devices list (an account's devices on an admin's user page, and later a person's own Settings → Signed-in sessions), one device's row: the device's key belonged to a sign-in provider account that is no longer linked to this account, so the key can't sign in again. It is removed the next time the device tries.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.row.kindApp": "Other app",
+  "@web.settings.appKeys.row.kindApp": {
+    "description": "Web, the Silo app devices list (an account's devices on an admin's user page, and later a person's own Settings → Signed-in sessions), one device's row: label for another app the person allowed to use their account.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.row.kindDevice": "Silo app",
+  "@web.settings.appKeys.row.kindDevice": {
+    "description": "Web, the Silo app devices list (an account's devices on an admin's user page, and later a person's own Settings → Signed-in sessions), one device's row: label for a device running the person's own Silo app.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.row.lastUsed": "Last signed in {time}",
+  "@web.settings.appKeys.row.lastUsed": {
+    "description": "Web, the Silo app devices list (an account's devices on an admin's user page, and later a person's own Settings → Signed-in sessions), one device's row: when the device last signed in with its key. {time}: a formatted date and time.",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.row.notUsed": "Not signed in with its key yet",
+  "@web.settings.appKeys.row.notUsed": {
+    "description": "Web, the Silo app devices list (an account's devices on an admin's user page, and later a person's own Settings → Signed-in sessions), one device's row: the device was added but hasn't signed in with its key since.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.row.preapproval": "Approved in advance · expires {date}",
+  "@web.settings.appKeys.row.preapproval": {
+    "description": "Web, the Silo app devices list (an account's devices on an admin's user page, and later a person's own Settings → Signed-in sessions), one device's row: status of a sign-in approved ahead of time for a device that hasn't connected yet. {date}: a formatted date and time.",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.row.provider": "Checked with the sign-in provider",
+  "@web.settings.appKeys.row.provider": {
+    "description": "Web, the Silo app devices list (an account's devices on an admin's user page, and later a person's own Settings → Signed-in sessions), one device's row: the device's key was added through the server's sign-in provider (single sign-on), which checks the person again each time the device signs in.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.row.remove": "Remove",
+  "@web.settings.appKeys.row.remove": {
+    "description": "Web, the Silo app devices list (an account's devices on an admin's user page, and later a person's own Settings → Signed-in sessions), one device's row: button that removes the device's key and signs it out.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.row.removeLabel": "Remove {device}",
+  "@web.settings.appKeys.row.removeLabel": {
+    "description": "Web, the Silo app devices list (an account's devices on an admin's user page, and later a person's own Settings → Signed-in sessions), one device's row: accessible name of the Remove button. {device}: the name the device gave itself, such as Sam's iPhone.",
+    "placeholders": {
+      "device": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.row.viaAppCode": "Added with a one-time code from the server’s web page",
+  "@web.settings.appKeys.row.viaAppCode": {
+    "description": "Web, the Silo app devices list (an account's devices on an admin's user page, and later a person's own Settings → Signed-in sessions), one device's row: how the device was added: with a one-time code from the server's website (an invitation, a sign-in link or \"Open in Silo\").",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.row.viaPersonKey": "Added by the Silo app on another device",
+  "@web.settings.appKeys.row.viaPersonKey": {
+    "description": "Web, the Silo app devices list (an account's devices on an admin's user page, and later a person's own Settings → Signed-in sessions), one device's row: how the device was added: the Silo app on another of the account's devices added it with the account key.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.row.viaSession": "Added while signed in",
+  "@web.settings.appKeys.row.viaSession": {
+    "description": "Web, the Silo app devices list (an account's devices on an admin's user page, and later a person's own Settings → Signed-in sessions), one device's row: how the device was added: from a signed-in session of the account.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.row.waitingUntil": "Waiting for approval until {time}",
+  "@web.settings.appKeys.row.waitingUntil": {
+    "description": "Web, the Silo app devices list (an account's devices on an admin's user page, and later a person's own Settings → Signed-in sessions), one device's row: status of a new device on an admin account that no one has approved yet. It stops waiting at {time}. {time}: a formatted date and time.",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.row.withdraw": "Withdraw",
+  "@web.settings.appKeys.row.withdraw": {
+    "description": "Web, the Silo app devices list (an account's devices on an admin's user page, and later a person's own Settings → Signed-in sessions), one device's row: button that withdraws a sign-in approved in advance for a device that hasn't connected yet.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.row.withdrawLabel": "Withdraw the approval for {device}",
+  "@web.settings.appKeys.row.withdrawLabel": {
+    "description": "Web, the Silo app devices list (an account's devices on an admin's user page, and later a person's own Settings → Signed-in sessions), one device's row: accessible name of the Withdraw button. {device}: the device name the approval was made for.",
+    "placeholders": {
+      "device": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.signsBackIn": "Devices signed in with the Silo app sign back in by themselves. <link>Remove a device</link> to stop it.",
+  "@web.settings.appKeys.signsBackIn": {
+    "description": "Web: sentence added where signing out everywhere, signing out one session, changing a password or resetting a password is described (a person's own settings, an admin's user page, the admin dashboard and the password reset page). Those end sessions but not a device's Silo app key, so the device signs in again on its own. <link> opens the Silo app devices list where a device is removed.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.title": "Silo app devices",
+  "@web.settings.appKeys.title": {
+    "description": "Web Silo app devices list, in a person's Settings → Signed-in sessions and on an admin's user page (Sign-in tab): heading.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.unavailable": "Silo app sign-in isn’t available on this server, so these devices can’t sign in. You can still remove them.",
+  "@web.settings.appKeys.unavailable": {
+    "description": "Web Silo app devices list, in a person's Settings → Signed-in sessions and on an admin's user page (Sign-in tab): note shown when the server can’t offer signing in with the Silo app (not set up or not supported).",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.waiting.description": "A new device asked to sign in to your account with the Silo app. Approve it only if you just set it up.",
+  "@web.settings.appKeys.waiting.description": {
+    "description": "Web Settings → Signed-in sessions, Silo app devices section: text under the waiting devices heading.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.waiting.title": "Waiting for your approval",
+  "@web.settings.appKeys.waiting.title": {
+    "description": "Web Settings → Signed-in sessions, Silo app devices section: sub-heading for new devices of an admin account that wait for the person to approve them.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.appKeys.withdrawn": "Approval withdrawn",
+  "@web.settings.appKeys.withdrawn": {
+    "description": "Web Silo app devices list, in a person's Settings → Signed-in sessions and on an admin's user page (Sign-in tab): toast after a sign-in approved in advance is withdrawn.",
     "x-platforms": [
       "web"
     ]
@@ -168402,6 +170202,62 @@
       "web"
     ]
   },
+  "web.settings.openInSilo.action": "Get a code for the Silo app",
+  "@web.settings.openInSilo.action": {
+    "description": "Web account settings, Signed-in sessions page: button that makes a one-time code to type into the Silo app, so the app signs in to this account.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.openInSilo.codeInstructions": "In the Silo app on your phone or tablet, add this server by its address and type this code. Anyone with the code can sign in to this account, so don’t share it.",
+  "@web.settings.openInSilo.codeInstructions": {
+    "description": "Web account settings: instructions above the server address and one-time code the person types into the Silo app.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.openInSilo.codeTitle": "Code for the Silo app",
+  "@web.settings.openInSilo.codeTitle": {
+    "description": "Web account settings, Signed-in sessions page: heading of the step that shows a one-time code for the Silo app, to type in the app. The code is never shown as a link.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.openInSilo.description": "Sign the Silo app on your phone or tablet in to this account, without a password.",
+  "@web.settings.openInSilo.description": {
+    "description": "Web account settings, Signed-in sessions page: description of the Silo app section.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.openInSilo.loadFailed": "Couldn’t check whether this browser can get a code for the Silo app.",
+  "@web.settings.openInSilo.loadFailed": {
+    "description": "Web account settings, Signed-in sessions page: shown in the Silo app section when the server couldn't be asked what this sign-in may do; a Retry button follows.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.openInSilo.mainProfileOnly": "Only the household’s main profile can get a code for the Silo app. Switch to it and try again.",
+  "@web.settings.openInSilo.mainProfileOnly": {
+    "description": "Web account settings, Signed-in sessions page: shown when 'Open in Silo' is pressed from a profile that isn't the household's main one; only the main profile may sign the Silo app in to the shared account.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.openInSilo.pinDescription": "Enter the main profile’s PIN to get a code for the Silo app.",
+  "@web.settings.openInSilo.pinDescription": {
+    "description": "Web account settings: description in the profile PIN dialog shown when 'Open in Silo' needs the main profile's PIN.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.openInSilo.title": "Silo app",
+  "@web.settings.openInSilo.title": {
+    "description": "Web account settings, Signed-in sessions page: heading of the section that signs the Silo app in.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.settings.overlays.accent.amber": "Amber",
   "@web.settings.overlays.accent.amber": {
     "description": "Web Settings → Navigation & Cards → Badges, and admin Settings → Appearance: name of an accent colour swatch in a badge's Adjust menu (tooltip and accessible name).",
@@ -171261,6 +173117,13 @@
       "web"
     ]
   },
+  "web.settings.sessions.row.signsBackIn": "This device signs back in by itself",
+  "@web.settings.sessions.row.signsBackIn": {
+    "description": "Web Settings → Signed-in sessions (also a section of an admin's user page): link on a session the Silo app opened with its key; signing it out doesn't stop it, so the link goes to that device in the Silo app devices list, where it is removed.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.settings.sessions.row.summary": "<status>{last_seen}</status> · Signed in {signed_in}",
   "@web.settings.sessions.row.summary": {
     "description": "Web Settings → Signed-in sessions (also a section of an admin's user page), one session's row: line under the device name. <status> wraps the last-activity text (green when active now). {last_seen}: when the session was last active, such as Active now or 5 minutes ago; {signed_in}: the sign-in date and time, formatted.",
@@ -171347,6 +173210,27 @@
   "web.settings.sidebar.title": "Settings",
   "@web.settings.sidebar.title": {
     "description": "Web Settings sidebar: title at the top of the personal settings sidebar (also the navigation's name).",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.signInAgain.action": "Sign in again",
+  "@web.settings.signInAgain.action": {
+    "description": "Web account settings: button that signs this browser out and back in, so it may manage the person's Silo app devices; it returns to the same page.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.signInAgain.manageDevices": "Sign in again to manage your devices",
+  "@web.settings.signInAgain.manageDevices": {
+    "description": "Web account settings: shown where this browser's sign-in (by QR code, or from before an update) can't manage the person's Silo app devices, and signing in again would allow it.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.settings.signInAgain.useApp": "Manage your devices in the Silo app.",
+  "@web.settings.signInAgain.useApp": {
+    "description": "Web account settings: shown where this browser's sign-in can't manage the person's Silo app devices and the account has no other way to sign in to a browser.",
     "x-platforms": [
       "web"
     ]
