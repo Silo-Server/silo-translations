@@ -35309,9 +35309,51 @@
       "apple"
     ]
   },
+  "settings.general.posterDeviceOverrideTv": "This TV has older device-specific settings. Clear them to use the TV-family choices shared by this profile.",
+  "@settings.general.posterDeviceOverrideTv": {
+    "description": "Footer beneath Use Synced TV Settings on the Vega TV General pane. Clearing this TV’s older override reveals the poster size the profile shares with other TVs.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
   "settings.general.posterSizeSyncsTv": "Poster size syncs with other TV-family devices on this profile.",
   "@settings.general.posterSizeSyncsTv": {
     "description": "Apple TV Settings > General: explanation under Poster Size: the size is shared with the profile's other TVs.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "settings.general.posterSyncCheckingTv": "Checking whether this server supports synced interface settings…",
+  "@settings.general.posterSyncCheckingTv": {
+    "description": "Server Support note in Vega TV General settings while Silo checks that the server can read and save this profile’s TV poster size.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "settings.general.posterSyncPendingTv": "Saved on this device. Sync will resume when the server is reachable.",
+  "@settings.general.posterSyncPendingTv": {
+    "description": "Note below Poster Size in Vega TV General settings after an edit has been saved locally. Silo still needs to send the edit to the server.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "settings.general.posterSyncRefusedTv": "The server didn’t accept this change, so it wasn’t saved.",
+  "@settings.general.posterSyncRefusedTv": {
+    "description": "Note below Poster Size in Vega TV General settings after the server definitively rejects an edit.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "settings.general.posterSyncUnavailableTv": "Interface settings are read-only until server support can be verified.",
+  "@settings.general.posterSyncUnavailableTv": {
+    "description": "Server Support note in Vega TV General settings when Silo cannot verify the server’s support for synced interface settings.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "settings.general.posterSyncUpgradeTv": "Update this Silo server to use synced interface settings.",
+  "@settings.general.posterSyncUpgradeTv": {
+    "description": "Server Support note in Vega TV General settings when the connected Silo server needs an update before Poster Size can sync.",
     "x-platforms": [
       "apple"
     ]
@@ -35459,6 +35501,13 @@
   "settings.general.useSyncedTvSettings": "Use Synced TV Settings",
   "@settings.general.useSyncedTvSettings": {
     "description": "Apple TV Settings > General: button that drops this Apple TV's older own card settings and uses the ones synced across the profile's TVs.",
+    "x-platforms": [
+      "apple"
+    ]
+  },
+  "settings.heldChange.body": "A change couldn’t be saved to the server. It stays on this device until you try again or discard it.",
+  "@settings.heldChange.body": {
+    "description": "Footer under Try Again and Discard Held Change in Vega TV General settings. Automatic retries for the poster preference have run out and the setting remains saved locally.",
     "x-platforms": [
       "apple"
     ]
