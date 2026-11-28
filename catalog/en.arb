@@ -3573,6 +3573,26 @@
       "roku"
     ]
   },
+  "catalog.episodeRangeTag": "S{season}E{start}–E{end}",
+  "@catalog.episodeRangeTag": {
+    "description": "Compact code of a video that holds several consecutive episodes (a multi-episode file) on an episode card, beside cards that read S01E03 (catalog.episodeTag), such as S01E04–E05 (Apple, Android, Roku). {season}: the season number, zero-padded to two digits. {start}: the first episode number, zero-padded to two digits. {end}: the last episode number, zero-padded to two digits.",
+    "placeholders": {
+      "season": {
+        "type": "String"
+      },
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple",
+      "android",
+      "roku"
+    ]
+  },
   "catalog.episodeTag": "S{season}E{episode}",
   "@catalog.episodeTag": {
     "description": "Compact episode tag, such as S2E5 (Android pads each number to two digits: S02E05), on Roku, Android phone and Android TV cards and the Android TV Home hero. On Android phone it also appears in a download's subtitle and progress notification, and in the media notification after the series name, such as Severance - S02E04. On Apple iOS, tvOS and macOS it is the season and episode code in the video player's title line (series • S2E5 • episode title), also on the lock screen. {season}: the season number; {episode}: the episode number. Android phone and TV title pages: the code before the episode title under an episode card (S01E02). Apple iOS, tvOS and macOS also show it padded to two digits (S01E02) on episode cards in Home rows, library and search grids and a series page's episode rail, and in the Apple TV Top Shelf after the series name (Severance · S2E5); the Downloads Free Up Space sheet shows it unpadded after the series name.",
@@ -7613,6 +7633,107 @@
       "android"
     ]
   },
+  "detail.episodePartCode": "E{episode}",
+  "@detail.episodePartCode": {
+    "description": "Tab on the page of a video that holds several consecutive episodes; choosing it shows that episode's title and description, such as E4 (Apple iOS, macOS and tvOS; Android phone and TV; Roku). {episode}: the episode number, as digits.",
+    "placeholders": {
+      "episode": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple",
+      "android",
+      "roku"
+    ]
+  },
+  "detail.episodePartOf": "Part of {code} · {title}",
+  "@detail.episodePartOf": {
+    "description": "Link under the title of an episode's page when the episode is played by a video that holds several consecutive episodes; it opens that video's page, which the episode list shows in its place (Apple iOS, macOS and tvOS; Android phone and TV; Roku). {code}: that video's short code, such as S12·E15–E16. {title}: that video's title.",
+    "placeholders": {
+      "code": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple",
+      "android",
+      "roku"
+    ]
+  },
+  "detail.episodePartSpoken": "Episode {episode}, {title}",
+  "@detail.episodePartSpoken": {
+    "description": "Screen-reader label of an episode tab on the page of a video that holds several consecutive episodes (shown visually as “E4”) (Apple iOS, macOS and tvOS; Android phone and TV; Roku). {episode}: the episode number. {title}: that episode's title.",
+    "placeholders": {
+      "episode": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple",
+      "android",
+      "roku"
+    ]
+  },
+  "detail.episodeRangeCode": "S{season}·E{start}–E{end}",
+  "@detail.episodeRangeCode": {
+    "description": "Short code of a video that holds several consecutive episodes (a multi-episode file), with a middle dot, such as S1·E4–E5, on Play buttons and episode pages (Apple iOS, macOS and tvOS; Android phone and TV); episode cards use catalog.episodeRangeTag. {season}: the season number. {start}: the first episode number. {end}: the last episode number. All are passed as digits.",
+    "placeholders": {
+      "season": {
+        "type": "String"
+      },
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple",
+      "android"
+    ]
+  },
+  "detail.episodeRangeCount": "{count, plural, one {# episode} other {# episodes}}",
+  "@detail.episodeRangeCount": {
+    "description": "Small tag on an episode card or episode page whose video holds several consecutive episodes (a multi-episode file), such as “2 episodes” (Apple iOS, macOS and tvOS; Android phone and TV; Roku). {count}: the number of episodes, at least 2.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    },
+    "x-platforms": [
+      "apple",
+      "android",
+      "roku"
+    ]
+  },
+  "detail.episodeRangeSpoken": "Season {season}, Episodes {start} to {end}",
+  "@detail.episodeRangeSpoken": {
+    "description": "Screen-reader text for the code of a video that holds several consecutive episodes (shown visually as “S1·E4–E5”) (Apple iOS, macOS and tvOS; Android phone and TV; Roku). {season}: the season number. {start}: the first episode number. {end}: the last episode number.",
+    "placeholders": {
+      "season": {
+        "type": "String"
+      },
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "apple",
+      "android",
+      "roku"
+    ]
+  },
   "detail.episodes.empty": "No episodes available",
   "@detail.episodes.empty": {
     "description": "Message in the episode list on a series or episode page when the season has no episodes.",
@@ -8500,6 +8621,24 @@
       "android"
     ]
   },
+  "detail.playEpisodeRange": "Play S{season}:E{start}–E{end}",
+  "@detail.playEpisodeRange": {
+    "description": "Roku: primary button on a series or episode page that plays a video holding several consecutive episodes (a multi-episode file), beside the single-episode “Play S1:E4” (detail.playEpisode). {season}: the season number. {start}: the first episode number. {end}: the last episode number.",
+    "placeholders": {
+      "season": {
+        "type": "String"
+      },
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "roku"
+    ]
+  },
   "detail.playSeasonEpisode": "Play Season {season}, Episode {episode}",
   "@detail.playSeasonEpisode": {
     "description": "Accessibility label of the play button on an episode card (Android phone). {season}: the season number; {episode}: the episode number. Both are passed as digits, so a year-numbered season reads 2021.",
@@ -8897,14 +9036,15 @@
   },
   "detail.resumeEpisodeCode": "Resume {code}",
   "@detail.resumeEpisodeCode": {
-    "description": "Apple iOS: primary button on a series page that continues a partly watched episode. {code}: the episode's short code, such as S2·E5.",
+    "description": "Primary button on a series page that continues a partly watched episode (Apple iOS; Android TV). {code}: the episode's short code, such as S2·E5, or a multi-episode video's, such as S1·E4–E5.",
     "placeholders": {
       "code": {
         "type": "String"
       }
     },
     "x-platforms": [
-      "apple"
+      "apple",
+      "android"
     ]
   },
   "detail.resumeEpisodeNumber": "Resume E{episode}",
@@ -8917,6 +9057,24 @@
     },
     "x-platforms": [
       "android"
+    ]
+  },
+  "detail.resumeEpisodeRange": "Resume S{season}:E{start}–E{end}",
+  "@detail.resumeEpisodeRange": {
+    "description": "Roku: primary button on a series or episode page that resumes a video holding several consecutive episodes (a multi-episode file), beside the single-episode “Resume S1:E4” (detail.resumeEpisode). {season}: the season number. {start}: the first episode number. {end}: the last episode number.",
+    "placeholders": {
+      "season": {
+        "type": "String"
+      },
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "roku"
     ]
   },
   "detail.resumeTimeLeft": "Resume · {time} left",
@@ -143894,6 +144052,24 @@
       }
     }
   },
+  "web.detail.episodeRangeCode": "S{season}E{start}–E{end}",
+  "@web.detail.episodeRangeCode": {
+    "description": "Web: short season and episode code of a video that holds several consecutive episodes (a multi-episode file), on episode cards, for example S12E15–E16 (S = season, E = episode). {season}: the season number, zero-padded to two digits. {start}: the first episode number, zero-padded to two digits. {end}: the last episode number, zero-padded to two digits.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "season": {
+        "type": "String"
+      },
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    }
+  },
   "web.detail.episodes.heading": "Episodes",
   "@web.detail.episodes.heading": {
     "description": "Web: heading of the episode list on a series or season detail page.",
@@ -143922,6 +144098,21 @@
       "web"
     ]
   },
+  "web.detail.episodes.numberRange": "{start}–{end}",
+  "@web.detail.episodes.numberRange": {
+    "description": "Web: episode number column of a season's episode list for a video that holds several consecutive episodes (a multi-episode file), for example 15–16. {start}: the first episode number. {end}: the last episode number.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    }
+  },
   "web.detail.episodes.numbered": "Episode {episode}",
   "@web.detail.episodes.numbered": {
     "description": "Web: fallback name of an episode with no title in an episode list (also the image's alt text). {episode}: the episode number.",
@@ -143930,6 +144121,70 @@
     ],
     "placeholders": {
       "episode": {
+        "type": "String"
+      }
+    }
+  },
+  "web.detail.episodes.numberedRange": "Episodes {start}–{end}",
+  "@web.detail.episodes.numberedRange": {
+    "description": "Web: last breadcrumb segment on the detail page of a video that holds several consecutive episodes (a multi-episode file), for example Episodes 15–16. {start}: the first episode number. {end}: the last episode number.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    }
+  },
+  "web.detail.episodes.partCode": "E{episode}",
+  "@web.detail.episodes.partCode": {
+    "description": "Web: tab on the detail page of a video that holds several consecutive episodes (a multi-episode file); choosing it shows that episode's title and description, such as E04. {episode}: the episode number, zero-padded to two digits.",
+    "placeholders": {
+      "episode": {
+        "type": "String"
+      }
+    },
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.detail.episodes.partOf": "Part of {code} · {title}",
+  "@web.detail.episodes.partOf": {
+    "description": "Web: link under the title of an episode's detail page when the episode is played by a video that holds several consecutive episodes; it opens that video's page, which the episode list shows in its place. {code}: that video's episode code, for example S12E15–E16. {title}: that video's title.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "code": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "web.detail.episodes.partsHeading": "In this video",
+  "@web.detail.episodes.partsHeading": {
+    "description": "Web: screen-reader name of the row of episode tabs on the detail page of a video that holds several consecutive episodes (a multi-episode file); each tab shows one episode's title and description.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.detail.episodes.rangeBadge": "{count, plural, one {{count_text} episode} other {{count_text} episodes}}",
+  "@web.detail.episodes.rangeBadge": {
+    "description": "Web: small badge on an episode card, episode row or episode page whose video holds several consecutive episodes (a multi-episode file), for example “2 episodes”. {count}: the number of episodes, at least 2. {count_text}: the same number as digits.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "count_text": {
         "type": "String"
       }
     }
@@ -143957,6 +144212,45 @@
         "type": "String"
       },
       "episode": {
+        "type": "String"
+      }
+    }
+  },
+  "web.detail.episodes.spokenRange": "Season {season}, Episodes {start} to {end}",
+  "@web.detail.episodes.spokenRange": {
+    "description": "Web: screen-reader text for the first line of an untitled episode card whose video holds several consecutive episodes (shown visually as “S12E15–E16”). {season}: the season number. {start}: the first episode number. {end}: the last episode number.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "season": {
+        "type": "String"
+      },
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    }
+  },
+  "web.detail.episodes.spokenRangeTitled": "Season {season}, Episodes {start} to {end}, {title}",
+  "@web.detail.episodes.spokenRangeTitled": {
+    "description": "Web: screen-reader text for the first line of an episode card whose video holds several consecutive episodes (shown visually as “S12E15–E16 · Title”). {season}: the season number. {start}: the first episode number. {end}: the last episode number. {title}: the episodes' title.",
+    "x-platforms": [
+      "web"
+    ],
+    "placeholders": {
+      "season": {
+        "type": "String"
+      },
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      },
+      "title": {
         "type": "String"
       }
     }
