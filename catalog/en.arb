@@ -178513,6 +178513,13 @@
       "web"
     ]
   },
+  "web.subtitles.menu.generateWithAi": "Generate subtitles with AI…",
+  "@web.subtitles.menu.generateWithAi": {
+    "description": "Web player: subtitle menu item that opens the AI dialog when it can only create subtitles from the audio, because AI translation is off or the video has no subtitles it can translate.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.subtitles.menu.heading": "Subtitles",
   "@web.subtitles.menu.heading": {
     "description": "Web player: heading and screen-reader name of the subtitles panel.",
