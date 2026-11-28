@@ -104848,6 +104848,13 @@
       "web"
     ]
   },
+  "web.admin.settings.network.direct.connected.emptyOnThisServer": "No device is connected directly to this server.",
+  "@web.admin.settings.network.direct.connected.emptyOnThisServer": {
+    "description": "Web admin, Network Access settings page, Direct connections section: shown in place of the table when the server that answered lists no device connected over a direct path. Other API servers can have direct connections of their own.",
+    "x-platforms": [
+      "web"
+    ]
+  },
   "web.admin.settings.network.direct.connected.peerEndpoint": "Remote address",
   "@web.admin.settings.network.direct.connected.peerEndpoint": {
     "description": "Web admin, Network Access settings page, Direct connections section: column heading of the connected devices table, the network address the device connects from.",
@@ -105046,6 +105053,13 @@
   "web.admin.settings.network.direct.listeners": "Listeners",
   "@web.admin.settings.network.direct.listeners": {
     "description": "Web admin, Network Access settings page, Direct connections section: heading above the list of a host's listeners, the API, Jellyfin, Audiobookshelf and proxy endpoints that accept connections.",
+    "x-platforms": [
+      "web"
+    ]
+  },
+  "web.admin.settings.network.direct.loadError": "Could not load the direct connection settings. Retry before editing.",
+  "@web.admin.settings.network.direct.loadError": {
+    "description": "Web admin, Network Access settings page, Direct connections section: shown with a Retry button when the section's settings failed to load; the toggle stays disabled until they load.",
     "x-platforms": [
       "web"
     ]
